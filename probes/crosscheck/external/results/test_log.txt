@@ -1,0 +1,14 @@
+test_controller_modes_and_arrivals (test_simulator.ElasticityInvariants.test_controller_modes_and_arrivals) ... ok
+test_release_quorum_and_quota (test_simulator.ElasticityInvariants.test_release_quorum_and_quota) ... ok
+test_all_organizations_terminate (test_simulator.Invariants.test_all_organizations_terminate) ... ok
+test_capacity_and_independence (test_simulator.Invariants.test_capacity_and_independence) ... ok
+test_fully_serial_resource_bound (test_simulator.Invariants.test_fully_serial_resource_bound) ... ok
+test_ground_truth_not_in_worker_input (test_simulator.Invariants.test_ground_truth_not_in_worker_input) ... ok
+test_quota_terminates (test_simulator.Invariants.test_quota_terminates) ... ok
+test_repeatability (test_simulator.Invariants.test_repeatability) ... ok
+test_workload_paired (test_simulator.Invariants.test_workload_paired) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.311s
+
+OK

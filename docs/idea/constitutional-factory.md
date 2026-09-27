@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12 (supersedes r1–r11)
+Revision: r12.1 (supersedes r1–r12)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -85,9 +85,11 @@ These rules are the whole of "management". They run identically in every institu
 | R11 | **Start state** | Licences and allowances start from today's predetermined mapping. It worked, so it is the starting point. The rules move it on evidence from day one. A new model starts at tier 1 and climbs by stretch cards. |
 | R12 | **Late marks** | An Audit finding weeks later applies like an immediate markdown, counted twice, because escaped defects cost more. |
 | R13 | **No orphan tiers** | If cards wait at a tier with no licensed agent for longer than a set time, the best-performing agent one tier below gets stretch cards. If there is none, the card is split in Planning or escalated to Isa. |
-| R14 | **Elastic capacity (the Scaler)** *(r12)* | Agents are instances of models on the menu. Every 15 minutes the Ledger prices each queued task on every model licensed for it whose pass chance clears the quality floor (0.8). Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins. Each model's target is its busy instances plus ⌈queued hours ÷ 2 h⌉, within vendor rate limits. The Ledger starts the shortfall and stops instances idle 30 minutes beyond target. An instance pulls only work it clears the floor on and whose cost is within 1.5× the cheapest qualified model's (cost-band pull), unless the task has waited an hour. Instances of one model are one model for independence. |
+| R14 | **Elastic capacity (the Scaler)** *(r12)* | Agents are instances of models on the menu. Every 15 minutes the Ledger prices each queued task on every model licensed for it whose pass chance clears the quality floor (0.8). Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins. Each model's target is its busy instances plus ⌈queued hours ÷ 2 h⌉, within vendor rate limits. The Ledger starts the shortfall and stops instances idle 30 minutes beyond target. An instance pulls only work it clears the floor on and whose cost is within 1.5× the cheapest qualified model's (cost-band pull), unless the task has waited an hour. Instances of one model are one model for independence. *r12.1:* work-conserving: the target clears queued work within 15 minutes (not 2 h). The cross-check found that conservative demand predictors lose output, and aggressiveness costs nothing under API pricing. |
 | R15 | **No training on our data** *(r12)* | No model tier that uses the Factory's prompts or outputs for training (for example, Muse Spark's Contributor tier). |
 | R16 | **Burn cap** *(r12)* | Running instances may burn at most 2× the trailing seven-day average ($ per hour), under a monthly ceiling of expected demand × cost per clean idea × 1.5. Both are relative, so neither depends on the token model. |
+| R17 | **Evidence-gated dependencies** *(r12.1)* | Each card is reviewed as it is built; there is no whole-idea barrier. A card that depends on another becomes available only when its prerequisite has passed review. A rework invalidates only the dependants whose inputs changed. The Ledger records the artifact versions each card read. |
+| R18 | **Family independence** *(r12.1)* | No model reviews, audits or releases work by a model of its own family (vendor). Instances and siblings are one epistemic source. If no other family is available, the waiver is recorded (R13). |
 
 **Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality). (r8 dropped the separate velocity standard: promotion credit is counted per card, so speed already moves models up; §3.2.) These are the "KPI and standards".
 
@@ -320,6 +322,17 @@ Organisations are compared as mappings of those steps onto models.
   - A burn cap of 2× the trailing average lost nothing (R16).
   - The choice of models, rules and organisation is the same under every token model; only the dollars scale.
 
+### 5.6 Cross-check with a second simulation (r12.1)
+
+[`crosscheck.md`](crosscheck.md): Isa supplied an independent simulation (another assistant; SQL state, stateless invocations, dependency graphs, family blind spots). Each model was run with the other's mechanisms.
+- **The two agree once definitions are aligned.** Their "institutions" held review until the whole idea was built and let any agent claim any task. Their better design, the "evidence graph", is our institutions plus one rule: build on reviewed work only (R17).
+- **Our evidence licences are the largest quality lever in their model too:**
+  - they raise useful output by 6–29% and cut escaped defects by up to 65%;
+  - with licences and family independence (R18), their best design is the first to pass the original quality floors at their reference blind-spot rate.
+- **Blind spots shared within a family hurt the institutions least:** −23% at 18%, against −35% to −64% for the others. More seats of the same models do not remove shared mistakes.
+- **Blind spots shared by every family cut every design by about 80% at 18%.** No model organisation fixes them; deterministic tests, CI, typed contracts and human-ratified acceptance criteria are the defence (X11).
+- **Packets:** one requirement per invocation until the trial measures interface costs (X12).
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -477,6 +490,8 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | X7 | Universal Inquiry participation adds unique value from every model | A model's surviving contributions stay near zero |
 | X9 | The value-stream model ranks live results correctly (r12): run the model's scenario live and compare | Live clean output, change-failure rate or cost per clean idea falls outside the model's range by more than 25% |
 | X10 | The Scaler (R14) holds lead time under bursts without raising cost per clean idea | 90th-percentile lead time above 1.5× steady state, or cost per clean idea above fixed seats |
+| X11 | Blind spots are mostly family-specific, so cross-family review (R18) catches most of what one family misses (r12.1) | More than 5% of escaped defects were missed by every model family that checked them: all-family blind spots, which R18 cannot reach |
+| X12 | One requirement per invocation beats larger packets (r12.1) | Measured interface-error cost exceeds whole-packet rework cost at 2+ requirements |
 
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
@@ -488,6 +503,8 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - Who owns live operation (incident, restore, hotfix): the value stream continues past the Release Gate (§5.5).
 - Which ideas need human ratification. At about 10 minutes an idea, 100 ideas a week is about 17 hours of Isa's time, so ratification is the likely real ceiling (§5.5).
 - Jurisdiction as a property of each route to a model (future): how data-residency law affects cost and efficiency.
+- SQL as canonical operational state, with stateless invocations reloading a versioned snapshot; Git as the artifact authority (r12.1, from the cross-check model).
+- Tests, CI and typed contracts as first-class evidence at review and release: the only defence against blind spots shared by all model families (r12.1).
 
 ### 11.3 Isa's decisions
 

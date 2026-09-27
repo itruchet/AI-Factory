@@ -1,0 +1,498 @@
+{
+ "reference": {
+  "6/3/3": {
+   "external institutions (barrier, FIFO)": {
+    "useful": 207.96473422189263,
+    "useful_ci": 11.954838065027921,
+    "gain": 0.0,
+    "gain_ci": 0.0,
+    "intent": 0.9601079189794864,
+    "defects": 0.7991172843175132,
+    "defects_ci": 0.09085870422206696,
+    "completion": 0.6783854166666666,
+    "cost_useful": 3.7596342514736234,
+    "passes": false
+   },
+   "external evidence graph (FIFO)": {
+    "useful": 255.90281599665462,
+    "useful_ci": 12.87064363746077,
+    "gain": 0.24931603836243008,
+    "gain_ci": 0.08425497324357724,
+    "intent": 0.957225448223621,
+    "defects": 0.8281530774877851,
+    "defects_ci": 0.06931404233741659,
+    "completion": 0.7838541666666666,
+    "cost_useful": 3.0495682677372224,
+    "passes": false
+   },
+   "institutions + streaming review": {
+    "useful": 233.96206425293988,
+    "useful_ci": 15.240598126220242,
+    "gain": 0.14544117087242342,
+    "gain_ci": 0.0993902794127321,
+    "intent": 0.9627048810438756,
+    "defects": 0.9013218189486305,
+    "defects_ci": 0.08827934539328874,
+    "completion": 0.7486979166666666,
+    "cost_useful": 3.5748345250068376,
+    "passes": false
+   },
+   "institutions + licences": {
+    "useful": 247.9951010577118,
+    "useful_ci": 14.726785513996123,
+    "gain": 0.20608114074447836,
+    "gain_ci": 0.07659928273967329,
+    "intent": 0.9731450660685262,
+    "defects": 0.5345960611449742,
+    "defects_ci": 0.057046292006017456,
+    "completion": 0.76953125,
+    "cost_useful": 3.364180291387452,
+    "passes": false
+   },
+   "institutions + streaming + licences": {
+    "useful": 278.88328570367145,
+    "useful_ci": 13.113918728963528,
+    "gain": 0.3620853494311324,
+    "gain_ci": 0.08748198204266278,
+    "intent": 0.9766259312334712,
+    "defects": 0.4752517250412053,
+    "defects_ci": 0.04806574072547896,
+    "completion": 0.7942708333333334,
+    "cost_useful": 3.077761736822944,
+    "passes": false
+   },
+   "institutions + streaming + licences + family review": {
+    "useful": 271.12750933447495,
+    "useful_ci": 15.993301721929749,
+    "gain": 0.31744610525888234,
+    "gain_ci": 0.08288425649365974,
+    "intent": 0.9770683987577103,
+    "defects": 0.39702924826113234,
+    "defects_ci": 0.04561324999081656,
+    "completion": 0.765625,
+    "cost_useful": 3.2081657591828963,
+    "passes": false
+   },
+   "evidence graph + licences": {
+    "useful": 311.0759380380293,
+    "useful_ci": 14.008625385215081,
+    "gain": 0.519006870984091,
+    "gain_ci": 0.10280401260726173,
+    "intent": 0.9713494484979962,
+    "defects": 0.45616870758038075,
+    "defects_ci": 0.04695360858714441,
+    "completion": 0.859375,
+    "cost_useful": 2.5763877613262367,
+    "passes": false
+   },
+   "evidence graph + licences + family review": {
+    "useful": 304.26987097622504,
+    "useful_ci": 13.23436374591069,
+    "gain": 0.4909661567404329,
+    "gain_ci": 0.1097892365705198,
+    "intent": 0.9717574947669829,
+    "defects": 0.3590189315339442,
+    "defects_ci": 0.05803426491566886,
+    "completion": 0.8502604166666666,
+    "cost_useful": 2.7106041114073105,
+    "passes": false
+   }
+  },
+  "4/7/1": {
+   "external institutions (barrier, FIFO)": {
+    "useful": 234.26824035348994,
+    "useful_ci": 16.12728943943857,
+    "gain": 0.0,
+    "gain_ci": 0.0,
+    "intent": 0.9524222132684699,
+    "defects": 0.7948539494613333,
+    "defects_ci": 0.06043912764750641,
+    "completion": 0.734375,
+    "cost_useful": 2.7436660850440053,
+    "passes": false
+   },
+   "external evidence graph (FIFO)": {
+    "useful": 289.68163264919997,
+    "useful_ci": 16.26325142797424,
+    "gain": 0.2576746796838701,
+    "gain_ci": 0.08844401420756044,
+    "intent": 0.9513503868668461,
+    "defects": 0.7566785623174667,
+    "defects_ci": 0.07573549652334022,
+    "completion": 0.8216145833333334,
+    "cost_useful": 2.1624363610475696,
+    "passes": false
+   },
+   "institutions + streaming review": {
+    "useful": 245.60236704060347,
+    "useful_ci": 21.916151358239528,
+    "gain": 0.05969712435214706,
+    "gain_ci": 0.08991275555252025,
+    "intent": 0.9461124533183158,
+    "defects": 0.7921934268824804,
+    "defects_ci": 0.053879506895974864,
+    "completion": 0.7421875,
+    "cost_useful": 2.716817226828293,
+    "passes": false
+   },
+   "institutions + licences": {
+    "useful": 269.2255977952795,
+    "useful_ci": 18.170553411547537,
+    "gain": 0.16556972543616735,
+    "gain_ci": 0.08232044427144287,
+    "intent": 0.9517749922433518,
+    "defects": 0.4883875769870273,
+    "defects_ci": 0.06237791732483175,
+    "completion": 0.7838541666666666,
+    "cost_useful": 2.364014088696563,
+    "passes": false
+   },
+   "institutions + streaming + licences": {
+    "useful": 283.0522703666184,
+    "useful_ci": 14.838550357292712,
+    "gain": 0.23383954165103008,
+    "gain_ci": 0.09704206588491181,
+    "intent": 0.9566693640327526,
+    "defects": 0.5180586483569367,
+    "defects_ci": 0.07174586913371651,
+    "completion": 0.80078125,
+    "cost_useful": 2.2995000833166435,
+    "passes": false
+   },
+   "institutions + streaming + licences + family review": {
+    "useful": 267.9153722113472,
+    "useful_ci": 12.656164249437047,
+    "gain": 0.16401701903864552,
+    "gain_ci": 0.07375900041678583,
+    "intent": 0.937637039180291,
+    "defects": 0.368559646539719,
+    "defects_ci": 0.05712855389342222,
+    "completion": 0.7591145833333334,
+    "cost_useful": 2.479535602084522,
+    "passes": false
+   },
+   "evidence graph + licences": {
+    "useful": 313.2369051660414,
+    "useful_ci": 14.521523453729829,
+    "gain": 0.3685947666332354,
+    "gain_ci": 0.110830209598485,
+    "intent": 0.947734992557944,
+    "defects": 0.4501521633724081,
+    "defects_ci": 0.05213285368970806,
+    "completion": 0.87109375,
+    "cost_useful": 1.9469098278170438,
+    "passes": false
+   },
+   "evidence graph + licences + family review": {
+    "useful": 271.00199743672135,
+    "useful_ci": 18.64795088000577,
+    "gain": 0.1817379199140754,
+    "gain_ci": 0.10669565619395875,
+    "intent": 0.9226921896792821,
+    "defects": 0.30123864695422664,
+    "defects_ci": 0.05694980408886463,
+    "completion": 0.80078125,
+    "cost_useful": 2.441812498117123,
+    "passes": false
+   }
+  },
+  "10/2/0": {
+   "external institutions (barrier, FIFO)": {
+    "useful": 318.3099095457385,
+    "useful_ci": 16.441216775727913,
+    "gain": 0.0,
+    "gain_ci": 0.0,
+    "intent": 0.9861815146968878,
+    "defects": 0.3795958092480799,
+    "defects_ci": 0.04301219288672746,
+    "completion": 0.8463541666666666,
+    "cost_useful": 4.019921713624147,
+    "passes": false
+   },
+   "external evidence graph (FIFO)": {
+    "useful": 375.70825658851294,
+    "useful_ci": 14.757996421169596,
+    "gain": 0.19649991699225905,
+    "gain_ci": 0.07328957518880766,
+    "intent": 0.9844741894309411,
+    "defects": 0.32813169633189565,
+    "defects_ci": 0.04252010650496086,
+    "completion": 0.9088541666666666,
+    "cost_useful": 3.2391668162801426,
+    "passes": false
+   },
+   "institutions + streaming review": {
+    "useful": 341.79705399365236,
+    "useful_ci": 16.89614647475671,
+    "gain": 0.08633615238546265,
+    "gain_ci": 0.07081032471149272,
+    "intent": 0.9863426142120134,
+    "defects": 0.3993738502889295,
+    "defects_ci": 0.034371232846857884,
+    "completion": 0.8723958333333334,
+    "cost_useful": 3.8654199964437823,
+    "passes": false
+   },
+   "institutions + licences": {
+    "useful": 333.2171177797316,
+    "useful_ci": 17.029825185834024,
+    "gain": 0.05963921755626279,
+    "gain_ci": 0.06827408859620368,
+    "intent": 0.9843686362328604,
+    "defects": 0.3386272829448117,
+    "defects_ci": 0.045329542506273836,
+    "completion": 0.8619791666666666,
+    "cost_useful": 3.8227413291271204,
+    "passes": false
+   },
+   "institutions + streaming + licences": {
+    "useful": 353.47235322411177,
+    "useful_ci": 14.499075721988726,
+    "gain": 0.1275059280050934,
+    "gain_ci": 0.07731900908999312,
+    "intent": 0.9843446996612601,
+    "defects": 0.33671549857956656,
+    "defects_ci": 0.03935175062726165,
+    "completion": 0.8828125,
+    "cost_useful": 3.742310886657363,
+    "passes": false
+   },
+   "institutions + streaming + licences + family review": {
+    "useful": 344.3380051774933,
+    "useful_ci": 14.899445571534779,
+    "gain": 0.0986514051639177,
+    "gain_ci": 0.07707112395439528,
+    "intent": 0.989186957844465,
+    "defects": 0.2680814082681899,
+    "defects_ci": 0.03821538326641993,
+    "completion": 0.8658854166666666,
+    "cost_useful": 3.7802292822738734,
+    "passes": false
+   },
+   "evidence graph + licences": {
+    "useful": 395.7741477403902,
+    "useful_ci": 18.219245316476936,
+    "gain": 0.25792564931658724,
+    "gain_ci": 0.08071484219036067,
+    "intent": 0.9823040055200137,
+    "defects": 0.30702594037636444,
+    "defects_ci": 0.04627305962219686,
+    "completion": 0.9361979166666666,
+    "cost_useful": 3.079276236736557,
+    "passes": false
+   },
+   "evidence graph + licences + family review": {
+    "useful": 396.8962995322319,
+    "useful_ci": 25.531079060351207,
+    "gain": 0.2578268630481161,
+    "gain_ci": 0.08642364113478901,
+    "intent": 0.9834120821545723,
+    "defects": 0.23804560108410452,
+    "defects_ci": 0.043042541705649834,
+    "completion": 0.9231770833333334,
+    "cost_useful": 3.1268362023011753,
+    "passes": true
+   }
+  }
+ },
+ "correlated_errors": {
+  "6/3/3": {
+   "external institutions (barrier, FIFO)": {
+    "useful": 119.12949519457005,
+    "useful_ci": 9.140613585465566,
+    "gain": 0.0,
+    "gain_ci": 0.0,
+    "intent": 0.9059199845739505,
+    "defects": 1.3286014002698616,
+    "defects_ci": 0.11301352840847177,
+    "completion": 0.5364583333333334,
+    "cost_useful": 6.738867531230473,
+    "passes": false
+   },
+   "external evidence graph (FIFO)": {
+    "useful": 151.15856062602577,
+    "useful_ci": 12.023146835345848,
+    "gain": 0.3074260732939396,
+    "gain_ci": 0.14352822592704798,
+    "intent": 0.9171316806991823,
+    "defects": 1.2589090336011186,
+    "defects_ci": 0.11133472361522746,
+    "completion": 0.6458333333333334,
+    "cost_useful": 5.12599371006704,
+    "passes": false
+   },
+   "institutions + streaming review": {
+    "useful": 135.43504711501967,
+    "useful_ci": 10.821814289648685,
+    "gain": 0.17119538047292449,
+    "gain_ci": 0.12791683806435356,
+    "intent": 0.9287520184526163,
+    "defects": 1.4070700780507788,
+    "defects_ci": 0.11849028841955071,
+    "completion": 0.5950520833333334,
+    "cost_useful": 6.0880980297599345,
+    "passes": false
+   },
+   "institutions + licences": {
+    "useful": 146.75198289103406,
+    "useful_ci": 10.105131649987817,
+    "gain": 0.271007860856077,
+    "gain_ci": 0.13340199947272616,
+    "intent": 0.9425798790160004,
+    "defects": 1.089356661856662,
+    "defects_ci": 0.09937304343841588,
+    "completion": 0.6145833333333334,
+    "cost_useful": 5.501141949539881,
+    "passes": false
+   },
+   "institutions + streaming + licences": {
+    "useful": 170.39155415162173,
+    "useful_ci": 13.625266788754114,
+    "gain": 0.4740043697344958,
+    "gain_ci": 0.1593038806866616,
+    "intent": 0.9568764672681649,
+    "defects": 1.0834006534507106,
+    "defects_ci": 0.07062394662139948,
+    "completion": 0.6575520833333334,
+    "cost_useful": 5.035816501793943,
+    "passes": false
+   },
+   "institutions + streaming + licences + family review": {
+    "useful": 162.13442764591625,
+    "useful_ci": 11.064289285973684,
+    "gain": 0.4049077712546534,
+    "gain_ci": 0.13712707915467126,
+    "intent": 0.9502802659058706,
+    "defects": 0.8857414857888929,
+    "defects_ci": 0.09486207069608683,
+    "completion": 0.609375,
+    "cost_useful": 5.258595222517595,
+    "passes": false
+   },
+   "evidence graph + licences": {
+    "useful": 182.0171546439781,
+    "useful_ci": 11.265582293251137,
+    "gain": 0.5725588644577806,
+    "gain_ci": 0.15199869940790237,
+    "intent": 0.9425408836313035,
+    "defects": 1.0138606921322182,
+    "defects_ci": 0.07573690435024683,
+    "completion": 0.703125,
+    "cost_useful": 4.431680897566421,
+    "passes": false
+   },
+   "evidence graph + licences + family review": {
+    "useful": 178.60413826366275,
+    "useful_ci": 15.336728596140984,
+    "gain": 0.5406863414356695,
+    "gain_ci": 0.16602560869785288,
+    "intent": 0.9488606064933948,
+    "defects": 0.76751178643529,
+    "defects_ci": 0.08195119047349002,
+    "completion": 0.6536458333333334,
+    "cost_useful": 4.681041675038069,
+    "passes": false
+   }
+  }
+ },
+ "no_family_blindspots": {
+  "6/3/3": {
+   "external institutions (barrier, FIFO)": {
+    "useful": 294.50183256007176,
+    "useful_ci": 16.593666523377493,
+    "gain": 0.0,
+    "gain_ci": 0.0,
+    "intent": 0.9745293859581637,
+    "defects": 0.5855712270058222,
+    "defects_ci": 0.06978396209306946,
+    "completion": 0.79296875,
+    "cost_useful": 2.7151386196458733,
+    "passes": false
+   },
+   "external evidence graph (FIFO)": {
+    "useful": 349.9628740476848,
+    "useful_ci": 15.238548727457793,
+    "gain": 0.20608862293081975,
+    "gain_ci": 0.07903051720787377,
+    "intent": 0.9770599242312604,
+    "defects": 0.509384078565113,
+    "defects_ci": 0.05164243827059544,
+    "completion": 0.8658854166666666,
+    "cost_useful": 2.220296675712621,
+    "passes": false
+   },
+   "institutions + streaming review": {
+    "useful": 312.2899337905162,
+    "useful_ci": 18.435148860896664,
+    "gain": 0.07989665197947937,
+    "gain_ci": 0.09575898432159632,
+    "intent": 0.9751172037162635,
+    "defects": 0.6010603977620469,
+    "defects_ci": 0.06181371836254246,
+    "completion": 0.8138020833333334,
+    "cost_useful": 2.6441775582849285,
+    "passes": false
+   },
+   "institutions + licences": {
+    "useful": 373.96576563560416,
+    "useful_ci": 16.552849831964476,
+    "gain": 0.285483348858553,
+    "gain_ci": 0.07319748162496241,
+    "intent": 0.9912358256534077,
+    "defects": 0.22262307970734,
+    "defects_ci": 0.033614993416190904,
+    "completion": 0.90625,
+    "cost_useful": 2.253573896843687,
+    "passes": true
+   },
+   "institutions + streaming + licences": {
+    "useful": 401.44286777902727,
+    "useful_ci": 18.066595725204557,
+    "gain": 0.3854770120317016,
+    "gain_ci": 0.09887766647642769,
+    "intent": 0.9896810080784751,
+    "defects": 0.22595454762214123,
+    "defects_ci": 0.03615688403642804,
+    "completion": 0.8997395833333334,
+    "cost_useful": 2.18409365168682,
+    "passes": true
+   },
+   "institutions + streaming + licences + family review": {
+    "useful": 383.5123271525025,
+    "useful_ci": 13.16843749426863,
+    "gain": 0.3231751643532274,
+    "gain_ci": 0.08429929102164638,
+    "intent": 0.9914961409519599,
+    "defects": 0.16067155651925766,
+    "defects_ci": 0.025541575873832517,
+    "completion": 0.8919270833333334,
+    "cost_useful": 2.3035025206996615,
+    "passes": true
+   },
+   "evidence graph + licences": {
+    "useful": 425.65828183641673,
+    "useful_ci": 16.263869861216175,
+    "gain": 0.46963011248792663,
+    "gain_ci": 0.09929045544830525,
+    "intent": 0.9873616467009444,
+    "defects": 0.17595610563520508,
+    "defects_ci": 0.03772425019237798,
+    "completion": 0.9466145833333334,
+    "cost_useful": 1.8901363523384986,
+    "passes": true
+   },
+   "evidence graph + licences + family review": {
+    "useful": 433.1785014098187,
+    "useful_ci": 17.621277135576282,
+    "gain": 0.48982218691229085,
+    "gain_ci": 0.08432847872897736,
+    "intent": 0.9895555729359783,
+    "defects": 0.11130779956124089,
+    "defects_ci": 0.022878171866794392,
+    "completion": 0.9635416666666666,
+    "cost_useful": 1.9159532981531024,
+    "passes": true
+   }
+  }
+ }
+}

@@ -1,0 +1,60 @@
+{
+  "config": {
+    "architecture": "institutions",
+    "mix": [
+      6,
+      3,
+      3
+    ],
+    "seed": 0,
+    "ideas": 32,
+    "wip": 8,
+    "coupling": 0.25,
+    "decoherence": 0.1,
+    "correlation": 0.18,
+    "read_error": 0.025,
+    "packet_size": 2,
+    "packet_context_penalty": 2.5,
+    "effort": 1.0,
+    "capacity": "unlimited",
+    "claim_policy": "fifo",
+    "max_attempts": 4,
+    "max_release_rounds": 2,
+    "audit_rate": 0.1,
+    "test_catch": 0.5,
+    "difficulty_shift": 0.0,
+    "slope": 0.12,
+    "common_controls": false,
+    "specialization": 0.0,
+    "repair_bonus": 0.025,
+    "controller": "full_pool",
+    "arrival_pattern": "saturated",
+    "target_drain_hours": 0.5,
+    "varying_difficulty": false,
+    "audit_path": null
+  },
+  "profiles": {
+    "top": {
+      "score": 72.0,
+      "tps": 45.0,
+      "input_price": 2.0,
+      "output_price": 12.0,
+      "verbosity": 1.4
+    },
+    "middle": {
+      "score": 56.0,
+      "tps": 70.0,
+      "input_price": 0.4,
+      "output_price": 2.0,
+      "verbosity": 1.0
+    },
+    "bottom": {
+      "score": 38.0,
+      "tps": 90.0,
+      "input_price": 0.08,
+      "output_price": 0.25,
+      "verbosity": 0.8
+    }
+  },
+  "notice": "All numerical input parameters synthetic. No Artificial Analysis snapshot or live provider-limit measurements used."
+}

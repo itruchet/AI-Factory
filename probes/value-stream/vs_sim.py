@@ -116,6 +116,14 @@ CRITIQUE_FIND = 0.30
 AMBIG_SCALE, AMBIG_PENALTY = 0.30, 0.6
 LICENCE_P, REVIEW_LICENCE_P = 0.60, 0.50
 ORPHAN_H = 8.0                 # R13
+BLIND_P = 0.0                  # r12.1: chance a defect, or a requirement, sits in a blind spot shared by every
+                               # model family: no LLM check sees it; tests, CI and smoke tests still can
+FAMILY_BLIND_P = 0.0           # r12.1 (from the cross-check model): each requirement x model family pair has a
+FAMILY_BLIND_MULT = 0.4        # latent blind spot with this chance; that family's pass/catch chance on the
+                               # requirement is x0.4, at every step. Other families are unaffected.
+CONTEXT_PENALTY = 0.0          # r12.1: packets. Every unit in a packet of k requirements is
+                               # CONTEXT_PENALTY x (k - 1)^1.2 points harder (the cross-check model's form;
+                               # 2.5 there): a longer context makes each part harder to get right
 DIRECTOR_NOISE = 12.0
 PRIORITY = ["operate", "release", "qa", "integrate", "security", "review", "audit", "build", "plan_check", "plan",
             "design", "challenge", "discover"]            # downstream first
@@ -159,6 +167,8 @@ class Idea:
     hotfix: bool = False
     done: bool = False
     shift: float = 0.0             # this idea's difficulty offset (open arrivals)
+    blind_req: set = field(default_factory=set)   # requirements no model notices
+    fam_blind: dict = field(default_factory=dict)  # (requirement, family) -> blind?
 
 
 @dataclass(eq=False)
@@ -169,6 +179,10 @@ class Card:
     sensitive: bool
     ambiguous: bool
     defects: set = field(default_factory=set)
+    blind: set = field(default_factory=set)       # defects no LLM check can see
+    units: list | None = None      # packet: [(difficulty, sensitive, ambiguous), ...]
+    reqs: tuple = ()               # requirements this card implements
+    base_h: float = 0.0            # packet: summed build hours of its units
     author: str = ""
     reviewers: set = field(default_factory=set)
     attempts: int = 0
@@ -194,6 +208,7 @@ class Org:
     pools: dict = field(default_factory=dict)       # step -> set of seat idx (missing = every seat)
     licences: bool = True                            # evidence licences (and R13 relaxations)
     independence: bool = True                        # author never checks own work (relaxed by R13)
+    by_family: bool = False                          # r12.1: nor does any model of the author's family (vendor)
     owner_steps: frozenset = frozenset()             # steps only the idea's owner may do
     K: int = 2
     challenge: int = 1
@@ -252,7 +267,8 @@ class Scaler:
 # ---------------------------------------------------------------- simulation
 class Sim:
     def __init__(self, org: Org, seats: list[Seat], seed: int, wip: int, horizon=7 * 168, warmup=168, conflict_k=None,
-                 demand: "Demand | None" = None, scaler: "Scaler | None" = None):
+                 demand: "Demand | None" = None, scaler: "Scaler | None" = None, packet: int = 0):
+        self.packet = packet                        # requirements per build invocation (0 = unit cards, r12)
         self.demand, self.scaler, self.retired = demand, scaler, []
         self.next_seat = len(seats)
         self.instance_h, self.peak = 0.0, len(seats)
@@ -311,6 +327,9 @@ class Sim:
             if s.idx not in task.card.allowed:
                 return False
         if org.independence and s.cfg.name in task.exclude and not relax and not self.forced(task):
+            return False
+        if org.by_family and org.independence and task.card is not None and task.step in ("review", "security", "audit") \
+                and not relax and task.card.author and self.family(s.cfg) == self.family_of(task.card.author):
             return False
         if self.scaler and self.scaler.band and self.t - task.born < self.scaler.band_wait_h:
             if self.task_cost(s.cfg, task) > self.scaler.band * self.cheapest(task):
@@ -381,7 +400,8 @@ class Sim:
     @staticmethod
     def base_hours(task: Task) -> float:
         if task.card is not None and task.step in ("build", "review", "security", "audit"):
-            return CARD_HOURS[task.card.band] * (1.0 if task.step == "build" else CARD_SHARE[task.step])
+            h = task.card.base_h or CARD_HOURS[task.card.band]
+            return h * (1.0 if task.step == "build" else CARD_SHARE[task.step])
         return STEP_HOURS[task.step]
 
     def start(self, s: Seat, task: Task):
@@ -482,6 +502,29 @@ class Sim:
             self.peak = max(self.peak, len(self.seats))
         self.at(self.t + sc.every, self.scale)
 
+    @staticmethod
+    def family(cfg):
+        c = s6.C.get(cfg.name)
+        return c["vendor"] if c else cfg.name
+
+    @staticmethod
+    def family_of(name):
+        c = s6.C.get(name)
+        return c["vendor"] if c else name
+
+    def fb(self, idea, reqs, cfg) -> float:
+        """Family blind-spot multiplier for this model on any of these requirements."""
+        if not FAMILY_BLIND_P:
+            return 1.0
+        fam = self.family(cfg)
+        for r in reqs:
+            key = (r, fam)
+            if key not in idea.fam_blind:
+                idea.fam_blind[key] = self.rng.random() < FAMILY_BLIND_P
+            if idea.fam_blind[key]:
+                return FAMILY_BLIND_MULT
+        return 1.0
+
     def own(self, s, author):
         return SELF_CATCH if s.cfg.name == author else 1.0
 
@@ -494,6 +537,8 @@ class Sim:
     def new_idea(self, hotfix_card=None, size=None, shift=0.0):
         idea = Idea(self.next_id, self.t, [self.rng.gauss(REQ_BASE + shift, REQ_SPREAD) for _ in range(size or R_REQ)],
                     shift=shift)
+        if BLIND_P:
+            idea.blind_req = {r for r in range(len(idea.req_d)) if self.rng.random() < BLIND_P}
         self.next_id += 1
         if hotfix_card is not None:
             idea.hotfix, idea.stage, idea.design_q = True, "build", 0.8
@@ -511,7 +556,7 @@ class Sim:
     def on_discover(self, s, task):
         idea = task.idea
         for r, d in enumerate(idea.req_d):
-            if self.rng.random() < p_pass(s.cfg.ci, d):
+            if r not in idea.blind_req and self.rng.random() < p_pass(s.cfg.ci, d) * self.fb(idea, (r,), s.cfg):
                 idea.captured.add(r)
         idea.authors["discover"].add(s.cfg.name)
         for t in self.queues["discover"]:
@@ -533,7 +578,8 @@ class Sim:
     def on_challenge(self, s, task):
         idea = task.idea
         for r, d in enumerate(idea.req_d):
-            if r not in idea.captured and self.rng.random() < CRITIQUE_FIND * p_pass(s.cfg.ci, d + 5):
+            if r not in idea.captured and r not in idea.blind_req and \
+                    self.rng.random() < CRITIQUE_FIND * p_pass(s.cfg.ci, d + 5) * self.fb(idea, (r,), s.cfg):
                 idea.captured.add(r)
         idea.pending -= 1
         if idea.pending == 0:
@@ -552,7 +598,7 @@ class Sim:
     def on_plan(self, s, task):
         idea = task.idea
         for r in idea.captured:
-            if self.rng.random() < p_pass(s.cfg.ci, idea.req_d[r] + 8):
+            if self.rng.random() < p_pass(s.cfg.ci, idea.req_d[r] + 8) * self.fb(idea, (r,), s.cfg):
                 idea.mapped.add(r)
         idea.plan_ci = s.cfg.ci
         idea.authors["plan"].add(s.cfg.name)
@@ -564,26 +610,46 @@ class Sim:
     def on_plan_check(self, s, task):
         idea = task.idea
         for r in range(len(idea.req_d)):
-            if r not in idea.mapped and self.rng.random() < p_pass(s.cfg.ci, idea.req_d[r] + 10) * self.own(s, next(iter(idea.authors["plan"]))):
+            if r not in idea.mapped and r not in idea.blind_req and \
+                    self.rng.random() < p_pass(s.cfg.ci, idea.req_d[r] + 10) * self.own(s, next(iter(idea.authors["plan"]))) \
+                    * self.fb(idea, (r,), s.cfg):
                 idea.mapped.add(r)
         self.at(self.t + HUMAN_PLAN_H, self.make_cards, idea, None)
 
     def make_cards(self, idea, only):
         rng = self.rng
         new = []
+        self._units_by_req = {}
         for r in (sorted(idea.mapped) if only is None else only):
+            self._units_by_req[r] = []
             for _ in range(rng.choice(CARDS_PER_REQ)):
                 band = rng.choices(list(CARD_MIX), weights=list(CARD_MIX.values()))[0]
                 lo, hi = CARD_RANGE[band]
                 d = rng.uniform(lo, hi) + DESIGN_PENALTY * (1 - idea.design_q) + idea.shift
                 new.append(Card(idea, band, d, rng.random() < SEC_SHARE,
-                                rng.random() < AMBIG_SCALE * (1 - p_pass(idea.plan_ci, 60))))
+                                rng.random() < AMBIG_SCALE * (1 - p_pass(idea.plan_ci, 60)), reqs=(r,)))
+                self._units_by_req[r].append(new[-1])
+        if self.packet and new:
+            new = self.pack(new, idea)
         idea.cards.extend(new)
         idea.stage = "build"
         for c in new:
             self.send_card(c)
         if not new:
             self.check_idea(idea)
+
+    def pack(self, units, idea):
+        """Group the unit cards of every `packet` requirements into one build invocation."""
+        per_req, out = self._units_by_req, []
+        reqs = list(per_req)
+        for i in range(0, len(reqs), self.packet):
+            us = [u for r in reqs[i:i + self.packet] for u in per_req[r]]
+            pen = CONTEXT_PENALTY * (len(reqs[i:i + self.packet]) - 1) ** 1.2
+            band = max((u.band for u in us), key=lambda b: CARD_HOURS[b])
+            out.append(Card(idea, band, max(u.d for u in us) + pen, any(u.sensitive for u in us), any(u.ambiguous for u in us),
+                            units=[(u.d + pen, u.sensitive, u.ambiguous) for u in us],
+                            base_h=sum(CARD_HOURS[u.band] for u in us), reqs=tuple(r for r in reqs[i:i + self.packet])))
+        return out
 
     # cards
     def send_card(self, card):
@@ -604,12 +670,23 @@ class Sim:
         card.attempts += 1
         card.author = s.cfg.name
         card.reviewers = set()
-        p = p_pass(s.cfg.ci, card.d) * (AMBIG_PENALTY if card.ambiguous else 1.0)
-        card.defects = set()
+        card.defects, card.blind = set(), set()
+        if card.units:                                 # a packet is right only if every unit is
+            p, clean_sec = 1.0, 1.0
+            for d, sens, amb in card.units:
+                p *= p_pass(s.cfg.ci, d) * (AMBIG_PENALTY if amb and card.ambiguous else 1.0)
+                if sens:
+                    clean_sec *= 1 - SEC_INJECT * (1 - p_pass(s.cfg.ci, d + 10))
+            sec = 1 - clean_sec
+        else:
+            p = p_pass(s.cfg.ci, card.d) * (AMBIG_PENALTY if card.ambiguous else 1.0)
+            sec = SEC_INJECT * (1 - p_pass(s.cfg.ci, card.d + 10)) if card.sensitive else 0.0
+        p *= self.fb(card.idea, card.reqs, s.cfg)
         if self.rng.random() >= p:
             card.defects.add("logic")
-        if card.sensitive and self.rng.random() < SEC_INJECT * (1 - p_pass(s.cfg.ci, card.d + 10)):
+        if sec and self.rng.random() < sec:
             card.defects.add("security")
+        self.mark_blind(card)
         if "logic" in card.defects and self.rng.random() < TEST_CATCH:
             self.drops["test_fail"] += 1
             if card.ambiguous and card.attempts >= 3:
@@ -619,14 +696,26 @@ class Sim:
             return
         self.to_review(card)
 
+    def mark_blind(self, card):
+        for k in card.defects - card.blind:
+            if BLIND_P and self.rng.random() < BLIND_P and k not in getattr(card, "_seen", ()):
+                card.blind.add(k)
+        card._seen = set(card.defects)
+
+    @staticmethod
+    def vis(card):
+        """Defects an LLM check can see."""
+        return card.defects - card.blind
+
     def to_review(self, card):
         self.enqueue(Task("review", card.idea, card, d=card.d + 5, exclude={card.author} | card.reviewers))
 
     def on_review(self, s, task):
         card = task.card
-        f = self.own(s, card.author)
-        caught = ("logic" in card.defects and self.rng.random() < f * p_pass(s.cfg.ci, card.d + 5)) or \
-                 ("security" in card.defects and self.rng.random() < f * REVIEW_SEC * p_pass(s.cfg.ci, card.d + 10))
+        f = self.own(s, card.author) * self.fb(card.idea, card.reqs, s.cfg)
+        v = self.vis(card)
+        caught = ("logic" in v and self.rng.random() < f * p_pass(s.cfg.ci, card.d + 5)) or \
+                 ("security" in v and self.rng.random() < f * REVIEW_SEC * p_pass(s.cfg.ci, card.d + 10))
         if caught or (not card.defects and self.rng.random() < FALSE_REJECT):
             self.drops["review_reject"] += 1
             self.send_card(card)
@@ -641,9 +730,10 @@ class Sim:
 
     def on_security(self, s, task):
         card = task.card
-        f = self.own(s, card.author)
-        if ("security" in card.defects and self.rng.random() < f * p_pass(s.cfg.ci, SECURITY_D)) or \
-           ("logic" in card.defects and self.rng.random() < 0.2 * f * p_pass(s.cfg.ci, card.d)):
+        f = self.own(s, card.author) * self.fb(card.idea, card.reqs, s.cfg)
+        v = self.vis(card)
+        if ("security" in v and self.rng.random() < f * p_pass(s.cfg.ci, SECURITY_D)) or \
+           ("logic" in v and self.rng.random() < 0.2 * f * p_pass(s.cfg.ci, card.d)):
             self.drops["security_reject"] += 1
             self.send_card(card)
             return
@@ -657,6 +747,7 @@ class Sim:
             return
         if self.rng.random() < INT_BASE * (1 + 2 * (1 - q)):
             card.defects.add("integration")
+            self.mark_blind(card)
         if ("integration" in card.defects and self.rng.random() < CI_CATCH) or \
            ("logic" in card.defects and self.rng.random() < 0.2):
             self.drops["ci_fail"] += 1
@@ -669,7 +760,7 @@ class Sim:
 
     def on_audit(self, s, task):
         card = task.card
-        if card.defects and self.rng.random() < self.own(s, card.author) * p_pass(s.cfg.ci, card.d):
+        if self.vis(card) and self.rng.random() < self.own(s, card.author) * self.fb(card.idea, card.reqs, s.cfg) * p_pass(s.cfg.ci, card.d):
             self.drops["audit_catch"] += 1
             if card.idea.stage in ("build", "qa", "release") and not card.idea.done:
                 card.idea.stage = "build"                  # pulled back before release
@@ -691,8 +782,8 @@ class Sim:
         idea, rng = task.idea, self.rng
         if idea.stage != "qa":                             # stale: pulled back by an audit
             return
-        gaps = [r for r in range(len(idea.req_d)) if r not in idea.mapped and rng.random() < QA_GAP * p_pass(s.cfg.ci, idea.req_d[r])]
-        bad = [c for c in idea.cards if c.defects and rng.random() < QA_DEFECT * self.own(s, c.author) * p_pass(s.cfg.ci, c.d)]
+        gaps = [r for r in range(len(idea.req_d)) if r not in idea.mapped and r not in idea.blind_req and rng.random() < QA_GAP * p_pass(s.cfg.ci, idea.req_d[r]) * self.fb(idea, (r,), s.cfg)]
+        bad = [c for c in idea.cards if self.vis(c) and rng.random() < QA_DEFECT * self.own(s, c.author) * self.fb(idea, c.reqs, s.cfg) * p_pass(s.cfg.ci, c.d)]
         idea.authors["qa"].add(s.cfg.name)
         if bad or (gaps and idea.gap_loops < 2):
             idea.stage = "build"
@@ -712,7 +803,7 @@ class Sim:
         idea = task.idea
         if idea.stage != "release":                         # stale: pulled back by an audit
             return
-        bad = [c for c in idea.cards if c.defects and self.rng.random() < RELEASE_CATCH * self.own(s, c.author)]
+        bad = [c for c in idea.cards if self.vis(c) and self.rng.random() < RELEASE_CATCH * self.own(s, c.author) * self.fb(idea, c.reqs, s.cfg)]
         if bad:
             idea.stage = "build"
             for c in bad:

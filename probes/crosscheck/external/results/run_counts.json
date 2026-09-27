@@ -1,0 +1,46 @@
+{
+  "controller_sensitivity": {
+    "runs": 240,
+    "ideas": 11520
+  },
+  "correlation_confirmation": {
+    "runs": 96,
+    "ideas": 3072
+  },
+  "effort": {
+    "runs": 72,
+    "ideas": 1440
+  },
+  "elasticity": {
+    "runs": 768,
+    "ideas": 36864
+  },
+  "mix_confirmation": {
+    "runs": 672,
+    "ideas": 21504
+  },
+  "mix_search": {
+    "runs": 546,
+    "ideas": 10920
+  },
+  "packet_confirmation": {
+    "runs": 128,
+    "ideas": 4096
+  },
+  "packet_size": {
+    "runs": 144,
+    "ideas": 2880
+  },
+  "scaling": {
+    "runs": 360,
+    "ideas": 11520
+  },
+  "topology": {
+    "runs": 768,
+    "ideas": 15360
+  },
+  "topology_confirmation": {
+    "runs": 456,
+    "ideas": 14592
+  }
+}

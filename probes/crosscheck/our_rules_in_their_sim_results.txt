@@ -1,0 +1,52 @@
+OUR RULES INSIDE THE EXTERNAL SIMULATION (24 paired seeds, 32 ideas each; 95% t intervals)
+useful idea-equivalents/week | intent | escaped defects per release | completion | cost per useful | floors (intent>=0.97, defects<=0.25)
+
+[reference / mix 6/3/3]
+  external institutions (barrier, FIFO)                 208.0±12.0  vs ext. inst.   +0%± 0%  intent 0.960  defects 0.80±0.09  completion 0.68  $ 3.76      
+  external evidence graph (FIFO)                        255.9±12.9  vs ext. inst.  +25%± 8%  intent 0.957  defects 0.83±0.07  completion 0.78  $ 3.05      
+  institutions + streaming review                       234.0±15.2  vs ext. inst.  +15%±10%  intent 0.963  defects 0.90±0.09  completion 0.75  $ 3.57      
+  institutions + licences                               248.0±14.7  vs ext. inst.  +21%± 8%  intent 0.973  defects 0.53±0.06  completion 0.77  $ 3.36      
+  institutions + streaming + licences                   278.9±13.1  vs ext. inst.  +36%± 9%  intent 0.977  defects 0.48±0.05  completion 0.79  $ 3.08      
+  institutions + streaming + licences + family review   271.1±16.0  vs ext. inst.  +32%± 8%  intent 0.977  defects 0.40±0.05  completion 0.77  $ 3.21      
+  evidence graph + licences                             311.1±14.0  vs ext. inst.  +52%±10%  intent 0.971  defects 0.46±0.05  completion 0.86  $ 2.58      
+  evidence graph + licences + family review             304.3±13.2  vs ext. inst.  +49%±11%  intent 0.972  defects 0.36±0.06  completion 0.85  $ 2.71      
+
+[reference / mix 4/7/1]
+  external institutions (barrier, FIFO)                 234.3±16.1  vs ext. inst.   +0%± 0%  intent 0.952  defects 0.79±0.06  completion 0.73  $ 2.74      
+  external evidence graph (FIFO)                        289.7±16.3  vs ext. inst.  +26%± 9%  intent 0.951  defects 0.76±0.08  completion 0.82  $ 2.16      
+  institutions + streaming review                       245.6±21.9  vs ext. inst.   +6%± 9%  intent 0.946  defects 0.79±0.05  completion 0.74  $ 2.72      
+  institutions + licences                               269.2±18.2  vs ext. inst.  +17%± 8%  intent 0.952  defects 0.49±0.06  completion 0.78  $ 2.36      
+  institutions + streaming + licences                   283.1±14.8  vs ext. inst.  +23%±10%  intent 0.957  defects 0.52±0.07  completion 0.80  $ 2.30      
+  institutions + streaming + licences + family review   267.9±12.7  vs ext. inst.  +16%± 7%  intent 0.938  defects 0.37±0.06  completion 0.76  $ 2.48      
+  evidence graph + licences                             313.2±14.5  vs ext. inst.  +37%±11%  intent 0.948  defects 0.45±0.05  completion 0.87  $ 1.95      
+  evidence graph + licences + family review             271.0±18.6  vs ext. inst.  +18%±11%  intent 0.923  defects 0.30±0.06  completion 0.80  $ 2.44      
+
+[reference / mix 10/2/0]
+  external institutions (barrier, FIFO)                 318.3±16.4  vs ext. inst.   +0%± 0%  intent 0.986  defects 0.38±0.04  completion 0.85  $ 4.02      
+  external evidence graph (FIFO)                        375.7±14.8  vs ext. inst.  +20%± 7%  intent 0.984  defects 0.33±0.04  completion 0.91  $ 3.24      
+  institutions + streaming review                       341.8±16.9  vs ext. inst.   +9%± 7%  intent 0.986  defects 0.40±0.03  completion 0.87  $ 3.87      
+  institutions + licences                               333.2±17.0  vs ext. inst.   +6%± 7%  intent 0.984  defects 0.34±0.05  completion 0.86  $ 3.82      
+  institutions + streaming + licences                   353.5±14.5  vs ext. inst.  +13%± 8%  intent 0.984  defects 0.34±0.04  completion 0.88  $ 3.74      
+  institutions + streaming + licences + family review   344.3±14.9  vs ext. inst.  +10%± 8%  intent 0.989  defects 0.27±0.04  completion 0.87  $ 3.78      
+  evidence graph + licences                             395.8±18.2  vs ext. inst.  +26%± 8%  intent 0.982  defects 0.31±0.05  completion 0.94  $ 3.08      
+  evidence graph + licences + family review             396.9±25.5  vs ext. inst.  +26%± 9%  intent 0.983  defects 0.24±0.04  completion 0.92  $ 3.13  PASS
+
+[correlated_errors / mix 6/3/3]
+  external institutions (barrier, FIFO)                 119.1± 9.1  vs ext. inst.   +0%± 0%  intent 0.906  defects 1.33±0.11  completion 0.54  $ 6.74      
+  external evidence graph (FIFO)                        151.2±12.0  vs ext. inst.  +31%±14%  intent 0.917  defects 1.26±0.11  completion 0.65  $ 5.13      
+  institutions + streaming review                       135.4±10.8  vs ext. inst.  +17%±13%  intent 0.929  defects 1.41±0.12  completion 0.60  $ 6.09      
+  institutions + licences                               146.8±10.1  vs ext. inst.  +27%±13%  intent 0.943  defects 1.09±0.10  completion 0.61  $ 5.50      
+  institutions + streaming + licences                   170.4±13.6  vs ext. inst.  +47%±16%  intent 0.957  defects 1.08±0.07  completion 0.66  $ 5.04      
+  institutions + streaming + licences + family review   162.1±11.1  vs ext. inst.  +40%±14%  intent 0.950  defects 0.89±0.09  completion 0.61  $ 5.26      
+  evidence graph + licences                             182.0±11.3  vs ext. inst.  +57%±15%  intent 0.943  defects 1.01±0.08  completion 0.70  $ 4.43      
+  evidence graph + licences + family review             178.6±15.3  vs ext. inst.  +54%±17%  intent 0.949  defects 0.77±0.08  completion 0.65  $ 4.68      
+
+[no_family_blindspots / mix 6/3/3]
+  external institutions (barrier, FIFO)                 294.5±16.6  vs ext. inst.   +0%± 0%  intent 0.975  defects 0.59±0.07  completion 0.79  $ 2.72      
+  external evidence graph (FIFO)                        350.0±15.2  vs ext. inst.  +21%± 8%  intent 0.977  defects 0.51±0.05  completion 0.87  $ 2.22      
+  institutions + streaming review                       312.3±18.4  vs ext. inst.   +8%±10%  intent 0.975  defects 0.60±0.06  completion 0.81  $ 2.64      
+  institutions + licences                               374.0±16.6  vs ext. inst.  +29%± 7%  intent 0.991  defects 0.22±0.03  completion 0.91  $ 2.25  PASS
+  institutions + streaming + licences                   401.4±18.1  vs ext. inst.  +39%±10%  intent 0.990  defects 0.23±0.04  completion 0.90  $ 2.18  PASS
+  institutions + streaming + licences + family review   383.5±13.2  vs ext. inst.  +32%± 8%  intent 0.991  defects 0.16±0.03  completion 0.89  $ 2.30  PASS
+  evidence graph + licences                             425.7±16.3  vs ext. inst.  +47%±10%  intent 0.987  defects 0.18±0.04  completion 0.95  $ 1.89  PASS
+  evidence graph + licences + family review             433.2±17.6  vs ext. inst.  +49%± 8%  intent 0.990  defects 0.11±0.02  completion 0.96  $ 1.92  PASS

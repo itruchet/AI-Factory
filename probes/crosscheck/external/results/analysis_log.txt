@@ -1,0 +1,96 @@
+{
+  "controller_sensitivity": {
+    "runs": 240,
+    "ideas": 11520
+  },
+  "correlation_confirmation": {
+    "runs": 96,
+    "ideas": 3072
+  },
+  "effort": {
+    "runs": 72,
+    "ideas": 1440
+  },
+  "elasticity": {
+    "runs": 768,
+    "ideas": 36864
+  },
+  "mix_confirmation": {
+    "runs": 672,
+    "ideas": 21504
+  },
+  "mix_search": {
+    "runs": 546,
+    "ideas": 10920
+  },
+  "packet_confirmation": {
+    "runs": 128,
+    "ideas": 4096
+  },
+  "packet_size": {
+    "runs": 144,
+    "ideas": 2880
+  },
+  "scaling": {
+    "runs": 360,
+    "ideas": 11520
+  },
+  "topology": {
+    "runs": 768,
+    "ideas": 15360
+  },
+  "topology_confirmation": {
+    "runs": 456,
+    "ideas": 14592
+  }
+}
+Paired comparisons [
+  {
+    "scenario": "reference",
+    "first": "evidence_graph",
+    "second": "institutions",
+    "seeds": 24,
+    "difference": 42.316034532024915,
+    "difference_lo": 26.83468443116655,
+    "difference_hi": 57.79738463288328,
+    "gain": 0.1969839896875305,
+    "gain_lo": 0.13006536289571538,
+    "gain_hi": 0.27154831278134706
+  },
+  {
+    "scenario": "equal_controls",
+    "first": "evidence_graph",
+    "second": "institutions",
+    "seeds": 24,
+    "difference": 38.41953353411653,
+    "difference_lo": 17.078299097617894,
+    "difference_hi": 59.76076797061517,
+    "gain": 0.17884551520905445,
+    "gain_lo": 0.08469637016945189,
+    "gain_hi": 0.28478580531081144
+  },
+  {
+    "scenario": "dense_dependencies",
+    "first": "evidence_graph",
+    "second": "institutions",
+    "seeds": 24,
+    "difference": 55.445144723429216,
+    "difference_lo": 41.13874594668992,
+    "difference_hi": 69.75154350016851,
+    "gain": 0.7438484196751574,
+    "gain_lo": 0.5234929586660635,
+    "gain_hi": 1.0227353420705245
+  },
+  {
+    "scenario": "interface_errors",
+    "first": "evidence_graph",
+    "second": "institutions",
+    "seeds": 24,
+    "difference": 59.92844937127622,
+    "difference_lo": 40.12366516910358,
+    "difference_hi": 79.73323357344887,
+    "gain": 0.40614824151804707,
+    "gain_lo": 0.2737331416149588,
+    "gain_hi": 0.5511462252264492
+  }
+]
