@@ -1,0 +1,130 @@
+CANDIDATES (27 Sep 2026 AA snapshot; * = Coding Index estimated from Intelligence Index)
+  model                              vendor     released   coding tier    $in   $out   t/s $/busy h open
+  Claude Fable 5.1 Max               Anthropic  2026-09-01   81.6    1  10.00  50.00    68     7.96   no  top
+  Claude Opus 5.5 Max*               Anthropic  2026-09-22   80.6    1   4.00  20.00    82     3.49   no  top
+  GPT-6 Astra (high)                 OpenAI     2026-09-03   77.1    1  10.00  50.00    56     7.21   no  top
+  GPT-6 Sol (max)*                   OpenAI     2026-09-22   76.6    1   2.00  10.00    84     1.76   no  top
+  GPT-5.6 Terra (max)                OpenAI     2026-07-09   76.7    1   2.00  12.00   100     2.10   no  top
+  Grok 4.7 (xhigh)*                  SpaceXAI   2026-09-21   76.2    1   2.00   6.00    80     1.40   no  top
+  Grok 4.6 (high)                    SpaceXAI   2026-08-12   76.8    1   2.00   6.00    64     1.25   no  top
+  Muse Spark 1.3 (xhigh)             Meta       2026-09-02   76.5    1   1.25   4.25   243     1.59   no  top
+  Kimi K3 (max)                      Kimi       2026-07-16   76.2    1   3.00  15.00    35     1.70  yes  top
+  GLM-5.3 (max)                      Z AI       2026-08-18   74.8    1   1.40   4.40    81     1.00  yes  top
+  Qwen3.8 Max (0902)*                Alibaba    2026-09-02   75.8    1   2.00   6.00    39     0.98   no  top
+  Gemini 3.8 Flash (high)            Google     2026-09-02   76.3    1   0.75   3.75   278     1.20   no  both
+  MiMo-V2.6-Pro*                     Xiaomi     2026-09-21   76.1    1   0.43   0.87    42     0.20  yes  mid
+  Step 5 Preview*                    StepFun    2026-09-18   75.1    1   1.00   2.70    66     0.62   no  mid
+  GLM 5.3 Flash*                     Z AI       2026-08-26   74.3    1   0.15   0.50    53     0.09  yes  mid
+  Qwen3.8-Flash-Next                 Alibaba    2026-08-26   73.0    1   0.15   0.47    55     0.09  yes  mid
+  DeepSeek V4.1 Flash Max*           DeepSeek   2026-09-10   71.6    1   0.30   1.20   222     0.39  yes  mid
+  GPT-6 Luna (max)*                  OpenAI     2026-09-22   68.0    1   0.10   0.50   154     0.12   no  mid
+  MiniMax-M3                         MiniMax    2026-06-01   58.6    1   0.30   1.20   179     0.35  yes  mid
+  MiMo-V2.5                          Xiaomi     2026-04-22   56.8    1   0.14   0.28    46     0.07  yes  mid
+  Qwen3.8 27B (medium)               Alibaba    2026-08-14   56.1    2   0.50   3.00    54     0.39  yes  mid
+  Inkling Small                      Thinking Machines 2026-07-30   53.0    2   0.30   1.20   214     0.38  yes  mid
+  Ling 3.0 Flash                     InclusionAI 2026-08-04   50.6    2   0.07   0.22   373     0.11  yes  mid
+  Gemma 4 31B                        Google     2026-04-02   43.4    2   0.00   0.00    35     0.00  yes  mid
+
+S1 top trios with reference mid (MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*): 219 legal trios
+   29.5±0.3 ideas/wk  lead   22 h  coh 0.997  esc 0.03  $    31/idea  $   903/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   29.5±0.9 ideas/wk  lead   22 h  coh 0.997  esc 0.03  $    51/idea  $  1514/wk  | Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   29.4±0.4 ideas/wk  lead   22 h  coh 0.998  esc 0.02  $    24/idea  $   710/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   29.4±1.0 ideas/wk  lead   22 h  coh 0.997  esc 0.03  $    21/idea  $   631/wk  | Grok 4.7 (xhigh)* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   29.3±0.1 ideas/wk  lead   22 h  coh 0.998  esc 0.02  $    20/idea  $   578/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   29.2±0.4 ideas/wk  lead   22 h  coh 0.996  esc 0.04  $    23/idea  $   676/wk  | GPT-6 Sol (max)* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   28.7±0.6 ideas/wk  lead   23 h  coh 0.997  esc 0.02  $    20/idea  $   579/wk  | Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   28.6±0.8 ideas/wk  lead   23 h  coh 0.997  esc 0.02  $    49/idea  $  1409/wk  | GPT-6 Astra (high) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   28.3±0.4 ideas/wk  lead   23 h  coh 0.997  esc 0.02  $    21/idea  $   606/wk  | Grok 4.6 (high) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   28.2±0.2 ideas/wk  lead   23 h  coh 0.997  esc 0.03  $    27/idea  $   768/wk  | GPT-6 Sol (max)* + GPT-5.6 Terra (max) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   28.0±0.1 ideas/wk  lead   23 h  coh 0.998  esc 0.03  $    24/idea  $   677/wk  | Muse Spark 1.3 (xhigh) + Kimi K3 (max) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   27.7±0.1 ideas/wk  lead   23 h  coh 0.999  esc 0.03  $    58/idea  $  1620/wk  | Claude Fable 5.1 Max + GPT-5.6 Terra (max) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+  ...
+   21.7±0.4 ideas/wk  lead   30 h  coh 0.997  esc 0.03  $    30/idea  $   650/wk  | Grok 4.6 (high) + Kimi K3 (max) + Qwen3.8 Max (0902)* || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   21.3±0.6 ideas/wk  lead   30 h  coh 0.998  esc 0.03  $    69/idea  $  1479/wk  | GPT-6 Astra (high) + Kimi K3 (max) + Qwen3.8 Max (0902)* || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   21.2±0.3 ideas/wk  lead   30 h  coh 0.999  esc 0.03  $    74/idea  $  1563/wk  | Claude Fable 5.1 Max + Kimi K3 (max) + Qwen3.8 Max (0902)* || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+  cheapest per idea within 10% of the best throughput:
+   29.3±0.1 ideas/wk  lead   22 h  coh 0.998  esc 0.02  $    20/idea  $   578/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   28.7±0.6 ideas/wk  lead   23 h  coh 0.997  esc 0.02  $    20/idea  $   579/wk  | Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+   26.5±0.2 ideas/wk  lead   24 h  coh 0.997  esc 0.03  $    21/idea  $   548/wk  | Grok 4.6 (high) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || MiMo-V2.6-Pro* + GLM 5.3 Flash* + DeepSeek V4.1 Flash Max*
+
+S2 mid trios with the leading top trios: 1320 legal sixes
+   36.8±2.6 ideas/wk  lead   21 h  coh 0.995  esc 0.06  $    21/idea  $   770/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+   36.1±3.0 ideas/wk  lead   23 h  coh 0.991  esc 0.06  $    46/idea  $  1645/wk  | Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiniMax-M3 + Inkling Small + Ling 3.0 Flash
+   36.1±1.9 ideas/wk  lead   20 h  coh 0.997  esc 0.06  $    44/idea  $  1580/wk  | Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+   35.9±1.9 ideas/wk  lead   21 h  coh 0.994  esc 0.07  $    16/idea  $   586/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+   35.8±2.5 ideas/wk  lead   20 h  coh 0.995  esc 0.07  $    20/idea  $   728/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+   35.8±1.8 ideas/wk  lead   20 h  coh 0.995  esc 0.05  $    26/idea  $   943/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + MiniMax-M3 + Ling 3.0 Flash
+   35.8±3.3 ideas/wk  lead   22 h  coh 0.994  esc 0.10  $    22/idea  $   772/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiniMax-M3 + Inkling Small + Ling 3.0 Flash
+   35.6±1.2 ideas/wk  lead   20 h  coh 0.996  esc 0.05  $    17/idea  $   610/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+   35.5±1.8 ideas/wk  lead   21 h  coh 0.993  esc 0.07  $    27/idea  $   955/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiniMax-M3 + Inkling Small + Ling 3.0 Flash
+   35.3±1.8 ideas/wk  lead   20 h  coh 0.995  esc 0.07  $    27/idea  $   941/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+   35.2±1.8 ideas/wk  lead   21 h  coh 0.995  esc 0.07  $    26/idea  $   913/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+   35.1±0.9 ideas/wk  lead   19 h  coh 0.997  esc 0.03  $    26/idea  $   902/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+  best with three statistically mid-tier models (Coding Index 29.9-56.8):
+   33.8±1.2 ideas/wk  lead   22 h  coh 0.995  esc 0.08  $    28/idea  $   955/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || Inkling Small + Ling 3.0 Flash + Gemma 4 31B
+   33.8±1.8 ideas/wk  lead   23 h  coh 0.995  esc 0.08  $    48/idea  $  1622/wk  | Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || Inkling Small + Ling 3.0 Flash + Gemma 4 31B
+   33.8±1.5 ideas/wk  lead   22 h  coh 0.994  esc 0.09  $    23/idea  $   782/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || Qwen3.8 27B (medium) + Inkling Small + Ling 3.0 Flash
+  cheapest per idea within 10% of the best throughput:
+   34.6±0.4 ideas/wk  lead   18 h  coh 0.996  esc 0.05  $    16/idea  $   561/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+   35.9±1.9 ideas/wk  lead   21 h  coh 0.994  esc 0.07  $    16/idea  $   586/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+   33.8±0.8 ideas/wk  lead   20 h  coh 0.993  esc 0.06  $    17/idea  $   566/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + MiniMax-M3 + Ling 3.0 Flash
+   33.2±0.1 ideas/wk  lead   19 h  coh 0.995  esc 0.06  $    17/idea  $   561/wk  | Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+   33.8±1.3 ideas/wk  lead   21 h  coh 0.994  esc 0.07  $    17/idea  $   576/wk  | Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+
+S3 finalists on 12 seeds; outage = worst week-long loss of one vendor; est-3 = estimated scores 3 points lower
+   36.6±2.2 ideas/wk  lead   20 h  coh 0.995  esc 0.06  $    21/idea  $   757/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+      without InclusionAI: 30.4 ideas/wk (83%);  est-3: 35.0 ideas/wk;  busy h/wk GPT-5.6 Terra 135, Muse Spark 1.3 130, Gemini 3.8 Flash 129, DeepSeek V4.1 Flash Max* 130, Inkling Small 124, Ling 3.0 Flash 118
+   35.6±2.8 ideas/wk  lead   22 h  coh 0.991  esc 0.07  $    46/idea  $  1620/wk  | Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiniMax-M3 + Inkling Small + Ling 3.0 Flash
+      without InclusionAI: 29.6 ideas/wk (83%);  est-3: 35.6 ideas/wk;  busy h/wk Claude Fable 5.1 Max 142, Muse Spark 1.3 135, Gemini 3.8 Flash 135, MiniMax-M3 135, Inkling Small 128, Ling 3.0 Flash 120
+   36.0±1.7 ideas/wk  lead   20 h  coh 0.996  esc 0.06  $    44/idea  $  1569/wk  | Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+      without InclusionAI: 29.7 ideas/wk (83%);  est-3: 34.9 ideas/wk;  busy h/wk Claude Fable 5.1 Max 137, Muse Spark 1.3 130, Gemini 3.8 Flash 130, DeepSeek V4.1 Flash Max* 131, Inkling Small 125, Ling 3.0 Flash 118
+   35.1±2.0 ideas/wk  lead   20 h  coh 0.994  esc 0.07  $    16/idea  $   577/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+      without InclusionAI: 29.4 ideas/wk (84%);  est-3: 35.2 ideas/wk;  busy h/wk Muse Spark 1.3 130, GLM-5.3 137, Gemini 3.8 Flash 130, GPT-6 Luna 132, Inkling Small 124, Ling 3.0 Flash 117
+   35.1±1.6 ideas/wk  lead   20 h  coh 0.995  esc 0.07  $    20/idea  $   719/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+      without OpenAI: 28.5 ideas/wk (81%);  est-3: 34.9 ideas/wk;  busy h/wk GPT-5.6 Terra 134, Muse Spark 1.3 129, Gemini 3.8 Flash 129, GPT-6 Luna 131, Inkling Small 123, Ling 3.0 Flash 116
+   34.8±1.3 ideas/wk  lead   19 h  coh 0.995  esc 0.06  $    27/idea  $   924/wk  | Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + MiniMax-M3 + Ling 3.0 Flash
+      without Google: 29.5 ideas/wk (85%);  est-3: 34.1 ideas/wk;  busy h/wk Claude Opus 5.5 Max* 133, Muse Spark 1.3 127, Gemini 3.8 Flash 126, DeepSeek V4.1 Flash Max* 127, MiniMax-M3 127, Ling 3.0 Flash 116
+   36.0±2.6 ideas/wk  lead   21 h  coh 0.993  esc 0.09  $    21/idea  $   771/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiniMax-M3 + Inkling Small + Ling 3.0 Flash
+      without Meta: 28.8 ideas/wk (80%);  est-3: 36.0 ideas/wk;  busy h/wk GPT-5.6 Terra 138, Muse Spark 1.3 133, Gemini 3.8 Flash 133, MiniMax-M3 134, Inkling Small 127, Ling 3.0 Flash 119
+   36.4±2.4 ideas/wk  lead   20 h  coh 0.995  esc 0.05  $    17/idea  $   620/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+      without InclusionAI: 29.9 ideas/wk (82%);  est-3: 35.5 ideas/wk;  busy h/wk Muse Spark 1.3 132, GLM-5.3 138, Gemini 3.8 Flash 131, DeepSeek V4.1 Flash Max* 133, Inkling Small 127, Ling 3.0 Flash 120
+   34.2±0.6 ideas/wk  lead   19 h  coh 0.996  esc 0.04  $    16/idea  $   558/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+      without Google: 29.2 ideas/wk (86%);  est-3: 34.0 ideas/wk;  busy h/wk Muse Spark 1.3 125, GLM-5.3 132, Gemini 3.8 Flash 124, DeepSeek V4.1 Flash Max* 126, GPT-6 Luna 128, Ling 3.0 Flash 114
+   33.6±1.3 ideas/wk  lead   20 h  coh 0.993  esc 0.06  $    17/idea  $   563/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + MiniMax-M3 + Ling 3.0 Flash
+      without Google: 28.0 ideas/wk (83%);  est-3: 33.5 ideas/wk;  busy h/wk Muse Spark 1.3 128, GLM-5.3 134, Gemini 3.8 Flash 127, GPT-6 Luna 130, MiniMax-M3 128, Ling 3.0 Flash 115
+   33.0±0.7 ideas/wk  lead   20 h  coh 0.997  esc 0.05  $    17/idea  $   558/wk  | Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+      without Google: 28.7 ideas/wk (87%);  est-3: 32.7 ideas/wk;  busy h/wk Muse Spark 1.3 124, Qwen3.8 Max 136, Gemini 3.8 Flash 124, DeepSeek V4.1 Flash Max* 125, GPT-6 Luna 127, Ling 3.0 Flash 113
+   33.6±1.4 ideas/wk  lead   21 h  coh 0.994  esc 0.08  $    17/idea  $   581/wk  | Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+      without Meta: 27.8 ideas/wk (83%);  est-3: 33.9 ideas/wk;  busy h/wk Muse Spark 1.3 131, Qwen3.8 Max 142, Gemini 3.8 Flash 130, GPT-6 Luna 133, Inkling Small 124, Ling 3.0 Flash 116
+
+  best throughput:  36.6±2.2 ideas/wk  lead   20 h  coh 0.995  esc 0.06  $    21/idea  $   757/wk  | GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+  best value:       34.2±0.6 ideas/wk  lead   19 h  coh 0.996  esc 0.04  $    16/idea  $   558/wk  | Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+  most resilient:   33.0±0.7 ideas/wk  lead   20 h  coh 0.997  esc 0.05  $    17/idea  $   558/wk  | Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+
+S4 top seats: API tokens vs subscription (one plan per seat)
+  capped = seat stops at the plan's weekly hours; hybrid = plan first, API past the cap
+  [best value] six at 34.2 ideas/wk, API $558/wk
+    seat                   plan                           cap h busy h   $/h API $/wk sub $/wk hybrid $/wk b/e h subs capped i/wk
+    Gemini 3.8 Flash (high) Google AI Ultra 20x ($199.99)     24  124.3   1.2      150       46         167  38.3    6        30.0
+    Gemini 3.8 Flash (high) Google AI Ultra 20x ($199.99)     40  124.3   1.2      150       46         148  38.3    4        31.6
+    Gemini 3.8 Flash (high) Google AI Ultra 5x ($99.99)        8  124.3   1.2      150       23         163  19.2   16        29.8
+    Gemini 3.8 Flash (high) Google AI Ultra 5x ($99.99)       20  124.3   1.2      150       23         149  19.2    7        30.0
+    all top seats on one 20x plan, low cap {'Gemini 3.8 Flash (high)': 24}: 30.0 ideas/wk (88% of uncapped)
+    all top seats on one 20x plan, high cap {'Gemini 3.8 Flash (high)': 40}: 31.6 ideas/wk (93% of uncapped)
+  [best throughput] six at 36.6 ideas/wk, API $757/wk
+    seat                   plan                           cap h busy h   $/h API $/wk sub $/wk hybrid $/wk b/e h subs capped i/wk
+    GPT-5.6 Terra (max)    ChatGPT Pro 20x ($200)            24  134.5   2.1      283       46         279  22.0    6        33.5
+    GPT-5.6 Terra (max)    ChatGPT Pro 20x ($200)            40  134.5   2.1      283       46         245  22.0    4        35.5
+    GPT-5.6 Terra (max)    ChatGPT Pro 5x ($100)              8  134.5   2.1      283       23         289  11.0   17        33.5
+    GPT-5.6 Terra (max)    ChatGPT Pro 5x ($100)             20  134.5   2.1      283       23         264  11.0    7        33.7
+    Gemini 3.8 Flash (high) Google AI Ultra 20x ($199.99)     24  129.1   1.2      155       46         173  38.3    6        32.5
+    Gemini 3.8 Flash (high) Google AI Ultra 20x ($199.99)     40  129.1   1.2      155       46         153  38.3    4        32.2
+    Gemini 3.8 Flash (high) Google AI Ultra 5x ($99.99)        8  129.1   1.2      155       23         169  19.2   17        31.7
+    Gemini 3.8 Flash (high) Google AI Ultra 5x ($99.99)       20  129.1   1.2      155       23         154  19.2    7        31.5
+    all top seats on one 20x plan, low cap {'GPT-5.6 Terra (max)': 24, 'Gemini 3.8 Flash (high)': 24}: 28.0 ideas/wk (76% of uncapped)
+    all top seats on one 20x plan, high cap {'GPT-5.6 Terra (max)': 40, 'Gemini 3.8 Flash (high)': 40}: 30.5 ideas/wk (83% of uncapped)
+
+S5 API bill sensitivity (best value six, $/idea)
+  base (0.25, 30, 0.90)    $    558/wk  (top seats $   481)  $  16.3/idea
+  lean (0.15, 15, 0.95)    $    211/wk  (top seats $   181)  $   6.2/idea
+  heavy (0.40, 60, 0.80)   $   1937/wk  (top seats $  1672)  $  56.7/idea

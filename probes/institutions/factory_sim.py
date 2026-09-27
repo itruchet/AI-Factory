@@ -136,6 +136,10 @@ class Agent:
     busy_until: float = 0.0
     busy_by_kind: dict = field(default_factory=lambda: defaultdict(float))
     queue: list = field(default_factory=list)   # baseline push queue
+    spend: float = 0.0                          # USD after warm-up
+    tokens: float = 0.0                         # tokens after warm-up
+    cap_h_week: float | None = None             # subscription cap: busy hours per week, then idle
+    week_used: dict = field(default_factory=lambda: defaultdict(float))
 
     @property
     def tier(self):
@@ -282,7 +286,9 @@ class Sim:
         self.at(self.t + 2.0, self.orphan_sweep)
 
     def dispatch(self):
-        free = [a for a in self.agents if a.busy_until <= self.t]
+        week = int(self.t // 168)
+        free = [a for a in self.agents if a.busy_until <= self.t
+                and (a.cap_h_week is None or a.week_used[week] < a.cap_h_week)]
         self.rng.shuffle(free)
         for a in free:
             task = self.pick(a)
@@ -318,10 +324,14 @@ class Sim:
             base, tokens = TASK_HOURS[task.kind], TASK_TOKENS[task.kind]
         dur = a.hours(base)
         a.busy_until = self.t + dur
+        a.week_used[int(self.t // 168)] += dur
         if self.t >= self.warmup:
             a.busy_by_kind[task.kind] += dur
             self.wait[task.kind].append(self.t - task.born)
         self.cost += a.cfg.price * tokens / 1e6
+        if self.t >= self.warmup:
+            a.spend += a.cfg.price * tokens / 1e6
+            a.tokens += tokens
         self.at(self.t + dur, self.finish, a, task)
 
     # -- task outcomes
@@ -577,6 +587,9 @@ def measure(sim: Sim) -> dict:
         "role_util": {k: statistics.mean(v) for k, v in role_util.items()},
         "wait_h": {k: statistics.mean(v) for k, v in sim.wait.items() if v},
         "drops_per_idea": {k: v / max(1, len(rel)) for k, v in sim.drops.items()},
+        "per_agent": {a.cfg.name: {"busy_h_per_week": sum(a.busy_by_kind.values()) / weeks,
+                                   "usd_per_week": a.spend / weeks, "mtok_per_week": a.tokens / 1e6 / weeks}
+                      for a in sim.agents},
     }
 
 
@@ -588,7 +601,11 @@ def mean_measure(builder, n=6, **simkw) -> dict:
         rows.append(measure(Sim(org, agents, seed=s, **simkw).run()))
     out = {}
     for k in rows[0]:
-        if isinstance(rows[0][k], dict):
+        if k == "per_agent":            # nested: average each agent's fields over the seeds it appears in
+            keys = set().union(*(r[k].keys() for r in rows))
+            out[k] = {kk: {f: statistics.mean(r[k][kk][f] for r in rows if kk in r[k]) for f in next(r[k][kk] for r in rows if kk in r[k])}
+                      for kk in keys}
+        elif isinstance(rows[0][k], dict):
             keys = set().union(*(r[k].keys() for r in rows))
             out[k] = {kk: statistics.mean(r[k].get(kk, 0.0) for r in rows) for kk in keys}
         else:

@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r10 (supersedes r1–r9)
+Revision: r11 (supersedes r1–r10)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -259,7 +259,7 @@ r8 banded models by hand-picked thresholds on the Intelligence Index. r9 replace
 | P2 | **No vendor above half the seats.** |
 | P6 | **New models earn seats on evidence.** One trial seat at a time. A trial replaces the weakest incumbent only if its Ledger value per dollar beats it by 10%. |
 | P7 | **Never chase the leaderboard.** A benchmark rank is a candidate list, not a reason to swap. |
-| P8 | **Match the help-down rule to how the seat is paid.** Subscription seats help down freely, since their capacity is already paid for. Per-token seats wait about 2 hours per tier before taking easier work. |
+| P8 | **Match the help-down rule to how the seat is paid.** Subscription seats help down freely, since their capacity is already paid for. Per-token seats wait about 2 hours per tier before taking easier work. *r11:* top seats run on API tokens; a subscription is admissible only as an overflow discount on an expensive anchor model, held by a named person where the vendor's terms allow it. No seat depends on a plan (§5.4). |
 
 These are Ledger arithmetic, not an agent: value per dollar and diversity are computed from recorded outcomes.
 
@@ -272,6 +272,20 @@ These are Ledger arithmetic, not an agent: value per dollar and diversity are co
 - **The ideal institution sizes are small.** Agents work from a shared pool; dedicated seats lost 34–46% of throughput. Settings: two Inquiry analysts, one Council round, one planner plus a red team, 10% audit, and a work-in-progress limit of about 0.7 × headcount.
 
 R13 (no orphans) is load-bearing. It must relax licences, independence and seat rules, each with a Ledger record, or small teams deadlock.
+
+### 5.4 The best six on today's market (r11)
+
+[`best-six.md`](best-six.md) staffs the r10 model with named models from the Artificial Analysis snapshot of 27 Sep 2026. It tested 219 top trios, 1,320 sixes and six assumption sets. `*` marks an estimated Coding Index.
+- **Recommended six, all paying per API token:**
+  - top seats: Claude Opus 5.5\* (frontier anchor), Muse Spark 1.3 and Gemini 3.8 Flash (fast top-tier volume);
+  - mid seats: DeepSeek V4.1 Flash\*, GPT-6 Luna\* and Ling 3.0 Flash.
+  - In the model it delivers about 35 ideas a week at about $26 per idea, and never falls below 94% of the best six under any assumption set.
+- **"Mid" is now a price class, not a capability class.** Every competitive cheap model is statistically top tier. Speed decides more than a few Coding Index points; a frontier anchor decides when work gets harder.
+- **One frontier model is enough.** The premium trio (Fable 5.1 + GPT-6 Astra + Gemini) reaches 85% of the best throughput at 2.8× the cost per idea.
+- **Tokens, not subscriptions, for the top seats.**
+  - A $200 plan covers 24–40 of the 125–135 hours an always-on seat works, so full cover needs 4–6 plans per seat.
+  - Hybrid (plan first, API past the cap) saves 5–12%.
+  - Plan-only is about 45% cheaper per idea but delivers 70–83% of the throughput, and rests on consumer terms written for one person.
 
 ## 6. The constitution (principles)
 
@@ -445,6 +459,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | H2 | Set the quality standard per institution and tier (maximum markdown rate). Design can propose starting values. |
 | H4 | Approve the rolling portfolio policy (P1, P2, P6–P8; §5.2) in place of a fixed model list. Start from today's four models. |
 | H5 | Approve three absolute work tiers for cards (§5.2) |
+| H6 | Approve the starting six on API tokens (§5.4), and set the data-residency rule for open-weight mid seats: US-hosted only, or a US-only mid tier at −10% throughput |
 | H3 | Approve exit from Idea stage into design |
 
 ---

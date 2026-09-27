@@ -1,0 +1,26 @@
+ROBUSTNESS of the leading sixes (8 seeds; share = throughput / scenario best)
+           base    speed-half speed-ignored   harder-work   harder+half   estimates-3   worst  $/idea(base)  six
+     36.1 (97%)    29.5 (98%)    25.5 (99%)    23.7 (96%)    20.7 (95%)    35.1 (99%)   95%          44    Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+     35.1 (95%)    29.6 (98%)    24.9 (96%)   24.7 (100%)    21.7 (99%)    33.9 (95%)   95%          26    Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + MiniMax-M3 + Ling 3.0 Flash
+     34.9 (94%)    29.5 (98%)    25.4 (98%)    24.1 (98%)   21.8 (100%)    34.9 (98%)   94%          26    Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     34.4 (93%)    29.4 (97%)    25.3 (98%)    23.7 (96%)    20.7 (95%)    34.1 (96%)   93%          16    Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     36.7 (99%)   30.2 (100%)    24.9 (97%)    22.8 (92%)    19.9 (91%)    35.2 (99%)   91%          21    GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+     33.3 (90%)    29.0 (96%)    24.6 (95%)    22.5 (91%)    19.6 (90%)    33.6 (95%)   90%          17    Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + MiniMax-M3 + Ling 3.0 Flash
+     32.9 (89%)    29.1 (96%)   25.7 (100%)    22.8 (92%)    19.7 (90%)    33.0 (93%)   89%          17    Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     35.4 (96%)    28.9 (96%)   25.8 (100%)    21.8 (88%)    19.2 (88%)    34.8 (98%)   88%          20    GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+    37.1 (100%)    29.7 (98%)    24.9 (96%)    22.7 (92%)    19.1 (88%)   35.6 (100%)   88%          17    Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + Inkling Small + Ling 3.0 Flash
+     32.3 (87%)    28.4 (94%)    25.6 (99%)    23.5 (95%)    21.2 (97%)    31.6 (89%)   87%          55    Claude Fable 5.1 Max + Claude Opus 5.5 Max* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     32.1 (87%)    28.7 (95%)    25.4 (98%)    22.8 (92%)    20.6 (94%)    32.0 (90%)   87%          48    Claude Fable 5.1 Max + GPT-6 Sol (max)* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     32.1 (86%)    28.0 (93%)    25.1 (97%)    22.5 (91%)    20.4 (94%)    32.5 (91%)   86%          27    Claude Opus 5.5 Max* + Grok 4.7 (xhigh)* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     32.0 (86%)    28.6 (95%)    25.4 (98%)    23.0 (93%)    21.3 (98%)    31.9 (90%)   86%          29    Claude Opus 5.5 Max* + GPT-6 Sol (max)* + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     35.2 (95%)    29.7 (98%)    25.4 (98%)    21.3 (86%)    18.8 (86%)    35.2 (99%)   86%          46    Claude Fable 5.1 Max + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiniMax-M3 + Inkling Small + Ling 3.0 Flash
+     31.8 (86%)    28.2 (93%)    25.4 (98%)    22.5 (91%)    20.9 (96%)    31.7 (89%)   86%          30    Claude Opus 5.5 Max* + GPT-6 Sol (max)* + Muse Spark 1.3 (xhigh) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     31.8 (86%)    27.8 (92%)    25.2 (98%)    22.8 (92%)    20.9 (96%)    31.1 (88%)   86%          52    Claude Opus 5.5 Max* + GPT-6 Astra (high) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     35.5 (96%)    29.9 (99%)    25.4 (98%)    21.8 (88%)    18.6 (86%)    35.2 (99%)   86%          16    Muse Spark 1.3 (xhigh) + GLM-5.3 (max) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+     31.4 (85%)    27.7 (92%)    25.4 (98%)    22.1 (90%)    20.5 (94%)    31.0 (87%)   85%          72    Claude Fable 5.1 Max + GPT-6 Astra (high) + Gemini 3.8 Flash (high) || DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
+     31.2 (84%)    27.8 (92%)    25.5 (99%)    21.9 (88%)    19.1 (88%)    30.9 (87%)   84%          30    Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Gemma 4 31B
+     33.8 (91%)    29.9 (99%)    25.6 (99%)    20.0 (81%)    18.2 (84%)    33.1 (93%)   81%          17    Muse Spark 1.3 (xhigh) + Qwen3.8 Max (0902)* + Gemini 3.8 Flash (high) || GPT-6 Luna (max)* + Inkling Small + Ling 3.0 Flash
+     35.3 (95%)   30.1 (100%)    25.1 (97%)    20.7 (84%)    17.1 (78%)    35.3 (99%)   78%          22    GPT-5.6 Terra (max) + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) || MiniMax-M3 + Inkling Small + Ling 3.0 Flash
+
+  within 2% of the best worst case: 3 sixes; cheapest of them:
+  minimax-regret six: Claude Opus 5.5 Max* + Muse Spark 1.3 (xhigh) + Gemini 3.8 Flash (high) + DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash
