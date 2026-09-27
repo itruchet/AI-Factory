@@ -1,6 +1,6 @@
 """Pull-rules probe: do dumb, rules-based feedback loops allocate work well?
 
-Idea-stage feasibility check for docs/idea/constitutional-factory.md (r6).
+Idea-stage feasibility check for docs/idea/constitutional-factory.md (r7).
 No agent manages allocation. Agents pull cards; rules adjust what each may pull.
 
 ALL NUMBERS ARE SYNTHETIC. They illustrate dynamics, not real model performance.
@@ -112,7 +112,7 @@ def tier_median_cycle(agents: list[Agent], tier: int) -> float | None:
 
 
 def run(agents: list[Agent], policy: str = "bands", seed: int = 7, change=None, arrivals=steady) -> dict:
-    assert policy in ("static", "pacing", "bands")
+    assert policy in ("static", "pacing", "bands", "reserve")
     adaptive = policy != "static"
     rng = random.Random(seed)
     queues = {t: deque() for t in TIERS}
@@ -126,6 +126,11 @@ def run(agents: list[Agent], policy: str = "bands", seed: int = 7, change=None, 
             return True
         if policy == "pacing":
             return a.cap is None or (a.cap - a.used) / a.cap >= (HOURS - hour) / HOURS
+        if policy == "reserve":             # hardest-first; capped agents keep a hard-work reserve
+            if a.cap is None:
+                return True
+            home_rate = a.concurrency * COST[a.top] / max(1, math.ceil(DURATION[a.top] * a.speed))
+            return (HOURS - hour) * home_rate * HARD_RESERVE < a.cap - a.used - COST[t]
         # reached only when every tier above t had nothing this agent could pull
         behind = bool(queues[t]) and hour - queues[t][0].born >= SPILL_AGE
         if a.cap is None:
@@ -291,11 +296,11 @@ def compare(arrivals, label: str) -> None:
     print(f"  {'policy':<14} {'accepted':>8} {'value':>6} {'markdown':>9} {'backlog':>8} {'T3 done':>8} "
           f"{'T3 left':>8} {'frontier cap on easy':>21} {'frontier cap used':>18} {'qwen T2 fails':>14}")
     global HARD_RESERVE
-    for policy, reserve in (("static", None), ("pacing", None), ("bands", 1.0), ("bands", 0.75), ("bands", 0.5)):
+    for policy, reserve in (("static", None), ("pacing", None), ("bands", 0.75), ("reserve", 0.75)):
         if reserve is not None:
             HARD_RESERVE = reserve
         m = mean_summary(policy, arrivals)
-        label = policy if reserve is None else f"home {reserve:.0%}"
+        label = {"bands": "home tier", "reserve": "lean reserve"}.get(policy, policy)
         print(f"  {label:<14} {m['accepted']:8.0f} {m['value']:6.0f} {m['marked_down']:9.0f} {m['backlog']:8.1f} "
               f"{m['t3_accepted']:8.0f} {m['t3_backlog']:8.1f} {m['frontier_easy_share']:21.0%} "
               f"{m['frontier_cap_used']:18.0%} {m['qwen_t2_markdowns']:14.1f}")
