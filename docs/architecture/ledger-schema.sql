@@ -1,12 +1,14 @@
 -- Factory Ledger: reference schema for the constitutional architecture.
--- Companion to docs/architecture/constitutional-factory.md (sections 6, 10, 11, 13, 14).
+-- Companion to docs/architecture/constitutional-factory.md r2 (sections 5-7, 11-14, 16).
 --
 -- Design rules enforced here:
 --   1. Ledger tables are append-only. UPDATE and DELETE abort (Article 2).
 --   2. FACT, ASSERTION and DERIVED values live in separate tables (Article 3).
 --   3. Every model output references the context manifest it was produced under,
 --      so exposure and independence are computed, never self-declared (Articles 6-7).
---   4. Mutable operational state lives only in projection tables (suffix _state),
+--   4. Every event names the institution it belongs to; rules come from a
+--      human-ratified charter version, never from the Clerk's discretion.
+--   5. Mutable operational state lives only in projection tables (suffix _state),
 --      which must be rebuildable from the ledger.
 --
 -- Target: SQLite >= 3.35, WAL mode, on a native Linux filesystem (not /mnt/c).
@@ -15,14 +17,14 @@ PRAGMA journal_mode = WAL;
 PRAGMA foreign_keys = ON;
 
 -- ---------------------------------------------------------------------------
--- Identity and policy
+-- Identity and charters
 -- ---------------------------------------------------------------------------
 
 -- An actor is anything that can author an event. Model actors are execution
 -- configurations (model x version x effort), not vendors.
 CREATE TABLE actor (
     actor_id        TEXT PRIMARY KEY,
-    kind            TEXT NOT NULL CHECK (kind IN ('model_config', 'human', 'governor', 'tool')),
+    kind            TEXT NOT NULL CHECK (kind IN ('model_config', 'human', 'clerk', 'tool')),
     family          TEXT,           -- lineage label, set by a human; used for independence
     model_id        TEXT,           -- provider model identifier as configured
     model_version   TEXT,           -- version string; a change creates a new actor
@@ -31,11 +33,15 @@ CREATE TABLE actor (
     created_at      TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
 );
 
--- Every tunable number and rule the Governor uses. Decisions cite a policy hash.
-CREATE TABLE policy_version (
-    policy_hash     TEXT PRIMARY KEY,
-    parent_hash     TEXT REFERENCES policy_version(policy_hash),
-    params_json     TEXT NOT NULL,
+-- Constitution and per-institution charters. Every rule and tunable number
+-- the Clerk applies lives here. Decisions cite a charter hash.
+CREATE TABLE charter_version (
+    charter_hash    TEXT PRIMARY KEY,
+    institution     TEXT NOT NULL CHECK (institution IN (
+                        'constitution', 'inquiry', 'council', 'planning', 'market',
+                        'court', 'audit', 'release', 'ledger')),
+    parent_hash     TEXT REFERENCES charter_version(charter_hash),
+    rules_json      TEXT NOT NULL,          -- roles, eligibility, memory rights, procedure, budgets
     ratified_by     TEXT NOT NULL REFERENCES actor(actor_id),  -- must be a human actor
     ratified_at     TEXT NOT NULL,
     rationale       TEXT NOT NULL
@@ -50,10 +56,13 @@ CREATE TABLE event (
     seq             INTEGER PRIMARY KEY AUTOINCREMENT,
     event_id        TEXT NOT NULL UNIQUE,
     ts              TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')),
-    kind            TEXT NOT NULL,          -- e.g. card.offered, lease.granted, evidence.recorded
+    institution     TEXT NOT NULL CHECK (institution IN (
+                        'inquiry', 'council', 'planning', 'market', 'court',
+                        'audit', 'release', 'ledger', 'human')),
+    kind            TEXT NOT NULL,          -- e.g. card.claimed, lease.granted, evidence.recorded
     actor_id        TEXT NOT NULL REFERENCES actor(actor_id),
     subject_id      TEXT NOT NULL,          -- idea, card, lease, challenge, audit sample...
-    policy_hash     TEXT REFERENCES policy_version(policy_hash),
+    charter_hash    TEXT REFERENCES charter_version(charter_hash),
     payload_json    TEXT NOT NULL,
     supersedes      TEXT REFERENCES event(event_id),  -- revision without rewrite
     prev_hash       TEXT NOT NULL,
@@ -73,7 +82,7 @@ CREATE TABLE context_manifest (
 CREATE TABLE observation (
     observation_id  TEXT PRIMARY KEY,
     event_id        TEXT NOT NULL REFERENCES event(event_id),
-    source          TEXT NOT NULL CHECK (source IN ('tool', 'adapter', 'git', 'governor', 'provider')),
+    source          TEXT NOT NULL CHECK (source IN ('tool', 'adapter', 'git', 'clerk', 'provider')),
     kind            TEXT NOT NULL,          -- test_result, build, tokens_used, throttle, commit...
     subject_id      TEXT NOT NULL,
     value_json      TEXT NOT NULL,
@@ -93,16 +102,16 @@ CREATE TABLE assertion (
 );
 CREATE INDEX assertion_scoring ON assertion(actor_id, kind);
 
--- Values the Governor computes from facts with a versioned function.
--- Reproducible from (inputs, policy_hash); neither fact nor opinion.
+-- Values the Clerk computes from facts with a versioned function.
+-- Reproducible from (inputs, charter_hash); neither fact nor opinion.
 CREATE TABLE derived (
     derived_id      TEXT PRIMARY KEY,
     event_id        TEXT NOT NULL REFERENCES event(event_id),
-    kind            TEXT NOT NULL,          -- independence_level, shadow_price, risk_class, posterior...
+    kind            TEXT NOT NULL,          -- independence_level, shadow_price, risk_class, eligibility...
     subject_id      TEXT NOT NULL,
     value_json      TEXT NOT NULL,
     function_ref    TEXT NOT NULL,          -- module@git_sha
-    policy_hash     TEXT NOT NULL REFERENCES policy_version(policy_hash)
+    charter_hash    TEXT NOT NULL REFERENCES charter_version(charter_hash)
 );
 
 -- ---------------------------------------------------------------------------
@@ -112,11 +121,12 @@ CREATE TABLE derived (
 CREATE TABLE proposition (
     proposition_id  TEXT PRIMARY KEY,
     idea_id         TEXT NOT NULL,
-    protocol        TEXT NOT NULL CHECK (protocol IN ('framing', 'planning')),
+    institution     TEXT NOT NULL CHECK (institution IN ('inquiry', 'council', 'planning')),
     round           INTEGER NOT NULL,
     actor_id        TEXT NOT NULL REFERENCES actor(actor_id),
     manifest_hash   TEXT NOT NULL REFERENCES context_manifest(manifest_hash),
-    kind            TEXT NOT NULL,          -- interpretation, assumption, risk, objection, question...
+    anon_label      TEXT NOT NULL,          -- per-idea random label shown to peers; identity stays here
+    kind            TEXT NOT NULL,          -- interpretation, hypothesis, assumption, risk, objection...
     body            TEXT NOT NULL,
     confidence      REAL,
     responds_to     TEXT REFERENCES proposition(proposition_id),
@@ -150,24 +160,49 @@ CREATE TABLE card_version (
 -- Work market
 -- ---------------------------------------------------------------------------
 
--- Every offer records its propensity so alternative policies (including the
--- legacy router) can be evaluated off-policy without deploying them.
-CREATE TABLE offer (
-    offer_id        TEXT PRIMARY KEY,
+-- Lots: rule-bound randomness for seats, tie-breaks and the service rota.
+-- Seed and candidate set are recorded so any draw can be replayed.
+CREATE TABLE lot_draw (
+    draw_id         TEXT PRIMARY KEY,
+    event_id        TEXT NOT NULL REFERENCES event(event_id),
+    purpose         TEXT NOT NULL CHECK (purpose IN (
+                        'synthesizer', 'reconciler', 'red_team', 'helper', 'reviewer',
+                        'replicator', 'expert_witness', 'auditor', 'tie_break', 'rota')),
+    subject_id      TEXT NOT NULL,
+    candidates_json TEXT NOT NULL,          -- eligible actors (or cards, for rota)
+    rng_seed        TEXT NOT NULL,
+    winner          TEXT NOT NULL
+);
+
+-- Participants claim cards they can see; nobody composes offers for them.
+-- via='rota' marks cards drawn by lot under the service duty (unbiased sample).
+CREATE TABLE claim (
+    claim_id        TEXT PRIMARY KEY,
     event_id        TEXT NOT NULL REFERENCES event(event_id),
     card_id         TEXT NOT NULL,
     card_version    INTEGER NOT NULL,
     actor_id        TEXT NOT NULL REFERENCES actor(actor_id),
-    propensity      REAL NOT NULL CHECK (propensity > 0 AND propensity <= 1),
-    exploration     INTEGER NOT NULL CHECK (exploration IN (0, 1)),
-    rng_seed        TEXT NOT NULL,
-    expires_at      TEXT NOT NULL,
+    via             TEXT NOT NULL CHECK (via IN ('claim', 'rota')),
+    window_id       TEXT,                   -- claim window this claim competed in
+    outcome         TEXT NOT NULL CHECK (outcome IN ('granted', 'lost_tie_break', 'ineligible', 'withdrawn')),
+    tie_break_draw  TEXT REFERENCES lot_draw(draw_id),
     FOREIGN KEY (card_id, card_version) REFERENCES card_version(card_id, version)
+);
+
+-- Court and Audit seats. Seating is by lot under independence constraints.
+CREATE TABLE seat (
+    seat_id         TEXT PRIMARY KEY,
+    event_id        TEXT NOT NULL REFERENCES event(event_id),
+    institution     TEXT NOT NULL CHECK (institution IN ('council', 'planning', 'court', 'audit')),
+    role            TEXT NOT NULL,
+    subject_id      TEXT NOT NULL,
+    actor_id        TEXT NOT NULL REFERENCES actor(actor_id),
+    draw_id         TEXT REFERENCES lot_draw(draw_id)   -- NULL only for open-standing challengers
 );
 
 CREATE TABLE lease (
     lease_id        TEXT PRIMARY KEY,
-    offer_id        TEXT NOT NULL REFERENCES offer(offer_id),
+    claim_id        TEXT NOT NULL REFERENCES claim(claim_id),
     card_id         TEXT NOT NULL,
     card_version    INTEGER NOT NULL,
     actor_id        TEXT NOT NULL REFERENCES actor(actor_id),
@@ -188,7 +223,7 @@ CREATE TABLE resource (
     amortized_cost  REAL                    -- subscription fee per window, for AUW per amortized $
 );
 
--- Adapter-observed capacity facts. Models cannot write here.
+-- Adapter-observed capacity facts. Participants cannot write here.
 CREATE TABLE capacity_observation (
     capacity_obs_id TEXT PRIMARY KEY,
     event_id        TEXT NOT NULL REFERENCES event(event_id),
@@ -231,7 +266,7 @@ CREATE TABLE audit_sample (
     card_id         TEXT NOT NULL,
     card_version    INTEGER NOT NULL,
     stratum         TEXT NOT NULL,
-    reason          TEXT NOT NULL CHECK (reason IN ('random', 'risk', 'adaptive', 'targeted', 'rejection', 'planted_defect', 'human')),
+    reason          TEXT NOT NULL CHECK (reason IN ('random', 'risk', 'adaptive', 'targeted', 'rejection', 'planted_defect', 'collusion_pattern', 'human')),
     selection_prob  REAL NOT NULL CHECK (selection_prob > 0 AND selection_prob <= 1),
     rng_seed        TEXT NOT NULL
 );
@@ -275,8 +310,20 @@ BEGIN SELECT RAISE(ABORT, 'ledger is append-only: evidence'); END;
 CREATE TRIGGER evidence_no_delete BEFORE DELETE ON evidence
 BEGIN SELECT RAISE(ABORT, 'ledger is append-only: evidence'); END;
 
-CREATE TRIGGER policy_no_update BEFORE UPDATE ON policy_version
-BEGIN SELECT RAISE(ABORT, 'policy versions are immutable'); END;
+CREATE TRIGGER charter_no_update BEFORE UPDATE ON charter_version
+BEGIN SELECT RAISE(ABORT, 'charter versions are immutable: ratify a new version'); END;
+CREATE TRIGGER charter_human_only BEFORE INSERT ON charter_version
+WHEN (SELECT kind FROM actor WHERE actor_id = NEW.ratified_by) IS NOT 'human'
+BEGIN SELECT RAISE(ABORT, 'only a human may ratify a charter'); END;
+
+CREATE TRIGGER lot_draw_no_update BEFORE UPDATE ON lot_draw
+BEGIN SELECT RAISE(ABORT, 'ledger is append-only: lot_draw'); END;
+CREATE TRIGGER lot_draw_no_delete BEFORE DELETE ON lot_draw
+BEGIN SELECT RAISE(ABORT, 'ledger is append-only: lot_draw'); END;
+CREATE TRIGGER claim_no_update BEFORE UPDATE ON claim
+BEGIN SELECT RAISE(ABORT, 'ledger is append-only: claim'); END;
+CREATE TRIGGER claim_no_delete BEFORE DELETE ON claim
+BEGIN SELECT RAISE(ABORT, 'ledger is append-only: claim'); END;
 
 -- ---------------------------------------------------------------------------
 -- Projections (mutable, rebuildable from the ledger)

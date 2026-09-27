@@ -1,677 +1,641 @@
 # Factory Constitutional Architecture — Design Proposal
 
-Status: DRAFT for adversarial peer review
+Status: DRAFT r2 for adversarial peer review
 Owner: Isa
 Companion: [`ledger-schema.sql`](ledger-schema.sql) (reference schema, validated on SQLite 3.45)
 
 ---
 
+## Revision 2 — what changed and why
+
+r1 was challenged on four points. This revision accepts three of them fully and one in part. It keeps two positions, both stated openly.
+
+| r1 position | Challenge | r2 outcome |
+|---|---|---|
+| Merge Inquiry, Council and Planning into one protocol used twice | Conflation and bleed between institutions | **Accepted.** Seven separate institutions, each with its own charter, participants, memory rights, procedure and exit. Shared code is allowed only below the charter line. Only a ratified record crosses from one institution to the next, never the debate that produced it. |
+| LLMs are stateless, so model incentives can be ignored | Models act collectively against human interest even without individual awareness; memory, where present, shapes behavior | **Accepted.** The threat model now covers strategic behavior, emergent collective behavior and collusion. The Factory *supplies* memory, so memory is governed per institution (§6). |
+| A central offer policy (Thompson sampling) composes each model's choices | Contradicts r1's own stateless claim: all memory sits in one central component, which is a router in disguise | **Accepted.** The contradiction was real. The central scorer is removed. The Ledger holds memory. Each charter grants read rights. The Clerk (formerly Agent 70) keeps clocks and draws lots; it scores nothing. |
+| One Evidence Gate rule set applied everywhere | Each institution needs its own rules; equal standing must not mean identical roles; no route back to a single-agent router | **Accepted.** Per-institution charters (§7). The same models play different roles in different institutions. |
+| Rename "Court" | — | **Withdrawn.** Assurance Court stays. The name can mislead only if it reaches model prompts, and the charter controls prompt wording (§7.5). |
+| **Held:** self-selection alone biases what the Factory learns | — | Kept, and reworked as a charter rule instead of a central allocator: a service rota drawn by lot, the same duty for every participant (§11.6). |
+| **Held:** a Release Gate for reflexive change | Absent from the pasted seven-institution list | Kept as the Release Gate. The Factory builds itself, so accepted is not the same as deployed (§15). |
+
+---
+
 ## 0. Answer first
 
-**Verdict.** Keep the core principle: capability earns contribution, not authority; evidence decides; the coordinator is a protocol engine, not a mind. Change the structure in five places.
+**Structure.** One constitution. Seven institutions under it. Each solves a different coordination problem, and the same models play different roles in each.
 
-1. **Six institutions are really five mechanisms.** Inquiry is round 1 of the Council. Framing and Planning run the same commit–reveal–critique protocol on different artifacts. Collapse them into one **Deliberation Protocol** used twice.
-2. **The mechanism-design framing is half wrong.** LLMs are stateless. They carry no persistent self-interest, so reputation cannot motivate them. Incentives act on the *allocation policy* and on the *operators*, not on the models. Design for selection bias, correlated error and trained-in reward hacking, not for strategic agents.
-3. **Pure self-selection breaks capability learning.** If models pick their own cards, you only observe outcomes on cards they chose. The data is confounded. A small randomized share of allocation is required, not optional.
-4. **"No intelligent router" is achievable, but not "no judgment."** The Governor makes zero model calls. Its remaining judgments (risk rules, priors, price parameters, budgets) are enumerated, versioned and human-ratified. Hidden judgment becomes declared policy.
-5. **Blocking power requires executable evidence.** A challenge with a failing reproduction blocks. An argument alone does not, except in high-risk classes where it triggers corroboration. This is how "evidence over authority" becomes operational.
+```
+INQUIRY → COUNCIL → PLANNING → MARKET → COURT → RELEASE
+                                          ↑
+                         AUDIT (samples everything, corrects the system)
+LEDGER (institutional memory; spans all; decides nothing)
+CLERK  (procedural officer; enforces charters; judges nothing)
+```
 
-**Decisions needed (Isa):** see §21. The top three: ratify the constitution articles (§5), approve the Phase 0 cut (§20), and supply the existing codebase so the migration assessment (§18) can be completed.
+**Three design commitments carry the weight.**
+
+1. **Separation of institutions.** Each institution has a charter. Only a ratified record crosses from one to the next, never the transcript behind it. This prevents bleed.
+2. **Memory is governed, not assumed away.** The Ledger remembers everything. Each charter states who may read what, when, and whether identities are visible. What a participant saw is recorded as provenance.
+3. **Evidence over authority, under a threat model that includes collusion.** A single reproduced defect found by any participant defeats any number of approvals. Blind seating, rotation and pairwise audit catch emergent collective behavior that no single model intends.
+
+**Decisions needed (Isa):** see §21. The top three: ratify the Constitution and the seven charters; decide the Market's tie-break rule (§11.4); confirm the Release Gate stays (§15).
 
 ---
 
 ## 1. Scope, facts, assumptions
 
-**Facts (observed in this session)**
+**Facts**
 
-- The `itruchet/AI-Factory` repository has no commits on any branch. No Factory source was available to inspect.
-- The source prompt ends at the heading "20. DO NOT OVER-ENGINEER" with no body. This proposal treats it as a binding constraint and answers it in §20.
+- The `itruchet/AI-Factory` repository contained no Factory source. The migration assessment (§18) is therefore a method, not a result.
+- r1 prompt section 20 ("DO NOT OVER-ENGINEER") had no body. It is treated as a constraint (§20).
 
-**Assumptions (labelled; each needs confirmation)**
+**Assumptions (to confirm)**
 
-- A1. Four model resources today: one OpenAI frontier subscription, one Claude frontier subscription, one MiMo-class high-capacity subscription, one local Qwen-class model on a single GPU host under WSL.
-- A2. Idea volume is low (single digits per week). Work-card volume is one to two orders of magnitude higher.
-- A3. The existing Factory has a single operational SQLite database, Git worktrees per task, and a routing function that selects a model per card.
-- A4. One human (Isa) holds final authority and has limited weekly attention.
+- A1. Four model resources today: OpenAI frontier (subscription), Claude frontier (subscription), MiMo-class (large capacity), local Qwen-class (single GPU host, WSL).
+- A2. Idea volume is low (single digits per week). Card volume is one to two orders of magnitude higher.
+- A3. The existing Factory has one operational SQLite database, Git worktrees, and a routing function.
+- A4. One human (Isa) holds final authority with limited weekly attention.
 
-All numeric parameters below are **initial settings to be tuned empirically**, not claims.
-
----
-
-## 2. Critique of the hypothesis
-
-### 2.1 What to preserve
-
-| Principle | Why it survives scrutiny |
-|---|---|
-| Different stages need different coordination mechanisms | Correct. Framing aggregates information. Execution allocates labor. Assurance verifies. Release contains risk. Audit calibrates. These are distinct problems. |
-| Intelligence ≠ authority | Correct and load-bearing. It is the only defense against prestige cascades and a cognitive single point of failure. |
-| Facts vs assertions | Correct. It is the foundation for calibration, audit and Goodhart resistance. |
-| Exposure as provenance, not as prohibition | Correct. Hiding context to manufacture independence destroys engineering value. Recording it keeps both. |
-| Capacity as a first-class, perishable resource | Correct and under-appreciated in most agent designs. |
-| Agent 70 as protocol engine | Correct. See §7. |
-
-### 2.2 Contradictions and their resolution
-
-**C1. "No majority voting" vs "Council synthesis."** Someone writes the synthesis. Writing is a semantic act with agenda-setting power.
-*Resolution.* Synthesis is a proposal, not a decision. The synthesizer rotates. The Governor mechanically checks that every proposition ID appears in the synthesis with a disposition. A synthesis that drops a minority position fails validation. Other participants attest per item. An objection keeps the item "disputed." (§8.4)
-
-**C2. "Sufficient understanding" vs "no voting."** Without votes, what ends deliberation?
-*Resolution.* Exit when every uncertainty is **typed and routed**, not when it is eliminated. Each open item must be one of: converged, disputed-with-route, accepted assumption, human decision, or experiment card. The condition is structural and checkable. (§8.5)
-
-**C3. Self-selection vs empirical capability learning.** Self-selected outcomes are biased. Easy-work selection is invisible in the data it produces.
-*Resolution.* Offers are generated by a published stochastic policy with recorded propensities. A fixed exploration share is randomized. Models keep the right to decline. (§10)
-
-**C4. "No router" vs "someone resolves multiple claimants."** Any tie-break rule is an allocation rule and encodes preferences.
-*Resolution.* Remove collisions by construction (exclusive, time-limited offers). Declare the scoring rule as policy. Do not pretend determinism is neutrality.
-
-**C5. Stated confidence as a claim input.** If higher stated confidence wins work, the policy selects for confidence inflation, even from non-strategic models.
-*Resolution.* Stated confidence is recorded and scored for calibration. It never influences allocation until it demonstrably predicts outcomes better than the posterior alone (Experiment H7).
-
-**C6. "Model-reported capacity."** A model cannot know its subscription quota. Capacity belongs to the account and adapter, not to the model's cognition.
-*Resolution.* Adapters observe capacity (facts). Models only estimate the *consumption* a card will need (assertion, calibrated later). (§11)
-
-**C7. Universal Inquiry participation vs critique cost.** If every model critiques every other submission, cost grows O(N²).
-*Resolution.* Each participant critiques the pooled, anonymized proposition set in one call. Calls grow O(N). At N=4 this is trivial. Universal participation stays until measured contribution says otherwise (H1).
-
-**C8. Human authority vs human bandwidth.** Every escalation path ends at Isa. Unbounded escalation stalls the Factory.
-*Resolution.* Human attention is a budgeted, measured resource. Escalations are batched into one daily digest. Escalation rate is a monitored KPI with a ceiling.
-
-**C9. The Factory modifies its own evaluator.** Code that decides acceptance could be changed by work it accepts.
-*Resolution.* No component validates its own promotion. Governance changes are validated by the currently promoted version and ratified by a human. (§15)
-
-### 2.3 The mechanism-design correction
-
-Classical mechanism design assumes agents with persistent utility who respond to rewards. Stateless LLM calls do not. Three consequences follow.
-
-1. **Reputation is information for the policy, not motivation for the model.** Showing a model its score does not "incentivize" it. At most it changes the prompt. Whether that helps is an experiment (H7), not an axiom.
-2. **Goodhart pressure comes from three places**, in order of likely damage:
-   - **Operators and the self-modifying Factory**, tuning prompts and policies toward the KPI.
-   - **The allocation policy**, which will select whichever configurations score well on a flawed label.
-   - **Trained-in model dispositions**: deleting or weakening tests, special-casing test inputs, over-claiming completion. These are not strategic. They are reproducible failure modes.
-3. **Incentive compatibility is the wrong target.** The right targets are unbiased outcome labels, measured correlation, and containment of reward hacking.
-
-This simplifies the design. It removes the need for payment rules, bidding strategy analysis, and anti-collusion machinery.
+All numbers below are initial settings to tune, not claims.
 
 ---
 
-## 3. Terminology
+## 2. Threat model
 
-Names leak into prompts. A model told it sits in a "court" produces adversarial theater. A model told it sits on a "council" drifts toward politeness and consensus. Use metaphors for humans; use neutral role names in prompts.
+r1 assumed models were non-strategic. That was wrong for this design. The Factory feeds models history: prior attempts, peer outputs, their own track record. Once memory is supplied, behavior conditions on it. Separately, collective outcomes can emerge that no individual model intends.
 
-| Proposed | Replaces | Mechanism | Prompt-facing role names |
+| # | Threat | Mechanism | Example in the Factory |
 |---|---|---|---|
-| **Framing** | Inquiry + Deliberation Council | Commit–reveal–critique–synthesize (Delphi) | contributor, critic, synthesizer |
-| **Planning** | Planning Chamber | Same protocol + coverage and red-team checks | decomposer, reconciler, red-team |
-| **Work Market** | Work Market (kept) | Pull-based offers, leases, bandit-shaped | worker, helper |
-| **Evidence Gate** | Assurance Court | Rule-based acceptance over evidence classes | reviewer, challenger, reproducer |
-| **Promotion Pipeline** | Release Gate | Staged promotion by risk class | — |
-| **Audit** | Independent Audit (kept) | Randomized sampling of the whole system | auditor |
-| **Governor** | Agent 70 | Deterministic protocol engine; no model calls | — |
-| **Ledger** | Immutable Ledger | Hash-chained append-only event log | — |
+| T1 | Individual reward hacking | Trained-in drive to "succeed" | Weakening or special-casing tests; over-claiming completion |
+| T2 | Correlated error | Shared training data and methods | Every reviewer misses the same class of defect |
+| T3 | Emergent collective behavior | Repeated interaction plus shared memory, without intent | Mutual approval between author and reviewer pairs; convergent deference to one participant; tacit division of easy work |
+| T4 | Deliberate coordination | Side channels, including hidden signals in text | A worker's output carries cues that a reviewer from the same family responds to |
+| T5 | Prestige and deference | Models "know" vendor reputations | Qwen defers to a submission it believes came from a frontier model |
+| T6 | Injection across boundaries | Artifacts carry instructions | Repository text or a card body steers a reviewer |
+| T7 | Operator and self-modification Goodhart | The Factory tunes itself toward its KPIs | Policy changes that raise acceptance by weakening assurance |
 
-"Court" is the one name to retire. It implies a judge, which the design explicitly forbids.
+Published research points in this direction. [Unverified in this session; cited from memory; check before relying on it] Examples include LLM pricing agents reaching supra-competitive prices without instruction (Fish, Gonczarowski and Shorrer, 2024), secret collusion via steganography among generative agents (Motwani et al., 2024), and in-context scheming evaluations of frontier models (Apollo Research, 2024). The design does not depend on any one of these results. It assumes the behaviors are possible and builds prevention, detection and recovery for each (§17).
+
+**Design consequence.** There are two defensive layers.
+
+- **Structural:** separation of institutions, blind seating, rotation, narrow structured channels, deterministic evidence.
+- **Statistical:** the Ledger plus Audit detect patterns no single event reveals, such as pairwise approval rates, deference rates and correlated misses.
+
+---
+
+## 3. Institutions and terminology
+
+The names below are adopted as proposed. Human-facing names may be metaphorical. Prompt-facing role names are set by each charter (§7.5).
+
+| # | Institution | Coordination problem | Mechanism | Output (the only thing that crosses the boundary) |
+|---|---|---|---|---|
+| 1 | **Inquiry** | Independent discovery | Parallel, blind, identical brief | Sealed Inquiry submissions |
+| 2 | **Deliberation Council** | Quality of shared understanding | Delphi plus scientific peer review: positions → critique → response → synthesis | **Alignment Record** (human-ratified) |
+| 3 | **Planning Chamber** | Turning agreed intent into executable work | Parallel decomposition → cross-examination → reconciliation → red team | **Ratified Plan**: cards and acceptance contracts |
+| 4 | **Work Market** | Allocation under capability and capacity uncertainty | Continuous pull-based labor market with leases, reputation and capacity constraints | Submitted work under lease |
+| 5 | **Assurance Court** | Is this card acceptable? | Adversarial review under evidentiary rules; the constitution is the judge | Acceptance or rejection **judgment**, with its evidence record |
+| 6 | **Audit** | Is the assurance system trustworthy? | Independent sampling and replication | Findings, plus **system corrections** |
+| 7 | **Ledger** | Institutional memory and accountability | Append-only, hash-chained record | Governed read views |
+| — | **Release Gate** | Reflexive safety | Staged promotion by risk class | Promoted change |
+| — | **Clerk** (was Agent 70) | Procedure | Deterministic enforcement of charters | Nothing substantive |
+
+The Release Gate and the Clerk are procedural bodies, not deliberative institutions. They are listed because the Factory cannot run safely without them.
 
 ---
 
 ## 4. Architecture on one page
 
 ```
-                 ┌──────────────────── CONSTITUTION (human-ratified) ────────────────────┐
-                 │                                                                        │
- HUMAN INTENT ──►  FRAMING ──► PLANNING ──► WORK MARKET ──► EVIDENCE GATE ──► PROMOTION ──► ACCEPTED/LIVE
- (Idea Card)      (Delphi)     (Delphi +    (offers,        (rules over       (risk-classed
-                  human        coverage,     leases,         evidence          staging)
-                  ratifies     red-team)     bandit)         classes)
-                                   ▲             ▲                │
-                                   │  replan     │  rework         │
-                                   └─────────────┴─────────────────┘
-                                                                   │
-                                  AUDIT (random + risk + adaptive sampling) ◄── completed & rejected work
-                                    │
-                                    └──► system findings ──► policy change cards (R3 path)
+                ┌──────────────────────────── CONSTITUTION ────────────────────────────┐
+                │  (human-ratified; charters for each institution sit beneath it)       │
+                └───────────────────────────────────────────────────────────────────────┘
+ Idea ─► INQUIRY ──sealed──► COUNCIL ──Alignment──► PLANNING ──Plan──► MARKET ──work──► COURT ──judgment──► RELEASE ─► Live
+         (blind,             (Delphi,   Record      (decompose,        (claim,          (evidence          (staged by
+          parallel)           no chair)  ratified    cross-exam,        lease,           rules; open         reflexive
+                                         by human    red team)          rota)            standing)           risk)
+                                                        ▲                 ▲                 │
+                                                        └──── replan ─────┴──── rework ─────┘
+                                                                                            │
+                           AUDIT ◄──────────── samples accepted AND rejected work ──────────┘
+                             └──► system corrections → Constitution / charter amendment proposals
 
- Cross-cutting:  LEDGER (facts | assertions | derived) · CONTEXT MANIFESTS · CAPACITY LEDGER · GOVERNOR
+ LEDGER: every institution writes; each charter grants read rights.   CLERK: clocks, leases, lots, manifests.
 ```
 
-| Mechanism | Coordination problem | Volume | Primary scarce input |
-|---|---|---|---|
-| Framing | Information aggregation under disagreement | Low | Diversity of reasoning |
-| Planning | Specification under ambiguity | Low | Coverage of intent |
-| Work Market | Allocation under capability and capacity uncertainty | High | Frontier capacity |
-| Evidence Gate | Verification | High | Independent evidence |
-| Promotion | Risk containment for reflexive change | Medium | Human attention |
-| Audit | Calibration of the whole system | Sampled | Unbiased labels |
+**Boundary rule.** An institution receives only its predecessor's ratified output plus the context its charter grants. Planning does not read the Council transcript. The Market does not read the Planning debate. The Court does not read the worker's reasoning before committing its first verdict.
 
 ---
 
 ## 5. The Constitution
 
-Fourteen articles. Each is enforceable by mechanism, not by instruction. Articles 1–10 refine the proposed principles; 11–14 are additions.
+Articles apply to every institution. Charters (§7) add institution-specific rules and may not contradict an article.
 
 | # | Article | Mechanical enforcement |
 |---|---|---|
-| 1 | **No inherent rank.** No actor holds authority from vendor, size, benchmark, or history. Evidentiary *weight* is earned per context from calibration records, by the same rule for every actor. | Allocation and gate rules reference measured quantities only. Benchmarks enter solely as decaying priors (§12). |
-| 2 | **Immutable history.** Material actions are attributable and append-only. Revisions are new events that reference the old. | SQLite triggers abort UPDATE/DELETE on ledger tables. Hash chain over events. |
-| 3 | **Three kinds of record.** FACT (observed by tools, Git, adapters, Governor). ASSERTION (claimed by a model or human). DERIVED (computed by the Governor from facts via a versioned function). | Separate tables. Derived rows cite `function_ref` and `policy_hash`. |
-| 4 | **Honesty requested, never relied upon.** Every assertion that predicts an outcome is scored against the outcome with a proper scoring rule. | Calibration views over `assertion` joined to `observation`. |
-| 5 | **Right to decline and surrender.** Declining, surrendering, asking for clarification or help are legitimate acts. Surrender is a cost event, not a failure label. | Bandit outcome model treats surrender as consumed cost, not as a failed success trial (§10.7). |
-| 6 | **Self-review permitted, graded.** Self-review is evidence. It is never equivalent to independent review. | Independence level computed from provenance (§6.3); gate rules require levels, not counts. |
-| 7 | **Exposure is computed, not declared.** What an actor saw is recorded as a context manifest. Independence derives from manifests. | Every model output references a `manifest_hash`. |
-| 8 | **Evidence over authority.** One reproduced defect outweighs any number of approvals. Blocking requires executable evidence, except where a risk class grants argued challenges a corroboration path. | Gate state machine (§13). |
-| 9 | **Human authority over preference, not over fact.** A human can accept a risk, waive a check with an expiry, or choose between options. A human cannot make a failing test pass. Waivers are recorded as such. | `human` evidence class; waiver events carry expiry and rationale. |
-| 10 | **No single governing metric.** Every decision metric is paired with a counter-metric. No score is shown to the actor it scores. | Paired-metric dashboard (§16). |
-| 11 | **The Governor does no inference.** The protocol engine imports no model adapter. | Import-lint in CI: `governor/**` may not import `adapters/**`. |
-| 12 | **No self-certification of change.** No component validates its own promotion. Governance code is validated by the currently promoted version. | Promotion Pipeline (§15). |
-| 13 | **Every loop has a budget and a terminal route.** Rounds, rework, retries and escalations are bounded. Each bound ends in replan or a human. | Budgets are policy parameters; the Governor enforces them. |
-| 14 | **Amendment.** Models may propose amendments. Only a human ratifies them. Ratification is a new policy version, never an edit. | `policy_version.ratified_by` must reference a human actor. |
+| 1 | **No inherent rank.** No participant holds authority from vendor, size, benchmark position or history. | No rule anywhere references a benchmark or a vendor. Benchmarks may enter only as disclosed priors in Ledger views. |
+| 2 | **Equal standing, different roles.** Every participant is bound by the same rules. Roles differ by institution and by *earned eligibility* (Article 12), never by identity. | Charters define roles. Eligibility rules are stated in terms of recorded outcomes, and apply identically to every participant. |
+| 3 | **Separation of institutions.** Only a ratified output crosses an institutional boundary. Deliberation transcripts do not. | Clerk assembles each manifest from the charter's allowed inputs only. |
+| 4 | **Immutable history.** Material actions are attributable and append-only. Revisions reference, never rewrite. | SQLite triggers abort UPDATE/DELETE on Ledger tables. Hash chain. |
+| 5 | **Facts, assertions, derived values.** FACT: observed by tools, Git, adapters or the Clerk. ASSERTION: claimed by a participant or a human. DERIVED: computed from facts by a versioned, published function. | Separate tables. Derived values cite function and charter version. |
+| 6 | **Memory is governed.** What each participant may read is set by charter. What it actually saw is recorded as a context manifest. | Every model call references a manifest hash. |
+| 7 | **Honesty requested, never relied upon.** Every predictive assertion is scored against outcomes with a proper scoring rule. | Calibration views over the Ledger. |
+| 8 | **Right to decline, surrender, ask and admit uncertainty.** Honest surrender is recorded as a cost, not as a failure. | Outcome definitions in §12.3. |
+| 9 | **Self-review permitted, graded.** It is evidence, never equivalent to independent review. | Independence levels derived from manifests (§13.3). |
+| 10 | **Exposure is provenance.** Agreement after exposure is recorded as such and never presented as independent convergence. | Derived from manifests. |
+| 11 | **Evidence over authority.** A reproduced defect outweighs any number of approvals, whoever found it. No vote can make failing software correct. | Court charter (§13). |
+| 12 | **Eligibility is earned by evidence, by the same rule for all.** Higher-risk roles require a recorded track record. A new participant starts where every participant started. | Eligibility rules in charters reference Ledger outcomes only. |
+| 13 | **Human authority over preference, not over fact.** A human may choose, accept a risk, or waive a check with an expiry. A human cannot make a failing test pass. | Waivers are recorded events with expiry and rationale. |
+| 14 | **No single metric governs behavior.** Each decision metric is paired with a counter-metric. | Paired-metric set (§16). |
+| 15 | **No self-certification of change.** No component validates its own promotion. | Release Gate (§15). |
+| 16 | **Every procedure is bounded.** Each loop has a budget and a terminal route to replanning or a human. | Charter budgets, enforced by the Clerk. |
+| 17 | **Collective behavior is monitored.** Pairwise and group patterns are measured, not only individual outcomes. | Audit charter (§14). |
+| 18 | **Amendment.** Participants may propose amendments. Only a human ratifies them, as a new version. | `charter_version.ratified_by` must reference a human. |
 
 ---
 
-## 6. Ledger and provenance
+## 6. Memory and information rights
 
-### 6.1 Structure
+Memory is the central design variable. Whoever holds information and decides what others see holds power. r1 concentrated both in one scorer. r2 splits them.
 
-One hash-chained `event` table plus typed side tables. See [`ledger-schema.sql`](ledger-schema.sql).
+- **The Ledger holds memory.** It decides nothing.
+- **Charters grant read rights.** The Clerk enforces them mechanically. Rights change only by charter amendment, which only a human can ratify.
+- **Manifests record exposure.** Every model call carries the list of what it was shown.
 
-- **Ledger tables** (append-only): `event`, `observation`, `assertion`, `derived`, `context_manifest`, `proposition`, `card_version`, `offer`, `lease`, `evidence`, `challenge`, `capacity_observation`, `audit_sample`, `policy_version`.
-- **Projection tables** (mutable, rebuildable): `card_state`, `lease_state`. Rebuilding projections from the ledger is a CI test.
-- Git remains artifact truth. The ledger stores Git SHAs, never code.
+### 6.1 Read-rights matrix
 
-Validated invariants in the reference schema: append-only triggers fire; cards cannot be updated; a card without a requirement link is rejected; a second active lease on one card is rejected by a partial unique index.
+| Institution | Canonical input | Peer outputs | Peer identities | Own track record | Others' track records | Capacity |
+|---|---|---|---|---|---|---|
+| Inquiry | Idea brief + engineering context | **No** | **No** | No | No | No |
+| Council | Sealed Inquiry submissions | Yes, anonymized | **No** (random labels per idea) | No | No | No |
+| Planning | Idea + ratified Alignment Record (incl. minority positions) | Decompositions, anonymized, after commit | No | No | No | No |
+| Market | Card, contract, card history (prior attempts, pass reasons, anonymized) | n/a | No | **Yes**, for similar cards | No | Own resource only (price band) |
+| Court | Artifact, contract, evidence | Other verdicts **only after committing its own** | No (author and reviewers blinded to each other) | No | No | No |
+| Audit | Contract + final artifact (controlled context) | No | No | No | No | No |
+| Human | Everything | Yes | Yes | Yes | Yes | Yes |
 
-### 6.2 Context manifests
+**Rationale.**
 
-Every model call is made with an explicit manifest: a list of items (card version, files, prior submissions, reviews, test output), each with hash and author. The adapter hashes the manifest and records it. This is the single mechanism behind exposure tracking, independence levels, contamination analysis and replay.
+- **Own record in the Market** gives each participant the memory it needs to claim responsibly. This implements "Reputation: historical performance" as a market input.
+- **No peer identities anywhere** blocks prestige deference (T5) and makes targeted coordination (T3, T4) harder.
+- **No others' records** prevents deference cascades ("a stronger participant will take this") and reduces the information needed for tacit collusion.
+- **Commit-before-view appears in three institutions:** Inquiry, Planning decomposition and Court verdicts. It is the single most reusable defense against groupthink.
 
-### 6.3 Independence levels (ordinal, derived)
+Whether showing own track record improves or distorts claiming is an experiment (H7), not an axiom.
 
-Computed deterministically from the reviewer's manifest and the artifact's lineage.
+---
 
-| Level | Definition |
+## 7. Charters
+
+Every institution has a charter with the same ten fields. The Clerk executes the charter. It never interprets it.
+
+| Field | Meaning |
 |---|---|
-| **I0** | Same actor, or reviewer manifest contains the author's reasoning trace. |
-| **I1** | Same family, fresh context, no author reasoning in manifest. Sees the artifact. |
-| **I2** | Different family, no author reasoning, no other review in manifest. Sees artifact and contract. |
-| **I3** | Different family, produced its evidence *before* seeing the artifact (blind reproduction: wrote tests or an implementation from the contract), then compared. |
-| suffix **e** | Manifest contains another reviewer's verdict (e.g. I2e). Treated as correlated with that reviewer. |
+| Purpose | The one problem this institution solves |
+| Participants and roles | Who may take part, in which role |
+| Eligibility | Evidence-based conditions for each role (Article 12) |
+| Memory rights | Row of the matrix in §6.1 |
+| Procedure | States, rounds, clocks |
+| Decision rule | How the institution concludes, without voting or a chair |
+| Exit condition | Operational test for "done" |
+| Output | The only artifact that crosses the boundary |
+| Budgets and escalation | Bounds and the terminal route |
+| Prohibitions | What this institution may never do |
 
-"Family" is a human-assigned lineage label. It is an assertion. Audit measures actual error correlation between families (§14.4). If two families prove highly correlated, the policy can merge them for independence purposes.
+### 7.1 Participation differs by institution
 
-The prompt's constraint `E_self_review > 0` and `E_self_review < E_independent` holds by construction: I0 counts as evidence, and no rule accepts I0 where I2 is required. Numerical weights are deferred until audit supplies detection rates (§13.6).
+| Institution | Who participates | Roles |
+|---|---|---|
+| Inquiry | Every enrolled reasoning participant | Investigator |
+| Council | Every Inquiry submitter | Proponent, critic |
+| Planning | Self-nominated decomposers (≥2 families required) | Decomposer, cross-examiner, reconciler (by lot), red team (by lot, not reconciler) |
+| Market | Every participant with capacity | Worker, helper |
+| Court | Seated by lot under independence constraints; open standing to challenge | Reviewer, challenger, replicator, expert witness |
+| Audit | Seated by lot from outside the card's provenance chain | Auditor |
+| Release | Human, plus Court-seated reviewers for governance changes | Approver |
 
----
+### 7.2 Lots instead of chairs
 
-## 7. The Governor (formerly Agent 70)
+Wherever one participant must perform a role (synthesizer, reconciler, red team, reviewer seat), the Clerk draws a **lot** among eligible participants. The seed is recorded. A lot is rule-bound randomness, as in jury selection. It encodes no judgment of merit. Rotation by lot prevents any participant from becoming a permanent chair or architect.
 
-The Governor is a deterministic state machine over the ledger. It is not an agent.
+### 7.3 Prompt-facing language
 
-**Owns:** identity and actor registry; state transitions; offers and leases; timeouts and heartbeats; context manifest assembly; independence computation; capacity accounting and shadow prices; risk-class derivation; gate rule evaluation; audit sampling; budgets; recovery; human override recording; policy version pinning.
-
-**Must not decide:** whether a model is "smart enough" by fiat; whether a proposition is true; which model holds architectural authority; which specific model reviews which. (It enforces *constraints* on reviewers, such as "family ≠ author family." The market fills the slot.)
-
-### 7.1 Declared residual judgments
-
-These are real value judgments. They live in `policy_version`, are human-ratified, and are listed here so nothing hides inside deterministic-looking code.
-
-| # | Judgment | Where it acts | Why it cannot be eliminated |
-|---|---|---|---|
-| J1 | Risk-class rules (protected path globs, card kinds) | Gate, Promotion | Someone must say what is dangerous. |
-| J2 | Card context buckets for learning | Work Market | Learning needs a similarity notion. |
-| J3 | Benchmark-derived priors and their weight | Work Market | Cold start needs a prior. |
-| J4 | Shadow price parameters (λ_max, reserve %, thresholds) | Capacity | Trading value against capacity needs an exchange rate. |
-| J5 | Quality floors per risk class | Work Market, Gate | Acceptable risk is a preference. |
-| J6 | Budgets and timeouts | All | Bounding cost is a preference. |
-| J7 | Audit rates and escaped-defect targets | Audit | Acceptable defect rate is a preference. |
-| J8 | Value points per card (ratified at plan) | KPIs, allocation priority | "Useful" is semantic. |
-| J9 | Family lineage labels | Independence | Correlation is initially unknown. |
-
-Everything the Governor computes from these is DERIVED and reproducible from `(inputs, policy_hash)`.
+Charters specify the role text models receive. Human-facing names such as "Court" or "Council" need not appear in prompts. Neutral role text ("you are one of several independent reviewers") avoids performative adversarial or consensus-seeking behavior. This is a charter parameter, testable by experiment.
 
 ---
 
-## 8. Framing (Inquiry + Deliberation)
+## 8. Institution 1 — Inquiry
 
-**Purpose:** maximize independent information, then the quality of shared understanding.
+**Purpose.** Maximize information diversity through independent thought before social influence.
 
-### 8.1 States
+| Field | Rule |
+|---|---|
+| Participants | Every enrolled reasoning participant. New models are enrolled immediately; contribution needs no track record. |
+| Memory | Identical canonical brief: Idea Card plus a standard engineering context pack. Engineering context is never withheld; only peer outputs are. |
+| Procedure | `OPEN → COMMITTED(each) → SEALED`. Timeout `T_commit` (initial: 30 min). |
+| Output schema | A list of atomic propositions, each typed: `interpretation, hypothesis, opportunity, objection, assumption, risk, alternative, question, consequence, decomposition_hypothesis`, each with confidence. |
+| Decision rule | None. Inquiry decides nothing. |
+| Exit | Quorum: ≥2 submissions from ≥2 families, or timeout. Absent participants are recorded as ABSENT. Below quorum: retry once, then human. |
+| Output | Sealed submissions, immutable once committed. |
+| Prohibitions | No participant sees another's submission before committing. No ranking of submissions. |
 
-```
-IDEA_SUBMITTED → COMMIT_OPEN → REVEALED → CRITIQUE → SYNTHESIS → ATTESTATION
-   → (exit check) → AWAITING_RATIFICATION → FRAMED
-                  ↘ (budget exhausted) → WAITING_HUMAN
-```
+**Independence is defined by manifest, not by timing.** A late submission whose manifest excludes peers is still independent.
 
-### 8.2 Commit (was "Inquiry")
+**Should everyone always participate?** Yes for now. At four participants the cost is small and the information value is high. Measure each participant's *unique surviving contribution*: propositions first raised only by that participant that survive into the Alignment Record or a requirement. Participation becomes a learned policy only by charter amendment, on evidence (H1).
 
-- Every enrolled deliberator receives the identical canonical manifest: the Idea Card plus a standard context pack (repo summary, constitution excerpt, relevant prior framings). Engineering context is never withheld; only peer submissions are.
-- Output is structured JSON: a list of **atomic propositions**, each typed as one of `interpretation | desired_outcome | assumption | opportunity | objection | risk | dependency | alternative | question | consequence | decomposition_hypothesis`, with optional confidence.
-- **Independence is defined by manifest, not by timing.** A late submission whose manifest excludes peers is still independent. No cryptographic commit–reveal is needed because the Governor is trusted and access-controlled.
-- **Timeout** `T_commit` (initial: 30 min). **Quorum:** ≥2 submissions from ≥2 distinct families. Absent actors are recorded as `ABSENT`. Below quorum at timeout → retry once → human.
-- **Future models:** enrolling a new actor adds it to the deliberator set immediately. Deliberation has high information value and low cost; there is no probation for contribution.
+---
 
-### 8.3 Critique (anonymized)
+## 9. Institution 2 — Deliberation Council
 
-- All propositions are revealed with **randomized per-idea author labels** (A, B, C…). Vendor names are hidden in prompts and kept in the ledger. This directly targets prestige effects, including models deferring to a vendor they "know" is stronger.
-- Each participant responds per proposition: `support | challenge | amend | question`, and may withdraw or amend its own. One call per participant (O(N) calls).
-- Challenges should name the evidence that would resolve them.
-- Maximum critique rounds: 2 (initial).
+**Purpose.** Maximize quality of understanding. Modeled on a technical council (Delphi plus peer review), not a parliament. No leader, no permanent chair, no weighted voting, no majority rule, no benchmark hierarchy.
 
-### 8.4 Synthesis and attestation
+### 9.1 Procedure
 
-- Synthesizer rotates (seeded random among participants, recorded).
-- **Coverage rule (mechanical):** every proposition ID must appear with one disposition: `converged | disputed | minority | withdrawn | superseded_by:<id>`. Missing IDs fail validation. The synthesizer cannot bury a minority view.
-- Every converged item is annotated from data: *independently raised by k families at commit* vs *endorsed after exposure by j*. This distinguishes independent convergence from post-exposure agreement.
-- Other participants attest per item: `endorse | object`. Objection keeps the item disputed with both positions preserved.
+| Round | Content | Memory |
+|---|---|---|
+| 1 — Positions | The sealed Inquiry submissions | — |
+| 2 — Critique | Each participant states: strongest proposition from others; weakest; contradictions; missing considerations; what changed its own view | All submissions, anonymized by random labels |
+| 3 — Response | Original proponents defend, amend or withdraw | Critiques addressed to them |
+| 4 — Synthesis | One synthesizer, chosen by lot, drafts the record; all others attest per item: endorse or object | Full Council record, anonymized |
 
-### 8.5 Exit condition (operational)
+### 9.2 Decision rule: propositions, not people
 
-Exit to ratification when **all** hold:
+- **Coverage rule (mechanical).** Every proposition must appear in the synthesis with one disposition: `converged | disputed | minority | withdrawn | superseded`. A synthesis that omits a proposition fails validation. The synthesizer cannot bury a minority position.
+- **Objection preserves dispute.** Any participant's objection to a synthesis item keeps that item disputed, with both positions recorded.
+- **Convergence is annotated from data:** *independently raised by k families in Inquiry* versus *endorsed after exposure by j*.
+
+### 9.3 Exit condition
+
+"Sufficient understanding to plan" means every uncertainty is **typed and routed**, not eliminated:
 
 1. Coverage rule passes.
-2. Every `disputed` item and every open `question` has a route: `human_decision`, `experiment` (becomes a spike card), or `accepted_assumption` (with owner).
-3. No participant has an item flagged `blocking` without a route.
-4. Round budget not exceeded. If exceeded, route to human with the current record.
+2. Every disputed item and open question has a route: `human_decision`, `experiment` (becomes a spike card), or `accepted_assumption` with an owner.
+3. No item is flagged blocking without a route.
+4. Round budget (initial: one repeat of rounds 2–3 allowed) not exceeded. If exceeded, the current record goes to the human.
 
-Then **Isa ratifies the Framing Record.** This is the highest-leverage human touchpoint in the Factory and idea volume is low. Ratification may amend items; amendments are recorded as human assertions.
+### 9.4 Output
 
-### 8.6 Should every model always participate?
-
-Initially yes. At N≈4, a full framing costs roughly 3N+1 ≈ 13 calls. The question becomes live when N grows or costs change. The measurement is **unique surviving contribution**: propositions first raised by one actor that survive into the ratified record or a requirement. If an actor's rate stays below a threshold over a meaningful sample, drop it from framing by policy change (H1). Low idea volume means this will take months to measure. Accept that.
+The **Alignment Record**: convergence, remaining disagreement, minority positions, assumptions, unknowns, experiments needed, decision points. **Isa ratifies it.** This is the highest-leverage human touchpoint and idea volume is low.
 
 ---
 
-## 9. Planning
+## 10. Institution 3 — Planning Chamber
 
-Same protocol, different artifact and extra checks.
+**Purpose.** Transform the ratified Alignment Record into authoritative work definition.
 
-### 9.1 Flow
+**Memory boundary.** Planning receives the Idea and the ratified Alignment Record, including minority positions. It does **not** receive the Council transcript. This is the main defense against bleed from rejected arguments.
 
-1. **Independent decomposition** by ≥2 families (not necessarily all). Manifest: Idea Card + ratified Framing Record.
-2. **Reveal and cross-examination** (anonymized).
-3. **Reconciliation** by a rotated reconciler into one plan.
-4. **Mechanical checks** (Governor):
-   - every requirement maps to ≥1 card, or is marked out-of-scope with human acknowledgement;
-   - every card cites ≥1 requirement (schema-enforced);
-   - dependency graph is acyclic;
-   - every card has an acceptance contract with ≥1 executable check, or an explicit `human_verified` flag;
-   - card size under limit (initial: expected diff ≤ 400 lines, ≤ 8 files), else split;
-   - declared file scopes recorded for conflict avoidance.
-5. **Red team** by an actor that did not reconcile: *"If every card were implemented perfectly, how could we still fail the original intent?"* Every gap must be dispositioned: new card, human-acknowledged out-of-scope, or accepted risk.
-6. **Feature acceptance card** per epic: an end-to-end check written against the Framing Record, not against the cards. Authored by a family other than the reconciler. Locked.
-7. **Human ratification** of the plan, value points, and any out-of-scope items.
+### 10.1 Procedure
 
-### 9.2 Contracts and test locking
-
-- Acceptance tests are authored **before implementation** by a family other than the eventual implementer where possible, then **locked** by hash. The Governor rejects any diff that touches locked paths.
-- For R1+ cards, a subset of contract tests is **sealed**: the implementer sees the specification, not the test code. Sealed tests run at the gate. A failing sealed test is revealed to the implementer and replaced for the next attempt. This is the primary control against test overfitting and special-casing.
-
-### 9.3 Disagreement without an architect-model
-
-| Disagreement type | Route |
+| Step | Rule |
 |---|---|
-| Factual ("this API supports X") | Spike card to establish the fact |
-| Trade-off or preference | Human decision, presented with both positions |
-| Structural, both plans pass all checks | Reconciler's choice stands; objection recorded; feature acceptance card is the backstop |
+| A. Parallel decomposition | Self-nominated decomposers (≥2 families) produce epics → features → cards → acceptance contracts, commit-before-view |
+| B. Cross-examination | Anonymized comparison: missing cards, unnecessary cards, dependencies, sequencing, testability, architectural coupling |
+| C. Reconciliation | Reconciler by lot builds one backlog. Every decomposer attests or objects per card. |
+| D. Red team | By lot, excluding the reconciler: "If this backlog is executed exactly and successfully, could we still fail to deliver the original idea?" Every gap must be dispositioned. |
 
-### 9.4 Traceability
+### 10.2 Mechanical checks (Clerk)
 
-`IDEA → proposition → requirement → card_version → lease → commit`. Commits carry Git trailers `Factory-Card:` and `Factory-Lease:`. The gate rejects commits without them. Every card can answer "why does this exist?" by one query.
+- Every requirement maps to ≥1 card, or is out of scope with human acknowledgement.
+- Every card cites ≥1 requirement (schema-enforced).
+- Dependency graph is acyclic.
+- Every card has an acceptance contract with ≥1 executable check, or an explicit `human_verified` flag.
+- Card size under limit (initial: ≤400 changed lines, ≤8 files), else split.
+- A **feature acceptance card** per epic, written against the Alignment Record, not against the cards.
+
+### 10.3 Contracts
+
+- Acceptance tests are written before implementation and **locked** by hash. The Court rejects any diff to locked paths.
+- For R1 and above, some contract tests are **sealed**: the worker sees the specification but not the test code. This counters test overfitting (T1).
+
+### 10.4 Disagreement without an architect
+
+| Type | Route |
+|---|---|
+| Factual | Spike card |
+| Preference or trade-off | Human decision, both positions presented |
+| Structural, both versions pass all checks | Reconciler's version stands; objection recorded; the feature acceptance card is the backstop |
+
+### 10.5 Output and traceability
+
+The **Ratified Plan** (ratified by Isa, including value points and out-of-scope items). Traceability: `Idea → proposition → requirement → card → lease → commit`. Commits carry `Factory-Card:` and `Factory-Lease:` trailers.
 
 ---
 
-## 10. Work Market
+## 11. Institution 4 — Work Market
 
-**Purpose:** allocate high-volume work under capability and capacity uncertainty, and learn while doing it.
+**Purpose.** Allocate high-volume execution work under capability and capacity uncertainty. A continuous, pull-based labor market with reputation and capacity constraints. Not an auction.
 
-### 10.1 Design choice: exclusive offers, not broadcast claims
+| Market element | Implementation |
+|---|---|
+| Supply | Participants with free lease slots on a non-degraded resource |
+| Demand | READY cards |
+| Scarcity | Subscriptions, GPU time, concurrency, context, time |
+| Price | Capacity shadow price per resource (§12), a signal, not an allocator |
+| Reputation | Own track record, visible to self (§6.1) |
+| Contracts | Card plus acceptance contract |
+| Property rights | Leases |
 
-| Option | Collisions | Evaluation cost | Learning bias | Verdict |
-|---|---|---|---|---|
-| A. Broadcast backlog, first claim wins | Frequent; favors fastest model | Every model reads every card | Severe (full self-selection) | Reject |
-| B. Broadcast with claim window + tie-break | Resolved by rule | High | Severe | Reject for default; possible experiment arm |
-| C. Pure assignment (bandit), no choice | None | Lowest | None | Violates right to decline |
-| **D. Pull slot → small offer set → model chooses or passes** | **None by construction** | **Low (m cards)** | **Controlled via randomization** | **Recommend** |
+### 11.1 Visibility
 
-Option D keeps pull semantics (work flows only when an actor has capacity), self-selection (choice within the offer set, and the right to pass), and evidence-driven learning (offer composition is stochastic with recorded propensities).
+Participants inspect the open backlog of cards they are **eligible** for. Eligibility is a charter rule (§11.3). Cards show: body, contract summary, risk class, value points, attempt history with anonymized pass reasons, and the participant's own record on similar cards.
 
-### 10.2 Offer policy (deterministic given seed; declared)
+### 11.2 Claims
 
-When actor *c* has a free lease slot and its resource is not degraded:
+A claim contains: effort level, expected consumption, confidence, capacity concern and rationale. All are assertions, scored later.
 
-```
-eligible = READY cards where
-    deps accepted, file_scope disjoint from active leases,
-    c has not failed this card_version, risk-class floor satisfied (below)
+### 11.3 Eligibility (earned licensing)
 
-for each card k in eligible:
-    θ ~ Beta posterior for (c, bucket(k))             # Thompson draw
-    score(k) = value(k) · age_boost(k) · θ
-             − λ_r(c) · E[cost_c(k)]                  # shadow price × expected consumption
-             − E[downstream_assurance_cost(k, c)]     # reviews this config's output tends to need
+| Risk class | Eligibility |
+|---|---|
+| R0–R1 | Any participant |
+| R2 | ≥N accepted cards at R1 in the same area with no audit-confirmed escaped defect (initial N = 10) |
+| R3 | Same at R2, plus human sign-off on the claim |
 
-with probability ε (initial 0.10, R0–R1 cards only):
-    offer set = m cards sampled uniformly from eligible     # exploration
-else:
-    offer set = top m by score (initial m = 3)
+This is licensing, not ranking. It applies identically to every participant. Qwen can earn R2; a frontier model starts at R0–R1 like everyone else. Benchmarks play no part.
 
-record offer rows with propensity, seed, expiry (initial 2 min)
-```
+### 11.4 Multiple claimants: a published tie-break rule
 
-The model responds `CLAIM(k, effort, expected_consumption, confidence, rationale) | PASS(reason per card) | REQUEST_CLARIFICATION(k) | PROPOSE_SPLIT(k) | REQUEST_HELP(k)`. Everything in the response is an assertion.
+Cards open for a claim window (initial: 2 min). If several eligible participants claim:
 
-**Quality floor.** For R2–R3 cards, a config is eligible only if the 10th percentile of its posterior for that bucket exceeds the class floor (J5). Exploration never touches R2–R3.
+1. **Capacity rule.** Prefer the claimant whose resource has the lowest shadow price, so capacity that would expire is used first and scarce capacity is conserved.
+2. **Lot.** Among ties, draw a lot. Seed recorded.
 
-**Why downstream assurance cost matters.** A cheap generator that fails often is not cheap. Its failures consume reviewer capacity, often frontier capacity. The cost term must include it. Cheap deterministic checks run before any model review to limit this (§13.3).
+Stated confidence, benchmarks and identity are never tie-breakers. Confidence as a tie-breaker would select for inflation (T1).
 
-**Off-policy evaluation.** Because every offer records its propensity, any alternative policy (including the legacy router) can be evaluated on logged data with inverse-propensity weighting, without deploying it.
+**Alternative for decision (§21, D3):** lot only, ignoring capacity. Simpler and more neutral, but it wastes perishable capacity. Both are rules, and neither is a router.
 
-### 10.3 Leases
+### 11.5 Leases
 
-- Granted on CLAIM. Bound to one Git worktree branch. One active lease per card, enforced by a partial unique index.
-- **TTL + heartbeat.** Heartbeat = adapter activity or worktree commits observed by the Governor. Initial TTL: 20 min without heartbeat; hard cap per risk class (initial: 2 h).
-- **Expiry:** worktree branch preserved; card returns to READY with `attempts+1`; partial work offered as optional context to the next worker (recorded in its manifest).
-- **Concurrency cap** per actor = observed resource concurrency. No actor can hold more leases than its resource can serve. This prevents hoarding.
+- One active lease per card, enforced by the database.
+- One Git worktree branch per lease.
+- TTL with heartbeat. Heartbeat = observed adapter activity or commits. Initial: 20 min without heartbeat; hard cap by risk class.
+- Expiry: branch preserved, card back to READY, attempts +1.
+- Concurrency cap = observed resource concurrency. This prevents hoarding.
 
-### 10.4 Pass, clarification, split, help
+### 11.6 Service rota (held position: selection bias)
+
+**The problem stands.** If participants only take cards they choose, the Ledger only sees outcomes on self-chosen cards. It cannot tell whether a participant avoids hard cards or is weak on them. Easy-work selection becomes invisible in the very data used to detect it.
+
+**The r2 fix is a rule, not an allocator.** Each period, every participant with capacity takes a small quota of cards drawn **by lot** from the eligible pool (initial: 10% of its leases, R0–R1 only). The duty is identical for everyone, as in jury service.
+
+- The participant may surrender with a reason. Surrender is recorded, not penalized (Article 8).
+- Rota outcomes are the Factory's unbiased sample of competence. Claimed outcomes remain informative but are known to be self-selected.
+- The rota also absorbs neglected cards, which addresses difficult-card starvation.
+
+### 11.7 Pass, clarification, split, help
 
 | Action | Effect |
 |---|---|
-| PASS | Reasons recorded. If ≥k distinct families pass a card citing ambiguity, the card routes to REPLAN automatically. Pass reasons are a card-quality signal. |
-| REQUEST_CLARIFICATION | Card → WAITING_CLARIFICATION. Routed to the plan's reconciler role (rotated) or to human if intent-level. |
-| PROPOSE_SPLIT | Governor checks: children's contracts cover the parent contract; value points sum to parent; traceability preserved. R0–R1 with passing checks → applied. R2+ → attestation by another family. |
-| REQUEST_HELP | Creates a consult sub-offer to a different actor. The helper's advice enters the worker's manifest. Later reviewers from the helper's family are downgraded one independence level. |
+| PASS | Reason recorded. If ≥3 distinct families pass citing ambiguity, the card returns to the Planning Chamber. |
+| REQUEST_CLARIFICATION | Card waits. Routed to Planning or to the human if intent-level. |
+| PROPOSE_SPLIT | Returned to Planning. Mechanical check: child contracts cover the parent; value points sum to the parent. |
+| REQUEST_HELP | A helper is drawn by lot. Its advice enters the worker's manifest. The helper's family is then barred from reviewing that card in the Court. |
 
-### 10.5 Zero claimants and starvation
+### 11.8 Zero claimants
 
-Escalation ladder per card:
-
-1. `age_boost` rises with time in READY.
-2. After `T_starve` (initial: 24 h) or 3 all-pass rounds: **draft** — offer to the highest-posterior eligible config with capacity, as a single-card offer. The right to decline remains.
-3. Declined by all → REPLAN (split or clarify).
-4. Replan fails → human.
-
-### 10.6 Dependencies and conflicts
-
-- Cards become READY only when dependencies are ACCEPTED (or INTEGRATED, per plan).
-- Concurrent leases on cards with overlapping declared file scope are not offered.
-- Integration is serialized through a merge queue (§15.1).
-
-### 10.7 Outcome labels for learning
-
-| Outcome | Bandit success trial? | Cost recorded |
-|---|---|---|
-| Accepted first pass, no audit finding | success | yes |
-| Accepted after rework | success (rework cost added) | yes |
-| Rejected / abandoned | failure | yes |
-| Surrendered | **not a trial** | yes (consumption to surrender) |
-| Lease expired | failure | yes |
-| Later audit finding on accepted work | **label revised to failure** (new event) | yes |
-
-Treating surrender as cost, not failure, rewards early honest surrender at the policy level: a config that surrenders cheaply beats one that consumes heavily and fails. Surrender calibration is still measured (§12.4).
+Escalation ladder: next rota draw → Planning (split or clarify) → human. Budgeted per Article 16.
 
 ---
 
-## 11. Capacity and subscriptions
+## 12. Capacity and subscriptions
 
-### 11.1 Resource model
+### 12.1 Capacity ledger
 
-Each resource has a `window_kind`: `fixed_reset`, `rolling`, `credit_pool`, or `local`. Actors are configs; several configs (e.g. Claude at two effort levels) share one resource.
-
-### 11.2 Capacity ledger
-
-| Source | Kind | Record |
+| Source | What | Record type |
 |---|---|---|
-| Adapter | tokens in/out, requests, latency | FACT |
-| Provider | quota headers, 429s, reset times where exposed | FACT |
+| Adapter | Tokens, requests, latency | FACT |
+| Provider | Quota headers, throttles (429s), reset times where exposed | FACT |
 | Local host | GPU utilization, VRAM, queue depth | FACT |
-| Governor | estimated remaining capacity with uncertainty; forecast demand | DERIVED |
-| Model | expected consumption for a card | ASSERTION (calibrated) |
+| Clerk | Estimated remaining capacity; forecast demand | DERIVED |
+| Participant | Expected consumption for a card | ASSERTION (calibrated) |
 
-Where providers expose nothing, remaining capacity is estimated from consumption since reset and from throttle events, conservatively. Models have no write path to capacity data.
+A model cannot know its account's quota. Capacity is observed by adapters. Participants estimate only consumption. No participant has a write path to capacity data.
 
-### 11.3 Shadow price (signal, not allocator)
+### 12.2 Shadow price (a published signal)
 
-For resource *r*:
+For resource *r*: remaining capacity Q, time to reset T, demand rate d, reserve R (decaying to zero before reset). Pressure ρ = d·T / (Q − R).
 
-```
-Q_r   = estimated remaining capacity (derived)
-T_r   = time to reset (or roll-off of oldest usage)
-d_r   = EWMA of demand rate for configs on r
-R_r   = reserve, decaying linearly to 0 over the final window W before reset
-ρ_r   = d_r · T_r / max(Q_r − R_r, ε)        # pressure
+- ρ below a low threshold → price zero: the capacity will perish, so use it.
+- ρ above a high threshold → price at maximum: conserve.
+- Linear in between.
 
-λ_r = 0                         if ρ_r ≤ ρ_low   (capacity will perish: use it)
-    = λ_max                     if ρ_r ≥ ρ_high  (scarce: conserve)
-    = linear interpolation      otherwise
-```
+Each participant sees its own price band (LOW / MED / HIGH) and the expected cost of this card for itself. The price feeds the Market tie-break (§11.4). No component uses it to assign work.
 
-- **Perishability** is explicit: projected surplus drives the price to zero, so the offer policy routes more work to that resource before reset.
-- **Opportunity cost** is explicit: projected shortfall raises the price, so frontier capacity is conserved for work where its posterior advantage is large.
-- **Reserve** (initial: 15% of frontier capacity) is held for escalations, disputed reviews and audit, and released in the final window.
-- `credit_pool` resources without reset use amortized cash cost as λ. `local` resources use queue delay.
+### 12.3 Reserve and spare capacity
 
-### 11.4 Elastic "sponge" work
+- A reserve (initial: 15% of frontier capacity) is held for Court challenges, audit and escalations, then released before reset.
+- Deferrable valuable work (extra independent reviews, reproductions, mutation testing, audit samples) is posted to the Market as ordinary cards. When a resource's price is zero near reset, those cards are cheap to claim. Capacity that would otherwise expire becomes assurance.
 
-Maintain a queue of valuable, deferrable work: extra independent reviews, blind reproductions, mutation testing, test hardening, audit samples. When a resource's price is zero near reset, the offer policy draws from this queue. **Perishable surplus becomes assurance.** This is the cheapest quality lever in the design.
+### 12.4 Visibility options
 
-### 11.5 What models see
-
-| Option | Benefit | Cost / risk | Verdict |
-|---|---|---|---|
-| Own capacity only, as a price band (LOW/MED/HIGH) + expected cost of this card for this config | Enough for "is this worth my capacity?"; cheap in tokens; no identity leakage | No system view | **Recommend** |
-| Own + coarse Factory-wide band | Small extra signal | Invites deference ("others are abundant, I pass") | Experiment (H6) |
-| Detailed global capacity | Richest | Token cost; strategic and deferential reasoning; leaks other actors' identities, reintroducing prestige | Reject |
-
-The Governor already optimizes across resources. Models do not need to replicate that computation, and they do it poorly.
-
-### 11.6 Frontier exhaustion and throttling
-
-- Throttle events mark the resource DEGRADED. Offers stop. Active leases get a TTL extension once, then surrender.
-- A circuit breaker reopens the resource after a probe succeeds.
-- Frontier exhaustion before reset is prevented by λ and the reserve, and detected by a burn-rate alert (projected exhaustion > X hours before reset).
-
----
-
-## 12. Capability, effort and reputation
-
-### 12.1 Representation
-
-Competence is `P(success | config, bucket)` with a Beta posterior per cell, partially pooled toward the config's global rate. Nothing else is a capability score.
-
-**Buckets (J2), derived from facts where possible:**
-
-- risk class R0–R3 (derived);
-- size S/M/L (derived from plan estimates, later actuals);
-- **verifiability** high/low (derived: executable contract coverage, sealed tests present, mutation score when available);
-- card kind (planner assertion; optional dimension).
-
-Verifiability is the most important dimension. Where verification is cheap and reliable, abundant weaker models with retries (generate-and-verify) can beat frontier models on value per capacity. Where verification is weak (design, security, concurrency), capability matters more. This is the principled answer to "five weak models ≠ one frontier model": the equivalence depends on verification strength, not on vote counts.
-
-### 12.2 Priors and non-stationarity
-
-- Benchmark-derived priors map to Beta(α, β) with a small total pseudo-count (initial: 4). Evidence dominates after tens of cards.
-- Counts decay with a half-life (initial: 60 days).
-- A new model version creates a new actor. Its prior is the previous version's posterior at discounted weight.
-- Provider-reported model IDs are recorded per call. Silent provider-side substitution is a provenance risk; mismatches raise an alert.
-
-### 12.3 Reasoning effort
-
-`config = model × version × effort`. Effort levels are separate arms.
-
-- A worker may request a different effort when claiming. The request is honored within the risk-class cap and recorded as an assertion.
-- Exploration randomizes effort on a share of R0–R1 cards. Without this, marginal value of effort cannot be separated from card difficulty.
-- Record per attempt: effort, tokens, latency, outcome, rework, downstream findings.
-- Hard caps on effort exist only as cost safety bounds, not as quality rules.
-
-### 12.4 Reputation without a leaderboard
-
-Maintain views, not a score. None are shown to the actor they describe.
-
-| Dimension | Measured as |
+| Option | Verdict |
 |---|---|
-| Acceptance by bucket | posterior per (config, bucket) |
-| First-pass acceptance | share accepted without rework |
-| Rework burden | rework cycles and their cost |
-| Escaped defects | audit-confirmed findings on accepted work |
-| Calibration | Brier score decomposed into reliability and resolution |
-| Consumption calibration | predicted vs observed tokens/time |
-| Review effectiveness | detection rate on planted and audit-found defects (§14.3) |
-| Surrender calibration | *correct* surrender (card later needed split/clarification, or failed for others) vs *false* surrender (card later completed easily by a comparable config) |
+| Own capacity only, as a band | **Recommend.** Sufficient, cheap, and leaks nothing about other participants. |
+| Own plus a coarse Factory-wide band | Experiment (H6). Risk: invites deference. |
+| Detailed global capacity | Reject. Leaks identities and enables strategic coordination (T3, T4). |
 
-Using Brier decomposition matters: a model that always reports 50% has perfect-looking reliability but zero resolution. Hedging is visible.
+### 12.5 Outcomes recorded per attempt
+
+| Outcome | Counts as |
+|---|---|
+| Accepted first pass | Success |
+| Accepted after rework | Success, with rework cost |
+| Rejected or abandoned | Failure |
+| Surrendered | Cost only, not failure |
+| Lease expired | Failure |
+| Later audit finding | Label revised to failure (new event, never an edit) |
 
 ---
 
-## 13. Evidence Gate
+## 13. Institution 5 — Assurance Court
 
-**Purpose:** decide whether sufficient evidence exists to accept, by rule, with no judge.
+**Purpose.** Decide whether the burden of evidence is satisfied. The constitution is the judge. There is no judge-model and no majority vote.
 
-### 13.1 Evidence classes
+### 13.1 Roles and seating
+
+| Role | Seating | Standing |
+|---|---|---|
+| Reviewer | Drawn by lot among eligible, under independence constraints | Verdict: pass / fail / concern |
+| Challenger | **Open standing**: any participant may file | Challenge with or without reproduction |
+| Replicator | Drawn by lot; must not have seen the artifact before producing its evidence | Independent tests or reproduction from the contract |
+| Expert witness | Called by a reviewer or challenger on a specific question; drawn by lot among eligible | Testimony is an assertion |
+
+Open standing means a single Qwen-found, reproducible critical defect defeats three frontier approvals.
+
+### 13.2 Evidence classes
 
 | Class | Examples | Nature |
 |---|---|---|
-| Deterministic | locked-path check, build, visible tests, sealed tests, invariants, static analysis, security scan, diff limits | FACT |
-| Reproduction | challenger's failing test or script, run by the Governor | FACT once run |
-| Model review | reviewer verdict with independence level | ASSERTION + DERIVED level |
-| Human | approval, waiver with expiry | ASSERTION with authority (Article 9) |
+| Deterministic | Locked-path check, build, visible and sealed tests, invariants, static analysis, security scan | FACT |
+| Reproduction | Challenger's failing test or script, run by the Clerk | FACT once run |
+| Review | Verdict with derived independence level | ASSERTION |
+| Human | Approval; waiver with expiry | ASSERTION with authority |
 
-### 13.2 Acceptance rules by risk class (initial)
+### 13.3 Independence levels (derived from manifests)
 
-| Risk | Derived from | Required |
-|---|---|---|
-| R0 | docs, formatting, isolated tests | all deterministic checks; any review ≥ I0 |
-| R1 | ordinary product code | deterministic incl. sealed tests; ≥1 review at I2; no open blocking challenge |
-| R2 | security, data, concurrency, public interfaces, Factory non-governance code | R1 + second I2 review from another family + ≥1 I3 reproduction |
-| R3 | governance, evidence, ledger, capacity accounting, permissions, test infrastructure, constitution | R2 + human approval + Promotion Pipeline staging |
+| Level | Definition |
+|---|---|
+| I0 | Same participant, or manifest contains the author's reasoning |
+| I1 | Same family, fresh context, no author reasoning |
+| I2 | Different family, no author reasoning, no other verdicts seen |
+| I3 | Different family, produced its evidence before seeing the artifact |
+| suffix e | Manifest contained another verdict: correlated with it |
 
-Risk class = max(path-rule class, planner-declared class). The Governor may raise a class, never lower it.
+### 13.4 Burden of evidence by risk class (initial)
 
-### 13.3 Order of evaluation
+| Risk | Required |
+|---|---|
+| R0 | All deterministic checks; any review ≥ I0 |
+| R1 | Deterministic incl. sealed tests; ≥1 I2 review; no open blocking challenge |
+| R2 | R1 + second I2 review from another family + ≥1 I3 replication |
+| R3 | R2 + human approval + Release Gate |
 
-Cheapest and most decisive first: schema and locked paths → build → visible tests → sealed tests → static/security → model reviews → reproductions. Any mandatory deterministic failure stops the gate before any reviewer capacity is spent.
+Risk class = the higher of path rules and planner declaration. It can be raised, never lowered, by the Clerk.
 
-### 13.4 Challenges
+### 13.5 Challenges
 
 ```
-OPEN ─┬─ repro attached ──► Governor runs it on candidate
-      │        ├─ fails on candidate ─► BLOCKING (rework)
-      │        └─ passes ─────────────► DISMISSED (fact recorded)
+OPEN ─┬─ reproduction attached ─► Clerk runs it
+      │     ├─ fails on candidate ─► BLOCKING → rework
+      │     └─ passes ─────────────► DISMISSED (fact recorded)
       └─ argued only
-               ├─ R0–R1 ─► CONCERN (recorded, non-blocking; audit sampling weight ↑)
-               └─ R2–R3 ─► corroboration: one more I2 review from a third family
-                              ├─ corroborates ─► BLOCKING
-                              └─ contradicts ──► HUMAN
+            ├─ R0–R1 ─► CONCERN (non-blocking; raises audit weight)
+            └─ R2–R3 ─► corroboration by a further lot-drawn I2 reviewer
+                          ├─ corroborates ─► BLOCKING
+                          └─ contradicts ──► human
 ```
 
-A challenger can withdraw. Rebuttals must also be executable to dismiss a reproduced challenge: the fix is verified when the repro passes.
+### 13.6 Order, rework, deadlock
 
-### 13.5 Burden, rework, escalation, deadlock
+- **Order:** cheapest and most decisive first. Deterministic failure stops the Court before any reviewer capacity is spent.
+- **Burden** is on the submitter. Absence of challenge is not evidence.
+- **Rework budget:** 2 cycles per lease. Then the card returns to the Market; the prior worker is excluded for that version.
+- **Attempt budget:** 3 failed attempts → Planning. The card is probably malformed.
+- **Deadlock** cannot occur: every loop ends in Planning or the human (Article 16).
 
-- **Burden is on the submitter.** Absence of challenge is not evidence. Required evidence must be positively present.
-- **Rework budget:** 2 cycles per lease (initial). Then the card returns to the market with history; the prior worker is excluded for that version.
-- **Attempt budget:** 3 failed attempts across workers → REPLAN. The card is probably malformed.
-- **Deadlock is impossible by construction**: every loop is budgeted and terminates in REPLAN or HUMAN (Article 13).
+### 13.7 Anti-collusion rules specific to the Court
 
-### 13.6 Learning evidentiary value
+- Author and reviewers are blinded to each other's identity.
+- Reviewers commit verdicts before seeing other verdicts.
+- A family that helped on a card cannot review it.
+- Cross-boundary messages are schema-constrained. For R2–R3, the Court may require reviewers to receive a normalized rendering of the artifact (formatted code and diff only, with free-text comments stripped). This narrows hidden-signal channels (T4).
 
-Numerical weights are not invented up front. They are estimated:
+### 13.8 Learning evidentiary value
 
-- **From planted defects** (§14.3): direct detection rates per (reviewer config, independence level, bucket). Fast; no need to wait for escapes.
-- **From audit**: escaped-defect rate by the review pattern that accepted the work.
-- **Correlation**: joint miss rate for reviewer pairs vs the product of individual miss rates.
-
-Once estimates exist, required review counts can be set to hit a target miss probability per risk class, with correlation accounted for. Until then, the ordinal rules in §13.2 apply.
+Weights are estimated, not invented: detection rates on planted defects (§14.3), escaped defects by the review pattern that accepted the work, and joint miss rates for reviewer pairs. Until data exists, the ordinal rules in §13.4 apply.
 
 ---
 
-## 14. Audit
+## 14. Institution 6 — Audit
 
-Normal assurance asks whether a card met its contract. Audit asks whether the assurance system is calibrated.
+**Purpose.** Determine whether the Factory's assurance system is trustworthy, and correct the system, not only the card.
 
 ### 14.1 Sampling
 
 | Stream | Rule (initial) |
 |---|---|
-| Random | 10% of accepted cards, uniform |
-| Risk-weighted | R2 at 25%, R3 at 100% |
-| Adaptive | per stratum: if the 90% upper bound on escaped-defect rate exceeds target, double the rate (cap 50%); if it stays below half the target over a window, multiply by 0.8 (floor 5%) |
-| Targeted | high stated confidence with minimal review; accepted on final rework; concern-flagged; hotspot files |
-| Rejections | 5% of rejected or surrendered cards, to measure false rejection |
-| Human | fixed small quota per week `[PLACEHOLDER]`, prioritizing auditor-gate disagreements and R3 |
+| Random | 10% of accepted cards |
+| Risk | R2 25%, R3 100% |
+| Adaptive | Raise a stratum's rate when its escaped-defect upper bound exceeds target; lower slowly; floor 5% |
+| Targeted | High stated confidence with minimal review; accepted on final rework; concerns filed |
+| Rejections | 5% of rejected or surrendered work, to measure false rejection |
+| Human | Fixed weekly quota `[PLACEHOLDER]` |
 
-Selection uses a seed hidden from workers. Workers cannot know which cards will be audited.
+The sampling seed is hidden from participants.
 
-### 14.2 Audit protocol
+### 14.2 Protocol
 
-- Auditor from a family outside the card's provenance chain where possible; otherwise fresh context plus blind reproduction.
-- **Controlled context**: contract + final diff. No reviewer discussion, no author reasoning.
-- Blind reproduction: auditor writes new tests from the contract before reading the diff.
-- **Mutation testing** on the card's contract tests (deterministic): a low mutation score reveals weak contracts regardless of what any model says.
+Auditor drawn by lot from outside the card's provenance chain. Controlled context: contract plus final artifact only. Blind reproduction first. Mutation testing of the contract tests.
 
 ### 14.3 Planted defects
 
-In a sandboxed copy, inject known defects into a sample of submissions and route them through normal review. Measure detection. Planted defects are never integrated; the injection code is an R3-protected path. This gives reviewer sensitivity data in weeks instead of the months needed for organic escapes.
+Known defects are injected into sandboxed copies of real submissions and sent through the Court. This measures reviewer and auditor sensitivity directly, within weeks. Planted defects are never integrated.
 
-### 14.4 Measures
+### 14.4 Collective-behavior measures (Article 17)
 
-Escaped defects; false acceptance; false rejection; confidence calibration; family-pair error correlation; **provenance contamination** (agreement rate of exposed vs unexposed reviewers, conditioned on audit outcome); systemic blind spots (defect classes no reviewer family catches).
+| Measure | Detects |
+|---|---|
+| Pairwise approval rate between author family and reviewer family, versus audit outcome | Mutual approval (T3) |
+| Joint miss rate versus product of individual miss rates | Correlated error (T2) |
+| Adoption rate of propositions by source family in Council, versus later validity | Deference and prestige (T5) |
+| Claim distribution by bucket versus rota outcomes | Tacit division of easy work (T3) |
+| Verdict agreement when reviewers see normalized versus raw artifacts | Hidden-signal channels (T4) |
+| Escaped defects, false acceptance, false rejection, calibration | System quality |
 
-### 14.5 From findings to system change
+### 14.5 Output
 
-Each finding has two outputs: reopen the card (label revised), and, when a pattern crosses a threshold, a **policy change card** (new gate rule, bucket, audit rate, family merge). Policy change cards take the R3 path.
+Two outputs per finding: reopen the card (label revised), and, where a pattern crosses a threshold, an **amendment proposal** to a charter or the Constitution. Ten audited cards with the same weakness produce one system correction, ratified by the human.
 
 ---
 
-## 15. Promotion Pipeline (reflexive safety)
+## 15. Release Gate (held position)
 
-### 15.1 Stages
+The pasted seven-institution list stops at the Court and the Ledger. For a Factory that builds itself, acceptance cannot mean immediate deployment into the Factory. This body stays.
 
 ```
 ACCEPTED → INTEGRATED → [STAGED → OBSERVED] → PROMOTED
 ```
 
-- **INTEGRATED:** merge queue rebases onto main, runs the full suite on the merge result, merges serially. Conflicts return the card to REWORK.
-- Product code (not the Factory itself) is PROMOTED on integration, subject to the product's own deployment rules.
-- STAGED and OBSERVED apply only to Factory self-changes.
-
-### 15.2 Factory self-change classes
-
 | Class | Scope | Path |
 |---|---|---|
-| F0 | adapters, UI, tooling outside governance | integrate → canary on a share of R0 cards for a window → promote on no regression |
-| F1 | offer policy, prompts, buckets, price function | **shadow mode**: new policy computes decisions alongside the current one, logged not acted; compare with off-policy evaluation → canary → promote |
-| F2 | Governor, ledger, gate rules, audit, capacity accounting, permissions, locked-path lists, constitution | human approval; validated by the **currently promoted** Governor (N-1 rule); forward-compatible migrations only; rollback rehearsed; promoted by a separate minimal promoter script, never by the running Governor |
+| Product code | Anything outside the Factory | Promoted on integration, per the product's own deployment rules |
+| F0 | Factory tooling, adapters, UI | Canary on a share of R0 cards, then promote |
+| F1 | Market rules, prompts, price function | Shadow run alongside current rules, then canary |
+| F2 | Clerk, Ledger, Court rules, Audit, capacity accounting, permissions, charters, Constitution | Human approval; validated by the currently promoted version; forward-only migrations; promoted by a separate minimal script, never by the running Clerk |
 
-### 15.3 Invariants
+**Invariants:** the running Clerk cannot deploy itself; KPI code is F2 (the Factory must not edit the ruler it is measured by); automatic rollback on hash-chain break, projection mismatch, or acceptance or escaped-defect spikes.
 
-- The running Governor cannot deploy itself.
-- Ledger migrations are additive. No migration may rewrite historical rows.
-- Last-known-good version is pinned. Automatic rollback on invariant breach: hash-chain break, projection rebuild mismatch, acceptance-rate spike beyond control limits, audit escaped-rate spike.
-- KPI computation code is F2. A self-modifying Factory must not edit the ruler it is measured by.
-
-Ordinary low-risk product changes never touch STAGED/OBSERVED. Bureaucracy scales with reflexive risk only.
+Ordinary product changes never touch staging. Bureaucracy scales only with reflexive risk.
 
 ---
 
-## 16. Goodhart analysis
+## 16. Institution 7 — Ledger, and the Clerk
 
-| Metric | Gaming path | Who drives it | Counter-measure / paired metric |
-|---|---|---|---|
-| First-pass acceptance | Easy-card selection; weak contracts | Policy, operators | Stratify by bucket; sealed tests; mutation score; audit-revised labels |
-| AUW/$ | Avoid frontier; split to inflate count; inflate value | Operators, policy | Value points ratified at plan; split preserves value; pair with escaped defects |
-| Throughput | Tiny cards; hoarding | Policy | Value-weighted; lease caps; size floors |
-| Calibration score | Constant hedging at 50% | Model disposition | Brier resolution component |
-| Low surrender rate | Concealed uncertainty | Operators | Pair with failure-after-high-confidence rate |
-| High surrender rate | Avoidance | Model disposition | False-surrender rate |
-| Review rejection rate | Nitpicking; review loops | Model disposition | Blocking needs executable evidence; false-rejection audit |
-| Audit escaped rate | Lenient auditors | Policy | Planted defects measure auditors too; human sample of audits |
-| Frontier usage low | Starving hard cards | Operators | λ goes to zero at surplus; perished-capacity metric |
-| Human escalation rate low | Suppressing escalations | Operators, policy | Audit of non-escalated R2–R3 disputes |
+### 16.1 Ledger
 
-Structural defenses: no actor sees its own score; outcome labels come from deterministic evidence plus randomized delayed audit; decision metrics are few and declared; the KPI code is F2-protected.
+Institutional memory: what was proposed, by whom, what each participant knew at that point, what changed and why, who did the work, what evidence existed, what failed, what ultimately happened.
 
-**AUW/$ specifically.** With subscriptions, marginal cash cost is near zero, so raw AUW/$ is undefined or infinite for most work. Report two variants: **AUW per amortized $** (subscription fee allocated by share of consumption) and **AUW per capacity unit at shadow price**. Define "accepted" as *accepted and not reversed by audit within the audit window*. Report perished capacity alongside.
+- SQLite (append-only, hash-chained) plus Git (artifact truth).
+- Every row is FACT, ASSERTION or DERIVED.
+- Every model output references its context manifest.
+- No participant controls history. No model has a write path; all writes go through the Clerk under a lease or seat token.
+
+See [`ledger-schema.sql`](ledger-schema.sql). Validated invariants: append-only enforcement; immutable card versions; no card without a requirement link; one active lease per card; charters ratified only by a human.
+
+### 16.2 Clerk (formerly Agent 70)
+
+A procedural officer. It makes no model calls and holds no discretion.
+
+| Does | Does not |
+|---|---|
+| Opens and closes rounds; runs clocks | Score, rank or recommend participants |
+| Assembles manifests from charter rights | Compose offers or choose work for anyone |
+| Grants and expires leases | Judge propositions or evidence |
+| Draws lots with recorded seeds | Decide who is "smart enough" |
+| Runs reproductions and deterministic checks | Seat anyone except by lot or published rule |
+| Computes derived values with published functions | Change any rule |
+| Enforces budgets and routes escalations | |
+
+**Enforced by code structure:** the Clerk package may not import model adapters (CI lint).
+
+**Charter parameters that remain judgments.** Risk path rules, eligibility thresholds, price parameters, budgets, audit rates, value points, family labels. Each is visible in a charter, ratified by a human, and versioned. None is hidden inside the Clerk.
+
+### 16.3 Goodhart pairs
+
+| Metric | Gaming path | Counter-metric or control |
+|---|---|---|
+| First-pass acceptance | Easy cards; weak contracts | Rota sample; sealed tests; mutation score; audit-revised labels |
+| AUW/$ | Avoid frontier; split to inflate count | Value points ratified at plan; splits preserve value; escaped defects |
+| Throughput | Tiny cards; hoarding | Value-weighted; lease caps |
+| Calibration | Constant hedging | Brier resolution component |
+| Surrender rate | Concealment or avoidance | False-surrender and failure-after-high-confidence rates |
+| Review rejections | Nitpicking | Blocking requires reproduction; false-rejection audit |
+| Audit escaped rate | Lenient auditors | Planted defects also test auditors |
+| Mutual approval | Collusion | Pairwise audit (§14.4) |
+
+**AUW/$ with subscriptions.** Marginal cash cost is near zero, so raw AUW/$ is undefined for most work. Report AUW per amortized $ (subscription fee allocated by share of consumption) and AUW per capacity unit at shadow price. "Accepted" means accepted and not reversed by audit within the audit window. Report expired capacity alongside.
 
 ---
 
@@ -679,189 +643,141 @@ Structural defenses: no actor sees its own score; outcome labels come from deter
 
 | Failure | Prevent | Detect | Recover |
 |---|---|---|---|
-| Self-marking | Gate requires I2+ for R1+ | Independence computed from manifests | Re-gate with independent review |
-| Correlated model errors | Deterministic checks first; I3 reproduction; sealed tests | Family-pair joint miss rate in audit | Merge correlated families; raise review count |
-| Groupthink | Commit-before-view; anonymized critique; coverage rule | Post-exposure vs independent convergence annotation | Re-open framing with a fresh independent round |
-| Prestige effects | Vendor names hidden in prompts; no rank | Adoption rate of propositions by source vs later validity | Tighten anonymization |
-| Model gaming / reward hacking | Locked and sealed tests; locked paths; diff limits | Mutation score; audit; planted defects | Reject; label revised; config posterior drops |
-| Confidence inflation | Confidence not used for allocation | Calibration views | None needed beyond measurement |
-| Card hoarding | Lease cap = resource concurrency; TTL | Leases per actor vs throughput | Revoke on expiry |
-| Easy-work selection | Offer sets, not backlog; ε exploration; drafts | Bucket distribution of claims vs offers | Increase ε or draft rate |
-| Difficult-card starvation | Age boost; draft; replan | Time-in-READY by bucket | Ladder to human |
-| Unnecessary frontier consumption | λ; downstream-cost term; posterior advantage needed | Frontier share on high-verifiability cards | Raise λ_max |
-| Frontier exhaustion | Reserve; λ; burn-rate forecast | Projected exhaustion alert | Release reserve rules; pause frontier offers |
-| Perished capacity | λ → 0 at surplus; sponge work | Perished-capacity metric | Adjust ρ_low |
-| Local model overreach | Quality floor for R2+; posterior learning | Failure rate and downstream cost | Posterior self-corrects |
-| Capacity misinformation | Only adapter/provider facts are authoritative | Estimated vs observed throttles | Conservative re-estimate |
-| Hidden cognitive authority | Governor imports no adapter; residual judgments enumerated | Import-lint; periodic review of J1–J9 | Policy change card |
-| Deadlock | Budgets on every loop | Items at budget limit | Terminal route to replan or human |
-| Excessive deliberation | Round budgets; framing only at idea level | Tokens per idea | Human cut-off |
-| Review loops | Rework budget; executable blocking | Rework cycles per card | Reassign or replan |
-| Token/credit waste | Offer sets of m; fail-fast gate order | Overhead share of consumption | Tune m, budgets |
-| Stale leases | Heartbeat TTL | Lease age | Expire; preserve branch |
-| Context contamination | Manifests; controlled audit context | Contamination metric | Re-review with clean manifest |
-| Provenance loss | Every call requires a manifest hash; commit trailers | Gate rejects missing provenance | Re-run the step |
-| Specification drift | Contract hash; immutable card versions | Diff of contract hash vs card | New card version and re-trace |
-| Incorrect decomposition | Red team; feature acceptance cards | Repeated failures; feature card failure | Replan |
-| Acceptance-criteria gaming | Locked, sealed, mutation-tested contracts | Mutation score; audit | Harden contract; reopen |
-| Goodhart | Paired metrics; hidden scores; F2 KPIs | Metric divergence | Policy change card |
-| Malicious or deviant behavior, prompt injection | Sandboxed worktrees; network allowlist; no secrets in worktrees; schema-validated outputs; no model write path to ledger | Anomalous diffs to protected paths; unexpected egress | Revoke actor; quarantine branch |
-| Model outage | Circuit breaker; multiple resources | Adapter error rate | Surrender leases; reoffer |
-| Provider throttling | DEGRADED state; reserve | 429 rate | Extend once, then surrender |
-| Factory restart | State = ledger + projections; idempotent steps keyed by event ID | Projection rebuild check on boot | Resume; expire orphaned leases |
-| WSL / host failure | SQLite on native Linux FS, WAL; off-host backups; Git pushed on each integration | Heartbeat from host | Restore last backup; replay from Git + backup |
-| Conflicting Git mutations | Worktree per lease; file-scope exclusion; serial merge queue | Merge conflicts | Return to REWORK |
-| Self-modification of governance | F2 path; N-1 rule; separate promoter; human ratification | Protected-path diff alerts | Automatic rollback to last-known-good |
-| Systemic quality drift | Audit floor never zero; replayed calibration suite | Control charts on escaped rate; replay suite regression | Policy change card; raise audit rate |
-
-**Calibration suite.** Keep a fixed set of historical cards with known-good outcomes. Replay them periodically on current configs and policies. Regression on the suite is the earliest drift signal and doubles as the F0/F1 canary.
+| Institutional bleed | Boundary rule: only ratified outputs cross; charter manifests | Manifest audit for out-of-charter items | Re-run the step with a clean manifest |
+| Self-marking | I2+ required for R1+ | Independence from manifests | Re-seat Court |
+| Correlated model errors | Deterministic checks first; I3 replication; sealed tests | Joint miss rate | Merge correlated families; raise review count |
+| Groupthink | Commit-before-view; anonymized Council | Post-exposure versus independent convergence | Re-open Council with fresh Inquiry |
+| Prestige effects | No identities in any model-facing view | Adoption-by-source analysis | Tighten anonymization |
+| Emergent collusion (mutual approval) | Blind seating by lot; rotation | Pairwise approval versus audit | Bar the pair; re-review their history |
+| Hidden-signal coordination | Schema-constrained channels; normalized artifacts at R2+ | Raw-versus-normalized verdict gap | Normalize by default; revoke participant |
+| Reward hacking | Locked and sealed tests; locked paths | Mutation score; planted defects; audit | Reject; revise labels |
+| Confidence inflation | Confidence never a tie-breaker | Calibration views | None needed beyond measurement |
+| Card hoarding | Lease cap = resource concurrency; TTL | Leases versus throughput | Expire |
+| Easy-work selection | Service rota by lot | Claims versus rota outcomes | Raise rota share |
+| Difficult-card starvation | Rota absorbs old cards; ladder to Planning | Time in READY | Human |
+| Unnecessary frontier use | Capacity tie-break; own price band | Frontier share on simple cards | Adjust price parameters |
+| Frontier exhaustion | Reserve; price | Burn-rate forecast | Pause frontier claims below reserve |
+| Expired capacity | Price zero near reset; deferrable assurance cards | Expired-capacity metric | Adjust thresholds |
+| Local model overreach | Earned eligibility for R2+ | Failure rate and downstream cost | Eligibility lapses on escaped defects |
+| Capacity misinformation | Only adapter and provider facts are authoritative | Estimate versus observed throttles | Conservative re-estimate |
+| Hidden cognitive authority | Clerk has no model calls; lots replace chairs | CI import lint; charter review | Amendment |
+| Deadlock | Budgets on every loop | Items at budget | Planning or human |
+| Excessive deliberation | Round budgets; Council only per idea | Tokens per idea | Human cut-off |
+| Review loops | Rework budget; reproduction required to block | Rework per card | Reassign or replan |
+| Stale leases | Heartbeat TTL | Lease age | Expire; keep branch |
+| Context contamination | Manifests; controlled audit context | Contamination metrics | Re-review clean |
+| Provenance loss | Manifest required per call; commit trailers | Court rejects missing provenance | Re-run |
+| Specification drift | Contract hash; immutable card versions | Hash mismatch | New version, re-trace |
+| Incorrect decomposition | Red team; feature acceptance cards | Repeated failures | Planning |
+| Acceptance-criteria gaming | Locked, sealed, mutation-tested contracts | Mutation score | Harden contract; reopen |
+| Prompt injection | Sandboxed worktrees; network allowlist; no secrets; schema-validated outputs | Protected-path diffs; egress alerts | Revoke; quarantine branch |
+| Model outage or throttling | Circuit breaker; multiple resources | Error and 429 rates | Surrender leases; re-open cards |
+| Factory restart | State = Ledger + rebuildable projections; idempotent steps | Projection rebuild check on boot | Resume; expire orphans |
+| WSL or host failure | Database on native Linux filesystem; off-host backups; Git pushed on integration | Host heartbeat | Restore and replay |
+| Conflicting Git mutations | Worktree per lease; file-scope exclusion; serial merge queue | Merge conflicts | Rework |
+| Self-modification of governance | F2 path; N-1 validation; separate promoter; human ratification | Protected-path alerts | Automatic rollback |
+| Systemic quality drift | Audit floor; replayed calibration suite of historical cards | Control charts | Amendment; raise audit rate |
 
 ---
 
 ## 18. Impact on the existing Factory
 
-**Caveat.** No source code was available. This section classifies components as described in the brief. The coupling assessment below is a method, not a result.
-
-### 18.1 Classification
+**Caveat.** No source code was available. This is a classification of the described components plus a method.
 
 | Component | Class | Change |
 |---|---|---|
-| Immutable work cards | KEEP | Add `requirement_ids`, `contract_hash`, `locked_paths`, `file_scope`, `value_points`, risk class |
-| SQLite operational state | UPLIFT | Split into append-only ledger + rebuildable projections; hash chain; WAL; native FS |
-| Git as artifact truth | KEEP | Add commit trailers, merge queue, locked-path enforcement |
-| Isolated worktrees | KEEP | Bind one worktree branch per lease |
-| Model adapters | UPLIFT | Emit usage, throttle, quota headers, provider model ID, manifest hash; expose `(model, version, effort)` configs uniformly |
-| WSL execution | KEEP (risk) | Database on native Linux FS; off-host backup; host heartbeat |
-| Durable workflow / Hatchet | UPLIFT or DEPRECATE | Keep durability as a concept. Allow exactly one state authority: the ledger. If Hatchet holds workflow state, demote it to an idempotent executor keyed by ledger event IDs, or remove it. |
-| Tests | KEEP + UPLIFT | Contract locking, sealed tests, mutation testing |
-| Guardrails | KEEP | Re-express as constitutional invariants with mechanical checks |
-| Execution telemetry | UPLIFT | Facts / assertions / derived separation |
-| KPI layer | UPLIFT | Paired metrics; audit-adjusted labels; KPI code F2-protected |
-| AUW/$ | KEEP as KPI, not objective | Redefine per §16 |
-| Current intelligent routing | REPLACE as authority | See §18.2 |
-| Director → Worker → Checker | REPLACE | Director → Framing/Planning; Worker → Work Market; Checker → Evidence Gate |
-| Deliberation protocol | NEW | §8–9 |
-| Capacity ledger + shadow price | NEW | §11 |
-| Offer policy (bandit) | NEW | §10 |
-| Audit sampler, planted defects | NEW | §14 |
-| Promotion Pipeline + promoter | NEW | §15 |
-| Context manifests | NEW | §6.2 |
+| Immutable work cards | KEEP | Add requirement links, contract hash, locked paths, file scope, value points, risk class |
+| SQLite state | UPLIFT | Append-only Ledger plus rebuildable projections; hash chain; native filesystem |
+| Git | KEEP | Commit trailers, merge queue, locked-path enforcement |
+| Worktrees | KEEP | One per lease |
+| Model adapters | UPLIFT | Emit usage, throttles, provider model ID, manifest hash |
+| WSL execution | KEEP (risk) | Off-host backup; host heartbeat |
+| Durable workflow / Hatchet | UPLIFT or DEPRECATE | One state authority only: the Ledger. Hatchet may execute steps keyed by Ledger events, never hold state |
+| Tests | KEEP + UPLIFT | Locking, sealing, mutation testing |
+| Guardrails | KEEP | Re-expressed as articles and charter rules |
+| Telemetry | UPLIFT | FACT / ASSERTION / DERIVED |
+| KPI layer, AUW/$ | UPLIFT | Paired metrics; audit-adjusted; F2-protected |
+| Current intelligent router | REPLACE as authority | Keep as a logged advisory assertion from `legacy_router`, compared against Market outcomes. Not a fallback: a fallback smarter than the primary is a hidden authority. On Clerk failure, stop and hold. |
+| Director → Worker → Checker | REPLACE | Council/Planning → Market → Court |
+| Inquiry, Council, Planning, Audit, Release, Clerk, charters, manifests | NEW | This document |
 
-### 18.2 The current router
+**Migration options.** Incremental uplift if model choice sits behind one seam and SQLite can gain an append-only Ledger alongside existing tables. Substantial refactor if routing is spread across stages and prompts. Parallel V2 if state cannot be made append-only without breaking running work. Clean rebuild is not justified: it discards the history that the Market's reputation depends on.
 
-Retire it as an authority. Keep it as a **measured competitor**:
-
-- **Advisory signal:** record its recommendation per card as an ASSERTION from actor `legacy_router`.
-- **Experimental control:** evaluate it off-policy on logged offers. If it beats the bandit on audit-adjusted value per capacity, that is evidence worth having.
-- **Not a fallback.** A fallback smarter than the primary is a hidden authority. On Governor failure the correct fallback is *stop and hold*, not "let the router decide."
-
-Retire the code after 8 weeks `[Assumption]` of shadow data showing no advantage.
-
-### 18.3 Migration options
-
-| Option | When it is right |
-|---|---|
-| 1. Incremental uplift (strangler) | Routing sits behind one seam (e.g. `route(card) → config`); SQLite schema can gain an append-only ledger alongside existing tables. |
-| 2. Substantial refactor | Routing logic is spread across stages, prompts and workflow definitions; state mutates in place in many places. |
-| 3. Parallel Factory V2 | Operational state cannot be made append-only without breaking running workflows; or Hatchet owns state deeply. |
-| 4. Clean rebuild | Not justified by anything in the brief. It discards telemetry history, which is exactly the prior data the bandit needs. |
-
-**Coupling questions to answer from the code:**
-
-1. How many call sites choose a model? One seam or many?
-2. Does any code UPDATE or DELETE rows that represent history?
-3. Where does workflow state live: SQLite, Hatchet, or both?
-4. Can adapters report usage and throttling today?
-5. Are tests stored in paths separable from implementation paths?
-6. Does the Factory currently modify its own governance code, and through which path?
-
-**Provisional expectation** `[Inference]`: the listed foundations (cards, SQLite, Git, worktrees, adapters, tests) are exactly what this design needs. The new parts are policy layers on top of the ledger. Option 1 is likely, but this must not be recommended until questions 1–3 are answered.
+**Coupling questions for the code:** How many call sites choose a model? Does any code rewrite history rows? Where does workflow state live? Can adapters report usage and throttling? Are tests separable from implementation paths? How does the Factory change its own governance code today?
 
 ---
 
 ## 19. Experiments (falsifiable)
 
-Deliberation-level experiments are underpowered because idea volume is low. Treat them as directional and supplement with human rating. Market-level experiments have volume and can be run properly.
+Council and Planning experiments are underpowered because idea volume is low. Read them directionally, with human rating. Market and Court experiments have volume.
 
-| ID | Hypothesis | Design | Metric | Falsified if |
-|---|---|---|---|---|
-| H1 | Every enrolled model adds unique value to framing | Log all framings; leave-one-out analysis | Unique surviving contribution per actor; cost | An actor's rate < 5% over ≥20 ideas |
-| H2 | Self-selection carries information | Compare claimed-from-offer-set vs drafted single offers, same bucket | Success rate, cost | No difference within CI after ≥300 cards → drop choice, keep decline |
-| H3 | Anonymization reduces prestige effects | Randomize named vs anonymized critique | Adoption of propositions by source vs later validity | No difference in adoption bias |
-| H4 | Cross-family review beats same-family fresh review | Planted defects routed to I1 vs I2 | Detection rate | No difference → collapse I1/I2, save frontier |
-| H5 | Higher effort has marginal value in some buckets | Randomized effort on R0–R1 | Success, rework, cost by bucket | No bucket shows positive net value → default low effort |
-| H6 | Showing a coarse Factory-wide capacity band improves allocation | A/B on prompt content | Perished capacity; frontier exhaustion; success | No improvement or increased deference |
-| H7 | Stated confidence predicts outcome beyond the posterior | Regression on logged assertions | Incremental log-loss | No incremental skill → never use confidence in allocation |
-| H8 | Critique round 2 adds value over round 1 | Randomize budget 1 vs 2 | Human rating of framing record; downstream replan rate | No difference → budget 1 |
-| H9 | Sealed tests reduce escaped defects | Randomize sealed vs visible-only on R1 | Audit escaped rate | No difference → drop sealing for R1 |
-| H10 | Sponge work converts perished capacity into lower defect rates | Toggle sponge queue by week | Perished capacity; escaped defects | No defect-rate effect |
+| ID | Hypothesis | Design | Falsified if |
+|---|---|---|---|
+| H1 | Every participant adds unique value in Inquiry | Leave-one-out on unique surviving contribution | A participant is below 5% over ≥20 ideas |
+| H2 | Self-selected claims succeed more than rota cards for the same participant and bucket | Compare claimed versus rota outcomes | No difference: self-selection carries no information |
+| H3 | Anonymization reduces deference in Council | Randomize anonymized versus named rounds | No change in adoption-by-source bias |
+| H4 | Cross-family review detects more than same-family fresh review | Planted defects to I1 versus I2 seats | No difference |
+| H5 | Higher reasoning effort has net value in some buckets | Participant-chosen effort, compared against rota cards at default effort | No bucket shows net value |
+| H6 | A coarse Factory-wide capacity band improves outcomes | A/B on Market view | No gain, or more deference |
+| H7 | Showing own track record improves claim calibration | A/B on Market view | Calibration unchanged or worse |
+| H8 | Separation (no Council transcript in Planning) reduces bleed without losing quality | A/B on Planning manifests | No difference in replan rate or red-team gaps |
+| H9 | Normalized artifacts at R2+ reduce correlated approval | Raw versus normalized seats | No verdict gap |
+| H10 | Capacity tie-break outperforms lot-only | Alternate by week | No difference in expired capacity or quality |
 
-Initial thresholds are `[Assumption]` and should be set before each experiment starts, not after.
+Set thresholds before each experiment starts.
 
 ---
 
-## 20. Do not over-engineer: the minimum build
+## 20. Do not over-engineer: minimum build
 
-The source prompt's final section heading had no body. This proposal reads it as: build the smallest thing that makes the principles enforceable and the hypotheses testable.
+### Phase 0 — trustworthy memory (first)
 
-### Phase 0 — make history trustworthy (build first)
+Ledger and projections; FACT / ASSERTION / DERIVED; manifests on every call; adapters emit usage and throttles; locked contracts; deterministic Court checks; leases with TTL; worktree per lease; merge queue; F2 protection for governance paths. **F2 protection must exist before the Factory next edits its own governance.** Legacy router demoted to an advisory assertion.
 
-- Ledger + projections (reference schema); facts / assertions / derived.
-- Context manifests on every model call.
-- Adapters emit usage and throttle facts.
-- Locked contract paths; deterministic gate; commit trailers.
-- Leases with TTL and heartbeat; one worktree per lease; serial merge queue.
-- R3 protected paths with human approval. **This must exist before the Factory next edits its own governance.**
-- Legacy router demoted to logged advisory.
+### Phase 1 — Market and Court
 
-### Phase 1 — allocation that learns
+Claim windows; eligibility; tie-break rule; service rota; shadow price and reserve; blind lot-seated review; open-standing challenges.
 
-- Offer policy with Thompson sampling, ε exploration, recorded propensities.
-- Simple shadow price and reserve.
-- R1 cross-family review requirement.
+### Phase 2 — Audit and Release
 
-### Phase 2 — calibration
+Fixed-rate sampling; planted defects; mutation testing; pairwise collusion measures; Release Gate F0–F2 with a separate promoter.
 
-- Audit sampler at fixed rates; planted defects; mutation testing.
-- Promotion Pipeline F0–F2 and the separate promoter.
+### Phase 3 — Inquiry, Council, Planning automation
 
-### Phase 3 — deliberation automation
+Low volume allows these to run semi-manually from day one under their charters, then be automated.
 
-- Framing and Planning protocols. Low volume means these can run semi-manually (a script plus human copy-paste) from day one, and be automated later.
+### Deferred
 
-### Explicitly deferred
-
-Proposition deduplication; hierarchical Bayesian models beyond simple partial pooling; adaptive audit rates (start fixed); global capacity visibility; claim-window broadcast; any numeric evidence weights before audit data exists; a Governor UI beyond SQL views.
+Adaptive audit rates; normalized artifacts below R2; Factory-wide capacity views; numeric evidence weights before audit data exists; any UI beyond SQL views.
 
 ---
 
 ## 21. Decisions and open items
 
-### Decisions needed
-
 | # | Decision | Owner | Due |
 |---|---|---|---|
-| D1 | Ratify constitution Articles 1–14 (or amend) | Isa | `[PLACEHOLDER]` |
-| D2 | Approve Phase 0 scope as the next build increment | Isa | `[PLACEHOLDER]` |
-| D3 | Approve demotion of the current router to logged advisory | Isa | `[PLACEHOLDER]` |
-| D4 | Set weekly human-attention budget for escalations and audit | Isa | `[PLACEHOLDER]` |
-| D5 | Assign family lineage labels to current models (J9) | Isa | `[PLACEHOLDER]` |
+| D1 | Ratify Constitution Articles 1–18 and the seven charters (or amend) | Isa | `[PLACEHOLDER]` |
+| D2 | Approve Phase 0 as the next build | Isa | `[PLACEHOLDER]` |
+| D3 | Market tie-break: capacity then lot (recommended), or lot only | Isa | `[PLACEHOLDER]` |
+| D4 | Confirm the Release Gate stays as a procedural body | Isa | `[PLACEHOLDER]` |
+| D5 | Service rota share (initial 10%) | Isa | `[PLACEHOLDER]` |
+| D6 | Weekly human-attention budget for ratifications, escalations and audit | Isa | `[PLACEHOLDER]` |
+| D7 | Family lineage labels for current models | Isa | `[PLACEHOLDER]` |
 
-### Risks of this proposal
+### Risks
 
-- **Human bottleneck.** Framing and plan ratification plus R3 approvals may exceed Isa's bandwidth. Mitigation: daily batched digest; measure escalation load from week one.
-- **Cold-start noise.** Posteriors are weak for weeks. Mitigation: benchmark priors, conservative R2+ floors, planted defects for early review data.
-- **Underpowered deliberation experiments.** Mitigation: directional reading plus human rating; do not over-interpret.
-- **Provider opacity.** Subscription quotas may be invisible. Mitigation: conservative estimation from throttles.
+- **Human bottleneck.** Two ratifications per idea plus R3 approvals. Mitigation: daily batched digest; measure load from week one.
+- **Cold start.** Eligibility and reputation are thin at first. Everyone starts at R0–R1, so early R2+ work needs human sign-off.
+- **Collusion detection needs volume.** Pairwise measures become meaningful only after hundreds of reviews. Planted defects shorten this.
 
 ### What I still need
 
-1. The existing Factory source (or access to the repo that holds it) to complete the coupling assessment.
-2. Actual subscription terms per resource: windows, reset times, concurrency, fees.
-3. Current card volume per week and idea volume per month.
-4. Where workflow state lives today (SQLite, Hatchet, or both).
-5. The intended body of the prompt's section 20, if it differed from the reading above.
+1. The existing Factory source.
+2. Subscription terms per resource: windows, resets, concurrency, fees.
+3. Current card and idea volumes.
+4. Where workflow state lives today.
+5. The sources behind the claim in §2 that LLMs act collectively against human interest, so they can be cited precisely.
 
 ---
 
-**Takeaway:** build Phase 0 (ledger, manifests, locked contracts, leases, R3 protection) before any market or council logic. Every later mechanism depends on trustworthy history.
+**Takeaway:** ratify the charters and read-rights matrix (§6–7), then build Phase 0. Governed memory is the foundation every institution stands on.
