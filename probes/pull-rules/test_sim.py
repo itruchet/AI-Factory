@@ -8,34 +8,48 @@ import unittest
 import sim
 
 
-def mean_over_seeds(adaptive, change=None, n=12):
-    runs = [sim.run(sim.roster(), adaptive=adaptive, seed=s, change=change) for s in range(n)]
-    ok = sum(sim.totals(r)[0] for r in runs) / n
-    bad = sum(sim.totals(r)[1] for r in runs) / n
-    qwen_t2_bad = sum(next(a for a in r["agents"] if a.name == "qwen").log[(2, "marked_down")] for r in runs) / n
-    qwen_t2 = sum(2 in next(a for a in r["agents"] if a.name == "qwen").licences for r in runs) / n
-    return ok, bad, qwen_t2_bad, qwen_t2
+def mean(policy, arrivals=sim.steady, change=None, n=12):
+    return sim.mean_summary(policy, arrivals=arrivals, n=n, change=change)
+
+
+def qwen_t2_share(change, n=12):
+    runs = [sim.run(sim.roster(), "bands", seed=s, change=change) for s in range(n)]
+    return sum(2 in next(a for a in r["agents"] if a.name == "qwen").licences for r in runs) / n
 
 
 class PullRulesTest(unittest.TestCase):
     def test_failing_agent_gets_less_of_the_work_it_fails(self):
-        _, _, static_q, _ = mean_over_seeds(adaptive=False)
-        _, _, rules_q, share = mean_over_seeds(adaptive=True)
-        self.assertLess(rules_q, 0.5 * static_q)
-        self.assertLess(share, 0.2)  # qwen ends the week without tier 2 in most runs
+        self.assertLess(mean("bands")["qwen_t2_markdowns"], 0.5 * mean("static")["qwen_t2_markdowns"])
 
-    def test_throughput_is_kept_and_markdowns_fall(self):
-        static_ok, static_bad, _, _ = mean_over_seeds(adaptive=False)
-        rules_ok, rules_bad, _, _ = mean_over_seeds(adaptive=True)
-        self.assertGreater(rules_ok, 0.97 * static_ok)
-        self.assertLess(rules_bad, static_bad)
+    def test_throughput_and_value_are_kept(self):
+        static, bands = mean("static"), mean("bands")
+        self.assertGreater(bands["accepted"], 0.97 * static["accepted"])
+        self.assertGreater(bands["value"], 0.99 * static["value"])
+        self.assertLess(bands["marked_down"], static["marked_down"])
 
-    def test_improved_agent_earns_work_back(self):
+    def test_accurate_and_fast_upgrade_earns_harder_work(self):
         def upgrade(hour, agents):
             if hour == 84:
+                q = next(a for a in agents if a.name == "qwen")
+                q.p.update({1: .97, 2: .90, 3: .45})
+                q.speed = 0.9
+        self.assertGreater(qwen_t2_share(upgrade), 0.5)
+
+    def test_accurate_but_slow_agent_stays_on_easier_work(self):
+        def accurate_only(hour, agents):
+            if hour == 84:
                 next(a for a in agents if a.name == "qwen").p.update({1: .97, 2: .90, 3: .45})
-        _, _, _, share = mean_over_seeds(adaptive=True, change=upgrade)
-        self.assertGreater(share, 0.5)  # re-licensed for tier 2 in most runs
+        self.assertLess(qwen_t2_share(accurate_only), 0.2)
+
+    def test_scarce_frontier_is_kept_for_hard_work(self):
+        sim.FRONTIER_CAP = 900
+        try:
+            pacing, bands = mean("pacing", sim.easy_first), mean("bands", sim.easy_first)
+        finally:
+            sim.FRONTIER_CAP = 1400
+        self.assertGreater(bands["t3_accepted"], 1.1 * pacing["t3_accepted"])
+        self.assertLess(bands["frontier_easy_share"], 0.05)
+        self.assertGreater(bands["value"], pacing["value"])
 
 
 if __name__ == "__main__":
