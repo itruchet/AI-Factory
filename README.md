@@ -13,6 +13,7 @@ An AI-native software engineering Factory that converts human ideas into impleme
 - **[Cross-check](docs/idea/crosscheck.md)** ([`probes/crosscheck/`](probes/crosscheck/)): an independent simulation Isa supplied (`external/`, unchanged), with our rules added to it, and its mechanisms (family blind spots, packets, controller aggressiveness) added to ours.
 - **[Dependency graphs](docs/idea/dependencies.md)** (`probes/value-stream/deps.py`): requirements that depend on each other; gates (R17, unreviewed, barrier, contract-first, hybrid), stale rebuilds, interface faults; organisations and elasticity re-run.
 - **[Institutions or the searched design](docs/idea/institutions-vs-searched.md)** (`probes/value-stream/searched.py`): the searched design out of sample, under outages, with a new model and with elastic capacity; adaptive licence floors (R19) and trial configurations (R20).
+- **[Approval register](docs/idea/approvals.md):** the 14 records, in three gates, from decision to the card backlog.
 - [Parked design notes](docs/design-parked/): earlier design-stage material.
 - [Superseded probe](probes/_superseded/): r3–r4 allocation maths, replaced by the pull rules.
 

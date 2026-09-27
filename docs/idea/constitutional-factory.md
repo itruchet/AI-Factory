@@ -548,11 +548,12 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 
 | # | Decision |
 |---|---|
-| H1 | Ratify the constitution's eight principles (§6), the five golden allocation rules (§3.2) and governance rules R8–R13 |
+| H1 | Ratify the constitution's eight principles (§6), the five golden allocation rules (§3.2) and rules R1–R20 (R1–R13 pull, licences and governance; R14–R20 from r12–r12.3) |
 | H2 | Set the quality standard per institution and tier (maximum markdown rate). Design can propose starting values. |
-| H4 | Approve the rolling portfolio policy (P1, P2, P6–P8; §5.2) in place of a fixed model list. Start from today's four models. |
+| H4 | Approve the rolling portfolio policy (P1, P2, P6–P8; §5.2) in place of a fixed model list. Start from the seven-model menu on API tokens (§5.4–5.5), not today's four models (r12.3). |
 | H5 | Approve three absolute work tiers for cards (§5.2) |
 | H6 | Approve for the trial: the seven-model menu on API tokens, the Scaler (R14), no training on our data (R15), the burn cap (R16), R17–R19, and R20 for any searched configuration (§5.4–5.8). (r12: the US data-residency option is withdrawn.) |
+| H7 | Approve the trial budget: a monthly ceiling of about $2,500 for about 25 ideas a week, with R16's hourly cap (§5.5). Optional: a value per clean idea, for scale decisions |
 | H3 | Approve exit from Idea stage into design |
 
 ---
@@ -567,7 +568,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | Every open item typed and routed | Met (§11) |
 | Only decisions that are genuinely Isa's are left to Isa | Met (§11.3) |
 
-**Status: ready to exit Idea stage on H1–H3.**
+**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 14 approval records in three gates, is in [`approvals.md`](approvals.md).
 
 ---
 
@@ -581,4 +582,4 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 
 ---
 
-**Takeaway:** replace Director → Worker → Checker with a shared pool pulling through the institutions, staffed about 40–45% top tier and the rest middle tier; the model shows no single-role ceiling and 99% of intent delivered.
+**Takeaway:** replace Director → Worker → Checker with the institutions (R1–R20), staffed by elastic instances of a seven-model menu on API tokens. Sign Gate 1 of [`approvals.md`](approvals.md) to start design.
