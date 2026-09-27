@@ -17,26 +17,33 @@
 **Why.** In the value-stream model, the institutions deliver the most clean ideas of every organisation tested (CL-07, CL-08).
 - With 25% dependency coupling, the institutions with R17 deliver 19.4 clean ideas a week with the six models.
 - Director → Worker → Checker delivers 10.3 on the same work.
-- These are synthetic results. The trial exists to test them on real work.
+- These are synthetic results: the baseline, until live data replaces them.
+
+**How it is built: dog food, not a lab.**
+- No study period, shadow run or trial. Each part is switched on for the Factory's own work once it passes its acceptance contract, then improved from live data.
+- Baselines come from this analysis: the cost model, the R19 floors, the model's predictions.
+- Live metering and the actual costs the Owner enters (invoices, subscriptions, cloud credits) replace the baselines.
+- Weekly alarms (C0.15) open a card when live results fall more than 25% outside the model, or when an experiment's falsification criterion is met. They never stop work.
 
 **In scope**
 - Protecting governance.
-- Measuring today's Factory.
-- A simulation twin calibrated on those measurements.
-- The rules and institutions, cut over phase by phase with rollback.
-- A trial judged against pre-registered predictions.
+- Live measurement from day one.
+- Live operation inside the Factory: detect, restore, hotfix.
+- The rules and institutions, switched on phase by phase.
+- A model of the Factory, refitted weekly on CPU with no model spend.
 
 **Out of scope**
 - Data-residency analysis (OI-14; future).
 - Any model tier that trains on our data (R15).
 - Kernel assignment from the parked design.
+- Lab spend: replays, shadow periods, trials.
 
-**Assumptions carried.** Every simulator constant is listed in `twin_parameters` as assumed until C0.12 calibrates it. The token model, pass curve, catch rates and demand are synthetic.
+**Assumptions carried.** Every simulator constant is listed in `twin_parameters` as assumed until C0.12 fits it from live data.
 
-**Minority positions and conflicts**, recorded so none is silently resolved:
-- **OI-12:** R11 and §5.1 disagree on where a new model starts.
-- **C3.01:** the institutional model found two Inquiry analysts sufficient, while X7 tests universal participation.
-- **C1.07:** R7 protects subscription caps, but the menu runs on API tokens, so R7 is dormant unless a capped seat is admitted.
+**Conflicts recorded, not silently resolved**
+- **OI-12:** R11 and §5.1 disagree on where a new model starts. [PROPOSED] Artificial Analysis band as prior, corrected live.
+- **C3.01:** two Inquiry analysts (model sizing) against universal participation (X7). Live data decides.
+- **C1.07:** R7 protects subscription caps; the menu runs on API tokens, so R7 is dormant unless a capped seat is admitted.
 
 ---
 
@@ -44,23 +51,24 @@
 
 | Question | Isa's answer | What the pack does |
 |---|---|---|
-| Where the backlog lives | The existing Factory runs Director → Worker → Checker and moves to the institutions | The Factory ingests this pack. The Director first produces a Fit Report (C0.00) against the real code, because the pack's author has not seen it |
-| Card and idea volumes | Build the infrastructure to measure, validate and understand against the simulation | Phase 0 measures today's Factory (C0.04–C0.11) and packages the simulation as a twin (C0.10). It calibrates the twin (C0.12), backcasts today's Factory (C0.13, X9) and pre-registers predictions before the trial (C0.14) |
-| Trial dates | Set once the cards are in the backlog | AR-12 is split. **AR-12a** (criteria and measurement) comes before the backlog; **AR-12b** (dates and scope) comes after, from the backlog forecast and measured demand |
-| Vendor accounts and keys | The Owner; hashed in the Factory | AR-10 key custody is settled. C0.05 keeps secrets out of the Ledger and records fingerprints. **Residual (OI-04):** [Inference] a hash cannot call an API, so confirm where the usable credential is held |
-| Value of a clean idea | No action, no value. Measure idea → artifact cost, then ratification → production → return | The idea value ledger (C0.09) records both segments (M06, M07). AR-05 keeps the initial ceiling (CL-04) and resets it from measured volume |
+| Where the backlog lives | The existing Factory runs Director → Worker → Checker and moves to the institutions | The Factory ingests this pack. The Director first produces a Fit Report (C0.00) against the real code |
+| Volumes and validation | Measure and understand against the simulation, but no lab: build it, use it, monitor and improve | Measurement is live from day one (C0.11). The model is refitted weekly (C0.12) and compared with live results (C0.15). No shadow periods, replay or backcast gate |
+| Trial dates | No trial | AR-12 is a monitoring and improvement plan. Experiments X1–X14 are judged continuously (C4.01) |
+| Vendor accounts and keys | The Owner; hashed in the Factory | Settled. C0.05 keeps secrets out of the Ledger and records fingerprints. **Residual (OI-04):** [Inference] a hash cannot call an API, so confirm where the usable credential is held |
+| Value of an idea | Baseline from the analysis; actuals replace it; the Owner provides real costs | Unit USD. Each idea gets a baseline cost and expected return at intake; metered spend, Owner-entered costs and recorded returns replace them (C0.09; M06, M07) |
+| Live operation | Part of the Factory | C0.16 from Phase 0: the Ledger detects incidents, the owner reverts, hotfixes are ordinary cards. Checker is interim owner, then the Release Gate (C2.03) [PROPOSED] |
 
 ---
 
 ## 3. Approval records
 
-**Sixteen records in three gates.** Isa signs fifteen; AR-14, the backlog admission, is done by the Director. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
+**Fifteen records in three gates.** Isa signs fourteen; AR-14, the backlog admission, is done by the Director. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
 
 | Gate | Records | When |
 |---|---|---|
-| 1. Decide | AR-01 constitution; AR-02 portfolio; AR-03 tiers; AR-04 trial rules; AR-05 budget and value measure; AR-06 exit Idea stage | Now; all Ready |
-| 2. Onto the backlog | AR-07 Alignment Record and authority to ingest; AR-11 protected paths; AR-12a trial criteria; AR-13 Ratified Plan; AR-14 admission of Phase 0 | After ingestion and the Fit Report |
-| 3. Just in time | AR-08 standards (before C1.06); AR-10 vendor terms (before C1.03); AR-09a live-operation owner (before C2.03); AR-09b ratification tiers (before C3.04); AR-12b trial dates (before CT.01) | During the build |
+| 1. Decide | AR-01 constitution; AR-02 portfolio; AR-03 tiers; AR-04 operating rules; AR-05 budget and value measure; AR-06 exit Idea stage | Now; all Ready |
+| 2. Onto the backlog | AR-07 Alignment Record and authority to ingest; AR-08 baseline standards; AR-09a live operation; AR-11 protected paths; AR-12 monitoring and improvement plan; AR-13 Ratified Plan; AR-14 admission of Phase 0 | After ingestion and the Fit Report |
+| 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C3.04) | During the build |
 
 ---
 

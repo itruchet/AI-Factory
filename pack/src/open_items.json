@@ -1,21 +1,158 @@
 {
-  "_about": "Everything the pack does not know. The Factory must not fill any of these by inference: each is resolved only by its named resolver, and the resolution is recorded. Status 'Resolved' records Isa's answer; residual questions stay open.",
-  "items": [
-    {"id": "OI-01", "question": "The existing Factory's code, card store and workflow engine were not visible to the pack's author.", "status": "Open", "resolver": "Fit Report (C0.00)", "isa_answer": "The Factory runs Director -> Worker -> Checker and moves to the constitutional institutions; it ingests this pack and distributes the cards itself.", "blocks": ["AR-13"]},
-    {"id": "OI-02", "question": "Current idea and card volumes.", "status": "Resolved by method", "resolver": "Baseline measurement (C0.11)", "isa_answer": "Build the infrastructure to measure, validate and understand the Factory against the simulation.", "blocks": ["AR-12b", "AR-05 ceiling reset"]},
-    {"id": "OI-03", "question": "Trial start date and duration.", "status": "Deferred", "resolver": "AR-12b", "isa_answer": "Set once the cards are in the existing backlog.", "blocks": ["CT.01"]},
-    {"id": "OI-04", "question": "Who holds vendor accounts and API keys, and how adapters obtain them.", "status": "Resolved in part", "resolver": "Owner, confirmed in the Fit Report (C0.00) and AR-10", "isa_answer": "The Owner; the keys are hashed in the Factory.", "residual": "[Inference] A one-way hash cannot authenticate an API call, so the Factory must also hold a usable credential, encrypted or in a secret store, and use the hash as a fingerprint. Confirm which is in place.", "blocks": ["C0.05", "C1.03"]},
-    {"id": "OI-05", "question": "What a clean idea is worth.", "status": "Resolved by method", "resolver": "Idea value ledger (C0.09)", "isa_answer": "Ideas are valued by action: measure the cost from idea to artifact, then from ratification to production and any monetisation or real-world return. An idea with no action is worth nothing.", "residual": "Where monetisation or return data comes from, and in what unit [PLACEHOLDER: source and unit, set by the Owner].", "blocks": []},
-    {"id": "OI-06", "question": "Is Muse Spark 1.3 served to the Owner's account region (UK or KSA)? [Unverified]", "status": "Open", "resolver": "AR-10", "isa_answer": null, "fallback": "A second route (OpenRouter) and Gemini 3.8 Flash in the same class (docs/idea/value-stream.md §12).", "blocks": ["C1.03"]},
-    {"id": "OI-07", "question": "No-training terms for every model tier used (R15), and their fit with Heliosvera IP.", "status": "Open", "resolver": "AR-10, with a qualified adviser where the terms are unclear", "isa_answer": null, "blocks": ["C1.03"]},
-    {"id": "OI-08", "question": "Three menu models have estimated Coding Index scores (Claude Opus 5.5, DeepSeek V4.1 Flash, GPT-6 Luna).", "status": "Open", "resolver": "Shadow replay (C1.04); re-run when Artificial Analysis publishes", "isa_answer": null, "blocks": []},
-    {"id": "OI-09", "question": "Who owns live operation: incident, restore, hotfix.", "status": "Open", "resolver": "Isa, AR-09a", "isa_answer": null, "blocks": ["C2.03"]},
-    {"id": "OI-10", "question": "Which ideas need Isa's ratification, and her weekly attention budget.", "status": "Open", "resolver": "Isa, AR-09b", "isa_answer": null, "blocks": ["C3.04"]},
-    {"id": "OI-11", "question": "Quality standards per institution and tier (maximum markdown rate).", "status": "Open", "resolver": "Isa, AR-08, from baseline variance", "isa_answer": null, "blocks": ["C1.06"]},
-    {"id": "OI-12", "question": "Starting licence for menu models that are not in today's mapping. R11 says a new model starts at tier 1 and climbs by stretch cards; §5.1 treats the Artificial Analysis band as the starting prior. The Idea Record does not reconcile the two.", "status": "Open", "resolver": "Isa in AR-13, informed by shadow replay (C1.04)", "isa_answer": null, "blocks": ["C1.05"]},
-    {"id": "OI-13", "question": "Today's model roster, routes and predetermined mapping (R11 start state).", "status": "Open", "resolver": "Fit Report (C0.00)", "isa_answer": null, "blocks": ["C1.05"]},
-    {"id": "OI-14", "question": "Jurisdiction as a property of each route to a model: how data-residency law affects cost and efficiency.", "status": "Deferred (future)", "resolver": "Future analysis; any legal reading needs a qualified adviser", "isa_answer": "Not an artificial single-country constraint; a future analysis.", "blocks": []},
-    {"id": "OI-15", "question": "Real vendor rate limits per account (the model assumed 8 instances per model, 48 in all).", "status": "Open", "resolver": "AR-10, recorded by C1.03", "isa_answer": null, "blocks": ["C1.14"]},
-    {"id": "OI-16", "question": "Length of the shadow periods: baseline (C0.11) and Market/Court shadow before cut-over (C1.18); sample for shadow replay (C1.04).", "status": "Open", "resolver": "Isa, AR-12a", "isa_answer": null, "blocks": ["C0.11", "C1.04", "C1.18"]}
-  ]
+ "_about": "Everything the pack does not know. The Factory must not fill any of these by inference: each is resolved only by its named resolver, and the resolution is recorded. Status 'Resolved' records Isa's answer; residual questions stay open.",
+ "items": [
+  {
+   "id": "OI-01",
+   "question": "The existing Factory's code, card store and workflow engine were not visible to the pack's author.",
+   "status": "Open",
+   "resolver": "Fit Report (C0.00)",
+   "isa_answer": "The Factory runs Director -> Worker -> Checker and moves to the constitutional institutions; it ingests this pack and distributes the cards itself.",
+   "blocks": [
+    "AR-13"
+   ]
+  },
+  {
+   "id": "OI-02",
+   "question": "Current idea and card volumes.",
+   "status": "Resolved",
+   "resolver": "Live measurement (C0.11)",
+   "isa_answer": "Baseline from the analysis; measure live and improve. No study period.",
+   "blocks": []
+  },
+  {
+   "id": "OI-03",
+   "question": "Trial start date and duration.",
+   "status": "Resolved",
+   "resolver": "None needed",
+   "isa_answer": "No trial: build it, use it, monitor and improve (dog-food). Continuous monitoring (C0.15, C4.01).",
+   "blocks": []
+  },
+  {
+   "id": "OI-04",
+   "question": "Who holds vendor accounts and API keys, and how adapters obtain them.",
+   "status": "Resolved in part",
+   "resolver": "Owner, confirmed in the Fit Report (C0.00) and AR-10",
+   "isa_answer": "The Owner; the keys are hashed in the Factory.",
+   "residual": "[Inference] A one-way hash cannot authenticate an API call, so the Factory must also hold a usable credential, encrypted or in a secret store, and use the hash as a fingerprint. Confirm which is in place.",
+   "blocks": [
+    "C0.05",
+    "C1.03"
+   ]
+  },
+  {
+   "id": "OI-05",
+   "question": "What a clean idea is worth.",
+   "status": "Resolved",
+   "resolver": "Idea value ledger (C0.09)",
+   "isa_answer": "Baseline each idea from the pack's analysis; replace with actual output. The Owner provides the actual costs paid in the real world.",
+   "blocks": [],
+   "decision": "Unit USD. Cost: baseline from the cost model, actuals from metering plus Owner-entered invoices, subscriptions and cloud credits. Return: baseline from the idea's Alignment Record, actuals entered by the Owner."
+  },
+  {
+   "id": "OI-06",
+   "question": "Is Muse Spark 1.3 served to the Owner's account region (UK or KSA)? [Unverified]",
+   "status": "Open",
+   "resolver": "AR-10",
+   "isa_answer": null,
+   "fallback": "A second route (OpenRouter) and Gemini 3.8 Flash in the same class (docs/idea/value-stream.md §12).",
+   "blocks": [
+    "C1.03"
+   ]
+  },
+  {
+   "id": "OI-07",
+   "question": "No-training terms for every model tier used (R15), and their fit with Heliosvera IP.",
+   "status": "Open",
+   "resolver": "AR-10, with a qualified adviser where the terms are unclear",
+   "isa_answer": null,
+   "blocks": [
+    "C1.03"
+   ]
+  },
+  {
+   "id": "OI-08",
+   "question": "Three menu models have estimated Coding Index scores (Claude Opus 5.5, DeepSeek V4.1 Flash, GPT-6 Luna).",
+   "status": "Open",
+   "resolver": "Live evidence under R5 (promotion and demotion); re-run the model when Artificial Analysis publishes",
+   "isa_answer": null,
+   "blocks": []
+  },
+  {
+   "id": "OI-09",
+   "question": "Who owns live operation: incident, restore, hotfix.",
+   "status": "Resolved",
+   "resolver": "AR-09a",
+   "isa_answer": "Live operation must be part of the Factory.",
+   "blocks": [],
+   "decision": "Interim owner the Checker (C0.16), then the Release Gate (C2.03) [PROPOSED]; hotfixes through the Market and Court."
+  },
+  {
+   "id": "OI-10",
+   "question": "Which ideas need Isa's ratification, and her weekly attention budget.",
+   "status": "Open",
+   "resolver": "Isa, AR-09b",
+   "isa_answer": null,
+   "blocks": [
+    "C3.04"
+   ]
+  },
+  {
+   "id": "OI-11",
+   "question": "Quality standards per institution and tier (maximum markdown rate).",
+   "status": "Resolved in part",
+   "resolver": "AR-08",
+   "isa_answer": null,
+   "blocks": [
+    "C1.06"
+   ],
+   "decision": "Baseline 1 minus the R19 floor per step [PROPOSED], adjusted from live variance."
+  },
+  {
+   "id": "OI-12",
+   "question": "Starting licence for menu models that are not in today's mapping. R11 says a new model starts at tier 1 and climbs by stretch cards; §5.1 treats the Artificial Analysis band as the starting prior. The Idea Record does not reconcile the two.",
+   "status": "Open",
+   "resolver": "Isa in AR-13",
+   "isa_answer": null,
+   "blocks": [
+    "C1.05"
+   ],
+   "decision": "[PROPOSED] Artificial Analysis band as the starting prior (§5.1), corrected by live evidence under R5; no replay spend."
+  },
+  {
+   "id": "OI-13",
+   "question": "Today's model roster, routes and predetermined mapping (R11 start state).",
+   "status": "Open",
+   "resolver": "Fit Report (C0.00)",
+   "isa_answer": null,
+   "blocks": [
+    "C1.05"
+   ]
+  },
+  {
+   "id": "OI-14",
+   "question": "Jurisdiction as a property of each route to a model: how data-residency law affects cost and efficiency.",
+   "status": "Deferred (future)",
+   "resolver": "Future analysis; any legal reading needs a qualified adviser",
+   "isa_answer": "Not an artificial single-country constraint; a future analysis.",
+   "blocks": []
+  },
+  {
+   "id": "OI-15",
+   "question": "Real vendor rate limits per account (the model assumed 8 instances per model, 48 in all).",
+   "status": "Open",
+   "resolver": "AR-10, recorded by C1.03",
+   "isa_answer": null,
+   "blocks": [
+    "C1.14"
+   ]
+  },
+  {
+   "id": "OI-16",
+   "question": "Length of shadow periods and replay samples.",
+   "status": "Withdrawn",
+   "resolver": "None needed",
+   "isa_answer": "No shadow periods or replay: build, use, monitor and improve.",
+   "blocks": []
+  }
+ ]
 }

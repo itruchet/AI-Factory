@@ -1,31 +1,30 @@
 {
- "_about": "Card seeds for the existing Factory (Director -> Worker -> Checker) to rebuild itself as the constitutional institutions. Each seed is a unit of intent with an acceptance contract, not an implementation plan: the Director splits seeds into Factory cards after the Fit Report (C0.00). Seeds may be split, never merged, dropped or widened without an approved delta in AR-13. Thresholds marked [PROPOSED] are design proposals for Isa to ratify in AR-13, not evidence. [PLACEHOLDER] values are resolved only by the open item named in open_items.",
+ "_about": "Card seeds for the existing Factory, built dog-food style: no lab, no shadow periods, no spend on testing hypotheses. The Factory builds each part, uses it at once on its own work, and improves it from live data.\n\nCard seeds for the existing Factory (Director -> Worker -> Checker) to rebuild itself as the constitutional institutions. Each seed is a unit of intent with an acceptance contract, not an implementation plan: the Director splits seeds into Factory cards after the Fit Report (C0.00). Seeds may be split, never merged, dropped or widened without an approved delta in AR-13. Thresholds marked [PROPOSED] are design proposals for Isa to ratify in AR-13, not evidence. [PLACEHOLDER] values are resolved only by the open item named in open_items.",
  "phases": [
   {
    "phase": 0,
-   "name": "Protect and measure",
-   "intent": "Protect governance, add trustworthy memory, and measure today's Director -> Worker -> Checker Factory so the simulation can be validated against it. No change to how work is allocated.",
+   "name": "Protect, measure and operate",
+   "intent": "Protect governance, add trustworthy memory, measure the Factory live from day one, and give live operation an owner inside the Factory. Measurement is built in, not a study period.",
    "entry": [
     "AR-13 ratified",
     "AR-14 admits Phase 0"
    ],
    "exit": [
     "Every Phase 0 card accepted",
-    "C0.13 backcast result recorded, pass or fail",
     "Isa approves the phase exit through the interim gate (C0.02)"
    ]
   },
   {
    "phase": 1,
    "name": "Rules, Market, Court and Scaler",
-   "intent": "Run the pull rules, licences and elastic capacity in the Ledger; stand up the Work Market and Assurance Court beside Director -> Worker -> Checker, then cut over with a rollback path.",
+   "intent": "Run the pull rules, licences and elastic capacity in the Ledger, and switch Workers and the Checker to the Work Market and Assurance Court as soon as each part passes its acceptance contract. No shadow period.",
    "entry": [
     "Phase 0 exit approved",
-    "AR-08 and AR-10 signed before the cards that name them start"
+    "AR-10 signed before C1.03 starts"
    ],
    "exit": [
     "Every Phase 1 card accepted",
-    "Cut-over (C1.18) run with rollback tested",
+    "Cut-over (C1.18) done",
     "Isa approves the phase exit through the interim gate (C0.02)"
    ]
   },
@@ -34,8 +33,7 @@
    "name": "Audit, Release Gate and live operation",
    "intent": "Mark the markers, gate every change including governance, and give live operation an owner.",
    "entry": [
-    "Phase 1 exit approved",
-    "AR-09a signed before C2.03 starts"
+    "Phase 1 exit approved"
    ],
    "exit": [
     "Every Phase 2 card accepted",
@@ -59,13 +57,13 @@
   },
   {
    "phase": 4,
-   "name": "Trial and decision",
-   "intent": "Run the trial against pre-registered predictions and criteria, then decide go or no-go.",
+   "name": "Operate, monitor and improve",
+   "intent": "No trial and no end date. The Factory runs on its new lines, compares itself weekly with the model, judges X1-X14 as data accrues, and amends through the Release Gate and Isa.",
    "entry": [
-    "AR-12b signed: trial dates and scope, set after admission from the measured baseline"
+    "Phase 3 exit approved"
    ],
    "exit": [
-    "Go / no-go recorded by Isa (CT.03)"
+    "Continuous: none"
    ]
   }
  ],
@@ -200,7 +198,7 @@
    "acceptance": [
     "UPDATE and DELETE on Ledger tables abort",
     "Rebuilding projections from the Ledger reproduces the live projection exactly",
-    "Director -> Worker -> Checker keeps running unchanged while the Ledger is written in shadow",
+    "Director -> Worker -> Checker keeps running unchanged while the Ledger is written alongside it",
     "Any recorded rule decision can be recomputed from the Ledger (replay)"
    ],
    "evidence": [
@@ -234,7 +232,7 @@
    ],
    "acceptance": [
     "Every model invocation in a sample week has a usage record",
-    "Recorded cost reconciles with the vendor's invoice or usage console within [PROPOSED] 2%",
+    "Metered cost reconciles with the actual costs the Owner enters from vendor invoices, subscriptions and cloud credits (C0.09) within [PROPOSED] 2%",
     "Throttle events (for example HTTP 429) are recorded with the rate-limit headers the vendor returns"
    ],
    "evidence": [
@@ -402,19 +400,21 @@
   {
    "id": "C0.09",
    "phase": 0,
-   "title": "Idea value ledger: cost to artifact, and return after ratification",
+   "title": "Idea value ledger: baseline at intake, actuals as they happen",
    "owner_after": "Ledger",
    "executed_by": "Worker",
-   "intent": "An idea is worth nothing without action. Measure what it cost to turn an idea into an artifact, then from ratification to production and any monetisation or real-world return.",
+   "intent": "An idea is worth nothing without action. Each idea carries a baseline from the pack's analysis at intake, and the baseline is replaced by actual output and actual cost as they happen.",
    "scope": [
-    "Segment 1: idea intake to first artifact (merged code or ratified document): model spend and recorded human hours",
-    "Segment 2: ratification, production and return events, with the value the Owner records",
-    "Ideas with no action are recorded as 'no action', value zero"
+    "At intake: a baseline cost to artifact from the pack's cost model (claim CL-02 per clean idea, the menu's token prices) and the expected return the idea's Alignment Record states, in USD",
+    "Segment 1, idea to first artifact (merged code or ratified document): metered model spend (C0.04), plus the actual costs the Owner enters (vendor invoices, subscriptions, cloud credits such as development sessions), plus recorded human hours",
+    "Segment 2: ratification, production and return events, with the actual value the Owner records in USD",
+    "Ideas with no action are recorded as 'no action', value zero",
+    "The cost model is re-based from actuals every week; baselines for new ideas use the re-based model"
    ],
    "acceptance": [
-    "For every idea, segment 1 cost is computable from Ledger facts alone",
-    "The Owner can record a ratification, production or return event against an idea",
-    "A report lists ideas by segment 1 cost and, where recorded, return"
+    "Every idea has a baseline at intake and, once acted on, an actual segment 1 cost computable from Ledger facts and Owner entries",
+    "The Owner can enter an actual cost against a vendor, a period or an idea",
+    "A weekly report shows baseline against actual per idea, and the model's re-based cost per clean idea"
    ],
    "evidence": [
     "Value report for a sample period"
@@ -433,9 +433,7 @@
     "M06",
     "M07"
    ],
-   "open_items": [
-    "OI-05"
-   ]
+   "open_items": []
   },
   {
    "id": "C0.10",
@@ -443,7 +441,7 @@
    "title": "Package the simulation twin and reproduce the recorded results",
    "owner_after": "Ledger",
    "executed_by": "Worker",
-   "intent": "The value-stream simulation is the hypothesis. Make it runnable inside the Factory, pinned to the pack's commit, with its parameters read from a file.",
+   "intent": "The value-stream simulation is the Factory's model of itself. Make it runnable inside the Factory on CPU (no model spend), pinned to the pack's commit, with its parameters read from a file.",
    "scope": [
     "probes/value-stream/vs_sim.py and the modules it imports (probes/institutions/factory_sim.py, probes/portfolio6/select6.py), pinned by the hashes in manifest.json",
     "Every assumed parameter listed in the pack's twin_parameters read from one parameter file",
@@ -472,17 +470,17 @@
   {
    "id": "C0.11",
    "phase": 0,
-   "title": "Baseline: measure today's Factory for the shadow period",
+   "title": "Live measurement from day one",
    "owner_after": "Ledger",
    "executed_by": "Worker",
-   "intent": "Replace assumed volumes with measured ones. This is the data the trial is sized from and the twin is calibrated on.",
+   "intent": "There is no study period. The measures accrue as the Factory works, and every figure is live from the first card.",
    "scope": [
-    "Run C0.04-C0.09 for the shadow period [PLACEHOLDER: length, set in AR-12a]",
-    "Report the demand profile, token use per card and step, pass rates per model, step and tier, coupling, catch rates, change-failure rate, lead times, cost per idea to artifact, human attention hours"
+    "C0.04-C0.09 switched on for all work from the start",
+    "Weekly: the demand profile, token use per card and step, pass rates per model, step and tier, coupling, catch rates, change-failure rate, lead times, cost per idea to artifact, human attention hours"
    ],
    "acceptance": [
-    "Every measure M01-M18 has a value for the period, or a recorded reason it cannot be measured under Director -> Worker -> Checker",
-    "Variance per measure is reported (needed for AR-08 standards)"
+    "Every measure M01-M18 has a live value each week, or a recorded reason it cannot be measured yet",
+    "Variance per measure is reported, so AR-08's baseline standards can be adjusted"
    ],
    "evidence": [
     "Baseline report"
@@ -495,9 +493,7 @@
     "C0.08",
     "C0.09"
    ],
-   "requires_approval": [
-    "AR-12a"
-   ],
+   "requires_approval": [],
    "ratified_by": null,
    "traces": [
     "X1",
@@ -524,25 +520,23 @@
     "M17",
     "M18"
    ],
-   "open_items": [
-    "OI-02",
-    "OI-16"
-   ]
+   "open_items": []
   },
   {
    "id": "C0.12",
    "phase": 0,
-   "title": "Calibrate the twin on the baseline",
+   "title": "Recalibrate the model weekly from live data",
    "owner_after": "Ledger",
    "executed_by": "Worker",
-   "intent": "Fit the simulation's assumed parameters to what the Factory actually does.",
+   "intent": "The model's assumptions are the baseline. Replace each with live data as soon as there is enough of it, automatically and without model spend.",
    "scope": [
-    "For each twin parameter: fitted value from the baseline, or 'not measurable yet' with the assumption kept",
-    "Sensitivity: which unmeasured parameters move the predictions most"
+    "Weekly, for each twin parameter: fitted value from live data, or 'not enough data yet' with the assumption kept",
+    "Sensitivity: which unmeasured parameters move the model's figures most",
+    "The weekly model run and its figures for the coming week (M01, M03, M04, M05, M12)"
    ],
    "acceptance": [
     "Every parameter in twin_parameters is marked fitted (with the measure and period used) or assumed (with the reason)",
-    "The calibrated parameter file is stored as a versioned record"
+    "Each week's parameter file and figures are stored as a versioned record before the week's live data arrives"
    ],
    "evidence": [
     "Calibration record"
@@ -555,12 +549,20 @@
    "ratified_by": null,
    "traces": [
     "X9",
+    "X10",
+    "X13",
+    "X14",
     "RK2"
    ],
    "measures": [
+    "M01",
+    "M03",
+    "M04",
+    "M05",
     "M08",
     "M09",
     "M11",
+    "M12",
     "M13",
     "M14",
     "M15",
@@ -569,100 +571,28 @@
    "open_items": []
   },
   {
-   "id": "C0.13",
-   "phase": 0,
-   "title": "Backcast: does the twin reproduce today's Factory?",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
-   "intent": "Before its predictions for the institutions are trusted, the calibrated twin must reproduce the Factory it was calibrated on.",
-   "scope": [
-    "Run the twin as Director -> Worker -> Checker with the calibrated parameters and today's roster",
-    "Compare with the baseline on clean ideas, change-failure rate and cost per clean idea"
-   ],
-   "acceptance": [
-    "Result recorded against X9's criterion: each of the three measures within 25% of the baseline, or a fail",
-    "On a fail, the causes are listed and the model is revised before C0.14; the revision is a new record, not an overwrite"
-   ],
-   "evidence": [
-    "Backcast report"
-   ],
-   "depends_on": [
-    "C0.12"
-   ],
-   "requires_approval": [],
-   "ratified_by": "Isa (reviews the result)",
-   "traces": [
-    "X9"
-   ],
-   "measures": [
-    "M01",
-    "M03",
-    "M05"
-   ],
-   "open_items": []
-  },
-  {
-   "id": "C0.14",
-   "phase": 0,
-   "title": "Pre-register predictions for the trial",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
-   "intent": "Criteria fixed before data. Record what the twin predicts for the trial configuration before the trial runs.",
-   "scope": [
-    "Run the calibrated twin for the trial configuration in AR-12a",
-    "Record predicted ranges for M01, M03, M04, M05, M12 as a sealed record",
-    "The uncalibrated predictions in this pack (predictions section) are the prior; the calibrated run replaces them"
-   ],
-   "acceptance": [
-    "Predictions are stored before the trial starts and cannot be changed afterwards",
-    "Each prediction names the parameter file and code version that produced it"
-   ],
-   "evidence": [
-    "Sealed prediction record"
-   ],
-   "depends_on": [
-    "C0.13"
-   ],
-   "requires_approval": [
-    "AR-12a"
-   ],
-   "ratified_by": null,
-   "traces": [
-    "X9",
-    "X10",
-    "X13",
-    "X14"
-   ],
-   "measures": [
-    "M01",
-    "M03",
-    "M04",
-    "M05",
-    "M12"
-   ],
-   "open_items": []
-  },
-  {
    "id": "C0.15",
    "phase": 0,
-   "title": "Weekly report: live against the model",
+   "title": "Weekly report and alarms: live against the model",
    "owner_after": "Ledger",
    "executed_by": "Worker",
    "intent": "One weekly view that compares the Factory with its own predictions, built on SQL views, no new tool.",
    "scope": [
     "SQL views for every measure M01-M20",
-    "Weekly comparison with the sealed predictions (C0.14) once they exist",
-    "Isa's attention hours shown every week"
+    "Weekly comparison with that week's model figures (C0.12)",
+    "Alarm when live results fall outside the model by more than 25% (X9) or an experiment's falsification criterion is met: the alarm opens a card, it does not stop work",
+    "Isa's attention hours and spend against the ceiling every week"
    ],
    "acceptance": [
     "The report is generated from Ledger queries alone",
-    "Each figure links to the query that produced it"
+    "Each figure links to the query that produced it",
+    "An alarm creates a card with the evidence attached"
    ],
    "evidence": [
     "A generated weekly report"
    ],
    "depends_on": [
-    "C0.11"
+    "C0.12"
    ],
    "requires_approval": [],
    "ratified_by": null,
@@ -677,6 +607,46 @@
     "M05",
     "M16",
     "M17"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C0.16",
+   "phase": 0,
+   "title": "Live operation inside the Factory: detect, restore, hotfix",
+   "owner_after": "Release Gate (interim: Checker)",
+   "executed_by": "Worker",
+   "intent": "Live operation is part of the Factory. From the first change, the Factory detects its own incidents, restores service and fixes forward by its own rules.",
+   "scope": [
+    "Detect: the Ledger raises an incident on failed runs, error-rate or throughput control limits, or a failed smoke test after a change",
+    "Restore: the owner reverts the change that caused it (Git) and records restore time",
+    "Hotfix: a card that is pulled, built, reviewed and released like any other",
+    "Attribute: change-failure rate and restore time are marked against the releasing change and its producers (R8, R12)",
+    "Owner: the Checker until the Release Gate exists, then the Release Gate (C2.03)"
+   ],
+   "acceptance": [
+    "A deliberately failed change is detected, reverted and recorded with restore time",
+    "A hotfix card goes through the normal flow, not a side door",
+    "Every incident names the change that caused it"
+   ],
+   "evidence": [
+    "Incident drill record"
+   ],
+   "depends_on": [
+    "C0.06",
+    "C0.02"
+   ],
+   "requires_approval": [
+    "AR-09a"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "DQ6",
+    "R8",
+    "R12"
+   ],
+   "measures": [
+    "M03"
    ],
    "open_items": []
   },
@@ -801,45 +771,6 @@
    ]
   },
   {
-   "id": "C1.04",
-   "phase": 1,
-   "title": "Shadow replay: menu models on historical cards",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
-   "intent": "Estimate each menu model's pass chance per step and tier on this Factory's own work before it takes live cards. This replaces the estimated benchmark scores.",
-   "scope": [
-    "Replay a sample of accepted historical cards [PLACEHOLDER: sample, set in AR-12a] on each menu model",
-    "Mark results with the same checks the cards passed",
-    "Record pass rates, cost and time per model, step and tier"
-   ],
-   "acceptance": [
-    "Every menu model has a recorded pass rate per step and tier on the sample, with its size",
-    "The estimated Coding Index values (marked * in the menu) are replaced by measured pass rates for licensing"
-   ],
-   "evidence": [
-    "Replay report"
-   ],
-   "depends_on": [
-    "C1.03",
-    "C0.06"
-   ],
-   "requires_approval": [],
-   "ratified_by": null,
-   "traces": [
-    "R11",
-    "R19",
-    "problem.P2"
-   ],
-   "measures": [
-    "M09"
-   ],
-   "open_items": [
-    "OI-08",
-    "OI-12",
-    "OI-16"
-   ]
-  },
-  {
    "id": "C1.05",
    "phase": 1,
    "title": "Licences and pull: hardest first, oldest first",
@@ -849,7 +780,7 @@
    "scope": [
     "R1 pull; R2 licence ladder; R3 hardest first, oldest first, no choice within a tier",
     "R10: at pull time the agent sees its licences, recent rate against the standard and its recent markdown reasons; it may decline without a markdown; repeated declines return the licence",
-    "R11 start state: today's predetermined mapping; the start for menu models not in today's mapping per OI-12",
+    "R11 start state: today's predetermined mapping for today's models; menu models not in today's mapping start from their Artificial Analysis band as prior (§5.1) and move on live evidence (OI-12)",
     "The Ledger views each agent sees at pull time (DQ5)"
    ],
    "acceptance": [
@@ -864,7 +795,7 @@
    "depends_on": [
     "C1.01",
     "C1.02",
-    "C1.04"
+    "C1.03"
    ],
    "requires_approval": [
     "AR-01"
@@ -884,7 +815,8 @@
     "problem.P4",
     "problem.P7",
     "X2",
-    "institution.Market"
+    "institution.Market",
+    "problem.P2"
    ],
    "measures": [
     "M09"
@@ -903,7 +835,7 @@
    "intent": "Success and velocity push an agent up to the hardest tier it can sustain; failure moves it down.",
    "scope": [
     "R5 as written, with the constants set once in the constitution (pack: constitution.constants)",
-    "Quality standards per institution and tier from AR-08",
+    "Quality standards per institution and tier from AR-08: baseline from the analysis, adjusted from live variance",
     "A minimum sample per tier before velocity comparisons count (RK4)"
    ],
    "acceptance": [
@@ -1131,7 +1063,7 @@
    "intent": "The steps where a mistake costs most need the most reliable models, chosen by evidence.",
    "scope": [
     "R19: design, plan, plan red-team, security review, acceptance test and release need a pass chance of at least 0.8; other steps 0.6; review 0.5",
-    "Pass chance from the same evidence as every licence (C1.04, then live records)"
+    "Pass chance from the same evidence as every licence: the Artificial Analysis prior, then live records"
    ],
    "acceptance": [
     "A model below a step's floor cannot take that step",
@@ -1221,7 +1153,6 @@
    ],
    "depends_on": [
     "C1.03",
-    "C1.04",
     "C1.12",
     "C1.13"
    ],
@@ -1370,21 +1301,21 @@
   {
    "id": "C1.18",
    "phase": 1,
-   "title": "Cut-over: Work Market and Court replace Worker and Checker, with rollback",
+   "title": "Cut-over: Work Market and Court replace Worker and Checker",
    "owner_after": "Market",
    "executed_by": "Director",
-   "intent": "Move execution and checking to the institutions while the Director keeps planning, with a tested way back.",
+   "intent": "Switch execution and checking to the institutions as soon as they pass their acceptance contracts, and keep improving them live.",
    "scope": [
-    "Shadow the Market and Court on live cards before switching [PLACEHOLDER: shadow length, set in AR-12a]",
     "Switch Workers to pull and the Checker to the Court",
-    "Rollback to Director -> Worker -> Checker by configuration, tested"
+    "The Director keeps planning until Phase 3",
+    "Revert by Git if a switch breaks the Factory; the revert is an incident handled by C0.16"
    ],
    "acceptance": [
-    "Rollback restores Director -> Worker -> Checker without data loss (tested)",
-    "During shadow, Market and Court decisions are recorded beside the live ones for comparison (X1)"
+    "All new cards flow through the Market and Court",
+    "Market and Court decisions are compared weekly with the Director -> Worker -> Checker figures from before the switch (X1)"
    ],
    "evidence": [
-    "Shadow comparison; rollback test"
+    "Weekly comparison"
    ],
    "depends_on": [
     "C1.05",
@@ -1397,9 +1328,7 @@
     "C1.17",
     "C0.15"
    ],
-   "requires_approval": [
-    "AR-12a"
-   ],
+   "requires_approval": [],
    "ratified_by": "Isa (switch)",
    "traces": [
     "X1",
@@ -1412,9 +1341,7 @@
     "M05",
     "M10"
    ],
-   "open_items": [
-    "OI-16"
-   ]
+   "open_items": []
   },
   {
    "id": "C2.01",
@@ -1493,23 +1420,24 @@
   {
    "id": "C2.03",
    "phase": 2,
-   "title": "Live operation: incident, restore, hotfix",
-   "owner_after": "[PLACEHOLDER: owner, set in AR-09a]",
+   "title": "Release Gate takes over live operation",
+   "owner_after": "Release Gate",
    "executed_by": "Worker",
-   "intent": "The value stream continues past the Release Gate. Give live operation an owner.",
+   "intent": "Live operation stays inside the Factory. The Release Gate, which let the change in, owns restoring from it.",
    "scope": [
-    "Incident detection, restore and hotfix cards (value-stream step 13)",
-    "The owner decided in AR-09a (the value-stream document gives one example: the Release Gate owns rollback, the Work Market takes hotfix cards, the Ledger marks change-failure rate and restore time)"
+    "Transfer C0.16's detection, restore and hotfix flow from the Checker to the Release Gate",
+    "Hotfix cards pulled by the Market and reviewed by the Court; restores decided by the Release Gate; the Ledger marks change-failure rate and restore time"
    ],
    "acceptance": [
-    "Every incident has an owner, a restore time and, where needed, a hotfix card",
+    "Every incident has the Release Gate as owner, a restore time and, where needed, a hotfix card",
     "Change-failure rate and restore time are recorded as evidence against the releasing change"
    ],
    "evidence": [
     "Incident records"
    ],
    "depends_on": [
-    "C2.02"
+    "C2.02",
+    "C0.16"
    ],
    "requires_approval": [
     "AR-09a"
@@ -1521,9 +1449,7 @@
    "measures": [
     "M03"
    ],
-   "open_items": [
-    "OI-09"
-   ]
+   "open_items": []
   },
   {
    "id": "C2.04",
@@ -1570,7 +1496,7 @@
    "intent": "Independent discovery: commit before seeing any other submission.",
    "scope": [
     "Participants on the same brief, committing before any peer output is visible",
-    "Sizing: the institutional model found two analysts sufficient (Idea Record §5.3); X7 tests universal participation. The trial compares both"
+    "Sizing: the institutional model found two analysts sufficient (Idea Record §5.3); X7 tests universal participation. Live data decides (C4.01)"
    ],
    "acceptance": [
     "No participant sees a peer output or identity before committing"
@@ -1700,62 +1626,24 @@
    ]
   },
   {
-   "id": "CT.01",
+   "id": "C4.01",
    "phase": 4,
-   "title": "Trial plan: dates and scope",
-   "owner_after": "Planning",
-   "executed_by": "Director",
-   "intent": "Set the trial's dates and scope once the cards are in the backlog and the baseline is measured.",
-   "scope": [
-    "Start date and duration from the backlog forecast",
-    "Scope from the measured demand profile (C0.11), not the assumed 25 ideas a week",
-    "Which phases the trial covers"
-   ],
-   "acceptance": [
-    "AR-12b signed by Isa"
-   ],
-   "evidence": [
-    "Signed AR-12b"
-   ],
-   "depends_on": [
-    "C0.14",
-    "C1.18"
-   ],
-   "requires_approval": [
-    "AR-12b"
-   ],
-   "ratified_by": "Isa",
-   "traces": [
-    "AR-12b",
-    "H6"
-   ],
-   "measures": [
-    "M18"
-   ],
-   "open_items": [
-    "OI-03"
-   ]
-  },
-  {
-   "id": "CT.02",
-   "phase": 4,
-   "title": "Run the trial and judge X1-X14",
+   "title": "Judge X1-X14 continuously",
    "owner_after": "Ledger",
    "executed_by": "Worker",
-   "intent": "Each experiment can prove the idea wrong. Judge each against its pre-registered criterion.",
+   "intent": "Each experiment can prove the idea wrong. Judge each as live data accrues, and turn a falsified one into an amendment card.",
    "scope": [
-    "Weekly live-against-prediction report (C0.15)",
-    "Each experiment X1-X14 judged against its falsification criterion in the pack",
-    "X9 on the sealed predictions (C0.14)"
+    "Each experiment X1-X14 judged against its falsification criterion in the pack, on live data, whenever it has enough",
+    "A falsified experiment opens an amendment card to the Release Gate and Isa (principle 8)"
    ],
    "acceptance": [
-    "Every experiment has a recorded verdict (not falsified / falsified / not testable yet, with reason)"
+    "Every experiment carries a current verdict (not falsified / falsified / not enough data yet, with the data used)"
    ],
    "evidence": [
     "Experiment verdicts"
    ],
    "depends_on": [
-    "CT.01",
+    "C0.15",
     "C2.01",
     "C3.03"
    ],
@@ -1790,35 +1678,34 @@
    "open_items": []
   },
   {
-   "id": "CT.03",
+   "id": "C4.02",
    "phase": 4,
-   "title": "Go / no-go, and retiring the old roles",
+   "title": "Retire the old roles",
    "owner_after": "Release Gate",
    "executed_by": "Director",
-   "intent": "Isa decides on the evidence. Go retires Director -> Worker -> Checker; no-go rolls back.",
+   "intent": "Once Planning, the Market and the Court carry all work, retire Director, Worker and Checker.",
    "scope": [
-    "Decision record against AR-12a's success and kill criteria",
-    "On go: retire the Director, Worker and Checker roles through the Release Gate",
-    "On no-go: roll back (C1.18) and record why"
+    "Retire the Director, Worker and Checker roles through the Release Gate",
+    "Keep their history in the Ledger"
    ],
    "acceptance": [
-    "Isa's decision recorded with the evidence it cites",
-    "Either the old roles are retired through the Release Gate or the rollback is complete"
+    "No card is routed through the old roles",
+    "The retirement passed the Release Gate and Isa"
    ],
    "evidence": [
-    "Decision record"
+    "Release Gate record"
    ],
    "depends_on": [
-    "CT.02",
+    "C3.03",
+    "C1.18",
     "C2.02"
    ],
-   "requires_approval": [
-    "AR-12a"
-   ],
+   "requires_approval": [],
    "ratified_by": "Isa",
    "traces": [
     "principle.8",
-    "H3"
+    "H3",
+    "X1"
    ],
    "measures": [],
    "open_items": []

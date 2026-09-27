@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.4 (supersedes r1–r12.3; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/), after Isa's answers of 27 Sep 2026)
+Revision: r12.5 (supersedes r1–r12.4; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -537,7 +537,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - Reason codes for R8, and the evidence each one requires.
 - Initial constants: window, hysteresis, stretch trials, back-off.
 - The Ledger views each agent sees at pull time (R10).
-- Who owns live operation (incident, restore, hotfix): the value stream continues past the Release Gate (§5.5).
+- Who owns live operation (incident, restore, hotfix): the value stream continues past the Release Gate (§5.5). r12.5: Isa decided it is part of the Factory; proposed owner the Release Gate, with the Checker as interim owner (AR-09a).
 - Which ideas need human ratification. At about 10 minutes an idea, 100 ideas a week is about 17 hours of Isa's time, so ratification is the likely real ceiling (§5.5).
 - Jurisdiction as a property of each route to a model (future): how data-residency law affects cost and efficiency.
 - SQL as canonical operational state, with stateless invocations reloading a versioned snapshot; Git as the artifact authority (r12.1, from the cross-check model).
@@ -568,7 +568,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | Every open item typed and routed | Met (§11) |
 | Only decisions that are genuinely Isa's are left to Isa | Met (§11.3) |
 
-**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 16 approval records in three gates, is in [`approvals.md`](approvals.md). The change reaches the existing Factory as an ingestion pack ([`pack/`](../../pack/)): rules, measures, approvals, open items and 45 card seeds, each traced to this record and checked by tests.
+**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 15 approval records in three gates, is in [`approvals.md`](approvals.md). The change reaches the existing Factory as an ingestion pack ([`pack/`](../../pack/)): rules, measures, approvals, open items and 42 card seeds, each traced to this record and checked by tests.
 
 ---
 

@@ -122,8 +122,8 @@ class NothingForgotten(unittest.TestCase):
         self.assertEqual([p["id"] for p in C["problems"] if p["id"] not in traced], [])
 
     def test_every_experiment_is_instrumented_and_judged(self):
-        judged = set(CARDS["CT.02"]["traces"])
-        instrumented = {t for c in PACK["cards"] if c["id"] != "CT.02" for t in c["traces"]}
+        judged = set(CARDS["C4.01"]["traces"])
+        instrumented = {t for c in PACK["cards"] if c["id"] != "C4.01" for t in c["traces"]}
         for x in C["experiments"]:
             self.assertIn(x["id"], judged)
             self.assertIn(x["id"], instrumented, x["id"])
@@ -207,7 +207,7 @@ class PlanIsSound(unittest.TestCase):
         readme = (HERE / "README.md").read_text()
         self.assertIn(f"{n_cards} card seeds", ingest)
         self.assertIn(f"{n_ar} approval records", ingest)
-        words = {15: "Fifteen", 16: "Sixteen"}
+        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}
         self.assertIn(f"{words[n_ar]} records in three gates", readme)
         self.assertIn(f"Isa signs {words[sum(1 for a in PACK['approvals']['records'] if a['signer'] == 'Isa')].lower()}", readme)
 

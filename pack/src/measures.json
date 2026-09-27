@@ -1,231 +1,231 @@
 {
-  "_about": "Measures the Factory must record to run the rules, calibrate the simulation twin and judge experiments X1-X14. Definitions follow the value-stream model (probes/value-stream/vs_sim.py) so live and simulated figures are comparable. Thresholds are not set here: they are set in AR-08 (standards) and AR-12a (trial criteria).",
-  "measures": [
-    {
-      "id": "M01",
-      "name": "Clean ideas per week",
-      "definition": "Ideas that reached live in the week with full intent delivered and no escaped defect found within the audit window [PLACEHOLDER: audit window, set in AR-12a].",
-      "unit": "ideas/week",
-      "used_by": [
-        "X9",
-        "X10",
-        "X14",
-        "AR-12a"
-      ],
-      "sim_field": "clean"
-    },
-    {
-      "id": "M02",
-      "name": "Ideas live per week",
-      "definition": "Ideas deployed to production in the week, clean or not.",
-      "unit": "ideas/week",
-      "used_by": [
-        "X1",
-        "X9"
-      ],
-      "sim_field": "ideas"
-    },
-    {
-      "id": "M03",
-      "name": "Change-failure rate",
-      "definition": "Share of production deploys that cause an incident, rollback or hotfix.",
-      "unit": "ratio",
-      "used_by": [
-        "X9",
-        "X14"
-      ],
-      "sim_field": "cfr"
-    },
-    {
-      "id": "M04",
-      "name": "Lead time, median and 90th percentile",
-      "definition": "Hours from idea intake to live, per idea.",
-      "unit": "hours",
-      "used_by": [
-        "X10"
-      ],
-      "sim_field": "lead, lead_p90"
-    },
-    {
-      "id": "M05",
-      "name": "Cost per clean idea",
-      "definition": "All model spend in the period divided by M01 for the period.",
-      "unit": "USD/clean idea",
-      "used_by": [
-        "X9",
-        "X10",
-        "R16"
-      ],
-      "sim_field": "usd_clean"
-    },
-    {
-      "id": "M06",
-      "name": "Cost from idea to artifact",
-      "definition": "Model spend (tokens at list price, including cached input) plus recorded human hours, from idea intake to the first artifact: merged code or a ratified document. Isa's definition: an idea is worth nothing without action; this is what it cost to turn it into something.",
-      "unit": "USD and human hours per idea",
-      "used_by": [
-        "AR-05",
-        "C0.09"
-      ],
-      "sim_field": null
-    },
-    {
-      "id": "M07",
-      "name": "Realised value from ratification to return",
-      "definition": "Timestamps for ratification, production and first monetisation or other real-world return, plus the value recorded by the Owner. An idea with no action is recorded as 'no action' with value zero.",
-      "unit": "dates; USD or Owner-defined value unit [PLACEHOLDER: unit, set by the Owner]",
-      "used_by": [
-        "AR-05",
-        "C0.09"
-      ],
-      "sim_field": null
-    },
-    {
-      "id": "M08",
-      "name": "Token use per invocation",
-      "definition": "Input, cached input and output tokens, list-price cost, latency and throttle events per model invocation, keyed to idea, card, step and model version.",
-      "unit": "tokens, USD, seconds",
-      "used_by": [
-        "C0.12",
-        "R14",
-        "R16"
-      ],
-      "sim_field": "CARD_TOKENS, STEP_TOKENS, GEN_DUTY, IN_PER_OUT, CACHE_HIT"
-    },
-    {
-      "id": "M09",
-      "name": "Pass rate per model, step and tier",
-      "definition": "Share of attempts accepted by the next institution, per model version, value-stream step and card tier.",
-      "unit": "ratio",
-      "used_by": [
-        "R2",
-        "R5",
-        "R14",
-        "R19",
-        "C0.12"
-      ],
-      "sim_field": "p_pass"
-    },
-    {
-      "id": "M10",
-      "name": "Markdown rate per institution and tier",
-      "definition": "Share of an institution's outputs marked down by the next institution, per tier, with R8 reason codes.",
-      "unit": "ratio",
-      "used_by": [
-        "H2",
-        "AR-08",
-        "R5"
-      ],
-      "sim_field": null
-    },
-    {
-      "id": "M11",
-      "name": "Coupling",
-      "definition": "Share of ordered requirement pairs within an idea where one depends on the other.",
-      "unit": "ratio",
-      "used_by": [
-        "X13",
-        "C0.12"
-      ],
-      "sim_field": "COUPLING"
-    },
-    {
-      "id": "M12",
-      "name": "Stale rebuilds per idea",
-      "definition": "Cards rebuilt because a prerequisite they read changed after they were built.",
-      "unit": "rebuilds/idea",
-      "used_by": [
-        "X13"
-      ],
-      "sim_field": "drops.stale_rework"
-    },
-    {
-      "id": "M13",
-      "name": "All-family miss share",
-      "definition": "Share of escaped defects that every model family which checked the artifact missed.",
-      "unit": "ratio",
-      "used_by": [
-        "X11"
-      ],
-      "sim_field": "BLIND_P"
-    },
-    {
-      "id": "M14",
-      "name": "Step hours and queue waits",
-      "definition": "Busy hours and waiting hours per value-stream step, per card and per idea.",
-      "unit": "hours",
-      "used_by": [
-        "C0.12",
-        "X10"
-      ],
-      "sim_field": "STEP_HOURS, CARD_HOURS, busy_step"
-    },
-    {
-      "id": "M15",
-      "name": "Defect catch by check",
-      "definition": "For each defect: where it was injected, which check caught it (unit test, CI, review, security review, audit, QA, release, smoke, live) and which checks passed it.",
-      "unit": "counts",
-      "used_by": [
-        "C0.12",
-        "X4",
-        "X11"
-      ],
-      "sim_field": "TEST_CATCH, CI_CATCH, RELEASE_CATCH, SMOKE, REVIEW_SEC"
-    },
-    {
-      "id": "M16",
-      "name": "Burn rate",
-      "definition": "Model spend per hour on running instances, and its trailing seven-day average.",
-      "unit": "USD/hour",
-      "used_by": [
-        "R16",
-        "AR-05"
-      ],
-      "sim_field": "usd_week"
-    },
-    {
-      "id": "M17",
-      "name": "Human attention",
-      "definition": "Isa's hours per week on ratification, standards, amendments, Release Gate governance changes and R13 escalations.",
-      "unit": "hours/week",
-      "used_by": [
-        "DQ7",
-        "AR-09b"
-      ],
-      "sim_field": "HUMAN_INTENT_H, HUMAN_PLAN_H"
-    },
-    {
-      "id": "M18",
-      "name": "Demand profile",
-      "definition": "Ideas arriving per week, requirements per idea, cards per requirement and card size by tier.",
-      "unit": "counts",
-      "used_by": [
-        "C0.12",
-        "AR-12b",
-        "AR-05"
-      ],
-      "sim_field": "R_REQ, CARDS_PER_REQ, CARD_MIX, Demand"
-    },
-    {
-      "id": "M19",
-      "name": "Interface error cost against packet rework",
-      "definition": "Rework caused by interface faults between requirements, compared with rework when several requirements go in one invocation.",
-      "unit": "hours or USD",
-      "used_by": [
-        "X12"
-      ],
-      "sim_field": "CONTEXT_PENALTY, INTERFACE_P"
-    },
-    {
-      "id": "M20",
-      "name": "Waivers",
-      "definition": "Every R13 or R18 waiver: which rule was relaxed, for which card, and why.",
-      "unit": "records",
-      "used_by": [
-        "R13",
-        "R18"
-      ],
-      "sim_field": null
-    }
-  ]
+ "_about": "Measures the Factory must record to run the rules, calibrate the simulation twin and judge experiments X1-X14. Definitions follow the value-stream model (probes/value-stream/vs_sim.py) so live and simulated figures are comparable. Thresholds are not set here: they are set in AR-08 (standards) and AR-12 (monitoring and improvement plan).",
+ "measures": [
+  {
+   "id": "M01",
+   "name": "Clean ideas per week",
+   "definition": "Ideas that reached live in the week with full intent delivered and no escaped defect found within 7 days of deploy [PROPOSED: the model's incidents follow a deploy by 24 h on average (INCIDENT_DELAY_H), so 7 days covers over 99.9% of them].",
+   "unit": "ideas/week",
+   "used_by": [
+    "X9",
+    "X10",
+    "X14",
+    "AR-12"
+   ],
+   "sim_field": "clean"
+  },
+  {
+   "id": "M02",
+   "name": "Ideas live per week",
+   "definition": "Ideas deployed to production in the week, clean or not.",
+   "unit": "ideas/week",
+   "used_by": [
+    "X1",
+    "X9"
+   ],
+   "sim_field": "ideas"
+  },
+  {
+   "id": "M03",
+   "name": "Change-failure rate",
+   "definition": "Share of production deploys that cause an incident, rollback or hotfix.",
+   "unit": "ratio",
+   "used_by": [
+    "X9",
+    "X14"
+   ],
+   "sim_field": "cfr"
+  },
+  {
+   "id": "M04",
+   "name": "Lead time, median and 90th percentile",
+   "definition": "Hours from idea intake to live, per idea.",
+   "unit": "hours",
+   "used_by": [
+    "X10"
+   ],
+   "sim_field": "lead, lead_p90"
+  },
+  {
+   "id": "M05",
+   "name": "Cost per clean idea",
+   "definition": "All model spend in the period divided by M01 for the period.",
+   "unit": "USD/clean idea",
+   "used_by": [
+    "X9",
+    "X10",
+    "R16"
+   ],
+   "sim_field": "usd_clean"
+  },
+  {
+   "id": "M06",
+   "name": "Cost from idea to artifact",
+   "definition": "Baseline at intake from the pack's cost model; actual = metered model spend plus the actual costs the Owner enters (vendor invoices, subscriptions, cloud credits including development sessions) plus recorded human hours, from idea intake to the first artifact: merged code or a ratified document. An idea is worth nothing without action; this is what it cost to turn it into something.",
+   "unit": "USD and human hours per idea",
+   "used_by": [
+    "AR-05",
+    "C0.09"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M07",
+   "name": "Realised value from ratification to return",
+   "definition": "Baseline at intake: the expected return stated in the idea's Alignment Record. Actual: timestamps for ratification, production and first monetisation or other real-world return, with the value the Owner records. An idea with no action is recorded as 'no action' with value zero.",
+   "unit": "USD and dates",
+   "used_by": [
+    "AR-05",
+    "C0.09"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M08",
+   "name": "Token use per invocation",
+   "definition": "Input, cached input and output tokens, list-price cost, latency and throttle events per model invocation, keyed to idea, card, step and model version.",
+   "unit": "tokens, USD, seconds",
+   "used_by": [
+    "C0.12",
+    "R14",
+    "R16"
+   ],
+   "sim_field": "CARD_TOKENS, STEP_TOKENS, GEN_DUTY, IN_PER_OUT, CACHE_HIT"
+  },
+  {
+   "id": "M09",
+   "name": "Pass rate per model, step and tier",
+   "definition": "Share of attempts accepted by the next institution, per model version, value-stream step and card tier.",
+   "unit": "ratio",
+   "used_by": [
+    "R2",
+    "R5",
+    "R14",
+    "R19",
+    "C0.12"
+   ],
+   "sim_field": "p_pass"
+  },
+  {
+   "id": "M10",
+   "name": "Markdown rate per institution and tier",
+   "definition": "Share of an institution's outputs marked down by the next institution, per tier, with R8 reason codes.",
+   "unit": "ratio",
+   "used_by": [
+    "H2",
+    "AR-08",
+    "R5"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M11",
+   "name": "Coupling",
+   "definition": "Share of ordered requirement pairs within an idea where one depends on the other.",
+   "unit": "ratio",
+   "used_by": [
+    "X13",
+    "C0.12"
+   ],
+   "sim_field": "COUPLING"
+  },
+  {
+   "id": "M12",
+   "name": "Stale rebuilds per idea",
+   "definition": "Cards rebuilt because a prerequisite they read changed after they were built.",
+   "unit": "rebuilds/idea",
+   "used_by": [
+    "X13"
+   ],
+   "sim_field": "drops.stale_rework"
+  },
+  {
+   "id": "M13",
+   "name": "All-family miss share",
+   "definition": "Share of escaped defects that every model family which checked the artifact missed.",
+   "unit": "ratio",
+   "used_by": [
+    "X11"
+   ],
+   "sim_field": "BLIND_P"
+  },
+  {
+   "id": "M14",
+   "name": "Step hours and queue waits",
+   "definition": "Busy hours and waiting hours per value-stream step, per card and per idea.",
+   "unit": "hours",
+   "used_by": [
+    "C0.12",
+    "X10"
+   ],
+   "sim_field": "STEP_HOURS, CARD_HOURS, busy_step"
+  },
+  {
+   "id": "M15",
+   "name": "Defect catch by check",
+   "definition": "For each defect: where it was injected, which check caught it (unit test, CI, review, security review, audit, QA, release, smoke, live) and which checks passed it.",
+   "unit": "counts",
+   "used_by": [
+    "C0.12",
+    "X4",
+    "X11"
+   ],
+   "sim_field": "TEST_CATCH, CI_CATCH, RELEASE_CATCH, SMOKE, REVIEW_SEC"
+  },
+  {
+   "id": "M16",
+   "name": "Burn rate",
+   "definition": "Model spend per hour on running instances, and its trailing seven-day average.",
+   "unit": "USD/hour",
+   "used_by": [
+    "R16",
+    "AR-05"
+   ],
+   "sim_field": "usd_week"
+  },
+  {
+   "id": "M17",
+   "name": "Human attention",
+   "definition": "Isa's hours per week on ratification, standards, amendments, Release Gate governance changes and R13 escalations.",
+   "unit": "hours/week",
+   "used_by": [
+    "DQ7",
+    "AR-09b"
+   ],
+   "sim_field": "HUMAN_INTENT_H, HUMAN_PLAN_H"
+  },
+  {
+   "id": "M18",
+   "name": "Demand profile",
+   "definition": "Ideas arriving per week, requirements per idea, cards per requirement and card size by tier.",
+   "unit": "counts",
+   "used_by": [
+    "C0.12",
+    "AR-05",
+    "AR-12"
+   ],
+   "sim_field": "R_REQ, CARDS_PER_REQ, CARD_MIX, Demand"
+  },
+  {
+   "id": "M19",
+   "name": "Interface error cost against packet rework",
+   "definition": "Rework caused by interface faults between requirements, compared with rework when several requirements go in one invocation.",
+   "unit": "hours or USD",
+   "used_by": [
+    "X12"
+   ],
+   "sim_field": "CONTEXT_PENALTY, INTERFACE_P"
+  },
+  {
+   "id": "M20",
+   "name": "Waivers",
+   "definition": "Every R13 or R18 waiver: which rule was relaxed, for which card, and why.",
+   "unit": "records",
+   "used_by": [
+    "R13",
+    "R18"
+   ],
+   "sim_field": null
+  }
+ ]
 }

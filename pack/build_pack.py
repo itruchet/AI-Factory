@@ -208,8 +208,8 @@ def predictions() -> dict:
     dp = json.load(open(ROOT / "probes/value-stream/deps.json"))
     el = json.load(open(ROOT / "probes/value-stream/elastic.json"))
     return dict(
-        _about="Uncalibrated synthetic predictions: means over seeds, per week. They are the prior for C0.14, which "
-               "replaces them with a calibrated run. Never treat them as measured. Metrics: ideas and clean per week; "
+        _about="Uncalibrated synthetic predictions: means over seeds, per week. They are the baseline until C0.12 "
+               "replaces them with weekly runs on live-fitted parameters. Never treat them as measured. Metrics: ideas and clean per week; "
                "cfr = change-failure rate; lead and lead_p90 in hours; usd_week; usd_clean = usd_week / clean.",
         trial_configuration=dict(
             description="Institutions, elastic Scaler with held demand and 15-minute target (R14), R17, the six (r11 roster), coupling 0.25",
@@ -220,14 +220,14 @@ def predictions() -> dict:
             source="probes/value-stream/scaler_held.json [0.25][demand]['fixed six']",
             by_demand={d: pick(v["fixed six"]) for d, v in sh["0.25"].items()}),
         backcast_prior=dict(
-            description="Director -> Worker -> Checker against the institutions, the six, coupling 0.25, base scenario (for C0.13 and X1)",
+            description="Director -> Worker -> Checker against the institutions, the six, coupling 0.25, base scenario (baseline for X1: the weekly before-and-after comparison in C1.18)",
             source="probes/value-stream/deps.json [D2]['best six']['base']",
             by_design={k: pick(dp["D2"]["best six"]["base"][k]) for k in ("Director-Worker-Checker", "institutions")}),
         seven_model_menu=dict(
             description="The approved seven-model menu, elastic, without a dependency graph (the menu was not re-run with dependencies)",
             source="probes/value-stream/elastic.json [menus][demand]['seven (Opus 5.5 + Terra)']",
             by_demand={d: pick(v["seven (Opus 5.5 + Terra)"]) for d, v in el["menus"].items()}),
-        gap="The trial configuration was simulated with the six (r11 roster); the seven-model menu only without dependencies. C0.14 must run the calibrated twin on the menu actually approved.")
+        gap="The trial configuration was simulated with the six (r11 roster); the seven-model menu only without dependencies. C0.12 runs the model on the menu actually approved.")
 
 
 def dig(obj, path):
@@ -272,12 +272,13 @@ def build() -> tuple[dict, str]:
     evidence_files = sorted(p for p in (ROOT / "probes").rglob("*") if p.is_file() and "__pycache__" not in p.parts)
     pack = dict(
         schema=SCHEMA, pack_version=PACK_VERSION, owner="Isa", scenario="Amend the existing Factory",
-        from_organisation="Director -> Worker -> Checker", to_organisation="Constitutional institutions (Idea Record r12.4)",
+        from_organisation="Director -> Worker -> Checker", to_organisation="Constitutional institutions (Idea Record r12.5)",
         integrity_rules=[
             "Do not infer. A value marked [PLACEHOLDER] or an open item is resolved only by its named resolver.",
             "[PROPOSED] marks a design proposal for Isa to ratify in AR-13, not evidence.",
             "[Unverified] and [Inference] mark statements that are not confirmed; keep the label until evidence closes it.",
-            "Simulation outputs are synthetic hypotheses, never measured facts.",
+            "Simulation outputs are synthetic hypotheses, never measured facts. They are the baseline until live data replaces them.",
+            "Dog-food build: no lab, no shadow periods, no trial. Build each part, use it at once on the Factory's own work, improve it from live data.",
             "Rule, experiment and decision text is verbatim from the Idea Record; change it only by constitutional amendment (principle 8).",
             "Card seeds may be split, never merged, dropped or widened without an approved delta in AR-13.",
             "This pack supersedes the parked design wherever they conflict.",
