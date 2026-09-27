@@ -3,9 +3,9 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r8 (supersedes r1–r7)
+Revision: r9 (supersedes r1–r8)
 
-The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), synthetic data, 17 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
+The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
 ---
 
@@ -171,7 +171,7 @@ Everything else runs on the rules.
 
 ---
 
-### 5.1 The model portfolio: how many, of what tier
+### 5.1 The model portfolio: how many, of what tier (r8; tiering superseded by §5.2)
 
 **Normalised banding from Artificial Analysis.** Each model's Intelligence Index score is divided by the current frontier score, then banded: ≥95% → tier 5; 85–95% → tier 4; 70–85% → tier 3; 50–70% → tier 2; below 50% → tier 1. The band is the model's **prior**: its starting licence and where it should land. Evidence then moves it.
 
@@ -218,6 +218,50 @@ It has the same cost as today's mix. It meets the service level at nominal and s
 - [eesel AI: MiMo V2.6 pricing](https://www.eesel.ai/blog/xiaomi-mimo-v2-6-pricing)
 
 **Costs are assumptions:** $200 per frontier plan; $100 and $60 for the Terra- and Luna-class plans; $50 per MiMo plan; $120 and $60 a month amortised for the local models. Swap in real invoices before acting.
+
+### 5.2 Tiers from real data, and a rolling market (r9)
+
+r8 banded models by hand-picked thresholds on the Intelligence Index. r9 replaces that with the full Artificial Analysis **Coding Index** dataset: 256 scored configurations (model × reasoning effort), 178 of them current, snapshot 9 September 2026, from a public daily mirror of the leaderboard ([`probes/aa-tiers/`](../../probes/aa-tiers/)).
+
+**How many tiers the data supports.** Five methods were run on three views of the data: Gaussian mixture by BIC, Jenks optimal breaks, density peaks, gap statistic and silhouette.
+
+| Finding | Evidence |
+|---|---|
+| **Two to three natural tiers**, not 7 or 22 | 13 of 21 method votes say 2; the Gaussian mixture says 3 |
+| **Five tiers is the useful limit** | Jenks fit: 0.90 at 3 tiers, 0.97 at 5, 0.98 at 7; each tier beyond five adds under 1% |
+| **The top is crowded, not scarce** | 77 of 178 current configurations sit in the top natural tier (58–82), from 19 vendors |
+| **The frontier moves fast** | The best new release rose about 1.9 Coding Index points a month (68.8 in February to 81.6 in September); 17–28 new top-tier configurations arrived each month from July to September |
+| **Price falls about 16× from top to bottom tier** | Median $3.00, $0.63 and $0.19 per million tokens; median speeds 64, 109 and 144 tokens/s |
+| **Reasoning effort moves a model between tiers** | GPT-5.6 Luna spans 39–71; Qwen3.8 27B spans 45–68 |
+| **The Factory's "low" and "mid" models are top-tier on this benchmark** | Qwen3.8 27B at extra-high effort scores 68.1 and MiMo-V2.5-Pro 60.2, both in the top natural tier; Qwen3 Coder Next (36.2) is middle-tier. Opus 5.5 and MiMo-V2.6-Pro were not yet scored in this snapshot. |
+
+**Design consequence: the Factory uses three absolute work tiers.** Card tiers describe the work, not a leaderboard rank, so they do not move when better models are released. Five tiers remain available for finer routing if card data later shows the need.
+
+**Simulations on the real models** (`market_sim.py`; demand mostly easy work; value per card, card sizes and the pass-rate slope are assumptions):
+
+| Result | Figure |
+|---|---|
+| Demand, not capability, caps value | Past about seven seats, more seats add only cost |
+| Top tier only is the costliest way to clear work | 6 top seats: $737 a week; 3 top + 3 middle: $522 for the same value |
+| Middle or bottom only cannot do hard work | 6 middle seats left 1,170 hard cards; 6 bottom seats completed none |
+| Chasing the leaderboard buys nothing | Same value as the guarded policy at 8.7× the spend, 23 seat swaps in 26 weeks, 59% of seats on one vendor |
+| Standing still decays | The static portfolio had hard cards waiting in 11 of 26 weeks |
+| Value-per-dollar optimisation drifts to one vendor | Without a guard, no second top-tier vendor in 8 of 26 weeks |
+| **Guarded evidence policy wins on every measure** | Highest value, lowest spend ($3,614 over 26 weeks), 50.7 value per $, hard backlog in 0.5 weeks, second top-tier vendor missing in 1.7 weeks |
+| The bottom tier hollows out | Cheap new middle-tier models replace bottom-tier seats; only 1.8 bottom-tier releases a month |
+| Payment model changes the best rule | Per-token pricing: capable seats waiting 2 hours per tier before easier work cut spend 7% for 0.1% of value |
+
+**Portfolio rules, revised for r9:**
+
+| # | Rule |
+|---|---|
+| P1 | **Keep two top-tier seats from two vendors, and repair at once.** When the Ledger shows fewer, add a repair seat immediately; waiting for the trial cycle left the gap open for weeks. |
+| P2 | **No vendor above half the seats.** |
+| P6 | **New models earn seats on evidence.** One trial seat at a time. A trial replaces the weakest incumbent only if its Ledger value per dollar beats it by 10%. |
+| P7 | **Never chase the leaderboard.** A benchmark rank is a candidate list, not a reason to swap. |
+| P8 | **Match the help-down rule to how the seat is paid.** Subscription seats help down freely, since their capacity is already paid for. Per-token seats wait about 2 hours per tier before taking easier work. |
+
+These are Ledger arithmetic, not an agent: value per dollar and diversity are computed from recorded outcomes.
 
 ## 6. The constitution (principles)
 
@@ -345,8 +389,10 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | Keeping frontier capacity for hard work | R7 hard-work reserve, replacing r5 pacing and the r6 floor (§9.1, §9.4) |
 | Capable models on hard cards, less capable on easy | R3 hardest-first cascade plus R5 ladder (§9.4) |
 | How many allocation rules | Five golden rules; allowance and velocity dropped, escalation optional (§3.2) |
-| How many models, of what tier | Five: two tier-5 from two vendors, two bulk mid-tier, one fast local (§5.1) |
+| How many models, of what tier | About six to seven seats clear demand; at least two top-tier seats from two vendors; composition then managed by the rolling policy (§5.2, superseding the fixed list in §5.1) |
 | Where models should land | Their Artificial Analysis band as prior; evidence corrects it (§5.1) |
+| How many tiers | Three natural tiers in the Coding Index data; five at most (§5.2) |
+| How to change the portfolio over time | Evidence-gated trial seat with active vendor-diversity repair (§5.2) |
 | Slow agents on hard work | Per-card credit plus two top-tier models (P1); the separate velocity standard was dropped in r8 (§3.2) |
 | How a failing agent gets less work | R4 allowance and R5 ladder, against the standard (§3) |
 | How an agent knows its capability | Its own record at pull time (R10) |
@@ -387,7 +433,8 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 |---|---|
 | H1 | Ratify the constitution's eight principles (§6), the five golden allocation rules (§3.2) and governance rules R8–R13 |
 | H2 | Set the quality standard per institution and tier (maximum markdown rate). Design can propose starting values. |
-| H4 | Approve moving to the recommended portfolio: swap local Qwen3.8 for a second MiMo plan and local Qwen3 Coder Next (§5.1). Check real plan prices first. |
+| H4 | Approve the rolling portfolio policy (P1, P2, P6–P8; §5.2) in place of a fixed model list. Start from today's four models. |
+| H5 | Approve three absolute work tiers for cards (§5.2) |
 | H3 | Approve exit from Idea stage into design |
 
 ---
@@ -416,4 +463,4 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 
 ---
 
-**Takeaway:** ratify the five golden rules (H1), set quality standards (H2), and move to the five-model portfolio (H4). The simulations show this mix meets the service level through surges and any single-vendor outage at today's cost.
+**Takeaway:** use three absolute work tiers, the five golden allocation rules, and an evidence-gated rolling portfolio with a vendor-diversity guard. On real market data this delivered the most value for the least spend.

@@ -1,0 +1,50 @@
+Number of natural tiers suggested by each method
+
+  view          n  GMM-BIC  Jenks .90  Jenks .95  KDE Silv.  KDE Scott   Gap  Silhouette
+  all         255        3          3          5          2          2     2           2
+  current     178        3          3          5          2          2     2           2
+  per model   193        2          4          5          2          2     2           2
+
+  all votes: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 5, 5, 5]  median 2
+
+  Jenks goodness of variance fit by k (current view):
+   k=2: 0.778  k=3: 0.903  k=4: 0.945  k=5: 0.968  k=6: 0.977  k=7: 0.983  k=8: 0.988  k=9: 0.990  k=10: 0.992
+
+  3 tiers on current configurations (Jenks breaks), highest first:
+    T1:  56.8 -  81.6    78 configurations
+    T2:  29.9 -  56.1    48 configurations
+    T3:   0.7 -  29.3    52 configurations
+
+  4 tiers on current configurations (Jenks breaks), highest first:
+    T1:  63.3 -  81.6    61 configurations
+    T2:  41.9 -  62.3    45 configurations
+    T3:  19.7 -  40.6    44 configurations
+    T4:   0.7 -  17.5    28 configurations
+
+  5 tiers on current configurations (Jenks breaks), highest first:
+    T1:  66.9 -  81.6    54 configurations
+    T2:  52.1 -  66.4    32 configurations
+    T3:  35.2 -  50.7    31 configurations
+    T4:  19.7 -  34.0    33 configurations
+    T5:   0.7 -  17.5    28 configurations
+
+  6 tiers on current configurations (Jenks breaks), highest first:
+    T1:  68.1 -  81.6    52 configurations
+    T2:  55.9 -  67.1    28 configurations
+    T3:  41.9 -  53.7    26 configurations
+    T4:  29.3 -  40.6    21 configurations
+    T5:  16.2 -  28.7    27 configurations
+    T6:   0.7 -  14.7    24 configurations
+
+  Where the Factory's models sit (all scored configurations):
+    GPT-5.6 Sol             65.1-78.3  (6 effort levels)
+    Claude Opus 5           66.9-78.0  (5 effort levels)
+    Claude Fable 5.1        75.2-81.6  (5 effort levels)
+    GPT-6 Astra             75.7-77.1  (6 effort levels)
+    GPT-5.6 Terra           52.3-76.7  (6 effort levels)
+    GPT-5.6 Luna            39.3-71.4  (6 effort levels)
+    MiMo-V2.5-Pro                60.2  (1 effort levels)
+    MiMo-V2.5                    56.8  (1 effort levels)
+    Qwen3.8 27B             44.6-68.1  (4 effort levels)
+    Qwen3 Coder Next             36.2  (1 effort levels)
+    Qwen3.8 Max                  71.8  (1 effort levels)

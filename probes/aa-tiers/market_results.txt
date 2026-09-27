@@ -1,0 +1,71 @@
+Real pool: 136 current, priced configurations; per tier: T1 63, T2 40, T3 33
+
+== E1 Homogeneous portfolios (6 seats, 4 weeks, real configs drawn per tier, 12 draws) ==
+  portfolio               value/wk     $/wk  value/$ hard done hard left  all left  markdown
+  all top tier, pyramid       7033      737     10.2      1338         0         0     2.9%
+  all top tier, hard-heavy      9677      919     11.1      2676         0       114     6.6%
+  all middle tier, pyramid      4111      127     46.1       170      1170      1171    13.4%
+  all middle tier, hard-heavy      3463      108     43.8       181      2504      2510    19.1%
+  all bottom tier, pyramid      1281       22     97.7         0      1344      3754    26.7%
+  all bottom tier, hard-heavy       429        7     98.2         0      2688      5282    27.7%
+
+== E2 Every mix of six seats (pyramid demand), mean of 12 draws ==
+  top/mid/bottom   value/wk     $/wk  value/$ hard left  all left
+  6/0/0                7033      737     10.2         0         0
+  3/3/0                7032      522     20.7         0         0
+  3/2/1                7032      529     21.1         0         0
+  5/1/0                7032      608     14.0         0         0
+  4/1/1                7031      580     15.6         0         4
+  5/0/1                7031      623     13.8         0         0
+  4/0/2                7031      591     15.2         0         0
+  3/1/2                7031      533     20.3         0         1
+  4/2/0                7031      587     15.2         0         0
+  2/3/1                6861      465     25.2        47        98  (misses service level)
+  best value meeting service level: 6/0/0; best value per $: 2/2/2
+
+== E2 Every mix of six seats (hard-heavy demand), mean of 12 draws ==
+  top/mid/bottom   value/wk     $/wk  value/$ hard left  all left
+  6/0/0                9677      919     11.1         0       114
+  5/1/0                9642      767     14.8        10        52
+  5/0/1                9548      781     14.5         9       149
+  4/2/0                9475      735     15.9        84       111  (misses service level)
+  4/1/1                9304      726     16.0        66       308  (misses service level)
+  3/3/0                9063      659     21.0       243       282  (misses service level)
+  4/0/2                9037      733     15.4        97       528  (misses service level)
+  3/2/1                8936      644     21.6       212       460  (misses service level)
+  3/1/2                8467      632     21.0       209       932  (misses service level)
+  3/0/3                7743      593     21.5       242      1610  (misses service level)
+  best value meeting service level: 6/0/0; best value per $: 5/1/0
+
+== E3 Portfolio size (pyramid demand; seats split 1/3 top, 1/3 middle, 1/3 bottom, rounding up at the top) ==
+  seats     mix  value/wk     $/wk  value/$ hard left  all left
+      3   1/1/1      4329      170     35.1       458      3226
+      4   2/1/1      6002      418     25.5        23      1997
+      5   2/1/2      6298      421     26.2        34       876
+      6   2/2/2      6846      450     25.9        18       157
+      7   3/2/2      7031      523     21.6         1         1
+      8   3/2/3      7033      509     22.0         0         0
+      9   3/3/3      7030      508     20.9         1         1
+     10   4/3/3      7030      530     16.1         0         0
+     11   4/3/4      7021      530     16.0         5         5
+     12   4/4/4      7030      521     16.2         0         0
+
+== E4 Rolling market, 26 weeks, four portfolio policies, mean of 8 runs ==
+  observed arrivals per month: top 18.5, middle 6.1, bottom 1.8; frontier drift 1.9 points a month
+  policy       value  cost $ value/$  swaps hard-backlog wks  wk1-4 -> wk23-26 top vendor share weeks <2 top vendors bottom seats at end
+  static      177878   11442    15.5    2.6             10.4     6969 -> 6701                30%                  8.5                 2.6
+  chase       183082   33465     5.5   24.0              0.0     7022 -> 7047                63%                  1.5                 0.0
+  evidence    182488    4383    41.6   10.1              5.9     6794 -> 7499                32%                  7.8                 2.1
+  guarded     183203    4493    40.8   13.2              0.6     7028 -> 7052                30%                  2.0                 1.9
+
+== E5 Per-token pricing: should capable seats wait before taking easier cards? ==
+  mix      rule                        value/wk    $/wk  value/$ hard left  all left
+  3/3/0    hardest first, no wait          7032     522     20.7         0         0
+  3/3/0    wait 2 h per tier               7026     486     21.2         0        15
+  3/3/0    wait 6 h per tier               7011     482     21.2         2        51
+  2/2/2    hardest first, no wait          6846     450     25.9        18       157
+  2/2/2    wait 2 h per tier               6846     442     26.2        26       151
+  2/2/2    wait 6 h per tier               6820     442     26.0        32       175
+  3/2/2    hardest first, no wait          7031     523     21.6         1         1
+  3/2/2    wait 2 h per tier               7026     486     22.4         1         6
+  3/2/2    wait 6 h per tier               7020     478     22.5         0        21
