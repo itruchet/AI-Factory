@@ -3,13 +3,11 @@
  "items": [
   {
    "id": "OI-01",
-   "question": "The existing Factory's code, card store and workflow engine were not visible to the pack's author.",
-   "status": "Open",
-   "resolver": "Fit Report (C0.00)",
-   "isa_answer": "The Factory runs Director -> Worker -> Checker and moves to the constitutional institutions; it ingests this pack and distributes the cards itself.",
-   "blocks": [
-    "AR-13"
-   ]
+   "question": "The pack's author has not seen the Factory's code.",
+   "status": "Resolved by the rules",
+   "resolver": "Every card: its puller grounds the work in the code and cites files and commit; a seed whose premise does not hold is returned with evidence under R8",
+   "isa_answer": "The institutions pull the cards and work as a collective; no named role pre-reads the code.",
+   "blocks": []
   },
   {
    "id": "OI-02",
@@ -31,7 +29,7 @@
    "id": "OI-04",
    "question": "Who holds vendor accounts and API keys, and how adapters obtain them.",
    "status": "Resolved in part",
-   "resolver": "Owner, confirmed in the Fit Report (C0.00) and AR-10",
+   "resolver": "The puller of C0.05 finds it in the code; confirmed in AR-10",
    "isa_answer": "The Owner; the keys are hashed in the Factory.",
    "residual": "[Inference] A one-way hash cannot authenticate an API call, so the Factory must also hold a usable credential, encrypted or in a secret store, and use the hash as a fingerprint. Confirm which is in place.",
    "blocks": [
@@ -84,7 +82,7 @@
    "resolver": "AR-09a",
    "isa_answer": "Live operation must be part of the Factory.",
    "blocks": [],
-   "decision": "Interim owner the Checker (C0.16), then the Release Gate (C2.03) [PROPOSED]; hotfixes through the Market and Court."
+   "decision": "Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family (C0.16); then the Release Gate owns them (C2.03) [PROPOSED]. Hotfixes flow through the Market and Court."
   },
   {
    "id": "OI-10",
@@ -122,10 +120,10 @@
    "id": "OI-13",
    "question": "Today's model roster, routes and predetermined mapping (R11 start state).",
    "status": "Open",
-   "resolver": "Fit Report (C0.00)",
+   "resolver": "The puller of C0.17 records it from the Factory's code and records",
    "isa_answer": null,
    "blocks": [
-    "C1.05"
+    "C0.17"
    ]
   },
   {

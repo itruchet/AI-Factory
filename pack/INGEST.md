@@ -1,67 +1,69 @@
-# Ingestion protocol: for the existing Factory
+# Ingestion protocol
 
-**Reader:** the Director of the existing Factory (Director → Worker → Checker).
-**Task:** ingest this pack, check it against your own codebase, and put the ratified cards on your backlog so the Factory rebuilds itself as the constitutional institutions.
-**Authority:** AR-07 (Isa) authorises steps 1–4 only. Nothing reaches the backlog before AR-13 and AR-14.
+**Reader:** every agent in the Factory.
+**Task:** load this pack's cards into the pull queue and start work as a collective, so the Factory rebuilds itself as the constitutional institutions.
+**Authority:** AR-07 authorises loading. Cards enter the queue only after AR-13 (ratified plan) and AR-14 (mechanical load).
+
+There are no named roles. From the first card, the Factory works the way the constitution says it will:
+- **Nobody assigns work.** An agent with a free slot pulls the oldest ready card it is licensed for (R1, R3). Starting licences come from what each model already did well (R11).
+- **Another family checks.** A model of a different family checks every card, after the deterministic checks: tests and CI (R18).
+- **Each card is grounded in the code by its puller.** The puller reads the files the card touches and cites them with the commit.
+- **Splits are recorded.** A puller may split a card into child cards that together meet its acceptance contract.
+- **A card whose premise does not hold goes back to its author** (Planning) with evidence (R8). It is not reshaped.
+- **The rules in the Ledger do the managing.** Card C0.17 encodes this operating mode in the Factory's code.
 
 ---
 
 ## The integrity contract
 
-These rules are also in `factory-pack.json` → `integrity_rules`. They apply to every card built from this pack.
+These rules are also in `factory-pack.json` → `integrity_rules`.
 
-1. **Do not infer.** A `[PLACEHOLDER]` or an open item (`OI-*`) is resolved only by its named resolver. Record the resolution; do not guess it.
+1. **Do not infer.** A `[PLACEHOLDER]` or open item (`OI-*`) is resolved only by its named resolver. Record the resolution.
 2. **Keep the labels.**
-   - `[PROPOSED]` is a design proposal for Isa to ratify in AR-13, not evidence.
-   - `[Unverified]` and `[Inference]` stay attached until evidence closes them.
-3. **Simulation outputs are hypotheses.** Everything under `predictions`, `claims` and the Idea Record's findings is synthetic. Never report it as measured.
-4. **Rule text is verbatim.** Rules R1–R20, experiments X1–X14 and decisions H1–H7 are extracted word for word from the Idea Record. They change only by constitutional amendment: the Release Gate and Isa (principle 8).
-5. **Seeds are split, never reshaped.** You may split a card seed into several Factory cards. Merging, dropping or widening a seed needs an approved delta in AR-13.
-6. **The pack wins over the parked design.** `docs/design-parked/` is r3 material. Where it conflicts with the pack, the pack wins. In particular, do not build kernel assignment, Thompson sampling or shadow prices: pull rules replace them.
-7. **No secrets.** No key, token or credential goes into the pack, the Ledger, a card or a log. Record key fingerprints only (C0.05).
+   - `[PROPOSED]` is a design proposal Isa ratifies in AR-13.
+   - `[Unverified]` and `[Inference]` stay until evidence closes them.
+3. **Simulation outputs are the baseline, never measured facts.** Live data replaces them (C0.12).
+4. **Rule text is verbatim.** R1–R20, X1–X14 and H1–H7 change only by amendment: the Release Gate and Isa (principle 8).
+5. **Seeds are split, never reshaped.** Merging, dropping or widening a seed needs Isa.
+6. **The pack wins over the parked design.** Do not build kernel assignment, Thompson sampling or shadow prices.
+7. **No secrets.** No key, token or credential goes into the pack, the Ledger, a card or a log. Record fingerprints only (C0.05).
+8. **Dog-food build.** No lab, shadow period or trial. Switch each part on for the Factory's own work once it passes its acceptance contract, and improve it from live data.
 
 ---
 
 ## Steps
 
-| # | Step | Output | Gate |
-|---|---|---|---|
-| 1 | **Verify.** Run `python3 pack/build_pack.py --check` and `python3 -m unittest discover -s pack` at the pack's commit. Check the sha256 of every file in `manifest.json`. | Pass, or stop and report | – |
-| 2 | **Read.** Read `factory-pack.json` in full: the constitution, operating parameters, menu, measures, twin parameters, predictions, approvals, open items and cards. The embedded `sources` carry the full Idea Record and evidence documents. | – | – |
-| 3 | **Fit Report (card C0.00).** Map every card seed onto your codebase, answer every open item marked "Fit Report", and list proposed deltas with evidence (file paths and commit). | Fit Report | AR-07 |
-| 4 | **Draft for Isa.** Draft AR-11 (the protected path list, from the Fit Report). AR-08, AR-09a and AR-12 are already drafted in the pack. | Draft | – |
-| 5 | **Ratification.** Isa signs AR-08, AR-09a, AR-11, AR-12, then AR-13: the card seeds plus the approved deltas, with every `[PROPOSED]` value accepted or changed. | Ratified Plan | AR-13 |
-| 6 | **Admission (AR-14).** Create the Phase 0 cards only. Each Factory card carries its pack card ID and the pack version. | Phase 0 backlog | AR-14 |
-| 7 | **Report the mapping.** Record pack card ID → Factory card ID(s) in the Ledger (C0.01) as cards are created. | Mapping | – |
-| 8 | **Later phases.** Admit each phase only after the previous phase's exit is approved. For Phases 0–1 that is the interim gate (Checker plus Isa, C0.02); from Phase 2 it is the Release Gate (C2.02). | Next phase | Phase exit |
+| # | Step | Gate |
+|---|---|---|
+| 1 | **Verify.** `python3 pack/build_pack.py --check` and `python3 -m unittest discover -s pack` pass; the sha256 of every file in `manifest.json` matches | – |
+| 2 | **Ratify.** Isa signs Gate 1 (AR-01 to AR-06), then Gate 2 (AR-07, AR-08, AR-09a, AR-11, AR-12, AR-13) | AR-13 |
+| 3 | **Load.** Phase 0 cards go into the pull queue with their pack card IDs (mechanical; nobody chooses) | AR-14 |
+| 4 | **Pull.** The collective pulls. C0.01 (register the pack) and C0.02 (protected paths) come first by dependency. C0.17 (the pull queue) encodes the operating mode | – |
+| 5 | **Next phase.** Each later phase loads when the previous phase's exit is approved: through the interim gate for Phases 0–1 (another family's pass plus Isa), then through the Release Gate | Phase exit |
 
-**Just-in-time approvals** (Gate 3): do not start a card until every record in its `requires_approval` is signed.
+**Just-in-time approvals:** a card stays unpullable until every record in its `requires_approval` is signed.
 - AR-10 before C1.03.
 - AR-09b before C3.04.
 
-**Dog-food build.** There is no lab, shadow period or trial. Build each part, switch it on for the Factory's own work as soon as it passes its acceptance contract, and improve it from live data. Baselines come from the pack's analysis. Live metering and the actual costs the Owner enters replace them.
+## What comes back to Isa
 
----
-
-## What to return to Isa
-
-1. The verification result (step 1).
-2. The Fit Report (step 3), including every answered open item.
-3. The draft of AR-11 (step 4).
-4. After admission, the card mapping (step 7) and the backlog forecast.
+- The weekly report and alarms (C0.15).
+- Cards returned under R8 with evidence.
+- Ratification requests the rules route to her (C3.04).
+- Phase-exit approvals.
 
 ## Where each part of the pack lives
 
 | `factory-pack.json` key | What it is | Source |
 |---|---|---|
-| `constitution` | Idea, problems, rules, constants, golden rules, institutions (with protections and memory), human touchpoints, portfolio rules, principles, threats, settled questions, experiments, design questions, decisions, risks, findings §5.3–5.8 | Extracted from `docs/idea/constitutional-factory.md` |
+| `constitution` | Idea, problems, rules, constants, golden rules, institutions, human touchpoints, portfolio rules, principles, threats, settled questions, experiments, design questions, decisions, risks, findings §5.3–5.8 | Extracted from `docs/idea/constitutional-factory.md` |
 | `operating_parameters` | The numbers the rules fix, each quoted from its rule | `src/parameters.json`, checked against rule text |
 | `menu` | The seven models on API tokens | `probes/portfolio6/select6.json` |
-| `measures` | What the Factory must record, and the simulator field it compares with | `src/measures.json` |
-| `twin_parameters` | Every assumed constant in the simulator, to calibrate | Read from `vs_sim.py` and `select6.py` |
-| `predictions` | Uncalibrated predictions: the baseline until C0.12's weekly live-fitted runs | Probe result JSON files |
+| `measures` | What the Factory records, and the simulator field it compares with | `src/measures.json` |
+| `twin_parameters` | Every assumed constant in the model, refitted weekly from live data | Read from `vs_sim.py` and `select6.py` |
+| `predictions` | The model's baseline figures | Probe result JSON files |
 | `claims` | Every figure used in hand-written text, with its source | `src/claims.json`, verified |
 | `approvals` | 15 approval records in three gates | `src/approvals.json` |
 | `open_items` | What the pack does not know, and who resolves it | `src/open_items.json` |
-| `phases`, `cards` | 5 phases, 42 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
+| `phases`, `cards` | 5 phases, 40 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
 | `sources`, `evidence_files` | Full text of the Idea Record and evidence documents; hashes of every probe file | Repository |

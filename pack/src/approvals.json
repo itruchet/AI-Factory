@@ -1,5 +1,5 @@
 {
- "_about": "Approval records from decision to the card backlog, updated with Isa's answers of 27 Sep 2026. Dog-food build: no lab, no shadow periods, no trial dates. Baselines come from the pack's analysis and are replaced by live data and the actual costs the Owner enters. Gates 1 and 2 put the change on the backlog; Gate 3 records are signed just in time, before the cards that name them start.",
+ "_about": "Approval records from decision to the card backlog, updated with Isa's answers of 27 Sep 2026. Dog-food build: no lab, no shadow periods, no trial dates. Baselines come from the pack's analysis and are replaced by live data and the actual costs the Owner enters. Gates 1 and 2 put the change on the backlog; Gate 3 records are signed just in time, before the cards that name them start. There are no named roles: the collective pulls the cards; AR-14 is a mechanical load.",
  "gates": [
   {
    "gate": 1,
@@ -9,7 +9,7 @@
   {
    "gate": 2,
    "name": "Onto the backlog",
-   "purpose": "Ingest the pack, check it against the real Factory, ratify the plan and its baselines, admit Phase 0."
+   "purpose": "Ratify the plan and its baselines, then load Phase 0 into the pull queue."
   },
   {
    "gate": 3,
@@ -121,7 +121,7 @@
    "decision": null,
    "gate": 2,
    "title": "Alignment Record and authority to ingest",
-   "approves": "The intent of the change as stated in this pack (README: intent and scope), its assumptions (twin_parameters), open experiments (X1-X14) and open items. Authorises the existing Factory to ingest the pack and produce the Fit Report (C0.00), and nothing else.",
+   "approves": "The intent of the change as stated in this pack (README: intent and scope), its assumptions (twin_parameters), experiments (X1-X14) and open items. Authorises loading the pack and nothing else until AR-13.",
    "evidence": [
     "pack/README.md",
     "pack/factory-pack.json"
@@ -155,7 +155,7 @@
    "decision": null,
    "gate": 2,
    "title": "Owner of live operation",
-   "approves": "Live operation is part of the Factory (Isa, 27 Sep 2026). The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards pulled by the Market and reviewed by the Court; change-failure rate and restore time are marked against the releasing change. Owner: the Checker until the Release Gate exists, then the Release Gate [PROPOSED]. This extends the Release Gate's charter: a constitutional amendment.",
+   "approves": "Live operation is part of the Factory (Isa, 27 Sep 2026). The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards pulled by the Market and reviewed by the Court; change-failure rate and restore time are marked against the releasing change. Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family; then the Release Gate owns them [PROPOSED]. This extends the Release Gate's charter: a constitutional amendment.",
    "evidence": [
     "docs/idea/value-stream.md §2",
     "Isa, 27 Sep 2026"
@@ -175,14 +175,13 @@
    "decision": null,
    "gate": 2,
    "title": "Protected governance paths",
-   "approves": "The protected path list and the interim gate (Checker plus Isa) until the Release Gate exists (C0.02, then C2.02).",
+   "approves": "The protected path categories: constitution, charters, Ledger rules, Scaler and burn-cap settings, and this pack. The puller of C0.02 confirms the exact paths against the code. Interim gate until the Release Gate exists: a pass by an agent of another family than the author, plus Isa.",
    "evidence": [
-    "Card C0.02",
-    "Protected path list from the Fit Report"
+    "Card C0.02"
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "To produce: the path list comes from the Fit Report",
+   "status": "Ready",
    "depends_on": [
     "AR-07"
    ]
@@ -208,14 +207,13 @@
    "decision": null,
    "gate": 2,
    "title": "Ratified Plan",
-   "approves": "The card seeds in this pack plus the deltas proposed in the Fit Report, phase by phase, with their dependency graph and acceptance contracts; every [PROPOSED] value accepted or changed.",
+   "approves": "The card seeds in this pack, phase by phase, with their dependency graph and acceptance contracts; every [PROPOSED] value accepted or changed. Later changes arrive as evidenced returns under R8, not as a pre-read report.",
    "evidence": [
-    "pack/CARDS.md",
-    "Fit Report (C0.00)"
+    "pack/CARDS.md"
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "To produce: after the Fit Report",
+   "status": "Ready once AR-07 to AR-12 are signed",
    "depends_on": [
     "AR-07",
     "AR-08",
@@ -229,11 +227,11 @@
    "decision": null,
    "gate": 2,
    "title": "Backlog admission",
-   "approves": "The existing Factory creates the ratified Phase 0 cards, each carrying its pack card ID. Each later phase is admitted when the previous phase's exit is approved: through the interim gate (C0.02) for Phases 0-1, through the Release Gate (C2.02) from Phase 2 on.",
+   "approves": "Load the ratified Phase 0 cards into the pull queue, each carrying its pack card ID. A mechanical load: no agent chooses or assigns. Later phases load when the previous phase's exit is approved: through the interim gate for Phases 0-1, then through the Release Gate.",
    "evidence": [
     "AR-13"
    ],
-   "owner": "Director (existing Factory)",
+   "owner": "Ledger load (mechanical)",
    "signer": null,
    "status": "To produce",
    "depends_on": [

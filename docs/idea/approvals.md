@@ -1,9 +1,9 @@
 # Approval register: Idea-to-Live Factory, from decision to card backlog
 
-Owner: Isa. Scenario: **Amend** the existing Factory through the ingestion pack ([`pack/`](../../pack/)), as a **dog-food build**. Source: Idea Record r12.5 ([`constitutional-factory.md`](constitutional-factory.md)) and Isa's answers of 27 Sep 2026. The machine-readable copy is `pack/src/approvals.json`; `pack/test_pack.py` checks that the two agree.
+Owner: Isa. Scenario: **Amend** the existing Factory through the ingestion pack ([`pack/`](../../pack/)), as a **dog-food build**. Source: Idea Record r12.6 ([`constitutional-factory.md`](constitutional-factory.md)) and Isa's answers of 27 Sep 2026. The machine-readable copy is `pack/src/approvals.json`; `pack/test_pack.py` checks that the two agree.
 
 **Fifteen approval records in three gates.**
-- **Isa signs fourteen.** AR-14, the backlog admission, is done by the existing Factory's Director under the Ratified Plan.
+- **Isa signs fourteen.** AR-14 is a mechanical load of the ratified cards into the pull queue.
 - **Gates 1 and 2 put the change on the backlog.**
 - **Gate 3 records are signed just in time,** before the first card that needs them starts.
 
@@ -13,6 +13,7 @@ Owner: Isa. Scenario: **Amend** the existing Factory through the ingestion pack 
 - **Live operation is part of the Factory** (AR-09a).
 - **AR-12 is a monitoring and improvement plan.** AR-12a and AR-12b are withdrawn.
 - **AR-08 and AR-09a move to Gate 2.** Both have derived baselines ready to sign.
+- **No named roles.** From the first card, the Factory's agents pull as a collective and another family checks. Each card's puller grounds it in the code, and a card whose premise fails returns with evidence (R8). There is no pre-read report, so all of Gate 2 is ready except the load.
 
 Status key:
 - **Ready:** the evidence or baseline exists; the record can be signed now.
@@ -39,13 +40,13 @@ One sitting. All evidence exists.
 
 | # | Record | What is approved | Owner | Status |
 |---|---|---|---|---|
-| AR-07 | **Alignment Record and authority to ingest** | The pack's intent, assumptions, experiments and open items (`pack/README.md` §1). It authorises the Factory to ingest the pack and produce the Fit Report, and nothing else | Isa | Ready once AR-06 is signed |
+| AR-07 | **Alignment Record and authority to ingest** | The pack's intent, assumptions, experiments and open items (`pack/README.md` §1). It authorises loading the pack, and nothing else until AR-13 | Isa | Ready once AR-06 is signed |
 | AR-08 (H2) | **Quality standards and constants** | Initial maximum markdown rate per step: 1 minus the R19 floor. That is 20% for design, plan, plan red-team, security review, acceptance test and release; 40% for other steps; 50% for review [PROPOSED]. Adjusted from live variance | Isa | Ready: baseline derived |
-| AR-09a | **Owner of live operation** | Live operation is part of the Factory. The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards through the Market and Court. The owner is the Checker until the Release Gate exists, then the Release Gate [PROPOSED]. This extends the Release Gate's charter, so it is a constitutional amendment | Isa | Ready: owner proposed |
-| AR-11 | **Protected governance paths** | The protected path list, and the interim gate (Checker plus Isa) until the Release Gate exists | Isa | To produce: the path list comes from the Fit Report |
+| AR-09a | **Owner of live operation** | Live operation is part of the Factory. The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards through the Market and Court. Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family; then the Release Gate owns them [PROPOSED]. This extends the Release Gate's charter, so it is a constitutional amendment | Isa | Ready: owner proposed |
+| AR-11 | **Protected governance paths** | The protected path categories: constitution, charters, Ledger rules, Scaler and burn-cap settings, and the pack. The puller of C0.02 confirms the exact paths in the code. Interim gate until the Release Gate exists: another family's pass plus Isa | Isa | Ready |
 | AR-12 | **Monitoring and improvement plan** | Measures M01–M20. A weekly report and alarms: when live results fall more than 25% outside the model, or any X1–X14 falsification criterion is met, a card is opened; work does not stop. Amendments pass the Release Gate and Isa | Isa | Ready |
-| AR-13 | **Ratified Plan** | The pack's 42 card seeds plus the Fit Report's deltas, with every `[PROPOSED]` value accepted or changed | Isa | To produce: after the Fit Report |
-| AR-14 | **Backlog admission** | Create the Phase 0 cards, each carrying its pack card ID. Later phases are admitted on phase-exit approval: through the interim gate for Phases 0–1, then through the Release Gate | Director | To produce |
+| AR-13 | **Ratified Plan** | The pack's 40 card seeds, with every `[PROPOSED]` value accepted or changed. Later changes arrive as evidenced returns under R8 | Isa | Ready once AR-07 to AR-12 are signed |
+| AR-14 | **Backlog admission** | Load the Phase 0 cards into the pull queue, each carrying its pack card ID. This is a mechanical load: nobody chooses or assigns. Later phases load on phase-exit approval: through the interim gate for Phases 0–1, then through the Release Gate | Ledger load | To produce |
 
 ---
 
@@ -70,7 +71,7 @@ One sitting. All evidence exists.
 | Sitting | Records | What it takes |
 |---|---|---|
 | 1: decide | AR-01 to AR-07 | Read the Idea Record §5.5–§5.8, `pack/README.md` and this register |
-| 2: commit | AR-08, AR-09a, AR-11, AR-12, AR-13 | After the Fit Report; the Phase 0 cards follow (AR-14) |
+| 2: commit | AR-08, AR-09a, AR-11, AR-12, AR-13 | Can follow Sitting 1 at once. The Phase 0 cards then load (AR-14) and the collective starts pulling |
 | Just in time | AR-10, AR-09b | Each when its card is next |
 
 ---

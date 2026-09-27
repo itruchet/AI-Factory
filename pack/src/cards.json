@@ -1,13 +1,13 @@
 {
- "_about": "Card seeds for the existing Factory, built dog-food style: no lab, no shadow periods, no spend on testing hypotheses. The Factory builds each part, uses it at once on its own work, and improves it from live data.\n\nCard seeds for the existing Factory (Director -> Worker -> Checker) to rebuild itself as the constitutional institutions. Each seed is a unit of intent with an acceptance contract, not an implementation plan: the Director splits seeds into Factory cards after the Fit Report (C0.00). Seeds may be split, never merged, dropped or widened without an approved delta in AR-13. Thresholds marked [PROPOSED] are design proposals for Isa to ratify in AR-13, not evidence. [PLACEHOLDER] values are resolved only by the open item named in open_items.",
+ "_about": "Card seeds for the Factory to rebuild itself as the constitutional institutions. There are no named roles: from the first card, the Factory's agents work as a collective. Any agent pulls the oldest ready card it can do; a model of another family checks it; the rules in the Ledger do the managing. Dog-food build: no lab, no shadow periods, no trial. Every card is grounded in the code by whoever pulls it: it cites the files and commit it read. A seed whose premise does not hold is marked down to its author with evidence (R8) and goes back to Planning, never quietly reshaped. A puller may split a seed into child cards that together meet the seed's acceptance contract; seeds are never merged, dropped or widened without Isa. [PROPOSED] values are for Isa to ratify in AR-13; [PLACEHOLDER] values are resolved only by the open item named.",
  "phases": [
   {
    "phase": 0,
    "name": "Protect, measure and operate",
-   "intent": "Protect governance, add trustworthy memory, measure the Factory live from day one, and give live operation an owner inside the Factory. Measurement is built in, not a study period.",
+   "intent": "Start pulling as a collective, protect governance, add trustworthy memory, measure live from day one, and operate live inside the Factory.",
    "entry": [
     "AR-13 ratified",
-    "AR-14 admits Phase 0"
+    "AR-14 loads the Phase 0 cards into the pull queue"
    ],
    "exit": [
     "Every Phase 0 card accepted",
@@ -17,14 +17,13 @@
   {
    "phase": 1,
    "name": "Rules, Market, Court and Scaler",
-   "intent": "Run the pull rules, licences and elastic capacity in the Ledger, and switch Workers and the Checker to the Work Market and Assurance Court as soon as each part passes its acceptance contract. No shadow period.",
+   "intent": "Layer the pull rules, licences, Market, Court and elastic capacity onto the collective's pull. Each part is switched on as soon as it passes its acceptance contract.",
    "entry": [
     "Phase 0 exit approved",
     "AR-10 signed before C1.03 starts"
    ],
    "exit": [
     "Every Phase 1 card accepted",
-    "Cut-over (C1.18) done",
     "Isa approves the phase exit through the interim gate (C0.02)"
    ]
   },
@@ -44,7 +43,7 @@
   {
    "phase": 3,
    "name": "Inquiry, Council and Planning",
-   "intent": "Replace the Director's planning with the three deliberative institutions. Low volume lets them start semi-manually under their charters.",
+   "intent": "Stand up the three deliberative institutions. Low volume lets them start semi-manually under their charters.",
    "entry": [
     "Phase 2 exit approved",
     "AR-09b signed before C3.04 starts"
@@ -69,56 +68,14 @@
  ],
  "cards": [
   {
-   "id": "C0.00",
-   "phase": 0,
-   "title": "Fit Report: map the pack onto the existing Factory",
-   "owner_after": "Planning",
-   "executed_by": "Director",
-   "intent": "The pack was written without access to the Factory's code. Before any other card is created, the Director reads the codebase and reports, card by card, what exists, what must change and what conflicts.",
-   "scope": [
-    "For each card seed: the components it touches, classified KEEP / UPLIFT / REPLACE / NEW (the parked design's classification in docs/design-parked/constitutional-factory-design-notes.md §18 is the starting hypothesis, not a finding)",
-    "Answer the parked coupling questions: how many call sites choose a model; does any code rewrite history rows; where workflow state lives; can adapters report usage and throttling; are tests separable from implementation paths; how the Factory changes its own governance code today",
-    "Today's roster of models, their access routes and today's predetermined mapping (R11 start state)",
-    "Where the Owner's hashed keys live and how adapters obtain usable credentials (OI-04)",
-    "Proposed deltas: seeds to split, and any seed whose premise does not hold, with evidence"
-   ],
-   "acceptance": [
-    "Every card seed in the pack appears in the report with a classification and the files or modules it touches",
-    "Every open item marked 'Fit Report' in open_items has an answer or an explicit 'not determinable from code' with the reason",
-    "No seed is dropped, merged or widened in the report; changes appear only as proposed deltas for AR-13",
-    "The report cites file paths and commit for every claim about the codebase"
-   ],
-   "evidence": [
-    "Fit Report document stored with the pack's manifest hash"
-   ],
-   "depends_on": [],
-   "requires_approval": [
-    "AR-07"
-   ],
-   "ratified_by": "Isa (in AR-13)",
-   "traces": [
-    "DQ2",
-    "R11",
-    "H3"
-   ],
-   "measures": [],
-   "open_items": [
-    "OI-01",
-    "OI-04",
-    "OI-13"
-   ]
-  },
-  {
    "id": "C0.01",
    "phase": 0,
    "title": "Register this pack as a versioned, hash-verified record",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "The pack is the constitution's first ratified input. Store it so every later card can cite the exact version it was built from.",
    "scope": [
     "Store factory-pack.json and manifest.json; verify every sha256 in the manifest",
     "Record the ratification (AR-13) as a human-authored record",
-    "Record the mapping from pack card IDs to Factory card IDs as cards are created"
+    "Record the mapping from pack card IDs to the Factory's card IDs, including child cards from splits"
    ],
    "acceptance": [
     "pack/test_pack.py passes on the stored copy",
@@ -129,9 +86,7 @@
     "Hash check output",
     "Card mapping table"
    ],
-   "depends_on": [
-    "C0.00"
-   ],
+   "depends_on": [],
    "requires_approval": [
     "AR-13",
     "AR-14"
@@ -142,19 +97,18 @@
     "principle.6"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.02",
    "phase": 0,
    "title": "Protected governance paths, with an interim gate",
-   "owner_after": "Release Gate",
-   "executed_by": "Worker",
    "intent": "No change approves itself. Before the Factory edits its own rules, the files that hold the constitution, charters, Ledger rules, Scaler and burn-cap settings, and this pack are protected.",
    "scope": [
-    "Define the protected path list (AR-11)",
-    "Block any merge touching a protected path unless it carries an approval record from Isa and a pass from a checker other than the change's author",
-    "Interim gate until C2.02: Director -> Worker -> Checker's Checker plus Isa's approval record",
+    "Confirm the protected path list in AR-11 against the code: the files holding the constitution, charters, Ledger rules, Scaler and burn-cap settings, and this pack",
+    "Block any merge touching a protected path unless it carries an approval record from Isa and a pass from an agent of another model family than the change's author",
+    "This interim gate holds until the Release Gate exists (C2.02)",
     "Alert on any attempted change to a protected path"
    ],
    "acceptance": [
@@ -176,17 +130,17 @@
    "traces": [
     "principle.8",
     "problem.P9",
-    "institution.ReleaseGate"
+    "institution.ReleaseGate",
+    "R18"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Release Gate"
   },
   {
    "id": "C0.03",
    "phase": 0,
    "title": "Append-only Ledger beside today's operational state",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Memory is governed, and facts and claims are kept apart. Add an append-only, replayable Ledger alongside the existing SQLite state without disturbing running work.",
    "scope": [
     "Append-only event log with a hash chain",
@@ -198,14 +152,14 @@
    "acceptance": [
     "UPDATE and DELETE on Ledger tables abort",
     "Rebuilding projections from the Ledger reproduces the live projection exactly",
-    "Director -> Worker -> Checker keeps running unchanged while the Ledger is written alongside it",
+    "The Factory keeps working while the Ledger is written alongside its existing state",
     "Any recorded rule decision can be recomputed from the Ledger (replay)"
    ],
    "evidence": [
     "Tests for append-only enforcement and replay"
    ],
    "depends_on": [
-    "C0.02"
+    "C0.17"
    ],
    "requires_approval": [],
    "ratified_by": null,
@@ -217,14 +171,13 @@
     "DQ9"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.04",
    "phase": 0,
    "title": "Adapters record usage for every model invocation",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Token use, cost and throttling are the inputs to the Scaler, the burn cap and calibration. Record them as facts from the adapter, never as model claims.",
    "scope": [
     "Per invocation: provider, model ID and version, reasoning effort, input, cached-input and output tokens, list-price cost, latency, throttle or error codes",
@@ -252,17 +205,16 @@
     "M08",
     "M16"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.05",
    "phase": 0,
    "title": "Key custody: no secret in the Ledger, a fingerprint for attribution",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "The Owner holds the vendor accounts and keys; they are hashed in the Factory. The Ledger may record which key was used, never the key.",
    "scope": [
-    "Adapters obtain credentials from the Owner's store as the Factory does today (Fit Report)",
+    "Adapters obtain credentials from where the Owner keeps them today; the puller finds this in the code and records it (OI-04)",
     "The Ledger records a key fingerprint (hash) per vendor account and invocation",
     "Secret scanning of the Ledger, logs, prompts and the pack"
    ],
@@ -287,17 +239,16 @@
    "measures": [],
    "open_items": [
     "OI-04"
-   ]
+   ],
+   "institution": "Ledger"
   },
   {
    "id": "C0.06",
    "phase": 0,
    "title": "Record every value-stream step for today's Factory",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Measure today's Factory on the same steps the simulation uses, so the two can be compared.",
    "scope": [
-    "Map Director -> Worker -> Checker stages onto the value-stream steps: discover, challenge, human intent ratification, design, plan, plan check, human plan ratification, build, review, security review, merge and CI, audit, acceptance test, release, deploy, live operation (docs/idea/value-stream.md §2)",
+    "Map the Factory's current workflow stages onto the value-stream steps: discover, challenge, human intent ratification, design, plan, plan check, human plan ratification, build, review, security review, merge and CI, audit, acceptance test, release, deploy, live operation (docs/idea/value-stream.md §2)",
     "Per card and idea: start, end, waiting time and outcome at each step; rework and its cause",
     "Steps today's Factory does not perform are recorded as absent, not inferred"
    ],
@@ -326,14 +277,13 @@
     "M14",
     "M18"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.07",
    "phase": 0,
    "title": "Record dependencies and the artifact versions each card read",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "R17 needs to know what each card depends on and which version of its prerequisites it built against. X13 needs the Factory's real coupling.",
    "scope": [
     "Dependencies between requirements and between cards, as planned",
@@ -360,14 +310,13 @@
     "M11",
     "M12"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.08",
    "phase": 0,
    "title": "Record defect provenance and which families missed it",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Blind spots shared by every model family are the one failure no organisation fixes. Measure them, and every check's catch rate.",
    "scope": [
     "For every defect found anywhere, including live: where it was introduced, which check caught it, which checks passed it, and the model family behind each check",
@@ -395,14 +344,13 @@
     "M13",
     "M15"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.09",
    "phase": 0,
    "title": "Idea value ledger: baseline at intake, actuals as they happen",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "An idea is worth nothing without action. Each idea carries a baseline from the pack's analysis at intake, and the baseline is replaced by actual output and actual cost as they happen.",
    "scope": [
     "At intake: a baseline cost to artifact from the pack's cost model (claim CL-02 per clean idea, the menu's token prices) and the expected return the idea's Alignment Record states, in USD",
@@ -433,14 +381,13 @@
     "M06",
     "M07"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.10",
    "phase": 0,
    "title": "Package the simulation twin and reproduce the recorded results",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "The value-stream simulation is the Factory's model of itself. Make it runnable inside the Factory on CPU (no model spend), pinned to the pack's commit, with its parameters read from a file.",
    "scope": [
     "probes/value-stream/vs_sim.py and the modules it imports (probes/institutions/factory_sim.py, probes/portfolio6/select6.py), pinned by the hashes in manifest.json",
@@ -465,14 +412,13 @@
     "X9"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.11",
    "phase": 0,
    "title": "Live measurement from day one",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "There is no study period. The measures accrue as the Factory works, and every figure is live from the first card.",
    "scope": [
     "C0.04-C0.09 switched on for all work from the start",
@@ -520,14 +466,13 @@
     "M17",
     "M18"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.12",
    "phase": 0,
    "title": "Recalibrate the model weekly from live data",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "The model's assumptions are the baseline. Replace each with live data as soon as there is enough of it, automatically and without model spend.",
    "scope": [
     "Weekly, for each twin parameter: fitted value from live data, or 'not enough data yet' with the assumption kept",
@@ -568,20 +513,20 @@
     "M15",
     "M18"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.15",
    "phase": 0,
    "title": "Weekly report and alarms: live against the model",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "One weekly view that compares the Factory with its own predictions, built on SQL views, no new tool.",
    "scope": [
     "SQL views for every measure M01-M20",
     "Weekly comparison with that week's model figures (C0.12)",
     "Alarm when live results fall outside the model by more than 25% (X9) or an experiment's falsification criterion is met: the alarm opens a card, it does not stop work",
-    "Isa's attention hours and spend against the ceiling every week"
+    "Isa's attention hours and spend against the ceiling every week",
+    "X1: pull against the old role routing, using the Factory's records from before the pack as the baseline"
    ],
    "acceptance": [
     "The report is generated from Ledger queries alone",
@@ -598,7 +543,8 @@
    "ratified_by": null,
    "traces": [
     "X9",
-    "problem.P10"
+    "problem.P10",
+    "X1"
    ],
    "measures": [
     "M01",
@@ -608,21 +554,20 @@
     "M16",
     "M17"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C0.16",
    "phase": 0,
    "title": "Live operation inside the Factory: detect, restore, hotfix",
-   "owner_after": "Release Gate (interim: Checker)",
-   "executed_by": "Worker",
    "intent": "Live operation is part of the Factory. From the first change, the Factory detects its own incidents, restores service and fixes forward by its own rules.",
    "scope": [
     "Detect: the Ledger raises an incident on failed runs, error-rate or throughput control limits, or a failed smoke test after a change",
     "Restore: the owner reverts the change that caused it (Git) and records restore time",
     "Hotfix: a card that is pulled, built, reviewed and released like any other",
     "Attribute: change-failure rate and restore time are marked against the releasing change and its producers (R8, R12)",
-    "Owner: the Checker until the Release Gate exists, then the Release Gate (C2.03)"
+    "Until the Release Gate exists, incidents and restores are top-priority cards in the pull queue: any agent pulls them, and one of another family checks the restore"
    ],
    "acceptance": [
     "A deliberately failed change is detected, reverted and recorded with restore time",
@@ -648,14 +593,57 @@
    "measures": [
     "M03"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Release Gate"
+  },
+  {
+   "id": "C0.17",
+   "phase": 0,
+   "title": "The pull queue: the collective pulls from day one",
+   "institution": "Market",
+   "intent": "No one assigns work, from the first card. Encode in the Factory what the collective already does under the pack's integrity contract: any agent pulls the oldest ready card it can do, and an agent of another family checks it.",
+   "scope": [
+    "One queue of ready cards; an agent with a free slot pulls the oldest in the highest tier it is licensed for (R1, R3)",
+    "Starting licences from today's mapping of models to work (R11): whatever a model did well under the old routing is its starting licence",
+    "The check on every card is done by a model of another family (R18), after the deterministic checks (tests, CI)",
+    "The old role routing stops assigning work; its history stays in the records",
+    "A puller may split a card into child cards, recorded against the parent"
+   ],
+   "acceptance": [
+    "No card in the Factory is assigned to a named role or a named model",
+    "Every accepted card has a check by another model family, or a recorded waiver (R13)",
+    "A pull is reproducible from the queue state and the licences"
+   ],
+   "evidence": [
+    "Queue and licence records for the first week of pulls"
+   ],
+   "depends_on": [
+    "C0.02"
+   ],
+   "requires_approval": [
+    "AR-01"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "DQ2",
+    "R1",
+    "R3",
+    "R11",
+    "R18",
+    "principle.2",
+    "problem.P1"
+   ],
+   "measures": [
+    "M09"
+   ],
+   "open_items": [
+    "OI-13"
+   ]
   },
   {
    "id": "C1.01",
    "phase": 1,
    "title": "Card schema: tier, requirements, dependencies, interfaces, contract",
-   "owner_after": "Planning",
-   "executed_by": "Worker",
    "intent": "Cards must carry what the rules read.",
    "scope": [
     "Absolute work tier (1-3, H5)",
@@ -688,14 +676,13 @@
    "measures": [
     "M19"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Planning"
   },
   {
    "id": "C1.02",
    "phase": 1,
    "title": "Tier-setting rules in Planning",
-   "owner_after": "Planning",
-   "executed_by": "Worker",
    "intent": "Card difficulty is set by rules over card facts, never by a model's judgement, and corrected by escalation.",
    "scope": [
     "Tier from card facts: size, files, risk paths, dependencies (Idea Record §2)",
@@ -721,14 +708,13 @@
     "R6"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Planning"
   },
   {
    "id": "C1.03",
    "phase": 1,
    "title": "API access for the seven-model menu, under the data rule",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Staff the menu on API tokens, with no tier that trains on our data, and read real rate limits.",
    "scope": [
     "Adapters for the menu in the pack's menu section, through the routes AR-10 approves",
@@ -768,19 +754,18 @@
     "OI-06",
     "OI-07",
     "OI-15"
-   ]
+   ],
+   "institution": "Ledger"
   },
   {
    "id": "C1.05",
    "phase": 1,
    "title": "Licences and pull: hardest first, oldest first",
-   "owner_after": "Market",
-   "executed_by": "Worker",
-   "intent": "Nobody assigns work. An agent with a free slot pulls the oldest card in the highest tier it is licensed for, and sees its own record when it pulls.",
+   "intent": "Extend C0.17's pull with the full licence ladder and the agent's view of its own record.",
    "scope": [
     "R1 pull; R2 licence ladder; R3 hardest first, oldest first, no choice within a tier",
     "R10: at pull time the agent sees its licences, recent rate against the standard and its recent markdown reasons; it may decline without a markdown; repeated declines return the licence",
-    "R11 start state: today's predetermined mapping for today's models; menu models not in today's mapping start from their Artificial Analysis band as prior (§5.1) and move on live evidence (OI-12)",
+    "R11 start state: C0.17's starting licences; menu models not in today's mapping start from their Artificial Analysis band as prior (§5.1) and move on live evidence (OI-12)",
     "The Ledger views each agent sees at pull time (DQ5)"
    ],
    "acceptance": [
@@ -795,7 +780,8 @@
    "depends_on": [
     "C1.01",
     "C1.02",
-    "C1.03"
+    "C1.03",
+    "C0.17"
    ],
    "requires_approval": [
     "AR-01"
@@ -824,14 +810,13 @@
    "open_items": [
     "OI-12",
     "OI-13"
-   ]
+   ],
+   "institution": "Market"
   },
   {
    "id": "C1.06",
    "phase": 1,
    "title": "The ladder: promotion, two-speed demotion, fast track",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Success and velocity push an agent up to the hardest tier it can sustain; failure moves it down.",
    "scope": [
     "R5 as written, with the constants set once in the constitution (pack: constitution.constants)",
@@ -871,14 +856,13 @@
    ],
    "open_items": [
     "OI-11"
-   ]
+   ],
+   "institution": "Ledger"
   },
   {
    "id": "C1.07",
    "phase": 1,
    "title": "Hard-work reserve for capped agents (dormant under API tokens)",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "R7 protects a subscription cap for hard work. The menu runs on API tokens, so no seat is capped today; the rule must exist for any subscription seat P8 admits.",
    "scope": [
     "R7 as written, applied only to agents with a subscription cap",
@@ -906,14 +890,13 @@
     "problem.P3"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C1.08",
    "phase": 1,
    "title": "Attribution with evidenced reason codes",
-   "owner_after": "Court",
-   "executed_by": "Worker",
    "intent": "Every markdown lands on the producer that caused it.",
    "scope": [
     "R8 reason codes and the evidence each requires (DQ3)",
@@ -941,14 +924,13 @@
    "measures": [
     "M10"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Court"
   },
   {
    "id": "C1.09",
    "phase": 1,
    "title": "Markers are marked; late marks count double",
-   "owner_after": "Audit",
-   "executed_by": "Worker",
    "intent": "Marking is accountable in both directions, and escaped defects cost more.",
    "scope": [
     "R9: a pass later overturned by Audit, or a markdown overturned as unfounded, counts against the reviewer under R5",
@@ -979,14 +961,13 @@
    "measures": [
     "M10"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Audit"
   },
   {
    "id": "C1.10",
    "phase": 1,
    "title": "No orphan tiers, with recorded waivers; escalation optional",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Small teams deadlock without R13. Keep work moving and record every relaxation.",
    "scope": [
     "R13: cards waiting at a tier with no licensed agent past a set time give the best agent one tier below stretch cards; if none, split in Planning or escalate to Isa",
@@ -1015,14 +996,13 @@
    "measures": [
     "M20"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C1.11",
    "phase": 1,
    "title": "Family independence",
-   "owner_after": "Court",
-   "executed_by": "Worker",
    "intent": "No model reviews, audits or releases work by a model of its own family.",
    "scope": [
     "R18: family = vendor; instances and siblings are one epistemic source",
@@ -1052,14 +1032,13 @@
     "M13",
     "M20"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Court"
   },
   {
    "id": "C1.12",
    "phase": 1,
    "title": "High-impact licence floors",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "The steps where a mistake costs most need the most reliable models, chosen by evidence.",
    "scope": [
     "R19: design, plan, plan red-team, security review, acceptance test and release need a pass chance of at least 0.8; other steps 0.6; review 0.5",
@@ -1087,14 +1066,13 @@
     "M03",
     "M09"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C1.13",
    "phase": 1,
    "title": "Evidence-gated dependencies",
-   "owner_after": "Market",
-   "executed_by": "Worker",
    "intent": "Build only on reviewed work.",
    "scope": [
     "R17: each card reviewed as built; no whole-idea barrier",
@@ -1126,14 +1104,13 @@
     "M11",
     "M12"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Market"
   },
   {
    "id": "C1.14",
    "phase": 1,
    "title": "The Scaler: elastic instances started and stopped by rule",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Agents are instances of menu models, started and stopped by Ledger arithmetic, not by an agent.",
    "scope": [
     "R14 as written (pack: parameters PR-01 to PR-09)",
@@ -1175,14 +1152,13 @@
    ],
    "open_items": [
     "OI-15"
-   ]
+   ],
+   "institution": "Ledger"
   },
   {
    "id": "C1.15",
    "phase": 1,
    "title": "Burn cap and monthly ceiling",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Spend follows demand, within limits Isa sets.",
    "scope": [
     "R16: running instances burn at most 2x the trailing seven-day average ($/hour)",
@@ -1213,14 +1189,13 @@
     "M16",
     "M05"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C1.16",
    "phase": 1,
    "title": "Rolling portfolio policy",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "The menu changes on evidence, never by chasing the leaderboard.",
    "scope": [
     "P1 two top-tier models from two vendors, repaired at once",
@@ -1256,14 +1231,13 @@
     "M09",
     "M05"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C1.17",
    "phase": 1,
    "title": "Assurance Court",
-   "owner_after": "Court",
-   "executed_by": "Worker",
    "intent": "Is this work acceptable? Decided blind, deterministic checks first.",
    "scope": [
     "Reviewers blind to author; open standing to challenge with evidence; other verdicts visible only after committing one's own",
@@ -1296,59 +1270,13 @@
    "measures": [
     "M15"
    ],
-   "open_items": []
-  },
-  {
-   "id": "C1.18",
-   "phase": 1,
-   "title": "Cut-over: Work Market and Court replace Worker and Checker",
-   "owner_after": "Market",
-   "executed_by": "Director",
-   "intent": "Switch execution and checking to the institutions as soon as they pass their acceptance contracts, and keep improving them live.",
-   "scope": [
-    "Switch Workers to pull and the Checker to the Court",
-    "The Director keeps planning until Phase 3",
-    "Revert by Git if a switch breaks the Factory; the revert is an incident handled by C0.16"
-   ],
-   "acceptance": [
-    "All new cards flow through the Market and Court",
-    "Market and Court decisions are compared weekly with the Director -> Worker -> Checker figures from before the switch (X1)"
-   ],
-   "evidence": [
-    "Weekly comparison"
-   ],
-   "depends_on": [
-    "C1.05",
-    "C1.06",
-    "C1.09",
-    "C1.10",
-    "C1.14",
-    "C1.15",
-    "C1.16",
-    "C1.17",
-    "C0.15"
-   ],
-   "requires_approval": [],
-   "ratified_by": "Isa (switch)",
-   "traces": [
-    "X1",
-    "institution.Market",
-    "institution.Court"
-   ],
-   "measures": [
-    "M01",
-    "M03",
-    "M05",
-    "M10"
-   ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Court"
   },
   {
    "id": "C2.01",
    "phase": 2,
    "title": "Audit",
-   "owner_after": "Audit",
-   "executed_by": "Worker",
    "intent": "Is assurance trustworthy? Auditors outside the work's provenance chain mark the markers.",
    "scope": [
     "Random plus risk-weighted samples (the model used 10%)",
@@ -1364,7 +1292,8 @@
     "Audit reports; planted-defect results"
    ],
    "depends_on": [
-    "C1.18"
+    "C1.17",
+    "C1.09"
    ],
    "requires_approval": [],
    "ratified_by": null,
@@ -1378,14 +1307,13 @@
    "measures": [
     "M15"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Audit"
   },
   {
    "id": "C2.02",
    "phase": 2,
    "title": "Release Gate",
-   "owner_after": "Release Gate",
-   "executed_by": "Worker",
    "intent": "Is an accepted change safe to run inside the Factory? Criteria fixed before data.",
    "scope": [
     "Approvers from different families, blind, with one seated dissenter; cooling-off period; no version approves itself",
@@ -1415,17 +1343,16 @@
    "measures": [
     "M03"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Release Gate"
   },
   {
    "id": "C2.03",
    "phase": 2,
    "title": "Release Gate takes over live operation",
-   "owner_after": "Release Gate",
-   "executed_by": "Worker",
    "intent": "Live operation stays inside the Factory. The Release Gate, which let the change in, owns restoring from it.",
    "scope": [
-    "Transfer C0.16's detection, restore and hotfix flow from the Checker to the Release Gate",
+    "Move C0.16's incident, restore and hotfix flow from the pull queue's top priority to the Release Gate's charter",
     "Hotfix cards pulled by the Market and reviewed by the Court; restores decided by the Release Gate; the Ledger marks change-failure rate and restore time"
    ],
    "acceptance": [
@@ -1449,14 +1376,13 @@
    "measures": [
     "M03"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Release Gate"
   },
   {
    "id": "C2.04",
    "phase": 2,
    "title": "Configurations as trial proposals",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Step affinities found by search are trials, never the constitution.",
    "scope": [
     "R20: the Ledger may propose step affinities from its own records as a trial configuration",
@@ -1485,14 +1411,13 @@
     "M01",
     "M03"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   },
   {
    "id": "C3.01",
    "phase": 3,
    "title": "Inquiry",
-   "owner_after": "Inquiry",
-   "executed_by": "Worker",
    "intent": "Independent discovery: commit before seeing any other submission.",
    "scope": [
     "Participants on the same brief, committing before any peer output is visible",
@@ -1515,14 +1440,13 @@
     "RK5"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Inquiry"
   },
   {
    "id": "C3.02",
    "phase": 3,
    "title": "Deliberation Council",
-   "owner_after": "Council",
-   "executed_by": "Worker",
    "intent": "Shared understanding without prestige or dominance.",
    "scope": [
     "Anonymous labels; random reading order; no chair; no vote",
@@ -1549,15 +1473,14 @@
     "RK5"
    ],
    "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Council"
   },
   {
    "id": "C3.03",
    "phase": 3,
-   "title": "Planning Chamber replaces the Director's planning",
-   "owner_after": "Planning",
-   "executed_by": "Director",
-   "intent": "Intent to executable cards: blind parallel decomposition, then reconciliation and a separate red team.",
+   "title": "Planning Chamber",
+   "intent": "Intent to executable cards: blind parallel decomposition, then reconciliation and a separate red team. Until it exists, cards come from this pack and from splits and returns under R8.",
    "scope": [
     "Decomposers blind in parallel; reconciler; red team separate from the reconciler",
     "One planner plus a red team (Idea Record §5.3)",
@@ -1586,14 +1509,13 @@
    "measures": [
     "M10"
    ],
-   "open_items": []
+   "open_items": [],
+   "institution": "Planning"
   },
   {
    "id": "C3.04",
    "phase": 3,
    "title": "Ratification tiers and Isa's attention budget",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Human ratification is the likely real ceiling. Route to Isa only what the rules say needs her.",
    "scope": [
     "Which ideas need Isa's ratification and which the Council may ratify (AR-09b)",
@@ -1623,18 +1545,18 @@
    ],
    "open_items": [
     "OI-10"
-   ]
+   ],
+   "institution": "Ledger"
   },
   {
    "id": "C4.01",
    "phase": 4,
    "title": "Judge X1-X14 continuously",
-   "owner_after": "Ledger",
-   "executed_by": "Worker",
    "intent": "Each experiment can prove the idea wrong. Judge each as live data accrues, and turn a falsified one into an amendment card.",
    "scope": [
     "Each experiment X1-X14 judged against its falsification criterion in the pack, on live data, whenever it has enough",
-    "A falsified experiment opens an amendment card to the Release Gate and Isa (principle 8)"
+    "A falsified experiment opens an amendment card to the Release Gate and Isa (principle 8)",
+    "When every institution is running, retire the old role routing's code through the Release Gate; keep its history in the Ledger"
    ],
    "acceptance": [
     "Every experiment carries a current verdict (not falsified / falsified / not enough data yet, with the data used)"
@@ -1663,7 +1585,8 @@
     "X11",
     "X12",
     "X13",
-    "X14"
+    "X14",
+    "principle.8"
    ],
    "measures": [
     "M01",
@@ -1675,40 +1598,8 @@
     "M13",
     "M19"
    ],
-   "open_items": []
-  },
-  {
-   "id": "C4.02",
-   "phase": 4,
-   "title": "Retire the old roles",
-   "owner_after": "Release Gate",
-   "executed_by": "Director",
-   "intent": "Once Planning, the Market and the Court carry all work, retire Director, Worker and Checker.",
-   "scope": [
-    "Retire the Director, Worker and Checker roles through the Release Gate",
-    "Keep their history in the Ledger"
-   ],
-   "acceptance": [
-    "No card is routed through the old roles",
-    "The retirement passed the Release Gate and Isa"
-   ],
-   "evidence": [
-    "Release Gate record"
-   ],
-   "depends_on": [
-    "C3.03",
-    "C1.18",
-    "C2.02"
-   ],
-   "requires_approval": [],
-   "ratified_by": "Isa",
-   "traces": [
-    "principle.8",
-    "H3",
-    "X1"
-   ],
-   "measures": [],
-   "open_items": []
+   "open_items": [],
+   "institution": "Ledger"
   }
  ]
 }

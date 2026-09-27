@@ -93,7 +93,7 @@ class NothingInvented(unittest.TestCase):
     def test_placeholders_are_owned(self):
         # every [PLACEHOLDER] in a card names the open item or approval that resolves it
         for c in PACK["cards"]:
-            for s in c["scope"] + c["acceptance"] + [c["owner_after"]]:
+            for s in c["scope"] + c["acceptance"] + [c["institution"]]:
                 for m in re.finditer(r"\[PLACEHOLDER: ([^\]]+)\]", s):
                     self.assertTrue(re.search(r"AR-\w+|OI-\d+", m.group(1)), (c["id"], m.group(0)))
 
@@ -177,7 +177,7 @@ class PlanIsSound(unittest.TestCase):
             visit(i)
 
     def test_governance_is_protected_before_anything_changes(self):
-        # every card except the Fit Report and pack registration depends, directly or not, on C0.02
+        # every card except pack registration and the protection itself depends, directly or not, on C0.02
         def ancestors(i, acc=None):
             acc = set() if acc is None else acc
             for d in CARDS[i]["depends_on"]:
@@ -186,7 +186,7 @@ class PlanIsSound(unittest.TestCase):
                     ancestors(d, acc)
             return acc
         for i in CARDS:
-            if i not in ("C0.00", "C0.01", "C0.02"):
+            if i not in ("C0.01", "C0.02"):
                 self.assertIn("C0.02", ancestors(i), i)
 
     def test_approvals_are_ordered(self):
@@ -217,9 +217,16 @@ class PlanIsSound(unittest.TestCase):
             self.assertRegex(md, rf"\| {re.escape(a['id'])}( \(H\d\))? \| \*\*{re.escape(a['title'])}\*\*", a["id"])
         self.assertIn(f"{len(PACK['cards'])} card seeds", md)
 
-    def test_no_card_ratifies_itself(self):
+    def test_no_named_roles(self):
+        # the thesis: institutions, not roles; the collective pulls, nobody assigns
+        text = json.dumps([PACK["cards"], PACK["phases"], PACK["approvals"], PACK["open_items"], PACK["integrity_rules"]])
+        for word in ("Director", "Worker", "Checker", "Fit Report", "executed_by", "assigned to"):
+            self.assertNotIn(word, text.replace("assigned to a named role", ""), word)
+        self.assertNotRegex((HERE / "INGEST.md").read_text(), r"Director|Fit Report")
+
+    def test_ratification_is_human(self):
         for c in PACK["cards"]:
-            self.assertNotEqual(c["ratified_by"], c["executed_by"], c["id"])
+            self.assertTrue(c["ratified_by"] is None or c["ratified_by"].startswith("Isa"), c["id"])
 
 
 if __name__ == "__main__":

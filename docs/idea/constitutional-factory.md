@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.5 (supersedes r1–r12.4; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
+Revision: r12.6 (supersedes r1–r12.5; r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -533,7 +533,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
 - Tier definitions per institution: which card facts set the tier.
-- Mapping R1–R20 onto the existing Factory's cards, SQLite state, worktrees and workflow engine (r12.4: the Fit Report, pack card C0.00).
+- Mapping R1–R20 onto the existing Factory's cards, SQLite state, worktrees and workflow engine (r12.6: no pre-read report; each card's puller grounds it in the code, and the pull queue, pack card C0.17, maps R1, R3, R11 and R18 onto the Factory from the first card).
 - Reason codes for R8, and the evidence each one requires.
 - Initial constants: window, hysteresis, stretch trials, back-off.
 - The Ledger views each agent sees at pull time (R10).
@@ -568,7 +568,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | Every open item typed and routed | Met (§11) |
 | Only decisions that are genuinely Isa's are left to Isa | Met (§11.3) |
 
-**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 15 approval records in three gates, is in [`approvals.md`](approvals.md). The change reaches the existing Factory as an ingestion pack ([`pack/`](../../pack/)): rules, measures, approvals, open items and 42 card seeds, each traced to this record and checked by tests.
+**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 15 approval records in three gates, is in [`approvals.md`](approvals.md). The change reaches the existing Factory as an ingestion pack ([`pack/`](../../pack/)): rules, measures, approvals, open items and 40 card seeds, each traced to this record and checked by tests.
 
 ---
 

@@ -1,6 +1,6 @@
 # Idea-to-Live Factory: ingestion pack
 
-**For:** the existing Factory (Director → Worker → Checker), and Isa.
+**For:** every agent in the Factory, and Isa.
 **What it is:** everything the Factory needs to rebuild itself as the constitutional institutions. Rules, evidence, measures, approvals, open items and card seeds, in one machine-readable file (`factory-pack.json`) with a readable card list (`CARDS.md`).
 **How to use it:** [`INGEST.md`](INGEST.md).
 
@@ -8,7 +8,7 @@
 
 ## 1. Intent: the draft Alignment Record for AR-07
 
-**Change.** Replace Director → Worker → Checker with the eight constitutional institutions under rules R1–R20.
+**Change.** Replace role routing (Director → Worker → Checker) with the eight constitutional institutions under rules R1–R20. There are no named roles: from the first card, agents pull as a collective and another family checks.
 - Agents pull cards; nobody assigns work.
 - Licences are earned by evidence.
 - Capacity is elastic instances of a seven-model menu on API tokens.
@@ -51,23 +51,23 @@
 
 | Question | Isa's answer | What the pack does |
 |---|---|---|
-| Where the backlog lives | The existing Factory runs Director → Worker → Checker and moves to the institutions | The Factory ingests this pack. The Director first produces a Fit Report (C0.00) against the real code |
+| Where the backlog lives | The existing Factory runs Director → Worker → Checker and moves to the institutions | The pack's cards load into one pull queue. The collective pulls from the first card (C0.17), and each puller grounds its card in the code. A card whose premise fails returns with evidence (R8); no role pre-reads the code |
 | Volumes and validation | Measure and understand against the simulation, but no lab: build it, use it, monitor and improve | Measurement is live from day one (C0.11). The model is refitted weekly (C0.12) and compared with live results (C0.15). No shadow periods, replay or backcast gate |
 | Trial dates | No trial | AR-12 is a monitoring and improvement plan. Experiments X1–X14 are judged continuously (C4.01) |
 | Vendor accounts and keys | The Owner; hashed in the Factory | Settled. C0.05 keeps secrets out of the Ledger and records fingerprints. **Residual (OI-04):** [Inference] a hash cannot call an API, so confirm where the usable credential is held |
 | Value of an idea | Baseline from the analysis; actuals replace it; the Owner provides real costs | Unit USD. Each idea gets a baseline cost and expected return at intake; metered spend, Owner-entered costs and recorded returns replace them (C0.09; M06, M07) |
-| Live operation | Part of the Factory | C0.16 from Phase 0: the Ledger detects incidents, the owner reverts, hotfixes are ordinary cards. Checker is interim owner, then the Release Gate (C2.03) [PROPOSED] |
+| Live operation | Part of the Factory | C0.16 from Phase 0: the Ledger detects incidents, the owner reverts, hotfixes are ordinary cards. Until the Release Gate exists, incidents and restores are top-priority cards any agent pulls; then the Release Gate owns them (C2.03) [PROPOSED] |
 
 ---
 
 ## 3. Approval records
 
-**Fifteen records in three gates.** Isa signs fourteen; AR-14, the backlog admission, is done by the Director. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
+**Fifteen records in three gates.** Isa signs fourteen; AR-14 is a mechanical load into the pull queue. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
 
 | Gate | Records | When |
 |---|---|---|
 | 1. Decide | AR-01 constitution; AR-02 portfolio; AR-03 tiers; AR-04 operating rules; AR-05 budget and value measure; AR-06 exit Idea stage | Now; all Ready |
-| 2. Onto the backlog | AR-07 Alignment Record and authority to ingest; AR-08 baseline standards; AR-09a live operation; AR-11 protected paths; AR-12 monitoring and improvement plan; AR-13 Ratified Plan; AR-14 admission of Phase 0 | After ingestion and the Fit Report |
+| 2. Onto the backlog | AR-07 Alignment Record and authority to ingest; AR-08 baseline standards; AR-09a live operation; AR-11 protected paths; AR-12 monitoring and improvement plan; AR-13 Ratified Plan; AR-14 admission of Phase 0 | Straight after Gate 1; then Phase 0 loads |
 | 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C3.04) | During the build |
 
 ---
