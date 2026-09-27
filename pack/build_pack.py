@@ -275,7 +275,7 @@ def build() -> tuple[dict, str]:
         from_organisation="Director -> Worker -> Checker", to_organisation="Constitutional institutions (Idea Record r12.6)",
         integrity_rules=[
             "Do not infer. A value marked [PLACEHOLDER] or an open item is resolved only by its named resolver.",
-            "[PROPOSED] marks a design proposal for Isa to ratify in AR-13, not evidence.",
+            "[PROPOSED] marks a design value, not evidence. AR-13 (signed 27 Sep 2026) accepted each as proposed; live data may adjust it through AR-12.",
             "[Unverified] and [Inference] mark statements that are not confirmed; keep the label until evidence closes it.",
             "Simulation outputs are synthetic hypotheses, never measured facts. They are the baseline until live data replaces them.",
             "Dog-food build: no lab, no shadow periods, no trial. Build each part, use it at once on the Factory's own work, improve it from live data.",

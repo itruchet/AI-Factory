@@ -1,5 +1,5 @@
 {
- "_about": "Approval records from decision to the card backlog, updated with Isa's answers of 27 Sep 2026. Dog-food build: no lab, no shadow periods, no trial dates. Baselines come from the pack's analysis and are replaced by live data and the actual costs the Owner enters. Gates 1 and 2 put the change on the backlog; Gate 3 records are signed just in time, before the cards that name them start. There are no named roles: the collective pulls the cards; AR-14 is a mechanical load.",
+ "_about": "Approval records from decision to the card backlog, updated with Isa's answers of 27 Sep 2026. Dog-food build: no lab, no shadow periods, no trial dates. Baselines come from the pack's analysis and are replaced by live data and the actual costs the Owner enters. Gates 1 and 2 put the change on the backlog; Gate 3 records are signed just in time, before the cards that name them start. There are no named roles: the collective pulls the cards; AR-14 is a mechanical load. Gates 1 and 2 were signed by Isa on 27 Sep 2026 (AR-14 loads Phase 0); AR-09b and AR-10 remain just in time.",
  "gates": [
   {
    "gate": 1,
@@ -33,8 +33,9 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
-   "depends_on": []
+   "status": "Signed by Isa, 27 Sep 2026",
+   "depends_on": [],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-02",
@@ -49,8 +50,9 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
-   "depends_on": []
+   "status": "Signed by Isa, 27 Sep 2026",
+   "depends_on": [],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-03",
@@ -64,8 +66,9 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
-   "depends_on": []
+   "status": "Signed by Isa, 27 Sep 2026",
+   "depends_on": [],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-04",
@@ -78,14 +81,15 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
-   "depends_on": []
+   "status": "Signed by Isa, 27 Sep 2026",
+   "depends_on": [],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-05",
    "decision": "H7",
    "gate": 1,
-   "title": "Trial budget and value measure",
+   "title": "Budget and value measure",
    "approves": "An initial monthly ceiling of about $2,500 (claim CL-04), with R16's hourly cap at 2x the trailing seven-day average. Baselines come from the pack's cost model and are replaced by live metering and the actual costs the Owner enters (vendor invoices, subscriptions, cloud credits); the ceiling resets by R16's formula from actuals. Value in USD: each idea carries a baseline at intake and an actual from ratification to production and return (C0.09; M06, M07).",
    "evidence": [
     "docs/idea/value-stream.md §5",
@@ -93,8 +97,9 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
-   "depends_on": []
+   "status": "Signed by Isa, 27 Sep 2026",
+   "depends_on": [],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-06",
@@ -107,14 +112,15 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready once AR-01 to AR-05 are signed",
+   "status": "Signed by Isa, 27 Sep 2026",
    "depends_on": [
     "AR-01",
     "AR-02",
     "AR-03",
     "AR-04",
     "AR-05"
-   ]
+   ],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-07",
@@ -128,10 +134,11 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready once AR-06 is signed",
+   "status": "Signed by Isa, 27 Sep 2026",
    "depends_on": [
     "AR-06"
-   ]
+   ],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-08",
@@ -145,10 +152,12 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready: baseline derived, to be adjusted live",
+   "status": "Signed by Isa, 27 Sep 2026",
    "depends_on": [
     "AR-07"
-   ]
+   ],
+   "signed": "2026-09-27",
+   "signed_note": "[PROPOSED] values accepted as proposed; live data may adjust them through AR-12"
   },
   {
    "id": "AR-09a",
@@ -162,13 +171,15 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready: owner proposed",
+   "status": "Signed by Isa, 27 Sep 2026",
    "depends_on": [
     "AR-07"
    ],
    "before_cards": [
     "C0.16"
-   ]
+   ],
+   "signed": "2026-09-27",
+   "signed_note": "[PROPOSED] values accepted as proposed; live data may adjust them through AR-12"
   },
   {
    "id": "AR-11",
@@ -181,10 +192,11 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 27 Sep 2026",
    "depends_on": [
     "AR-07"
-   ]
+   ],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-12",
@@ -197,10 +209,11 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 27 Sep 2026",
    "depends_on": [
     "AR-07"
-   ]
+   ],
+   "signed": "2026-09-27"
   },
   {
    "id": "AR-13",
@@ -213,14 +226,16 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready once AR-07 to AR-12 are signed",
+   "status": "Signed by Isa, 27 Sep 2026",
    "depends_on": [
     "AR-07",
     "AR-08",
     "AR-09a",
     "AR-11",
     "AR-12"
-   ]
+   ],
+   "signed": "2026-09-27",
+   "signed_note": "[PROPOSED] values accepted as proposed; live data may adjust them through AR-12"
   },
   {
    "id": "AR-14",

@@ -1,6 +1,6 @@
 # Constitutional Factory — Idea Record
 
-Stage: **IDEA** (not design)
+Stage: **IDEA, exited 27 Sep 2026** (AR-06 signed; the build proceeds through the ingestion pack)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
 Revision: r12.6 (supersedes r1–r12.5; r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
@@ -568,7 +568,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | Every open item typed and routed | Met (§11) |
 | Only decisions that are genuinely Isa's are left to Isa | Met (§11.3) |
 
-**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 15 approval records in three gates, is in [`approvals.md`](approvals.md). The change reaches the existing Factory as an ingestion pack ([`pack/`](../../pack/)): rules, measures, approvals, open items and 40 card seeds, each traced to this record and checked by tests.
+**Status: exited Idea stage on 27 Sep 2026.** Isa signed H1–H7 (AR-01 to AR-06, AR-08), and Gate 2 of the approval register. H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 15 approval records in three gates, is in [`approvals.md`](approvals.md). The change reaches the existing Factory as an ingestion pack ([`pack/`](../../pack/)): rules, measures, approvals, open items and 40 card seeds, each traced to this record and checked by tests.
 
 ---
 
