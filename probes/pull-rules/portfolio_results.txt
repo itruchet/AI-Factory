@@ -78,3 +78,18 @@
   velocity           -0.2%     +0.0%       +5%      -0.08  current mix, nominal               optional
   fast_track         -2.1%     +0.0%      +73%      +0.00  cold start, even spread            GOLDEN
   thresholds: a rule is golden if removing it costs >2% value, >5% hard cards, >25% longer hard-card waits, or >0.10 alignment in any scenario
+
+== Portfolio search: 431 portfolios under the golden rules; 139 meet the service level ==
+  service level at nominal demand: <=10 tier 4-5 cards and <=100 cards in total waiting after two weeks
+  best value of any portfolio: 8478 at $720/mo (GPT-5.6 Sol, Claude Opus 5.5, GPT-5.6 Terra, GPT-5.6 Luna, 2x MiMo-V2.6-Pro, Qwen3 Coder Next (local))
+
+  cheapest portfolios meeting the service level, with resilience tests:
+   $/mo  value  hard  survives vendor outage   surge queue  portfolio
+    410   8394   413  fails: openai                    654  GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, MiMo-V2.6-Pro
+    410   8392   413  fails: anthropic,openai,xiaomi         812  Claude Opus 5.5, GPT-5.6 Terra, MiMo-V2.6-Pro, Qwen3 Coder Next (local)
+    410   8378   412  fails: openai,xiaomi             794  GPT-5.6 Sol, GPT-5.6 Terra, MiMo-V2.6-Pro, Qwen3 Coder Next (local)
+    410   8376   411  fails: openai                    570  Claude Opus 5.5, GPT-5.6 Terra, GPT-5.6 Luna, MiMo-V2.6-Pro
+    450   8423   416  fails: anthropic,openai,xiaomi        1010  GPT-5.6 Sol, Claude Opus 5.5, MiMo-V2.6-Pro
+    460   8424   417  fails: xiaomi                     11  Claude Opus 5.5, GPT-5.6 Terra, 2x MiMo-V2.6-Pro, Qwen3 Coder Next (local)
+    460   8410   415  fails: xiaomi                     10  GPT-5.6 Sol, GPT-5.6 Terra, 2x MiMo-V2.6-Pro, Qwen3 Coder Next (local)
+    470   8438   418  all                               26  Claude Opus 5.5, GPT-5.6 Terra, GPT-5.6 Luna, MiMo-V2.6-Pro, Qwen3 Coder Next (local)
