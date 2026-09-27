@@ -173,4 +173,4 @@ The cross-check sharpens the institutions' scheduling rules; it does not replace
 - **Two synthetic models agreeing is not evidence about the real Factory.** It shows the conclusions survive a second set of assumptions written by a different author.
 - **The supplied model's prices and tiers are illustrative, not AA data,** so its cost figures are not comparable with ours.
 - **Licences in the supplied model are approximated** by the track record a Ledger would hold: tier skill against visible difficulty, with blind spots invisible. Real licences come from marks earned over time.
-- **Our model now has the blind-spot mechanisms, but not dependency graphs.** The evidence-graph result rests on the supplied model. R17 should be tested again when the trial provides real dependency data.
+- **r12.2 adds dependency graphs to our model** ([`dependencies.md`](dependencies.md)). R17 holds there too: it matches or beats building on unreviewed work, the review barrier, contract-first and a hybrid in every case. The trial should still measure real coupling (X13).

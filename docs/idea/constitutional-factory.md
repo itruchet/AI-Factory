@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.1 (supersedes r1–r12)
+Revision: r12.2 (supersedes r1–r12.1)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -333,6 +333,19 @@ Organisations are compared as mappings of those steps onto models.
 - **Blind spots shared by every family cut every design by about 80% at 18%.** No model organisation fixes them; deterministic tests, CI, typed contracts and human-ratified acceptance criteria are the defence (X11).
 - **Packets:** one requirement per invocation until the trial measures interface costs (X12).
 
+### 5.7 Dependency graphs (r12.2)
+
+[`dependencies.md`](dependencies.md) adds dependencies between requirements to our model:
+- a dependency graph;
+- gates on when a dependent card may start;
+- stale rebuilds when a prerequisite changes;
+- interface faults at each dependency.
+
+With the graph off it reproduces r12 exactly.
+- **R17 is confirmed in our own model.** Building only on reviewed work matches or beats every alternative in every case: building on unreviewed work, a whole-idea review barrier, building to the plan's contract, and a hybrid with waiting limits. At high coupling it delivers 1.2–1.3× the clean output of building on unreviewed work, and 1.8–1.9× that of the barrier.
+- **The institutions lead every named design in all 6 cases,** and the gap is wider than without dependencies: peer review 48–67%, Director → Worker → Checker 37–68%, no organisation 41–64%.
+- **Elastic instances still match 24 fixed seats** (within 0–5%) at 55–59% less cost per clean idea in normal work. Harder work remains the exception.
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -492,6 +505,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | X10 | The Scaler (R14) holds lead time under bursts without raising cost per clean idea | 90th-percentile lead time above 1.5× steady state, or cost per clean idea above fixed seats |
 | X11 | Blind spots are mostly family-specific, so cross-family review (R18) catches most of what one family misses (r12.1) | More than 5% of escaped defects were missed by every model family that checked them: all-family blind spots, which R18 cannot reach |
 | X12 | One requirement per invocation beats larger packets (r12.1) | Measured interface-error cost exceeds whole-packet rework cost at 2+ requirements |
+| X13 | R17 beats building on unreviewed work at the Factory's real coupling (r12.2) | At the measured share of dependent requirement pairs, building on unreviewed work gives more clean ideas, or stale rebuilds under R17 exceed 3 per idea |
 
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
@@ -505,6 +519,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - Jurisdiction as a property of each route to a model (future): how data-residency law affects cost and efficiency.
 - SQL as canonical operational state, with stateless invocations reloading a versioned snapshot; Git as the artifact authority (r12.1, from the cross-check model).
 - Tests, CI and typed contracts as first-class evidence at review and release: the only defence against blind spots shared by all model families (r12.1).
+- Plans name the interfaces between requirements, so review can check them against reviewed upstream work. The Scaler counts cards held behind prerequisites as near-term demand (r12.2).
 
 ### 11.3 Isa's decisions
 
