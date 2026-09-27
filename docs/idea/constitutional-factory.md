@@ -1,350 +1,266 @@
 # Constitutional Factory — Idea Record
 
 Stage: **IDEA** (not design)
-Scenario: **Amend** the existing Factory (confirmed by Isa's sense check; no rebuild, no new build)
+Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r4 (supersedes r1–r3 at the idea level)
+Revision: r5 (supersedes r1–r4)
 
-This record does the Idea-stage work: it states the problems, the idea, the principles and the mechanisms at concept level. It resolves every question that analysis can resolve, and routes every remaining question to an experiment, to design, or to a human decision. It follows the Council's own exit rule (§12): uncertainty is typed and routed, not left open.
-
-Design-stage material produced earlier is kept as **parked input**, not commitments:
-- [`../design-parked/`](../design-parked/): r3 design notes and a reference Ledger schema.
-- [`../../probes/allocation/`](../../probes/allocation/): a feasibility probe showing the allocation mathematics is tractable (15 passing tests). It proves feasibility only; it is not a design.
+The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), synthetic data, 3 passing tests). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
 ---
 
 ## 0. The idea in one paragraph
 
-The Factory is governed by a **constitution**. Work passes through **eight institutions**, each solving a different coordination problem with its own rules. Four kinds of intelligence each do only what they are fit for, and none holds authority it has not earned by evidence:
+The Factory is a chain of eight institutions under a constitution. At every institution, AI agents **pull** cards from a queue. Nobody assigns work. What each agent may pull is governed by **plain rules written into the Ledger**. Each institution's output is **marked** by the next institution. Marks feed back by rule:
+- agents whose work is marked down get fewer and easier cards;
+- agents whose work is accepted get more and harder cards;
+- cards that keep failing climb to more capable agents, or go back to be rewritten.
 
-- **System 2 models** (GPT, Claude, MiMo, Qwen) think, argue, write and code.
-- **A System 1 model** (Jev) makes fast, cheap, typed, calibrated judgments.
-- **The Ledger kernel** decides by arithmetic over recorded evidence. It is not an agent.
-- **The human** sets intent and values, and ratifies the rules.
-
-Every model's competence and every subscription's capacity is learned from what the Factory observes, not declared in advance.
+Each agent sees its own record when it pulls, so it knows its capability. Fast, accurate agents naturally do more work. No agent, model or router manages any of this. The rules are the management.
 
 ---
 
-## 1. The inherent problems the idea must solve
+## 1. The problems the idea must solve
 
-| # | Problem | Why it is inherent, not incidental |
+| # | Problem |
+|---|---|
+| P1 | A central router is a cognitive single point of failure and a hidden hierarchy. |
+| P2 | Capability is contextual, unknown in advance, and drifts as providers change models. |
+| P3 | Subscriptions reset, throttle and change terms without notice. |
+| P4 | Work is mismatched to capability: frontier reasoning on simple work, weak models on hard work. |
+| P5 | Models mark their own work, and share blind spots. |
+| P6 | Groupthink, prestige and emergent collusion. |
+| P7 | Agents cherry-pick easy work, which hides weakness. |
+| P8 | A single metric gets gamed. |
+| P9 | The Factory amends itself, including its own rules. |
+| P10 | Human attention is scarce. |
+| P11 | Memory is power: whoever holds history controls the system. |
+
+---
+
+## 2. Verdict: rules, not Jev
+
+Jev (TypeSafe's typed-decision model) was proposed in r4 as a "System 1" layer for small judgments. Every judgment it would make can instead be made by a rule or a count, and Jev would be one more agent in the control path.
+
+| Criterion | Rules in the Ledger | Jev |
 |---|---|---|
-| P1 | **Central intelligence.** A router model becomes a cognitive single point of failure and a hidden hierarchy. | Any component that judges which model is "good enough" holds authority that no one can verify. |
-| P2 | **Capability is contextual.** Competence varies by task, effort and context. It is unknown in advance and it drifts. | Benchmarks measure other people's tasks. Providers change models silently. |
-| P3 | **Capacity is perishable, nested, opaque and time-varying.** | Subscriptions reset, meter in undisclosed units, and change terms and peak rules without notice. |
-| P4 | **Intelligence mismatch.** Frontier reasoning is spent on simple work; weak models are given hard work. | Without a price on capacity and time, "use the best model" is always locally rational. |
-| P5 | **Self-marking and correlated error.** Models share training data and blind spots. | Agreement between models is weaker evidence than it looks. |
-| P6 | **Groupthink, prestige and emergent collusion.** | Models defer to perceived authority and can converge on collective behavior no single model intends. |
-| P7 | **Selection bias in what the Factory learns.** | If who does the work is not randomized, observed success rates are confounded. |
-| P8 | **Goodhart.** A single metric (AUW/$) gets optimized at the expense of the goal. | The Factory tunes itself, so it is its own Goodhart risk. |
-| P9 | **Reflexivity.** The Factory builds and amends itself, including its governance. | Accepted code can change the rules that accepted it. |
-| P10 | **Human attention is the scarcest resource.** | One human holds final authority with limited time. |
-| P11 | **Memory is power.** | Whoever holds history and decides who sees it holds control. |
+| Another agent in control? | **No** | Yes |
+| Reproducible | By construction: same record, same result | Only if every answer is stored |
+| Can be steered by content | No | Yes; the vendor states that input can move its answers |
+| Explainable | Every decision cites a rule and a count | A probability without reasons |
+| Dependency | None | Early-access product; price may be subsidized |
+| Cold start | Starts from today's working mapping | Forecasts would help, but the mapping already exists |
+| Per-card nuance | Card tier from card facts, corrected by escalation | Finer-grained forecasts |
+
+What each proposed Jev job becomes:
+
+| Proposed Jev job | Rules replacement |
+|---|---|
+| Card difficulty | Tier set by Planning rules (size, files, risk paths, dependencies); raised automatically when a card fails (R6) |
+| Forecast of whether an agent will succeed | The agent's own record at that tier (R4, R5) |
+| Defect triage | Deterministic checks first: build, tests, static analysis |
+| Mapping critiques to propositions | Agents must cite proposition IDs in structured output; the rule checks coverage |
+| Anomaly detection in releases | Control limits on canary metrics |
+
+**Verdict: rules. Jev is not needed.** Its one real advantage, per-card nuance, is covered by escalation: a card that proves harder than its tier moves up. Any future model, Jev included, may enter only as a **worker inside an institution** under the same rules. It never enters the control logic.
 
 ---
 
-## 2. The idea: four kinds of intelligence, one constitution
+## 3. The rule system
 
-### 2.1 The separation
+These rules are the whole of "management". They run identically in every institution. Only the **standards** differ by institution.
 
-| Layer | Who | What it is fit for | What it may never do |
-|---|---|---|---|
-| **System 2** | GPT, Claude, MiMo, Qwen, and future LLMs | Open-ended reasoning, argument, decomposition, code, review | Hold permanent authority; allocate work; judge its own acceptance alone |
-| **System 1** | Jev (TypeSafe AI), and future decision models | Many fast, typed judgments over known answer sets, each with a calibrated probability: classification, forecasting, scoring, triage | Generate artifacts; lower a safeguard; act as the kernel |
-| **Arithmetic** | The Ledger kernel | Bayesian updating, constrained optimization, seeded randomization, sequential tests, sampling | Hold discretion; make a judgment not reducible to published maths |
-| **Human** | Isa | Intent, value of ideas, risk appetite, ratification of the constitution | Make a failing test pass |
+| # | Rule | What it does |
+|---|---|---|
+| R1 | **Pull** | An agent with a free slot pulls the next card. No one assigns work. |
+| R2 | **Licence** | Each card has a difficulty tier. An agent may pull only tiers it holds a licence for. Licences form a ladder: holding tier 2 implies tier 1. |
+| R3 | **Hardest first, oldest first** | An agent pulls the oldest card in the highest tier it is licensed for. It cannot pick within a tier. |
+| R4 | **Allowance** | Each agent has a number of slots. An accepted card adds one, up to its concurrency limit. A markdown that takes its recent markdown rate **over the standard** halves them. Normal error within the standard costs nothing. |
+| R5 | **Ladder** | After sustained success at its top tier, an agent receives **stretch cards** from the tier above. Meeting that tier's standard on them earns the licence. A full window **well over** the standard (1.5×) loses the top licence. The gap between the two thresholds (hysteresis) stops licences flapping on noise. A failed promotion attempt doubles the wait before the next one (back-off). |
+| R6 | **Escalation** | A marked-down card is retried once at its tier by a **different** agent, then moves up a tier. A card that fails repeatedly at the top tier returns to Planning. The card is then suspect, not the agents. |
+| R7 | **Pacing** | An agent on a capped subscription may work below its top tier only while its remaining cap is above the pro-rata line for the window. Near reset the line reaches zero, so leftover capacity is used freely. |
+| R8 | **Attribution** | Every markdown carries a reason backed by evidence, and it lands on the agent that caused it: implementation → implementer; unclear or wrong card → the card's author in Planning; review miss found later → the reviewer who passed it, and the implementer; infrastructure → nobody. |
+| R9 | **The marker is marked** | Reviewers are workers too. A pass later overturned by Audit, or a markdown overturned as unfounded, counts against the reviewer under R4–R5 in the Court. Marking is accountable in both directions. |
+| R10 | **Self-awareness** | When pulling, an agent sees its own record: licences, allowance, recent rate against the standard, and the reasons behind its recent markdowns. It may decline a card with no markdown. Repeated declines at a tier return that licence: honest self-assessment reallocates work; it is not punished. |
+| R11 | **Start state** | Licences and allowances start from today's predetermined mapping. It worked, so it is the starting point. The rules move it on evidence from day one. A new model starts at tier 1 and climbs by stretch cards. |
+| R12 | **Late marks** | An Audit finding weeks later applies like an immediate markdown, counted twice, because escaped defects cost more. |
+| R13 | **No orphan tiers** | If cards wait at a tier with no licensed agent for longer than a set time, the best-performing agent one tier below gets stretch cards. If there is none, the card is split in Planning or escalated to Isa. |
 
-This separation resolves P1. No layer both judges and decides:
-- System 2 and System 1 produce **assertions**.
-- The kernel turns evidence and assertions into decisions by **published mathematics**.
-- The human sets the **values** the mathematics optimizes.
+**Constants set once in the constitution:** window size, hysteresis factor, stretch-trial count, back-off, late-mark weight. **Standards set per institution by Isa:** the maximum acceptable markdown rate for each tier. These are the "KPI and standards".
 
-### 2.2 Why Jev fits, and where it must not go
+### 3.1 Key points the rules encode
 
-**What Jev is** (from public sources; see §14):
-- A "System One" model released in early access on 15 September 2026. It returns typed decisions with calibrated probabilities, never text, and cannot answer outside a predefined schema.
-- On its maker's own four-workflow benchmark it scored about 67.8%. That ties a mid-tier LLM and trails frontier models (about 73–74%). It costs about $0.0004 per case against $0.03–0.18 for those LLMs, and runs in roughly 0.4 s against 10–38 s.
-- Input costs $0.042 per million tokens; output is not metered. The maker says the price may be subsidized.
-- Stated limits: it is not built for chat, code or explanation. It does not treat its input as hostile, so content written to steer it can move the answer. Calibration is a training objective, not a guarantee on any particular task.
-
-**The fit.** The Factory contains hundreds of small judgments that r1–r3 either handed to a human or hid in heuristics:
-- which class a card belongs to;
-- its size, risk and verifiability;
-- the forecast chance a given configuration succeeds;
-- whether a critique challenges a given proposition;
-- whether a canary log shows an anomaly.
-
-These are exactly Jev's shape: known answer sets, high volume, a probability wanted. Jev turns hidden judgment into **recorded, calibrated, auditable assertions** at near-zero cost.
-
-**The boundary: Jev is a witness, not a judge.** Three rules keep Jev from becoming the new router:
-
-1. **Every Jev output is an assertion.** The kernel weights it by Jev's *measured* calibration on Factory outcomes, scored by a proper scoring rule. If calibration is poor, its weight falls toward zero automatically.
-2. **Asymmetric authority** (a new constitutional principle). A cheap or steerable judgment may **raise** scrutiny (extra review, higher audit weight, a higher risk class). It may never **lower** a safeguard below its floor. This neutralizes Jev's stated susceptibility to steering: an attacker who steers Jev can at most cause extra caution.
-3. **Replay does not need Jev to be deterministic.** Jev's answer is recorded in the Ledger when it is made. Any later replay of a kernel decision uses the recorded answer. The decision stays reproducible even if Jev would answer differently tomorrow.
-
-**This is probabilistic determinism, stated precisely:**
-- Jev supplies fast calibrated probabilities, the System 1 intuition.
-- System 2 models supply reasoning and artifacts.
-- The kernel combines both with observed outcomes, under constraints and with seeded randomness.
-- Every decision is therefore probabilistic in construction, deterministic in replay, and justified by evidence.
-
----
-
-## 3. The constitution (concept)
-
-The constitution constrains every institution. Its full articles are in the parked design notes. At idea level, eight principles carry it:
-
-1. **Capability earns contribution, never authority.** No model holds rank by vendor, size or benchmark.
-2. **Evidence over authority.** One reproduced defect defeats any number of approvals, whoever found it.
-3. **Facts, assertions and derived values are different kinds of record.** Only facts and published derivations decide.
-4. **Separation of institutions.** Only a ratified output crosses an institutional boundary, never the debate behind it.
-5. **Memory is governed.** The Ledger remembers everything. Each institution's charter says who may see what.
-6. **Asymmetric authority.** Cheap, fast or steerable judgment may add caution, never remove it.
-7. **No self-certification.** No component approves its own promotion; the Factory never edits the ruler it is measured by.
-8. **Human attention is a priced resource.** Escalation competes for it like any scarce capacity (§6.4).
+1. **One feedback loop serves all eight institutions.** Each institution's output is the next institution's input, and the next institution's acceptance is the mark. Institutions stay separate, each with its own charter, standards and memory rules. They share only the feedback rule, not their content.
+2. **Marks must land on the right producer.** A failed build card may be the card writer's fault, not the coder's. Without attribution (R8), Planning never learns and coders are punished for bad cards.
+3. **Markers must be marked.** Otherwise reviewers can wave work through, or reject it for nothing, at no cost (R9).
+4. **Measure against the standard, not against perfection.** The simulation's first rule set halved allowances on every single markdown. Across 20 runs, accepted work fell 32% and an average of 540 cards were left in the queue at week end. Every agent errs sometimes; only errors beyond the standard should cost work.
+5. **Cards fail too.** Escalation (R6) separates "this card is hard" from "this agent is weak".
+6. **Self-awareness comes from memory, not introspection.** A model cannot know its own capability on this Factory's work. The Ledger can tell it. Seeing its own markdown reasons also lets it improve within the task, not only be reallocated.
+7. **Start from what works.** The predetermined mapping is the starting state, not a thing to be discarded (R11).
+8. **Speed is throughput.** A fast agent finishes sooner and pulls again. If it is also accurate, it takes more work. If it is fast and sloppy, R4 cuts its slots.
 
 ---
 
 ## 4. The eight institutions
 
-| # | Institution | Coordination problem | Mechanism | Output that crosses the boundary |
+| # | Institution | Coordination problem | Who pulls | What marks its output |
 |---|---|---|---|---|
-| 1 | **Inquiry** | Independent discovery | Every System 2 model gets the same brief and commits before seeing any other submission | Sealed submissions |
-| 2 | **Deliberation Council** | Quality of shared understanding | Delphi plus peer review: positions → critique → response → synthesis; anonymous; no chair; no vote | Alignment Record, human-ratified |
-| 3 | **Planning Chamber** | Turning intent into executable work | Parallel blind decomposition → cross-examination → reconciliation → red team: "could perfect execution still fail the intent?" | Ratified plan with acceptance contracts |
-| 4 | **Work Market** | Allocating high-volume work under capability and capacity uncertainty | Continuous market cleared by kernel arithmetic: posteriors, capacity prices, seeded assignment; assignee may decline | Work under lease |
-| 5 | **Assurance Court** | Is this work acceptable? | Evidentiary rules; the constitution is the judge; open standing to challenge; blind seating | Judgment with its evidence |
-| 6 | **Audit** | Is assurance itself trustworthy? | Independent sampling, replication, planted defects, collective-behavior measures | Findings and system corrections |
-| 7 | **Ledger** | Memory, accountability and control arithmetic | Append-only record plus kernel: constraints and pure functions | Governed views; derived decisions |
-| 8 | **Release Gate** | Is an accepted change safe to run, especially inside the Factory? | Pre-registered criteria, sequential testing on canaries, independent approvers with seated dissent | Promoted change |
+| 1 | **Inquiry** | Independent discovery | Every model, on the same brief, committing before seeing any other submission | Council: which propositions survive into the Alignment Record |
+| 2 | **Deliberation Council** | Shared understanding | Every Inquiry participant; anonymous; no chair; no vote | Isa's ratification; Planning's clarification requests |
+| 3 | **Planning Chamber** | Intent → executable cards | Decomposers blind in parallel, then reconciliation and red team | Market: cards declined as unclear; Court: rejections attributed to the card |
+| 4 | **Work Market** | High-volume execution | Every agent, by R1–R13 | Court |
+| 5 | **Assurance Court** | Is this work acceptable? | Reviewers, blind to author; open standing to challenge with evidence | Audit: overturned passes and overturned rejections |
+| 6 | **Audit** | Is assurance trustworthy? | Auditors outside the work's provenance chain, on random and risk-weighted samples | Planted defects with known answers; Isa's sample |
+| 7 | **Ledger** | Memory and the rules | Nobody. It is where rules run and marks are kept. | Replay: any decision can be recomputed from the record |
+| 8 | **Release Gate** | Is an accepted change safe to run inside the Factory? | Approvers from different families, blind, with one seated dissenter | Canary results against criteria fixed in advance |
 
-### 4.1 Rules each institution uses against bias and groupthink
+### 4.1 Institution-specific protections
 
-| Institution | Bias it faces | Strategy (standard method chosen for that bias) | Anti-groupthink rule |
-|---|---|---|---|
-| Inquiry | Anchoring; participation bias | Universal participation; commit before view | No peer outputs visible |
-| Council | Order, prestige and dominance effects | Anonymous labels; random reading order per participant; rotating synthesizer | Every proposition must appear in the synthesis; any objection preserves a dispute |
-| Planning | Anchoring on the first plan | Blind parallel decomposition | Red team separate from reconciler |
-| Market | Easy-work selection; confounded competence data | Thompson sampling at capacity prices, with recorded probabilities | Models cannot pick their own cards |
-| Court | Reviewer choice; knowing the author; no ground truth | Blind seating; commit before view; planted defects | A reproduced defect overrides consensus |
-| Audit | Unrepresentative samples | Stratified (Neyman) sampling with inverse-probability weights | Auditors drawn outside the work's provenance chain |
-| Release | Post-hoc rationalization; cherry-picked canaries | Criteria fixed in advance; randomized canaries; sequential test | Seated dissenter; cooling-off period; base rates shown |
-| Ledger | Survivorship | Record every outcome: declines, surrenders, expiries | — |
-
-### 4.2 The intelligence each institution needs
-
-This is a starting hypothesis. The kernel replaces it with evidence (§5).
-
-| Institution | System 2 | System 1 (Jev) | Arithmetic |
-|---|---|---|---|
-| Inquiry | All models, by constitution; only reasoning effort is optimized | Intake typing (idea, defect or chore) | Contribution measured by leave-one-out |
-| Council | Highest levels; volume is tiny | Maps each critique to the propositions it touches, for the coverage check | Coverage rule |
-| Planning | Highest levels; errors propagate to every card | Card features: size, risk, verifiability, dependencies | Traceability and acyclicity checks |
-| Market | Widest spread, learned per card class | Per-card success forecast for each configuration | Posteriors, prices, assignment |
-| Court | A family other than the author's, at the level that meets the detection floor | Defect-likelihood triage (may raise review depth only) | Deterministic checks first |
-| Audit | Strong and independent | Escape-risk forecast for targeted sampling | Unbiased weighting; uniform floor |
-| Release | Only for changes to governance | Canary anomaly typing | Sequential test decides routine changes |
-| Ledger | **Never** | **Never inside the kernel** | Everything |
-
----
-
-## 5. How intelligence is matched to work
-
-### 5.1 Minimum sufficient intelligence
-
-For each class of work, choose the configuration (model × reasoning effort, or plain code) with the best expected net value among those whose record clears a quality floor:
-
-**net value = P(success) × value − P(failure) × cost of failure − (capacity price + time cost) × consumption**
-
-Plain code is a configuration. Where it is sufficient, it wins, because it is free and instant.
-
-### 5.2 The parameters are derived, not set by hand
-
-r3 asked Isa to set value, failure cost, floor and time cost for each class. That was wrong. Analysis resolves them:
-
-| Parameter | Derivation |
-|---|---|
-| **Value** | Flows down from the idea's priority. That priority is the human's single input; the plan distributes it across cards. |
-| **Cost of failure** | Measured from the Ledger: rework consumed, downstream cards blocked, and defects escaping into audit, weighted by their cost. |
-| **Quality floor** | Follows from the two above. A configuration is worth using only if P·V > (1 − P)·F, so the floor is **F / (V + F)**. High-consequence work demands high reliability automatically. |
-| **Required confidence** | Scales with the risk class: more evidence before the Factory trusts a configuration on consequential work. |
-| **Time cost** | The cost of delay. Cards on the idea's critical path carry a time cost; cards off it carry almost none. |
-| **Capacity price** | The shadow price of each capacity constraint, from the optimization (§6.2). |
-
-The human sets **what matters** (idea priority, risk appetite). The arithmetic sets **everything else**.
-
-### 5.3 Where competence estimates come from
-
-- **Observed outcomes**, per configuration and class. This is the only source that can override the others.
-- **Jev's per-card forecast**, used as a prior and weighted by Jev's measured calibration. This solves two problems at once:
-  - **Cold start:** a new model or class has an informed starting point.
-  - **Coarse buckets:** a forecast can distinguish two cards in the same class.
-- **Benchmarks**, as a weak initial prior that evidence overrides within tens of tasks.
-
-### 5.4 Exploration without self-selection
-
-Assignment uses Thompson sampling: each configuration's success chance is drawn from its uncertainty. Configurations with thin records sometimes draw high and get work, so evidence is gathered where it is missing. Exploration stops by itself as uncertainty shrinks. Every assignment records its probability. Any alternative policy, including today's router, can therefore be scored on history without being deployed.
-
-### 5.5 Whether frontier models should do simple work (a result, not an opinion)
-
-On subscriptions, every model costs nothing extra per call until its capacity binds. So:
-
-- **Capacity scarce:** frontier work on simple tasks has a real opportunity cost. The capacity price keeps it for work where its quality margin pays.
-- **Capacity spare and time priced:** frontier models lose simple work because they are slower.
-- **Capacity spare, about to expire, time not critical:** using it on simple work is *not* waste. The alternative is losing it. Better still, send it to deferrable assurance work: extra reviews, replications, audits.
-
-The feasibility probe demonstrates all three cases.
-
-### 5.6 Cascades where checking is cheap
-
-Where a reliable check exists (tests, invariants), try the cheapest sufficient configuration first and escalate only on failure. Where checking is weak (design, security, concurrency), cascades are forbidden, because failures would pass silently.
-
----
-
-## 6. Capacity: every subscription factored in, and learned
-
-### 6.1 All capacity forms become constraints
-
-| Form | Example in this Factory | How it enters the model |
+| Institution | Main risk | Protection |
 |---|---|---|
-| Rolling short window (e.g. 5 hours) | Claude and OpenAI subscriptions | Tactical constraint; unused capacity perishes continuously |
-| Weekly cap on top | Claude and OpenAI subscriptions | Strategic constraint; usually the binding one |
-| Peak-hour reductions | Anthropic reduced 5-hour limits in weekday peak hours from March 2026 | Capacity varies with time, so deferrable work shifts off-peak |
-| Temporary exemptions | ChatGPT Pro's Codex reported with no 5-hour gate "for the coming months" | Terms change; the model must re-learn |
-| Plan multipliers | Claude Max 5x and 20x | Prior on capacity |
-| Very large pool | MiMo-class subscription | Rarely binding; its price is usually zero |
-| Pay-per-token | Jev API | Cash cost, very low; early-access limits unknown |
-| Local compute | Qwen on GPU | GPU time, VRAM, concurrency and queue delay |
-| Human attention | Isa | Scarcest of all (§6.4) |
+| Inquiry | Anchoring | No peer outputs visible until everyone has committed |
+| Council | Prestige and dominance | Anonymous labels; random reading order; every proposition must appear in the synthesis; one objection keeps a point disputed |
+| Planning | Anchoring on the first plan | Blind parallel decomposition; red team separate from reconciler |
+| Market | Cherry-picking easy work | Hardest-first, oldest-first pull; no choice within a tier (R3) |
+| Court | Self-marking; knowing the author | Blind review; deterministic checks first; a reproduced defect beats any number of approvals |
+| Audit | Unrepresentative samples | Random plus risk-weighted sampling; planted defects as ground truth |
+| Release | Post-hoc rationalization | Criteria fixed before data; seated dissenter; cooling-off period; no version approves itself |
 
-**Nested windows each get their own price.** A call consumes from its 5-hour window and its weekly cap at once. Each constraint carries its own shadow price. A resource can be cheap this hour and expensive this week, and the kernel sees both.
+---
 
-### 6.2 Capacity is learned, not declared
+## 5. Capacity and subscriptions under pull
 
-This is why Isa does not need to supply subscription terms. Vendors meter in undisclosed units ("messages", "usage"), change limits without notice, and differ by peak hour. So published terms are only a **prior**. The Factory learns:
+**Correction to r4.** r3–r4 treated capacity as something to price and optimize centrally, and treated slowness as a cost. In a pull system neither is needed:
 
-- **the true ceilings**, from observed throttling events;
-- **the conversion** from tokens and reasoning effort to each vendor's hidden unit, from consumption up to each throttle;
-- **the reset behavior**, from observed recovery.
+- **Using capacity is simply pulling.** An agent with subscription left keeps pulling. When throttled, it stops. When its window resets, it resumes. No component has to track this for allocation.
+- **Speed is good.** Faster agents complete more cards. At the standard, that is more accepted work, which is the KPI.
+- **Leftover capacity is used automatically.** An agent with nothing at its top tier pulls from lower tiers.
+- **One risk remains, and one rule covers it.** A frontier agent could burn its weekly cap on easy cards early in the week and be throttled when hard cards arrive. Pacing (R7) lets it drop down a tier only while it is ahead of the pro-rata line. Hard work is never restricted. At reset the line reaches zero, so nothing is wasted.
 
-Capability emerges from evidence. So does capacity. It is the same principle applied twice.
+All subscription forms fit without special handling: 5-hour rolling windows, weekly caps, peak-hour reductions, plan multipliers, MiMo's large pool, and Qwen's local GPU slots. Each simply determines when an agent can pull. In the simulation, frontier agents used 89–100% of their weekly caps and the hard-card queue stayed near empty.
 
-### 6.3 Perishability and opportunity cost
+**Human attention.** Isa's touchpoints are fixed by the constitution:
+- setting each institution's standards;
+- ratifying Alignment Records;
+- constitutional amendments;
+- governance changes at the Release Gate;
+- R13 escalations.
 
-- A constraint that will not bind before reset has a price of zero. Its capacity is perishing, so the kernel uses it, preferably on deferrable assurance.
-- A constraint that will bind has a positive price. That price is exactly the value lost per unit if the constraint had one unit less.
-- A reserve on frontier capacity is held for challenges, audits and escalations, and released before reset.
+Everything else runs on the rules.
 
-### 6.4 Human attention as capacity
+---
 
-Isa's time is modeled as a resource with a weekly capacity and a shadow price, like any subscription. Escalations compete for it:
+## 6. The constitution (principles)
 
-- Low-value escalations are batched into a daily digest, or resolved by evidence rules.
-- When attention is scarce, the kernel asks for more evidence (another independent review, a replication) before escalating, because model capacity is cheaper than Isa.
-- Human touchpoints are fixed by the constitution: idea priority, Alignment Record ratification, constitutional amendments, and governance changes at the Release Gate. Everything else runs on evidence.
-
-This makes P10 a managed constraint instead of an unbounded risk.
+1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
+2. **No manager.** No agent, model or router allocates work. Plain rules in the Ledger do.
+3. **Evidence over authority.** A reproduced defect beats any number of approvals, whoever found it.
+4. **Facts and claims are kept apart.** Test results, commits and timings are facts. "This is done" is a claim until the next institution marks it.
+5. **Separation of institutions.** Only a ratified output crosses an institutional boundary, never the debate behind it.
+6. **Memory is governed.** The Ledger holds all history. Each institution's charter says who sees what. Every agent sees its own record.
+7. **Accountability in both directions.** Producers are marked by the next stage; markers are marked by Audit.
+8. **No self-certification.** No change approves itself. Rule changes pass the Release Gate and Isa.
 
 ---
 
 ## 7. Memory: who sees what
 
-The Ledger holds all memory. The kernel enforces read rights by charter.
-
 | Institution | Sees | Never sees |
 |---|---|---|
-| Inquiry | The brief and engineering context | Peer outputs, identities, reputations |
-| Council | Anonymized submissions | Identities, reputations |
+| Inquiry | The brief and engineering context | Peer outputs; identities |
+| Council | Anonymized submissions | Identities |
 | Planning | The Alignment Record, including minority positions | The Council transcript |
-| Market | The card, its contract, and **its own** record | Others' records or identities |
+| Market | The card, its contract, and **its own record** (R10) | Others' records or identities |
 | Court | Artifact, contract, evidence; other verdicts only after committing its own | The author's identity and reasoning |
 | Audit | Contract and final artifact | Review discussion |
-| Jev | Kernel-supplied features and state for the question asked | Anything it could be steered by, where avoidable |
 
-Exposure is recorded. Agreement after exposure is never counted as independent agreement.
+Showing an agent only its own record gives it self-awareness. It gets no information to defer to, compete with, or collude with other agents.
 
 ---
 
-## 8. Threats the idea must withstand (concept level)
+## 8. Threats and how the rules answer them
 
-| Threat | How the idea handles it |
+| Threat | Answer |
 |---|---|
-| Central intelligence (P1) | No layer both judges and decides; the kernel is replayable arithmetic |
-| Self-marking, correlated error (P5) | Deterministic evidence first; independence computed from recorded exposure; error correlation between model families measured by audit |
-| Groupthink, prestige (P6) | Commit before view, anonymity, seated dissent, open standing to challenge |
-| Emergent collusion (P6) | Blind random seating; pairwise approval-versus-audit monitoring; narrow structured channels between models |
-| Reward hacking | Locked and sealed tests; planted defects; audit revises outcome labels |
-| Selection bias (P7) | A strategy per institution (§4.1); recorded probabilities |
-| Goodhart (P8) | Paired metrics; outcome labels revised by audit; the metric code itself protected as governance |
-| Reflexivity (P9) | Release Gate; no self-certification; governance changes need independent approvers and the human |
-| Jev steering | Asymmetric authority; calibration-weighted influence; recorded answers |
-| Jev miscalibration on our work | Weight earned from measured calibration, never assumed |
-| Vendor limit changes | Capacity learned continuously; priors only |
-| Human overload (P10) | Attention priced; touchpoints fixed by constitution |
+| Central intelligence (P1) | There is no allocator to fail or capture. Rules are replayable from the Ledger. |
+| A weak agent keeps failing (P4) | R4 cuts its slots; R5 removes its top licence; R10 shows it why. |
+| A strong agent on simple work (P4) | R3 sends it to its hardest licensed work first; R7 paces its drop-downs. |
+| Cherry-picking easy work (P7) | R3: no choice within a tier. Declines return licences (R10). |
+| Card hoarding | Slots are capped by allowance and concurrency. |
+| Rubber-stamp or hostile reviewing (P5) | R9: reviewers are marked by Audit in both directions. |
+| Bad cards blamed on coders | R8 attribution; R6 returns repeat failures to Planning. |
+| Noise making licences flap | Hysteresis and full windows (R5). |
+| Wasted retry cycles | Back-off on failed promotions (R5); retry by a different agent (R6). |
+| Hard cards starving | R6 escalation; R13 orphan-tier rule. |
+| Frontier cap exhausted early | R7 pacing. |
+| Collusion between producer and marker (P6) | Blind review; Audit marks the marker; planted defects. |
+| Groupthink (P6) | Commit before view; anonymity; seated dissent. |
+| Gaming the markdown rate (P8) | Marks come from a different institution, audited later; late marks count double (R12). |
+| Rules edited by the Factory itself (P9) | Rule changes pass the Release Gate and Isa. No change approves itself. |
+| Provider silently changes a model | Its record moves; the rules follow the record. |
 
 ---
 
-## 9. What changed through r1–r4
+## 9. Evidence from the simulation (synthetic)
 
-| Idea | Settled position |
+**Setup.** One weekly window. Four agents with hidden true success rates by tier. Qwen is wrongly licensed for tier 2, as a predetermined mapping might do. Cards arrive continuously. Results are the mean over 20 runs.
+
+| Allocation | Accepted | Marked down | Qwen tier-2 markdowns | Backlog at week end |
+|---|---|---|---|---|
+| Static predetermined mapping | 1,660 | 266 (13.8%) | 116 | 0 |
+| **Pull rules R1–R13 (final)** | **1,657** | **217 (11.6%)** | **36** | 5 |
+
+- **Throughput held; markdowns fell 18%.** Qwen's failures on work beyond it fell 69%. It was demoted to tier 1, where it succeeds.
+- **Self-correction works both ways.** When Qwen was upgraded mid-week, it re-earned tier 2 in most runs with no intervention.
+- **The first rule set failed**, and that was informative (figures from the probe's first iteration, preserved in git history). It halved allowances on every markdown, used short noisy windows, escalated after one failure and started every allowance at one. Accepted work fell 32%. The fixes are now rules: measure against the standard, hysteresis, retry before escalating, start from the existing mapping, back-off.
+
+---
+
+## 10. Settled by analysis (not for Isa)
+
+| Question | Settlement |
 |---|---|
-| Number of institutions | Eight, each with its own rules (r2, r3) |
-| Agent 70 | Dissolved. Control is Ledger arithmetic, not an agent (r3) |
-| Stateless models | Rejected. Memory is supplied and governed; collusion is in the threat model (r2) |
-| Self-selection | Replaced by per-institution bias strategies (r3) |
-| Hand-set economics | Replaced by derived parameters; the human sets only priority and risk appetite (r4) |
-| Human-supplied subscription terms | Replaced by learned capacity with published terms as priors (r4) |
-| Jev | System 1 layer: witness, not judge; asymmetric authority (r4) |
-| Human attention | A priced capacity (r4) |
+| Jev or rules | Rules (§2) |
+| Subscription terms | Not needed. Pull plus throttling handles them; one pacing rule covers frontier caps (§5) |
+| How a failing agent gets less work | R4 allowance and R5 ladder, against the standard (§3) |
+| How an agent knows its capability | Its own record at pull time (R10) |
+| Starting point | Today's predetermined mapping (R11) |
+| Who is at fault when a card fails | Attribution by evidenced reason (R8) |
+| Who checks the checkers | Audit marks reviewers; planted defects mark auditors (R9) |
+| Card difficulty | Planning rules set the tier; escalation corrects it (R6) |
+| Migration | Amend (Isa's sense check); mapping onto existing components happens in design |
 
 ---
 
-## 10. Questions resolved by analysis
+## 11. Open items, typed and routed
 
-These were previously handed to Isa. They do not need her.
-
-| Question | Resolution | Basis |
-|---|---|---|
-| Value, failure cost, floor and time cost per class | Derived (§5.2) | Break-even arithmetic; Ledger measurement; critical path |
-| Subscription terms | Learned; public terms as priors (§6.2) | Vendors meter in opaque, changing units |
-| Which historical cards to replay for calibration | A stratified sample across classes, run on capacity that would otherwise expire; Jev forecasts recorded alongside for its own calibration | Unbiased seeding at zero opportunity cost |
-| Model family labels for independence | Vendor as prior; replaced by measured error correlation from audit | Correlation is empirical |
-| Human attention budget | Modeled as capacity with a price; touchpoints fixed by constitution (§6.4) | Same mechanism as every other resource |
-| Release Gate rules | Adopted as part of the idea (§4.1); ratified with the constitution | Standard anti-groupthink controls |
-| Existing code and migration | Amend scenario confirmed; mapping onto existing components happens in design | Isa's sense check |
-
----
-
-## 11. Open questions, typed and routed
-
-### 11.1 Experiments (evidence decides; each can prove the idea wrong)
+### 11.1 Experiments (each can prove the idea wrong)
 
 | # | Hypothesis | Falsified if |
 |---|---|---|
-| X1 | Jev's forecasts are calibrated on Factory work | Its calibration error on Factory outcomes stays above a threshold; its weight then falls to zero on its own |
-| X2 | Jev priors cut the cold-start cost of new models and classes | No reduction in tasks needed to reach stable estimates |
-| X3 | Kernel assignment beats today's router | Evaluation on history shows the router equal or better |
-| X4 | Time cost reduces over-provisioning without lowering quality | No reduction, or a quality drop |
-| X5 | Anonymity reduces deference in the Council | Adoption of propositions by source is unchanged |
-| X6 | Cross-family review detects more planted defects than same-family review | No difference; then save frontier capacity |
-| X7 | Universal Inquiry participation adds unique value from every model | A model's unique surviving contribution stays near zero |
-| X8 | Sequential testing at the Release Gate decides as well as human review on routine changes | Material disagreement |
+| X1 | Pull rules match the static mapping's throughput with fewer markdowns on real work | Throughput drops more than 3%, or markdowns do not fall |
+| X2 | Seeing its own markdown reasons improves an agent's next attempt | No change in its rework rate |
+| X3 | Attribution (R8) improves card quality in Planning | Card-caused markdowns do not fall |
+| X4 | Marking the markers (R9) reduces escaped defects | Audit escape rate unchanged |
+| X5 | Pacing (R7) prevents frontier exhaustion without idle capacity at reset | Tier-3 backlog at cap exhaustion, or more than 10% of cap unused at reset |
+| X6 | Anonymity reduces deference in the Council | Adoption by source unchanged |
+| X7 | Universal Inquiry participation adds unique value from every model | A model's surviving contributions stay near zero |
 
-### 11.2 Design-stage questions (for the Planning Chamber, not for now)
+### 11.2 Design-stage questions (for the Planning Chamber)
 
-- Mapping the eight institutions onto existing Factory components (amend).
-- The Ledger's physical form and replay mechanism.
-- Jev question schemas for each institution.
-- How capacity is learned per vendor (throttle detection and unit conversion).
-- Charter texts for each institution.
+- Tier definitions per institution: which card facts set the tier.
+- Mapping R1–R13 onto the existing Factory's cards, SQLite state, worktrees and workflow engine.
+- Reason codes for R8, and the evidence each one requires.
+- Initial constants: window, hysteresis, stretch trials, back-off.
+- The Ledger views each agent sees at pull time (R10).
 
-### 11.3 Human decisions (only two)
+### 11.3 Isa's decisions
 
-| # | Decision | Why it is Isa's |
-|---|---|---|
-| H1 | Ratify the constitution's principles (§3), including asymmetric authority and priced human attention | Constitutional authority rests with the human |
-| H2 | Approve exit from Idea stage into the Planning Chamber / design | Stage gates are human decisions |
+| # | Decision |
+|---|---|
+| H1 | Ratify the constitution's eight principles (§6) and rules R1–R13 (§3) |
+| H2 | Set the standard per institution and tier: the maximum acceptable markdown rate. These are the KPI standards. Design can propose starting values. |
+| H3 | Approve exit from Idea stage into design |
 
 ---
 
@@ -352,42 +268,22 @@ These were previously handed to Isa. They do not need her.
 
 | Criterion | Status |
 |---|---|
-| Every inherent problem P1–P11 has a mechanism | Met (§2–§8) |
-| Every contradiction raised in r1–r3 is resolved or routed | Met (§9) |
-| Every open item is typed: experiment, design question or human decision | Met (§11) |
-| No question left to the human that analysis can resolve | Met (§10) |
-| Feasibility shown for the least obvious mechanism (allocation arithmetic) | Met (probe; 15 passing tests) |
+| Every problem P1–P11 has a mechanism | Met (§3–§8) |
+| No agent or model in the control path | Met (§2) |
+| Central mechanism tested for failure modes | Met (simulation; first version failed and was corrected) |
+| Every open item typed and routed | Met (§11) |
+| Only decisions that are genuinely Isa's are left to Isa | Met (§11.3) |
 
-**Status: ready to exit Idea stage on H1 and H2.**
+**Status: ready to exit Idea stage on H1–H3.**
 
 ---
 
 ## 13. Risks carried into design
 
-- **Jev is days old.** It is in early access, the price may be subsidized, and the benchmarks are the vendor's own. The idea does not depend on Jev: remove it and the kernel falls back to class-level posteriors and benchmark priors, only slower to learn.
-- **Parameters are derived, but the derivations have inputs.** Failure cost is only as good as audit's measurement of escapes. Audit quality is therefore load-bearing.
-- **Learning takes volume.** Idea-level experiments (X5, X7) are underpowered for months. Market-level and Court-level learning is fast.
+- **Marks are only as good as the markers.** The whole loop rests on the Court and Audit being reliable. That is why R9, planted defects and Isa's sample exist.
+- **Real success rates may be noisier than the simulation.** Window and hysteresis constants must be set from real variance in design.
+- **Low-volume institutions learn slowly.** Inquiry and Council handle few items, so their feedback loops take months to settle. Market and Court settle within days.
 
 ---
 
-## 14. Sources
-
-Jev:
-- [Introducing System One Models & Jev — TypeSafe AI Blog](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
-- [Jev, an AI Model That Can't Chat, Takes On Bigger Rivals — Bloomberg](https://www.bloomberg.com/news/articles/2026-09-25/jev-an-ai-model-that-can-t-chat-takes-on-bigger-rivals)
-- [What is Jev? — DigitalOcean](https://www.digitalocean.com/resources/articles/what-is-jev)
-- [TypeSafe Jev: the First Decision-Only Model Class, Benchmarked and Priced — Developers Digest](https://www.developersdigest.tech/blog/typesafe-jev-system-one-models-release-guide-2026)
-- [What Is Jev? TypeSafe's Decision Model and Its Limits — BenchLM.ai](https://benchlm.ai/blog/posts/what-is-jev)
-- [Jev: TypeSafe's System One Model — DataCamp](https://www.datacamp.com/blog/system-one-models-jev)
-
-Subscription limits (secondary sources; terms change often, which is the point of §6.2):
-- [Claude Code Rate Limits & Usage Quotas Explained (2026) — TrueFoundry](https://www.truefoundry.com/blog/claude-code-limits-explained)
-- [Claude Code and ChatGPT Rate Limits (Sept 2026) — BetterClaw](https://www.betterclaw.io/blog/claude-code-chatgpt-rate-limit-alternatives-2026)
-- [AI Usage Limits Compared (Sept 2026) — The AI Career Lab](https://theaicareerlab.com/blog/ai-usage-limits-compared-2026)
-- [Claude Max vs ChatGPT Pro: What 5x and 20x Actually Mean — AI Models Compared](https://aimodelscompared.com/claude-max-vs-codex-usage-limits/)
-
-The TypeSafe primary page could not be fetched from this environment. Jev facts above come from search summaries of these sources and should be checked against the primary page before design.
-
----
-
-**Takeaway:** ratify the principles (H1) and open the design stage (H2). Every other question in this record is resolved or routed.
+**Takeaway:** ratify R1–R13 and set the standards (H1–H2). The rules then manage the Factory, starting from the mapping that already works.

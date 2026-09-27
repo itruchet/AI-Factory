@@ -4,11 +4,12 @@ An AI-native software engineering Factory that converts human ideas into impleme
 
 ## Constitutional Factory (Idea stage)
 
-- **[Idea Record](docs/idea/constitutional-factory.md)** — current. Problems, idea, principles, eight institutions, intelligence matching, capacity, Jev as the System 1 layer, routed open questions.
-- [Parked design notes](docs/design-parked/) — earlier design-stage material, kept as input for the design stage.
-- [Allocation probe](probes/allocation/) — feasibility check of the allocation arithmetic. Not a design.
+- **[Idea Record](docs/idea/constitutional-factory.md)** (r5): eight institutions; agents pull cards; plain rules in the Ledger adjust what each agent may pull, based on how the next institution marks its work. No manager agent.
+- [Pull-rules probe](probes/pull-rules/): simulation testing rules R1–R13 against a static mapping (synthetic data).
+- [Parked design notes](docs/design-parked/): earlier design-stage material.
+- [Superseded probe](probes/_superseded/): r3–r4 allocation maths, replaced by the pull rules.
 
 ```
-python3 -m unittest discover -s probes/allocation   # probe tests
-python3 probes/allocation/demo.py                    # worked example (synthetic data)
+python3 probes/pull-rules/sim.py                    # simulation
+python3 -m unittest discover -s probes/pull-rules   # checks of the Idea Record's claims
 ```
