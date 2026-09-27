@@ -1,6 +1,6 @@
 # Idea to live: organisations, elasticity and budget (r12)
 
-Stage: **IDEA**. Market: Artificial Analysis snapshot of 27 Sep 2026.
+Stage: **IDEA**. Market: Artificial Analysis snapshot of 27 Sep 2026. Visual summary: [Idea-to-Live Factory](https://claude.ai/artifact/XVowDeyPNUthrzjwS7fCB9).
 
 **Probes**
 - [`probes/value-stream/`](../../probes/value-stream/) (new):
