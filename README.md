@@ -2,15 +2,13 @@
 
 An AI-native software engineering Factory that converts human ideas into implemented, tested, reviewed software using multiple model families.
 
-## Architecture
+## Constitutional Factory (Idea stage)
 
-- [Constitutional architecture — design proposal](docs/architecture/constitutional-factory.md)
-- [Ledger reference schema (SQLite)](docs/architecture/ledger-schema.sql)
-- [Allocation kernel](kernel/allocation.py): minimum sufficient intelligence, capacity shadow prices, Thompson assignment, Neyman audit sampling, SPRT release decisions
-
-## Kernel
+- **[Idea Record](docs/idea/constitutional-factory.md)** — current. Problems, idea, principles, eight institutions, intelligence matching, capacity, Jev as the System 1 layer, routed open questions.
+- [Parked design notes](docs/design-parked/) — earlier design-stage material, kept as input for the design stage.
+- [Allocation probe](probes/allocation/) — feasibility check of the allocation arithmetic. Not a design.
 
 ```
-python3 -m unittest discover -s kernel   # tests
-python3 kernel/demo.py                    # worked example (synthetic data)
+python3 -m unittest discover -s probes/allocation   # probe tests
+python3 probes/allocation/demo.py                    # worked example (synthetic data)
 ```

@@ -1,6 +1,6 @@
 -- Factory Ledger: reference schema for the constitutional architecture.
--- Companion to docs/architecture/constitutional-factory.md r3 (sections 5-7, 11-16).
--- Kernel functions that write DERIVED rows and draws: kernel/allocation.py.
+-- Companion to docs/design-parked/constitutional-factory-design-notes.md (parked); current idea: docs/idea/constitutional-factory.md (sections 5-7, 11-16).
+-- Kernel functions that write DERIVED rows and draws: probes/allocation/allocation.py.
 --
 -- Design rules enforced here:
 --   1. Ledger tables are append-only. UPDATE and DELETE abort (Article 2).

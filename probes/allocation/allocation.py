@@ -1,9 +1,11 @@
-"""Ledger allocation kernel.
+"""Ledger allocation kernel — FEASIBILITY PROBE (Idea stage).
+
+Shows that the allocation arithmetic in docs/idea/constitutional-factory.md
+(section 5) is tractable. Not a design commitment.
 
 Pure functions over Ledger outcomes. No model calls, no hidden state, no
 discretion: every output is reproducible from (ledger rows, charter params,
-seed). This is the "probabilistic determinism" layer of the constitutional
-architecture (docs/architecture/constitutional-factory.md, section 12).
+seed).
 
 Pipeline:
     outcomes  -> Posterior per (config, task class)          [Bayesian update]

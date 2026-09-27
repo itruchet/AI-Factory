@@ -1,8 +1,10 @@
-# Factory Constitutional Architecture — Design Proposal
+# Factory Constitutional Architecture — Design Notes (parked)
 
-Status: DRAFT r3 for adversarial peer review
+> **Parked for the design stage.** The project is at Idea stage. The current record is [`../idea/constitutional-factory.md`](../idea/constitutional-factory.md) (r4), which supersedes this file wherever they conflict. In particular: charter economics are derived, not hand-set (Idea Record §5.2); subscription terms are learned (§6.2); Jev is the System 1 layer (§2.2).
+
+Status: r3 design notes, parked
 Owner: Isa
-Companions: [`ledger-schema.sql`](ledger-schema.sql) (reference schema, validated on SQLite 3.45) · [`../../kernel/allocation.py`](../../kernel/allocation.py) (allocation kernel, 15 passing tests) · [`../../kernel/demo.py`](../../kernel/demo.py) (worked example, synthetic data)
+Companions: [`ledger-schema.sql`](ledger-schema.sql) (reference schema, validated on SQLite 3.45) · [`../../probes/allocation/allocation.py`](../../probes/allocation/allocation.py) (allocation kernel, 15 passing tests) · [`../../probes/allocation/demo.py`](../../probes/allocation/demo.py) (worked example, synthetic data)
 
 ---
 
@@ -13,7 +15,7 @@ Companions: [`ledger-schema.sql`](ledger-schema.sql) (reference schema, validate
 | Agent 70 becomes a "Clerk" | A Clerk is still an agent in all but name. Control must be logic inside the Ledger and backlog, based on sound mathematical inference. | **Accepted.** No actor sits in the control path. The **Ledger kernel** is database constraints plus pure mathematical functions over Ledger rows. Every output is reproducible from (rows, charter, seed), so anyone can verify it by replay (§16.2). |
 | One bias fix for all: a service rota drawn by lot | The optimal selection-bias strategy differs by institution | **Accepted.** Each institution faces a different bias and gets its own strategy, chosen from standard statistical methods (§7.4). The Market rota is replaced by Thompson sampling, which explores exactly as much as uncertainty justifies. |
 | Release Gate as a procedural body | It is an eighth institution, needing its own rules against groupthink among experts | **Accepted.** Institution 8 with its own charter: pre-registered criteria, independent commit-before-view, dissent by draw, decision by sequential test on canary data (§15). |
-| Capacity as a signal only | Intelligence must be matched to the task. No point spending frontier reasoning on simple work. This must be mathematically modelled, monitored and trialled per institution. | **Accepted, with one qualification.** New §12: minimum sufficient intelligence per task class, computed from Ledger posteriors, capacity shadow prices (Lagrange duals) and time cost. Implemented and tested in `kernel/`. Qualification: subscription capacity that would expire unused costs nothing, so using it is not waste. Time cost is what keeps over-qualified models off simple work when capacity is spare. |
+| Capacity as a signal only | Intelligence must be matched to the task. No point spending frontier reasoning on simple work. This must be mathematically modelled, monitored and trialled per institution. | **Accepted, with one qualification.** New §12: minimum sufficient intelligence per task class, computed from Ledger posteriors, capacity shadow prices (Lagrange duals) and time cost. Implemented and tested in `probes/allocation/`. Qualification: subscription capacity that would expire unused costs nothing, so using it is not waste. Time cost is what keeps over-qualified models off simple work when capacity is spare. |
 | Market clears by claims and tie-breaks | Superseded by the kernel | Assignment by seeded Thompson sampling at shadow prices, with recorded propensity. Models keep the right to decline, surrender, ask and split (§11). |
 
 ## Revision 2 — what changed and why
@@ -486,7 +488,7 @@ Where a reliable verifier exists (tests, invariants), a class may run as a **cas
 
 ### 12.8 Worked example (synthetic data)
 
-`python3 kernel/demo.py`. All numbers are illustrative, not measurements of real models.
+`python3 probes/allocation/demo.py`. All numbers are illustrative, not measurements of real models.
 
 | Task class | Frontier scarce | Frontier surplus near reset |
 |---|---|---|
@@ -733,7 +735,7 @@ Agent 70 is not reframed. It is dissolved. Its control duties become part of the
 
   output = f(ledger rows, charter version, seed)
 
-| Function | Mathematics | In `kernel/allocation.py` |
+| Function | Mathematics | In `probes/allocation/allocation.py` |
 |---|---|---|
 | Competence | Beta–binomial posterior with decay | `Posterior` |
 | Eligibility | Lower credible bound ≥ τ | `window_options` |
@@ -833,7 +835,7 @@ Agent 70 is not reframed. It is dissolved. Its control duties become part of the
 | KPI layer, AUW/$ | UPLIFT | Paired metrics; audit-adjusted; F2-protected |
 | Current intelligent router | REPLACE as authority | Keep as a logged advisory assertion from `legacy_router`, compared against Market outcomes. Not a fallback: a fallback smarter than the primary is a hidden authority. On kernel failure, stop and hold. |
 | Director → Worker → Checker | REPLACE | Council/Planning → Market → Court |
-| Inquiry, Council, Planning, Audit, Release Gate, Ledger kernel, charters, manifests | NEW | This document and `kernel/` |
+| Inquiry, Council, Planning, Audit, Release Gate, Ledger kernel, charters, manifests | NEW | This document and `probes/allocation/` |
 
 **Migration options.** Incremental uplift if model choice sits behind one seam and SQLite can gain an append-only Ledger alongside existing tables. Substantial refactor if routing is spread across stages and prompts. Parallel V2 if state cannot be made append-only without breaking running work. Clean rebuild is not justified: it discards the history that the Market's reputation depends on.
 
@@ -872,7 +874,7 @@ Ledger and projections; FACT / ASSERTION / DERIVED; manifests on every call; ada
 
 ### Phase 1 — kernel, Market and Court
 
-Kernel functions (already prototyped and tested in `kernel/`) wired to the Ledger; charter economics per task class; calibration tournament on historical cards; assignment with propensity; shadow prices and reserve; blind seated review; open-standing challenges; over-provisioning and calibration KPIs.
+Kernel functions (already prototyped and tested in `probes/allocation/`) wired to the Ledger; charter economics per task class; calibration tournament on historical cards; assignment with propensity; shadow prices and reserve; blind seated review; open-standing challenges; over-provisioning and calibration KPIs.
 
 ### Phase 2 — Audit and Release Gate
 

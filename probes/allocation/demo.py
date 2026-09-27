@@ -3,7 +3,7 @@
 ALL NUMBERS ARE SYNTHETIC. They illustrate the mechanics, not real model
 performance. Replace them with Ledger outcomes and real subscription terms.
 
-Run: python3 kernel/demo.py
+Run: python3 probes/allocation/demo.py
 """
 
 from collections import Counter

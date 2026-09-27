@@ -1,4 +1,4 @@
-"""Tests for the allocation kernel. Run: python3 -m unittest discover -s kernel"""
+"""Tests for the allocation kernel. Run: python3 -m unittest discover -s probes/allocation"""
 
 import unittest
 
