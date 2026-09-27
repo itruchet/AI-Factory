@@ -224,6 +224,7 @@ class Org:
     independence: bool = True                        # author never checks own work (relaxed by R13)
     by_family: bool = False                          # r12.1: nor does any model of the author's family (vendor)
     hold_h: float = 2.0                              # "hybrid" gate: waiting limits (reviewed, then built, then contract)
+    step_floor: dict = field(default_factory=dict)   # r12.3: a higher licence floor for some steps (step -> pass chance)
     dep_gate: str = "accepted"                       # r12.2: a dependent card may start when its prerequisites are
                                                      # "accepted" (R17: reviewed and merged), "built" (tests passed,
                                                      # not reviewed) or "none" (ignore the graph, as r12 did)
@@ -279,6 +280,8 @@ class Scaler:
                                                    # cost is within band x the cheapest qualified model's (None = off)
     band_wait_h: float = 1.0                       # ... unless the task has waited this long
     strict: bool = True                            # instances pull only work they clear the quality floor on
+    held_weight: float = 0.0                       # r12.3: count cards waiting on prerequisites as build demand at this
+                                                   # weight (1.0 = the R14 rule from r12.3; 0 reproduces r12-r12.2)
     floor: float = 0.80                            # start a model only if its pass chance on the task >= floor
                                                    # (0.8 maximised clean output in the floor sweep; 0.6 = the licence floor)
 
@@ -356,12 +359,15 @@ class Sim:
             if self.scaler.strict and task.step not in ("discover", "challenge") and \
                     p_pass(s.cfg.ci, task.card.d if task.card is not None else task.d) < self.scaler.floor:
                 return False                               # ... and to a model that clears the quality floor
-        if not org.licences or task.step in ("discover", "challenge"):
+        floor = org.step_floor.get(task.step, 0.0)
+        if not org.licences or (task.step in ("discover", "challenge") and not floor):
             return True
         if task.step in ("review", "audit", "security"):
-            ok = p_pass(s.cfg.ci, task.card.d) >= REVIEW_LICENCE_P
+            ok = p_pass(s.cfg.ci, task.card.d) >= max(REVIEW_LICENCE_P, floor)
+        elif task.step in ("discover", "challenge"):
+            ok = p_pass(s.cfg.ci, REQ_BASE) >= floor
         else:
-            ok = p_pass(s.cfg.ci, task.d) >= LICENCE_P
+            ok = p_pass(s.cfg.ci, task.d) >= max(LICENCE_P, floor)
         if not ok and task.step != "build" and aged:
             ok = s.cfg.ci >= self.top_ci - 10              # R13: open to the most capable
         return ok
@@ -444,11 +450,14 @@ class Sim:
 
     # elasticity: rules, not an agent
     def licensed(self, cfg, task) -> bool:
-        if not self.org.licences or task.step in ("discover", "challenge"):
+        floor = self.org.step_floor.get(task.step, 0.0)
+        if not self.org.licences or (task.step in ("discover", "challenge") and not floor):
             return True
         if task.step in ("review", "audit", "security"):
-            return p_pass(cfg.ci, task.card.d) >= REVIEW_LICENCE_P
-        return p_pass(cfg.ci, task.d) >= LICENCE_P
+            return p_pass(cfg.ci, task.card.d) >= max(REVIEW_LICENCE_P, floor)
+        if task.step in ("discover", "challenge"):
+            return p_pass(cfg.ci, REQ_BASE) >= floor
+        return p_pass(cfg.ci, task.d) >= max(LICENCE_P, floor)
 
     def task_cost(self, cfg, task) -> float:
         """Expected cost of a success: $/busy hour x hours / pass chance."""
@@ -485,6 +494,12 @@ class Sim:
             for task in q:
                 best = self.best_model(task)
                 demand[best.name] += self.base_hours(task) * math.sqrt(100 / max(best.speed, 10))
+        if sc.held_weight:                               # near-term demand: cards held behind prerequisites
+            for idea in self.open_ideas:
+                for c in idea.held:
+                    t = Task("build", idea, c, d=c.d)
+                    best = self.best_model(t)
+                    demand[best.name] += sc.held_weight * self.base_hours(t) * math.sqrt(100 / max(best.speed, 10))
         count = defaultdict(int)
         busy = defaultdict(int)
         for s in self.seats:

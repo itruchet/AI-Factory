@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.2 (supersedes r1–r12.1)
+Revision: r12.3 (supersedes r1–r12.2)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -85,11 +85,13 @@ These rules are the whole of "management". They run identically in every institu
 | R11 | **Start state** | Licences and allowances start from today's predetermined mapping. It worked, so it is the starting point. The rules move it on evidence from day one. A new model starts at tier 1 and climbs by stretch cards. |
 | R12 | **Late marks** | An Audit finding weeks later applies like an immediate markdown, counted twice, because escaped defects cost more. |
 | R13 | **No orphan tiers** | If cards wait at a tier with no licensed agent for longer than a set time, the best-performing agent one tier below gets stretch cards. If there is none, the card is split in Planning or escalated to Isa. |
-| R14 | **Elastic capacity (the Scaler)** *(r12)* | Agents are instances of models on the menu. Every 15 minutes the Ledger prices each queued task on every model licensed for it whose pass chance clears the quality floor (0.8). Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins. Each model's target is its busy instances plus ⌈queued hours ÷ 2 h⌉, within vendor rate limits. The Ledger starts the shortfall and stops instances idle 30 minutes beyond target. An instance pulls only work it clears the floor on and whose cost is within 1.5× the cheapest qualified model's (cost-band pull), unless the task has waited an hour. Instances of one model are one model for independence. *r12.1:* work-conserving: the target clears queued work within 15 minutes (not 2 h). The cross-check found that conservative demand predictors lose output, and aggressiveness costs nothing under API pricing. |
+| R14 | **Elastic capacity (the Scaler)** *(r12)* | Agents are instances of models on the menu. Every 15 minutes the Ledger prices each queued task on every model licensed for it whose pass chance clears the quality floor (0.8). Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins. Each model's target is its busy instances plus ⌈queued hours ÷ 2 h⌉, within vendor rate limits. The Ledger starts the shortfall and stops instances idle 30 minutes beyond target. An instance pulls only work it clears the floor on and whose cost is within 1.5× the cheapest qualified model's (cost-band pull), unless the task has waited an hour. Instances of one model are one model for independence. *r12.1:* work-conserving: the target clears queued work within 15 minutes (not 2 h). The cross-check found that conservative demand predictors lose output, and aggressiveness costs nothing under API pricing. *r12.3:* cards held behind prerequisites count as demand. The cost-band wait stays at 1 hour: it costs 2–3 h of median lead time, and removing it costs 1.5–2.4× per clean idea. |
 | R15 | **No training on our data** *(r12)* | No model tier that uses the Factory's prompts or outputs for training (for example, Muse Spark's Contributor tier). |
 | R16 | **Burn cap** *(r12)* | Running instances may burn at most 2× the trailing seven-day average ($ per hour), under a monthly ceiling of expected demand × cost per clean idea × 1.5. Both are relative, so neither depends on the token model. |
 | R17 | **Evidence-gated dependencies** *(r12.1)* | Each card is reviewed as it is built; there is no whole-idea barrier. A card that depends on another becomes available only when its prerequisite has passed review. A rework invalidates only the dependants whose inputs changed. The Ledger records the artifact versions each card read. |
 | R18 | **Family independence** *(r12.1)* | No model reviews, audits or releases work by a model of its own family (vendor). Instances and siblings are one epistemic source. If no other family is available, the waiver is recorded (R13). |
+| R19 | **High-impact licence floors** *(r12.3)* | Design, plan, plan red-team, security review, acceptance test and release need a pass chance of at least 0.8 (other steps 0.6; review 0.5). The floors are set from the same evidence as every licence, so they re-sort themselves when models change. |
+| R20 | **Configurations are proposals** *(r12.3)* | The Ledger may propose step affinities found by search over its own records (a step reserved for a pool of models) as a trial configuration: compared with the institutions on the same work, adopted only on evidence, and lapsing automatically when the roster changes or a reserved pool is empty. The constitution never reserves steps for named models. |
 
 **Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality). (r8 dropped the separate velocity standard: promotion credit is counted per card, so speed already moves models up; §3.2.) These are the "KPI and standards".
 
@@ -346,6 +348,26 @@ With the graph off it reproduces r12 exactly.
 - **The institutions lead every named design in all 6 cases,** and the gap is wider than without dependencies: peer review 48–67%, Director → Worker → Checker 37–68%, no organisation 41–64%.
 - **Elastic instances still match 24 fixed seats** (within 0–5%) at 55–59% less cost per clean idea in normal work. Harder work remains the exception.
 
+### 5.8 Institutions or the searched design (r12.3)
+
+[`institutions-vs-searched.md`](institutions-vs-searched.md) tests the searched design, the institutions plus step affinities found by search, on questions its search never asked:
+- **Out of sample:**
+  - The design tuned on the six loses its edge (96–103%) and does not transfer.
+  - The design tuned on the population holds (105–131% on new rosters).
+- **Brittle under change:**
+  - When the anchor models are down, the population-tuned design loses its whole edge. On the six it drops to 65%, because planning is reserved for models that are unavailable.
+  - A new model cannot be used on reserved steps. The institutions gain +27% from Fable joining; the searched designs gain +19–23%.
+- **With elastic capacity:** within noise.
+
+Adaptive floors (R19) keep most of the gain by evidence alone:
+- 98–110% on the six and 103–139% on the population;
+- best on harder work;
+- unchanged in an outage;
+- a lower change-failure rate;
+- about half of the tuned design's gain on its own roster type.
+
+The searched design is therefore a configuration, admissible only as a trial (R20), not the constitution.
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -506,6 +528,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | X11 | Blind spots are mostly family-specific, so cross-family review (R18) catches most of what one family misses (r12.1) | More than 5% of escaped defects were missed by every model family that checked them: all-family blind spots, which R18 cannot reach |
 | X12 | One requirement per invocation beats larger packets (r12.1) | Measured interface-error cost exceeds whole-packet rework cost at 2+ requirements |
 | X13 | R17 beats building on unreviewed work at the Factory's real coupling (r12.2) | At the measured share of dependent requirement pairs, building on unreviewed work gives more clean ideas, or stale rebuilds under R17 exceed 3 per idea |
+| X14 | High-impact floors (R19) cut change failures without lowering clean output (r12.3) | Clean output falls more than 5% against plain licences, or change-failure rate does not fall |
 
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
@@ -529,7 +552,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | H2 | Set the quality standard per institution and tier (maximum markdown rate). Design can propose starting values. |
 | H4 | Approve the rolling portfolio policy (P1, P2, P6–P8; §5.2) in place of a fixed model list. Start from today's four models. |
 | H5 | Approve three absolute work tiers for cards (§5.2) |
-| H6 | Approve for the trial: the seven-model menu on API tokens, the Scaler (R14), no training on our data (R15) and the burn cap (R16) (§5.4–5.5). (r12: the US data-residency option is withdrawn.) |
+| H6 | Approve for the trial: the seven-model menu on API tokens, the Scaler (R14), no training on our data (R15), the burn cap (R16), R17–R19, and R20 for any searched configuration (§5.4–5.8). (r12: the US data-residency option is withdrawn.) |
 | H3 | Approve exit from Idea stage into design |
 
 ---

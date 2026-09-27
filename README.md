@@ -4,7 +4,7 @@ An AI-native software engineering Factory that converts human ideas into impleme
 
 ## Constitutional Factory (Idea stage)
 
-- **[Idea Record](docs/idea/constitutional-factory.md)** (r12.2): eight institutions; agents pull cards; plain rules in the Ledger adjust what each agent may pull, based on how the next institution marks its work. Success and velocity push agents up, failure moves them down, and hardest-first pull puts more capable models on harder cards. No manager agent.
+- **[Idea Record](docs/idea/constitutional-factory.md)** (r12.3): eight institutions; agents pull cards; plain rules in the Ledger adjust what each agent may pull, based on how the next institution marks its work. Success and velocity push agents up, failure moves them down, and hardest-first pull puts more capable models on harder cards. No manager agent.
 - [Pull-rules probes](probes/pull-rules/): `sim.py` (capacity and frontier caps) and `capability_sort.py` (five-tier capability sorting from an inverted start), synthetic data. `portfolio.py` (model mixes, outages, golden-rules ablation, portfolio search; results in `portfolio_results.txt`). Visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg).
 - [Artificial Analysis tiering and market probes](probes/aa-tiers/): real Coding Index data (`aa_coding_2026-09-09.csv`), statistical tiering (`tiering.py`), portfolio and 26-week market simulation (`market_sim.py`). [Visual summary](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd).
 - **[Institutional throughput](docs/idea/institutional-throughput.md)** ([`probes/institutions/`](probes/institutions/)): discrete-event simulation of the institutions vs the Director → Worker → Checker baseline, staffed only from the Artificial Analysis population; headcount, tier mix, institution sizing, shared vs dedicated seats, and sensitivity. [Visual summary](https://claude.ai/artifact/KqT8mPfqWx69EobtZ4Ybx3).
@@ -12,6 +12,7 @@ An AI-native software engineering Factory that converts human ideas into impleme
 - **[Idea to live](docs/idea/value-stream.md)** ([`probes/value-stream/`](probes/value-stream/)): every step from idea to live; organisations as mappings of steps onto models (no organisation, peer, Director → Worker → Checker, orchestrator, functional roles, institutions, pools per step, and a searched design); elastic model instances started and stopped by Ledger rules; budget and burn cap. [Visual summary](https://claude.ai/artifact/XVowDeyPNUthrzjwS7fCB9).
 - **[Cross-check](docs/idea/crosscheck.md)** ([`probes/crosscheck/`](probes/crosscheck/)): an independent simulation Isa supplied (`external/`, unchanged), with our rules added to it, and its mechanisms (family blind spots, packets, controller aggressiveness) added to ours.
 - **[Dependency graphs](docs/idea/dependencies.md)** (`probes/value-stream/deps.py`): requirements that depend on each other; gates (R17, unreviewed, barrier, contract-first, hybrid), stale rebuilds, interface faults; organisations and elasticity re-run.
+- **[Institutions or the searched design](docs/idea/institutions-vs-searched.md)** (`probes/value-stream/searched.py`): the searched design out of sample, under outages, with a new model and with elastic capacity; adaptive licence floors (R19) and trial configurations (R20).
 - [Parked design notes](docs/design-parked/): earlier design-stage material.
 - [Superseded probe](probes/_superseded/): r3–r4 allocation maths, replaced by the pull rules.
 
@@ -39,5 +40,8 @@ python3 -m unittest discover -s probes/value-stream
 python3 probes/value-stream/crosscheck.py           # blind spots, packets, Scaler aggressiveness (~15 min)
 python3 probes/crosscheck/our_rules_in_their_sim.py # our rules inside the supplied simulation (~10 min)
 python3 probes/value-stream/deps.py                 # dependency graphs: gates, organisations, elasticity (~40 min)
+python3 probes/value-stream/scaler_held.py          # Scaler counts held cards as demand (~15 min)
+python3 probes/value-stream/band_wait.py            # the cost-band wait behind elastic's lead-time gap (~5 min)
+python3 probes/value-stream/searched.py             # institutions vs searched design (~30 min)
 python3 -m unittest discover -s probes/crosscheck
 ```

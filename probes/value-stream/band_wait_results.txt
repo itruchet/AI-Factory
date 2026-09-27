@@ -1,0 +1,21 @@
+COST-BAND WAIT (elastic, the six models, coupling 0.25, held demand counted; lead = median/90th percentile)
+
+[steady]
+  wait 1.00 h    20.1 clean  lead   25/  44 h  CFR  10%  $  26/clean
+  wait 0.25 h    19.1 clean  lead   25/  43 h  CFR  11%  $  28/clean
+  wait 0.00 h    18.2 clean  lead   23/  41 h  CFR  11%  $  45/clean
+
+[mixed]
+  wait 1.00 h    18.1 clean  lead   24/  89 h  CFR  14%  $  63/clean
+  wait 0.25 h    17.4 clean  lead   22/ 121 h  CFR  12%  $  77/clean
+  wait 0.00 h    17.9 clean  lead   23/ 102 h  CFR  16%  $ 153/clean
+
+[harder]
+  wait 1.00 h    13.4 clean  lead   39/ 113 h  CFR  19%  $ 138/clean
+  wait 0.25 h    14.1 clean  lead   37/ 100 h  CFR  17%  $ 142/clean
+  wait 0.00 h    13.7 clean  lead   33/  93 h  CFR  19%  $ 202/clean
+
+[surge]
+  wait 1.00 h    44.8 clean  lead   25/  43 h  CFR  12%  $  29/clean
+  wait 0.25 h    44.6 clean  lead   24/  42 h  CFR  14%  $  31/clean
+  wait 0.00 h    44.3 clean  lead   23/  40 h  CFR  15%  $  58/clean

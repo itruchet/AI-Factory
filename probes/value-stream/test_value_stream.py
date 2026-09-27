@@ -56,6 +56,20 @@ class ValueStreamTest(unittest.TestCase):
         self.assertGreater(r17["clean"], 1.1 * barrier["clean"])
         self.assertLess(r17["drops"].get("stale_rework", 0), barrier["drops"].get("stale_rework", 0))
 
+    def test_reserved_steps_break_in_an_outage_but_floors_do_not(self):
+        import searched as sr
+        def run(d, variant):
+            return v.mean_measures([sr.job((d, "best six", "base", variant, 0.0, k)) for k in (40, 41, 42)])["clean"]
+        inst = run("institutions", "outage")
+        self.assertLess(run("searched (population 12)", "outage"), 0.8 * inst)     # planning reserved for absent models
+        self.assertGreater(run("adaptive institutions", "outage"), 0.95 * inst)
+
+    def test_held_cards_count_as_scaler_demand(self):
+        import scaler_held as sh
+        m0 = v.mean_measures([sh.job((0.25, "mixed", "elastic, r12.2 Scaler", k)) for k in range(3)])
+        m1 = v.mean_measures([sh.job((0.25, "mixed", "elastic + held demand", k)) for k in range(3)])
+        self.assertGreater(m1["seat_h"], m0["seat_h"])                            # the Scaler now provisions for held work
+
 
 if __name__ == "__main__":
     unittest.main()

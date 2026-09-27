@@ -1,0 +1,64 @@
+SCALER COUNTS HELD CARDS AS DEMAND (institutions, R17, the six models; lead = median/90th percentile)
+
+[coupling 0.25 / steady]
+  fixed six                               18.2 clean ( 23.9 live)  lead   46/  77 h  CFR  15%  $  57/clean  peak   6  seat-h  1008  backlog   11
+  fixed 24                                20.4 clean ( 25.9 live)  lead   22/  38 h  CFR  11%  $  66/clean  peak  24  seat-h  4032  backlog    3
+  elastic, r12.2 Scaler                   20.1 clean ( 26.0 live)  lead   26/  45 h  CFR  13%  $  27/clean  peak  30  seat-h  1609  backlog    3
+  elastic + held demand                   20.1 clean ( 25.6 live)  lead   25/  44 h  CFR  10%  $  26/clean  peak  34  seat-h  1863  backlog    6
+  elastic + held demand, 15-min target    18.1 clean ( 24.6 live)  lead   24/  44 h  CFR  14%  $  30/clean  peak  47  seat-h  3095  backlog    4
+
+[coupling 0.25 / bursty]
+  fixed six                               17.4 clean ( 23.7 live)  lead   64/ 107 h  CFR  15%  $  59/clean  peak   6  seat-h  1008  backlog    5
+  fixed 24                                19.8 clean ( 25.9 live)  lead   22/  38 h  CFR  14%  $  65/clean  peak  24  seat-h  4032  backlog    1
+  elastic, r12.2 Scaler                   19.3 clean ( 25.5 live)  lead   26/  46 h  CFR  15%  $  27/clean  peak  34  seat-h  1515  backlog    2
+  elastic + held demand                   17.4 clean ( 23.1 live)  lead   25/  43 h  CFR  14%  $  28/clean  peak  37  seat-h  1665  backlog    2
+  elastic + held demand, 15-min target    18.9 clean ( 25.2 live)  lead   24/  41 h  CFR  13%  $  27/clean  peak  48  seat-h  2674  backlog    2
+
+[coupling 0.25 / growth]
+  fixed six                               19.4 clean ( 26.4 live)  lead  154/ 318 h  CFR  15%  $  58/clean  peak   6  seat-h  1008  backlog  145
+  fixed 24                                38.3 clean ( 50.2 live)  lead   23/  38 h  CFR  14%  $  64/clean  peak  24  seat-h  4032  backlog   13
+  elastic, r12.2 Scaler                   38.1 clean ( 49.7 live)  lead   25/  44 h  CFR  12%  $  28/clean  peak  40  seat-h  2767  backlog   13
+  elastic + held demand                   36.6 clean ( 48.8 live)  lead   25/  43 h  CFR  14%  $  29/clean  peak  42  seat-h  3142  backlog   14
+  elastic + held demand, 15-min target    35.9 clean ( 47.3 live)  lead   25/  43 h  CFR  12%  $  30/clean  peak  48  seat-h  4381  backlog   16
+
+[coupling 0.25 / mixed]
+  fixed six                               10.9 clean ( 15.5 live)  lead  295/ 434 h  CFR  14%  $ 106/clean  peak   6  seat-h  1008  backlog   70
+  fixed 24                                19.3 clean ( 24.6 live)  lead   20/ 104 h  CFR  11%  $ 123/clean  peak  24  seat-h  4032  backlog    9
+  elastic, r12.2 Scaler                   18.3 clean ( 25.5 live)  lead   23/ 116 h  CFR  15%  $  70/clean  peak  35  seat-h  2783  backlog    8
+  elastic + held demand                   18.1 clean ( 24.5 live)  lead   24/  89 h  CFR  14%  $  63/clean  peak  40  seat-h  3178  backlog    8
+  elastic + held demand, 15-min target    18.2 clean ( 24.5 live)  lead   22/ 110 h  CFR  13%  $  68/clean  peak  48  seat-h  5072  backlog    9
+
+[coupling 0.25 / surge]
+  fixed six                               20.9 clean ( 28.4 live)  lead  371/ 584 h  CFR  12%  $  56/clean  peak   6  seat-h  1008  backlog  226
+  fixed 24                                45.1 clean ( 59.7 live)  lead   23/  39 h  CFR  14%  $  64/clean  peak  24  seat-h  4032  backlog   10
+  elastic, r12.2 Scaler                   43.4 clean ( 59.4 live)  lead   26/  45 h  CFR  15%  $  29/clean  peak  41  seat-h  3249  backlog   11
+  elastic + held demand                   44.8 clean ( 58.7 live)  lead   25/  43 h  CFR  12%  $  29/clean  peak  43  seat-h  3707  backlog   12
+  elastic + held demand, 15-min target    45.8 clean ( 60.9 live)  lead   25/  43 h  CFR  13%  $  29/clean  peak  48  seat-h  5189  backlog   10
+
+[coupling 0.25 / harder]
+  fixed six                               10.1 clean ( 20.8 live)  lead  156/ 251 h  CFR  18%  $ 115/clean  peak   6  seat-h  1008  backlog   45
+  fixed 24                                15.4 clean ( 25.7 live)  lead   29/  79 h  CFR  17%  $ 127/clean  peak  24  seat-h  4032  backlog    5
+  elastic, r12.2 Scaler                   13.3 clean ( 24.7 live)  lead   42/ 131 h  CFR  17%  $ 152/clean  peak  34  seat-h  2616  backlog    8
+  elastic + held demand                   13.3 clean ( 24.0 live)  lead   39/ 113 h  CFR  20%  $ 139/clean  peak  38  seat-h  2906  backlog    9
+  elastic + held demand, 15-min target    13.7 clean ( 24.6 live)  lead   39/ 123 h  CFR  15%  $ 138/clean  peak  47  seat-h  4395  backlog    9
+
+[coupling 0.65 / steady]
+  fixed six                               11.0 clean ( 17.3 live)  lead  247/ 350 h  CFR  22%  $ 105/clean  peak   6  seat-h  1008  backlog   56
+  fixed 24                                17.4 clean ( 23.8 live)  lead   36/  71 h  CFR  17%  $ 105/clean  peak  24  seat-h  4032  backlog    7
+  elastic, r12.2 Scaler                   18.0 clean ( 26.2 live)  lead   42/  93 h  CFR  18%  $  52/clean  peak  31  seat-h  2447  backlog    7
+  elastic + held demand                   17.4 clean ( 24.6 live)  lead   41/  85 h  CFR  17%  $  47/clean  peak  37  seat-h  3045  backlog    8
+  elastic + held demand, 15-min target    17.9 clean ( 24.7 live)  lead   40/  81 h  CFR  15%  $  44/clean  peak  48  seat-h  4862  backlog    8
+
+[coupling 0.65 / surge]
+  fixed six                               11.4 clean ( 17.0 live)  lead  483/ 763 h  CFR  18%  $ 102/clean  peak   6  seat-h  1008  backlog  303
+  fixed 24                                42.1 clean ( 60.3 live)  lead   51/  97 h  CFR  17%  $ 101/clean  peak  24  seat-h  4032  backlog   19
+  elastic, r12.2 Scaler                   41.8 clean ( 59.8 live)  lead   48/ 104 h  CFR  19%  $  59/clean  peak  43  seat-h  4693  backlog   20
+  elastic + held demand                   40.8 clean ( 59.2 live)  lead   46/  95 h  CFR  18%  $  57/clean  peak  45  seat-h  5458  backlog   23
+  elastic + held demand, 15-min target    41.2 clean ( 59.0 live)  lead   47/ 101 h  CFR  18%  $  60/clean  peak  48  seat-h  6660  backlog   20
+
+[coupling 0.65 / harder]
+  fixed six                                5.6 clean ( 12.0 live)  lead  363/ 564 h  CFR  24%  $ 205/clean  peak   6  seat-h  1008  backlog   93
+  fixed 24                                12.8 clean ( 26.0 live)  lead   54/ 165 h  CFR  26%  $ 259/clean  peak  24  seat-h  4032  backlog   13
+  elastic, r12.2 Scaler                   11.5 clean ( 23.9 live)  lead   74/ 223 h  CFR  27%  $ 296/clean  peak  37  seat-h  3687  backlog   16
+  elastic + held demand                   12.8 clean ( 25.1 live)  lead   62/ 212 h  CFR  23%  $ 259/clean  peak  43  seat-h  4616  backlog   17
+  elastic + held demand, 15-min target    11.6 clean ( 22.9 live)  lead   68/ 214 h  CFR  24%  $ 296/clean  peak  48  seat-h  6115  backlog   19

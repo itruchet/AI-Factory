@@ -1,0 +1,221 @@
+T1  IN-SAMPLE vs OUT-OF-SAMPLE (share = of the institutions on the same draws)
+
+[best six / coupling 0.0 / in-sample (search seeds) / base]
+  institutions                  24.9 clean (100%)   31.4 live  CFR  11%  lead   31/  42 h  $  42/clean
+  adaptive institutions         25.1 clean (101%)   30.6 live  CFR  10%  lead   31/  41 h  $  42/clean
+  searched (six)                26.0 clean (104%)   31.2 live  CFR   9%  lead   32/  42 h  $  40/clean
+  searched (population 12)      24.3 clean ( 98%)   30.3 live  CFR  11%  lead   33/  41 h  $  44/clean
+
+[best six / coupling 0.0 / out-of-sample / base]
+  institutions                  24.1 clean (100%)   31.3 live  CFR  12%  lead   31/  41 h  $  43/clean
+  adaptive institutions         25.4 clean (105%)   30.9 live  CFR  10%  lead   31/  42 h  $  41/clean
+  searched (six)                24.9 clean (103%)   30.9 live  CFR  11%  lead   32/  42 h  $  42/clean
+  searched (population 12)      25.1 clean (104%)   30.2 live  CFR  10%  lead   33/  42 h  $  43/clean
+
+[best six / coupling 0.0 / out-of-sample / harder work]
+  institutions                  12.4 clean (100%)   20.3 live  CFR  17%  lead   42/  78 h  $  86/clean
+  adaptive institutions         12.9 clean (104%)   18.9 live  CFR  14%  lead   45/  92 h  $  80/clean
+  searched (six)                12.4 clean (101%)   20.4 live  CFR  17%  lead   42/  78 h  $  86/clean
+  searched (population 12)      14.0 clean (113%)   19.1 live  CFR  14%  lead   49/  75 h  $  75/clean
+
+[best six / coupling 0.0 / out-of-sample / security-heavy]
+  institutions                  23.0 clean (100%)   29.4 live  CFR  13%  lead   33/  44 h  $  46/clean
+  adaptive institutions         24.1 clean (105%)   28.7 live  CFR   9%  lead   34/  45 h  $  44/clean
+  searched (six)                22.5 clean ( 97%)   29.2 live  CFR  12%  lead   33/  45 h  $  47/clean
+  searched (population 12)      23.5 clean (102%)   28.6 live  CFR  10%  lead   35/  44 h  $  46/clean
+
+[best six / coupling 0.0 / out-of-sample / weak tests]
+  institutions                  23.5 clean (100%)   30.6 live  CFR  13%  lead   32/  42 h  $  45/clean
+  adaptive institutions         24.1 clean (103%)   30.3 live  CFR  13%  lead   32/  43 h  $  44/clean
+  searched (six)                23.5 clean (100%)   30.4 live  CFR  12%  lead   32/  43 h  $  45/clean
+  searched (population 12)      23.2 clean ( 99%)   29.7 live  CFR  14%  lead   33/  43 h  $  46/clean
+
+[best six / coupling 0.0 / out-of-sample / heavy contention]
+  institutions                  24.6 clean (100%)   30.4 live  CFR  10%  lead   32/  43 h  $  43/clean
+  adaptive institutions         24.2 clean ( 98%)   29.7 live  CFR  11%  lead   33/  44 h  $  44/clean
+  searched (six)                23.5 clean ( 96%)   29.7 live  CFR  12%  lead   33/  44 h  $  45/clean
+  searched (population 12)      24.7 clean (100%)   29.2 live  CFR   9%  lead   34/  43 h  $  44/clean
+
+[best six / coupling 0.25 / in-sample (search seeds) / base]
+  institutions                  19.2 clean (100%)   26.0 live  CFR  14%  lead   36/  55 h  $  57/clean
+  adaptive institutions         20.0 clean (104%)   25.2 live  CFR  13%  lead   37/  57 h  $  55/clean
+  searched (six)                19.5 clean (101%)   26.0 live  CFR  15%  lead   36/  56 h  $  57/clean
+  searched (population 12)      19.7 clean (102%)   24.7 live  CFR  13%  lead   38/  54 h  $  55/clean
+
+[best six / coupling 0.25 / out-of-sample / base]
+  institutions                  19.2 clean (100%)   25.6 live  CFR  13%  lead   36/  57 h  $  57/clean
+  adaptive institutions         20.2 clean (105%)   25.8 live  CFR  13%  lead   36/  56 h  $  55/clean
+  searched (six)                19.4 clean (101%)   25.7 live  CFR  13%  lead   36/  56 h  $  57/clean
+  searched (population 12)      19.3 clean (100%)   24.4 live  CFR  13%  lead   38/  58 h  $  56/clean
+
+[best six / coupling 0.25 / out-of-sample / harder work]
+  institutions                   7.8 clean (100%)   14.0 live  CFR  25%  lead   56/ 128 h  $ 138/clean
+  adaptive institutions          8.6 clean (110%)   13.2 live  CFR  19%  lead   58/ 141 h  $ 121/clean
+  searched (six)                 7.7 clean ( 98%)   14.6 live  CFR  24%  lead   55/ 120 h  $ 141/clean
+  searched (population 12)       8.6 clean (111%)   13.3 live  CFR  20%  lead   64/ 129 h  $ 121/clean
+
+[best six / coupling 0.25 / out-of-sample / security-heavy]
+  institutions                  17.4 clean (100%)   24.2 live  CFR  16%  lead   38/  60 h  $  64/clean
+  adaptive institutions         19.1 clean (109%)   24.3 live  CFR  12%  lead   38/  61 h  $  58/clean
+  searched (six)                18.0 clean (103%)   24.0 live  CFR  15%  lead   38/  61 h  $  61/clean
+  searched (population 12)      18.3 clean (105%)   23.7 live  CFR  14%  lead   39/  60 h  $  59/clean
+
+[best six / coupling 0.25 / out-of-sample / weak tests]
+  institutions                  17.5 clean (100%)   24.5 live  CFR  17%  lead   38/  60 h  $  63/clean
+  adaptive institutions         18.3 clean (105%)   23.8 live  CFR  15%  lead   38/  64 h  $  61/clean
+  searched (six)                17.6 clean (101%)   23.9 live  CFR  16%  lead   39/  63 h  $  63/clean
+  searched (population 12)      18.2 clean (104%)   23.8 live  CFR  13%  lead   39/  61 h  $  59/clean
+
+[best six / coupling 0.25 / out-of-sample / heavy contention]
+  institutions                  19.6 clean (100%)   25.2 live  CFR  13%  lead   37/  57 h  $  56/clean
+  adaptive institutions         19.5 clean ( 99%)   24.7 live  CFR  12%  lead   37/  60 h  $  57/clean
+  searched (six)                19.8 clean (101%)   25.2 live  CFR  11%  lead   37/  57 h  $  56/clean
+  searched (population 12)      19.0 clean ( 97%)   23.9 live  CFR  12%  lead   39/  60 h  $  57/clean
+
+[population 12 / coupling 0.0 / in-sample (search seeds) / base]
+  institutions                  22.3 clean (100%)   32.8 live  CFR  15%  lead   60/  80 h
+  adaptive institutions         21.3 clean ( 96%)   32.1 live  CFR  15%  lead   62/  80 h
+  searched (six)                21.3 clean ( 96%)   32.0 live  CFR  16%  lead   61/  83 h
+  searched (population 12)      26.0 clean (116%)   33.2 live  CFR  12%  lead   60/  76 h
+
+[population 12 / coupling 0.0 / out-of-sample / base]
+  institutions                  18.8 clean (100%)   29.1 live  CFR  15%  lead   67/  91 h
+  adaptive institutions         20.7 clean (110%)   29.2 live  CFR  14%  lead   68/  90 h
+  searched (six)                18.5 clean ( 99%)   29.7 live  CFR  17%  lead   66/  92 h
+  searched (population 12)      21.1 clean (113%)   28.6 live  CFR  12%  lead   69/  90 h
+
+[population 12 / coupling 0.0 / out-of-sample / harder work]
+  institutions                   5.7 clean (100%)   13.2 live  CFR  22%  lead  137/ 237 h
+  adaptive institutions          7.9 clean (139%)   13.6 live  CFR  18%  lead  143/ 224 h
+  searched (six)                 6.0 clean (107%)   13.1 live  CFR  22%  lead  138/ 236 h
+  searched (population 12)       7.1 clean (125%)   13.4 live  CFR  23%  lead  144/ 216 h
+
+[population 12 / coupling 0.0 / out-of-sample / security-heavy]
+  institutions                  16.5 clean (100%)   26.5 live  CFR  21%  lead   76/  98 h
+  adaptive institutions         17.0 clean (103%)   26.3 live  CFR  19%  lead   75/ 101 h
+  searched (six)                16.9 clean (102%)   26.8 live  CFR  20%  lead   74/ 100 h
+  searched (population 12)      19.1 clean (116%)   26.4 live  CFR  15%  lead   75/  98 h
+
+[population 12 / coupling 0.0 / out-of-sample / weak tests]
+  institutions                  18.8 clean (100%)   28.6 live  CFR  16%  lead   69/  94 h
+  adaptive institutions         19.7 clean (105%)   29.1 live  CFR  16%  lead   68/  92 h
+  searched (six)                18.1 clean ( 97%)   27.8 live  CFR  17%  lead   72/  96 h
+  searched (population 12)      20.7 clean (110%)   28.8 live  CFR  16%  lead   69/  89 h
+
+[population 12 / coupling 0.0 / out-of-sample / heavy contention]
+  institutions                  18.2 clean (100%)   27.5 live  CFR  15%  lead   72/  99 h
+  adaptive institutions         19.4 clean (107%)   27.5 live  CFR  14%  lead   71/  97 h
+  searched (six)                17.3 clean ( 95%)   26.8 live  CFR  14%  lead   73/  99 h
+  searched (population 12)      20.4 clean (112%)   27.6 live  CFR  13%  lead   72/  93 h
+
+[population 12 / coupling 0.25 / in-sample (search seeds) / base]
+  institutions                  13.8 clean (100%)   21.8 live  CFR  19%  lead   84/ 140 h
+  adaptive institutions         15.6 clean (113%)   22.8 live  CFR  16%  lead   85/ 130 h
+  searched (six)                14.1 clean (102%)   21.8 live  CFR  19%  lead   86/ 134 h
+  searched (population 12)      17.3 clean (126%)   24.0 live  CFR  14%  lead   77/ 121 h
+
+[population 12 / coupling 0.25 / out-of-sample / base]
+  institutions                  11.0 clean (100%)   18.3 live  CFR  20%  lead   99/ 169 h
+  adaptive institutions         12.9 clean (117%)   19.9 live  CFR  18%  lead   94/ 151 h
+  searched (six)                11.5 clean (104%)   18.2 live  CFR  20%  lead  102/ 169 h
+  searched (population 12)      14.4 clean (131%)   20.9 live  CFR  17%  lead   88/ 142 h
+
+[population 12 / coupling 0.25 / out-of-sample / harder work]
+  institutions                   3.2 clean (100%)    8.1 live  CFR  28%  lead  216/ 378 h
+  adaptive institutions          4.1 clean (127%)    8.5 live  CFR  22%  lead  207/ 353 h
+  searched (six)                 3.3 clean (103%)    7.9 live  CFR  26%  lead  208/ 397 h
+  searched (population 12)       3.4 clean (105%)    7.3 live  CFR  34%  lead  232/ 420 h
+
+[population 12 / coupling 0.25 / out-of-sample / security-heavy]
+  institutions                   9.7 clean (100%)   16.6 live  CFR  23%  lead  113/ 184 h
+  adaptive institutions         11.5 clean (119%)   17.9 live  CFR  21%  lead  102/ 175 h
+  searched (six)                 9.8 clean (102%)   17.0 live  CFR  25%  lead  110/ 177 h
+  searched (population 12)      12.3 clean (127%)   18.6 live  CFR  20%  lead   98/ 163 h
+
+[population 12 / coupling 0.25 / out-of-sample / weak tests]
+  institutions                  10.1 clean (100%)   17.0 live  CFR  23%  lead  111/ 188 h
+  adaptive institutions         11.2 clean (111%)   18.0 live  CFR  24%  lead  104/ 171 h
+  searched (six)                10.0 clean ( 99%)   17.2 live  CFR  23%  lead  106/ 183 h
+  searched (population 12)      12.6 clean (125%)   19.0 live  CFR  20%  lead  100/ 162 h
+
+[population 12 / coupling 0.25 / out-of-sample / heavy contention]
+  institutions                  10.8 clean (100%)   17.2 live  CFR  19%  lead  107/ 182 h
+  adaptive institutions         12.3 clean (114%)   18.4 live  CFR  18%  lead  100/ 163 h
+  searched (six)                10.4 clean ( 96%)   17.2 live  CFR  19%  lead  106/ 182 h
+  searched (population 12)      13.0 clean (120%)   18.7 live  CFR  18%  lead   96/ 160 h
+
+T3  VENDOR OUTAGE: the anchor models unavailable
+
+[best six / normal]
+  institutions                  24.1 clean (100%)   31.3 live  CFR  12%  lead   31/  41 h  $  43/clean
+  adaptive institutions         25.4 clean (105%)   30.9 live  CFR  10%  lead   31/  42 h  $  41/clean
+  searched (six)                24.9 clean (103%)   30.9 live  CFR  11%  lead   32/  42 h  $  42/clean
+  searched (population 12)      25.1 clean (104%)   30.2 live  CFR  10%  lead   33/  42 h  $  43/clean
+
+[best six / outage]
+  institutions                  21.5 clean (100%)   27.0 live  CFR  11%  lead   30/  40 h  $  24/clean
+  adaptive institutions         21.8 clean (101%)   26.5 live  CFR  10%  lead   30/  42 h  $  23/clean
+  searched (six)                21.2 clean ( 98%)   27.2 live  CFR  12%  lead   30/  39 h  $  24/clean
+  searched (population 12)      14.0 clean ( 65%)   17.8 live  CFR  12%  lead   46/  55 h  $  25/clean
+
+[population 12 / normal]
+  institutions                  18.8 clean (100%)   29.1 live  CFR  15%  lead   67/  91 h
+  adaptive institutions         20.7 clean (110%)   29.2 live  CFR  14%  lead   68/  90 h
+  searched (six)                18.5 clean ( 99%)   29.7 live  CFR  17%  lead   66/  92 h
+  searched (population 12)      21.1 clean (113%)   28.6 live  CFR  12%  lead   69/  90 h
+
+[population 12 / outage]
+  institutions                  13.0 clean (100%)   21.2 live  CFR  19%  lead   77/ 113 h
+  adaptive institutions         14.3 clean (110%)   21.2 live  CFR  13%  lead   79/ 112 h
+  searched (six)                12.2 clean ( 93%)   20.5 live  CFR  18%  lead   81/ 120 h
+  searched (population 12)      12.7 clean ( 97%)   18.4 live  CFR  15%  lead   90/ 121 h
+
+T4  A NEW MODEL ENTERS: Claude Fable 5.1 joins, unlabelled
+
+[best six / normal]
+  institutions                  24.1 clean (100%)   31.3 live  CFR  12%  lead   31/  41 h  $  43/clean
+  adaptive institutions         25.4 clean (105%)   30.9 live  CFR  10%  lead   31/  42 h  $  41/clean
+  searched (six)                24.9 clean (103%)   30.9 live  CFR  11%  lead   32/  42 h  $  42/clean
+  searched (population 12)      25.1 clean (104%)   30.2 live  CFR  10%  lead   33/  42 h  $  43/clean
+
+[best six / new model]
+  institutions                  27.9 clean (100%)   34.8 live  CFR  11%  lead   33/  43 h  $  82/clean
+  adaptive institutions         28.6 clean (102%)   34.2 live  CFR   9%  lead   33/  44 h  $  81/clean
+  searched (six)                27.9 clean (100%)   34.8 live  CFR  11%  lead   33/  44 h  $  82/clean
+  searched (population 12)      29.1 clean (104%)   34.3 live  CFR   9%  lead   34/  42 h  $  76/clean
+
+[population 12 / normal]
+  institutions                  18.8 clean (100%)   29.1 live  CFR  15%  lead   67/  91 h
+  adaptive institutions         20.7 clean (110%)   29.2 live  CFR  14%  lead   68/  90 h
+  searched (six)                18.5 clean ( 99%)   29.7 live  CFR  17%  lead   66/  92 h
+  searched (population 12)      21.1 clean (113%)   28.6 live  CFR  12%  lead   69/  90 h
+
+[population 12 / new model]
+  institutions                  23.8 clean (100%)   34.1 live  CFR  12%  lead   63/  84 h
+  adaptive institutions         24.8 clean (104%)   34.5 live  CFR  13%  lead   62/  81 h
+  searched (six)                22.1 clean ( 93%)   32.6 live  CFR  16%  lead   66/  87 h
+  searched (population 12)      25.9 clean (109%)   33.5 live  CFR  12%  lead   64/  80 h
+
+T2  TRANSFER is inside T1: 'searched (population 12)' on the six, 'searched (six)' on the population
+
+T5  ELASTIC: the six models as instances (Scaler with held demand, 15-minute target); coupling 0
+
+[steady]
+  institutions                  19.1 clean (100%)   24.8 live  CFR  10%  lead   18/  26 h  $  20/clean
+  adaptive institutions         19.4 clean (102%)   25.5 live  CFR  11%  lead   18/  27 h  $  21/clean
+  searched (six)                20.6 clean (108%)   26.4 live  CFR  11%  lead   18/  25 h  $  19/clean
+
+[mixed]
+  institutions                  19.6 clean (100%)   24.7 live  CFR   9%  lead   18/  33 h  $  30/clean
+  adaptive institutions         20.6 clean (105%)   26.8 live  CFR  11%  lead   18/  40 h  $  35/clean
+  searched (six)                18.7 clean ( 95%)   24.3 live  CFR   8%  lead   19/  38 h  $  36/clean
+
+[harder]
+  institutions                  14.6 clean (100%)   24.9 live  CFR  12%  lead   27/  68 h  $  88/clean
+  adaptive institutions         14.4 clean ( 99%)   24.7 live  CFR  13%  lead   27/  80 h  $  90/clean
+  searched (six)                14.9 clean (102%)   25.7 live  CFR  13%  lead   26/  67 h  $  90/clean
+
+[surge]
+  institutions                  47.6 clean (100%)   61.3 live  CFR  11%  lead   18/  25 h  $  22/clean
+  adaptive institutions         46.0 clean ( 97%)   59.3 live  CFR  11%  lead   18/  26 h  $  22/clean
+  searched (six)                46.9 clean ( 99%)   59.4 live  CFR  10%  lead   18/  25 h  $  21/clean

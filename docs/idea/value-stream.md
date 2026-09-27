@@ -118,7 +118,7 @@ An organisation here is only a mapping: which seats may do which step, plus rule
 - **No organisation ships plenty but little of it is clean.** With the six it takes 28 ideas a week live but only 14 clean; 29% of its deploys cause incidents, and 46% on harder work. Peer review recovers most of that, but not with a weak roster: 49–58% with the 12-seat population, where no licence keeps weak models off hard work.
 - **Fixed roles cost throughput.** Functional roles and pools per step idle some seats while others queue. Pools per step does well with the six (81–97%) and badly with a weak roster (48–56%).
 - **One lead, whether orchestrator or Director, is a ceiling.** Lead times reach up to 250 h with the 12-seat population.
-- **The search confirms the institutions.**
+- **The search confirms the institutions** (tested out of sample, under outages and with new models in [`institutions-vs-searched.md`](institutions-vs-searched.md), r12.3).
   - With the six, it keeps every step open to every pool except design (moved off the anchor so the anchor stays free for hard cards) and audit.
   - With the 12-seat population, it adds step affinities: planning by the anchors, discovery and security by fast top-tier models, merging by mid models. That gains 6–20%.
   - It kept licences, independence and every optional step (council, red team, security review, audit) in every case.

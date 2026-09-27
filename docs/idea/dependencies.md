@@ -106,6 +106,34 @@ Clean ideas as a share of the institutions':
 
 ---
 
+## 5a. The Scaler counts held cards as demand (r12.3; `scaler_held_results.txt`, `band_wait_results.txt`)
+
+With dependencies, cards wait behind their prerequisites, and the r12.2 Scaler did not see them as demand until they were released. r12.3 counts each held card as build demand for the model that would take it.
+
+**Held demand** (elastic, the six, 6 seeds; 90th-percentile lead / $ per clean idea):
+
+| Case | r12.2 Scaler | + held demand | + held, 15-min target |
+|---|---|---|---|
+| Mixed, 25% coupling | 116 h / $70 | **89 h / $63** | 110 h / $68 |
+| Harder, 25% coupling | 131 h / $152 | **113 h / $139** | 123 h / $138 |
+| Harder, 65% coupling | 223 h / $296 | **212 h / $259** | 214 h / $296 |
+| Steady, 65% coupling | 93 h / $52 | **85 h / $47** | 81 h / $44 |
+| Steady / bursty / growth / surge, 25% coupling | 44–46 h / $27–29 | 43–44 h / $26–29 | 41–44 h / $27–30 |
+
+- **Held demand is a small, consistent improvement where dependencies bite:** 90th-percentile lead falls 5–23%, and cost per clean idea falls 9–13%, on mixed and harder work.
+- **Clean output is unchanged within noise.**
+- **The 15-minute target adds instances** (peak 47–48 against 34–45) **with no measurable gain.** It is kept only because the cross-check model found conservative targets lose output; it costs nothing on API tokens.
+
+**The remaining 2–3 h median gap to 24 fixed seats is deliberate.** It comes from rule 6 (cost-band pull): a task may wait up to an hour for a cheaper qualified model.
+
+| Wait for a cheaper model | Steady: lead / $ | Mixed | Harder | Surge |
+|---|---|---|---|---|
+| 1 h (kept) | 25 h / $26 | 24 h / $63 | 39 h / $138 | 25 h / $29 |
+| 15 min | 25 h / $28 | 22 h / $77 | 37 h / $142 | 24 h / $31 |
+| None | 23 h / $45 | 23 h / $153 | 33 h / $202 | 23 h / $58 |
+
+Removing the wait buys 1–6 h of median lead time at 1.5–2.4× the cost per clean idea. The hour stays. It is a dial the Ledger can turn if lead time ever matters more than cost.
+
 ## 6. Dependencies with family blind spots (D4; the six; coupling 0.25, blind spots 18%)
 
 | Design | Clean ideas a week | Share of institutions with R17 | Change-failure rate |
