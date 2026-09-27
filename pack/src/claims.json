@@ -1,0 +1,13 @@
+{
+  "_about": "Every figure the pack's hand-written text uses, with where it comes from. test_pack.py re-reads each source: a 'json' claim must match the stored value within 'tol' (relative); a 'text' claim must appear verbatim in the named document. All are synthetic model outputs unless 'kind' says otherwise.",
+  "claims": [
+    {"id": "CL-01", "statement": "With the dependency graph off, the institutions staffed by the six deliver 24.9 clean ideas a week.", "value": 24.9, "kind": "synthetic", "source": {"json": "probes/value-stream/orgs.json", "path": ["results", "best six", "base", "institutions", "clean"], "tol": 0.005}},
+    {"id": "CL-02", "statement": "About $20 per clean idea at 25 ideas a week (elastic, six models, base token model, light contention).", "value": 20, "kind": "synthetic", "source": {"json": "probes/value-stream/elastic.json", "path": ["scale", "light", "25", "usd_clean"], "tol": 0.05}},
+    {"id": "CL-03", "statement": "Expected spend about $1,700 a month at 25 ideas a week (weekly spend x 52/12).", "value": 1700, "kind": "synthetic", "source": {"json": "probes/value-stream/elastic.json", "path": ["scale", "light", "25", "usd_week"], "scale": 4.333333333, "tol": 0.01}},
+    {"id": "CL-04", "statement": "Trial ceiling about $2,500 a month at the base token model (R16's 1.5x on the expected spend).", "value": 2500, "kind": "synthetic", "source": {"text": "docs/idea/value-stream.md", "contains": "Ceiling: about **$2,500 a month** at the base token model"}},
+    {"id": "CL-05", "statement": "The ceiling ranges from $1,000 to $8,500 a month from the lean to the heavy token model.", "value": "1,000-8,500", "kind": "synthetic", "source": {"text": "docs/idea/value-stream.md", "contains": "The range is $1,000–8,500 from the lean to the heavy token model"}},
+    {"id": "CL-06", "statement": "Scale is efficient up to about 100 ideas a week; beyond it each extra clean idea costs 2-4x.", "value": 100, "kind": "synthetic", "source": {"text": "docs/idea/value-stream.md", "contains": "Scale sweet spot: up to about 100 ideas a week."}},
+    {"id": "CL-07", "statement": "With 25% coupling, the institutions with R17 deliver 19.4 clean ideas a week with the six; Director -> Worker -> Checker delivers 53% of that.", "value": 19.4, "kind": "synthetic", "source": {"json": "probes/value-stream/deps.json", "path": ["D2", "best six", "base", "institutions", "clean"], "tol": 0.01}},
+    {"id": "CL-08", "statement": "Director -> Worker -> Checker, same case: 10.3 clean ideas a week.", "value": 10.3, "kind": "synthetic", "source": {"json": "probes/value-stream/deps.json", "path": ["D2", "best six", "base", "Director-Worker-Checker", "clean"], "tol": 0.01}}
+  ]
+}

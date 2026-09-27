@@ -1,0 +1,18 @@
+{
+ "schema": "factory-pack/1",
+ "pack_version": "1.0",
+ "files": {
+  "CARDS.md": "8a602696f46d20b224da7d9d756994c21b3ead9c646dfe9b263f511092e684d3",
+  "INGEST.md": "5a95218c44611a3aeedb42eea1f5699f074da9a3f9f49ae9df75aa29e62c7e04",
+  "README.md": "aecf33d75bbbce06ee184462ead9e755d77e125e584871aac637d3af56b5f900",
+  "build_pack.py": "623791aaecc3bcde3d1be721e986e62bf4c935fd759f4b5a20b0f2fd36c61f72",
+  "factory-pack.json": "3220b43ca86995c1aa289e765ec79747ecd555fb1121e888b7217898295792e8",
+  "src/approvals.json": "9be2568642a62c2bccff93d19845bd6cf2c83a97d04c98c6159b3e090a88fc72",
+  "src/cards.json": "cf71e94e76c1861cfc57ebc3e8fd13533ad8a529c1070b615474a3562a889976",
+  "src/claims.json": "37ad55912a64c0ec811a89b3ebc3af55cff32eeae2b42553c0db7e9351311b86",
+  "src/measures.json": "0d1bca6572ea3dc8ab2eb6a9ad647aea1b2eb83a5329019b2e814708a8f3e36e",
+  "src/open_items.json": "31416e96cef5db2e50a78cbc4c7eeccfcf4082f7bfced957a71731eeaacf38a2",
+  "src/parameters.json": "dfd2445b8f56f4d5efd589ce593dd8a68c97debb3b77560f3b675410b2300193",
+  "test_pack.py": "6be487c1a6cf34bda363a0d46c97fca8dd8e837b0cef365b97af306d9d15ccac"
+ }
+}

@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.3 (supersedes r1–r12.2)
+Revision: r12.4 (supersedes r1–r12.3; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/), after Isa's answers of 27 Sep 2026)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -533,7 +533,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
 - Tier definitions per institution: which card facts set the tier.
-- Mapping R1–R13 onto the existing Factory's cards, SQLite state, worktrees and workflow engine.
+- Mapping R1–R20 onto the existing Factory's cards, SQLite state, worktrees and workflow engine (r12.4: the Fit Report, pack card C0.00).
 - Reason codes for R8, and the evidence each one requires.
 - Initial constants: window, hysteresis, stretch trials, back-off.
 - The Ledger views each agent sees at pull time (R10).
@@ -542,7 +542,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - Jurisdiction as a property of each route to a model (future): how data-residency law affects cost and efficiency.
 - SQL as canonical operational state, with stateless invocations reloading a versioned snapshot; Git as the artifact authority (r12.1, from the cross-check model).
 - Tests, CI and typed contracts as first-class evidence at review and release: the only defence against blind spots shared by all model families (r12.1).
-- Plans name the interfaces between requirements, so review can check them against reviewed upstream work. The Scaler counts cards held behind prerequisites as near-term demand (r12.2).
+- Plans name the interfaces between requirements, so review can check them against reviewed upstream work. The Scaler counts cards held behind prerequisites as near-term demand (r12.2; adopted in R14, r12.3).
 
 ### 11.3 Isa's decisions
 
@@ -553,7 +553,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | H4 | Approve the rolling portfolio policy (P1, P2, P6–P8; §5.2) in place of a fixed model list. Start from the seven-model menu on API tokens (§5.4–5.5), not today's four models (r12.3). |
 | H5 | Approve three absolute work tiers for cards (§5.2) |
 | H6 | Approve for the trial: the seven-model menu on API tokens, the Scaler (R14), no training on our data (R15), the burn cap (R16), R17–R19, and R20 for any searched configuration (§5.4–5.8). (r12: the US data-residency option is withdrawn.) |
-| H7 | Approve the trial budget: a monthly ceiling of about $2,500 for about 25 ideas a week, with R16's hourly cap (§5.5). Optional: a value per clean idea, for scale decisions |
+| H7 | Approve the trial budget: a monthly ceiling of about $2,500 for about 25 ideas a week, with R16's hourly cap (§5.5), reset from measured volume. Value is measured, not set: cost from idea to artifact, and return from ratification to production and monetisation (r12.4) |
 | H3 | Approve exit from Idea stage into design |
 
 ---
@@ -568,7 +568,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | Every open item typed and routed | Met (§11) |
 | Only decisions that are genuinely Isa's are left to Isa | Met (§11.3) |
 
-**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 14 approval records in three gates, is in [`approvals.md`](approvals.md).
+**Status: ready to exit Idea stage on H1 and H3–H7.** H2 (quality standards) is set in design from shadow-running variance. The full path from decision to card backlog, 16 approval records in three gates, is in [`approvals.md`](approvals.md). The change reaches the existing Factory as an ingestion pack ([`pack/`](../../pack/)): rules, measures, approvals, open items and 45 card seeds, each traced to this record and checked by tests.
 
 ---
 
@@ -582,4 +582,4 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 
 ---
 
-**Takeaway:** replace Director → Worker → Checker with the institutions (R1–R20), staffed by elastic instances of a seven-model menu on API tokens. Sign Gate 1 of [`approvals.md`](approvals.md) to start design.
+**Takeaway:** replace Director → Worker → Checker with the institutions (R1–R20), staffed by elastic instances of a seven-model menu on API tokens. Sign Gate 1 of [`approvals.md`](approvals.md), then let the Factory ingest [`pack/`](../../pack/).
