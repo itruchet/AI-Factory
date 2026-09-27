@@ -106,7 +106,7 @@ REVIEW_SEC = 0.30              # an ordinary code review spots a security flaw a
 QA_GAP, QA_DEFECT = 0.70, 0.50
 RELEASE_CATCH = 0.30           # the release check catches a remaining defect
 SMOKE = 0.30                   # the staging smoke test catches a logic/integration defect
-INCIDENT_P = {"logic": 0.5, "integration": 0.6, "security": 0.8}   # an escaped defect causes an incident
+INCIDENT_P = {"logic": 0.5, "integration": 0.6, "security": 0.8, "interface": 0.6}   # an escaped defect causes an incident
 INCIDENT_DELAY_H = 24.0        # mean time from deploy to the incident
 DEPLOY_H = 0.5
 HUMAN_INTENT_H, HUMAN_PLAN_H = 4.0, 2.0
@@ -118,6 +118,13 @@ LICENCE_P, REVIEW_LICENCE_P = 0.60, 0.50
 ORPHAN_H = 8.0                 # R13
 BLIND_P = 0.0                  # r12.1: chance a defect, or a requirement, sits in a blind spot shared by every
                                # model family: no LLM check sees it; tests, CI and smoke tests still can
+COUPLING = 0.0                 # r12.2: dependency graph. Each ordered requirement pair (p < r) is an edge
+                               # "r needs p" with this probability (0.25 in the cross-check model; 0 = r12)
+INTERFACE_P = 0.10             # an interface fault at each edge a card builds across: 0.10 x (1.25 - 0.5 x pass)
+IFACE_MULT = {"accepted": 1.0, "built": 1.5, "absent": 3.0}   # the builder read reviewed work, unreviewed work,
+                               # or only the plan's contract (upstream not built yet) [assumption]
+IFACE_REVIEW = 0.95            # review catches it at this x skill when the upstream work it read was reviewed;
+IFACE_REVIEW_BLIND = 0.30      # at this x skill when it was not (nothing reviewed to check against)
 FAMILY_BLIND_P = 0.0           # r12.1 (from the cross-check model): each requirement x model family pair has a
 FAMILY_BLIND_MULT = 0.4        # latent blind spot with this chance; that family's pass/catch chance on the
                                # requirement is x0.4, at every step. Other families are unaffected.
@@ -169,6 +176,9 @@ class Idea:
     shift: float = 0.0             # this idea's difficulty offset (open arrivals)
     blind_req: set = field(default_factory=set)   # requirements no model notices
     fam_blind: dict = field(default_factory=dict)  # (requirement, family) -> blind?
+    deps: dict = field(default_factory=dict)       # requirement -> prerequisite requirements
+    held: list = field(default_factory=list)       # cards waiting for prerequisites
+    await_review: list = field(default_factory=list)   # cards waiting for the review barrier
 
 
 @dataclass(eq=False)
@@ -182,6 +192,10 @@ class Card:
     blind: set = field(default_factory=set)       # defects no LLM check can see
     units: list | None = None      # packet: [(difficulty, sensitive, ambiguous), ...]
     reqs: tuple = ()               # requirements this card implements
+    version: int = 0               # r12.2: incremented at each build
+    built: bool = False            # passed its unit tests, not yet reviewed
+    read: dict = field(default_factory=dict)   # id(prerequisite card) -> version it was built against
+    held_since: float = 0.0
     base_h: float = 0.0            # packet: summed build hours of its units
     author: str = ""
     reviewers: set = field(default_factory=set)
@@ -209,6 +223,11 @@ class Org:
     licences: bool = True                            # evidence licences (and R13 relaxations)
     independence: bool = True                        # author never checks own work (relaxed by R13)
     by_family: bool = False                          # r12.1: nor does any model of the author's family (vendor)
+    hold_h: float = 2.0                              # "hybrid" gate: waiting limits (reviewed, then built, then contract)
+    dep_gate: str = "accepted"                       # r12.2: a dependent card may start when its prerequisites are
+                                                     # "accepted" (R17: reviewed and merged), "built" (tests passed,
+                                                     # not reviewed) or "none" (ignore the graph, as r12 did)
+    review_barrier: bool = False                     # r12.2: hold all review until every card of the idea is built
     owner_steps: frozenset = frozenset()             # steps only the idea's owner may do
     K: int = 2
     challenge: int = 1
@@ -368,6 +387,9 @@ class Sim:
 
     def orphan_sweep(self):
         """R13: split build cards nobody may take after ORPHAN_H hours (rule-based organisations only)."""
+        if self.org.dep_gate == "hybrid":
+            for idea in self.open_ideas:
+                self.release_held(idea)
         if self.org.licences:
             for task in list(self.queues["build"]):
                 if self.t - task.born >= ORPHAN_H and not any(self.eligible(s, task) for s in self.seats):
@@ -376,7 +398,7 @@ class Sim:
                     c.idea.cards.remove(c)
                     self.drops["split"] += 1
                     for _ in range(2):
-                        n = Card(c.idea, c.band, max(5.0, c.d - 10), c.sensitive, c.ambiguous)
+                        n = Card(c.idea, c.band, max(5.0, c.d - 10), c.sensitive, c.ambiguous, reqs=c.reqs)
                         c.idea.cards.append(n)
                         self.send_card(n)
         self.at(self.t + 2.0, self.orphan_sweep)
@@ -539,6 +561,8 @@ class Sim:
                     shift=shift)
         if BLIND_P:
             idea.blind_req = {r for r in range(len(idea.req_d)) if self.rng.random() < BLIND_P}
+        if COUPLING:
+            idea.deps = {r: [q for q in range(r) if self.rng.random() < COUPLING] for r in range(len(idea.req_d))}
         self.next_id += 1
         if hotfix_card is not None:
             idea.hotfix, idea.stage, idea.design_q = True, "build", 0.8
@@ -652,8 +676,63 @@ class Sim:
         return out
 
     # cards
+    # dependency graph (r12.2)
+    def graph_on(self, idea):
+        # "hybrid" waits by the clock: the sweep (every 2 h) re-checks held cards
+        return bool(idea.deps) and self.org.dep_gate != "none"
+
+    def prereqs(self, card):
+        idea = card.idea
+        if not idea.deps:
+            return []
+        need = {q for r in card.reqs for q in idea.deps.get(r, ()) if q not in card.reqs and q in idea.mapped}
+        return [c for c in idea.cards if c is not card and need.intersection(c.reqs)] if need else []
+
+    def ready(self, card):
+        if not self.graph_on(card.idea):
+            return True
+        pcs = self.prereqs(card)
+        if self.org.dep_gate == "built":
+            return all(c.built or c.accepted for c in pcs)
+        if self.org.dep_gate == "hybrid":                 # R17 with waiting limits
+            waited = self.t - card.held_since if card in card.idea.held else 0.0
+            if all(c.accepted for c in pcs):
+                return True
+            if waited >= self.org.hold_h and all(c.built or c.accepted for c in pcs):
+                return True
+            return waited >= 2 * self.org.hold_h
+        return all(c.accepted for c in pcs)
+
+    def stale(self, card):
+        if not self.graph_on(card.idea):
+            return False
+        for pc in self.prereqs(card):
+            r = card.read.get(id(pc))
+            if r == -1:                                   # built to the plan's contract: a later upstream build
+                continue                                  # does not invalidate it (interface risk was charged)
+            if r is None or r != pc.version:              # new prerequisite, or the version read has changed
+                return True
+        return False
+
+    def release_held(self, idea):
+        for c in list(idea.held):
+            if self.ready(c):
+                idea.held.remove(c)
+                self.enqueue_build(c)
+
     def send_card(self, card):
         card.accepted = False
+        card.built = False
+        if card in card.idea.await_review:
+            card.idea.await_review.remove(card)
+        if not self.ready(card):
+            if card not in card.idea.held:
+                card.held_since = self.t
+                card.idea.held.append(card)
+            return
+        self.enqueue_build(card)
+
+    def enqueue_build(self, card):
         if self.org.routing == "director":
             est = card.d + self.rng.gauss(0, DIRECTOR_NOISE)
             ws = [s for s in self.seats if s.idx in self.org.workers]
@@ -670,6 +749,10 @@ class Sim:
         card.attempts += 1
         card.author = s.cfg.name
         card.reviewers = set()
+        card.version += 1
+        pcs = self.prereqs(card)
+        contract = self.org.dep_gate == "none"
+        card.read = {id(pc): (pc.version if (pc.built or pc.accepted) and not contract else -1) for pc in pcs}
         card.defects, card.blind = set(), set()
         if card.units:                                 # a packet is right only if every unit is
             p, clean_sec = 1.0, 1.0
@@ -686,6 +769,10 @@ class Sim:
             card.defects.add("logic")
         if sec and self.rng.random() < sec:
             card.defects.add("security")
+        for pc in pcs:                                   # an interface fault at each edge built across
+            seen = "absent" if contract else "accepted" if pc.accepted else "built" if pc.built else "absent"
+            if self.rng.random() < INTERFACE_P * IFACE_MULT[seen] * (1.25 - 0.5 * min(1.0, p)):
+                card.defects.add("interface")
         self.mark_blind(card)
         if "logic" in card.defects and self.rng.random() < TEST_CATCH:
             self.drops["test_fail"] += 1
@@ -708,12 +795,38 @@ class Sim:
         return card.defects - card.blind
 
     def to_review(self, card):
+        card.built = True
+        idea = card.idea
+        if self.org.dep_gate == "built":
+            self.release_held(idea)
+        if self.org.review_barrier and not idea.hotfix:
+            if not all(c.built or c.accepted for c in idea.cards):
+                if card not in idea.await_review:
+                    idea.await_review.append(card)
+                return
+            waiting, idea.await_review = idea.await_review, []
+            for c in waiting:
+                if c.built and not c.accepted:
+                    self._review(c)
+        self._review(card)
+
+    def _review(self, card):
         self.enqueue(Task("review", card.idea, card, d=card.d + 5, exclude={card.author} | card.reviewers))
 
     def on_review(self, s, task):
         card = task.card
+        if self.stale(card):
+            self.drops["stale_rework"] += 1
+            self.send_card(card)
+            return
         f = self.own(s, card.author) * self.fb(card.idea, card.reqs, s.cfg)
         v = self.vis(card)
+        if "interface" in v:
+            base = IFACE_REVIEW if all(pc.accepted for pc in self.prereqs(card)) else IFACE_REVIEW_BLIND
+            if self.rng.random() < f * base * p_pass(s.cfg.ci, card.d):
+                self.drops["interface_reject"] += 1
+                self.send_card(card)
+                return
         caught = ("logic" in v and self.rng.random() < f * p_pass(s.cfg.ci, card.d + 5)) or \
                  ("security" in v and self.rng.random() < f * REVIEW_SEC * p_pass(s.cfg.ci, card.d + 10))
         if caught or (not card.defects and self.rng.random() < FALSE_REJECT):
@@ -722,7 +835,7 @@ class Sim:
             return
         card.reviewers.add(s.cfg.name)
         if len(card.reviewers) < self.org.reviewers:
-            self.to_review(card)
+            self._review(card)
         elif card.sensitive and self.org.security and "security" not in self.org.owner_steps:
             self.enqueue(Task("security", card.idea, card, d=SECURITY_D, exclude={card.author}))
         else:
@@ -741,6 +854,10 @@ class Sim:
 
     def on_integrate(self, s, task):
         card, q = task.card, task.card.idea.design_q
+        if self.stale(card):
+            self.drops["stale_rework"] += 1
+            self.send_card(card)
+            return
         if self.rng.random() < 1 - math.exp(-self.conflict_k * (2 - q) * self.building):
             self.drops["merge_conflict"] += 1
             self.send_card(card)
@@ -749,11 +866,13 @@ class Sim:
             card.defects.add("integration")
             self.mark_blind(card)
         if ("integration" in card.defects and self.rng.random() < CI_CATCH) or \
+           ("interface" in card.defects and self.rng.random() < 0.5 * CI_CATCH) or \
            ("logic" in card.defects and self.rng.random() < 0.2):
             self.drops["ci_fail"] += 1
             self.send_card(card)
             return
         card.accepted = True
+        self.release_held(card.idea)
         if self.org.audit and self.rng.random() < self.org.audit and not card.idea.hotfix:
             self.enqueue(Task("audit", card.idea, card, d=card.d, exclude={card.author} | card.reviewers))
         self.check_idea(card.idea)
@@ -781,6 +900,13 @@ class Sim:
     def on_qa(self, s, task):
         idea, rng = task.idea, self.rng
         if idea.stage != "qa":                             # stale: pulled back by an audit
+            return
+        old = [c for c in idea.cards if self.stale(c)]
+        if old:                                            # built against work that has since changed
+            idea.stage = "build"
+            for c in old:
+                self.drops["stale_rework"] += 1
+                self.send_card(c)
             return
         gaps = [r for r in range(len(idea.req_d)) if r not in idea.mapped and r not in idea.blind_req and rng.random() < QA_GAP * p_pass(s.cfg.ci, idea.req_d[r]) * self.fb(idea, (r,), s.cfg)]
         bad = [c for c in idea.cards if self.vis(c) and rng.random() < QA_DEFECT * self.own(s, c.author) * self.fb(idea, c.reqs, s.cfg) * p_pass(s.cfg.ci, c.d)]
@@ -817,7 +943,7 @@ class Sim:
     def deploy(self, idea):
         if idea.done or idea.stage != "deploy":
             return
-        bad = [c for c in idea.cards if c.defects & {"logic", "integration"} and self.rng.random() < SMOKE]
+        bad = [c for c in idea.cards if c.defects & {"logic", "integration", "interface"} and self.rng.random() < SMOKE]
         if bad:
             idea.stage = "build"
             self.drops["smoke_rollback"] += 1
@@ -833,8 +959,13 @@ class Sim:
                     self.at(self.t + self.rng.expovariate(1 / INCIDENT_DELAY_H), self.incident, idea, c)
         if self.t >= self.warmup:
             key = "hotfixes" if idea.hotfix else "ideas"
+            correct = []                                   # a requirement is useful only if it and all its prerequisites are right
+            for r in range(len(idea.req_d)):
+                ok = r in idea.mapped and not any(c.defects for c in idea.cards if r in c.reqs)
+                correct.append(ok and all(correct[q] for q in idea.deps.get(r, ())))
             self.log[key].append(dict(lead=self.t - idea.start, coherence=len(idea.mapped) / len(idea.req_d),
-                                      escaped=sum(1 for c in idea.cards if c.defects), incidents=incidents))
+                                      escaped=sum(1 for c in idea.cards if c.defects), incidents=incidents,
+                                      useful=sum(correct) / len(idea.req_d)))
         if not idea.hotfix:
             self.open_ideas.remove(idea)
             if not self.demand:
@@ -867,6 +998,7 @@ def measure(sim: Sim) -> dict:
     waits = {k: statistics.mean(v) for k, v in sim.wait.items() if v}
     return dict(
         ideas=len(ideas) / weeks, clean=clean, hotfixes=len(fixes) / weeks,
+        useful=sum(r["useful"] for r in ideas) / weeks,
         lead=statistics.median(r["lead"] for r in ideas) if ideas else float("nan"),
         coherence=statistics.mean(r["coherence"] for r in ideas) if ideas else float("nan"),
         escaped=statistics.mean(r["escaped"] for r in ideas) if ideas else float("nan"),

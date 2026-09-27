@@ -1,0 +1,191 @@
+D1  GATING POLICIES for the institutions (clean = live, full intent, no escaped defect; useful = requirement-equivalents right with their prerequisites)
+
+[best six / coupling 0.1]
+  R17: build on reviewed work               22.8 clean   27.8 useful ( 29.0 live)  CFR  11%  lead   33/  47 h  $  47/clean  stale  0.8/idea  (100%)
+  build on unreviewed work                  22.6 clean   27.6 useful ( 28.9 live)  CFR  13%  lead   33/  47 h  $  47/clean  stale  0.7/idea  ( 99%)
+  whole-idea review barrier                 20.4 clean   25.7 useful ( 27.0 live)  CFR  15%  lead   35/  51 h  $  54/clean  stale  2.4/idea  ( 89%)
+  ignore the graph (r12)                    18.1 clean   24.3 useful ( 25.7 live)  CFR  18%  lead   37/  54 h  $  59/clean  stale  0.0/idea  ( 80%)
+
+[best six / coupling 0.25]
+  R17: build on reviewed work               19.4 clean   23.9 useful ( 25.7 live)  CFR  13%  lead   36/  56 h  $  57/clean  stale  2.3/idea  (100%)
+  build on unreviewed work                  18.4 clean   22.9 useful ( 24.8 live)  CFR  16%  lead   38/  60 h  $  60/clean  stale  2.9/idea  ( 95%)
+  whole-idea review barrier                 15.0 clean   18.6 useful ( 20.1 live)  CFR  15%  lead   45/  72 h  $  75/clean  stale  8.5/idea  ( 77%)
+  ignore the graph (r12)                    12.4 clean   18.0 useful ( 19.8 live)  CFR  25%  lead   46/  76 h  $  89/clean  stale  0.0/idea  ( 64%)
+
+[best six / coupling 0.65]
+  R17: build on reviewed work               11.8 clean   14.5 useful ( 16.4 live)  CFR  18%  lead   51/ 101 h  $  96/clean  stale  7.9/idea  (100%)
+  build on unreviewed work                   9.6 clean   12.3 useful ( 14.3 live)  CFR  22%  lead   62/ 111 h  $ 118/clean  stale 12.3/idea  ( 81%)
+  whole-idea review barrier                  6.2 clean    8.1 useful (  9.5 live)  CFR  19%  lead   92/ 185 h  $ 184/clean  stale 31.1/idea  ( 53%)
+  ignore the graph (r12)                     3.8 clean    6.9 useful (  8.3 live)  CFR  41%  lead   97/ 212 h  $ 298/clean  stale  0.0/idea  ( 32%)
+
+[population 12 / coupling 0.1]
+  R17: build on reviewed work               18.5 clean   26.0 useful ( 28.0 live)  CFR  17%  lead   68/ 100 h  stale  2.0/idea  (100%)
+  build on unreviewed work                  18.5 clean   25.8 useful ( 27.9 live)  CFR  18%  lead   68/ 101 h  stale  2.5/idea  (100%)
+  whole-idea review barrier                 15.9 clean   23.8 useful ( 25.9 live)  CFR  20%  lead   74/ 111 h  stale  4.3/idea  ( 86%)
+  ignore the graph (r12)                    17.6 clean   25.4 useful ( 27.6 live)  CFR  19%  lead   70/ 100 h  stale  0.0/idea  ( 95%)
+
+[population 12 / coupling 0.25]
+  R17: build on reviewed work               13.8 clean   19.1 useful ( 21.7 live)  CFR  20%  lead   86/ 143 h  stale  6.1/idea  (100%)
+  build on unreviewed work                  13.6 clean   19.0 useful ( 21.5 live)  CFR  21%  lead   88/ 136 h  stale  6.9/idea  ( 99%)
+  whole-idea review barrier                 11.4 clean   16.2 useful ( 18.2 live)  CFR  21%  lead  102/ 163 h  stale 12.3/idea  ( 82%)
+  ignore the graph (r12)                    11.5 clean   17.8 useful ( 20.0 live)  CFR  27%  lead   93/ 152 h  stale  0.0/idea  ( 83%)
+
+[population 12 / coupling 0.65]
+  R17: build on reviewed work                6.7 clean    9.8 useful ( 11.8 live)  CFR  26%  lead  162/ 270 h  stale 19.2/idea  (100%)
+  build on unreviewed work                   5.2 clean    8.1 useful ( 10.0 live)  CFR  27%  lead  174/ 337 h  stale 26.2/idea  ( 78%)
+  whole-idea review barrier                  3.8 clean    5.6 useful (  7.0 live)  CFR  29%  lead  253/ 414 h  stale 52.3/idea  ( 57%)
+  ignore the graph (r12)                     2.9 clean    6.5 useful (  8.0 live)  CFR  45%  lead  218/ 386 h  stale  0.0/idea  ( 44%)
+
+D2  ORGANISATIONS re-run with dependencies (coupling 0.25); share = of the institutions' clean ideas
+
+[best six / base]
+  no organisation (solo)                     8.1 clean   16.0 useful ( 20.4 live)  CFR  41%  lead   41/  80 h  $ 124/clean  stale  6.1/idea  ( 41%)
+  peer                                      13.0 clean   18.2 useful ( 20.6 live)  CFR  21%  lead   40/  74 h  $  79/clean  stale  4.5/idea  ( 67%)
+  Director-Worker-Checker                   10.3 clean   13.5 useful ( 14.8 live)  CFR  18%  lead   58/ 115 h  $  47/clean  stale  4.1/idea  ( 53%)
+  orchestrator                               6.8 clean    8.2 useful (  8.8 live)  CFR  12%  lead  106/ 162 h  $ 100/clean  stale  7.2/idea  ( 35%)
+  institutions                              19.4 clean   23.9 useful ( 25.7 live)  CFR  13%  lead   36/  56 h  $  57/clean  stale  2.3/idea  (100%)
+  pools per step                            15.4 clean   18.2 useful ( 19.1 live)  CFR  11%  lead   47/  83 h  $  43/clean  stale  2.3/idea  ( 79%)
+  functional roles                          10.8 clean   14.2 useful ( 15.5 live)  CFR  17%  lead   57/ 100 h  $  57/clean  stale  3.2/idea  ( 56%)
+  searched (clean)                          19.4 clean   23.9 useful ( 25.7 live)  CFR  15%  lead   36/  56 h  $  57/clean  stale  2.2/idea  (100%)
+
+[best six / harder work]
+  no organisation (solo)                     3.8 clean    9.2 useful ( 12.7 live)  CFR  51%  lead   62/ 125 h  $ 278/clean  stale  9.8/idea  ( 49%)
+  peer                                       5.0 clean    9.7 useful ( 12.1 live)  CFR  33%  lead   63/ 127 h  $ 210/clean  stale  8.2/idea  ( 66%)
+  Director-Worker-Checker                    5.2 clean    8.2 useful (  9.4 live)  CFR  29%  lead   88/ 197 h  $ 100/clean  stale  7.1/idea  ( 68%)
+  orchestrator                               3.3 clean    5.1 useful (  5.9 live)  CFR  27%  lead  160/ 238 h  $ 234/clean  stale 11.2/idea  ( 43%)
+  institutions                               7.6 clean   12.2 useful ( 14.4 live)  CFR  24%  lead   55/ 119 h  $ 140/clean  stale  3.7/idea  (100%)
+  pools per step                             6.3 clean    7.8 useful (  8.5 live)  CFR  15%  lead   96/ 179 h  $  87/clean  stale  3.6/idea  ( 82%)
+  functional roles                           4.6 clean    8.1 useful (  9.6 live)  CFR  34%  lead   91/ 173 h  $ 124/clean  stale  6.4/idea  ( 60%)
+  searched (clean)                           8.0 clean   12.3 useful ( 14.2 live)  CFR  22%  lead   59/ 123 h  $ 134/clean  stale  3.6/idea  (105%)
+
+[best six / heavy contention]
+  no organisation (solo)                     7.6 clean   14.8 useful ( 18.7 live)  CFR  40%  lead   45/  84 h  $ 133/clean  stale  6.4/idea  ( 41%)
+  peer                                      11.5 clean   16.8 useful ( 19.0 live)  CFR  21%  lead   44/  80 h  $  90/clean  stale  5.3/idea  ( 63%)
+  Director-Worker-Checker                   10.2 clean   13.0 useful ( 14.2 live)  CFR  18%  lead   60/ 116 h  $  46/clean  stale  3.9/idea  ( 56%)
+  orchestrator                               6.3 clean    8.2 useful (  8.8 live)  CFR  17%  lead  106/ 154 h  $ 107/clean  stale  6.8/idea  ( 34%)
+  institutions                              18.3 clean   23.2 useful ( 25.1 live)  CFR  15%  lead   37/  57 h  $  60/clean  stale  2.2/idea  (100%)
+  pools per step                            15.6 clean   18.6 useful ( 19.8 live)  CFR  11%  lead   46/  75 h  $  44/clean  stale  2.0/idea  ( 85%)
+  functional roles                          11.2 clean   14.3 useful ( 15.4 live)  CFR  14%  lead   58/ 106 h  $  55/clean  stale  3.2/idea  ( 61%)
+  searched (clean)                          18.6 clean   22.6 useful ( 24.1 live)  CFR  14%  lead   38/  60 h  $  59/clean  stale  2.4/idea  (102%)
+
+[population 12 / base]
+  no organisation (solo)                     6.2 clean   12.7 useful ( 24.9 live)  CFR  39%  lead   56/ 138 h  stale  4.8/idea  ( 45%)
+  peer                                       7.6 clean   13.1 useful ( 16.4 live)  CFR  31%  lead   61/ 144 h  stale  8.5/idea  ( 55%)
+  Director-Worker-Checker                    5.1 clean    7.4 useful (  8.4 live)  CFR  23%  lead  227/ 411 h  stale 11.5/idea  ( 37%)
+  orchestrator                               4.9 clean    6.2 useful (  7.0 live)  CFR  20%  lead  286/ 390 h  stale  9.6/idea  ( 35%)
+  institutions                              13.8 clean   19.1 useful ( 21.7 live)  CFR  20%  lead   86/ 143 h  stale  6.1/idea  (100%)
+  pools per step                             5.5 clean    6.8 useful (  7.3 live)  CFR  15%  lead  224/ 443 h  stale  6.0/idea  ( 40%)
+  functional roles                           7.6 clean   11.8 useful ( 13.8 live)  CFR  29%  lead  123/ 235 h  stale  5.0/idea  ( 55%)
+  searched (clean)                          17.4 clean   22.4 useful ( 24.3 live)  CFR  15%  lead   76/ 121 h  stale  4.1/idea  (126%)
+
+[population 12 / harder work]
+  no organisation (solo)                     2.3 clean    6.2 useful ( 26.1 live)  CFR  33%  lead   35/ 174 h  stale  4.4/idea  ( 64%)
+  peer                                       2.3 clean    6.4 useful (  9.7 live)  CFR  46%  lead   92/ 254 h  stale 13.1/idea  ( 63%)
+  Director-Worker-Checker                    1.8 clean    3.1 useful (  3.7 live)  CFR  30%  lead  361/ 613 h  stale 12.3/idea  ( 49%)
+  orchestrator                               2.5 clean    3.9 useful (  4.4 live)  CFR  28%  lead  381/ 591 h  stale 10.6/idea  ( 68%)
+  institutions                               3.6 clean    6.7 useful (  8.5 live)  CFR  28%  lead  179/ 390 h  stale  7.6/idea  (100%)
+  pools per step                             1.1 clean    1.5 useful (  1.6 live)  CFR  18%  lead  665/ 819 h  stale 19.3/idea  ( 29%)
+  functional roles                           1.2 clean    4.3 useful (  5.9 live)  CFR  54%  lead  247/ 482 h  stale 10.9/idea  ( 35%)
+  searched (clean)                           4.7 clean    7.7 useful (  9.1 live)  CFR  28%  lead  181/ 309 h  stale  6.6/idea  (129%)
+
+[population 12 / heavy contention]
+  no organisation (solo)                     5.4 clean   11.4 useful ( 24.8 live)  CFR  39%  lead   53/ 159 h  stale  5.0/idea  ( 42%)
+  peer                                       6.2 clean   11.5 useful ( 14.5 live)  CFR  30%  lead   73/ 179 h  stale  8.2/idea  ( 48%)
+  Director-Worker-Checker                    5.0 clean    7.1 useful (  7.9 live)  CFR  22%  lead  236/ 471 h  stale 10.7/idea  ( 38%)
+  orchestrator                               4.4 clean    6.1 useful (  6.7 live)  CFR  19%  lead  297/ 430 h  stale 10.5/idea  ( 34%)
+  institutions                              12.9 clean   18.0 useful ( 20.3 live)  CFR  20%  lead   90/ 145 h  stale  5.6/idea  (100%)
+  pools per step                             6.1 clean    7.3 useful (  7.8 live)  CFR  15%  lead  223/ 409 h  stale  4.4/idea  ( 47%)
+  functional roles                           6.4 clean   10.8 useful ( 12.6 live)  CFR  25%  lead  135/ 289 h  stale  5.4/idea  ( 50%)
+  searched (clean)                          15.7 clean   20.7 useful ( 22.6 live)  CFR  19%  lead   83/ 130 h  stale  4.1/idea  (121%)
+
+D3  FIXED vs ELASTIC re-run with dependencies (coupling 0.25)
+
+[steady]
+  fixed six                                 18.2 clean   22.3 useful ( 23.9 live)  CFR  15%  lead   46/  77 h  $  57/clean  stale  2.0/idea  backlog   11
+  fixed 24                                  20.4 clean   24.4 useful ( 25.9 live)  CFR  11%  lead   22/  38 h  $  66/clean  stale  2.0/idea  backlog    3
+  elastic (six models, rules)               20.1 clean   24.2 useful ( 26.0 live)  CFR  13%  lead   26/  45 h  $  27/clean  stale  2.4/idea  backlog    3
+
+[bursty]
+  fixed six                                 17.4 clean   22.0 useful ( 23.7 live)  CFR  15%  lead   64/ 107 h  $  59/clean  stale  2.2/idea  backlog    5
+  fixed 24                                  19.8 clean   24.3 useful ( 25.9 live)  CFR  14%  lead   22/  38 h  $  65/clean  stale  2.4/idea  backlog    1
+  elastic (six models, rules)               19.3 clean   23.7 useful ( 25.5 live)  CFR  15%  lead   26/  46 h  $  27/clean  stale  2.5/idea  backlog    2
+
+[growth]
+  fixed six                                 19.4 clean   24.5 useful ( 26.4 live)  CFR  15%  lead  154/ 318 h  $  58/clean  stale  2.2/idea  backlog  145
+  fixed 24                                  38.3 clean   46.9 useful ( 50.2 live)  CFR  14%  lead   23/  38 h  $  64/clean  stale  2.0/idea  backlog   13
+  elastic (six models, rules)               38.1 clean   46.5 useful ( 49.7 live)  CFR  12%  lead   25/  44 h  $  28/clean  stale  2.3/idea  backlog   13
+
+[mixed]
+  fixed six                                 10.9 clean   14.0 useful ( 15.5 live)  CFR  14%  lead  295/ 434 h  $ 106/clean  stale 10.5/idea  backlog   70
+  fixed 24                                  19.3 clean   23.1 useful ( 24.6 live)  CFR  11%  lead   20/ 104 h  $ 123/clean  stale 10.3/idea  backlog    9
+  elastic (six models, rules)               18.3 clean   23.2 useful ( 25.5 live)  CFR  15%  lead   23/ 116 h  $  70/clean  stale 10.2/idea  backlog    8
+
+[surge]
+  fixed six                                 20.9 clean   26.2 useful ( 28.4 live)  CFR  12%  lead  371/ 584 h  $  56/clean  stale  2.1/idea  backlog  226
+  fixed 24                                  45.1 clean   55.7 useful ( 59.7 live)  CFR  14%  lead   23/  39 h  $  64/clean  stale  2.1/idea  backlog   10
+  elastic (six models, rules)               43.4 clean   55.1 useful ( 59.4 live)  CFR  15%  lead   26/  45 h  $  29/clean  stale  2.8/idea  backlog   11
+
+[harder]
+  fixed six                                 10.1 clean   16.8 useful ( 20.8 live)  CFR  18%  lead  156/ 251 h  $ 115/clean  stale  4.0/idea  backlog   45
+  fixed 24                                  15.4 clean   22.3 useful ( 25.7 live)  CFR  17%  lead   29/  79 h  $ 127/clean  stale  3.5/idea  backlog    5
+  elastic (six models, rules)               13.3 clean   20.9 useful ( 24.7 live)  CFR  17%  lead   42/ 131 h  $ 152/clean  stale  4.8/idea  backlog    8
+
+D4  DEPENDENCIES (0.25) WITH FAMILY BLIND SPOTS (18%), the six
+  institutions, R17                         14.0 clean   20.6 useful ( 23.3 live)  CFR  20%  lead   39/  62 h  $  79/clean  stale  3.1/idea  (100%)
+  institutions, unreviewed                  12.7 clean   19.2 useful ( 22.2 live)  CFR  23%  lead   41/  68 h  $  87/clean  stale  3.7/idea  ( 91%)
+  institutions, barrier                     11.2 clean   16.3 useful ( 18.5 live)  CFR  22%  lead   49/  82 h  $ 101/clean  stale  9.1/idea  ( 80%)
+  peer                                       7.7 clean   13.4 useful ( 16.5 live)  CFR  25%  lead   50/ 102 h  $ 134/clean  stale  7.1/idea  ( 55%)
+  no organisation (solo)                     3.3 clean   12.3 useful ( 19.2 live)  CFR  48%  lead   44/  86 h  $ 303/clean  stale  7.0/idea  ( 23%)
+  Director-Worker-Checker                    6.0 clean   10.0 useful ( 12.1 live)  CFR  26%  lead   73/ 143 h  $  74/clean  stale  5.8/idea  ( 43%)
+
+D5  WHICH GATE, AND HOW SENSITIVE: contract-first (ignore the graph) depends on how often building against
+    only the plan breaks an interface (x3 base; x6 sensitivity). Hybrid = R17, but after 2 h build on unreviewed
+    work, after 4 h on the plan's contract.
+
+[best six / coupling 0.25 / contract-only interface faults x3]
+  R17: reviewed                             19.4 clean   23.9 useful ( 25.7 live)  CFR  13%  lead   36/  56 h  $  57/clean  stale  2.3/idea  (100%)
+  hybrid (R17 + waiting limits)             16.9 clean   21.8 useful ( 23.6 live)  CFR  17%  lead   40/  62 h  $  65/clean  stale  3.0/idea  ( 87%)
+  unreviewed                                18.4 clean   22.9 useful ( 24.8 live)  CFR  16%  lead   38/  60 h  $  60/clean  stale  2.9/idea  ( 95%)
+  contract-first (ignore the graph)         12.4 clean   18.0 useful ( 19.8 live)  CFR  25%  lead   46/  76 h  $  89/clean  stale  0.0/idea  ( 64%)
+
+[best six / coupling 0.25 / contract-only interface faults x6]
+  R17: reviewed                             19.2 clean   23.9 useful ( 25.8 live)  CFR  14%  lead   35/  57 h  $  57/clean  stale  2.2/idea  (100%)
+  hybrid (R17 + waiting limits)             16.0 clean   20.8 useful ( 22.6 live)  CFR  17%  lead   42/  66 h  $  69/clean  stale  3.2/idea  ( 83%)
+  unreviewed                                17.7 clean   22.1 useful ( 23.7 live)  CFR  16%  lead   39/  62 h  $  62/clean  stale  3.3/idea  ( 92%)
+  contract-first (ignore the graph)          2.5 clean    5.9 useful (  6.8 live)  CFR  45%  lead  103/ 291 h  $ 450/clean  stale  0.0/idea  ( 13%)
+
+[best six / coupling 0.65 / contract-only interface faults x3]
+  R17: reviewed                             11.8 clean   14.5 useful ( 16.4 live)  CFR  18%  lead   51/ 101 h  $  96/clean  stale  7.9/idea  (100%)
+  hybrid (R17 + waiting limits)              8.5 clean   11.8 useful ( 13.8 live)  CFR  25%  lead   62/ 121 h  $ 133/clean  stale 11.6/idea  ( 72%)
+  unreviewed                                 9.6 clean   12.3 useful ( 14.3 live)  CFR  22%  lead   62/ 111 h  $ 118/clean  stale 12.3/idea  ( 81%)
+  contract-first (ignore the graph)          3.8 clean    6.9 useful (  8.3 live)  CFR  41%  lead   97/ 212 h  $ 298/clean  stale  0.0/idea  ( 32%)
+
+[best six / coupling 0.65 / contract-only interface faults x6]
+  R17: reviewed                             11.3 clean   14.3 useful ( 16.4 live)  CFR  18%  lead   50/ 106 h  $  99/clean  stale  7.4/idea  (100%)
+  hybrid (R17 + waiting limits)              7.9 clean   11.1 useful ( 12.8 live)  CFR  24%  lead   70/ 123 h  $ 143/clean  stale 13.6/idea  ( 70%)
+  unreviewed                                 9.4 clean   12.0 useful ( 14.1 live)  CFR  20%  lead   64/ 124 h  $ 121/clean  stale 11.7/idea  ( 83%)
+  contract-first (ignore the graph)          0.1 clean    0.7 useful (  1.0 live)  CFR  72%  lead  427/ 616 h  $10355/clean  stale  0.0/idea  (  1%)
+
+[population 12 / coupling 0.25 / contract-only interface faults x3]
+  R17: reviewed                             13.8 clean   19.1 useful ( 21.7 live)  CFR  20%  lead   86/ 143 h  stale  6.1/idea  (100%)
+  hybrid (R17 + waiting limits)             13.0 clean   18.1 useful ( 20.4 live)  CFR  19%  lead   92/ 150 h  stale  6.5/idea  ( 94%)
+  unreviewed                                13.6 clean   19.0 useful ( 21.5 live)  CFR  21%  lead   88/ 136 h  stale  6.9/idea  ( 99%)
+  contract-first (ignore the graph)         11.5 clean   17.8 useful ( 20.0 live)  CFR  27%  lead   93/ 152 h  stale  0.0/idea  ( 83%)
+
+[population 12 / coupling 0.25 / contract-only interface faults x6]
+  R17: reviewed                             15.1 clean   20.4 useful ( 22.6 live)  CFR  16%  lead   85/ 132 h  stale  5.8/idea  (100%)
+  hybrid (R17 + waiting limits)             12.6 clean   17.8 useful ( 20.0 live)  CFR  21%  lead   93/ 146 h  stale  7.2/idea  ( 83%)
+  unreviewed                                13.1 clean   18.7 useful ( 20.9 live)  CFR  21%  lead   89/ 147 h  stale  7.6/idea  ( 87%)
+  contract-first (ignore the graph)          1.6 clean    5.1 useful (  6.1 live)  CFR  56%  lead  213/ 469 h  stale  0.0/idea  ( 11%)
+
+[population 12 / coupling 0.65 / contract-only interface faults x3]
+  R17: reviewed                              6.7 clean    9.8 useful ( 11.8 live)  CFR  26%  lead  162/ 270 h  stale 19.2/idea  (100%)
+  hybrid (R17 + waiting limits)              4.9 clean    7.6 useful (  9.6 live)  CFR  30%  lead  188/ 326 h  stale 25.3/idea  ( 73%)
+  unreviewed                                 5.2 clean    8.1 useful ( 10.0 live)  CFR  27%  lead  174/ 337 h  stale 26.2/idea  ( 78%)
+  contract-first (ignore the graph)          2.9 clean    6.5 useful (  8.0 live)  CFR  45%  lead  218/ 386 h  stale  0.0/idea  ( 44%)
+
+[population 12 / coupling 0.65 / contract-only interface faults x6]
+  R17: reviewed                              6.7 clean    9.4 useful ( 11.2 live)  CFR  23%  lead  165/ 279 h  stale 20.2/idea  (100%)
+  hybrid (R17 + waiting limits)              5.1 clean    7.3 useful (  8.8 live)  CFR  28%  lead  210/ 341 h  stale 27.4/idea  ( 76%)
+  unreviewed                                 5.6 clean    7.9 useful (  9.6 live)  CFR  28%  lead  202/ 310 h  stale 28.4/idea  ( 84%)
+  contract-first (ignore the graph)          0.0 clean    0.3 useful (  0.5 live)  CFR  90%  lead  761/ 725 h  stale  0.0/idea  (  0%)

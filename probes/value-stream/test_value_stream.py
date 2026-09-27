@@ -43,6 +43,19 @@ class ValueStreamTest(unittest.TestCase):
         m = elastic_run("bursty", "elastic", o.SIX, None)
         self.assertLess(m["seat_h"], m["peak"] * 168 * 0.8)      # instances do not stay at peak
 
+    def test_graph_off_reproduces_r12(self):
+        m = v.mean_measures([o.job((("design", "institutions"), "best six", "base", k)) for k in range(4)])
+        self.assertAlmostEqual(m["clean"], 24.9, delta=0.1)       # orgs_results.txt, r12
+
+    def test_r17_beats_the_review_barrier_with_dependencies(self):
+        import deps
+        def run(gate, barrier):
+            return v.mean_measures([deps.org_job(({"COUPLING": 0.25}, ("design", "institutions"), "best six", "base",
+                                                  gate, barrier, k)) for k in range(3)])
+        r17, barrier = run("accepted", False), run("built", True)
+        self.assertGreater(r17["clean"], 1.1 * barrier["clean"])
+        self.assertLess(r17["drops"].get("stale_rework", 0), barrier["drops"].get("stale_rework", 0))
+
 
 if __name__ == "__main__":
     unittest.main()

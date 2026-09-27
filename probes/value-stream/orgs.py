@@ -76,13 +76,13 @@ def idx(seats, classes):
 # ---------------------------------------------------------------- designs
 def solo(seats):
     return v.Org("no organisation (solo)", licences=False, independence=False, owner_steps=frozenset(v.ALL_STEPS),
-                 K=1, challenge=0, plan_check=False, security=False, audit=0.0)
+                 K=1, challenge=0, plan_check=False, security=False, audit=0.0, dep_gate="built")
 
 
 def peer(seats):
     return v.Org("peer", licences=False, independence=True,
                  owner_steps=frozenset(v.ALL_STEPS - {"review", "qa", "release"}), K=1, challenge=0,
-                 plan_check=False, security=False, audit=0.0)
+                 plan_check=False, security=False, audit=0.0, dep_gate="built")
 
 
 def dwc(seats):
@@ -91,7 +91,7 @@ def dwc(seats):
     pools = {st: {d} for st in ("discover", "design", "plan", "release", "operate")}
     pools.update(review={c}, qa={c}, build=w, integrate=w)
     return v.Org("Director-Worker-Checker", pools=pools, licences=False, independence=True, K=1, challenge=0,
-                 plan_check=False, security=False, audit=0.0, routing="director", workers=frozenset(w))
+                 plan_check=False, security=False, audit=0.0, routing="director", workers=frozenset(w), dep_gate="built")
 
 
 def orchestrator(seats):
@@ -100,7 +100,7 @@ def orchestrator(seats):
     pools = {st: {lead} for st in ("discover", "design", "plan", "review", "qa", "release")}
     pools.update(build=w, integrate=w, operate=w)
     return v.Org("orchestrator", pools=pools, licences=False, independence=False, K=1, challenge=0,
-                 plan_check=False, security=False, audit=0.0, routing="director", workers=frozenset(w))
+                 plan_check=False, security=False, audit=0.0, routing="director", workers=frozenset(w), dep_gate="built")
 
 
 ROLES = [("architect", {"design", "plan", "plan_check"}), ("product", {"discover", "challenge", "qa"}),
@@ -125,7 +125,7 @@ def functional(seats, order=None):
         for st in steps:
             pools[st] = members
     return v.Org("functional roles", pools=pools, licences=False, independence=True, K=counts["product"],
-                 challenge=1, plan_check=True, security=True, audit=0.0)
+                 challenge=1, plan_check=True, security=True, audit=0.0, dep_gate="built")
 
 
 def institutions(seats):
