@@ -93,9 +93,9 @@ Clean ideas a week, and as a share of what each design delivers at b = 0:
 | b | Institutions | Peer | Director-Worker-Checker | No organisation | Institutions, 24 seats |
 |---|---|---|---|---|---|
 | 0% | 25.0 | 19.5 | 16.4 | 14.8 | 98.1 |
-| 5% | 23.4 (94%) | 17.7 (91%) | 14.5 (88%) | 11.1 (75%) | 90.6 (92%) |
-| 18% | 19.2 (77%) | 12.6 (65%) | 10.5 (64%) | 5.4 (36%) | 75.9 (77%) |
-| 45% | 10.7 (43%) | 4.8 (25%) | 4.1 (25%) | 1.1 (7%) | 42.8 (44%) |
+| 5% | 23.4 (94%) | 17.7 (91%) | 14.5 (89%) | 11.1 (75%) | 90.6 (92%) |
+| 18% | 19.2 (77%) | 12.6 (65%) | 10.5 (64%) | 5.4 (37%) | 75.9 (77%) |
+| 45% | 10.7 (43%) | 4.8 (25%) | 4.1 (25%) | 1.1 (8%) | 42.8 (44%) |
 
 **Findings:**
 - **The institutions' advantage grows with shared mistakes:** 1.7× no organisation at b = 0, 3.6× at 18%, 9.7× at 45%.
