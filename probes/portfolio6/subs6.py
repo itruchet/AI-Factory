@@ -44,7 +44,7 @@ def seat_cap(name, plan, level):
 def main():
     chosen = json.load(open(HERE / "robust6.json"))
     mid = [r for r in chosen if r["six"][0] == OPUS and MUSE in r["six"] and GEMINI in r["six"]]
-    mid = min(mid, key=lambda r: r["scenarios"]["base"]["usd_idea"])["six"][3:]
+    mid = min(mid, key=lambda r: r["scenarios"]["base"]["usd_clean"])["six"][3:]
     sixes = {
         "chosen: Opus 5.5 + Muse Spark 1.3 + Gemini 3.8 Flash": [OPUS, MUSE, GEMINI] + mid,
         "all-subscription trio: Opus 5.5 + GPT-6 Sol + Gemini 3.8 Flash": [OPUS, SOL, GEMINI] + mid,
@@ -57,7 +57,7 @@ def main():
         for title, six in sixes.items():
             base = s.evaluate(pool, [six], SEEDS)[0]
             mid_api = sum(base["busy"][n] * s.usd_per_busy_hour(s.C[n]) for n in six[3:])
-            lines.append(f"\n[{title}]  {base['ipw']:.1f} ideas/wk uncapped; mid seats ${mid_api:.0f}/wk on API")
+            lines.append(f"\n[{title}]  {base['ipw']:.1f} ideas/wk ({base['clean']:.1f} clean) uncapped; mid seats ${mid_api:.0f}/wk on API")
             lines.append(f"  {'seat':<24} {'busy h/wk':>9} {'$/busy h':>8} {'API $/wk':>8}   {'20x plan':<30} {'b/e h':>5} "
                          f"{'plan h':>7} {'plans to cover':>14} {'hybrid $/wk':>12}")
             seats = []
@@ -82,8 +82,8 @@ def main():
                 seats.append(row)
             api_top = sum(r["api_week"] for r in seats)
             hyb = [sum(r.get("hybrid_week", (r["api_week"], r["api_week"]))[i] for r in seats) for i in (0, 1)]
-            modes = dict(api=dict(ipw=round(base["ipw"], 1), top_week=api_top))
-            modes["hybrid"] = dict(ipw=round(base["ipw"], 1), top_week=(hyb[0], hyb[1]))
+            modes = dict(api=dict(ipw=round(base["ipw"], 1), clean=round(base["clean"], 1), top_week=api_top))
+            modes["hybrid"] = dict(ipw=round(base["ipw"], 1), clean=round(base["clean"], 1), top_week=(hyb[0], hyb[1]))
             for level in ("low", "high"):
                 caps = {}
                 for n in six[:3]:
@@ -93,18 +93,18 @@ def main():
                 capped = s.evaluate(pool, [six], SEEDS, caps=caps)[0]
                 sub_cost = sum(round(s.PLANS[plan_for(n, PLAN_20X)[0]]["usd"] / s.WEEKS_PER_MONTH) for n in caps)
                 api_rest = sum(capped["busy"][n] * s.usd_per_busy_hour(s.C[n]) for n in six[:3] if n not in caps)
-                modes[f"capped-{level}"] = dict(ipw=round(capped["ipw"], 1), top_week=round(sub_cost + api_rest),
-                                                share=round(capped["ipw"] / base["ipw"], 3))
+                modes[f"capped-{level}"] = dict(ipw=round(capped["ipw"], 1), clean=round(capped["clean"], 1),
+                                                top_week=round(sub_cost + api_rest), share=round(capped["clean"] / base["clean"], 3))
             lines.append(f"  top seats, API only:          ${api_top:5.0f}/wk  (${api_top * s.WEEKS_PER_MONTH:6.0f}/month)  "
-                         f"{base['ipw']:.1f} ideas/wk")
+                         f"{base['ipw']:.1f} ideas/wk, {base['clean']:.1f} clean")
             lines.append(f"  top seats, hybrid (20x plan): ${hyb[0]:5.0f}-{hyb[1]:<5.0f}/wk (${hyb[0] * s.WEEKS_PER_MONTH:6.0f}-"
-                         f"{hyb[1] * s.WEEKS_PER_MONTH:<6.0f}/month)  {base['ipw']:.1f} ideas/wk  "
+                         f"{hyb[1] * s.WEEKS_PER_MONTH:<6.0f}/month)  {base['clean']:.1f} clean/wk  "
                          f"saves {1 - hyb[1] / api_top:.0%}-{1 - hyb[0] / api_top:.0%}")
             for level in ("low", "high"):
                 m = modes[f"capped-{level}"]
                 lines.append(f"  top seats, plan only ({level} cap): ${m['top_week']:5.0f}/wk (${m['top_week'] * s.WEEKS_PER_MONTH:6.0f}/month)  "
-                             f"{m['ipw']:.1f} ideas/wk ({m['share']:.0%} of uncapped)")
-            out[title] = dict(six=six, ipw=base["ipw"], busy=base["busy"], mid_api_week=round(mid_api), seats=seats, modes=modes)
+                             f"{m['ipw']:.1f} ideas/wk, {m['clean']:.1f} clean ({m['share']:.0%} of uncapped clean)")
+            out[title] = dict(six=six, ipw=base["ipw"], clean=base["clean"], busy=base["busy"], mid_api_week=round(mid_api), seats=seats, modes=modes)
     first = next(iter(out.values()))
     lines.append("\nAPI bill sensitivity to the token model, first six, all seats on API:")
     saved = (s.GEN_DUTY, s.IN_PER_OUT, s.CACHE_HIT)
@@ -112,7 +112,7 @@ def main():
                              "heavy (0.40, 60, 0.80)": (0.40, 60, 0.80)}.items():
         s.GEN_DUTY, s.IN_PER_OUT, s.CACHE_HIT = d, io, ch
         wk = sum(first["busy"][n] * s.usd_per_busy_hour(s.C[n]) for n in first["six"])
-        lines.append(f"  {lbl:<24} ${wk:6.0f}/wk  ${wk * s.WEEKS_PER_MONTH:7.0f}/month  ${wk / first['ipw']:5.1f}/idea")
+        lines.append(f"  {lbl:<24} ${wk:6.0f}/wk  ${wk * s.WEEKS_PER_MONTH:7.0f}/month  ${wk / first['clean']:5.1f}/clean idea")
     s.GEN_DUTY, s.IN_PER_OUT, s.CACHE_HIT = saved
     print("\n".join(lines))
     (HERE / "subs6_results.txt").write_text("\n".join(lines) + "\n")

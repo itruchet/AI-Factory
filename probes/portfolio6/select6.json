@@ -316,55 +316,31 @@
  "s1": [
   {
    "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-6 Sol (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 29.458333333333336,
-   "sd": 0.29755951785595136,
-   "lead": 21.840592212184184,
-   "coh": 0.9968167241317467,
-   "esc": 0.03252114027457697,
-   "util": 0.7775898219688111,
+   "ipw": 34.5,
+   "clean": 33.125,
+   "sd": 0.6808389432653423,
+   "lead": 27.904730065390495,
+   "coh": 0.997877587056943,
+   "esc": 0.022948326498395358,
+   "util": 0.8930481842508372,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 132.64633379124558,
-    "Muse Spark 1.3 (xhigh)": 125.74939240132854,
-    "Gemini 3.8 Flash (high)": 125.3436774236154,
-    "MiMo-V2.6-Pro": 136.91603325906982,
-    "GLM 5.3 Flash": 136.04031863978597,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.1147850295163
+    "GPT-6 Sol (max)": 151.38583746052927,
+    "Muse Spark 1.3 (xhigh)": 147.95958089266014,
+    "Gemini 3.8 Flash (high)": 147.04140444863947,
+    "MiMo-V2.6-Pro": 152.92003602635148,
+    "GLM 5.3 Flash": 152.67117839337115,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 148.21453250329242
    },
-   "api_week": 902.988929624998,
-   "usd_idea": 30.653089548797666
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 29.458333333333332,
-   "sd": 0.8926785535678563,
-   "lead": 21.995341964164574,
-   "coh": 0.9974852421773377,
-   "esc": 0.02945828515681457,
-   "util": 0.7844985971430137,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 134.2609675507416,
-    "Muse Spark 1.3 (xhigh)": 127.25682283973451,
-    "Gemini 3.8 Flash (high)": 126.60964894051148,
-    "MiMo-V2.6-Pro": 137.88752224494314,
-    "GLM 5.3 Flash": 136.96203581555946,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.79758852866772
-   },
-   "api_week": 1513.7970189375003,
-   "usd_idea": 51.387734730551635
+   "api_week": 781.0027723124985,
+   "usd_idea": 22.637761516304302,
+   "usd_clean": 23.57744218301882
   },
   {
    "six": [
@@ -375,152 +351,24 @@
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 29.416666666666664,
-   "sd": 0.3818813079129871,
-   "lead": 22.052471886074127,
-   "coh": 0.9984068562620146,
-   "esc": 0.019792521462515717,
-   "util": 0.7690221969317226,
+   "ipw": 34.25,
+   "clean": 32.541666666666664,
+   "sd": 0.7204840194079395,
+   "lead": 28.018007629076017,
+   "coh": 0.9977092643512089,
+   "esc": 0.03159347326135328,
+   "util": 0.8949499939269476,
    "busy": {
-    "GPT-5.6 Terra (max)": 129.6094786960871,
-    "Muse Spark 1.3 (xhigh)": 125.65442562126931,
-    "Gemini 3.8 Flash (high)": 124.02646717799996,
-    "MiMo-V2.6-Pro": 135.40127740609626,
-    "GLM 5.3 Flash": 134.67058413708847,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 125.81214146863522
+    "GPT-5.6 Terra (max)": 150.98769463679403,
+    "Muse Spark 1.3 (xhigh)": 148.55880789923143,
+    "Gemini 3.8 Flash (high)": 147.8162340048839,
+    "MiMo-V2.6-Pro": 153.1980608348087,
+    "GLM 5.3 Flash": 152.51993687536486,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.02885962728035
    },
-   "api_week": 709.7647706249983,
-   "usd_idea": 24.12798087110476
-  },
-  {
-   "six": [
-    "Grok 4.7 (xhigh)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 29.375,
-   "sd": 1.0231690964840559,
-   "lead": 22.102956489185473,
-   "coh": 0.9968300588989174,
-   "esc": 0.026872585644297804,
-   "util": 0.7830925956143194,
-   "busy": {
-    "Grok 4.7 (xhigh)": 133.88442153275872,
-    "Muse Spark 1.3 (xhigh)": 126.64957047146802,
-    "Gemini 3.8 Flash (high)": 126.92957856373488,
-    "MiMo-V2.6-Pro": 137.63186724866068,
-    "GLM 5.3 Flash": 136.3313872216092,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.93051134100249
-   },
-   "api_week": 631.2592286249983,
-   "usd_idea": 21.489675868085047
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 29.291666666666668,
-   "sd": 0.13819269959814104,
-   "lead": 22.17722844390741,
-   "coh": 0.9980437967752587,
-   "esc": 0.02274405679066696,
-   "util": 0.7836117660488836,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 127.42936811618024,
-    "GLM-5.3 (max)": 134.12360745647058,
-    "Gemini 3.8 Flash (high)": 126.06226935077753,
-    "MiMo-V2.6-Pro": 138.0057626807238,
-    "GLM 5.3 Flash": 136.359923357082,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.89972921604073
-   },
-   "api_week": 578.3585442187479,
-   "usd_idea": 19.744815165362656
-  },
-  {
-   "six": [
-    "GPT-6 Sol (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 29.166666666666668,
-   "sd": 0.4249182927993979,
-   "lead": 21.899309814588186,
-   "coh": 0.9964349241318297,
-   "esc": 0.03717499652798,
-   "util": 0.781138332168972,
-   "busy": {
-    "GPT-6 Sol (max)": 132.83173037983843,
-    "Muse Spark 1.3 (xhigh)": 126.56931685451652,
-    "Gemini 3.8 Flash (high)": 125.89105701334933,
-    "MiMo-V2.6-Pro": 137.87154380767544,
-    "GLM 5.3 Flash": 136.96488942910673,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.25890134183722
-   },
-   "api_week": 676.2281312812486,
-   "usd_idea": 23.184964501071377
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "Qwen3.8 Max (0902)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 28.708333333333336,
-   "sd": 0.6052432935972484,
-   "lead": 22.614367450278376,
-   "coh": 0.9972604185358331,
-   "esc": 0.015936103650817664,
-   "util": 0.7865132773874741,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 127.19128238589076,
-    "Qwen3.8 Max (0902)": 137.97452639495762,
-    "Gemini 3.8 Flash (high)": 126.62464564160007,
-    "MiMo-V2.6-Pro": 137.69258531027782,
-    "GLM 5.3 Flash": 136.2229499068123,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.09939396703544
-   },
-   "api_week": 579.4754759062482,
-   "usd_idea": 20.184922237663216
-  },
-  {
-   "six": [
-    "GPT-6 Astra (high)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 28.625,
-   "sd": 0.844713955529721,
-   "lead": 22.74543758927122,
-   "coh": 0.9973256542146991,
-   "esc": 0.018651352968552623,
-   "util": 0.7787164705802392,
-   "busy": {
-    "GPT-6 Astra (high)": 134.42962071067956,
-    "Muse Spark 1.3 (xhigh)": 126.43422326598147,
-    "Gemini 3.8 Flash (high)": 125.16371701055216,
-    "MiMo-V2.6-Pro": 136.826554010371,
-    "GLM 5.3 Flash": 135.26413575492404,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 126.82795159237277
-   },
-   "api_week": 1409.4533741249984,
-   "usd_idea": 49.238545820960645
+   "api_week": 834.0028932187474,
+   "usd_idea": 24.35044943704372,
+   "usd_clean": 25.628770086107476
   },
   {
    "six": [
@@ -531,48 +379,136 @@
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 28.333333333333332,
-   "sd": 0.42491829279939897,
-   "lead": 22.68434962783629,
-   "coh": 0.9965096314566277,
-   "esc": 0.023355615425174232,
-   "util": 0.7771625638250492,
+   "ipw": 33.916666666666664,
+   "clean": 32.541666666666664,
+   "sd": 0.9157192073264965,
+   "lead": 28.37973719628706,
+   "coh": 0.9975165847764892,
+   "esc": 0.023287281236652767,
+   "util": 0.8987978027045563,
    "busy": {
-    "Grok 4.6 (high)": 133.06275196752753,
-    "Muse Spark 1.3 (xhigh)": 125.49793106821383,
-    "Gemini 3.8 Flash (high)": 125.46365103232415,
-    "MiMo-V2.6-Pro": 136.96716425832633,
-    "GLM 5.3 Flash": 135.5352290419163,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 126.85313696734141
+    "Grok 4.6 (high)": 152.0713448008111,
+    "Muse Spark 1.3 (xhigh)": 148.2284305094477,
+    "Gemini 3.8 Flash (high)": 148.35486551898285,
+    "MiMo-V2.6-Pro": 154.84064418592342,
+    "GLM 5.3 Flash": 153.22477942154484,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.26812068948288
    },
-   "api_week": 606.4563834374983,
-   "usd_idea": 21.404342944852882
+   "api_week": 707.923747218748,
+   "usd_idea": 20.872444635442204,
+   "usd_clean": 21.754378915813
   },
   {
    "six": [
-    "GPT-6 Sol (max)",
-    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 28.166666666666668,
-   "sd": 0.23570226039551626,
-   "lead": 22.6599131203846,
-   "coh": 0.9970433756177047,
-   "esc": 0.029587042047950193,
-   "util": 0.8012850205544737,
+   "ipw": 34.041666666666664,
+   "clean": 32.375,
+   "sd": 0.8447139555297201,
+   "lead": 28.269272533051947,
+   "coh": 0.9980073269195386,
+   "esc": 0.03306286726233599,
+   "util": 0.8985986320206945,
    "busy": {
-    "GPT-6 Sol (max)": 135.3039403985723,
-    "GPT-5.6 Terra (max)": 135.43363868774537,
-    "Gemini 3.8 Flash (high)": 127.83063035414169,
-    "MiMo-V2.6-Pro": 141.40597413128046,
-    "GLM 5.3 Flash": 137.72680424623223,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.99431290093747
+    "Muse Spark 1.3 (xhigh)": 148.90791113297053,
+    "GLM-5.3 (max)": 152.04107799644157,
+    "Gemini 3.8 Flash (high)": 148.2848809139026,
+    "MiMo-V2.6-Pro": 154.48272719112802,
+    "GLM 5.3 Flash": 153.10492765255873,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 148.96589618985854
    },
-   "api_week": 767.5766794687487,
-   "usd_idea": 27.251243058062084
+   "api_week": 670.2414758437474,
+   "usd_idea": 19.688856083537257,
+   "usd_clean": 20.70243940830108
+  },
+  {
+   "six": [
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 33.5,
+   "clean": 32.041666666666664,
+   "sd": 1.2822235461190934,
+   "lead": 28.490061481253314,
+   "coh": 0.9976570089125479,
+   "esc": 0.02622095404304594,
+   "util": 0.8977531572405408,
+   "busy": {
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 151.95318000374115,
+    "Muse Spark 1.3 (xhigh)": 148.8116067926287,
+    "Gemini 3.8 Flash (high)": 147.8562252077868,
+    "MiMo-V2.6-Pro": 154.2654204442879,
+    "GLM 5.3 Flash": 153.19338967252457,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 148.85536037749597
+   },
+   "api_week": 1047.6689209687474,
+   "usd_idea": 31.273699133395446,
+   "usd_clean": 32.69707945806234
+  },
+  {
+   "six": [
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 33.583333333333336,
+   "clean": 32.0,
+   "sd": 0.772801541291309,
+   "lead": 28.60649195264736,
+   "coh": 0.9986217888832714,
+   "esc": 0.037246023197708075,
+   "util": 0.8989204627332588,
+   "busy": {
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 152.48100129048376,
+    "Muse Spark 1.3 (xhigh)": 148.71931513313442,
+    "Gemini 3.8 Flash (high)": 148.33112074225917,
+    "MiMo-V2.6-Pro": 154.05770075980843,
+    "GLM 5.3 Flash": 153.39028900728738,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.13239950215163
+   },
+   "api_week": 1732.245330187501,
+   "usd_idea": 51.58050610980151,
+   "usd_clean": 54.132666568359404
+  },
+  {
+   "six": [
+    "Grok 4.7 (xhigh)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 33.58333333333333,
+   "clean": 31.75,
+   "sd": 0.75,
+   "lead": 28.29203975539916,
+   "coh": 0.9978371695266602,
+   "esc": 0.03732875305988156,
+   "util": 0.8948917779745426,
+   "busy": {
+    "Grok 4.7 (xhigh)": 150.99638140486906,
+    "Muse Spark 1.3 (xhigh)": 148.60294738855478,
+    "Gemini 3.8 Flash (high)": 147.77749252707153,
+    "MiMo-V2.6-Pro": 153.05745058685335,
+    "GLM 5.3 Flash": 153.1334637880316,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 148.48317650295854
+   },
+   "api_week": 727.8616645312478,
+   "usd_idea": 21.673300184553288,
+   "usd_clean": 22.924776835629853
   },
   {
    "six": [
@@ -583,74 +519,192 @@
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 28.0,
-   "sd": 0.11785113019775875,
-   "lead": 22.881977089157125,
-   "coh": 0.9977622879241517,
-   "esc": 0.02977123732248099,
-   "util": 0.7850914354550427,
+   "ipw": 33.0,
+   "clean": 31.708333333333336,
+   "sd": 1.0433320021290768,
+   "lead": 28.861763633717686,
+   "coh": 0.9981049931264729,
+   "esc": 0.024166993977481017,
+   "util": 0.9067150899297732,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 126.15333560665115,
-    "Kimi K3 (max)": 138.31789157714948,
-    "Gemini 3.8 Flash (high)": 126.09476220313613,
-    "MiMo-V2.6-Pro": 138.25502630209917,
-    "GLM 5.3 Flash": 135.84912653211777,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 126.70202471752927
+    "Muse Spark 1.3 (xhigh)": 149.53388934519228,
+    "Kimi K3 (max)": 156.08527432046344,
+    "Gemini 3.8 Flash (high)": 148.78602067528007,
+    "MiMo-V2.6-Pro": 155.2848447419643,
+    "GLM 5.3 Flash": 154.263494752757,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.01528681355435
    },
-   "api_week": 677.3826072187487,
-   "usd_idea": 24.192235972098167
+   "api_week": 786.3425594999984,
+   "usd_idea": 23.82856240909086,
+   "usd_clean": 24.799239721419134
   },
   {
    "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-6 Astra (high)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 32.91666666666667,
+   "clean": 31.583333333333336,
+   "sd": 0.7861650943380516,
+   "lead": 29.02087638045611,
+   "coh": 0.9982654528490824,
+   "esc": 0.027757419536658782,
+   "util": 0.9022239056013743,
+   "busy": {
+    "GPT-6 Astra (high)": 153.54715142122782,
+    "Muse Spark 1.3 (xhigh)": 149.29714117518535,
+    "Gemini 3.8 Flash (high)": 148.78352122509864,
+    "MiMo-V2.6-Pro": 154.34850831807972,
+    "GLM 5.3 Flash": 154.16647189214922,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.29890281444472
+   },
+   "api_week": 1626.0064622812497,
+   "usd_idea": 49.39766467689872,
+   "usd_clean": 51.483054214709746
+  },
+  {
+   "six": [
+    "Muse Spark 1.3 (xhigh)",
+    "Qwen3.8 Max (0902)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 32.291666666666664,
+   "clean": 30.666666666666668,
+   "sd": 1.006920497799548,
+   "lead": 29.592637786054205,
+   "coh": 0.9975778343795669,
+   "esc": 0.031089536003719942,
+   "util": 0.895245822022946,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 147.8739770345785,
+    "Qwen3.8 Max (0902)": 153.39771096548125,
+    "Gemini 3.8 Flash (high)": 147.23761128788203,
+    "MiMo-V2.6-Pro": 153.5719562668718,
+    "GLM 5.3 Flash": 152.69686091529675,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 147.6296721290192
+   },
+   "api_week": 665.0080794374979,
+   "usd_idea": 20.593798589032197,
+   "usd_clean": 21.685046068614064
+  },
+  {
+   "six": [
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Grok 4.6 (high)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 31.166666666666668,
+   "clean": 30.125,
+   "sd": 0.5697830971323904,
+   "lead": 31.081559039655055,
+   "coh": 0.9983365281740926,
+   "esc": 0.02146614913601302,
+   "util": 0.9109534410113118,
+   "busy": {
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 153.76499312931537,
+    "Grok 4.6 (high)": 153.95529020961294,
+    "Gemini 3.8 Flash (high)": 149.99700428818463,
+    "MiMo-V2.6-Pro": 155.16340861873007,
+    "GLM 5.3 Flash": 154.4090290436686,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.95134324989073
+   },
+   "api_week": 1013.409829312498,
+   "usd_idea": 32.515823400401004,
+   "usd_clean": 33.64016030912857
+  },
+  {
+   "six": [
+    "GPT-6 Sol (max)",
     "GPT-5.6 Terra (max)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.708333333333332,
-   "sd": 0.13819269959814104,
-   "lead": 23.27746704081538,
-   "coh": 0.9986889924969339,
-   "esc": 0.028560786422773293,
-   "util": 0.8013467253071682,
+   "ipw": 31.25,
+   "clean": 30.041666666666668,
+   "sd": 0.8025566785107594,
+   "lead": 30.417863101180668,
+   "coh": 0.9985247080451036,
+   "esc": 0.028038379992506197,
+   "util": 0.9039281141566036,
    "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 137.23844299390143,
-    "GPT-5.6 Terra (max)": 134.4754704310532,
-    "Gemini 3.8 Flash (high)": 128.10931904937152,
-    "MiMo-V2.6-Pro": 140.63581345497954,
-    "GLM 5.3 Flash": 138.15484627832524,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.1436069019948
+    "GPT-6 Sol (max)": 152.76890795027256,
+    "GPT-5.6 Terra (max)": 151.76842432743206,
+    "Gemini 3.8 Flash (high)": 149.11219892395715,
+    "MiMo-V2.6-Pro": 154.70322962542164,
+    "GLM 5.3 Flash": 153.17626799124082,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.63051025153231
    },
-   "api_week": 1620.2081636250002,
-   "usd_idea": 58.4736780857143
+   "api_week": 869.9340365624981,
+   "usd_idea": 27.83788916999994,
+   "usd_clean": 28.957582354368867
   },
   {
    "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
     "GPT-6 Sol (max)",
+    "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.666666666666668,
-   "sd": 0.35355339059327334,
-   "lead": 23.235202765940087,
-   "coh": 0.9979289291357927,
-   "esc": 0.028564623004807055,
-   "util": 0.8041635789482962,
+   "ipw": 31.25,
+   "clean": 30.041666666666668,
+   "sd": 0.3200477394945253,
+   "lead": 30.68198963884626,
+   "coh": 0.9981651319739842,
+   "esc": 0.02922441175431793,
+   "util": 0.9111165917049159,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 135.3065720987194,
-    "GPT-6 Sol (max)": 136.71207476868977,
-    "Gemini 3.8 Flash (high)": 129.16158757575494,
-    "MiMo-V2.6-Pro": 140.10213365023992,
-    "GLM 5.3 Flash": 139.23065858565218,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.0838609008262
+    "GPT-6 Sol (max)": 153.37727668299323,
+    "GLM-5.3 (max)": 153.7433072711425,
+    "Gemini 3.8 Flash (high)": 150.0107512641825,
+    "MiMo-V2.6-Pro": 155.55967386296783,
+    "GLM 5.3 Flash": 154.92267948218023,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.79183587508908
    },
-   "api_week": 959.1744458437486,
-   "usd_idea": 34.66895587387043
+   "api_week": 707.7644467499987,
+   "usd_idea": 22.64846229599996,
+   "usd_clean": 23.559426798890385
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Grok 4.7 (xhigh)",
+    "Muse Spark 1.3 (xhigh)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 30.916666666666668,
+   "clean": 29.958333333333332,
+   "sd": 0.37960139913101165,
+   "lead": 30.948258642229398,
+   "coh": 0.9986557585568918,
+   "esc": 0.02014854575114639,
+   "util": 0.9074559245451951,
+   "busy": {
+    "GPT-5.6 Terra (max)": 152.7036299461643,
+    "Grok 4.7 (xhigh)": 153.0940065594454,
+    "Muse Spark 1.3 (xhigh)": 149.9498705930577,
+    "MiMo-V2.6-Pro": 154.44757462913913,
+    "GLM 5.3 Flash": 153.88396415096793,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.63652606278208
+   },
+   "api_week": 877.1491106249982,
+   "usd_idea": 28.37139980458215,
+   "usd_clean": 29.27896892211399
   },
   {
    "six": [
@@ -661,74 +715,304 @@
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.625,
-   "sd": 0.8609990966571587,
-   "lead": 23.38869901425003,
-   "coh": 0.998868628890589,
-   "esc": 0.03472103571317484,
-   "util": 0.7947372876139344,
+   "ipw": 31.583333333333332,
+   "clean": 29.875,
+   "sd": 0.5448623679425841,
+   "lead": 30.687807695589747,
+   "coh": 0.9971978098978277,
+   "esc": 0.03168425919799313,
+   "util": 0.9098834767901711,
    "busy": {
-    "GPT-5.6 Terra (max)": 133.7886788047967,
-    "Grok 4.7 (xhigh)": 135.30614524863824,
-    "Gemini 3.8 Flash (high)": 127.4357172254752,
-    "MiMo-V2.6-Pro": 138.3668753629727,
-    "GLM 5.3 Flash": 137.38437062055783,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.8133986524052
+    "GPT-5.6 Terra (max)": 152.7432926844587,
+    "Grok 4.7 (xhigh)": 153.4855632549663,
+    "Gemini 3.8 Flash (high)": 150.339428963041,
+    "MiMo-V2.6-Pro": 154.83425281101637,
+    "GLM 5.3 Flash": 154.7429018287011,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 151.01710506230904
    },
-   "api_week": 713.6864954999984,
-   "usd_idea": 25.834805266968267
+   "api_week": 819.9891336562475,
+   "usd_idea": 25.96271663291549,
+   "usd_clean": 27.447335017782343
+  },
+  {
+   "six": [
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 30.708333333333336,
+   "clean": 29.791666666666668,
+   "sd": 0.7107800878846656,
+   "lead": 31.17693064124264,
+   "coh": 0.997964032982329,
+   "esc": 0.01497194666768361,
+   "util": 0.9152411448285303,
+   "busy": {
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 154.57682156857936,
+    "GPT-5.6 Terra (max)": 153.8768119946632,
+    "Muse Spark 1.3 (xhigh)": 151.30214403869073,
+    "MiMo-V2.6-Pro": 156.07737523043983,
+    "GLM 5.3 Flash": 155.19091915562504,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 151.53900199916038
+   },
+   "api_week": 1899.3744187500015,
+   "usd_idea": 61.85208419267304,
+   "usd_clean": 63.755225244755295
+  },
+  {
+   "six": [
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-5.6 Terra (max)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 31.208333333333332,
+   "clean": 29.75,
+   "sd": 0.1863389981249822,
+   "lead": 30.851784286240346,
+   "coh": 0.9973495054176987,
+   "esc": 0.025357021012592594,
+   "util": 0.905181497758605,
+   "busy": {
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 153.10067892078607,
+    "GPT-5.6 Terra (max)": 152.13165150970758,
+    "Gemini 3.8 Flash (high)": 149.27216373556882,
+    "MiMo-V2.6-Pro": 154.65209862616518,
+    "GLM 5.3 Flash": 153.49872632208428,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.76763062636192
+   },
+   "api_week": 1821.2947308750006,
+   "usd_idea": 58.35924371295062,
+   "usd_clean": 61.21999095378153
   },
   {
    "six": [
     "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 31.125,
+   "clean": 29.75,
+   "sd": 0.44876373392787555,
+   "lead": 31.00961274549561,
+   "coh": 0.9973221158906276,
+   "esc": 0.022737939635147805,
+   "util": 0.9083748344803724,
+   "busy": {
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 153.39481303639985,
+    "GPT-5.6 Terra (max)": 152.58464173128095,
+    "Muse Spark 1.3 (xhigh)": 150.48355714578523,
+    "MiMo-V2.6-Pro": 155.02918974568172,
+    "GLM 5.3 Flash": 153.73557624650897,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.41405525055865
+   },
+   "api_week": 1198.8516513749978,
+   "usd_idea": 38.51732213253005,
+   "usd_clean": 40.29753449999993
+  },
+  {
+   "six": [
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Grok 4.7 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 30.875,
+   "clean": 29.708333333333336,
+   "sd": 0.5448623679425835,
+   "lead": 30.827099528018294,
+   "coh": 0.997974670838585,
+   "esc": 0.023010884275543497,
+   "util": 0.9199008650159108,
+   "busy": {
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 155.75823948976554,
+    "Grok 4.7 (xhigh)": 155.3641031156201,
+    "Gemini 3.8 Flash (high)": 151.4941749468632,
+    "MiMo-V2.6-Pro": 156.24994235293047,
+    "GLM 5.3 Flash": 155.84439665795375,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 152.54921537290488
+   },
+   "api_week": 1744.4739727500018,
+   "usd_idea": 56.50118130364378,
+   "usd_clean": 58.72002152314171
+  },
+  {
+   "six": [
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Grok 4.7 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 31.083333333333336,
+   "clean": 29.708333333333336,
+   "sd": 0.3974746672570606,
+   "lead": 30.96027487805975,
+   "coh": 0.9971454096523817,
+   "esc": 0.021420210292509907,
+   "util": 0.9059285309505385,
+   "busy": {
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 152.80620369611182,
+    "Grok 4.7 (xhigh)": 152.50434082154774,
+    "Gemini 3.8 Flash (high)": 149.41838157118275,
+    "MiMo-V2.6-Pro": 153.9522430738419,
+    "GLM 5.3 Flash": 154.14649659731828,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.3482934381404
+   },
+   "api_week": 1029.319522031248,
+   "usd_idea": 33.114837169906096,
+   "usd_clean": 34.64750144284705
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
     "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.458333333333332,
-   "sd": 0.4768967975941498,
-   "lead": 23.740799286767327,
-   "coh": 0.9982832277990603,
-   "esc": 0.018206005015461588,
-   "util": 0.7938765998265868,
+   "ipw": 31.291666666666668,
+   "clean": 29.708333333333336,
+   "sd": 0.5448623679425851,
+   "lead": 30.758508902416345,
+   "coh": 0.9981827090053194,
+   "esc": 0.03736197037185465,
+   "util": 0.9106704538294815,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 134.18913405426628,
-    "GLM-5.3 (max)": 134.3369658941715,
-    "Gemini 3.8 Flash (high)": 127.34948619421569,
-    "MiMo-V2.6-Pro": 138.4339847994969,
-    "GLM 5.3 Flash": 137.17320321805872,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.7448384649904
+    "GPT-5.6 Terra (max)": 153.03136941522894,
+    "GLM-5.3 (max)": 153.27252724012845,
+    "Gemini 3.8 Flash (high)": 150.46815064738482,
+    "MiMo-V2.6-Pro": 155.37112830320953,
+    "GLM 5.3 Flash": 154.64302535454604,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 151.16961649961956
    },
-   "api_week": 845.7700519687481,
-   "usd_idea": 30.801944229514348
+   "api_week": 759.4707404062473,
+   "usd_idea": 24.270702755991923,
+   "usd_clean": 25.564232496142964
   },
   {
    "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
     "GPT-6 Sol (max)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 30.916666666666664,
+   "clean": 29.708333333333332,
+   "sd": 0.6166103577895313,
+   "lead": 30.821669370726234,
+   "coh": 0.997163194140006,
+   "esc": 0.016191905021692255,
+   "util": 0.9011757531775958,
+   "busy": {
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 151.9738733008607,
+    "GPT-6 Sol (max)": 151.92129308670673,
+    "Gemini 3.8 Flash (high)": 148.77602287455437,
+    "MiMo-V2.6-Pro": 153.62628295358184,
+    "GLM 5.3 Flash": 152.8195662978301,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.26812068948274
+   },
+   "api_week": 1079.0959169062487,
+   "usd_idea": 34.903371975404276,
+   "usd_clean": 36.32300421563811
+  },
+  {
+   "six": [
+    "GPT-6 Sol (max)",
+    "GPT-5.6 Terra (max)",
     "Muse Spark 1.3 (xhigh)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.375,
-   "sd": 0.5187458165828638,
-   "lead": 23.686590947961477,
-   "coh": 0.9967581911339032,
-   "esc": 0.01683169547160819,
-   "util": 0.8054338105494366,
+   "ipw": 30.958333333333336,
+   "clean": 29.708333333333332,
+   "sd": 0.5574620066774856,
+   "lead": 31.18780124749346,
+   "coh": 0.998153096861074,
+   "esc": 0.026925737810446385,
+   "util": 0.8996751722919373,
    "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 136.77746329331066,
-    "GPT-6 Sol (max)": 135.68445567334513,
-    "Muse Spark 1.3 (xhigh)": 129.73665960353628,
-    "MiMo-V2.6-Pro": 140.09574227533284,
-    "GLM 5.3 Flash": 138.93102916318716,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.65193102512018
+    "GPT-6 Sol (max)": 151.65926161006666,
+    "GPT-5.6 Terra (max)": 150.8561813466598,
+    "Muse Spark 1.3 (xhigh)": 148.75944194161025,
+    "MiMo-V2.6-Pro": 154.07687488452962,
+    "GLM 5.3 Flash": 152.9536861345525,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 148.56712775285405
    },
-   "api_week": 1626.0165104062517,
-   "usd_idea": 59.39786339383568
+   "api_week": 923.1767396249992,
+   "usd_idea": 29.819975438761748,
+   "usd_clean": 31.074672862552568
+  },
+  {
+   "six": [
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GLM-5.3 (max)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 30.875,
+   "clean": 29.666666666666668,
+   "sd": 0.42491829279939897,
+   "lead": 31.22729400769959,
+   "coh": 0.9983132667737237,
+   "esc": 0.028317980119005572,
+   "util": 0.9092630455107684,
+   "busy": {
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 153.89920659885854,
+    "GLM-5.3 (max)": 153.59952223703968,
+    "Gemini 3.8 Flash (high)": 149.5258579289844,
+    "MiMo-V2.6-Pro": 154.94610187188997,
+    "GLM 5.3 Flash": 154.01808398769037,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.54837725039152
+   },
+   "api_week": 1662.361664437501,
+   "usd_idea": 53.841673342105295,
+   "usd_clean": 56.0346628462079
+  },
+  {
+   "six": [
+    "GPT-6 Sol (max)",
+    "Grok 4.7 (xhigh)",
+    "Muse Spark 1.3 (xhigh)",
+    "MiMo-V2.6-Pro",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+   ],
+   "ipw": 30.75,
+   "clean": 29.583333333333332,
+   "sd": 0.7861650943380507,
+   "lead": 31.12814091724919,
+   "coh": 0.9979747381727362,
+   "esc": 0.023119940026214165,
+   "util": 0.9080894401050469,
+   "busy": {
+    "GPT-6 Sol (max)": 153.0537247727073,
+    "Grok 4.7 (xhigh)": 152.5975686061957,
+    "Muse Spark 1.3 (xhigh)": 150.09566466385292,
+    "MiMo-V2.6-Pro": 155.23371374270772,
+    "GLM 5.3 Flash": 154.02379121478498,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.3496926256386
+   },
+   "api_week": 825.3194038124996,
+   "usd_idea": 26.839655408536572,
+   "usd_clean": 27.898120692253507
   },
   {
    "six": [
@@ -739,74 +1023,52 @@
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.375,
-   "sd": 0.34105636549468643,
-   "lead": 23.59932337739859,
-   "coh": 0.9977340765501028,
-   "esc": 0.031821917270658154,
-   "util": 0.7926204773755926,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 133.89253012888673,
-    "GPT-5.6 Terra (max)": 133.84086661834203,
-    "Gemini 3.8 Flash (high)": 127.81563365305308,
-    "MiMo-V2.6-Pro": 137.72773787226657,
-    "GLM 5.3 Flash": 137.5498802063005,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.13479271574857
-   },
-   "api_week": 991.7967592499982,
-   "usd_idea": 36.23001860273966
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.375,
+   "ipw": 30.916666666666664,
+   "clean": 29.458333333333332,
    "sd": 0.3608439182435162,
-   "lead": 23.8017949675951,
-   "coh": 0.9975213698046334,
-   "esc": 0.02425605228649723,
-   "util": 0.8053968405363632,
+   "lead": 30.905170809677777,
+   "coh": 0.9981551639817768,
+   "esc": 0.032394021103698524,
+   "util": 0.9039702993390824,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 135.87218888665248,
-    "Muse Spark 1.3 (xhigh)": 129.91455512111213,
-    "GLM-5.3 (max)": 136.45199736355454,
-    "MiMo-V2.6-Pro": 140.3833541461506,
-    "GLM 5.3 Flash": 139.0109303425112,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.20698940067317
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 152.75102157045978,
+    "GPT-5.6 Terra (max)": 151.74546168947214,
+    "Gemini 3.8 Flash (high)": 149.06345964541916,
+    "MiMo-V2.6-Pro": 154.95568893425056,
+    "GLM 5.3 Flash": 153.247608329923,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.43882156427057
    },
-   "api_week": 908.703372281249,
-   "usd_idea": 33.19464373630134
+   "api_week": 1133.923094156247,
+   "usd_idea": 36.67675776246622,
+   "usd_clean": 38.492438839816025
   },
   {
    "six": [
-    "GPT-6 Sol (max)",
-    "GPT-5.6 Terra (max)",
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
     "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.375,
-   "sd": 0.2732266051792491,
-   "lead": 23.557620631901482,
-   "coh": 0.9981035282793682,
-   "esc": 0.02287722176476017,
-   "util": 0.790481058774753,
+   "ipw": 30.916666666666668,
+   "clean": 29.416666666666668,
+   "sd": 0.6066758241067104,
+   "lead": 31.238296633285394,
+   "coh": 0.9981367954700784,
+   "esc": 0.033650274498806344,
+   "util": 0.9153484233772455,
    "busy": {
-    "GPT-6 Sol (max)": 133.81150024901407,
-    "GPT-5.6 Terra (max)": 132.83677308572993,
-    "Muse Spark 1.3 (xhigh)": 127.80388499528738,
-    "MiMo-V2.6-Pro": 138.09204624196914,
-    "GLM 5.3 Flash": 136.63101664407426,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.62968602887632
+    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 154.0592977994595,
+    "Muse Spark 1.3 (xhigh)": 151.1429743650702,
+    "GLM-5.3 (max)": 154.34163854208637,
+    "MiMo-V2.6-Pro": 155.86645985850674,
+    "GLM 5.3 Flash": 155.5847178251506,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 151.67612237399004
    },
-   "api_week": 807.6997713749996,
-   "usd_idea": 29.50501447945204
+   "api_week": 1036.8275883749984,
+   "usd_idea": 33.536202319406954,
+   "usd_clean": 35.2462636274787
   },
   {
    "six": [
@@ -817,466 +1079,250 @@
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.333333333333336,
-   "sd": 0.39086797998528555,
-   "lead": 23.486992282911793,
-   "coh": 0.9980987871942315,
-   "esc": 0.03064530850675429,
-   "util": 0.8008509005569172,
+   "ipw": 30.666666666666664,
+   "clean": 29.375,
+   "sd": 0.4912427551063154,
+   "lead": 31.071237534311265,
+   "coh": 0.9974514065546675,
+   "esc": 0.021791993259384565,
+   "util": 0.8974924298208931,
    "busy": {
-    "GPT-6 Sol (max)": 135.71179808829888,
-    "Grok 4.7 (xhigh)": 135.31546802710304,
-    "Gemini 3.8 Flash (high)": 127.96934983921118,
-    "MiMo-V2.6-Pro": 140.13089483732165,
-    "GLM 5.3 Flash": 138.33177031825699,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.79842665118096
+    "GPT-6 Sol (max)": 151.1124133109919,
+    "Grok 4.7 (xhigh)": 151.09893196798166,
+    "Gemini 3.8 Flash (high)": 147.88746833505473,
+    "MiMo-V2.6-Pro": 153.3834107071135,
+    "GLM 5.3 Flash": 152.78532293526274,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 148.40482200305578
    },
-   "api_week": 672.9508265624988,
-   "usd_idea": 24.620152191310932
+   "api_week": 757.293666843749,
+   "usd_idea": 24.694358701426598,
+   "usd_clean": 25.78020993510635
   },
   {
    "six": [
-    "GPT-6 Astra (high)",
-    "GPT-5.6 Terra (max)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.291666666666668,
-   "sd": 0.4768967975941494,
-   "lead": 23.570474698457566,
-   "coh": 0.9977092225146428,
-   "esc": 0.036566401723549774,
-   "util": 0.8002689079349627,
-   "busy": {
-    "GPT-6 Astra (high)": 138.04043144776722,
-    "GPT-5.6 Terra (max)": 133.6863906902479,
-    "Gemini 3.8 Flash (high)": 127.70815729525143,
-    "MiMo-V2.6-Pro": 139.18497135107663,
-    "GLM 5.3 Flash": 139.23351219919948,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.8175962149
-   },
-   "api_week": 1519.5044002499988,
-   "usd_idea": 55.6764971083969
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
     "Grok 4.7 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.291666666666664,
-   "sd": 0.6705615391429612,
-   "lead": 23.546934335742797,
-   "coh": 0.9971376435346855,
-   "esc": 0.02577327176034123,
-   "util": 0.7968052055711025,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 134.58460595477231,
-    "Grok 4.7 (xhigh)": 135.1663035716665,
-    "Gemini 3.8 Flash (high)": 127.05205162262516,
-    "MiMo-V2.6-Pro": 139.80813040451508,
-    "GLM 5.3 Flash": 138.03499450933919,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.53356115275298
-   },
-   "api_week": 901.8013247812485,
-   "usd_idea": 33.0431019767175
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "GPT-6 Astra (high)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.25,
-   "sd": 0.44876373392787455,
-   "lead": 23.78661403860002,
-   "coh": 0.9980739895944643,
-   "esc": 0.02436739525998508,
-   "util": 0.8037685779905394,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 135.6882484678124,
-    "GPT-6 Astra (high)": 137.29989508996823,
-    "Gemini 3.8 Flash (high)": 128.55922008202947,
-    "MiMo-V2.6-Pro": 139.92956652774924,
-    "GLM 5.3 Flash": 138.67991117102594,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.04188527587837
-   },
-   "api_week": 1708.3743949687484,
-   "usd_idea": 62.69263834747701
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.25,
-   "sd": 0.44876373392787455,
-   "lead": 23.68761445756674,
-   "coh": 0.9971469006956626,
-   "esc": 0.027473714187786047,
-   "util": 0.7908478751571332,
-   "busy": {
-    "GPT-5.6 Terra (max)": 132.2940198248586,
-    "Muse Spark 1.3 (xhigh)": 127.2501350383219,
-    "GLM-5.3 (max)": 134.65004621036306,
-    "MiMo-V2.6-Pro": 137.53280093760122,
-    "GLM 5.3 Flash": 136.87072018204634,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.57693596519906
-   },
-   "api_week": 705.088869656249,
-   "usd_idea": 25.874820904816477
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
     "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.25,
-   "sd": 0.2500000000000003,
-   "lead": 23.7636974923402,
-   "coh": 0.9984825388026608,
-   "esc": 0.024466908136049174,
-   "util": 0.7823471177957886,
+   "ipw": 30.916666666666668,
+   "clean": 29.375,
+   "sd": 0.869027233942259,
+   "lead": 30.928796827144637,
+   "coh": 0.9969666321715869,
+   "esc": 0.02710402105187214,
+   "util": 0.9082206933843661,
    "busy": {
-    "GPT-5.6 Terra (max)": 131.3149764427483,
-    "GLM-5.3 (max)": 131.85783361262486,
-    "Gemini 3.8 Flash (high)": 125.06623845347626,
-    "MiMo-V2.6-Pro": 137.92906618183906,
-    "GLM 5.3 Flash": 135.77493257988834,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 126.66284746757795
+    "Grok 4.7 (xhigh)": 153.13362836792064,
+    "GLM-5.3 (max)": 153.29803748811443,
+    "Gemini 3.8 Flash (high)": 149.86078425329646,
+    "MiMo-V2.6-Pro": 154.78631749921342,
+    "GLM 5.3 Flash": 154.4175898843105,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.99010143858547
    },
-   "api_week": 647.1445995937481,
-   "usd_idea": 23.74842567316507
+   "api_week": 650.8872209999977,
+   "usd_idea": 21.052955935309896,
+   "usd_clean": 22.15786284255311
   },
   {
    "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "GPT-6 Sol (max)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.208333333333332,
-   "sd": 0.3608439182435156,
-   "lead": 23.839602824303547,
-   "coh": 0.997883861905818,
-   "esc": 0.03054077031122939,
-   "util": 0.7980599481397871,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 135.71695808047627,
-    "GPT-6 Sol (max)": 135.41331005838725,
-    "Gemini 3.8 Flash (high)": 127.40072492293503,
-    "MiMo-V2.6-Pro": 139.21692822561192,
-    "GLM 5.3 Flash": 137.56129466048964,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.13521177700522
-   },
-   "api_week": 1562.726803687501,
-   "usd_idea": 57.43559462251152
-  },
-  {
-   "six": [
-    "GPT-6 Sol (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.166666666666664,
-   "sd": 0.2635231383473651,
-   "lead": 23.4940074518978,
-   "coh": 0.9978931827724467,
-   "esc": 0.026019694665859388,
-   "util": 0.8058810291851353,
-   "busy": {
-    "GPT-6 Sol (max)": 136.08092069017434,
-    "Muse Spark 1.3 (xhigh)": 129.98143313523843,
-    "GLM-5.3 (max)": 137.05728597485825,
-    "MiMo-V2.6-Pro": 139.84008727905032,
-    "GLM 5.3 Flash": 138.8311526890321,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.53719765026278
-   },
-   "api_week": 674.8310429062494,
-   "usd_idea": 24.840406487346606
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Gemini 3.8 Flash (high)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.125,
-   "sd": 0.47689679759414944,
-   "lead": 23.664944439074965,
-   "coh": 0.998851687361944,
-   "esc": 0.0214499544167272,
-   "util": 0.7962934591407128,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 136.10488635310455,
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 134.64668584613077,
-    "Gemini 3.8 Flash (high)": 127.65191966616914,
-    "MiMo-V2.6-Pro": 138.35409261315863,
-    "GLM 5.3 Flash": 137.2131538077207,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.69306852755471
-   },
-   "api_week": 1797.2350393125002,
-   "usd_idea": 66.2575129700461
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
     "Grok 4.7 (xhigh)",
-    "Muse Spark 1.3 (xhigh)",
-    "MiMo-V2.6-Pro",
-    "GLM 5.3 Flash",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
-   ],
-   "ipw": 27.083333333333336,
-   "sd": 0.08333333333333393,
-   "lead": 23.774331147146725,
-   "coh": 0.9984591570097705,
-   "esc": 0.02002385821404226,
-   "util": 0.7980668314620634,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 135.2628862492449,
-    "Grok 4.7 (xhigh)": 134.70249534304352,
-    "Muse Spark 1.3 (xhigh)": 128.80839276746377,
-    "MiMo-V2.6-Pro": 139.56206247059322,
-    "GLM 5.3 Flash": 137.03908338133624,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.07644590207826
-   },
-   "api_week": 956.0135651249996,
-   "usd_idea": 35.29896240461537
-  },
-  {
-   "six": [
-    "GPT-6 Sol (max)",
-    "GLM-5.3 (max)",
+    "Grok 4.6 (high)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
     "GLM 5.3 Flash",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
    ],
-   "ipw": 27.083333333333336,
-   "sd": 0.5068968775248517,
-   "lead": 23.613394634172316,
-   "coh": 0.997688076222127,
-   "esc": 0.02165088312081947,
-   "util": 0.7944584360996708,
+   "ipw": 30.75,
+   "clean": 29.333333333333336,
+   "sd": 0.6123724356957936,
+   "lead": 30.97041011105047,
+   "coh": 0.9967927028764795,
+   "esc": 0.02017792945592039,
+   "util": 0.9154153704521413,
    "busy": {
-    "GPT-6 Sol (max)": 134.52012450323178,
-    "GLM-5.3 (max)": 134.7358534081341,
-    "Gemini 3.8 Flash (high)": 127.35698454476,
-    "MiMo-V2.6-Pro": 138.94209910460827,
-    "GLM 5.3 Flash": 136.88498824978282,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.3740537779512
+    "Grok 4.7 (xhigh)": 154.34325887372634,
+    "Grok 4.6 (high)": 154.5902110379937,
+    "Gemini 3.8 Flash (high)": 151.09301319274323,
+    "MiMo-V2.6-Pro": 155.98470029428745,
+    "GLM 5.3 Flash": 155.42776908004987,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 151.29974093695773
    },
-   "api_week": 614.6428661249985,
-   "usd_idea": 22.694505826153787
+   "api_week": 695.2828302187484,
+   "usd_idea": 22.610823746951166,
+   "usd_clean": 23.702823757457328
   }
  ],
  "s2": [
   {
    "six": [
+    "GPT-6 Sol (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "GPT-6 Luna (max)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 39.375,
+   "clean": 37.125,
+   "sd": 0.8281086214313255,
+   "lead": 24.233781586818594,
+   "coh": 0.9976135171242071,
+   "esc": 0.04119582920917669,
+   "util": 0.8558876448171051,
+   "busy": {
+    "GPT-6 Sol (max)": 146.9039599426958,
+    "Muse Spark 1.3 (xhigh)": 144.1702726122661,
+    "Gemini 3.8 Flash (high)": 144.39448670650168,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.678785695187,
+    "GPT-6 Luna (max)": 145.1088146836779,
+    "Ling 3.0 Flash": 137.4784263353136
+   },
+   "api_week": 751.6557773437487,
+   "usd_idea": 19.08967053571425,
+   "usd_clean": 20.24662026515148
+  },
+  {
+   "six": [
+    "Grok 4.6 (high)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "GPT-6 Luna (max)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 39.16666666666667,
+   "clean": 36.958333333333336,
+   "sd": 0.5818433351570396,
+   "lead": 24.61797752498851,
+   "coh": 0.9968203288858342,
+   "esc": 0.031978613583256175,
+   "util": 0.8589259213066162,
+   "busy": {
+    "Grok 4.6 (high)": 148.7093869718442,
+    "Muse Spark 1.3 (xhigh)": 144.6905835621684,
+    "Gemini 3.8 Flash (high)": 144.07080790800603,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.15031188210102,
+    "GPT-6 Luna (max)": 145.09033590431315,
+    "Ling 3.0 Flash": 138.08590244863635
+   },
+   "api_week": 680.096447812498,
+   "usd_idea": 17.364164624999948,
+   "usd_clean": 18.40170771984211
+  },
+  {
+   "six": [
     "GPT-5.6 Terra (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
+    "GPT-6 Luna (max)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 36.75,
-   "sd": 2.6391812703521835,
-   "lead": 21.015844454771454,
-   "coh": 0.9947882371344786,
-   "esc": 0.05882198628410136,
-   "util": 0.774574650404336,
+   "ipw": 39.75,
+   "clean": 36.95833333333333,
+   "sd": 0.2975595178559536,
+   "lead": 24.201687254532914,
+   "coh": 0.9968495454449748,
+   "esc": 0.048137619114989066,
+   "util": 0.8477008337266316,
    "busy": {
-    "GPT-5.6 Terra (max)": 136.72163392604412,
-    "Muse Spark 1.3 (xhigh)": 132.1937578425351,
-    "Gemini 3.8 Flash (high)": 131.29986720597188,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 132.4932617728316,
-    "Inkling Small": 126.97968159403614,
-    "Ling 3.0 Flash": 121.08304526615183
+    "GPT-5.6 Terra (max)": 145.58312466604025,
+    "Muse Spark 1.3 (xhigh)": 143.240668215911,
+    "Gemini 3.8 Flash (high)": 142.36243370899618,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.33556569685652,
+    "GPT-6 Luna (max)": 144.05216448182523,
+    "Ling 3.0 Flash": 135.9084836268155
    },
-   "api_week": 770.210645624998,
-   "usd_idea": 20.958112806122397
+   "api_week": 794.1865490624976,
+   "usd_idea": 19.97953582547164,
+   "usd_clean": 21.48870031285225
   },
   {
    "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-5.6 Terra (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
-    "Inkling Small",
+    "Qwen3.8-Flash-Next",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 36.125,
-   "sd": 2.9753034392403657,
-   "lead": 23.114362780666767,
-   "coh": 0.991382413175844,
-   "esc": 0.05707999903002085,
-   "util": 0.8039785600691205,
+   "ipw": 38.791666666666664,
+   "clean": 36.875,
+   "sd": 0.7671646933134145,
+   "lead": 25.00166943993704,
+   "coh": 0.9976092164165665,
+   "esc": 0.03005244122820597,
+   "util": 0.8683669412099337,
    "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 144.20099978315145,
-    "Muse Spark 1.3 (xhigh)": 136.95012220719485,
-    "Gemini 3.8 Flash (high)": 137.70095912062305,
-    "MiniMax-M3": 137.7718852473136,
-    "Inkling Small": 130.7083088372569,
-    "Ling 3.0 Flash": 123.07811335413349
+    "GPT-5.6 Terra (max)": 147.82093811086384,
+    "Muse Spark 1.3 (xhigh)": 145.8555985682478,
+    "Gemini 3.8 Flash (high)": 145.62171674558547,
+    "Qwen3.8-Flash-Next": 150.3554796805555,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 146.2416781307446,
+    "Ling 3.0 Flash": 139.41846550361592
    },
-   "api_week": 1644.9095845312481,
-   "usd_idea": 45.53382932958473
+   "api_week": 804.5690742187477,
+   "usd_idea": 20.740770978786195,
+   "usd_clean": 21.818822351694852
   },
   {
    "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-5.6 Terra (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
+    "MiniMax-M3",
     "Ling 3.0 Flash"
    ],
-   "ipw": 36.08333333333333,
-   "sd": 1.8948028334836797,
-   "lead": 20.14134889885397,
-   "coh": 0.9971485293052021,
-   "esc": 0.057619113401355296,
-   "util": 0.7684015225535211,
+   "ipw": 39.791666666666664,
+   "clean": 36.25,
+   "sd": 1.233220715579062,
+   "lead": 24.27032506898071,
+   "coh": 0.9956900430855073,
+   "esc": 0.05669705324205679,
+   "util": 0.8536811063329643,
    "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 138.32413835430893,
-    "Muse Spark 1.3 (xhigh)": 131.0956208505819,
-    "Gemini 3.8 Flash (high)": 129.87643032764552,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.87999858733664,
-    "Inkling Small": 126.12295121219685,
-    "Ling 3.0 Flash": 118.24959540187936
+    "GPT-5.6 Terra (max)": 146.28870390517304,
+    "Muse Spark 1.3 (xhigh)": 144.04989218683878,
+    "Gemini 3.8 Flash (high)": 143.58841402298935,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.21005788326968,
+    "MiniMax-M3": 144.36743062017712,
+    "Ling 3.0 Flash": 138.0060565651801
    },
-   "api_week": 1579.782070312499,
-   "usd_idea": 43.78148924653577
+   "api_week": 832.4235665624979,
+   "usd_idea": 20.919545128272198,
+   "usd_clean": 22.963408732758563
   },
   {
    "six": [
     "Muse Spark 1.3 (xhigh)",
     "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.875,
-   "sd": 1.8722201615550802,
-   "lead": 20.638408249437575,
-   "coh": 0.9942581669443263,
-   "esc": 0.06660501194220651,
-   "util": 0.7758933451310511,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 132.43050601254208,
-    "GLM-5.3 (max)": 138.54615681185828,
-    "Gemini 3.8 Flash (high)": 131.6485405062818,
-    "GPT-6 Luna (max)": 134.31048797857628,
-    "Inkling Small": 126.16422227710275,
-    "Ling 3.0 Flash": 119.00057830573837
-   },
-   "api_week": 586.1489896874975,
-   "usd_idea": 16.33864779616718
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.791666666666664,
-   "sd": 2.4759257527909306,
-   "lead": 20.132185186791475,
-   "coh": 0.9947124014128897,
-   "esc": 0.06571816343124996,
-   "util": 0.7660505636621526,
-   "busy": {
-    "GPT-5.6 Terra (max)": 135.93046667269698,
-    "Muse Spark 1.3 (xhigh)": 130.7665810210807,
-    "Gemini 3.8 Flash (high)": 130.22385390286473,
-    "GPT-6 Luna (max)": 132.44077148467795,
-    "Inkling Small": 124.64430857643109,
-    "Ling 3.0 Flash": 118.17298651369836
-   },
-   "api_week": 727.9039392187481,
-   "usd_idea": 20.33724626455175
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
+    "Qwen3.8-Flash-Next",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiniMax-M3",
     "Ling 3.0 Flash"
    ],
-   "ipw": 35.75,
-   "sd": 1.800848565414526,
-   "lead": 19.778405217477935,
-   "coh": 0.9952940672814226,
-   "esc": 0.053558524830096294,
-   "util": 0.7663648291517915,
+   "ipw": 37.875,
+   "clean": 36.125,
+   "sd": 0.9455671431591849,
+   "lead": 25.603495342717025,
+   "coh": 0.9980677766618,
+   "esc": 0.031977334147882,
+   "util": 0.8685847272578344,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 135.1272301903504,
-    "Muse Spark 1.3 (xhigh)": 129.78347421342465,
-    "Gemini 3.8 Flash (high)": 128.83540932707845,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.16739308946524,
-    "MiniMax-M3": 130.20832920386945,
-    "Ling 3.0 Flash": 119.37391176081763
+    "Muse Spark 1.3 (xhigh)": 146.19533888000927,
+    "GLM-5.3 (max)": 148.66676792193243,
+    "Gemini 3.8 Flash (high)": 145.27554289545697,
+    "Qwen3.8-Flash-Next": 150.43153487195582,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 146.10036019342022,
+    "Ling 3.0 Flash": 138.86386031312242
    },
-   "api_week": 943.1476237499986,
-   "usd_idea": 26.381751713286675
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.75,
-   "sd": 3.344772040064914,
-   "lead": 21.5784629609618,
-   "coh": 0.9940003456650477,
-   "esc": 0.09625185384262876,
-   "util": 0.7795506998166635,
-   "busy": {
-    "GPT-5.6 Terra (max)": 137.7445150715325,
-    "Muse Spark 1.3 (xhigh)": 133.5005542385623,
-    "Gemini 3.8 Flash (high)": 133.2556869729436,
-    "MiniMax-M3": 133.94186232078758,
-    "Inkling Small": 127.53897568051926,
-    "Ling 3.0 Flash": 119.8055111308516
-   },
-   "api_week": 772.162147499998,
-   "usd_idea": 21.598941188811132
+   "api_week": 642.6992882812476,
+   "usd_idea": 16.96895810643558,
+   "usd_clean": 17.79098375865045
   },
   {
    "six": [
@@ -1284,129 +1330,55 @@
     "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.625,
-   "sd": 1.1629404780794055,
-   "lead": 19.68716555794346,
-   "coh": 0.9955640844917578,
-   "esc": 0.05023494840260275,
-   "util": 0.7592467065128423,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 129.6403552631944,
-    "GLM-5.3 (max)": 135.90700570203597,
-    "Gemini 3.8 Flash (high)": 129.23532135610776,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.3674769017165,
-    "Inkling Small": 124.59876809101772,
-    "Ling 3.0 Flash": 116.5717528508727
-   },
-   "api_week": 609.6869076562479,
-   "usd_idea": 17.114018460526257
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.5,
-   "sd": 1.8371173070873836,
-   "lead": 20.69280814341935,
-   "coh": 0.993376255095868,
-   "esc": 0.06677385898025881,
-   "util": 0.7686900149214403,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 137.47017127532524,
-    "Muse Spark 1.3 (xhigh)": 131.85669265133876,
-    "Gemini 3.8 Flash (high)": 131.10865926709226,
-    "MiniMax-M3": 131.6494511989783,
-    "Inkling Small": 124.88908868552798,
-    "Ling 3.0 Flash": 117.86547196254925
-   },
-   "api_week": 955.2154574999984,
-   "usd_idea": 26.907477676056292
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.29166666666667,
-   "sd": 1.8347532380253337,
-   "lead": 19.618073831442246,
-   "coh": 0.9951097213234317,
-   "esc": 0.0677741741152526,
-   "util": 0.7544476383295994,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 134.7869404154964,
-    "Muse Spark 1.3 (xhigh)": 128.82711861141905,
-    "Gemini 3.8 Flash (high)": 128.5054819031293,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.34508990174425,
-    "Inkling Small": 123.38340638654805,
-    "Ling 3.0 Flash": 115.63518221789919
-   },
-   "api_week": 941.3406820312483,
-   "usd_idea": 26.673171627803963
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.166666666666664,
-   "sd": 1.767766952966368,
-   "lead": 20.753179877023896,
-   "coh": 0.9952100439909597,
-   "esc": 0.06774402936155016,
-   "util": 0.7633558040620173,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 135.61697155551198,
-    "Muse Spark 1.3 (xhigh)": 130.07506235501512,
-    "Gemini 3.8 Flash (high)": 129.2840606346457,
-    "GPT-6 Luna (max)": 132.63227883445734,
-    "Inkling Small": 124.20028884365057,
-    "Ling 3.0 Flash": 117.65398827123265
-   },
-   "api_week": 913.1061149999979,
-   "usd_idea": 25.965102796208473
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "GPT-6 Luna (max)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 35.08333333333333,
-   "sd": 0.9242113755341171,
-   "lead": 19.42041821397981,
-   "coh": 0.9971791141201032,
-   "esc": 0.02851114298323036,
-   "util": 0.7576367343831494,
+   "ipw": 39.125,
+   "clean": 36.125,
+   "sd": 1.144885972002842,
+   "lead": 24.333968715387854,
+   "coh": 0.996419757786806,
+   "esc": 0.048105339131473086,
+   "util": 0.8560983372014083,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 133.6534075843947,
-    "Muse Spark 1.3 (xhigh)": 127.5136344139793,
-    "Gemini 3.8 Flash (high)": 127.33074031785543,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.13059515325375,
-    "GPT-6 Luna (max)": 129.89237982138624,
-    "Ling 3.0 Flash": 117.1770709673451
+    "Muse Spark 1.3 (xhigh)": 144.05791754853396,
+    "GLM-5.3 (max)": 147.56750814508206,
+    "Gemini 3.8 Flash (high)": 144.06455928255244,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.54866125784878,
+    "GPT-6 Luna (max)": 145.28184325409254,
+    "Ling 3.0 Flash": 137.42663441090968
    },
-   "api_week": 901.7835459374983,
-   "usd_idea": 25.704044064726794
+   "api_week": 640.0490235937476,
+   "usd_idea": 16.359080475239555,
+   "usd_clean": 17.717620030276752
+  },
+  {
+   "six": [
+    "GPT-6 Sol (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.5,
+   "clean": 36.04166666666667,
+   "sd": 1.0565601944254968,
+   "lead": 25.564910534250252,
+   "coh": 0.9987624799761795,
+   "esc": 0.029033953988981228,
+   "util": 0.8690566646273432,
+   "busy": {
+    "GPT-6 Sol (max)": 148.6629886380529,
+    "Muse Spark 1.3 (xhigh)": 145.99069215678293,
+    "Gemini 3.8 Flash (high)": 145.69919970120995,
+    "MiMo-V2.6-Pro": 151.21673461361968,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.9716349435802,
+    "Ling 3.0 Flash": 138.4678678911163
+   },
+   "api_week": 772.2303891562486,
+   "usd_idea": 20.592810377499962,
+   "usd_clean": 21.42604547947973
   },
   {
    "six": [
@@ -1414,311 +1386,307 @@
     "Qwen3.8 Max (0902)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "GPT-6 Luna (max)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 38.75,
+   "clean": 36.041666666666664,
+   "sd": 0.9673488971869919,
+   "lead": 24.88404766917318,
+   "coh": 0.9959510708290826,
+   "esc": 0.040840730178124174,
+   "util": 0.8648190252519818,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 145.3607012637135,
+    "Qwen3.8 Max (0902)": 152.1647867087124,
+    "Gemini 3.8 Flash (high)": 144.89687619296984,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.18109400706274,
+    "GPT-6 Luna (max)": 146.30825545334844,
+    "Ling 3.0 Flash": 137.8258638281909
+   },
+   "api_week": 645.2225207812481,
+   "usd_idea": 16.650903762096725,
+   "usd_clean": 17.9021277442196
+  },
+  {
+   "six": [
+    "GPT-6 Sol (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "MiniMax-M3",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 39.041666666666664,
+   "clean": 36.0,
+   "sd": 0.5000000000000006,
+   "lead": 24.399781135322662,
+   "coh": 0.9951983117699508,
+   "esc": 0.04478750461672766,
+   "util": 0.8552496294879358,
+   "busy": {
+    "GPT-6 Sol (max)": 147.5373925557907,
+    "Muse Spark 1.3 (xhigh)": 144.28664035684577,
+    "Gemini 3.8 Flash (high)": 144.08080570873176,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.3415815081062,
+    "MiniMax-M3": 144.89656828576784,
+    "Ling 3.0 Flash": 136.9486381085971
+   },
+   "api_week": 785.8579068749989,
+   "usd_idea": 20.128697721451413,
+   "usd_clean": 21.829386302083304
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 38.0,
+   "clean": 36.0,
+   "sd": 0.485912657903773,
+   "lead": 25.13889116127058,
+   "coh": 0.997407393520671,
+   "esc": 0.03510894144740898,
+   "util": 0.8684476715477351,
+   "busy": {
+    "GPT-5.6 Terra (max)": 148.10692732909214,
+    "Muse Spark 1.3 (xhigh)": 145.63222600106616,
+    "Gemini 3.8 Flash (high)": 145.6729554743049,
+    "GLM 5.3 Flash": 151.1159590101,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 146.19970250579678,
+    "Ling 3.0 Flash": 138.6674825997569
+   },
+   "api_week": 804.9680920312475,
+   "usd_idea": 21.183370842927566,
+   "usd_clean": 22.36022477864576
+  },
+  {
+   "six": [
+    "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
+    "Gemini 3.8 Flash (high)",
+    "Step 5 Preview",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 38.04166666666667,
+   "clean": 35.95833333333333,
+   "sd": 1.2040152730666573,
+   "lead": 25.47307153805985,
+   "coh": 0.9983482210073141,
+   "esc": 0.04177753107076992,
+   "util": 0.8609736186434477,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 145.15337941992212,
+    "GLM-5.3 (max)": 148.14264828149322,
+    "Gemini 3.8 Flash (high)": 144.7581567079002,
+    "Step 5 Preview": 148.31755625731964,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.01039313227483,
+    "Ling 3.0 Flash": 136.47927379368528
+   },
+   "api_week": 717.2982782812476,
+   "usd_idea": 18.855595486034982,
+   "usd_clean": 19.948040183951267
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "Inkling Small",
     "Ling 3.0 Flash"
    ],
-   "ipw": 35.08333333333333,
-   "sd": 1.7380544678845162,
-   "lead": 20.669738553554712,
-   "coh": 0.9951108261064403,
-   "esc": 0.07354125808329737,
-   "util": 0.7781192666841595,
+   "ipw": 40.66666666666667,
+   "clean": 35.875,
+   "sd": 0.3200477394945266,
+   "lead": 23.587277816620563,
+   "coh": 0.9937267496542741,
+   "esc": 0.07478560029505019,
+   "util": 0.848451419503699,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 132.19509540281763,
-    "Qwen3.8 Max (0902)": 143.27842697124632,
-    "Gemini 3.8 Flash (high)": 131.87599047279227,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 133.15927502200387,
-    "Inkling Small": 125.83832317836321,
-    "Ling 3.0 Flash": 117.99710977040955
+    "GPT-5.6 Terra (max)": 146.8168445782518,
+    "Muse Spark 1.3 (xhigh)": 143.71015187507737,
+    "Gemini 3.8 Flash (high)": 143.78462086223195,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.92322444612606,
+    "Inkling Small": 141.17123536098177,
+    "Ling 3.0 Flash": 135.8329537370596
    },
-   "api_week": 623.6814562499982,
-   "usd_idea": 17.77714364608071
+   "api_week": 836.3817459374976,
+   "usd_idea": 20.566764244364695,
+   "usd_clean": 23.313776890243837
   },
   {
    "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-6 Sol (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
-    "Ling 3.0 Flash",
-    "Gemma 4 31B (Reasoning)"
-   ],
-   "ipw": 35.0,
-   "sd": 2.6562295750848706,
-   "lead": 25.260993213265436,
-   "coh": 0.9945661223577194,
-   "esc": 0.08908802199388514,
-   "util": 0.8463179880509801,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 148.89287128529054,
-    "Muse Spark 1.3 (xhigh)": 144.44313490990126,
-    "Gemini 3.8 Flash (high)": 144.15453948908433,
-    "MiniMax-M3": 144.4810395895539,
-    "Ling 3.0 Flash": 134.97083399541694,
-    "Gemma 4 31B (Reasoning)": 136.1461126861412
-   },
-   "api_week": 989.4023198437485,
-   "usd_idea": 28.268637709821387
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
-    "Qwen3.8 27B (medium)",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 34.916666666666664,
-   "sd": 2.370243775554649,
-   "lead": 26.169203276601074,
-   "coh": 0.9936443655975504,
-   "esc": 0.0661937909675702,
-   "util": 0.8484907107331219,
+   "ipw": 38.083333333333336,
+   "clean": 35.70833333333333,
+   "sd": 1.1016086722001885,
+   "lead": 25.340128203501337,
+   "coh": 0.9973966791001059,
+   "esc": 0.04396658640915189,
+   "util": 0.8677711004988492,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 142.54112418815038,
-    "GLM-5.3 (max)": 147.30544832486243,
-    "Gemini 3.8 Flash (high)": 142.34993645808925,
-    "MiniMax-M3": 142.92630862506812,
-    "Qwen3.8 27B (medium)": 148.19970642708662,
-    "Ling 3.0 Flash": 131.95611239573017
+    "GPT-6 Sol (max)": 148.20956025673667,
+    "Muse Spark 1.3 (xhigh)": 146.14317402899079,
+    "Gemini 3.8 Flash (high)": 145.0843349565773,
+    "GLM 5.3 Flash": 151.00181446820852,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.76875275633236,
+    "Ling 3.0 Flash": 138.50563283599428
    },
-   "api_week": 668.2038857812478,
-   "usd_idea": 19.13710412738657
+   "api_week": 754.5860301562484,
+   "usd_idea": 19.814075190098425,
+   "usd_clean": 21.1319308328471
+  },
+  {
+   "six": [
+    "Grok 4.6 (high)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "MiniMax-M3",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 38.833333333333336,
+   "clean": 35.66666666666667,
+   "sd": 0.9354143466934867,
+   "lead": 24.56467537739846,
+   "coh": 0.9959663994457616,
+   "esc": 0.05262446294651127,
+   "util": 0.8586870820042143,
+   "busy": {
+    "Grok 4.6 (high)": 149.46140385463946,
+    "Muse Spark 1.3 (xhigh)": 144.31071644193122,
+    "Gemini 3.8 Flash (high)": 144.2145262934385,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.98240938230967,
+    "MiniMax-M3": 145.16736226757018,
+    "Ling 3.0 Flash": 137.4201604203591
+   },
+   "api_week": 714.0332760937482,
+   "usd_idea": 18.38712298953858,
+   "usd_clean": 20.019624563376116
   },
   {
    "six": [
     "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "GPT-6 Luna (max)",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 34.875,
-   "sd": 1.1865859054915133,
-   "lead": 19.06965698886286,
-   "coh": 0.9976403413450392,
-   "esc": 0.04550767666001323,
-   "util": 0.7433749004805925,
-   "busy": {
-    "GPT-5.6 Terra (max)": 130.45492127552143,
-    "Muse Spark 1.3 (xhigh)": 125.13143955080184,
-    "Gemini 3.8 Flash (high)": 125.19745958800195,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 126.07798709330481,
-    "GPT-6 Luna (max)": 127.94706832099608,
-    "Ling 3.0 Flash": 114.51302385581103
-   },
-   "api_week": 701.7868101562484,
-   "usd_idea": 20.122919287634364
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiniMax-M3",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 34.791666666666664,
-   "sd": 0.6601241465731204,
-   "lead": 19.200331503680374,
-   "coh": 0.9950468492405906,
-   "esc": 0.038360583499947386,
-   "util": 0.7476574245642315,
-   "busy": {
-    "GPT-5.6 Terra (max)": 131.44231470779903,
-    "Muse Spark 1.3 (xhigh)": 126.40747206033089,
-    "Gemini 3.8 Flash (high)": 125.53863453776766,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.78079827868854,
-    "MiniMax-M3": 127.01015890154892,
-    "Ling 3.0 Flash": 115.45930547461035
-   },
-   "api_week": 736.3266787499988,
-   "usd_idea": 21.163880586826313
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "GPT-6 Luna (max)",
-    "Inkling Small"
-   ],
-   "ipw": 34.66666666666667,
-   "sd": 2.508319490548736,
-   "lead": 20.758953933441628,
-   "coh": 0.9953006590712304,
-   "esc": 0.055883401850977246,
-   "util": 0.7734395342806999,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 129.49188607183416,
-    "GLM-5.3 (max)": 134.65700355072292,
-    "Gemini 3.8 Flash (high)": 128.4105027962345,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.0628730883522,
-    "GPT-6 Luna (max)": 131.20773293434428,
-    "Inkling Small": 125.79705211345733
-   },
-   "api_week": 610.4899584374981,
-   "usd_idea": 17.610287262620137
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "Step 5 Preview",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 38.125,
+   "clean": 35.625,
+   "sd": 1.1865859054915102,
+   "lead": 25.418935595498496,
+   "coh": 0.9967237944530087,
+   "esc": 0.040564114055525874,
+   "util": 0.8540291313701074,
+   "busy": {
+    "GPT-5.6 Terra (max)": 146.1384030021625,
+    "Muse Spark 1.3 (xhigh)": 143.75830404524828,
+    "Gemini 3.8 Flash (high)": 143.16225776705494,
+    "Step 5 Preview": 147.63236862239995,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.02956269599386,
+    "Ling 3.0 Flash": 136.1404682882087
+   },
+   "api_week": 871.1817604687475,
+   "usd_idea": 22.850669127049116,
+   "usd_clean": 24.45422485526309
+  },
+  {
+   "six": [
+    "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
+    "Gemini 3.8 Flash (high)",
+    "GLM 5.3 Flash",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.791666666666664,
+   "clean": 35.583333333333336,
+   "sd": 0.629152869605896,
+   "lead": 25.334110085890003,
+   "coh": 0.9969689277798173,
+   "esc": 0.0342224035805295,
+   "util": 0.8662950353143811,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 145.53324654015924,
+    "GLM-5.3 (max)": 148.87316901927355,
+    "Gemini 3.8 Flash (high)": 145.3467772256278,
+    "GLM 5.3 Flash": 150.00590334020555,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.43434694424795,
+    "Ling 3.0 Flash": 138.03195252738212
+   },
+   "api_week": 641.6703299999973,
+   "usd_idea": 16.97914875413444,
+   "usd_clean": 18.032889836065497
+  },
+  {
+   "six": [
+    "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "Inkling Small",
     "Ling 3.0 Flash"
    ],
-   "ipw": 34.583333333333336,
-   "sd": 1.2500000000000007,
-   "lead": 21.63625940503912,
-   "coh": 0.9960750489820257,
-   "esc": 0.05776258625095834,
-   "util": 0.7888805459314042,
+   "ipw": 39.541666666666664,
+   "clean": 35.54166666666667,
+   "sd": 1.7887573278054743,
+   "lead": 24.2387672264828,
+   "coh": 0.9953492814716811,
+   "esc": 0.06985404807939982,
+   "util": 0.8465631433122848,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 139.62917194145996,
-    "Muse Spark 1.3 (xhigh)": 133.92723596868782,
-    "Gemini 3.8 Flash (high)": 132.7333018850239,
-    "Step 5 Preview": 140.86997573298737,
-    "Inkling Small": 127.95880203042381,
-    "Ling 3.0 Flash": 120.07310274027253
+    "Muse Spark 1.3 (xhigh)": 144.06861803079414,
+    "GLM-5.3 (max)": 147.5095303087503,
+    "Gemini 3.8 Flash (high)": 143.57091787171942,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.2310456957435,
+    "Inkling Small": 139.83063732162532,
+    "Ling 3.0 Flash": 134.1248992301505
    },
-   "api_week": 1010.0593453124978,
-   "usd_idea": 29.206535286144515
+   "api_week": 675.1780757812475,
+   "usd_idea": 17.075104129346617,
+   "usd_clean": 18.996804007913173
   },
   {
    "six": [
     "Muse Spark 1.3 (xhigh)",
     "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "GPT-6 Luna (max)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 34.583333333333336,
-   "sd": 0.44876373392787455,
-   "lead": 18.490502056097554,
-   "coh": 0.9957751627918919,
-   "esc": 0.050568876745129734,
-   "util": 0.7477170428916885,
+   "ipw": 37.333333333333336,
+   "clean": 35.541666666666664,
+   "sd": 0.7671646933134156,
+   "lead": 25.659234310631433,
+   "coh": 0.9972153015110162,
+   "esc": 0.026816349228985563,
+   "util": 0.8632196098391085,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 125.98480301105295,
-    "GLM-5.3 (max)": 131.92276878931654,
-    "Gemini 3.8 Flash (high)": 124.97375879676363,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 126.57329946768924,
-    "GPT-6 Luna (max)": 129.05243530481013,
-    "Ling 3.0 Flash": 115.19171386518937
+    "Muse Spark 1.3 (xhigh)": 145.22560767517848,
+    "GLM-5.3 (max)": 147.70201672537178,
+    "Gemini 3.8 Flash (high)": 144.84813691443185,
+    "MiMo-V2.6-Pro": 150.96107961733722,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.369984319328,
+    "Ling 3.0 Flash": 136.01854146617404
    },
-   "api_week": 561.1360012499982,
-   "usd_idea": 16.22561931325296
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "GPT-6 Luna (max)",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 34.333333333333336,
-   "sd": 0.3118047822311602,
-   "lead": 18.95501570165192,
-   "coh": 0.9978700627159393,
-   "esc": 0.033971274635984754,
-   "util": 0.7426219435681761,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 132.04171554953692,
-    "Muse Spark 1.3 (xhigh)": 125.23844437340388,
-    "Gemini 3.8 Flash (high)": 124.55135171610137,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 125.39378440665514,
-    "GPT-6 Luna (max)": 126.89041811914339,
-    "Ling 3.0 Flash": 114.44720495188095
-   },
-   "api_week": 1478.2271896874997,
-   "usd_idea": 43.05516086468445
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "MiniMax-M3",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 34.291666666666664,
-   "sd": 2.328492001274644,
-   "lead": 21.033946344559546,
-   "coh": 0.9953142689815484,
-   "esc": 0.05549065107888637,
-   "util": 0.7771453481779833,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 137.19561974302678,
-    "Muse Spark 1.3 (xhigh)": 131.5530664672055,
-    "Gemini 3.8 Flash (high)": 130.4263093675608,
-    "GPT-6 Luna (max)": 133.19504166056328,
-    "MiniMax-M3": 131.1265386823946,
-    "Ling 3.0 Flash": 119.86593504265622
-   },
-   "api_week": 1534.8540693749994,
-   "usd_idea": 44.758806397326836
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiniMax-M3",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 34.291666666666664,
-   "sd": 0.7938566201357359,
-   "lead": 19.290203479200983,
-   "coh": 0.9958917257750444,
-   "esc": 0.06590242624174675,
-   "util": 0.7506769124812989,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 127.66611628618716,
-    "GLM-5.3 (max)": 132.60690725803144,
-    "Gemini 3.8 Flash (high)": 126.97456866700118,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.44919084160068,
-    "MiniMax-M3": 126.6319810993767,
-    "Ling 3.0 Flash": 115.35356362895206
-   },
-   "api_week": 596.2544934374982,
-   "usd_idea": 17.38773735419193
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiniMax-M3",
-    "Inkling Small"
-   ],
-   "ipw": 34.208333333333336,
-   "sd": 0.6277716322216419,
-   "lead": 20.01994412677075,
-   "coh": 0.9940437617744639,
-   "esc": 0.045155267901502795,
-   "util": 0.7687324573415579,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 134.7708456288478,
-    "Muse Spark 1.3 (xhigh)": 128.348272030275,
-    "Gemini 3.8 Flash (high)": 128.4854863016775,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 129.0246759646426,
-    "MiniMax-M3": 129.27144427832351,
-    "Inkling Small": 124.98159279652396
-   },
-   "api_week": 973.2954824999981,
-   "usd_idea": 28.451999488428687
+   "api_week": 655.4678035312478,
+   "usd_idea": 17.55717330887271,
+   "usd_clean": 18.442235972743198
   },
   {
    "six": [
@@ -1726,77 +1694,55 @@
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "MiMo-V2.6-Pro",
-    "Inkling Small",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 34.208333333333336,
-   "sd": 1.1982336537123663,
-   "lead": 21.326807339853524,
-   "coh": 0.9943307534221145,
-   "esc": 0.052757687853583674,
-   "util": 0.7807876929068025,
+   "ipw": 37.791666666666664,
+   "clean": 35.5,
+   "sd": 0.6561673228343182,
+   "lead": 25.563304884462156,
+   "coh": 0.996964145547828,
+   "esc": 0.03751459008303474,
+   "util": 0.8625704633214235,
    "busy": {
-    "GPT-5.6 Terra (max)": 137.19132424795202,
-    "Muse Spark 1.3 (xhigh)": 131.8566926513387,
-    "Gemini 3.8 Flash (high)": 131.41359218922713,
-    "MiMo-V2.6-Pro": 142.52446474001619,
-    "Inkling Small": 125.87817110309989,
-    "Ling 3.0 Flash": 118.16974951842315
+    "GPT-5.6 Terra (max)": 147.60801183159893,
+    "Muse Spark 1.3 (xhigh)": 145.17478038444253,
+    "Gemini 3.8 Flash (high)": 144.9493646467799,
+    "MiMo-V2.6-Pro": 151.01540630404725,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.14191675711146,
+    "Ling 3.0 Flash": 135.58154710401482
    },
-   "api_week": 746.3898779062476,
-   "usd_idea": 21.81894892783184
+   "api_week": 817.7832402187478,
+   "usd_idea": 21.63924781174195,
+   "usd_clean": 23.036147611795712
   },
   {
    "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "MiniMax-M3",
-    "Inkling Small"
-   ],
-   "ipw": 34.208333333333336,
-   "sd": 1.4499760534421093,
-   "lead": 21.595093468211385,
-   "coh": 0.9923513634764574,
-   "esc": 0.04938405299634675,
-   "util": 0.7848064622910831,
-   "busy": {
-    "GPT-5.6 Terra (max)": 135.78642830731184,
-    "Muse Spark 1.3 (xhigh)": 131.30561781493836,
-    "Gemini 3.8 Flash (high)": 131.134903493997,
-    "GPT-6 Luna (max)": 133.86531738479096,
-    "MiniMax-M3": 131.95603978757066,
-    "Inkling Small": 127.0366072008029
-   },
-   "api_week": 763.6114321874979,
-   "usd_idea": 22.322380478075456
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Grok 4.6 (high)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiniMax-M3",
+    "Inkling Small",
     "Ling 3.0 Flash"
    ],
-   "ipw": 34.16666666666667,
-   "sd": 0.857969178415584,
-   "lead": 19.785951283507224,
-   "coh": 0.9945277507375733,
-   "esc": 0.056105253139990485,
-   "util": 0.7507235059507498,
+   "ipw": 39.58333333333333,
+   "clean": 35.45833333333333,
+   "sd": 0.844713955529719,
+   "lead": 24.258514977551076,
+   "coh": 0.9954008781249505,
+   "esc": 0.07485889252011066,
+   "util": 0.8542963190815669,
    "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 133.53549130063146,
-    "Muse Spark 1.3 (xhigh)": 127.24344723690923,
-    "Gemini 3.8 Flash (high)": 125.82107240826969,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.5555290914685,
-    "MiniMax-M3": 127.0194966250593,
-    "Ling 3.0 Flash": 115.55425733601774
+    "Grok 4.6 (high)": 149.49002733460736,
+    "Muse Spark 1.3 (xhigh)": 145.07045068240555,
+    "Gemini 3.8 Flash (high)": 144.3519960534174,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.21747288201746,
+    "Inkling Small": 141.48717247853708,
+    "Ling 3.0 Flash": 135.51357020323456
    },
-   "api_week": 1525.1957203125,
-   "usd_idea": 44.63987474085366
+   "api_week": 718.6739399999977,
+   "usd_idea": 18.155973221052577,
+   "usd_clean": 20.268125217391244
   },
   {
    "six": [
@@ -1805,336 +1751,530 @@
     "Gemini 3.8 Flash (high)",
     "Step 5 Preview",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Ling 3.0 Flash"
+    "GPT-6 Luna (max)"
    ],
-   "ipw": 34.125,
-   "sd": 0.4912427551063187,
-   "lead": 18.86849081214464,
-   "coh": 0.9977100194689883,
-   "esc": 0.03912815911126115,
-   "util": 0.7541789250942186,
+   "ipw": 37.20833333333333,
+   "clean": 35.416666666666664,
+   "sd": 0.8036375634160786,
+   "lead": 25.720827410048194,
+   "coh": 0.9973562243661866,
+   "esc": 0.02804703226630091,
+   "util": 0.8803636779775186,
    "busy": {
-    "GPT-5.6 Terra (max)": 131.4965900338861,
-    "Muse Spark 1.3 (xhigh)": 126.43288570569891,
-    "Gemini 3.8 Flash (high)": 125.52488756176977,
-    "Step 5 Preview": 134.94361402498777,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 127.06721265457533,
-    "Ling 3.0 Flash": 114.74716651405447
+    "GPT-5.6 Terra (max)": 149.03169538511526,
+    "Muse Spark 1.3 (xhigh)": 146.85475609929432,
+    "Gemini 3.8 Flash (high)": 146.40029547710182,
+    "Step 5 Preview": 149.82854839253412,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 147.21411344203574,
+    "GPT-6 Luna (max)": 148.07717860525761
    },
-   "api_week": 774.7074018749984,
-   "usd_idea": 22.70204840659336
+   "api_week": 891.0600103124973,
+   "usd_idea": 23.94786141937283,
+   "usd_clean": 25.159341467646986
   },
   {
    "six": [
-    "GPT-5.6 Terra (max)",
+    "GPT-6 Sol (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiniMax-M3",
-    "Inkling Small"
-   ],
-   "ipw": 34.04166666666667,
-   "sd": 1.3352850299135062,
-   "lead": 20.24120838362458,
-   "coh": 0.9947624348285677,
-   "esc": 0.049894183516667426,
-   "util": 0.7622429302769858,
-   "busy": {
-    "GPT-5.6 Terra (max)": 132.55078386750165,
-    "Muse Spark 1.3 (xhigh)": 128.14095018648362,
-    "Gemini 3.8 Flash (high)": 127.24825846186793,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 128.61191565265563,
-    "MiniMax-M3": 128.21628152164547,
-    "Inkling Small": 123.57268402904741
-   },
-   "api_week": 778.6119065624983,
-   "usd_idea": 22.87232038861684
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
     "Inkling Small",
     "Ling 3.0 Flash"
    ],
-   "ipw": 33.95833333333333,
-   "sd": 1.0565601944254968,
-   "lead": 19.50492325109777,
-   "coh": 0.9910632637057462,
-   "esc": 0.07369136080276997,
-   "util": 0.7449469432738636,
+   "ipw": 39.33333333333333,
+   "clean": 35.375,
+   "sd": 0.776164000424881,
+   "lead": 24.130014880399525,
+   "coh": 0.9961541989972009,
+   "esc": 0.07100012033790015,
+   "util": 0.8506721919120082,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 127.47350760550356,
-    "GLM-5.3 (max)": 135.9116439289425,
-    "Gemini 3.8 Flash (high)": 127.51694935637241,
-    "MiniMax-M3": 127.58442889743999,
-    "Inkling Small": 120.53001034736569,
-    "Ling 3.0 Flash": 111.88997868443026
+    "GPT-6 Sol (max)": 147.46675798382682,
+    "Muse Spark 1.3 (xhigh)": 144.1221204420952,
+    "Gemini 3.8 Flash (high)": 144.19578041707783,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.49409294541653,
+    "Inkling Small": 141.19969816436506,
+    "Ling 3.0 Flash": 135.99911949452272
    },
-   "api_week": 596.363120624998,
-   "usd_idea": 17.561613368098104
+   "api_week": 788.8976559374986,
+   "usd_idea": 20.056720066207593,
+   "usd_clean": 22.300993807420454
   },
   {
    "six": [
-    "GPT-5.6 Terra (max)",
+    "GPT-6 Sol (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "MiniMax-M3",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 33.875,
-   "sd": 1.0889278621143306,
-   "lead": 20.035987752794277,
-   "coh": 0.9949368808940191,
-   "esc": 0.049217835553639615,
-   "util": 0.7479500088821516,
-   "busy": {
-    "GPT-5.6 Terra (max)": 131.6949037253584,
-    "Muse Spark 1.3 (xhigh)": 126.32320576253187,
-    "Gemini 3.8 Flash (high)": 126.09226275295514,
-    "GPT-6 Luna (max)": 128.2477684579303,
-    "MiniMax-M3": 126.83585472935428,
-    "Ling 3.0 Flash": 114.73961352507882
-   },
-   "api_week": 702.7347989062484,
-   "usd_idea": 20.744938713099586
-  },
-  {
-   "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "Inkling Small",
-    "Ling 3.0 Flash",
-    "Gemma 4 31B (Reasoning)"
-   ],
-   "ipw": 33.833333333333336,
-   "sd": 1.2247448713915905,
-   "lead": 22.17193356446071,
-   "coh": 0.9949221257097347,
-   "esc": 0.07772151784703926,
-   "util": 0.7838306506814531,
-   "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 144.5127900616626,
-    "Muse Spark 1.3 (xhigh)": 138.92837386504974,
-    "Gemini 3.8 Flash (high)": 138.11961702601317,
-    "Inkling Small": 129.51287109515553,
-    "Ling 3.0 Flash": 118.6466668223106,
-    "Gemma 4 31B (Reasoning)": 120.38097701671305
-   },
-   "api_week": 955.2186328124983,
-   "usd_idea": 28.233063038793052
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "Inkling Small",
-    "Ling 3.0 Flash",
-    "Gemma 4 31B (Reasoning)"
-   ],
-   "ipw": 33.833333333333336,
-   "sd": 1.7677669529663684,
-   "lead": 22.96110872915635,
-   "coh": 0.9951067430174725,
-   "esc": 0.08414240985790827,
-   "util": 0.7960884289375143,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 146.47315109425983,
-    "Muse Spark 1.3 (xhigh)": 140.0867010697166,
-    "Gemini 3.8 Flash (high)": 139.34684706509705,
-    "Inkling Small": 131.4469185850552,
-    "Ling 3.0 Flash": 121.60528050389291,
-    "Gemma 4 31B (Reasoning)": 123.49823805099282
-   },
-   "api_week": 1621.8045393749976,
-   "usd_idea": 47.935109538177265
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "MiniMax-M3",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 33.833333333333336,
-   "sd": 0.7728015412913103,
-   "lead": 19.9497479289992,
-   "coh": 0.9932361274060749,
-   "esc": 0.06292710085787635,
-   "util": 0.7608218115707368,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 128.42852564722656,
-    "GLM-5.3 (max)": 134.2929027385594,
-    "Gemini 3.8 Flash (high)": 127.12078650261505,
-    "GPT-6 Luna (max)": 130.93055124387422,
-    "MiniMax-M3": 129.01465688178675,
-    "Ling 3.0 Flash": 117.12096304924077
-   },
-   "api_week": 566.304831562498,
-   "usd_idea": 16.738073839285654
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 33.791666666666664,
-   "sd": 1.101608672200191,
-   "lead": 19.864909720111918,
-   "coh": 0.9960144655920413,
-   "esc": 0.06490512338097851,
-   "util": 0.757870837977636,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 137.90598190459275,
-    "Muse Spark 1.3 (xhigh)": 129.06252922114354,
-    "Gemini 3.8 Flash (high)": 128.89539613143285,
-    "GPT-6 Luna (max)": 131.6764219745938,
-    "Inkling Small": 122.35305290407021,
-    "Ling 3.0 Flash": 114.04042254562401
-   },
-   "api_week": 1534.7977017187484,
-   "usd_idea": 45.41941410758319
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "Qwen3.8-Flash-Next",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 33.75,
-   "sd": 1.1931517552730286,
-   "lead": 20.941868928224523,
-   "coh": 0.9958078346124206,
-   "esc": 0.06829764542482673,
-   "util": 0.7762452631697646,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 139.47784711316436,
-    "Muse Spark 1.3 (xhigh)": 131.0809076874741,
-    "Gemini 3.8 Flash (high)": 130.4575524948288,
-    "Qwen3.8-Flash-Next": 139.74718890968094,
-    "Inkling Small": 124.85777960180624,
-    "Ling 3.0 Flash": 116.83394946816824
-   },
-   "api_week": 1550.2900387499978,
-   "usd_idea": 45.9345196666666
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
+    "Step 5 Preview",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiMo-V2.5",
     "Ling 3.0 Flash"
    ],
-   "ipw": 33.75,
-   "sd": 1.4264368973853088,
-   "lead": 21.13960961268001,
-   "coh": 0.9948942947348216,
-   "esc": 0.045918019478484826,
-   "util": 0.7898508862142097,
+   "ipw": 37.791666666666664,
+   "clean": 35.33333333333333,
+   "sd": 0.9354143466934847,
+   "lead": 25.295499940340903,
+   "coh": 0.9952945597253489,
+   "esc": 0.027497828470324285,
+   "util": 0.8597278027870037,
    "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 139.41487174423136,
-    "Muse Spark 1.3 (xhigh)": 132.07337741710782,
-    "Gemini 3.8 Flash (high)": 131.4010949383199,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 131.68033383634202,
-    "MiMo-V2.5": 140.5719990214498,
-    "Ling 3.0 Flash": 121.02801634647247
+    "GPT-6 Sol (max)": 147.343717116535,
+    "Muse Spark 1.3 (xhigh)": 145.20286915037556,
+    "Gemini 3.8 Flash (high)": 144.4494746104932,
+    "Step 5 Preview": 148.39169969542664,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.96841750732708,
+    "Ling 3.0 Flash": 136.2494471291422
    },
-   "api_week": 1553.3534614687496,
-   "usd_idea": 46.02528774722221
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "Qwen3.8 27B (medium)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 33.75,
-   "sd": 1.5388487760516147,
-   "lead": 21.506243022179305,
-   "coh": 0.9940460673947442,
-   "esc": 0.09433708713066698,
-   "util": 0.7854291262784263,
-   "busy": {
-    "GPT-5.6 Terra (max)": 138.72982099126824,
-    "Muse Spark 1.3 (xhigh)": 133.76940385534988,
-    "Gemini 3.8 Flash (high)": 133.81181463831257,
-    "Qwen3.8 27B (medium)": 140.52792438930953,
-    "Inkling Small": 126.54847012277814,
-    "Ling 3.0 Flash": 118.32512529163527
-   },
-   "api_week": 781.993863749998,
-   "usd_idea": 23.170188555555498
+   "api_week": 828.2021774999985,
+   "usd_idea": 21.91494185226016,
+   "usd_clean": 23.439684268867886
   },
   {
    "six": [
     "Muse Spark 1.3 (xhigh)",
     "Qwen3.8 Max (0902)",
     "Gemini 3.8 Flash (high)",
+    "Qwen3.8-Flash-Next",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 36.75,
+   "clean": 35.291666666666664,
+   "sd": 0.5574620066774852,
+   "lead": 26.231498437575475,
+   "coh": 0.9984449918446315,
+   "esc": 0.02947965765044133,
+   "util": 0.8711505592024866,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 146.40399828408323,
+    "Qwen3.8 Max (0902)": 151.7261182399968,
+    "Gemini 3.8 Flash (high)": 145.50049341178607,
+    "Qwen3.8-Flash-Next": 151.74700799728728,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 146.39558875555326,
+    "Ling 3.0 Flash": 136.34655698739988
+   },
+   "api_week": 643.399725937498,
+   "usd_idea": 17.50747553571423,
+   "usd_clean": 18.230924938016475
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "GPT-6 Luna (max)",
+    "Inkling Small"
+   ],
+   "ipw": 38.875,
+   "clean": 35.25,
+   "sd": 0.7861650943380508,
+   "lead": 24.93667522105316,
+   "coh": 0.9940991650446912,
+   "esc": 0.05038757895910486,
+   "util": 0.8580933268350759,
+   "busy": {
+    "GPT-5.6 Terra (max)": 146.1738907153733,
+    "Muse Spark 1.3 (xhigh)": 144.271927193738,
+    "Gemini 3.8 Flash (high)": 143.8483568418583,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.8518658837148,
+    "GPT-6 Luna (max)": 145.22808680503158,
+    "Inkling Small": 141.58394601004042
+   },
+   "api_week": 838.1939624999974,
+   "usd_idea": 21.561259485530478,
+   "usd_clean": 23.778552127659502
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
     "GPT-6 Luna (max)",
     "Inkling Small",
     "Ling 3.0 Flash"
    ],
-   "ipw": 33.75,
-   "sd": 1.314977819838292,
-   "lead": 20.62677273253542,
-   "coh": 0.9935383264995985,
-   "esc": 0.07422022252253983,
-   "util": 0.7641457210562584,
+   "ipw": 39.041666666666664,
+   "clean": 35.25,
+   "sd": 0.30046260628866445,
+   "lead": 24.223044160323425,
+   "coh": 0.9939951645606927,
+   "esc": 0.05764112730230146,
+   "util": 0.852228423779966,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 129.70455815675564,
-    "Qwen3.8 Max (0902)": 140.6929416026043,
-    "Gemini 3.8 Flash (high)": 129.03286589141175,
-    "GPT-6 Luna (max)": 132.54492460473344,
-    "Inkling Small": 123.3022873969054,
-    "Ling 3.0 Flash": 114.98130917229796
+    "GPT-5.6 Terra (max)": 147.33246017607965,
+    "Muse Spark 1.3 (xhigh)": 144.55816509419842,
+    "Gemini 3.8 Flash (high)": 144.490715538487,
+    "GPT-6 Luna (max)": 146.23266044685673,
+    "Inkling Small": 140.88091476647142,
+    "Ling 3.0 Flash": 135.5513351481125
    },
-   "api_week": 576.340063593748,
-   "usd_idea": 17.07674262499994
+   "api_week": 800.8649423437477,
+   "usd_idea": 20.513082834845193,
+   "usd_clean": 22.71957283244674
   },
   {
    "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-6 Sol (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "GPT-6 Luna (max)",
+    "Inkling Small"
+   ],
+   "ipw": 38.16666666666667,
+   "clean": 35.208333333333336,
+   "sd": 0.8769818824937163,
+   "lead": 24.849106542257168,
+   "coh": 0.9953562563467808,
+   "esc": 0.041508637449643365,
+   "util": 0.8652178262821678,
+   "busy": {
+    "GPT-6 Sol (max)": 148.22095292963428,
+    "Muse Spark 1.3 (xhigh)": 144.98350926404146,
+    "Gemini 3.8 Flash (high)": 144.77690258426088,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.2300655695018,
+    "GPT-6 Luna (max)": 145.7488524053088,
+    "Inkling Small": 143.17928613967797
+   },
+   "api_week": 795.4491065624986,
+   "usd_idea": 20.841461307314372,
+   "usd_clean": 22.592637346153804
+  },
+  {
+   "six": [
+    "Grok 4.6 (high)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "Step 5 Preview",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 36.75,
+   "clean": 35.20833333333333,
+   "sd": 0.3608439182435165,
+   "lead": 25.81592242051757,
+   "coh": 0.9976040436952237,
+   "esc": 0.022531766791255334,
+   "util": 0.8542210526345748,
+   "busy": {
+    "Grok 4.6 (high)": 147.80644628558153,
+    "Muse Spark 1.3 (xhigh)": 143.95358784649693,
+    "Gemini 3.8 Flash (high)": 143.27473302521946,
+    "Step 5 Preview": 147.934055715387,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.00857488352,
+    "Ling 3.0 Flash": 134.07742329944665
+   },
+   "api_week": 749.739309843748,
+   "usd_idea": 20.40106965561219,
+   "usd_clean": 21.294370930473317
+  },
+  {
+   "six": [
+    "Grok 4.6 (high)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "GLM 5.3 Flash",
-    "Inkling Small",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 33.66666666666667,
-   "sd": 1.1365151414154895,
-   "lead": 21.264652696624548,
-   "coh": 0.9951911157522296,
-   "esc": 0.05189966334968628,
-   "util": 0.7697749567560446,
+   "ipw": 37.375,
+   "clean": 35.166666666666664,
+   "sd": 0.612372435695795,
+   "lead": 25.917990188705616,
+   "coh": 0.9969373356202119,
+   "esc": 0.035668642439636744,
+   "util": 0.8658975864715146,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 136.2308727033906,
-    "Muse Spark 1.3 (xhigh)": 130.2155061846803,
-    "Gemini 3.8 Flash (high)": 129.52025867679131,
-    "GLM 5.3 Flash": 139.6273108687248,
-    "Inkling Small": 124.01670376182787,
-    "Ling 3.0 Flash": 116.32250421467808
+    "Grok 4.6 (high)": 149.6539618107877,
+    "Muse Spark 1.3 (xhigh)": 145.14000381709678,
+    "Gemini 3.8 Flash (high)": 144.56694876902054,
+    "GLM 5.3 Flash": 150.90193799405353,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.2496541944775,
+    "Ling 3.0 Flash": 137.3122605778507
    },
-   "api_week": 912.1282528124982,
-   "usd_idea": 27.09291840037123
+   "api_week": 678.6537107812479,
+   "usd_idea": 18.157958816889575,
+   "usd_clean": 19.29820978524876
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash",
+    "Gemma 4 31B (Reasoning)"
+   ],
+   "ipw": 37.75,
+   "clean": 35.125,
+   "sd": 0.836452495828529,
+   "lead": 25.406066365446,
+   "coh": 0.9961527406081596,
+   "esc": 0.04758786669587001,
+   "util": 0.8580548690115104,
+   "busy": {
+    "GPT-5.6 Terra (max)": 148.95236990852646,
+    "Muse Spark 1.3 (xhigh)": 146.46686361736192,
+    "Gemini 3.8 Flash (high)": 146.30781582038907,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 147.21131506703946,
+    "Ling 3.0 Flash": 138.13769437304046,
+    "Gemma 4 31B (Reasoning)": 137.8432491772451
+   },
+   "api_week": 795.7210284374978,
+   "usd_idea": 21.078702740066166,
+   "usd_clean": 22.65397945729531
+  },
+  {
+   "six": [
+    "Grok 4.6 (high)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.125,
+   "clean": 35.125,
+   "sd": 0.6495190528383298,
+   "lead": 25.687058351502024,
+   "coh": 0.9983179781810487,
+   "esc": 0.041455029973247244,
+   "util": 0.8764733014452084,
+   "busy": {
+    "Grok 4.6 (high)": 150.72864337685837,
+    "Muse Spark 1.3 (xhigh)": 147.01927601404475,
+    "Gemini 3.8 Flash (high)": 146.3877982261949,
+    "MiMo-V2.6-Pro": 152.99353683778278,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 147.2071175045446,
+    "Ling 3.0 Flash": 139.14871589734472
+   },
+   "api_week": 702.7919343749979,
+   "usd_idea": 18.93042247474742,
+   "usd_clean": 20.008311298932327
+  },
+  {
+   "six": [
+    "Grok 4.6 (high)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "Qwen3.8-Flash-Next",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.16666666666667,
+   "clean": 35.125,
+   "sd": 1.2040152730666578,
+   "lead": 25.678096482299217,
+   "coh": 0.9966268045980731,
+   "esc": 0.029285363878596378,
+   "util": 0.8676817120734462,
+   "busy": {
+    "Grok 4.6 (high)": 149.7112087707237,
+    "Muse Spark 1.3 (xhigh)": 145.84891076683525,
+    "Gemini 3.8 Flash (high)": 145.45175413324807,
+    "Qwen3.8-Flash-Next": 150.1752007083472,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.90587313116185,
+    "Ling 3.0 Flash": 137.53021825971774
+   },
+   "api_week": 681.0114867187481,
+   "usd_idea": 18.323179014854205,
+   "usd_clean": 19.388227379893184
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "GLM 5.3 Flash",
+    "GPT-6 Luna (max)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 36.79166666666667,
+   "clean": 35.083333333333336,
+   "sd": 0.44876373392787455,
+   "lead": 26.13564814529716,
+   "coh": 0.9978711937313871,
+   "esc": 0.02943808030431721,
+   "util": 0.8680385782153953,
+   "busy": {
+    "GPT-5.6 Terra (max)": 147.829288161031,
+    "Muse Spark 1.3 (xhigh)": 146.0829838162772,
+    "Gemini 3.8 Flash (high)": 145.4292590816151,
+    "GLM 5.3 Flash": 150.57091882256827,
+    "GPT-6 Luna (max)": 147.1280413015268,
+    "Ling 3.0 Flash": 137.94239565810005
+   },
+   "api_week": 765.2391154687472,
+   "usd_idea": 20.799251156568438,
+   "usd_clean": 21.812041296021295
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Qwen3.8 27B (medium)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.25,
+   "clean": 35.041666666666664,
+   "sd": 0.6166103577895308,
+   "lead": 25.640600092150486,
+   "coh": 0.9966440070346321,
+   "esc": 0.036963834776334775,
+   "util": 0.8672415195860974,
+   "busy": {
+    "GPT-5.6 Terra (max)": 148.3282036585244,
+    "Muse Spark 1.3 (xhigh)": 146.0375067666713,
+    "Gemini 3.8 Flash (high)": 145.77168375647156,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.69879338141936,
+    "Qwen3.8 27B (medium)": 150.2001748145336,
+    "Ling 3.0 Flash": 138.1430893651658
+   },
+   "api_week": 850.3861617187479,
+   "usd_idea": 22.829158703859004,
+   "usd_clean": 24.26785717152194
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "GPT-6 Luna (max)",
+    "MiniMax-M3",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 38.166666666666664,
+   "clean": 35.0,
+   "sd": 0.6561673228343168,
+   "lead": 25.16655557724423,
+   "coh": 0.9948347342498829,
+   "esc": 0.048055870921866486,
+   "util": 0.8549224263111694,
+   "busy": {
+    "GPT-5.6 Terra (max)": 146.8398072162117,
+    "Muse Spark 1.3 (xhigh)": 143.91346103802124,
+    "Gemini 3.8 Flash (high)": 144.13329416254186,
+    "GPT-6 Luna (max)": 145.99243631511592,
+    "MiniMax-M3": 144.27405338507282,
+    "Ling 3.0 Flash": 136.6087536046953
+   },
+   "api_week": 795.0299892187476,
+   "usd_idea": 20.83048006686675,
+   "usd_clean": 22.715142549107075
+  },
+  {
+   "six": [
+    "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "MiniMax-M3",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 39.25,
+   "clean": 34.916666666666664,
+   "sd": 0.885845484394554,
+   "lead": 24.408039656136456,
+   "coh": 0.9949576386508651,
+   "esc": 0.07437258663393714,
+   "util": 0.8544845709601822,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 144.07931851305437,
+    "GLM-5.3 (max)": 147.558231691269,
+    "Gemini 3.8 Flash (high)": 143.8021170135019,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.8816678824349,
+    "MiniMax-M3": 144.34719888590453,
+    "Ling 3.0 Flash": 136.65191354169878
+   },
+   "api_week": 673.0571807812478,
+   "usd_idea": 17.14795365047765,
+   "usd_clean": 19.2761006428997
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "Step 5 Preview",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Inkling Small"
+   ],
+   "ipw": 37.416666666666664,
+   "clean": 34.833333333333336,
+   "sd": 0.8740073734751275,
+   "lead": 25.851908898550363,
+   "coh": 0.9949830598436447,
+   "esc": 0.0323326322473114,
+   "util": 0.8746279218688815,
+   "busy": {
+    "GPT-5.6 Terra (max)": 148.43049177307316,
+    "Muse Spark 1.3 (xhigh)": 146.25820421328802,
+    "Gemini 3.8 Flash (high)": 146.11285870623706,
+    "Step 5 Preview": 149.81832171141593,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 146.4823383804454,
+    "Inkling Small": 144.5227304593728
+   },
+   "api_week": 925.9322540624972,
+   "usd_idea": 24.74651903953222,
+   "usd_clean": 26.581787197966428
+  },
+  {
+   "six": [
+    "GPT-6 Sol (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "Qwen3.8-Flash-Next",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.166666666666664,
+   "clean": 34.83333333333333,
+   "sd": 0.8079466429027218,
+   "lead": 25.88792380641832,
+   "coh": 0.9964925542552396,
+   "esc": 0.03475437923616544,
+   "util": 0.856712737239949,
+   "busy": {
+    "GPT-6 Sol (max)": 147.31865323616077,
+    "Muse Spark 1.3 (xhigh)": 144.39097005888263,
+    "Gemini 3.8 Flash (high)": 143.83460986586059,
+    "Qwen3.8-Flash-Next": 148.42311444719905,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.17507819581311,
+    "Ling 3.0 Flash": 135.42401333395233
+   },
+   "api_week": 747.3967167187485,
+   "usd_idea": 20.109328700952876,
+   "usd_clean": 21.45636507326551
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "GPT-6 Luna (max)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.333333333333336,
+   "clean": 34.75,
+   "sd": 1.1814539065631515,
+   "lead": 25.706317967224436,
+   "coh": 0.9966598285131693,
+   "esc": 0.04375150641782606,
+   "util": 0.867143141034922,
+   "busy": {
+    "GPT-5.6 Terra (max)": 148.14659006738663,
+    "Muse Spark 1.3 (xhigh)": 145.50382021394373,
+    "Gemini 3.8 Flash (high)": 145.1143283587545,
+    "MiMo-V2.6-Pro": 151.39569311101744,
+    "GPT-6 Luna (max)": 146.83742049879146,
+    "Ling 3.0 Flash": 137.08243391330763
+   },
+   "api_week": 780.8192301562474,
+   "usd_idea": 20.914800807756624,
+   "usd_clean": 22.469618133992732
   }
  ],
  "finalists": [
@@ -2144,231 +2284,123 @@
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 36.583333333333336,
-   "sd": 2.1874007914011133,
-   "lead": 19.707484102058448,
-   "coh": 0.9951997488801444,
-   "esc": 0.06440069983223322,
-   "util": 0.7599504451199978,
-   "busy": {
-    "GPT-5.6 Terra (max)": 134.5471416949889,
-    "Muse Spark 1.3 (xhigh)": 130.0358272533944,
-    "Gemini 3.8 Flash (high)": 129.07535654449606,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.14868992157886,
-    "Inkling Small": 124.2572144504173,
-    "Ling 3.0 Flash": 117.96581881608213
-   },
-   "api_week": 757.2122429687483,
-   "usd_idea": 20.698284545842778,
-   "outage_vendor": "InclusionAI",
-   "outage_ipw": 30.416666666666664,
-   "est3_ipw": 34.97222222222222
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 36.40277777777778,
-   "sd": 2.366293332577867,
-   "lead": 20.326248635133823,
-   "coh": 0.9952658155776563,
-   "esc": 0.05479638347656002,
-   "util": 0.7738534362563366,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 132.12687982840882,
-    "GLM-5.3 (max)": 137.5953202960172,
-    "Gemini 3.8 Flash (high)": 131.40609383868275,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 132.52730866862262,
-    "Inkling Small": 126.7543510672512,
-    "Ling 3.0 Flash": 119.63431004740475
-   },
-   "api_week": 620.3585528124979,
-   "usd_idea": 17.0415169028996,
-   "outage_vendor": "InclusionAI",
-   "outage_ipw": 29.875,
-   "est3_ipw": 35.52777777777778
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.98611111111111,
-   "sd": 2.58508751672662,
-   "lead": 21.236303281615616,
-   "coh": 0.9928815598195416,
-   "esc": 0.08797915933603667,
-   "util": 0.7773868627645206,
-   "busy": {
-    "GPT-5.6 Terra (max)": 137.65266451969273,
-    "Muse Spark 1.3 (xhigh)": 133.28966556735082,
-    "Gemini 3.8 Flash (high)": 132.8799362956681,
-    "MiniMax-M3": 133.5066206527184,
-    "Inkling Small": 126.81791799480735,
-    "Ling 3.0 Flash": 119.45915263639937
-   },
-   "api_week": 770.7124001562481,
-   "usd_idea": 21.41694049064063,
-   "outage_vendor": "Meta",
-   "outage_ipw": 28.833333333333336,
-   "est3_ipw": 35.98611111111111
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.958333333333336,
-   "sd": 1.66266881626877,
-   "lead": 20.032575362449915,
-   "coh": 0.9956406805449168,
-   "esc": 0.060912926743086286,
-   "util": 0.7643889246232616,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 137.27202985733226,
-    "Muse Spark 1.3 (xhigh)": 130.34168270466515,
-    "Gemini 3.8 Flash (high)": 129.56983110538965,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.88139777483488,
-    "Inkling Small": 124.79373829419374,
-    "Ling 3.0 Flash": 117.64535628383197
-   },
-   "api_week": 1569.2542318749988,
-   "usd_idea": 43.64090563731167,
-   "outage_vendor": "InclusionAI",
-   "outage_ipw": 29.666666666666664,
-   "est3_ipw": 34.90277777777778
-  },
-  {
-   "six": [
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "MiniMax-M3",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.583333333333336,
-   "sd": 2.7634351944769886,
-   "lead": 21.904451666041567,
-   "coh": 0.9906813232929209,
-   "esc": 0.07265675910405399,
-   "util": 0.7892829876926005,
-   "busy": {
-    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)": 142.19166567839073,
-    "Muse Spark 1.3 (xhigh)": 134.6994541051324,
-    "Gemini 3.8 Flash (high)": 134.66621002533256,
-    "MiniMax-M3": 135.22424301621936,
-    "Inkling Small": 128.40377052331718,
-    "Ling 3.0 Flash": 120.41190824574916
-   },
-   "api_week": 1619.5869699999982,
-   "usd_idea": 45.515324683840696,
-   "outage_vendor": "InclusionAI",
-   "outage_ipw": 29.625,
-   "est3_ipw": 35.583333333333336
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
     "GPT-6 Luna (max)",
-    "Inkling Small",
     "Ling 3.0 Flash"
    ],
-   "ipw": 35.09722222222222,
-   "sd": 1.9536982183528395,
-   "lead": 20.01991545448147,
-   "coh": 0.9944404746744677,
-   "esc": 0.07447287313854342,
-   "util": 0.7631052053756222,
+   "ipw": 39.625,
+   "clean": 36.986111111111114,
+   "sd": 0.30775721953000545,
+   "lead": 24.410975426669562,
+   "coh": 0.996885551433691,
+   "esc": 0.04373647139029485,
+   "util": 0.8461960052514803,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 130.29308468106674,
-    "GLM-5.3 (max)": 136.55713050676962,
-    "Gemini 3.8 Flash (high)": 129.54192057836366,
-    "GPT-6 Luna (max)": 132.0975141589039,
-    "Inkling Small": 123.89004428677187,
-    "Ling 3.0 Flash": 116.83035280675135
+    "GPT-5.6 Terra (max)": 145.38759432462376,
+    "Muse Spark 1.3 (xhigh)": 143.05207221607495,
+    "Gemini 3.8 Flash (high)": 142.34910330802856,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.04033713472344,
+    "GPT-6 Luna (max)": 143.83545879654864,
+    "Ling 3.0 Flash": 135.30100751349278
    },
-   "api_week": 576.8331078124976,
-   "usd_idea": 16.435292347645362,
-   "outage_vendor": "InclusionAI",
-   "outage_ipw": 29.375,
-   "est3_ipw": 35.16666666666667
-  },
-  {
-   "six": [
-    "GPT-5.6 Terra (max)",
-    "Muse Spark 1.3 (xhigh)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "Inkling Small",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 35.083333333333336,
-   "sd": 1.6393596310755003,
-   "lead": 19.59818049883541,
-   "coh": 0.9950359318203447,
-   "esc": 0.06799773975587955,
-   "util": 0.7563080158155473,
-   "busy": {
-    "GPT-5.6 Terra (max)": 134.07466802302523,
-    "Muse Spark 1.3 (xhigh)": 129.24399156613947,
-    "Gemini 3.8 Flash (high)": 128.63462016250327,
-    "GPT-6 Luna (max)": 131.26092942039415,
-    "Inkling Small": 123.34687912220602,
-    "Ling 3.0 Flash": 115.7973916478036
-   },
-   "api_week": 718.7565093749979,
-   "usd_idea": 20.48712140736336,
+   "api_week": 793.2494507812478,
+   "usd_idea": 20.0189135843848,
+   "usd_clean": 21.447225105613906,
    "outage_vendor": "OpenAI",
-   "outage_ipw": 28.541666666666668,
-   "est3_ipw": 34.861111111111114
+   "outage_ipw": 29.75,
+   "est3_clean": 35.625
   },
   {
    "six": [
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "GPT-6 Sol (max)",
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "MiniMax-M3",
+    "GPT-6 Luna (max)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 34.77777777777778,
-   "sd": 1.3182011686338526,
-   "lead": 19.089651461164905,
-   "coh": 0.9950848951653354,
-   "esc": 0.05551068042496745,
-   "util": 0.7493007472862079,
+   "ipw": 39.263888888888886,
+   "clean": 36.83333333333333,
+   "sd": 0.7576767609436592,
+   "lead": 24.397045790206956,
+   "coh": 0.997393418218621,
+   "esc": 0.043071002172651536,
+   "util": 0.8540789153446622,
    "busy": {
-    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 132.84483615991047,
-    "Muse Spark 1.3 (xhigh)": 126.80829429166099,
-    "Gemini 3.8 Flash (high)": 125.74400602767545,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 126.8134933215574,
-    "MiniMax-M3": 127.3738113560382,
-    "Ling 3.0 Flash": 115.71071210765507
+    "GPT-6 Sol (max)": 146.95712574955027,
+    "Muse Spark 1.3 (xhigh)": 143.9723136904523,
+    "Gemini 3.8 Flash (high)": 143.67964395461166,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.24223919572964,
+    "GPT-6 Luna (max)": 145.03209975116397,
+    "Ling 3.0 Flash": 137.02812432591165
    },
-   "api_week": 924.3914301562486,
-   "usd_idea": 26.579945276058265,
+   "api_week": 750.3430010937486,
+   "usd_idea": 19.11025683719487,
+   "usd_clean": 20.37130319711535,
+   "outage_vendor": "OpenAI",
+   "outage_ipw": 29.75,
+   "est3_clean": 35.916666666666664
+  },
+  {
+   "six": [
+    "Grok 4.6 (high)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "GPT-6 Luna (max)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 39.166666666666664,
+   "clean": 36.75,
+   "sd": 0.9801265980209651,
+   "lead": 24.580574754687277,
+   "coh": 0.9970743880929134,
+   "esc": 0.04013487151362265,
+   "util": 0.8565808757033212,
+   "busy": {
+    "Grok 4.6 (high)": 148.57754548835533,
+    "Muse Spark 1.3 (xhigh)": 144.20148235219168,
+    "Gemini 3.8 Flash (high)": 143.86127066779585,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.42506636216905,
+    "GPT-6 Luna (max)": 145.2404059912748,
+    "Ling 3.0 Flash": 137.1277518471611
+   },
+   "api_week": 678.5262615624981,
+   "usd_idea": 17.324074763297826,
+   "usd_clean": 18.46329963435369,
    "outage_vendor": "Google",
-   "outage_ipw": 29.5,
-   "est3_ipw": 34.138888888888886
+   "outage_ipw": 30.0,
+   "est3_clean": 34.84722222222222
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "Qwen3.8-Flash-Next",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 38.56944444444444,
+   "clean": 36.583333333333336,
+   "sd": 0.8673608331108883,
+   "lead": 25.070279783844367,
+   "coh": 0.9972156887417687,
+   "esc": 0.030600612824356502,
+   "util": 0.8639379038451607,
+   "busy": {
+    "GPT-5.6 Terra (max)": 147.30532251303597,
+    "Muse Spark 1.3 (xhigh)": 145.28044764676198,
+    "Gemini 3.8 Flash (high)": 144.86979881600425,
+    "Qwen3.8-Flash-Next": 149.7676951149184,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.71791561056222,
+    "Ling 3.0 Flash": 137.90822737463907
+   },
+   "api_week": 801.2369174999975,
+   "usd_idea": 20.773877587324385,
+   "usd_clean": 21.90169250569469,
+   "outage_vendor": "Google",
+   "outage_ipw": 29.166666666666668,
+   "est3_clean": 35.31944444444444
   },
   {
    "six": [
@@ -2379,112 +2411,213 @@
     "GPT-6 Luna (max)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 34.18055555555556,
-   "sd": 0.5871239274402285,
-   "lead": 18.820388546207436,
-   "coh": 0.9961872118455907,
-   "esc": 0.04462527008450101,
-   "util": 0.742660186267613,
+   "ipw": 39.11111111111111,
+   "clean": 36.138888888888886,
+   "sd": 0.8602145870667793,
+   "lead": 24.57561311825835,
+   "coh": 0.9962301569757527,
+   "esc": 0.049423139179552815,
+   "util": 0.851807073908438,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 125.13946491249699,
-    "GLM-5.3 (max)": 131.53161165353154,
-    "Gemini 3.8 Flash (high)": 124.34098132583074,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 125.86531059356912,
-    "GPT-6 Luna (max)": 127.67324640859228,
-    "Ling 3.0 Flash": 114.05085286373314
+    "Muse Spark 1.3 (xhigh)": 143.60671387989544,
+    "GLM-5.3 (max)": 146.94521270178768,
+    "Gemini 3.8 Flash (high)": 143.27598275031016,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.97919194605657,
+    "GPT-6 Luna (max)": 144.7638774688707,
+    "Ling 3.0 Flash": 136.05055175278494
    },
-   "api_week": 558.0655065624981,
-   "usd_idea": 16.32698759548958,
+   "api_week": 637.3184660937477,
+   "usd_idea": 16.295074417169687,
+   "usd_clean": 17.63525348145651,
    "outage_vendor": "Google",
-   "outage_ipw": 29.25,
-   "est3_ipw": 33.986111111111114
-  },
-  {
-   "six": [
-    "Muse Spark 1.3 (xhigh)",
-    "GLM-5.3 (max)",
-    "Gemini 3.8 Flash (high)",
-    "GPT-6 Luna (max)",
-    "MiniMax-M3",
-    "Ling 3.0 Flash"
-   ],
-   "ipw": 33.59722222222222,
-   "sd": 1.3201752362171422,
-   "lead": 19.975510701835763,
-   "coh": 0.9934632559901074,
-   "esc": 0.05828287089740936,
-   "util": 0.7545477332914061,
-   "busy": {
-    "Muse Spark 1.3 (xhigh)": 127.53503537849973,
-    "GLM-5.3 (max)": 133.88783092205475,
-    "Gemini 3.8 Flash (high)": 126.55965993688324,
-    "GPT-6 Luna (max)": 129.62415753909292,
-    "MiniMax-M3": 127.58754147194347,
-    "Ling 3.0 Flash": 115.38988990926323
-   },
-   "api_week": 562.9479295312481,
-   "usd_idea": 16.755787898408375,
-   "outage_vendor": "Google",
-   "outage_ipw": 28.041666666666664,
-   "est3_ipw": 33.47222222222222
+   "outage_ipw": 29.875,
+   "est3_clean": 35.80555555555556
   },
   {
    "six": [
     "Muse Spark 1.3 (xhigh)",
     "Qwen3.8 Max (0902)",
     "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
     "GPT-6 Luna (max)",
-    "Inkling Small",
     "Ling 3.0 Flash"
    ],
-   "ipw": 33.59722222222222,
-   "sd": 1.3633060533356876,
-   "lead": 20.92025523696846,
-   "coh": 0.9941861426315468,
-   "esc": 0.07649863661750714,
-   "util": 0.7695970421938266,
+   "ipw": 38.611111111111114,
+   "clean": 36.125,
+   "sd": 0.7821060125167263,
+   "lead": 25.051701892141587,
+   "coh": 0.9966698974649091,
+   "esc": 0.04062503220665005,
+   "util": 0.8628926602036813,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 130.61231573516278,
-    "Qwen3.8 Max (0902)": 141.80512125561052,
-    "Gemini 3.8 Flash (high)": 130.12220959548645,
-    "GPT-6 Luna (max)": 132.8232262212256,
-    "Inkling Small": 124.31840947769152,
-    "Ling 3.0 Flash": 116.07253624620024
+    "Muse Spark 1.3 (xhigh)": 145.0896223797884,
+    "Qwen3.8 Max (0902)": 151.62974410671836,
+    "Gemini 3.8 Flash (high)": 144.67984060221534,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.28883144442887,
+    "GPT-6 Luna (max)": 146.22818074276822,
+    "Ling 3.0 Flash": 136.87958220939163
    },
-   "api_week": 580.7365635937479,
-   "usd_idea": 17.28525530332776,
+   "api_week": 643.9296709374981,
+   "usd_idea": 16.67731521852513,
+   "usd_clean": 17.825042794117596,
+   "outage_vendor": "Google",
+   "outage_ipw": 29.541666666666668,
+   "est3_clean": 34.55555555555556
+  },
+  {
+   "six": [
+    "GPT-5.6 Terra (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "MiniMax-M3",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 39.47222222222222,
+   "clean": 35.90277777777778,
+   "sd": 0.9585346004432568,
+   "lead": 24.38237155612607,
+   "coh": 0.9941054266197084,
+   "esc": 0.050018175882669505,
+   "util": 0.8535567312227343,
+   "busy": {
+    "GPT-5.6 Terra (max)": 146.32558329341177,
+    "Muse Spark 1.3 (xhigh)": 144.04052926486114,
+    "Gemini 3.8 Flash (high)": 143.6129919497735,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.37236363306795,
+    "MiniMax-M3": 144.50853399766794,
+    "Ling 3.0 Flash": 137.52518293373402
+   },
+   "api_week": 832.5743973437479,
+   "usd_idea": 21.092665942558007,
+   "usd_clean": 23.189693078820056,
+   "outage_vendor": "Google",
+   "outage_ipw": 30.125,
+   "est3_clean": 35.513888888888886
+  },
+  {
+   "six": [
+    "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
+    "Gemini 3.8 Flash (high)",
+    "Qwen3.8-Flash-Next",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.69444444444444,
+   "clean": 35.513888888888886,
+   "sd": 0.8346055104207567,
+   "lead": 25.613080179782095,
+   "coh": 0.9973308178665959,
+   "esc": 0.03799384713646196,
+   "util": 0.863916901138221,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 145.37229345282876,
+    "GLM-5.3 (max)": 148.25010053816143,
+    "Gemini 3.8 Flash (high)": 144.59402614598608,
+    "Qwen3.8-Flash-Next": 149.83905554141745,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 145.56120661075698,
+    "Ling 3.0 Flash": 137.211554058176
+   },
+   "api_week": 639.7008745312475,
+   "usd_idea": 16.970693797439136,
+   "usd_clean": 18.01269572399289,
+   "outage_vendor": "Google",
+   "outage_ipw": 29.125,
+   "est3_clean": 35.041666666666664
+  },
+  {
+   "six": [
+    "GPT-6 Sol (max)",
+    "Muse Spark 1.3 (xhigh)",
+    "Gemini 3.8 Flash (high)",
+    "MiMo-V2.6-Pro",
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 37.0,
+   "clean": 35.236111111111114,
+   "sd": 0.9894310311649309,
+   "lead": 26.008281915602065,
+   "coh": 0.9978892132688119,
+   "esc": 0.03193093494182463,
+   "util": 0.8606302165716329,
+   "busy": {
+    "GPT-6 Sol (max)": 147.79334794021872,
+    "Muse Spark 1.3 (xhigh)": 144.62058457404956,
+    "Gemini 3.8 Flash (high)": 144.4773851375192,
+    "MiMo-V2.6-Pro": 150.18665802443164,
+    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.7384843617795,
+    "Ling 3.0 Flash": 135.6987982662073
+   },
+   "api_week": 766.0482760937487,
+   "usd_idea": 20.704007461993207,
+   "usd_clean": 21.740431958513952,
+   "outage_vendor": "Google",
+   "outage_ipw": 29.166666666666664,
+   "est3_clean": 34.263888888888886
+  },
+  {
+   "six": [
+    "Muse Spark 1.3 (xhigh)",
+    "GLM-5.3 (max)",
+    "Gemini 3.8 Flash (high)",
+    "GLM 5.3 Flash",
+    "GPT-6 Luna (max)",
+    "Ling 3.0 Flash"
+   ],
+   "ipw": 36.083333333333336,
+   "clean": 34.111111111111114,
+   "sd": 0.6358623967921998,
+   "lead": 26.562614045568385,
+   "coh": 0.9971649996685708,
+   "esc": 0.03424667462924414,
+   "util": 0.8672958251341173,
+   "busy": {
+    "Muse Spark 1.3 (xhigh)": 145.4284709846948,
+    "GLM-5.3 (max)": 148.92728166651656,
+    "Gemini 3.8 Flash (high)": 145.3376125749626,
+    "GLM 5.3 Flash": 150.6032597761042,
+    "GPT-6 Luna (max)": 146.89397676290753,
+    "Ling 3.0 Flash": 137.0435899700045
+   },
+   "api_week": 602.3181946874972,
+   "usd_idea": 16.69242109988445,
+   "usd_clean": 17.657536652076463,
    "outage_vendor": "Meta",
-   "outage_ipw": 27.833333333333332,
-   "est3_ipw": 33.888888888888886
+   "outage_ipw": 27.416666666666664,
+   "est3_clean": 33.583333333333336
   },
   {
    "six": [
     "Muse Spark 1.3 (xhigh)",
-    "Qwen3.8 Max (0902)",
+    "GLM-5.3 (max)",
     "Gemini 3.8 Flash (high)",
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+    "Qwen3.8-Flash-Next",
     "GPT-6 Luna (max)",
     "Ling 3.0 Flash"
    ],
-   "ipw": 32.98611111111111,
-   "sd": 0.702041775338895,
-   "lead": 19.67983530982666,
-   "coh": 0.996630432789363,
-   "esc": 0.04961401160075722,
-   "util": 0.7442317761623823,
+   "ipw": 36.19444444444444,
+   "clean": 33.80555555555556,
+   "sd": 1.1563699053610366,
+   "lead": 26.590299996345824,
+   "coh": 0.9969458523204179,
+   "esc": 0.045048217417124614,
+   "util": 0.8676683253461193,
    "busy": {
-    "Muse Spark 1.3 (xhigh)": 124.49386914946483,
-    "Qwen3.8 Max (0902)": 136.44140225176977,
-    "Gemini 3.8 Flash (high)": 123.92232342044065,
-    "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 125.22494911519833,
-    "GPT-6 Luna (max)": 127.39774460715535,
-    "Ling 3.0 Flash": 112.7053418276525
+    "Muse Spark 1.3 (xhigh)": 145.69776645490987,
+    "GLM-5.3 (max)": 148.85925433855394,
+    "Gemini 3.8 Flash (high)": 145.54506694002157,
+    "Qwen3.8-Flash-Next": 150.18177337920903,
+    "GPT-6 Luna (max)": 146.99197028984142,
+    "Ling 3.0 Flash": 137.3338405463523
    },
-   "api_week": 558.3925745312484,
-   "usd_idea": 16.92811173315785,
+   "api_week": 602.8106914062472,
+   "usd_idea": 16.654785027340676,
+   "usd_clean": 17.83170492245267,
    "outage_vendor": "Google",
-   "outage_ipw": 28.708333333333332,
-   "est3_ipw": 32.736111111111114
+   "outage_ipw": 27.458333333333332,
+   "est3_clean": 33.958333333333336
   }
  ],
  "best_throughput": {
@@ -2493,28 +2626,30 @@
    "Muse Spark 1.3 (xhigh)",
    "Gemini 3.8 Flash (high)",
    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "Inkling Small",
+   "GPT-6 Luna (max)",
    "Ling 3.0 Flash"
   ],
-  "ipw": 36.583333333333336,
-  "sd": 2.1874007914011133,
-  "lead": 19.707484102058448,
-  "coh": 0.9951997488801444,
-  "esc": 0.06440069983223322,
-  "util": 0.7599504451199978,
+  "ipw": 39.625,
+  "clean": 36.986111111111114,
+  "sd": 0.30775721953000545,
+  "lead": 24.410975426669562,
+  "coh": 0.996885551433691,
+  "esc": 0.04373647139029485,
+  "util": 0.8461960052514803,
   "busy": {
-   "GPT-5.6 Terra (max)": 134.5471416949889,
-   "Muse Spark 1.3 (xhigh)": 130.0358272533944,
-   "Gemini 3.8 Flash (high)": 129.07535654449606,
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 130.14868992157886,
-   "Inkling Small": 124.2572144504173,
-   "Ling 3.0 Flash": 117.96581881608213
+   "GPT-5.6 Terra (max)": 145.38759432462376,
+   "Muse Spark 1.3 (xhigh)": 143.05207221607495,
+   "Gemini 3.8 Flash (high)": 142.34910330802856,
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.04033713472344,
+   "GPT-6 Luna (max)": 143.83545879654864,
+   "Ling 3.0 Flash": 135.30100751349278
   },
-  "api_week": 757.2122429687483,
-  "usd_idea": 20.698284545842778,
-  "outage_vendor": "InclusionAI",
-  "outage_ipw": 30.416666666666664,
-  "est3_ipw": 34.97222222222222
+  "api_week": 793.2494507812478,
+  "usd_idea": 20.0189135843848,
+  "usd_clean": 21.447225105613906,
+  "outage_vendor": "OpenAI",
+  "outage_ipw": 29.75,
+  "est3_clean": 35.625
  },
  "best_value": {
   "six": [
@@ -2525,54 +2660,58 @@
    "GPT-6 Luna (max)",
    "Ling 3.0 Flash"
   ],
-  "ipw": 34.18055555555556,
-  "sd": 0.5871239274402285,
-  "lead": 18.820388546207436,
-  "coh": 0.9961872118455907,
-  "esc": 0.04462527008450101,
-  "util": 0.742660186267613,
+  "ipw": 39.11111111111111,
+  "clean": 36.138888888888886,
+  "sd": 0.8602145870667793,
+  "lead": 24.57561311825835,
+  "coh": 0.9962301569757527,
+  "esc": 0.049423139179552815,
+  "util": 0.851807073908438,
   "busy": {
-   "Muse Spark 1.3 (xhigh)": 125.13946491249699,
-   "GLM-5.3 (max)": 131.53161165353154,
-   "Gemini 3.8 Flash (high)": 124.34098132583074,
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 125.86531059356912,
-   "GPT-6 Luna (max)": 127.67324640859228,
-   "Ling 3.0 Flash": 114.05085286373314
+   "Muse Spark 1.3 (xhigh)": 143.60671387989544,
+   "GLM-5.3 (max)": 146.94521270178768,
+   "Gemini 3.8 Flash (high)": 143.27598275031016,
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.97919194605657,
+   "GPT-6 Luna (max)": 144.7638774688707,
+   "Ling 3.0 Flash": 136.05055175278494
   },
-  "api_week": 558.0655065624981,
-  "usd_idea": 16.32698759548958,
+  "api_week": 637.3184660937477,
+  "usd_idea": 16.295074417169687,
+  "usd_clean": 17.63525348145651,
   "outage_vendor": "Google",
-  "outage_ipw": 29.25,
-  "est3_ipw": 33.986111111111114
+  "outage_ipw": 29.875,
+  "est3_clean": 35.80555555555556
  },
  "resilient": {
   "six": [
+   "GPT-5.6 Terra (max)",
    "Muse Spark 1.3 (xhigh)",
-   "Qwen3.8 Max (0902)",
    "Gemini 3.8 Flash (high)",
    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "GPT-6 Luna (max)",
+   "MiniMax-M3",
    "Ling 3.0 Flash"
   ],
-  "ipw": 32.98611111111111,
-  "sd": 0.702041775338895,
-  "lead": 19.67983530982666,
-  "coh": 0.996630432789363,
-  "esc": 0.04961401160075722,
-  "util": 0.7442317761623823,
+  "ipw": 39.47222222222222,
+  "clean": 35.90277777777778,
+  "sd": 0.9585346004432568,
+  "lead": 24.38237155612607,
+  "coh": 0.9941054266197084,
+  "esc": 0.050018175882669505,
+  "util": 0.8535567312227343,
   "busy": {
-   "Muse Spark 1.3 (xhigh)": 124.49386914946483,
-   "Qwen3.8 Max (0902)": 136.44140225176977,
-   "Gemini 3.8 Flash (high)": 123.92232342044065,
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 125.22494911519833,
-   "GPT-6 Luna (max)": 127.39774460715535,
-   "Ling 3.0 Flash": 112.7053418276525
+   "GPT-5.6 Terra (max)": 146.32558329341177,
+   "Muse Spark 1.3 (xhigh)": 144.04052926486114,
+   "Gemini 3.8 Flash (high)": 143.6129919497735,
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 144.37236363306795,
+   "MiniMax-M3": 144.50853399766794,
+   "Ling 3.0 Flash": 137.52518293373402
   },
-  "api_week": 558.3925745312484,
-  "usd_idea": 16.92811173315785,
+  "api_week": 832.5743973437479,
+  "usd_idea": 21.092665942558007,
+  "usd_clean": 23.189693078820056,
   "outage_vendor": "Google",
-  "outage_ipw": 28.708333333333332,
-  "est3_ipw": 32.736111111111114
+  "outage_ipw": 30.125,
+  "est3_clean": 35.513888888888886
  },
  "subscriptions": {
   "best value": {
@@ -2589,60 +2728,60 @@
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 20x ($199.99)",
      "cap_h": 24,
-     "busy_h": 124.3,
+     "busy_h": 143.3,
      "rate": 1.2,
-     "api_week": 150,
+     "api_week": 173,
      "sub_week": 46,
-     "hybrid_week": 167,
+     "hybrid_week": 190,
      "breakeven_h": 38.3,
      "subs_to_cover": 6,
-     "capped_ipw": 30.0,
-     "base_ipw": 34.2,
+     "capped_ipw": 34.4,
+     "base_ipw": 39.1,
      "note": "no published agent limits; hours assumed = other 20x plans"
     },
     {
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 20x ($199.99)",
      "cap_h": 40,
-     "busy_h": 124.3,
+     "busy_h": 143.3,
      "rate": 1.2,
-     "api_week": 150,
+     "api_week": 173,
      "sub_week": 46,
-     "hybrid_week": 148,
+     "hybrid_week": 170,
      "breakeven_h": 38.3,
      "subs_to_cover": 4,
-     "capped_ipw": 31.6,
-     "base_ipw": 34.2,
+     "capped_ipw": 34.8,
+     "base_ipw": 39.1,
      "note": "no published agent limits; hours assumed = other 20x plans"
     },
     {
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 5x ($99.99)",
      "cap_h": 8,
-     "busy_h": 124.3,
+     "busy_h": 143.3,
      "rate": 1.2,
-     "api_week": 150,
+     "api_week": 173,
      "sub_week": 23,
-     "hybrid_week": 163,
+     "hybrid_week": 186,
      "breakeven_h": 19.2,
-     "subs_to_cover": 16,
-     "capped_ipw": 29.8,
-     "base_ipw": 34.2,
+     "subs_to_cover": 18,
+     "capped_ipw": 33.5,
+     "base_ipw": 39.1,
      "note": "no published agent limits; assumed"
     },
     {
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 5x ($99.99)",
      "cap_h": 20,
-     "busy_h": 124.3,
+     "busy_h": 143.3,
      "rate": 1.2,
-     "api_week": 150,
+     "api_week": 173,
      "sub_week": 23,
-     "hybrid_week": 149,
+     "hybrid_week": 172,
      "breakeven_h": 19.2,
-     "subs_to_cover": 7,
-     "capped_ipw": 30.0,
-     "base_ipw": 34.2,
+     "subs_to_cover": 8,
+     "capped_ipw": 33.2,
+     "base_ipw": 39.1,
      "note": "no published agent limits; assumed"
     }
    ],
@@ -2659,22 +2798,24 @@
       "GPT-6 Luna (max)",
       "Ling 3.0 Flash"
      ],
-     "ipw": 30.041666666666668,
-     "sd": 0.24650332429581667,
-     "lead": 21.346045747070114,
-     "coh": 0.995844586939433,
-     "esc": 0.060914593318063426,
-     "util": 0.6683267417145613,
+     "ipw": 34.375,
+     "clean": 31.625,
+     "sd": 0.7580585582775116,
+     "lead": 28.43081690221196,
+     "coh": 0.9968201530714723,
+     "esc": 0.05704420331552333,
+     "util": 0.7658637447053173,
      "busy": {
-      "Muse Spark 1.3 (xhigh)": 131.17186178668578,
-      "GLM-5.3 (max)": 135.52899020915282,
-      "Gemini 3.8 Flash (high)": 24.430875798421525,
-      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 131.40049633668983,
-      "GPT-6 Luna (max)": 132.6994743957834,
-      "Ling 3.0 Flash": 118.44165712154445
+      "Muse Spark 1.3 (xhigh)": 150.19330656447718,
+      "GLM-5.3 (max)": 153.32586684955373,
+      "Gemini 3.8 Flash (high)": 24.41212992206077,
+      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 150.67850168773035,
+      "GPT-6 Luna (max)": 151.82165126015363,
+      "Ling 3.0 Flash": 141.55919837898404
      },
-     "api_week": 454.64511187499903,
-     "usd_idea": 15.13381787101245
+     "api_week": 515.1690051562487,
+     "usd_idea": 14.986734695454507,
+     "usd_clean": 16.289929016798375
     },
     "high cap": {
      "caps": {
@@ -2688,22 +2829,24 @@
       "GPT-6 Luna (max)",
       "Ling 3.0 Flash"
      ],
-     "ipw": 31.625,
-     "sd": 1.2876280950302046,
-     "lead": 21.573288533135198,
-     "coh": 0.9962323279708245,
-     "esc": 0.0423040096875973,
-     "util": 0.6957304105922829,
+     "ipw": 34.833333333333336,
+     "clean": 32.666666666666664,
+     "sd": 1.0069204977995465,
+     "lead": 27.689241678487136,
+     "coh": 0.9967107145565226,
+     "esc": 0.0396744247836076,
+     "util": 0.7783578927858048,
      "busy": {
-      "Muse Spark 1.3 (xhigh)": 132.6993556293296,
-      "GLM-5.3 (max)": 138.2075662476807,
-      "Gemini 3.8 Flash (high)": 40.44360338577506,
-      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 133.2852018968475,
-      "GPT-6 Luna (max)": 134.8782904717816,
-      "Ling 3.0 Flash": 121.78223624560671
+      "Muse Spark 1.3 (xhigh)": 149.6569448911846,
+      "GLM-5.3 (max)": 152.36111565299302,
+      "Gemini 3.8 Flash (high)": 40.35237345415275,
+      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 149.57874031409722,
+      "GPT-6 Luna (max)": 150.38366624777544,
+      "Ling 3.0 Flash": 142.2519153678883
      },
-     "api_week": 480.412429687499,
-     "usd_idea": 15.190906867588902
+     "api_week": 532.0177429687487,
+     "usd_idea": 15.27323664025116,
+     "usd_clean": 16.28625743781884
     }
    }
   },
@@ -2713,7 +2856,7 @@
     "Muse Spark 1.3 (xhigh)",
     "Gemini 3.8 Flash (high)",
     "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-    "Inkling Small",
+    "GPT-6 Luna (max)",
     "Ling 3.0 Flash"
    ],
    "rows": [
@@ -2721,120 +2864,120 @@
      "seat": "GPT-5.6 Terra (max)",
      "plan": "ChatGPT Pro 20x ($200)",
      "cap_h": 24,
-     "busy_h": 134.5,
+     "busy_h": 145.4,
      "rate": 2.1,
-     "api_week": 283,
+     "api_week": 306,
      "sub_week": 46,
-     "hybrid_week": 279,
+     "hybrid_week": 301,
      "breakeven_h": 22.0,
-     "subs_to_cover": 6,
-     "capped_ipw": 33.5,
-     "base_ipw": 36.6,
+     "subs_to_cover": 7,
+     "capped_ipw": 37.1,
+     "base_ipw": 39.6,
      "note": "Astra 100-900 messages per 5 h; hours assumed = Claude Max 20x; new sign-ups paused"
     },
     {
      "seat": "GPT-5.6 Terra (max)",
      "plan": "ChatGPT Pro 20x ($200)",
      "cap_h": 40,
-     "busy_h": 134.5,
+     "busy_h": 145.4,
      "rate": 2.1,
-     "api_week": 283,
+     "api_week": 306,
      "sub_week": 46,
-     "hybrid_week": 245,
+     "hybrid_week": 268,
      "breakeven_h": 22.0,
      "subs_to_cover": 4,
-     "capped_ipw": 35.5,
-     "base_ipw": 36.6,
+     "capped_ipw": 37.2,
+     "base_ipw": 39.6,
      "note": "Astra 100-900 messages per 5 h; hours assumed = Claude Max 20x; new sign-ups paused"
     },
     {
      "seat": "GPT-5.6 Terra (max)",
      "plan": "ChatGPT Pro 5x ($100)",
      "cap_h": 8,
-     "busy_h": 134.5,
+     "busy_h": 145.4,
      "rate": 2.1,
-     "api_week": 283,
+     "api_week": 306,
      "sub_week": 23,
-     "hybrid_week": 289,
+     "hybrid_week": 312,
      "breakeven_h": 11.0,
-     "subs_to_cover": 17,
-     "capped_ipw": 33.5,
-     "base_ipw": 36.6,
+     "subs_to_cover": 19,
+     "capped_ipw": 37.0,
+     "base_ipw": 39.6,
      "note": "Astra 25-225 messages per 5 h; hours assumed pro rata"
     },
     {
      "seat": "GPT-5.6 Terra (max)",
      "plan": "ChatGPT Pro 5x ($100)",
      "cap_h": 20,
-     "busy_h": 134.5,
+     "busy_h": 145.4,
      "rate": 2.1,
-     "api_week": 283,
+     "api_week": 306,
      "sub_week": 23,
-     "hybrid_week": 264,
+     "hybrid_week": 287,
      "breakeven_h": 11.0,
-     "subs_to_cover": 7,
-     "capped_ipw": 33.7,
-     "base_ipw": 36.6,
+     "subs_to_cover": 8,
+     "capped_ipw": 36.0,
+     "base_ipw": 39.6,
      "note": "Astra 25-225 messages per 5 h; hours assumed pro rata"
     },
     {
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 20x ($199.99)",
      "cap_h": 24,
-     "busy_h": 129.1,
+     "busy_h": 142.3,
      "rate": 1.2,
-     "api_week": 155,
+     "api_week": 171,
      "sub_week": 46,
-     "hybrid_week": 173,
+     "hybrid_week": 189,
      "breakeven_h": 38.3,
      "subs_to_cover": 6,
-     "capped_ipw": 32.5,
-     "base_ipw": 36.6,
+     "capped_ipw": 34.5,
+     "base_ipw": 39.6,
      "note": "no published agent limits; hours assumed = other 20x plans"
     },
     {
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 20x ($199.99)",
      "cap_h": 40,
-     "busy_h": 129.1,
+     "busy_h": 142.3,
      "rate": 1.2,
-     "api_week": 155,
+     "api_week": 171,
      "sub_week": 46,
-     "hybrid_week": 153,
+     "hybrid_week": 169,
      "breakeven_h": 38.3,
      "subs_to_cover": 4,
-     "capped_ipw": 32.2,
-     "base_ipw": 36.6,
+     "capped_ipw": 35.0,
+     "base_ipw": 39.6,
      "note": "no published agent limits; hours assumed = other 20x plans"
     },
     {
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 5x ($99.99)",
      "cap_h": 8,
-     "busy_h": 129.1,
+     "busy_h": 142.3,
      "rate": 1.2,
-     "api_week": 155,
+     "api_week": 171,
      "sub_week": 23,
-     "hybrid_week": 169,
+     "hybrid_week": 185,
      "breakeven_h": 19.2,
-     "subs_to_cover": 17,
-     "capped_ipw": 31.7,
-     "base_ipw": 36.6,
+     "subs_to_cover": 18,
+     "capped_ipw": 33.9,
+     "base_ipw": 39.6,
      "note": "no published agent limits; assumed"
     },
     {
      "seat": "Gemini 3.8 Flash (high)",
      "plan": "Google AI Ultra 5x ($99.99)",
      "cap_h": 20,
-     "busy_h": 129.1,
+     "busy_h": 142.3,
      "rate": 1.2,
-     "api_week": 155,
+     "api_week": 171,
      "sub_week": 23,
-     "hybrid_week": 154,
+     "hybrid_week": 170,
      "breakeven_h": 19.2,
-     "subs_to_cover": 7,
-     "capped_ipw": 31.5,
-     "base_ipw": 36.6,
+     "subs_to_cover": 8,
+     "capped_ipw": 34.3,
+     "base_ipw": 39.6,
      "note": "no published agent limits; assumed"
     }
    ],
@@ -2849,25 +2992,27 @@
       "Muse Spark 1.3 (xhigh)",
       "Gemini 3.8 Flash (high)",
       "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-      "Inkling Small",
+      "GPT-6 Luna (max)",
       "Ling 3.0 Flash"
      ],
-     "ipw": 27.958333333333332,
-     "sd": 0.3200477394945253,
-     "lead": 22.982384244179563,
-     "coh": 0.992947984289295,
-     "esc": 0.08065047246449819,
-     "util": 0.5734625365186915,
+     "ipw": 30.75,
+     "clean": 27.875,
+     "sd": 0.4768967975941504,
+     "lead": 30.978513614993652,
+     "coh": 0.9956077921965096,
+     "esc": 0.05821591294108169,
+     "util": 0.6553031604196813,
      "busy": {
-      "GPT-5.6 Terra (max)": 24.643085556102772,
-      "Muse Spark 1.3 (xhigh)": 141.4643881607176,
-      "Gemini 3.8 Flash (high)": 24.623333462391898,
-      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 141.6439480114587,
-      "Inkling Small": 129.33355543384042,
-      "Ling 3.0 Flash": 116.34192618632959
+      "GPT-5.6 Terra (max)": 24.947862387207472,
+      "Muse Spark 1.3 (xhigh)": 155.3977536237829,
+      "Gemini 3.8 Flash (high)": 24.559597482765348,
+      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 155.38536843188052,
+      "GPT-6 Luna (max)": 156.24647897347612,
+      "Ling 3.0 Flash": 144.00852480392643
      },
-     "api_week": 424.9255612499992,
-     "usd_idea": 15.198529761549898
+     "api_week": 425.25274265624927,
+     "usd_idea": 13.829357484756073,
+     "usd_clean": 15.255703772421498
     },
     "high cap": {
      "caps": {
@@ -2879,44 +3024,46 @@
       "Muse Spark 1.3 (xhigh)",
       "Gemini 3.8 Flash (high)",
       "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-      "Inkling Small",
+      "GPT-6 Luna (max)",
       "Ling 3.0 Flash"
      ],
-     "ipw": 30.541666666666664,
-     "sd": 0.8926785535678553,
-     "lead": 24.795261807456953,
-     "coh": 0.9912839753331775,
-     "esc": 0.07777297170914192,
-     "util": 0.6210818106235177,
+     "ipw": 32.70833333333333,
+     "clean": 30.0,
+     "sd": 0.48591265790377425,
+     "lead": 29.812776780530506,
+     "coh": 0.9958467813644535,
+     "esc": 0.052092779331861495,
+     "util": 0.6826408019318879,
      "busy": {
-      "GPT-5.6 Terra (max)": 40.90480825682626,
-      "Muse Spark 1.3 (xhigh)": 144.25453891006524,
-      "Gemini 3.8 Flash (high)": 40.51858689121807,
-      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 143.26420713444494,
-      "Inkling Small": 134.3657790720193,
-      "Ling 3.0 Flash": 122.74254484393212
+      "GPT-5.6 Terra (max)": 40.810870192444675,
+      "Muse Spark 1.3 (xhigh)": 153.52918190909514,
+      "Gemini 3.8 Flash (high)": 40.56107754430244,
+      "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 154.01836224607945,
+      "GPT-6 Luna (max)": 154.66570339328007,
+      "Ling 3.0 Flash": 144.51673306214118
      },
-     "api_week": 485.9726990624992,
-     "usd_idea": 15.911793693724395
+     "api_week": 474.2151534374993,
+     "usd_idea": 14.498297684713355,
+     "usd_clean": 15.807171781249975
     }
    }
   }
  },
  "sensitivity": {
   "base (0.25, 30, 0.90)": {
-   "api_week": 558,
-   "top_week": 481,
-   "usd_idea": 16.3
+   "api_week": 637,
+   "top_week": 549,
+   "usd_clean": 17.6
   },
   "lean (0.15, 15, 0.95)": {
-   "api_week": 211,
-   "top_week": 181,
-   "usd_idea": 6.2
+   "api_week": 240,
+   "top_week": 207,
+   "usd_clean": 6.7
   },
   "heavy (0.40, 60, 0.80)": {
-   "api_week": 1937,
-   "top_week": 1672,
-   "usd_idea": 56.7
+   "api_week": 2211,
+   "top_week": 1906,
+   "usd_clean": 61.2
   }
  },
  "plans": {
@@ -2986,7 +3133,7 @@
    "council_rounds": 1,
    "redteam": true,
    "audit": true,
-   "wip": 4
+   "wip": 6
   },
   "quality": {
    "coherence": 0.97,

@@ -1,0 +1,142 @@
+FIXED vs ELASTIC (institutions' rules on the idea-to-live value stream; lead = median/90th percentile)
+
+[steady]
+  fixed six                               19.7 clean ( 25.0 live)  lead   30/  49 h  backlog    3  CFR  12%  $   43/clean  $   851/wk  seat-h  1008  peak   6  util 0.71
+  fixed twelve                            20.0 clean ( 24.4 live)  lead   17/  23 h  backlog    5  CFR   7%  $   44/clean  $   888/wk  seat-h  2016  peak  12  util 0.35
+  fixed 24                                19.4 clean ( 24.7 live)  lead   16/  21 h  backlog    3  CFR  14%  $   51/clean  $   996/wk  seat-h  4032  peak  24  util 0.18
+  elastic (six models, floor 0.8)         20.1 clean ( 25.0 live)  lead   19/  26 h  backlog    3  CFR   9%  $   19/clean  $   390/wk  seat-h  1240  peak  36  util 0.58
+  elastic, cheapest only (floor 0.6)      14.6 clean ( 23.8 live)  lead   19/  27 h  backlog    3  CFR  20%  $   10/clean  $   148/wk  seat-h  1163  peak  27  util 0.62
+  elastic, no pull rules (no cost band)   19.1 clean ( 24.8 live)  lead   18/  25 h  backlog    3  CFR  11%  $   27/clean  $   510/wk  seat-h  1159  peak  33  util 0.65
+  elastic, one model: Opus 5.5            17.8 clean ( 25.5 live)  lead   19/  27 h  backlog    4  CFR  18%  $  219/clean  $  3899/wk  seat-h  1516  peak  48  util 0.74
+  elastic, one model: Gemini 3.8 Flash    15.4 clean ( 23.5 live)  lead   15/  22 h  backlog    2  CFR  19%  $   44/clean  $   672/wk  seat-h   891  peak  42  util 0.63
+  elastic, two models: Opus + Gemini      19.3 clean ( 25.2 live)  lead   17/  23 h  backlog    4  CFR  12%  $   70/clean  $  1353/wk  seat-h  1156  peak  48  util 0.61
+
+[bursty]
+  fixed six                               20.6 clean ( 25.0 live)  lead   41/  67 h  backlog    1  CFR  10%  $   40/clean  $   829/wk  seat-h  1008  peak   6  util 0.70
+  fixed twelve                            20.6 clean ( 25.2 live)  lead   21/  34 h  backlog    2  CFR  11%  $   43/clean  $   892/wk  seat-h  2016  peak  12  util 0.36
+  fixed 24                                19.6 clean ( 25.1 live)  lead   16/  22 h  backlog    0  CFR  12%  $   51/clean  $   993/wk  seat-h  4032  peak  24  util 0.19
+  elastic (six models, floor 0.8)         19.2 clean ( 25.2 live)  lead   19/  27 h  backlog    2  CFR  12%  $   21/clean  $   412/wk  seat-h  1210  peak  40  util 0.62
+  elastic, cheapest only (floor 0.6)      16.8 clean ( 26.8 live)  lead   20/  27 h  backlog    1  CFR  16%  $   11/clean  $   177/wk  seat-h  1176  peak  29  util 0.68
+  elastic, no pull rules (no cost band)   18.0 clean ( 24.2 live)  lead   19/  26 h  backlog    2  CFR  12%  $   33/clean  $   590/wk  seat-h  1104  peak  37  util 0.68
+  elastic, one model: Opus 5.5            18.2 clean ( 24.7 live)  lead   19/  27 h  backlog    1  CFR  16%  $  205/clean  $  3750/wk  seat-h  1421  peak  48  util 0.76
+  elastic, one model: Gemini 3.8 Flash    16.5 clean ( 25.5 live)  lead   15/  21 h  backlog    1  CFR  20%  $   45/clean  $   740/wk  seat-h   951  peak  48  util 0.65
+  elastic, two models: Opus + Gemini      17.4 clean ( 23.1 live)  lead   17/  23 h  backlog    1  CFR  14%  $   71/clean  $  1230/wk  seat-h  1008  peak  48  util 0.64
+
+[growth]
+  fixed six                               25.7 clean ( 32.0 live)  lead  101/ 220 h  backlog  110  CFR  10%  $   42/clean  $  1083/wk  seat-h  1008  peak   6  util 0.93
+  fixed twelve                            36.2 clean ( 46.2 live)  lead   31/  53 h  backlog   26  CFR  12%  $   46/clean  $  1665/wk  seat-h  2016  peak  12  util 0.70
+  fixed 24                                38.8 clean ( 48.8 live)  lead   16/  23 h  backlog    7  CFR  11%  $   48/clean  $  1871/wk  seat-h  4032  peak  24  util 0.36
+  elastic (six models, floor 0.8)         40.7 clean ( 51.5 live)  lead   19/  26 h  backlog    7  CFR   9%  $   23/clean  $   929/wk  seat-h  2319  peak  44  util 0.66
+  elastic, cheapest only (floor 0.6)      32.7 clean ( 49.7 live)  lead   19/  27 h  backlog   10  CFR  16%  $   10/clean  $   333/wk  seat-h  2104  peak  30  util 0.71
+  elastic, no pull rules (no cost band)   38.4 clean ( 49.9 live)  lead   18/  25 h  backlog    8  CFR  12%  $   32/clean  $  1212/wk  seat-h  2142  peak  41  util 0.71
+  elastic, one model: Opus 5.5            33.2 clean ( 48.0 live)  lead   20/  27 h  backlog   11  CFR  18%  $  224/clean  $  7434/wk  seat-h  2768  peak  48  util 0.77
+  elastic, one model: Gemini 3.8 Flash    33.9 clean ( 51.5 live)  lead   15/  21 h  backlog    8  CFR  20%  $   44/clean  $  1504/wk  seat-h  1871  peak  48  util 0.67
+  elastic, two models: Opus + Gemini      37.2 clean ( 47.0 live)  lead   17/  24 h  backlog    9  CFR  13%  $   79/clean  $  2936/wk  seat-h  2155  peak  48  util 0.65
+
+[mixed]
+  fixed six                               19.2 clean ( 24.0 live)  lead   36/  66 h  backlog    4  CFR  10%  $   46/clean  $   887/wk  seat-h  1008  peak   6  util 0.74
+  fixed twelve                            21.3 clean ( 26.2 live)  lead   17/  29 h  backlog    2  CFR  10%  $   46/clean  $   977/wk  seat-h  2016  peak  12  util 0.38
+  fixed 24                                20.0 clean ( 25.0 live)  lead   16/  26 h  backlog    2  CFR  10%  $   55/clean  $  1098/wk  seat-h  4032  peak  24  util 0.20
+  elastic (six models, floor 0.8)         21.0 clean ( 26.8 live)  lead   19/  37 h  backlog    3  CFR  11%  $   32/clean  $   675/wk  seat-h  1437  peak  42  util 0.57
+  elastic, cheapest only (floor 0.6)      16.0 clean ( 25.3 live)  lead   18/  31 h  backlog    4  CFR  15%  $   27/clean  $   433/wk  seat-h  1354  peak  38  util 0.61
+  elastic, no pull rules (no cost band)   17.9 clean ( 24.5 live)  lead   18/  31 h  backlog    4  CFR  13%  $   57/clean  $  1019/wk  seat-h  1262  peak  39  util 0.68
+  elastic, one model: Opus 5.5            18.6 clean ( 25.2 live)  lead   20/  32 h  backlog    4  CFR  16%  $  214/clean  $  3993/wk  seat-h  1581  peak  48  util 0.72
+  elastic, one model: Gemini 3.8 Flash    17.6 clean ( 25.8 live)  lead   16/  31 h  backlog    2  CFR  17%  $   47/clean  $   823/wk  seat-h  1111  peak  48  util 0.62
+  elastic, two models: Opus + Gemini      19.9 clean ( 25.0 live)  lead   17/  29 h  backlog    4  CFR  12%  $   86/clean  $  1710/wk  seat-h  1318  peak  48  util 0.60
+
+[surge]
+  fixed six                               28.1 clean ( 35.2 live)  lead  327/ 508 h  backlog  201  CFR  11%  $   41/clean  $  1161/wk  seat-h  1008  peak   6  util 1.00
+  fixed twelve                            47.9 clean ( 59.7 live)  lead   34/  50 h  backlog    9  CFR  11%  $   43/clean  $  2040/wk  seat-h  2016  peak  12  util 0.86
+  fixed 24                                51.8 clean ( 62.9 live)  lead   16/  22 h  backlog    8  CFR   9%  $   46/clean  $  2362/wk  seat-h  4032  peak  24  util 0.46
+  elastic (six models, floor 0.8)         49.2 clean ( 62.0 live)  lead   18/  25 h  backlog    8  CFR  11%  $   22/clean  $  1071/wk  seat-h  2725  peak  43  util 0.67
+  elastic, cheapest only (floor 0.6)      38.8 clean ( 61.0 live)  lead   19/  27 h  backlog    8  CFR  19%  $   11/clean  $   418/wk  seat-h  2506  peak  32  util 0.73
+  elastic, no pull rules (no cost band)   45.3 clean ( 58.2 live)  lead   18/  25 h  backlog    6  CFR  11%  $   30/clean  $  1341/wk  seat-h  2436  peak  38  util 0.72
+  elastic, one model: Opus 5.5            42.7 clean ( 61.4 live)  lead   20/  27 h  backlog    8  CFR  18%  $  219/clean  $  9344/wk  seat-h  3467  peak  48  util 0.77
+  elastic, one model: Gemini 3.8 Flash    41.8 clean ( 63.5 live)  lead   15/  22 h  backlog    5  CFR  20%  $   44/clean  $  1846/wk  seat-h  2287  peak  48  util 0.67
+  elastic, two models: Opus + Gemini      48.3 clean ( 60.6 live)  lead   17/  24 h  backlog    8  CFR  11%  $   80/clean  $  3859/wk  seat-h  2756  peak  48  util 0.65
+
+[harder]
+  fixed six                               14.2 clean ( 24.6 live)  lead   43/  96 h  backlog   10  CFR  14%  $   71/clean  $  1015/wk  seat-h  1008  peak   6  util 0.81
+  fixed twelve                            14.5 clean ( 23.5 live)  lead   22/  52 h  backlog    4  CFR  13%  $   80/clean  $  1157/wk  seat-h  2016  peak  12  util 0.40
+  fixed 24                                15.9 clean ( 24.4 live)  lead   19/  44 h  backlog    4  CFR  16%  $   81/clean  $  1297/wk  seat-h  4032  peak  24  util 0.20
+  elastic (six models, floor 0.8)         13.3 clean ( 23.8 live)  lead   26/  61 h  backlog    7  CFR  13%  $   90/clean  $  1203/wk  seat-h  1740  peak  37  util 0.48
+  elastic, cheapest only (floor 0.6)       8.7 clean ( 26.2 live)  lead   22/  45 h  backlog    3  CFR  17%  $   83/clean  $   723/wk  seat-h  1599  peak  36  util 0.51
+  elastic, no pull rules (no cost band)   12.9 clean ( 22.5 live)  lead   24/  50 h  backlog    5  CFR  14%  $  154/clean  $  1983/wk  seat-h  1431  peak  32  util 0.64
+  elastic, one model: Opus 5.5            13.5 clean ( 24.5 live)  lead   25/  51 h  backlog    6  CFR  23%  $  312/clean  $  4223/wk  seat-h  1849  peak  48  util 0.65
+  elastic, one model: Gemini 3.8 Flash    12.3 clean ( 23.9 live)  lead   23/  47 h  backlog    4  CFR  25%  $   69/clean  $   849/wk  seat-h  1279  peak  43  util 0.55
+  elastic, two models: Opus + Gemini      18.0 clean ( 26.0 live)  lead   24/  51 h  backlog    4  CFR  14%  $  135/clean  $  2424/wk  seat-h  1813  peak  48  util 0.53
+
+BUDGET CAP sweep, elastic six models ($/hour of running instances at API rates)
+
+[growth]
+  cap $2/h                                20.2 clean ( 26.2 live)  lead   90/ 277 h  backlog  136  CFR   9%  $   16/clean  $   316/wk  seat-h   879  peak  18  util 0.89  ( 50% of uncapped)
+  cap $5/h                                26.3 clean ( 32.5 live)  lead   28/ 170 h  backlog  100  CFR  10%  $   24/clean  $   640/wk  seat-h  1282  peak  24  util 0.78  ( 65% of uncapped)
+  cap $10/h                               38.9 clean ( 49.2 live)  lead   20/  29 h  backlog   10  CFR   9%  $   20/clean  $   780/wk  seat-h  2093  peak  30  util 0.69  ( 95% of uncapped)
+  cap $20/h                               39.6 clean ( 48.9 live)  lead   19/  26 h  backlog    9  CFR   8%  $   21/clean  $   823/wk  seat-h  2178  peak  37  util 0.66  ( 97% of uncapped)
+  cap $40/h                               39.5 clean ( 50.7 live)  lead   19/  26 h  backlog   10  CFR  11%  $   24/clean  $   937/wk  seat-h  2304  peak  42  util 0.66  ( 97% of uncapped)
+  cap none                                40.7 clean ( 51.5 live)  lead   19/  26 h  backlog    7  CFR   9%  $   23/clean  $   929/wk  seat-h  2319  peak  44  util 0.66  (100% of uncapped)
+  sweet spot: the lowest cap within 5% of uncapped clean output and 25% of its p90 lead time: $10/h (spend $780/wk = $3380/month)
+
+[surge]
+  cap $2/h                                22.5 clean ( 29.6 live)  lead  332/ 524 h  backlog  211  CFR  12%  $   16/clean  $   355/wk  seat-h   882  peak   5  util 1.00  ( 46% of uncapped)
+  cap $5/h                                29.2 clean ( 37.8 live)  lead  203/ 363 h  backlog  152  CFR  11%  $   32/clean  $   945/wk  seat-h  1257  peak  19  util 0.96  ( 59% of uncapped)
+  cap $10/h                               48.4 clean ( 61.3 live)  lead   20/  29 h  backlog    9  CFR   9%  $   20/clean  $   957/wk  seat-h  2513  peak  30  util 0.72  ( 98% of uncapped)
+  cap $20/h                               48.2 clean ( 59.8 live)  lead   18/  26 h  backlog    6  CFR  10%  $   21/clean  $  1004/wk  seat-h  2597  peak  35  util 0.67  ( 98% of uncapped)
+  cap $40/h                               45.0 clean ( 57.8 live)  lead   18/  25 h  backlog    8  CFR  10%  $   22/clean  $   992/wk  seat-h  2556  peak  41  util 0.66  ( 92% of uncapped)
+  cap none                                49.2 clean ( 62.0 live)  lead   18/  25 h  backlog    8  CFR  11%  $   22/clean  $  1071/wk  seat-h  2725  peak  43  util 0.67  (100% of uncapped)
+  sweet spot: the lowest cap within 5% of uncapped clean output and 25% of its p90 lead time: $10/h (spend $957/wk = $4147/month)
+
+[bursty]
+  cap $2/h                                18.6 clean ( 24.3 live)  lead   42/ 124 h  backlog   13  CFR  11%  $   13/clean  $   239/wk  seat-h   890  peak  19  util 0.80  ( 97% of uncapped)
+  cap $5/h                                18.9 clean ( 24.4 live)  lead   23/  40 h  backlog    1  CFR  12%  $   17/clean  $   329/wk  seat-h  1030  peak  24  util 0.69  ( 98% of uncapped)
+  cap $10/h                               20.4 clean ( 25.6 live)  lead   20/  27 h  backlog    1  CFR  10%  $   19/clean  $   397/wk  seat-h  1135  peak  29  util 0.65  (106% of uncapped)
+  cap $20/h                               20.1 clean ( 25.6 live)  lead   19/  26 h  backlog    2  CFR  10%  $   21/clean  $   425/wk  seat-h  1184  peak  34  util 0.63  (105% of uncapped)
+  cap $40/h                               20.0 clean ( 25.9 live)  lead   19/  27 h  backlog    2  CFR  10%  $   22/clean  $   438/wk  seat-h  1235  peak  38  util 0.62  (104% of uncapped)
+  cap none                                19.2 clean ( 25.2 live)  lead   19/  27 h  backlog    2  CFR  12%  $   21/clean  $   412/wk  seat-h  1210  peak  40  util 0.62  (100% of uncapped)
+  sweet spot: the lowest cap within 5% of uncapped clean output and 25% of its p90 lead time: $10/h (spend $397/wk = $1719/month)
+
+MENU: which models the Scaler may start (floor 0.8, 48 instances in all); a model costs nothing unless used
+
+[steady]
+  six with Opus 5.5 (r11)                 20.1 clean ( 25.0 live)  lead   19/  26 h  backlog    3  CFR   9%  $   19/clean  $   390/wk  seat-h  1240  peak  36  util 0.58
+  six with GPT-5.6 Terra                  21.0 clean ( 26.7 live)  lead   19/  27 h  backlog    4  CFR  12%  $   18/clean  $   374/wk  seat-h  1350  peak  39  util 0.57
+  seven (Opus 5.5 + Terra)                19.6 clean ( 25.7 live)  lead   19/  26 h  backlog    3  CFR  12%  $   20/clean  $   391/wk  seat-h  1265  peak  36  util 0.58
+  whole shortlist (24 models)             18.8 clean ( 24.8 live)  lead   25/  35 h  backlog    4  CFR  12%  $   19/clean  $   352/wk  seat-h  1839  peak  42  util 0.70
+  whole shortlist, share of busy hours: Gemma 4 31B 31%, Qwen3.8-Flash-Next 20%, GLM 5.3 Flash* 17%, GPT-6 Luna (max)* 14%, Ling 3.0 Flash 6%, MiMo-V2.6-Pro* 5%, MiMo-V2.5 3%, Claude Opus 5.5 Max* 2%
+
+[mixed]
+  six with Opus 5.5 (r11)                 21.0 clean ( 26.8 live)  lead   19/  37 h  backlog    3  CFR  11%  $   32/clean  $   675/wk  seat-h  1437  peak  42  util 0.57
+  six with GPT-5.6 Terra                  20.4 clean ( 26.0 live)  lead   19/  40 h  backlog    4  CFR   9%  $   26/clean  $   521/wk  seat-h  1536  peak  40  util 0.56
+  seven (Opus 5.5 + Terra)                20.0 clean ( 25.7 live)  lead   19/  36 h  backlog    4  CFR  11%  $   31/clean  $   630/wk  seat-h  1420  peak  43  util 0.57
+  whole shortlist (24 models)             19.3 clean ( 25.5 live)  lead   25/  44 h  backlog    5  CFR  10%  $   52/clean  $   997/wk  seat-h  1998  peak  52  util 0.68
+  whole shortlist, share of busy hours: Gemma 4 31B 29%, Qwen3.8-Flash-Next 18%, GPT-6 Luna (max)* 14%, GLM 5.3 Flash* 14%, Claude Fable 5.1 Max 7%, Ling 3.0 Flash 6%, MiMo-V2.6-Pro* 4%, Claude Opus 5.5 Max* 4%, MiMo-V2.5 3%
+
+[harder]
+  six with Opus 5.5 (r11)                 13.3 clean ( 23.8 live)  lead   26/  61 h  backlog    7  CFR  13%  $   90/clean  $  1203/wk  seat-h  1740  peak  37  util 0.48
+  six with GPT-5.6 Terra                  14.8 clean ( 25.6 live)  lead   31/  64 h  backlog    6  CFR  16%  $   68/clean  $   997/wk  seat-h  2119  peak  38  util 0.48
+  seven (Opus 5.5 + Terra)                15.5 clean ( 25.7 live)  lead   27/  65 h  backlog    5  CFR  13%  $   85/clean  $  1315/wk  seat-h  1882  peak  37  util 0.49
+  whole shortlist (24 models)             13.4 clean ( 22.8 live)  lead   34/  73 h  backlog   10  CFR  12%  $  169/clean  $  2268/wk  seat-h  2256  peak  51  util 0.57
+  whole shortlist, share of busy hours: Gemma 4 31B 21%, Claude Fable 5.1 Max 18%, Qwen3.8-Flash-Next 16%, GLM 5.3 Flash* 14%, GPT-6 Luna (max)* 11%, Claude Opus 5.5 Max* 7%, MiMo-V2.6-Pro* 5%, Ling 3.0 Flash 4%, MiMo-V2.5 2%
+
+[surge]
+  six with Opus 5.5 (r11)                 49.2 clean ( 62.0 live)  lead   18/  25 h  backlog    8  CFR  11%  $   22/clean  $  1071/wk  seat-h  2725  peak  43  util 0.67
+  six with GPT-5.6 Terra                  48.1 clean ( 60.2 live)  lead   19/  27 h  backlog    6  CFR   9%  $   19/clean  $   895/wk  seat-h  2718  peak  46  util 0.65
+  seven (Opus 5.5 + Terra)                47.9 clean ( 59.0 live)  lead   18/  25 h  backlog    8  CFR   9%  $   21/clean  $  1009/wk  seat-h  2618  peak  47  util 0.66
+  whole shortlist (24 models)             45.1 clean ( 58.9 live)  lead   25/  36 h  backlog   10  CFR  10%  $   22/clean  $   973/wk  seat-h  3933  peak  54  util 0.77
+  whole shortlist, share of busy hours: Gemma 4 31B 28%, Qwen3.8-Flash-Next 19%, GLM 5.3 Flash* 18%, GPT-6 Luna (max)* 13%, Ling 3.0 Flash 6%, MiMo-V2.6-Pro* 5%, MiMo-V2.5 3%, Claude Opus 5.5 Max* 3%
+
+SCALE: elastic six models, uncapped, demand from 10 to 150 ideas a week; merge contention light (k=0.005) and heavy (k=0.02)
+
+[contention light]
+  10 ideas/wk arriving                     7.0 clean (  9.5 live)  lead   20/  28 h  backlog    1  CFR  10%  $   22/clean  $   157/wk  seat-h   508  peak  29  util 0.54  marginal $  nan/clean
+  25 ideas/wk arriving                    20.1 clean ( 25.0 live)  lead   19/  26 h  backlog    3  CFR   9%  $   19/clean  $   390/wk  seat-h  1240  peak  36  util 0.58  marginal $   18/clean
+  50 ideas/wk arriving                    36.8 clean ( 46.5 live)  lead   18/  26 h  backlog    4  CFR  10%  $   21/clean  $   763/wk  seat-h  2120  peak  42  util 0.64  marginal $   22/clean
+  100 ideas/wk arriving                   78.0 clean ( 99.9 live)  lead   20/  27 h  backlog   12  CFR  11%  $   25/clean  $  1987/wk  seat-h  3957  peak  48  util 0.75  marginal $   30/clean
+  150 ideas/wk arriving                  119.0 clean (150.1 live)  lead   24/  33 h  backlog   21  CFR  10%  $   32/clean  $  3788/wk  seat-h  5367  peak  48  util 0.84  marginal $   44/clean
+
+[contention heavy]
+  10 ideas/wk arriving                     8.5 clean ( 10.4 live)  lead   20/  27 h  backlog    1  CFR  10%  $   20/clean  $   167/wk  seat-h   582  peak  27  util 0.55  marginal $  nan/clean
+  25 ideas/wk arriving                    20.8 clean ( 26.4 live)  lead   19/  27 h  backlog    4  CFR  10%  $   21/clean  $   441/wk  seat-h  1399  peak  36  util 0.59  marginal $   22/clean
+  50 ideas/wk arriving                    38.4 clean ( 50.1 live)  lead   19/  28 h  backlog    6  CFR  12%  $   26/clean  $   988/wk  seat-h  2459  peak  44  util 0.66  marginal $   31/clean
+  100 ideas/wk arriving                   77.6 clean ( 98.4 live)  lead   23/  33 h  backlog   16  CFR  10%  $   34/clean  $  2668/wk  seat-h  4552  peak  48  util 0.79  marginal $   43/clean
+  150 ideas/wk arriving                  126.9 clean (153.8 live)  lead   44/  61 h  backlog   41  CFR  10%  $   55/clean  $  6921/wk  seat-h  7091  peak  48  util 0.93  marginal $   86/clean

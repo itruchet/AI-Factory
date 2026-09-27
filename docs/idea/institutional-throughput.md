@@ -3,6 +3,12 @@
 Stage: IDEA (analysis to inform design)
 Code: [`probes/institutions/`](../../probes/institutions/) · Visual summary: [Factory Throughput Model](https://claude.ai/artifact/KqT8mPfqWx69EobtZ4Ybx3) · Data: [`probes/aa-tiers/aa_coding_2026-09-09.csv`](../../probes/aa-tiers/aa_coding_2026-09-09.csv)
 
+> **r12 note.** Two model faults were fixed in r12 and every table in [`experiments_output.txt`](../../probes/institutions/experiments_output.txt) was re-run:
+> - **Double release.** A late audit catch could send an idea through release twice, counting it twice.
+> - **Empty-plan stall.** A plan that mapped no requirements left its idea stalled in build forever.
+>
+> Throughput moved by 0–2% (largest at 24 agents), and lead times fell because stalls are gone (12 agents: 56 h → 45 h). Every conclusion below stands. The figures in this document are the r10 run. r12 extends the model to every step from idea to live, adds other organisations and elastic capacity: see [`value-stream.md`](value-stream.md).
+
 This analysis does not start from the Factory's current models. It starts from the whole Artificial Analysis Coding Index population, staffs each organisation with agents drawn from that population, and simulates work moving through it. The question it answers: how many agents, of which tiers, in which institutions, give the most coherent work through the pipeline, and where does each organisation bottleneck?
 
 ---

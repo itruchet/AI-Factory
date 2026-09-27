@@ -1,217 +1,67 @@
 [
  {
   "six": [
-   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "Muse Spark 1.3 (xhigh)",
-   "Gemini 3.8 Flash (high)",
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "Inkling Small",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 36.06,
-    "share": 0.972,
-    "coh": 0.997,
-    "esc": 0.059,
-    "usd_idea": 43.6
-   },
-   "speed-half": {
-    "ipw": 29.54,
-    "share": 0.978,
-    "coh": 0.996,
-    "esc": 0.06,
-    "usd_idea": 53.3
-   },
-   "speed-ignored": {
-    "ipw": 25.48,
-    "share": 0.987,
-    "coh": 0.996,
-    "esc": 0.06,
-    "usd_idea": 63.0
-   },
-   "harder-work": {
-    "ipw": 23.73,
-    "share": 0.96,
-    "coh": 0.997,
-    "esc": 0.234,
-    "usd_idea": 72.9
-   },
-   "harder+half": {
-    "ipw": 20.69,
-    "share": 0.949,
-    "coh": 0.997,
-    "esc": 0.241,
-    "usd_idea": 83.8
-   },
-   "estimates-3": {
-    "ipw": 35.1,
-    "share": 0.987,
-    "coh": 0.995,
-    "esc": 0.06,
-    "usd_idea": 44.2
-   }
-  }
- },
- {
-  "six": [
    "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
    "Muse Spark 1.3 (xhigh)",
    "Gemini 3.8 Flash (high)",
    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "MiniMax-M3",
+   "GPT-6 Luna (max)",
    "Ling 3.0 Flash"
   ],
   "scenarios": {
    "base": {
-    "ipw": 35.1,
+    "ipw": 39.52,
+    "clean": 36.65,
+    "share": 0.988,
+    "coh": 0.996,
+    "esc": 0.042,
+    "usd_idea": 25.3,
+    "usd_clean": 27.3
+   },
+   "speed-half": {
+    "ipw": 33.52,
+    "clean": 31.6,
+    "share": 1.0,
+    "coh": 0.997,
+    "esc": 0.039,
+    "usd_idea": 30.6,
+    "usd_clean": 32.5
+   },
+   "speed-ignored": {
+    "ipw": 28.33,
+    "clean": 26.65,
+    "share": 0.987,
+    "coh": 0.998,
+    "esc": 0.041,
+    "usd_idea": 37.0,
+    "usd_clean": 39.3
+   },
+   "harder-work": {
+    "ipw": 27.73,
+    "clean": 21.85,
+    "share": 1.0,
+    "coh": 0.997,
+    "esc": 0.222,
+    "usd_idea": 38.5,
+    "usd_clean": 48.9
+   },
+   "harder+half": {
+    "ipw": 23.83,
+    "clean": 18.06,
     "share": 0.947,
     "coh": 0.995,
-    "esc": 0.052,
-    "usd_idea": 26.5
-   },
-   "speed-half": {
-    "ipw": 29.62,
-    "share": 0.981,
-    "coh": 0.995,
-    "esc": 0.044,
-    "usd_idea": 32.2
-   },
-   "speed-ignored": {
-    "ipw": 24.92,
-    "share": 0.965,
-    "coh": 0.994,
-    "esc": 0.054,
-    "usd_idea": 39.1
-   },
-   "harder-work": {
-    "ipw": 24.73,
-    "share": 1.0,
-    "coh": 0.998,
-    "esc": 0.227,
-    "usd_idea": 41.3
-   },
-   "harder+half": {
-    "ipw": 21.67,
-    "share": 0.994,
-    "coh": 0.998,
-    "esc": 0.233,
-    "usd_idea": 48.5
+    "esc": 0.232,
+    "usd_idea": 45.5,
+    "usd_clean": 60.0
    },
    "estimates-3": {
-    "ipw": 33.85,
-    "share": 0.952,
-    "coh": 0.995,
-    "esc": 0.058,
-    "usd_idea": 27.0
-   }
-  }
- },
- {
-  "six": [
-   "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "Muse Spark 1.3 (xhigh)",
-   "Gemini 3.8 Flash (high)",
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "GPT-6 Luna (max)",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 34.9,
-    "share": 0.941,
+    "ipw": 39.04,
+    "clean": 35.67,
+    "share": 0.99,
     "coh": 0.996,
-    "esc": 0.038,
-    "usd_idea": 25.6
-   },
-   "speed-half": {
-    "ipw": 29.48,
-    "share": 0.976,
-    "coh": 0.998,
-    "esc": 0.043,
-    "usd_idea": 30.7
-   },
-   "speed-ignored": {
-    "ipw": 25.38,
-    "share": 0.983,
-    "coh": 0.998,
-    "esc": 0.05,
-    "usd_idea": 37.2
-   },
-   "harder-work": {
-    "ipw": 24.12,
-    "share": 0.976,
-    "coh": 0.997,
-    "esc": 0.218,
-    "usd_idea": 40.4
-   },
-   "harder+half": {
-    "ipw": 21.79,
-    "share": 1.0,
-    "coh": 0.997,
-    "esc": 0.199,
-    "usd_idea": 45.3
-   },
-   "estimates-3": {
-    "ipw": 34.94,
-    "share": 0.982,
-    "coh": 0.996,
-    "esc": 0.05,
-    "usd_idea": 25.9
-   }
-  }
- },
- {
-  "six": [
-   "Muse Spark 1.3 (xhigh)",
-   "GLM-5.3 (max)",
-   "Gemini 3.8 Flash (high)",
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "GPT-6 Luna (max)",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 34.4,
-    "share": 0.928,
-    "coh": 0.996,
-    "esc": 0.047,
-    "usd_idea": 16.3
-   },
-   "speed-half": {
-    "ipw": 29.35,
-    "share": 0.972,
-    "coh": 0.996,
-    "esc": 0.033,
-    "usd_idea": 19.7
-   },
-   "speed-ignored": {
-    "ipw": 25.29,
-    "share": 0.98,
-    "coh": 0.996,
-    "esc": 0.044,
-    "usd_idea": 23.5
-   },
-   "harder-work": {
-    "ipw": 23.67,
-    "share": 0.957,
-    "coh": 0.996,
-    "esc": 0.227,
-    "usd_idea": 26.1
-   },
-   "harder+half": {
-    "ipw": 20.69,
-    "share": 0.949,
-    "coh": 0.997,
-    "esc": 0.226,
-    "usd_idea": 30.8
-   },
-   "estimates-3": {
-    "ipw": 34.1,
-    "share": 0.959,
-    "coh": 0.995,
-    "esc": 0.06,
-    "usd_idea": 16.6
+    "esc": 0.057,
+    "usd_idea": 25.7,
+    "usd_clean": 28.1
    }
   }
  },
@@ -221,51 +71,327 @@
    "Muse Spark 1.3 (xhigh)",
    "Gemini 3.8 Flash (high)",
    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "Inkling Small",
+   "GPT-6 Luna (max)",
    "Ling 3.0 Flash"
   ],
   "scenarios": {
    "base": {
-    "ipw": 36.71,
-    "share": 0.99,
-    "coh": 0.996,
-    "esc": 0.069,
-    "usd_idea": 20.8
+    "ipw": 39.77,
+    "clean": 37.1,
+    "share": 1.0,
+    "coh": 0.997,
+    "esc": 0.048,
+    "usd_idea": 20.0,
+    "usd_clean": 21.4
    },
    "speed-half": {
-    "ipw": 30.21,
-    "share": 1.0,
-    "coh": 0.996,
-    "esc": 0.055,
-    "usd_idea": 25.5
+    "ipw": 33.27,
+    "clean": 31.04,
+    "share": 0.982,
+    "coh": 0.997,
+    "esc": 0.043,
+    "usd_idea": 24.6,
+    "usd_clean": 26.4
    },
    "speed-ignored": {
-    "ipw": 24.94,
-    "share": 0.966,
-    "coh": 0.996,
-    "esc": 0.06,
-    "usd_idea": 31.6
+    "ipw": 27.88,
+    "clean": 26.17,
+    "share": 0.969,
+    "coh": 0.997,
+    "esc": 0.04,
+    "usd_idea": 30.0,
+    "usd_clean": 32.0
    },
    "harder-work": {
-    "ipw": 22.75,
-    "share": 0.92,
-    "coh": 0.997,
-    "esc": 0.243,
-    "usd_idea": 35.2
+    "ipw": 26.94,
+    "clean": 21.1,
+    "share": 0.966,
+    "coh": 0.996,
+    "esc": 0.222,
+    "usd_idea": 31.6,
+    "usd_clean": 40.3
    },
    "harder+half": {
-    "ipw": 19.92,
-    "share": 0.914,
-    "coh": 0.998,
-    "esc": 0.206,
-    "usd_idea": 41.5
+    "ipw": 22.58,
+    "clean": 17.83,
+    "share": 0.934,
+    "coh": 0.997,
+    "esc": 0.214,
+    "usd_idea": 38.2,
+    "usd_clean": 48.4
    },
    "estimates-3": {
-    "ipw": 35.25,
-    "share": 0.991,
+    "ipw": 39.23,
+    "clean": 35.48,
+    "share": 0.985,
+    "coh": 0.995,
+    "esc": 0.061,
+    "usd_idea": 20.3,
+    "usd_clean": 22.4
+   }
+  }
+ },
+ {
+  "six": [
+   "GPT-5.6 Terra (max)",
+   "Muse Spark 1.3 (xhigh)",
+   "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "MiniMax-M3",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 39.48,
+    "clean": 36.04,
+    "share": 0.971,
+    "coh": 0.995,
+    "esc": 0.054,
+    "usd_idea": 21.1,
+    "usd_clean": 23.1
+   },
+   "speed-half": {
+    "ipw": 33.04,
+    "clean": 30.44,
+    "share": 0.963,
     "coh": 0.996,
-    "esc": 0.066,
-    "usd_idea": 21.1
+    "esc": 0.05,
+    "usd_idea": 25.8,
+    "usd_clean": 28.1
+   },
+   "speed-ignored": {
+    "ipw": 28.0,
+    "clean": 25.38,
+    "share": 0.94,
+    "coh": 0.995,
+    "esc": 0.059,
+    "usd_idea": 31.3,
+    "usd_clean": 34.5
+   },
+   "harder-work": {
+    "ipw": 26.85,
+    "clean": 20.27,
+    "share": 0.928,
+    "coh": 0.997,
+    "esc": 0.256,
+    "usd_idea": 33.5,
+    "usd_clean": 44.3
+   },
+   "harder+half": {
+    "ipw": 22.38,
+    "clean": 17.71,
+    "share": 0.928,
+    "coh": 0.997,
+    "esc": 0.21,
+    "usd_idea": 40.8,
+    "usd_clean": 51.5
+   },
+   "estimates-3": {
+    "ipw": 39.71,
+    "clean": 35.77,
+    "share": 0.993,
+    "coh": 0.994,
+    "esc": 0.054,
+    "usd_idea": 21.0,
+    "usd_clean": 23.3
+   }
+  }
+ },
+ {
+  "six": [
+   "GPT-6 Sol (max)",
+   "Muse Spark 1.3 (xhigh)",
+   "Gemini 3.8 Flash (high)",
+   "MiMo-V2.6-Pro",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 37.21,
+    "clean": 35.71,
+    "share": 0.962,
+    "coh": 0.998,
+    "esc": 0.026,
+    "usd_idea": 20.7,
+    "usd_clean": 21.5
+   },
+   "speed-half": {
+    "ipw": 32.56,
+    "clean": 30.77,
+    "share": 0.974,
+    "coh": 0.997,
+    "esc": 0.034,
+    "usd_idea": 24.2,
+    "usd_clean": 25.6
+   },
+   "speed-ignored": {
+    "ipw": 28.23,
+    "clean": 26.88,
+    "share": 0.995,
+    "coh": 0.997,
+    "esc": 0.03,
+    "usd_idea": 28.3,
+    "usd_clean": 29.7
+   },
+   "harder-work": {
+    "ipw": 25.1,
+    "clean": 20.12,
+    "share": 0.921,
+    "coh": 0.997,
+    "esc": 0.202,
+    "usd_idea": 32.4,
+    "usd_clean": 40.4
+   },
+   "harder+half": {
+    "ipw": 22.02,
+    "clean": 17.71,
+    "share": 0.928,
+    "coh": 0.998,
+    "esc": 0.207,
+    "usd_idea": 37.3,
+    "usd_clean": 46.4
+   },
+   "estimates-3": {
+    "ipw": 36.9,
+    "clean": 34.44,
+    "share": 0.956,
+    "coh": 0.997,
+    "esc": 0.041,
+    "usd_idea": 21.0,
+    "usd_clean": 22.5
+   }
+  }
+ },
+ {
+  "six": [
+   "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+   "GPT-6 Sol (max)",
+   "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "GPT-6 Luna (max)",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 36.9,
+    "clean": 34.21,
+    "share": 0.922,
+    "coh": 0.996,
+    "esc": 0.045,
+    "usd_idea": 28.3,
+    "usd_clean": 30.5
+   },
+   "speed-half": {
+    "ipw": 32.23,
+    "clean": 29.96,
+    "share": 0.948,
+    "coh": 0.996,
+    "esc": 0.045,
+    "usd_idea": 32.9,
+    "usd_clean": 35.4
+   },
+   "speed-ignored": {
+    "ipw": 28.27,
+    "clean": 26.65,
+    "share": 0.987,
+    "coh": 0.997,
+    "esc": 0.039,
+    "usd_idea": 38.0,
+    "usd_clean": 40.3
+   },
+   "harder-work": {
+    "ipw": 25.77,
+    "clean": 20.1,
+    "share": 0.92,
+    "coh": 0.996,
+    "esc": 0.23,
+    "usd_idea": 42.8,
+    "usd_clean": 54.9
+   },
+   "harder+half": {
+    "ipw": 22.9,
+    "clean": 17.96,
+    "share": 0.941,
+    "coh": 0.998,
+    "esc": 0.23,
+    "usd_idea": 48.7,
+    "usd_clean": 62.0
+   },
+   "estimates-3": {
+    "ipw": 36.67,
+    "clean": 33.56,
+    "share": 0.932,
+    "coh": 0.995,
+    "esc": 0.052,
+    "usd_idea": 28.6,
+    "usd_clean": 31.3
+   }
+  }
+ },
+ {
+  "six": [
+   "GPT-5.6 Terra (max)",
+   "Muse Spark 1.3 (xhigh)",
+   "Gemini 3.8 Flash (high)",
+   "Qwen3.8-Flash-Next",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 38.6,
+    "clean": 36.71,
+    "share": 0.989,
+    "coh": 0.997,
+    "esc": 0.026,
+    "usd_idea": 20.8,
+    "usd_clean": 21.8
+   },
+   "speed-half": {
+    "ipw": 32.23,
+    "clean": 30.73,
+    "share": 0.972,
+    "coh": 0.998,
+    "esc": 0.03,
+    "usd_idea": 25.4,
+    "usd_clean": 26.6
+   },
+   "speed-ignored": {
+    "ipw": 28.69,
+    "clean": 27.0,
+    "share": 1.0,
+    "coh": 0.997,
+    "esc": 0.036,
+    "usd_idea": 29.1,
+    "usd_clean": 30.9
+   },
+   "harder-work": {
+    "ipw": 25.19,
+    "clean": 19.98,
+    "share": 0.914,
+    "coh": 0.998,
+    "esc": 0.211,
+    "usd_idea": 33.7,
+    "usd_clean": 42.5
+   },
+   "harder+half": {
+    "ipw": 21.94,
+    "clean": 17.65,
+    "share": 0.925,
+    "coh": 0.998,
+    "esc": 0.204,
+    "usd_idea": 39.3,
+    "usd_clean": 48.8
+   },
+   "estimates-3": {
+    "ipw": 37.67,
+    "clean": 35.44,
+    "share": 0.984,
+    "coh": 0.997,
+    "esc": 0.035,
+    "usd_idea": 21.3,
+    "usd_clean": 22.7
    }
   }
  },
@@ -274,52 +400,196 @@
    "Muse Spark 1.3 (xhigh)",
    "GLM-5.3 (max)",
    "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
    "GPT-6 Luna (max)",
-   "MiniMax-M3",
    "Ling 3.0 Flash"
   ],
   "scenarios": {
    "base": {
-    "ipw": 33.31,
-    "share": 0.898,
-    "coh": 0.994,
-    "esc": 0.054,
-    "usd_idea": 16.8
+    "ipw": 39.25,
+    "clean": 36.31,
+    "share": 0.979,
+    "coh": 0.996,
+    "esc": 0.047,
+    "usd_idea": 16.3,
+    "usd_clean": 17.6
    },
    "speed-half": {
-    "ipw": 28.96,
-    "share": 0.959,
-    "coh": 0.994,
-    "esc": 0.056,
-    "usd_idea": 20.0
+    "ipw": 33.02,
+    "clean": 30.73,
+    "share": 0.972,
+    "coh": 0.997,
+    "esc": 0.047,
+    "usd_idea": 19.9,
+    "usd_clean": 21.4
    },
    "speed-ignored": {
-    "ipw": 24.62,
-    "share": 0.954,
-    "coh": 0.995,
-    "esc": 0.053,
-    "usd_idea": 24.2
+    "ipw": 28.04,
+    "clean": 25.85,
+    "share": 0.958,
+    "coh": 0.996,
+    "esc": 0.051,
+    "usd_idea": 24.0,
+    "usd_clean": 26.0
    },
    "harder-work": {
-    "ipw": 22.52,
-    "share": 0.911,
+    "ipw": 26.31,
+    "clean": 20.6,
+    "share": 0.943,
     "coh": 0.997,
-    "esc": 0.257,
-    "usd_idea": 27.7
+    "esc": 0.22,
+    "usd_idea": 25.7,
+    "usd_clean": 32.9
    },
    "harder+half": {
-    "ipw": 19.58,
-    "share": 0.899,
-    "coh": 0.996,
-    "esc": 0.272,
-    "usd_idea": 32.8
+    "ipw": 22.44,
+    "clean": 17.4,
+    "share": 0.912,
+    "coh": 0.998,
+    "esc": 0.24,
+    "usd_idea": 30.8,
+    "usd_clean": 39.7
    },
    "estimates-3": {
-    "ipw": 33.62,
-    "share": 0.946,
-    "coh": 0.993,
-    "esc": 0.061,
-    "usd_idea": 16.9
+    "ipw": 39.12,
+    "clean": 36.02,
+    "share": 1.0,
+    "coh": 0.996,
+    "esc": 0.048,
+    "usd_idea": 16.3,
+    "usd_clean": 17.8
+   }
+  }
+ },
+ {
+  "six": [
+   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+   "GPT-6 Astra (high)",
+   "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "GPT-6 Luna (max)",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 35.6,
+    "clean": 33.65,
+    "share": 0.907,
+    "coh": 0.998,
+    "esc": 0.037,
+    "usd_idea": 71.7,
+    "usd_clean": 75.9
+   },
+   "speed-half": {
+    "ipw": 31.48,
+    "clean": 29.46,
+    "share": 0.932,
+    "coh": 0.997,
+    "esc": 0.046,
+    "usd_idea": 81.5,
+    "usd_clean": 87.1
+   },
+   "speed-ignored": {
+    "ipw": 28.48,
+    "clean": 26.71,
+    "share": 0.989,
+    "coh": 0.997,
+    "esc": 0.039,
+    "usd_idea": 90.7,
+    "usd_clean": 96.7
+   },
+   "harder-work": {
+    "ipw": 25.06,
+    "clean": 20.19,
+    "share": 0.924,
+    "coh": 0.997,
+    "esc": 0.208,
+    "usd_idea": 107.8,
+    "usd_clean": 133.8
+   },
+   "harder+half": {
+    "ipw": 22.67,
+    "clean": 17.88,
+    "share": 0.937,
+    "coh": 0.996,
+    "esc": 0.207,
+    "usd_idea": 118.8,
+    "usd_clean": 150.6
+   },
+   "estimates-3": {
+    "ipw": 35.67,
+    "clean": 32.69,
+    "share": 0.907,
+    "coh": 0.996,
+    "esc": 0.054,
+    "usd_idea": 71.5,
+    "usd_clean": 78.0
+   }
+  }
+ },
+ {
+  "six": [
+   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+   "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
+   "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "GPT-6 Luna (max)",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 36.35,
+    "clean": 34.15,
+    "share": 0.92,
+    "coh": 0.997,
+    "esc": 0.042,
+    "usd_idea": 54.1,
+    "usd_clean": 57.6
+   },
+   "speed-half": {
+    "ipw": 32.38,
+    "clean": 30.54,
+    "share": 0.966,
+    "coh": 0.997,
+    "esc": 0.033,
+    "usd_idea": 61.6,
+    "usd_clean": 65.3
+   },
+   "speed-ignored": {
+    "ipw": 27.98,
+    "clean": 26.83,
+    "share": 0.994,
+    "coh": 0.999,
+    "esc": 0.03,
+    "usd_idea": 71.9,
+    "usd_clean": 75.0
+   },
+   "harder-work": {
+    "ipw": 26.08,
+    "clean": 20.94,
+    "share": 0.958,
+    "coh": 0.997,
+    "esc": 0.197,
+    "usd_idea": 80.5,
+    "usd_clean": 100.3
+   },
+   "harder+half": {
+    "ipw": 23.08,
+    "clean": 19.08,
+    "share": 1.0,
+    "coh": 0.997,
+    "esc": 0.175,
+    "usd_idea": 91.0,
+    "usd_clean": 110.0
+   },
+   "estimates-3": {
+    "ipw": 35.83,
+    "clean": 32.6,
+    "share": 0.905,
+    "coh": 0.995,
+    "esc": 0.055,
+    "usd_idea": 55.1,
+    "usd_clean": 60.5
    }
   }
  },
@@ -334,100 +604,124 @@
   ],
   "scenarios": {
    "base": {
-    "ipw": 32.94,
-    "share": 0.888,
+    "ipw": 38.67,
+    "clean": 36.19,
+    "share": 0.975,
     "coh": 0.996,
-    "esc": 0.056,
-    "usd_idea": 17.0
+    "esc": 0.038,
+    "usd_idea": 16.7,
+    "usd_clean": 17.8
    },
    "speed-half": {
-    "ipw": 29.1,
-    "share": 0.963,
-    "coh": 0.996,
-    "esc": 0.043,
-    "usd_idea": 19.9
+    "ipw": 32.38,
+    "clean": 30.23,
+    "share": 0.956,
+    "coh": 0.997,
+    "esc": 0.044,
+    "usd_idea": 20.2,
+    "usd_clean": 21.6
    },
    "speed-ignored": {
-    "ipw": 25.71,
-    "share": 0.996,
-    "coh": 0.996,
-    "esc": 0.046,
-    "usd_idea": 23.3
+    "ipw": 28.33,
+    "clean": 26.58,
+    "share": 0.985,
+    "coh": 0.997,
+    "esc": 0.037,
+    "usd_idea": 23.6,
+    "usd_clean": 25.2
    },
    "harder-work": {
-    "ipw": 22.77,
-    "share": 0.921,
+    "ipw": 25.31,
+    "clean": 20.38,
+    "share": 0.932,
     "coh": 0.997,
-    "esc": 0.21,
-    "usd_idea": 27.0
+    "esc": 0.196,
+    "usd_idea": 27.0,
+    "usd_clean": 33.6
    },
    "harder+half": {
-    "ipw": 19.71,
+    "ipw": 21.79,
+    "clean": 17.25,
     "share": 0.904,
     "coh": 0.997,
-    "esc": 0.208,
-    "usd_idea": 31.9
+    "esc": 0.201,
+    "usd_idea": 31.8,
+    "usd_clean": 40.1
    },
    "estimates-3": {
-    "ipw": 33.02,
-    "share": 0.929,
-    "coh": 0.995,
-    "esc": 0.057,
-    "usd_idea": 17.1
+    "ipw": 37.56,
+    "clean": 34.46,
+    "share": 0.957,
+    "coh": 0.996,
+    "esc": 0.053,
+    "usd_idea": 17.2,
+    "usd_clean": 18.7
    }
   }
  },
  {
   "six": [
-   "GPT-5.6 Terra (max)",
+   "Grok 4.6 (high)",
    "Muse Spark 1.3 (xhigh)",
    "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
    "GPT-6 Luna (max)",
-   "Inkling Small",
    "Ling 3.0 Flash"
   ],
   "scenarios": {
    "base": {
-    "ipw": 35.44,
-    "share": 0.956,
-    "coh": 0.995,
-    "esc": 0.066,
-    "usd_idea": 20.5
+    "ipw": 39.35,
+    "clean": 37.06,
+    "share": 0.999,
+    "coh": 0.997,
+    "esc": 0.037,
+    "usd_idea": 17.3,
+    "usd_clean": 18.3
    },
    "speed-half": {
-    "ipw": 28.88,
-    "share": 0.956,
-    "coh": 0.995,
-    "esc": 0.059,
-    "usd_idea": 25.3
+    "ipw": 33.33,
+    "clean": 31.21,
+    "share": 0.987,
+    "coh": 0.997,
+    "esc": 0.041,
+    "usd_idea": 20.8,
+    "usd_clean": 22.3
    },
    "speed-ignored": {
-    "ipw": 25.81,
-    "share": 1.0,
-    "coh": 0.995,
-    "esc": 0.069,
-    "usd_idea": 30.1
+    "ipw": 28.12,
+    "clean": 26.44,
+    "share": 0.979,
+    "coh": 0.997,
+    "esc": 0.04,
+    "usd_idea": 25.3,
+    "usd_clean": 26.9
    },
    "harder-work": {
-    "ipw": 21.79,
-    "share": 0.881,
+    "ipw": 26.12,
+    "clean": 20.35,
+    "share": 0.931,
     "coh": 0.997,
-    "esc": 0.248,
-    "usd_idea": 35.3
+    "esc": 0.226,
+    "usd_idea": 27.5,
+    "usd_clean": 35.3
    },
    "harder+half": {
-    "ipw": 19.17,
-    "share": 0.88,
-    "coh": 0.996,
-    "esc": 0.261,
-    "usd_idea": 41.7
+    "ipw": 22.29,
+    "clean": 17.23,
+    "share": 0.903,
+    "coh": 0.997,
+    "esc": 0.232,
+    "usd_idea": 32.8,
+    "usd_clean": 42.5
    },
    "estimates-3": {
-    "ipw": 34.77,
-    "share": 0.978,
-    "coh": 0.993,
-    "esc": 0.067,
-    "usd_idea": 20.7
+    "ipw": 38.21,
+    "clean": 34.92,
+    "share": 0.969,
+    "coh": 0.995,
+    "esc": 0.051,
+    "usd_idea": 17.7,
+    "usd_clean": 19.4
    }
   }
  },
@@ -436,160 +730,130 @@
    "Muse Spark 1.3 (xhigh)",
    "GLM-5.3 (max)",
    "Gemini 3.8 Flash (high)",
+   "Qwen3.8-Flash-Next",
    "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "Inkling Small",
    "Ling 3.0 Flash"
   ],
   "scenarios": {
    "base": {
-    "ipw": 37.08,
-    "share": 1.0,
-    "coh": 0.995,
-    "esc": 0.051,
-    "usd_idea": 16.9
+    "ipw": 37.83,
+    "clean": 35.88,
+    "share": 0.967,
+    "coh": 0.998,
+    "esc": 0.034,
+    "usd_idea": 16.9,
+    "usd_clean": 17.8
    },
    "speed-half": {
-    "ipw": 29.71,
-    "share": 0.983,
-    "coh": 0.995,
-    "esc": 0.066,
-    "usd_idea": 21.0
-   },
-   "speed-ignored": {
-    "ipw": 24.88,
-    "share": 0.964,
-    "coh": 0.996,
-    "esc": 0.072,
-    "usd_idea": 25.7
-   },
-   "harder-work": {
-    "ipw": 22.73,
-    "share": 0.919,
-    "coh": 0.996,
-    "esc": 0.274,
-    "usd_idea": 28.5
-   },
-   "harder+half": {
-    "ipw": 19.15,
-    "share": 0.879,
-    "coh": 0.998,
-    "esc": 0.289,
-    "usd_idea": 34.6
-   },
-   "estimates-3": {
-    "ipw": 35.56,
-    "share": 1.0,
-    "coh": 0.994,
-    "esc": 0.079,
-    "usd_idea": 17.2
-   }
-  }
- },
- {
-  "six": [
-   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "Gemini 3.8 Flash (high)",
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "GPT-6 Luna (max)",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 32.29,
-    "share": 0.871,
-    "coh": 0.997,
-    "esc": 0.046,
-    "usd_idea": 54.8
-   },
-   "speed-half": {
-    "ipw": 28.44,
-    "share": 0.941,
-    "coh": 0.997,
-    "esc": 0.04,
-    "usd_idea": 62.8
-   },
-   "speed-ignored": {
-    "ipw": 25.62,
-    "share": 0.993,
-    "coh": 0.998,
-    "esc": 0.029,
-    "usd_idea": 69.8
-   },
-   "harder-work": {
-    "ipw": 23.46,
-    "share": 0.949,
-    "coh": 0.998,
-    "esc": 0.185,
-    "usd_idea": 82.9
-   },
-   "harder+half": {
-    "ipw": 21.17,
-    "share": 0.971,
-    "coh": 0.997,
-    "esc": 0.217,
-    "usd_idea": 92.4
-   },
-   "estimates-3": {
-    "ipw": 31.65,
-    "share": 0.89,
-    "coh": 0.995,
-    "esc": 0.061,
-    "usd_idea": 56.0
-   }
-  }
- },
- {
-  "six": [
-   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "GPT-6 Sol (max)",
-   "Gemini 3.8 Flash (high)",
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "GPT-6 Luna (max)",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 32.15,
-    "share": 0.867,
-    "coh": 0.997,
-    "esc": 0.042,
-    "usd_idea": 47.6
-   },
-   "speed-half": {
-    "ipw": 28.73,
+    "ipw": 32.19,
+    "clean": 30.04,
     "share": 0.951,
     "coh": 0.996,
-    "esc": 0.034,
-    "usd_idea": 54.0
+    "esc": 0.037,
+    "usd_idea": 20.3,
+    "usd_clean": 21.8
    },
    "speed-ignored": {
-    "ipw": 25.35,
-    "share": 0.982,
+    "ipw": 28.62,
+    "clean": 26.58,
+    "share": 0.985,
     "coh": 0.997,
-    "esc": 0.037,
-    "usd_idea": 62.0
+    "esc": 0.049,
+    "usd_idea": 23.3,
+    "usd_clean": 25.1
    },
    "harder-work": {
-    "ipw": 22.81,
-    "share": 0.922,
+    "ipw": 25.02,
+    "clean": 20.12,
+    "share": 0.921,
     "coh": 0.997,
-    "esc": 0.224,
-    "usd_idea": 74.3
+    "esc": 0.198,
+    "usd_idea": 27.1,
+    "usd_clean": 33.7
    },
    "harder+half": {
-    "ipw": 20.56,
-    "share": 0.944,
+    "ipw": 21.88,
+    "clean": 17.19,
+    "share": 0.901,
     "coh": 0.997,
-    "esc": 0.23,
-    "usd_idea": 82.4
+    "esc": 0.217,
+    "usd_idea": 31.3,
+    "usd_clean": 39.9
    },
    "estimates-3": {
-    "ipw": 32.04,
-    "share": 0.901,
-    "coh": 0.994,
-    "esc": 0.052,
-    "usd_idea": 48.5
+    "ipw": 37.29,
+    "clean": 35.1,
+    "share": 0.975,
+    "coh": 0.997,
+    "esc": 0.035,
+    "usd_idea": 17.2,
+    "usd_clean": 18.2
+   }
+  }
+ },
+ {
+  "six": [
+   "GPT-6 Sol (max)",
+   "Muse Spark 1.3 (xhigh)",
+   "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "GPT-6 Luna (max)",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 39.08,
+    "clean": 36.94,
+    "share": 0.996,
+    "coh": 0.998,
+    "esc": 0.039,
+    "usd_idea": 19.2,
+    "usd_clean": 20.3
+   },
+   "speed-half": {
+    "ipw": 33.54,
+    "clean": 31.25,
+    "share": 0.989,
+    "coh": 0.997,
+    "esc": 0.045,
+    "usd_idea": 23.0,
+    "usd_clean": 24.6
+   },
+   "speed-ignored": {
+    "ipw": 27.88,
+    "clean": 26.17,
+    "share": 0.969,
+    "coh": 0.997,
+    "esc": 0.04,
+    "usd_idea": 28.2,
+    "usd_clean": 30.0
+   },
+   "harder-work": {
+    "ipw": 26.48,
+    "clean": 20.48,
+    "share": 0.937,
+    "coh": 0.997,
+    "esc": 0.233,
+    "usd_idea": 30.2,
+    "usd_clean": 39.1
+   },
+   "harder+half": {
+    "ipw": 22.15,
+    "clean": 17.12,
+    "share": 0.897,
+    "coh": 0.996,
+    "esc": 0.228,
+    "usd_idea": 36.7,
+    "usd_clean": 47.5
+   },
+   "estimates-3": {
+    "ipw": 38.9,
+    "clean": 35.9,
+    "share": 0.997,
+    "coh": 0.996,
+    "esc": 0.047,
+    "usd_idea": 19.3,
+    "usd_clean": 20.9
    }
   }
  },
@@ -604,154 +868,58 @@
   ],
   "scenarios": {
    "base": {
-    "ipw": 32.08,
-    "share": 0.865,
-    "coh": 0.996,
-    "esc": 0.038,
-    "usd_idea": 27.2
-   },
-   "speed-half": {
-    "ipw": 28.04,
-    "share": 0.928,
-    "coh": 0.996,
-    "esc": 0.039,
-    "usd_idea": 31.6
-   },
-   "speed-ignored": {
-    "ipw": 25.1,
-    "share": 0.973,
-    "coh": 0.998,
-    "esc": 0.037,
-    "usd_idea": 36.3
-   },
-   "harder-work": {
-    "ipw": 22.48,
-    "share": 0.909,
-    "coh": 0.996,
-    "esc": 0.23,
-    "usd_idea": 43.1
-   },
-   "harder+half": {
-    "ipw": 20.4,
-    "share": 0.936,
-    "coh": 0.996,
-    "esc": 0.23,
-    "usd_idea": 47.9
-   },
-   "estimates-3": {
-    "ipw": 32.46,
+    "ipw": 36.5,
+    "clean": 33.88,
     "share": 0.913,
-    "coh": 0.994,
-    "esc": 0.053,
-    "usd_idea": 27.6
-   }
-  }
- },
- {
-  "six": [
-   "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "GPT-6 Sol (max)",
-   "Gemini 3.8 Flash (high)",
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
-   "GPT-6 Luna (max)",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 31.98,
-    "share": 0.862,
     "coh": 0.997,
-    "esc": 0.044,
-    "usd_idea": 28.9
+    "esc": 0.048,
+    "usd_idea": 27.1,
+    "usd_clean": 29.2
    },
    "speed-half": {
-    "ipw": 28.58,
-    "share": 0.946,
+    "ipw": 32.15,
+    "clean": 30.23,
+    "share": 0.956,
     "coh": 0.997,
-    "esc": 0.043,
-    "usd_idea": 32.9
+    "esc": 0.036,
+    "usd_idea": 31.4,
+    "usd_clean": 33.4
    },
    "speed-ignored": {
-    "ipw": 25.38,
-    "share": 0.983,
+    "ipw": 28.35,
+    "clean": 26.69,
+    "share": 0.988,
     "coh": 0.998,
-    "esc": 0.05,
-    "usd_idea": 38.1
+    "esc": 0.041,
+    "usd_idea": 36.0,
+    "usd_clean": 38.2
    },
    "harder-work": {
-    "ipw": 22.98,
-    "share": 0.929,
-    "coh": 0.996,
-    "esc": 0.211,
-    "usd_idea": 43.9
+    "ipw": 25.33,
+    "clean": 19.6,
+    "share": 0.897,
+    "coh": 0.997,
+    "esc": 0.234,
+    "usd_idea": 41.4,
+    "usd_clean": 53.5
    },
    "harder+half": {
-    "ipw": 21.33,
-    "share": 0.979,
+    "ipw": 22.75,
+    "clean": 17.92,
+    "share": 0.939,
     "coh": 0.996,
-    "esc": 0.226,
-    "usd_idea": 48.5
+    "esc": 0.212,
+    "usd_idea": 46.5,
+    "usd_clean": 59.0
    },
    "estimates-3": {
-    "ipw": 31.85,
-    "share": 0.896,
+    "ipw": 36.27,
+    "clean": 32.6,
+    "share": 0.905,
     "coh": 0.996,
-    "esc": 0.05,
-    "usd_idea": 29.2
-   }
-  }
- },
- {
-  "six": [
-   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "Muse Spark 1.3 (xhigh)",
-   "Gemini 3.8 Flash (high)",
-   "MiniMax-M3",
-   "Inkling Small",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 35.19,
-    "share": 0.949,
-    "coh": 0.991,
-    "esc": 0.069,
-    "usd_idea": 45.8
-   },
-   "speed-half": {
-    "ipw": 29.73,
-    "share": 0.984,
-    "coh": 0.992,
-    "esc": 0.081,
-    "usd_idea": 54.1
-   },
-   "speed-ignored": {
-    "ipw": 25.42,
-    "share": 0.985,
-    "coh": 0.992,
     "esc": 0.073,
-    "usd_idea": 64.2
-   },
-   "harder-work": {
-    "ipw": 21.27,
-    "share": 0.86,
-    "coh": 0.998,
-    "esc": 0.236,
-    "usd_idea": 82.9
-   },
-   "harder+half": {
-    "ipw": 18.79,
-    "share": 0.862,
-    "coh": 0.997,
-    "esc": 0.244,
-    "usd_idea": 94.6
-   },
-   "estimates-3": {
-    "ipw": 35.19,
-    "share": 0.989,
-    "coh": 0.991,
-    "esc": 0.069,
-    "usd_idea": 45.8
+    "usd_idea": 27.4,
+    "usd_clean": 30.5
    }
   }
  },
@@ -766,46 +934,58 @@
   ],
   "scenarios": {
    "base": {
-    "ipw": 31.81,
-    "share": 0.858,
-    "coh": 0.998,
-    "esc": 0.044,
-    "usd_idea": 30.5
+    "ipw": 36.5,
+    "clean": 34.31,
+    "share": 0.925,
+    "coh": 0.997,
+    "esc": 0.039,
+    "usd_idea": 30.2,
+    "usd_clean": 32.1
    },
    "speed-half": {
-    "ipw": 28.23,
-    "share": 0.934,
-    "coh": 0.998,
-    "esc": 0.039,
-    "usd_idea": 35.5
+    "ipw": 31.85,
+    "clean": 29.67,
+    "share": 0.939,
+    "coh": 0.997,
+    "esc": 0.045,
+    "usd_idea": 34.9,
+    "usd_clean": 37.5
    },
    "speed-ignored": {
-    "ipw": 25.35,
-    "share": 0.982,
-    "coh": 0.998,
-    "esc": 0.051,
-    "usd_idea": 40.2
+    "ipw": 28.35,
+    "clean": 26.58,
+    "share": 0.985,
+    "coh": 0.997,
+    "esc": 0.039,
+    "usd_idea": 39.8,
+    "usd_clean": 42.5
    },
    "harder-work": {
-    "ipw": 22.5,
-    "share": 0.91,
-    "coh": 0.997,
-    "esc": 0.225,
-    "usd_idea": 47.3
+    "ipw": 25.27,
+    "clean": 19.6,
+    "share": 0.897,
+    "coh": 0.996,
+    "esc": 0.219,
+    "usd_idea": 46.4,
+    "usd_clean": 59.8
    },
    "harder+half": {
-    "ipw": 20.92,
-    "share": 0.96,
+    "ipw": 22.77,
+    "clean": 17.71,
+    "share": 0.928,
     "coh": 0.997,
-    "esc": 0.215,
-    "usd_idea": 52.1
+    "esc": 0.222,
+    "usd_idea": 51.8,
+    "usd_clean": 66.6
    },
    "estimates-3": {
-    "ipw": 31.73,
-    "share": 0.892,
-    "coh": 0.994,
-    "esc": 0.06,
-    "usd_idea": 30.9
+    "ipw": 36.19,
+    "clean": 32.46,
+    "share": 0.901,
+    "coh": 0.995,
+    "esc": 0.064,
+    "usd_idea": 30.5,
+    "usd_clean": 34.0
    }
   }
  },
@@ -820,46 +1000,124 @@
   ],
   "scenarios": {
    "base": {
-    "ipw": 31.81,
-    "share": 0.858,
-    "coh": 0.997,
-    "esc": 0.047,
-    "usd_idea": 52.5
+    "ipw": 36.06,
+    "clean": 33.15,
+    "share": 0.893,
+    "coh": 0.996,
+    "esc": 0.049,
+    "usd_idea": 51.9,
+    "usd_clean": 56.5
    },
    "speed-half": {
-    "ipw": 27.81,
-    "share": 0.921,
+    "ipw": 31.65,
+    "clean": 29.77,
+    "share": 0.942,
     "coh": 0.997,
-    "esc": 0.045,
-    "usd_idea": 59.9
+    "esc": 0.037,
+    "usd_idea": 59.5,
+    "usd_clean": 63.3
    },
    "speed-ignored": {
-    "ipw": 25.23,
-    "share": 0.977,
-    "coh": 0.998,
-    "esc": 0.045,
-    "usd_idea": 67.1
+    "ipw": 28.35,
+    "clean": 26.6,
+    "share": 0.985,
+    "coh": 0.997,
+    "esc": 0.039,
+    "usd_idea": 67.0,
+    "usd_clean": 71.4
    },
    "harder-work": {
-    "ipw": 22.79,
-    "share": 0.922,
-    "coh": 0.998,
-    "esc": 0.23,
-    "usd_idea": 80.8
+    "ipw": 25.27,
+    "clean": 19.56,
+    "share": 0.895,
+    "coh": 0.997,
+    "esc": 0.232,
+    "usd_idea": 78.3,
+    "usd_clean": 101.2
    },
    "harder+half": {
-    "ipw": 20.92,
-    "share": 0.96,
-    "coh": 0.997,
-    "esc": 0.22,
-    "usd_idea": 87.0
+    "ipw": 22.94,
+    "clean": 17.94,
+    "share": 0.94,
+    "coh": 0.996,
+    "esc": 0.227,
+    "usd_idea": 86.2,
+    "usd_clean": 110.2
    },
    "estimates-3": {
-    "ipw": 31.15,
-    "share": 0.876,
+    "ipw": 35.81,
+    "clean": 32.77,
+    "share": 0.91,
+    "coh": 0.996,
+    "esc": 0.058,
+    "usd_idea": 52.3,
+    "usd_clean": 57.1
+   }
+  }
+ },
+ {
+  "six": [
+   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+   "GPT-6 Sol (max)",
+   "Gemini 3.8 Flash (high)",
+   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "GPT-6 Luna (max)",
+   "Ling 3.0 Flash"
+  ],
+  "scenarios": {
+   "base": {
+    "ipw": 36.42,
+    "clean": 34.1,
+    "share": 0.919,
+    "coh": 0.997,
+    "esc": 0.045,
+    "usd_idea": 46.9,
+    "usd_clean": 50.1
+   },
+   "speed-half": {
+    "ipw": 32.02,
+    "clean": 30.25,
+    "share": 0.957,
+    "coh": 0.997,
+    "esc": 0.037,
+    "usd_idea": 54.3,
+    "usd_clean": 57.4
+   },
+   "speed-ignored": {
+    "ipw": 28.42,
+    "clean": 26.81,
+    "share": 0.993,
+    "coh": 0.997,
+    "esc": 0.037,
+    "usd_idea": 61.8,
+    "usd_clean": 65.5
+   },
+   "harder-work": {
+    "ipw": 25.21,
+    "clean": 19.1,
+    "share": 0.874,
     "coh": 0.995,
+    "esc": 0.233,
+    "usd_idea": 72.8,
+    "usd_clean": 96.1
+   },
+   "harder+half": {
+    "ipw": 22.9,
+    "clean": 18.23,
+    "share": 0.955,
+    "coh": 0.997,
+    "esc": 0.206,
+    "usd_idea": 80.0,
+    "usd_clean": 100.5
+   },
+   "estimates-3": {
+    "ipw": 36.15,
+    "clean": 33.12,
+    "share": 0.92,
+    "coh": 0.996,
     "esc": 0.055,
-    "usd_idea": 53.7
+    "usd_idea": 47.6,
+    "usd_clean": 51.9
    }
   }
  },
@@ -868,106 +1126,130 @@
    "Muse Spark 1.3 (xhigh)",
    "GLM-5.3 (max)",
    "Gemini 3.8 Flash (high)",
+   "GLM 5.3 Flash",
    "GPT-6 Luna (max)",
-   "Inkling Small",
    "Ling 3.0 Flash"
   ],
   "scenarios": {
    "base": {
-    "ipw": 35.46,
-    "share": 0.956,
-    "coh": 0.995,
-    "esc": 0.07,
-    "usd_idea": 16.4
+    "ipw": 35.88,
+    "clean": 34.0,
+    "share": 0.916,
+    "coh": 0.997,
+    "esc": 0.033,
+    "usd_idea": 16.8,
+    "usd_clean": 17.7
    },
    "speed-half": {
-    "ipw": 29.88,
-    "share": 0.989,
-    "coh": 0.995,
-    "esc": 0.072,
-    "usd_idea": 20.0
+    "ipw": 31.69,
+    "clean": 29.54,
+    "share": 0.935,
+    "coh": 0.997,
+    "esc": 0.043,
+    "usd_idea": 19.3,
+    "usd_clean": 20.7
    },
    "speed-ignored": {
-    "ipw": 25.35,
-    "share": 0.982,
-    "coh": 0.994,
-    "esc": 0.073,
-    "usd_idea": 24.1
+    "ipw": 28.15,
+    "clean": 26.19,
+    "share": 0.97,
+    "coh": 0.997,
+    "esc": 0.05,
+    "usd_idea": 22.1,
+    "usd_clean": 23.7
    },
    "harder-work": {
-    "ipw": 21.81,
-    "share": 0.882,
+    "ipw": 23.9,
+    "clean": 19.15,
+    "share": 0.876,
     "coh": 0.996,
-    "esc": 0.272,
-    "usd_idea": 28.5
+    "esc": 0.195,
+    "usd_idea": 26.7,
+    "usd_clean": 33.3
    },
    "harder+half": {
-    "ipw": 18.65,
-    "share": 0.856,
-    "coh": 0.997,
-    "esc": 0.285,
-    "usd_idea": 33.8
+    "ipw": 21.0,
+    "clean": 16.52,
+    "share": 0.866,
+    "coh": 0.996,
+    "esc": 0.208,
+    "usd_idea": 30.8,
+    "usd_clean": 39.1
    },
    "estimates-3": {
-    "ipw": 35.19,
-    "share": 0.989,
-    "coh": 0.994,
-    "esc": 0.073,
-    "usd_idea": 16.6
+    "ipw": 36.44,
+    "clean": 34.04,
+    "share": 0.945,
+    "coh": 0.997,
+    "esc": 0.045,
+    "usd_idea": 16.6,
+    "usd_clean": 17.7
    }
   }
  },
  {
   "six": [
-   "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-   "GPT-6 Astra (high)",
+   "Muse Spark 1.3 (xhigh)",
+   "GLM-5.3 (max)",
    "Gemini 3.8 Flash (high)",
-   "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+   "Qwen3.8-Flash-Next",
    "GPT-6 Luna (max)",
    "Ling 3.0 Flash"
   ],
   "scenarios": {
    "base": {
-    "ipw": 31.42,
-    "share": 0.847,
-    "coh": 0.998,
-    "esc": 0.046,
-    "usd_idea": 72.4
+    "ipw": 36.4,
+    "clean": 33.96,
+    "share": 0.915,
+    "coh": 0.997,
+    "esc": 0.044,
+    "usd_idea": 16.6,
+    "usd_clean": 17.8
    },
    "speed-half": {
-    "ipw": 27.67,
-    "share": 0.916,
-    "coh": 0.998,
-    "esc": 0.035,
-    "usd_idea": 82.1
+    "ipw": 31.48,
+    "clean": 29.0,
+    "share": 0.918,
+    "coh": 0.997,
+    "esc": 0.055,
+    "usd_idea": 19.6,
+    "usd_clean": 21.3
    },
    "speed-ignored": {
-    "ipw": 25.44,
-    "share": 0.985,
+    "ipw": 28.48,
+    "clean": 26.5,
+    "share": 0.981,
     "coh": 0.997,
-    "esc": 0.046,
-    "usd_idea": 91.1
+    "esc": 0.05,
+    "usd_idea": 22.0,
+    "usd_clean": 23.6
    },
    "harder-work": {
-    "ipw": 22.15,
-    "share": 0.896,
-    "coh": 0.996,
-    "esc": 0.249,
-    "usd_idea": 112.7
+    "ipw": 23.52,
+    "clean": 18.48,
+    "share": 0.846,
+    "coh": 0.998,
+    "esc": 0.217,
+    "usd_idea": 27.1,
+    "usd_clean": 34.4
    },
    "harder+half": {
-    "ipw": 20.52,
-    "share": 0.942,
+    "ipw": 21.15,
+    "clean": 16.52,
+    "share": 0.866,
     "coh": 0.997,
-    "esc": 0.189,
-    "usd_idea": 121.4
+    "esc": 0.228,
+    "usd_idea": 30.6,
+    "usd_clean": 39.2
    },
    "estimates-3": {
-    "ipw": 31.02,
-    "share": 0.872,
-    "coh": 0.996,
-    "esc": 0.055,
-    "usd_idea": 73.5
+    "ipw": 36.46,
+    "clean": 34.08,
+    "share": 0.946,
+    "coh": 0.997,
+    "esc": 0.045,
+    "usd_idea": 16.5,
+    "usd_clean": 17.7
    }
   }
  },
@@ -982,154 +1264,58 @@
   ],
   "scenarios": {
    "base": {
-    "ipw": 31.23,
+    "ipw": 34.23,
+    "clean": 31.25,
     "share": 0.842,
-    "coh": 0.994,
-    "esc": 0.048,
-    "usd_idea": 29.6
+    "coh": 0.995,
+    "esc": 0.053,
+    "usd_idea": 30.0,
+    "usd_clean": 32.9
    },
    "speed-half": {
-    "ipw": 27.75,
-    "share": 0.919,
-    "coh": 0.994,
-    "esc": 0.052,
-    "usd_idea": 33.8
+    "ipw": 30.52,
+    "clean": 27.71,
+    "share": 0.877,
+    "coh": 0.995,
+    "esc": 0.055,
+    "usd_idea": 34.0,
+    "usd_clean": 37.4
    },
    "speed-ignored": {
-    "ipw": 25.46,
-    "share": 0.986,
-    "coh": 0.995,
-    "esc": 0.043,
-    "usd_idea": 37.4
-   },
-   "harder-work": {
-    "ipw": 21.9,
-    "share": 0.885,
-    "coh": 0.997,
-    "esc": 0.227,
-    "usd_idea": 44.8
-   },
-   "harder+half": {
-    "ipw": 19.15,
-    "share": 0.879,
-    "coh": 0.997,
-    "esc": 0.231,
-    "usd_idea": 52.0
-   },
-   "estimates-3": {
-    "ipw": 30.85,
-    "share": 0.868,
+    "ipw": 27.83,
+    "clean": 25.17,
+    "share": 0.932,
     "coh": 0.994,
     "esc": 0.05,
-    "usd_idea": 30.1
-   }
-  }
- },
- {
-  "six": [
-   "Muse Spark 1.3 (xhigh)",
-   "Qwen3.8 Max (0902)",
-   "Gemini 3.8 Flash (high)",
-   "GPT-6 Luna (max)",
-   "Inkling Small",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 33.83,
-    "share": 0.912,
-    "coh": 0.994,
-    "esc": 0.07,
-    "usd_idea": 17.1
-   },
-   "speed-half": {
-    "ipw": 29.88,
-    "share": 0.989,
-    "coh": 0.994,
-    "esc": 0.083,
-    "usd_idea": 20.2
-   },
-   "speed-ignored": {
-    "ipw": 25.56,
-    "share": 0.99,
-    "coh": 0.995,
-    "esc": 0.074,
-    "usd_idea": 23.7
+    "usd_idea": 37.5,
+    "usd_clean": 41.5
    },
    "harder-work": {
-    "ipw": 20.04,
-    "share": 0.81,
+    "ipw": 23.85,
+    "clean": 18.29,
+    "share": 0.837,
     "coh": 0.996,
-    "esc": 0.271,
-    "usd_idea": 30.3
+    "esc": 0.224,
+    "usd_idea": 44.7,
+    "usd_clean": 58.2
    },
    "harder+half": {
-    "ipw": 18.21,
-    "share": 0.836,
-    "coh": 0.997,
-    "esc": 0.243,
-    "usd_idea": 34.3
+    "ipw": 20.92,
+    "clean": 16.02,
+    "share": 0.84,
+    "coh": 0.996,
+    "esc": 0.239,
+    "usd_idea": 51.2,
+    "usd_clean": 66.9
    },
    "estimates-3": {
-    "ipw": 33.1,
-    "share": 0.931,
-    "coh": 0.992,
-    "esc": 0.062,
-    "usd_idea": 17.4
-   }
-  }
- },
- {
-  "six": [
-   "GPT-5.6 Terra (max)",
-   "Muse Spark 1.3 (xhigh)",
-   "Gemini 3.8 Flash (high)",
-   "MiniMax-M3",
-   "Inkling Small",
-   "Ling 3.0 Flash"
-  ],
-  "scenarios": {
-   "base": {
-    "ipw": 35.29,
-    "share": 0.952,
-    "coh": 0.994,
-    "esc": 0.084,
-    "usd_idea": 21.5
-   },
-   "speed-half": {
-    "ipw": 30.15,
-    "share": 0.998,
-    "coh": 0.992,
-    "esc": 0.074,
-    "usd_idea": 26.2
-   },
-   "speed-ignored": {
-    "ipw": 25.15,
-    "share": 0.974,
-    "coh": 0.991,
-    "esc": 0.074,
-    "usd_idea": 32.0
-   },
-   "harder-work": {
-    "ipw": 20.67,
-    "share": 0.836,
-    "coh": 0.997,
-    "esc": 0.259,
-    "usd_idea": 39.6
-   },
-   "harder+half": {
-    "ipw": 17.08,
-    "share": 0.784,
-    "coh": 0.997,
-    "esc": 0.265,
-    "usd_idea": 48.9
-   },
-   "estimates-3": {
-    "ipw": 35.29,
-    "share": 0.992,
-    "coh": 0.994,
-    "esc": 0.084,
-    "usd_idea": 21.5
+    "ipw": 33.9,
+    "clean": 30.88,
+    "share": 0.857,
+    "coh": 0.995,
+    "esc": 0.054,
+    "usd_idea": 30.3,
+    "usd_clean": 33.3
    }
   }
  }

@@ -1,0 +1,66 @@
+OPERATING MODELS: clean ideas/week (ideas/week; coherence; escaped defects per idea) at each organisation's best WIP
+
+[base]
+  organisation                         best six                  population 12                  population 24                  weak-heavy 12
+  institutions         39.4 ( 43.1; 1.00; 0.05)       34.5 ( 44.9; 0.99; 0.19)       66.9 ( 93.5; 0.98; 0.21)       15.9 ( 22.8; 0.99; 0.26)
+  dedicated            22.7 ( 24.6; 1.00; 0.08)       30.7 ( 35.5; 0.99; 0.08)       63.0 ( 76.7; 0.99; 0.12)       14.4 ( 20.4; 0.99; 0.27)
+  peer                 29.7 ( 37.7; 0.98; 0.07)       23.7 ( 36.0; 0.97; 0.34)       43.7 ( 73.5; 0.97; 0.44)       10.7 ( 22.7; 0.96; 0.84)
+  solo                 17.5 ( 38.0; 0.91; 0.34)       12.6 ( 44.0; 0.87; 1.26)       22.0 ( 91.7; 0.85; 1.47)        5.9 ( 36.2; 0.81; 2.20)
+  swarm                17.0 ( 50.3; 0.90; 0.39)        3.8 ( 52.8; 0.85; 1.36)        9.0 ( 95.9; 0.86; 1.33)        0.8 ( 36.1; 0.85; 2.38)
+  self-licensed        36.9 ( 41.5; 0.99; 0.05)       27.6 ( 44.7; 0.98; 0.37)       53.3 ( 90.5; 0.98; 0.42)       13.3 ( 30.6; 0.97; 0.65)
+  orchestrator         13.4 ( 19.1; 0.97; 0.07)       10.0 ( 21.0; 0.93; 0.19)        8.7 ( 14.0; 0.95; 0.10)        7.8 ( 16.5; 0.93; 0.18)
+  DWC                  15.8 ( 26.0; 0.95; 0.09)       13.5 ( 29.0; 0.94; 0.24)       10.6 ( 18.2; 0.95; 0.10)        3.0 ( 15.0; 0.94; 1.11)
+
+[harder work]
+  organisation                         best six                  population 12                  population 24                  weak-heavy 12
+  institutions         22.4 ( 29.5; 1.00; 0.25)       12.5 ( 19.2; 0.99; 0.36)       24.1 ( 38.6; 0.99; 0.38)        5.4 (  9.0; 0.99; 0.45)
+  dedicated            13.1 ( 16.9; 1.00; 0.24)       12.3 ( 17.5; 0.99; 0.31)       22.8 ( 36.5; 0.99; 0.42)        4.0 (  6.5; 0.99; 0.38)
+  peer                 16.9 ( 26.2; 0.98; 0.36)       11.0 ( 20.2; 0.98; 0.60)       19.9 ( 42.0; 0.98; 0.78)        4.9 ( 11.9; 0.97; 1.13)
+  solo                  8.8 ( 28.6; 0.92; 1.01)        6.0 ( 27.6; 0.90; 2.05)        9.5 ( 57.5; 0.88; 2.32)        3.5 ( 20.1; 0.84; 3.38)
+  swarm                 5.6 ( 27.9; 0.92; 1.04)        1.0 ( 30.4; 0.86; 2.33)        2.1 ( 64.5; 0.86; 2.55)        0.1 ( 28.3; 0.82; 4.06)
+  self-licensed        20.2 ( 29.0; 1.00; 0.35)       12.4 ( 24.1; 0.99; 0.67)       21.9 ( 47.8; 0.99; 0.75)        5.1 ( 11.9; 0.98; 0.77)
+  orchestrator          6.4 ( 15.0; 0.96; 0.49)        4.5 ( 17.0; 0.94; 0.81)        3.2 ( 11.0; 0.94; 0.70)        2.2 (  7.1; 0.94; 0.59)
+  DWC                  10.4 ( 32.5; 0.95; 0.73)        3.3 ( 20.2; 0.94; 1.19)        3.5 ( 12.3; 0.95; 0.79)        0.1 (  9.9; 0.93; 3.82)
+
+[speed ignored]
+  organisation                         best six                  population 12                  population 24                  weak-heavy 12
+  institutions         28.2 ( 30.5; 1.00; 0.05)       35.8 ( 47.1; 0.98; 0.17)       70.3 ( 96.9; 0.98; 0.21)       16.2 ( 23.2; 0.99; 0.24)
+  dedicated            19.2 ( 20.4; 1.00; 0.05)       32.1 ( 37.8; 0.99; 0.08)       66.5 ( 83.0; 0.99; 0.15)       14.0 ( 20.8; 0.99; 0.29)
+  peer                 22.5 ( 28.2; 0.98; 0.07)       23.8 ( 38.1; 0.97; 0.37)       47.0 ( 76.0; 0.97; 0.37)       10.5 ( 23.5; 0.96; 0.84)
+  solo                 14.1 ( 29.0; 0.92; 0.30)       13.4 ( 45.5; 0.86; 1.26)       24.8 ( 90.5; 0.85; 1.27)        5.5 ( 35.5; 0.82; 2.30)
+  swarm                13.1 ( 35.0; 0.90; 0.31)        5.6 ( 45.5; 0.87; 1.06)       14.0 ( 94.5; 0.88; 0.94)        1.3 ( 35.5; 0.85; 2.08)
+  self-licensed        26.8 ( 29.5; 1.00; 0.06)       29.5 ( 47.4; 0.98; 0.35)       56.2 ( 91.4; 0.98; 0.36)       14.0 ( 28.6; 0.98; 0.61)
+  orchestrator          9.1 ( 13.4; 0.96; 0.04)        9.6 ( 19.3; 0.94; 0.15)       12.5 ( 19.3; 0.95; 0.07)        8.0 ( 17.4; 0.93; 0.18)
+  DWC                   8.3 ( 13.3; 0.96; 0.13)       12.0 ( 25.6; 0.94; 0.22)       14.1 ( 25.3; 0.94; 0.12)        3.7 ( 20.2; 0.94; 1.11)
+
+Clean ideas as a share of the institutions' (same roster, same scenario); worst case across all twelve cells
+  institutions   worst  100%   mean  100%   best  100%
+  dedicated      worst   58%   mean   83%   best   99%
+  peer           worst   65%   mean   74%   best   91%
+  solo           worst   33%   mean   42%   best   65%
+  swarm          worst    2%   mean   17%   best   46%
+  self-licensed  worst   80%   mean   88%   best  100%
+  orchestrator   worst   13%   mean   31%   best   49%
+  DWC            worst    2%   mean   26%   best   46%
+
+Best six, base scenario: API cost per clean idea (token model of ../portfolio6)
+  institutions   $ 1104/wk   39.4 clean/wk  $  28.0 per clean idea  lead   33 h
+  dedicated      $  588/wk   22.7 clean/wk  $  25.9 per clean idea  lead   57 h
+  peer           $  966/wk   29.7 clean/wk  $  32.6 per clean idea  lead   38 h
+  solo           $  899/wk   17.5 clean/wk  $  51.5 per clean idea  lead   38 h
+  swarm          $ 1092/wk   17.0 clean/wk  $  64.1 per clean idea  lead   28 h
+  self-licensed  $ 1110/wk   36.9 clean/wk  $  30.1 per clean idea  lead   34 h
+  orchestrator   $  713/wk   13.4 clean/wk  $  53.1 per clean idea  lead   33 h
+  DWC            $  486/wk   15.8 clean/wk  $  30.7 per clean idea  lead   36 h
+
+ABLATION of the institutions: clean ideas/week (ideas/week), base and harder work
+  variant                           best six / base     population 12 / base        best six / harder   population 12 / harder
+  institutions (all)                   32.1 ( 34.5)             31.4 ( 40.9)             19.4 ( 24.3)             12.5 ( 19.3)
+  - council                            32.0 ( 34.5)             31.6 ( 41.4)             19.5 ( 25.0)             13.0 ( 20.0)
+  - red team                           28.8 ( 34.0)             28.0 ( 41.5)             17.6 ( 24.2)             12.0 ( 19.9)
+  - audit                              32.5 ( 34.8)             32.3 ( 42.2)             19.6 ( 25.4)             13.6 ( 20.2)
+  - second analyst (K=1)               31.7 ( 34.3)             30.9 ( 40.6)             18.9 ( 24.2)             12.8 ( 19.8)
+  - licences                           28.4 ( 33.3)             18.3 ( 37.0)             14.9 ( 24.0)              7.0 ( 22.7)
+  - independence                       23.8 ( 34.1)             15.7 ( 44.4)             11.1 ( 26.5)              5.5 ( 21.4)
+  - hardest-first                      32.4 ( 34.8)             32.0 ( 40.8)             19.4 ( 24.6)             13.8 ( 20.2)
+  + second planner (D=2)               31.6 ( 33.6)             31.4 ( 40.0)             19.5 ( 24.6)             13.0 ( 19.4)

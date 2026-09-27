@@ -35,6 +35,26 @@ World model (same for both):
   - task time scales with the agent's measured output speed; cost is the
     agent's real blended price times the task's tokens.
 
+Other operating models (r12), same world, same agents:
+
+  solo          "no model": each agent owns one idea end to end, reviews and
+                releases its own work; no licences, no independence
+  peer          solo, but review and release by any other agent
+  orchestrator  one lead agent frames, plans, checks every card and releases;
+                workers build (the common orchestrator-subagent pattern);
+                built as the baseline with the Director and Checker merged
+  swarm         shared pull queue with none of the rules: no licences, no
+                independence, first-come not hardest-first, one analyst, no
+                council, no red team, no audit
+  self-licensed the institutions, but each agent licenses itself on its own
+                confidence, overstated by OVERCONF Coding Index points
+
+An author checking its own work (or the same model checking it) catches
+SELF_CATCH as much as an independent reviewer of equal skill. Optional
+shared-codebase contention: a finished card conflicts with the cards other
+agents are building with probability 1 - exp(-conflict_k x active cards),
+and must be redone.
+
 Run: python3 probes/institutions/factory_sim.py
 """
 
@@ -108,6 +128,8 @@ ORPHAN_H = 8.0                      # R13: hours a task may wait with nobody lic
                                     # a card is split (two cards, 10 points easier) or any other
                                     # task opens to the organisation's most capable agents
 SPLIT_EASIER = 10.0
+SELF_CATCH = 0.5                    # own-work (or same-model) review catches half as much (r12)
+OVERCONF = 10.0                     # self-assessed licence: agents overrate themselves by 10 points (r12)
 
 # task: (base hours at 100 tokens/s, tokens, difficulty offset or fixed difficulty)
 TASK_HOURS = {"inquiry": 0.5, "critique": 0.3, "synthesis": 0.5, "decompose": 1.0, "reconcile": 0.6,
@@ -149,7 +171,7 @@ class Agent:
         return base * math.sqrt(100 / max(self.cfg.speed, 10))
 
 
-@dataclass
+@dataclass(eq=False)
 class Idea:
     iid: int
     start: float
@@ -163,9 +185,10 @@ class Idea:
     rounds_left: int = 0
     gap_loops: int = 0
     done: bool = False
+    owner: object = None              # solo / peer: the agent that owns the idea
 
 
-@dataclass
+@dataclass(eq=False)
 class Card:
     idea: Idea
     band: str
@@ -175,6 +198,7 @@ class Card:
     accepted: bool = False
     attempts: int = 0
     worker_tier: int = 0
+    author: str = ""
 
 
 @dataclass
@@ -189,7 +213,16 @@ class Task:
 
 class Sim:
     def __init__(self, org: str, agents: list[Agent], seed: int, wip: int, K=3, D=2, council_rounds=1,
-                 redteam=True, audit=True, horizon=7 * 168, warmup=168):
+                 redteam=True, audit=True, horizon=7 * 168, warmup=168, licences=True, independence=True,
+                 hardest_first=True, overconf=0.0, conflict_k=0.0):
+        self.licences, self.independence, self.hardest_first = licences, independence, hardest_first
+        self.overconf, self.conflict_k = overconf, conflict_k
+        self.cards_active = 0
+        if org in ("solo", "peer"):
+            K, council_rounds, D, redteam, audit = 1, 0, 1, False, False
+            licences = self.licences = False
+            if org == "solo":
+                independence = self.independence = False
         self.org, self.agents, self.rng = org, agents, random.Random(seed)
         self.K, self.D, self.council_rounds, self.redteam, self.audit = K, D, council_rounds, redteam, audit
         self.wip, self.horizon, self.warmup = wip, horizon, warmup
@@ -203,9 +236,10 @@ class Sim:
         self.cost = 0.0
         self.wait = defaultdict(list)
         self.drops = defaultdict(int)
+        self.open_ideas = []
         if org == "baseline":
-            self.director = next(a for a in agents if a.roles == {"director"})
-            self.checker = next(a for a in agents if a.roles == {"checker"})
+            self.director = next(a for a in agents if a.roles and "director" in a.roles)
+            self.checker = next(a for a in agents if a.roles and "checker" in a.roles)
             self.workers = [a for a in agents if a.roles == {"worker"}]
 
     # -- event plumbing
@@ -232,6 +266,7 @@ class Sim:
         idea = Idea(self.next_id, self.t, [rng.gauss(REQ_BASE, REQ_SPREAD) for _ in range(R_REQ)])
         self.next_id += 1
         self.ideas_open += 1
+        self.open_ideas.append(idea)
         if self.org == "baseline":
             self.push(self.director, Task("inquiry", idea, born=self.t))
         else:
@@ -254,14 +289,22 @@ class Sim:
     # -- dispatch
     def eligible(self, a: Agent, task: Task) -> bool:
         aged = self.t - task.born >= ORPHAN_H
-        if a.cfg.name in task.exclude and not aged:     # R13 also relaxes independence
+        if self.org in ("solo", "peer"):
+            owned = task.idea.owner
+            shared = self.org == "peer" and task.kind in ("review", "release")
+            if not shared:
+                if owned is None:          # take a new idea only when free of others
+                    return not any(i is not task.idea and i.owner is a and not i.done for i in self.open_ideas)
+                return owned is a
+        if self.independence and a.cfg.name in task.exclude and not aged:     # R13 also relaxes independence
             return False
-        if task.kind == "inquiry":
+        if task.kind == "inquiry" or not self.licences:
             return True
+        ci = a.cfg.ci + self.overconf                    # self-licensed: the agent's own (inflated) view
         if task.kind in ("review", "audit"):
-            ok = p_pass(a.cfg.ci, task.card.d) >= REVIEW_LICENCE_P
+            ok = p_pass(ci, task.card.d) >= REVIEW_LICENCE_P
         else:
-            ok = p_pass(a.cfg.ci, task.d) >= LICENCE_P
+            ok = p_pass(ci, task.d) >= LICENCE_P
         if not ok and task.kind != "card" and self.t - task.born >= ORPHAN_H:
             ok = a.cfg.ci >= self.top_ci - 10            # R13: open to the most capable
         return ok
@@ -307,9 +350,11 @@ class Sim:
             cands = [t for t in q if (in_role or self.t - t.born >= 2 * ORPHAN_H) and self.eligible(a, t)]
             if not cands:
                 continue
-            task = max(cands, key=lambda t: t.d) if kind == "card" else cands[0]
+            task = max(cands, key=lambda t: t.d) if kind == "card" and self.hardest_first else cands[0]
             q.remove(task)
-            if a.cfg.name in task.exclude:
+            if self.org in ("solo", "peer") and task.idea.owner is None:
+                task.idea.owner = a
+            if self.independence and a.cfg.name in task.exclude:
                 self.drops["independence_waived"] += 1  # recorded in the Ledger
             if not in_role:
                 self.drops["seat_rule_waived"] += 1
@@ -323,6 +368,8 @@ class Sim:
         else:
             base, tokens = TASK_HOURS[task.kind], TASK_TOKENS[task.kind]
         dur = a.hours(base)
+        if task.kind == "card":
+            self.cards_active += 1
         a.busy_until = self.t + dur
         a.week_used[int(self.t // 168)] += dur
         if self.t >= self.warmup:
@@ -336,6 +383,8 @@ class Sim:
 
     # -- task outcomes
     def finish(self, a: Agent, task: Task):
+        if task.kind == "card":
+            self.cards_active -= 1
         getattr(self, "on_" + task.kind)(a, task)
 
     def on_inquiry(self, a, task):
@@ -439,6 +488,8 @@ class Sim:
         idea.stage = "build"
         for c in new:
             self.send_card(c)
+        if not new:                                  # r12 fix: an empty plan goes to the Release Gate,
+            self.check_idea(idea)                    # which finds the unmapped intent, instead of stalling
 
     def send_card(self, card: Card):
         task = Task("card", card.idea, card, d=card.d)
@@ -459,6 +510,14 @@ class Sim:
         p = p_pass(a.cfg.ci, card.d) * (AMBIG_PENALTY if card.ambiguous else 1)
         card.attempts += 1
         card.worker_tier = a.tier
+        card.author = a.cfg.name
+        if self.conflict_k and self.rng.random() < 1 - math.exp(-self.conflict_k * self.cards_active):
+            self.drops["merge_conflict"] += 1          # clashed with work in flight: redo
+            if self.org == "baseline":
+                self.push(a, task)
+            else:
+                self.enqueue(Task("card", card.idea, card, d=card.d))
+            return
         card.defective = self.rng.random() >= p
         if card.defective and self.rng.random() < TEST_CATCH:
             self.drops["test_fail"] += 1
@@ -483,7 +542,8 @@ class Sim:
 
     def on_review(self, a, task):
         card = task.card
-        if card.defective and self.rng.random() < p_pass(a.cfg.ci, card.d + 5):
+        own = SELF_CATCH if a.cfg.name == card.author else 1.0
+        if card.defective and self.rng.random() < own * p_pass(a.cfg.ci, card.d + 5):
             self.drops["review_reject"] += 1
             self.send_card(card)
             return
@@ -504,7 +564,7 @@ class Sim:
             self.send_card(card)
 
     def check_idea(self, idea):
-        if idea.stage == "build" and idea.cards and all(c.accepted for c in idea.cards):
+        if idea.stage == "build" and all(c.accepted for c in idea.cards):
             idea.stage = "release"
             t = Task("release", idea)
             if self.org == "baseline":
@@ -514,11 +574,16 @@ class Sim:
 
     def on_release(self, a, task):
         idea = task.idea
+        if idea.done or idea.stage != "release":   # r12 fix: a late audit catch could queue a second release
+            self.drops["stale_release"] += 1
+            return
         rng = self.rng
         if self.org == "baseline":
             gap_catch, defect_catch = 0.0, 0.0        # no independent release gate
         else:
             gap_catch, defect_catch = RELEASE_GAP_CATCH, RELEASE_DEFECT_CATCH
+            if not self.independence and any(c.author == a.cfg.name for c in idea.cards):
+                gap_catch, defect_catch = SELF_CATCH * gap_catch, SELF_CATCH * defect_catch
         bad = [c for c in idea.cards if c.defective and rng.random() < defect_catch]
         gaps = [r for r in range(R_REQ) if r not in idea.mapped and rng.random() < gap_catch]
         if bad or (gaps and idea.gap_loops < 2):
@@ -541,6 +606,7 @@ class Sim:
                 escaped=sum(c.defective for c in idea.cards),
                 cards=len(idea.cards)))
         self.ideas_open -= 1
+        self.open_ideas.remove(idea)
         self.new_idea()
 
 
@@ -559,6 +625,18 @@ def baseline_org(workers: dict, rng: random.Random, director_tier=1, checker_tie
     ws = [Agent(rng.choice(POOL[t]), 2 + i, {"worker"}) for i, t in
           enumerate(t for t, n in workers.items() for _ in range(n))]
     return [d, c] + ws
+
+
+def per_agent(sim: Sim, weeks: float) -> dict:
+    """Totals per model (several seats may run the same model)."""
+    out = {}
+    for a in sim.agents:
+        r = out.setdefault(a.cfg.name, {"busy_h_per_week": 0.0, "usd_per_week": 0.0, "mtok_per_week": 0.0, "seats": 0})
+        r["busy_h_per_week"] += sum(a.busy_by_kind.values()) / weeks
+        r["usd_per_week"] += a.spend / weeks
+        r["mtok_per_week"] += a.tokens / 1e6 / weeks
+        r["seats"] += 1
+    return out
 
 
 def measure(sim: Sim) -> dict:
@@ -581,15 +659,14 @@ def measure(sim: Sim) -> dict:
         "coherence": statistics.mean(r["coherence"] for r in rel) if rel else float("nan"),
         "escaped_per_idea": statistics.mean(r["escaped"] for r in rel) if rel else float("nan"),
         "cost_per_idea": sim.cost / max(1, len(rel)) if rel else float("nan"),
+        "clean_per_week": sum(1 for r in rel if r["coherence"] >= 1.0 and r["escaped"] == 0) / weeks,
         "utilisation": util,
         "max_agent_util": max(agent_util),
         "busy_share": {k: v / max(1e-9, sum(busy.values())) for k, v in busy.items()},
         "role_util": {k: statistics.mean(v) for k, v in role_util.items()},
         "wait_h": {k: statistics.mean(v) for k, v in sim.wait.items() if v},
         "drops_per_idea": {k: v / max(1, len(rel)) for k, v in sim.drops.items()},
-        "per_agent": {a.cfg.name: {"busy_h_per_week": sum(a.busy_by_kind.values()) / weeks,
-                                   "usd_per_week": a.spend / weeks, "mtok_per_week": a.tokens / 1e6 / weeks}
-                      for a in sim.agents},
+        "per_agent": per_agent(sim, weeks),
     }
 
 

@@ -14,8 +14,8 @@ asked about and a US-only mid tier, when that assumption and the work itself cha
   estimates-3     every estimated Coding Index 3 points lower
 
 Choice rule: minimax regret, i.e. the six whose worst share of the scenario's
-best throughput is highest; sixes within two points of that are treated as
-tied (seed noise is 1-3%), and the cheapest per idea among them is chosen.
+best clean-idea throughput is highest; sixes within two points of that are treated as
+tied (seed noise is 1-3%), and the cheapest per clean idea among them is chosen.
 
 Run: python3 probes/portfolio6/robust6.py   (after select6.py; about 5 minutes)
 """
@@ -107,25 +107,26 @@ def main():
         with Pool() as pool:                 # fork after patching so workers see the scenario
             rows = s.evaluate(pool, sixes, SEEDS, ci_shift=sc.get("shift", 0.0))
         restore(snap)
-        top = max(r["ipw"] for r in rows)
+        top = max(r["clean"] for r in rows)
         for r in rows:
-            table.setdefault(tuple(r["six"]), {})[name] = dict(ipw=round(r["ipw"], 2), share=round(r["ipw"] / top, 3),
+            table.setdefault(tuple(r["six"]), {})[name] = dict(ipw=round(r["ipw"], 2), clean=round(r["clean"], 2),
+                                                              share=round(r["clean"] / top, 3),
                                                               coh=round(r["coh"], 3), esc=round(r["esc"], 3),
-                                                              usd_idea=round(r["usd_idea"], 1))
-        print(f"{name}: best {top:.1f} ideas/wk")
+                                                              usd_idea=round(r["usd_idea"], 1), usd_clean=round(r["usd_clean"], 1))
+        print(f"{name}: best {top:.1f} clean ideas/wk")
 
-    lines = [f"ROBUSTNESS of the leading sixes ({SEEDS} seeds; share = throughput / scenario best)",
-             "  " + " ".join(f"{k:>13}" for k in SCENARIOS) + "   worst  $/idea(base)  six"]
-    ranked = sorted(table.items(), key=lambda kv: (-min(v["share"] for v in kv[1].values()), kv[1]["base"]["usd_idea"]))
+    lines = [f"ROBUSTNESS of the leading sixes ({SEEDS} seeds; clean ideas/week, share = of the scenario's best six)",
+             "  " + " ".join(f"{k:>13}" for k in SCENARIOS) + "   worst  $/clean(base)  six"]
+    ranked = sorted(table.items(), key=lambda kv: (-min(v["share"] for v in kv[1].values()), kv[1]["base"]["usd_clean"]))
     for six, v in ranked:
         worst = min(x["share"] for x in v.values())
-        lines.append("  " + " ".join(f"{v[k]['ipw']:6.1f} ({v[k]['share']:.0%})".rjust(13) for k in SCENARIOS)
-                     + f"   {worst:.0%}  {v['base']['usd_idea']:10.0f}    "
+        lines.append("  " + " ".join(f"{v[k]['clean']:6.1f} ({v[k]['share']:.0%})".rjust(13) for k in SCENARIOS)
+                     + f"   {worst:.0%}  {v['base']['usd_clean']:11.0f}    "
                      + " + ".join(s.label(n) for n in six[:3]) + " || " + " + ".join(s.label(n) for n in six[3:]))
     worst_of = {six: min(x["share"] for x in v.values()) for six, v in ranked}
     best_worst = max(worst_of.values())
     tied = [(six, v) for six, v in ranked if worst_of[six] >= best_worst - TIE]
-    pick = min(tied, key=lambda kv: kv[1]["base"]["usd_idea"])
+    pick = min(tied, key=lambda kv: kv[1]["base"]["usd_clean"])
     lines.append(f"\n  within {TIE:.0%} of the best worst case: {len(tied)} sixes; cheapest of them:")
     lines.append("  minimax-regret six: " + " + ".join(s.label(n) for n in pick[0]))
     print("\n".join(lines))

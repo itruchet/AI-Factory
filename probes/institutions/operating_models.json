@@ -1,0 +1,1546 @@
+{
+ "summary": {
+  "institutions": {
+   "base": {
+    "best six": {
+     "ipw": 43.083,
+     "clean": 39.417,
+     "coh": 0.996,
+     "esc": 0.054,
+     "lead": 33.057,
+     "util": 0.943,
+     "usd_week": 1104.219,
+     "sim_cost": 201.391,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 44.917,
+     "clean": 34.458,
+     "coh": 0.99,
+     "esc": 0.186,
+     "lead": 41.933,
+     "util": 0.84,
+     "usd_week": NaN,
+     "sim_cost": 422.11,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 93.5,
+     "clean": 66.917,
+     "coh": 0.984,
+     "esc": 0.207,
+     "lead": 40.516,
+     "util": 0.839,
+     "usd_week": NaN,
+     "sim_cost": 942.786,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 22.792,
+     "clean": 15.917,
+     "coh": 0.987,
+     "esc": 0.257,
+     "lead": 61.437,
+     "util": 0.409,
+     "usd_week": NaN,
+     "sim_cost": 202.059,
+     "wip": 8
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 29.5,
+     "clean": 22.417,
+     "coh": 0.997,
+     "esc": 0.247,
+     "lead": 43.778,
+     "util": 0.926,
+     "usd_week": 1126.92,
+     "sim_cost": 211.904,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 19.208,
+     "clean": 12.458,
+     "coh": 0.989,
+     "esc": 0.355,
+     "lead": 76.963,
+     "util": 0.533,
+     "usd_week": NaN,
+     "sim_cost": 345.497,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 38.625,
+     "clean": 24.083,
+     "coh": 0.99,
+     "esc": 0.377,
+     "lead": 43.169,
+     "util": 0.514,
+     "usd_week": NaN,
+     "sim_cost": 779.654,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 8.958,
+     "clean": 5.417,
+     "coh": 0.986,
+     "esc": 0.446,
+     "lead": 128.631,
+     "util": 0.237,
+     "usd_week": NaN,
+     "sim_cost": 158.211,
+     "wip": 8
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 30.458,
+     "clean": 28.25,
+     "coh": 0.997,
+     "esc": 0.051,
+     "lead": 46.281,
+     "util": 0.976,
+     "usd_week": 1135.205,
+     "sim_cost": 180.629,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 47.083,
+     "clean": 35.75,
+     "coh": 0.984,
+     "esc": 0.168,
+     "lead": 39.975,
+     "util": 0.83,
+     "usd_week": NaN,
+     "sim_cost": 482.18,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 96.917,
+     "clean": 70.292,
+     "coh": 0.985,
+     "esc": 0.208,
+     "lead": 38.737,
+     "util": 0.876,
+     "usd_week": NaN,
+     "sim_cost": 1118.735,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 23.167,
+     "clean": 16.25,
+     "coh": 0.985,
+     "esc": 0.24,
+     "lead": 79.706,
+     "util": 0.424,
+     "usd_week": NaN,
+     "sim_cost": 224.999,
+     "wip": 12
+    }
+   }
+  },
+  "dedicated": {
+   "base": {
+    "best six": {
+     "ipw": 24.583,
+     "clean": 22.708,
+     "coh": 1.0,
+     "esc": 0.075,
+     "lead": 57.435,
+     "util": 0.575,
+     "usd_week": 588.211,
+     "sim_cost": 107.573,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 35.458,
+     "clean": 30.667,
+     "coh": 0.992,
+     "esc": 0.081,
+     "lead": 73.753,
+     "util": 0.702,
+     "usd_week": NaN,
+     "sim_cost": 365.433,
+     "wip": 18
+    },
+    "population 24": {
+     "ipw": 76.708,
+     "clean": 63.042,
+     "coh": 0.99,
+     "esc": 0.12,
+     "lead": 67.844,
+     "util": 0.7,
+     "usd_week": NaN,
+     "sim_cost": 831.292,
+     "wip": 36
+    },
+    "weak-heavy 12": {
+     "ipw": 20.375,
+     "clean": 14.375,
+     "coh": 0.99,
+     "esc": 0.271,
+     "lead": 133.476,
+     "util": 0.394,
+     "usd_week": NaN,
+     "sim_cost": 199.905,
+     "wip": 18
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 16.917,
+     "clean": 13.083,
+     "coh": 0.999,
+     "esc": 0.244,
+     "lead": 75.106,
+     "util": 0.578,
+     "usd_week": 697.793,
+     "sim_cost": 131.9,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 17.458,
+     "clean": 12.333,
+     "coh": 0.994,
+     "esc": 0.312,
+     "lead": 126.608,
+     "util": 0.497,
+     "usd_week": NaN,
+     "sim_cost": 324.571,
+     "wip": 18
+    },
+    "population 24": {
+     "ipw": 36.542,
+     "clean": 22.792,
+     "coh": 0.992,
+     "esc": 0.42,
+     "lead": 118.626,
+     "util": 0.52,
+     "usd_week": NaN,
+     "sim_cost": 771.561,
+     "wip": 36
+    },
+    "weak-heavy 12": {
+     "ipw": 6.458,
+     "clean": 4.042,
+     "coh": 0.991,
+     "esc": 0.385,
+     "lead": 310.64,
+     "util": 0.214,
+     "usd_week": NaN,
+     "sim_cost": 144.049,
+     "wip": 18
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 20.375,
+     "clean": 19.208,
+     "coh": 0.999,
+     "esc": 0.053,
+     "lead": 71.4,
+     "util": 0.678,
+     "usd_week": 671.036,
+     "sim_cost": 106.824,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 37.833,
+     "clean": 32.083,
+     "coh": 0.989,
+     "esc": 0.079,
+     "lead": 67.656,
+     "util": 0.686,
+     "usd_week": NaN,
+     "sim_cost": 411.733,
+     "wip": 18
+    },
+    "population 24": {
+     "ipw": 82.958,
+     "clean": 66.458,
+     "coh": 0.991,
+     "esc": 0.15,
+     "lead": 62.237,
+     "util": 0.751,
+     "usd_week": NaN,
+     "sim_cost": 986.217,
+     "wip": 36
+    },
+    "weak-heavy 12": {
+     "ipw": 20.833,
+     "clean": 14.042,
+     "coh": 0.986,
+     "esc": 0.295,
+     "lead": 119.625,
+     "util": 0.399,
+     "usd_week": NaN,
+     "sim_cost": 215.297,
+     "wip": 18
+    }
+   }
+  },
+  "peer": {
+   "base": {
+    "best six": {
+     "ipw": 37.708,
+     "clean": 29.667,
+     "coh": 0.977,
+     "esc": 0.065,
+     "lead": 38.0,
+     "util": 0.806,
+     "usd_week": 965.718,
+     "sim_cost": 174.445,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 36.042,
+     "clean": 23.708,
+     "coh": 0.969,
+     "esc": 0.339,
+     "lead": 36.166,
+     "util": 0.916,
+     "usd_week": NaN,
+     "sim_cost": 412.25,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 73.5,
+     "clean": 43.708,
+     "coh": 0.967,
+     "esc": 0.444,
+     "lead": 37.925,
+     "util": 0.926,
+     "usd_week": NaN,
+     "sim_cost": 912.176,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 22.667,
+     "clean": 10.667,
+     "coh": 0.962,
+     "esc": 0.838,
+     "lead": 81.708,
+     "util": 0.933,
+     "usd_week": NaN,
+     "sim_cost": 276.998,
+     "wip": 18
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 26.208,
+     "clean": 16.917,
+     "coh": 0.982,
+     "esc": 0.362,
+     "lead": 52.195,
+     "util": 0.873,
+     "usd_week": 1028.109,
+     "sim_cost": 190.251,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 20.167,
+     "clean": 10.958,
+     "coh": 0.98,
+     "esc": 0.601,
+     "lead": 96.328,
+     "util": 0.948,
+     "usd_week": NaN,
+     "sim_cost": 435.321,
+     "wip": 18
+    },
+    "population 24": {
+     "ipw": 42.0,
+     "clean": 19.875,
+     "coh": 0.979,
+     "esc": 0.784,
+     "lead": 51.506,
+     "util": 0.963,
+     "usd_week": NaN,
+     "sim_cost": 966.35,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 11.875,
+     "clean": 4.917,
+     "coh": 0.973,
+     "esc": 1.128,
+     "lead": 54.854,
+     "util": 0.96,
+     "usd_week": NaN,
+     "sim_cost": 291.383,
+     "wip": 12
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 28.167,
+     "clean": 22.458,
+     "coh": 0.978,
+     "esc": 0.071,
+     "lead": 32.056,
+     "util": 0.86,
+     "usd_week": 995.123,
+     "sim_cost": 156.959,
+     "wip": 6
+    },
+    "population 12": {
+     "ipw": 38.083,
+     "clean": 23.833,
+     "coh": 0.97,
+     "esc": 0.368,
+     "lead": 34.731,
+     "util": 0.911,
+     "usd_week": NaN,
+     "sim_cost": 459.151,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 75.958,
+     "clean": 47.042,
+     "coh": 0.968,
+     "esc": 0.366,
+     "lead": 34.362,
+     "util": 0.926,
+     "usd_week": NaN,
+     "sim_cost": 1048.061,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 23.458,
+     "clean": 10.542,
+     "coh": 0.961,
+     "esc": 0.836,
+     "lead": 38.662,
+     "util": 0.936,
+     "usd_week": NaN,
+     "sim_cost": 289.099,
+     "wip": 12
+    }
+   }
+  },
+  "solo": {
+   "base": {
+    "best six": {
+     "ipw": 38.0,
+     "clean": 17.458,
+     "coh": 0.911,
+     "esc": 0.342,
+     "lead": 37.978,
+     "util": 0.734,
+     "usd_week": 899.242,
+     "sim_cost": 162.606,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 44.042,
+     "clean": 12.583,
+     "coh": 0.868,
+     "esc": 1.264,
+     "lead": 36.11,
+     "util": 0.831,
+     "usd_week": NaN,
+     "sim_cost": 371.619,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 91.667,
+     "clean": 22.0,
+     "coh": 0.85,
+     "esc": 1.465,
+     "lead": 36.759,
+     "util": 0.822,
+     "usd_week": NaN,
+     "sim_cost": 807.784,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 36.25,
+     "clean": 5.917,
+     "coh": 0.806,
+     "esc": 2.198,
+     "lead": 64.411,
+     "util": 0.844,
+     "usd_week": NaN,
+     "sim_cost": 243.867,
+     "wip": 18
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 28.583,
+     "clean": 8.833,
+     "coh": 0.924,
+     "esc": 1.006,
+     "lead": 31.194,
+     "util": 0.804,
+     "usd_week": 952.281,
+     "sim_cost": 176.432,
+     "wip": 6
+    },
+    "population 12": {
+     "ipw": 27.625,
+     "clean": 6.0,
+     "coh": 0.9,
+     "esc": 2.047,
+     "lead": 49.383,
+     "util": 0.896,
+     "usd_week": NaN,
+     "sim_cost": 407.109,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 57.5,
+     "clean": 9.5,
+     "coh": 0.876,
+     "esc": 2.322,
+     "lead": 52.201,
+     "util": 0.889,
+     "usd_week": NaN,
+     "sim_cost": 882.872,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 20.083,
+     "clean": 3.542,
+     "coh": 0.839,
+     "esc": 3.375,
+     "lead": 53.065,
+     "util": 0.917,
+     "usd_week": NaN,
+     "sim_cost": 272.55,
+     "wip": 12
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 28.958,
+     "clean": 14.083,
+     "coh": 0.924,
+     "esc": 0.299,
+     "lead": 32.225,
+     "util": 0.802,
+     "usd_week": 934.017,
+     "sim_cost": 147.585,
+     "wip": 6
+    },
+    "population 12": {
+     "ipw": 45.458,
+     "clean": 13.417,
+     "coh": 0.861,
+     "esc": 1.257,
+     "lead": 35.075,
+     "util": 0.823,
+     "usd_week": NaN,
+     "sim_cost": 411.419,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 90.458,
+     "clean": 24.833,
+     "coh": 0.854,
+     "esc": 1.271,
+     "lead": 56.006,
+     "util": 0.821,
+     "usd_week": NaN,
+     "sim_cost": 923.985,
+     "wip": 36
+    },
+    "weak-heavy 12": {
+     "ipw": 35.542,
+     "clean": 5.5,
+     "coh": 0.816,
+     "esc": 2.298,
+     "lead": 64.931,
+     "util": 0.848,
+     "usd_week": NaN,
+     "sim_cost": 254.661,
+     "wip": 18
+    }
+   }
+  },
+  "swarm": {
+   "base": {
+    "best six": {
+     "ipw": 50.292,
+     "clean": 17.042,
+     "coh": 0.898,
+     "esc": 0.387,
+     "lead": 27.858,
+     "util": 0.936,
+     "usd_week": 1091.941,
+     "sim_cost": 196.757,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 52.833,
+     "clean": 3.792,
+     "coh": 0.845,
+     "esc": 1.362,
+     "lead": 34.878,
+     "util": 0.935,
+     "usd_week": NaN,
+     "sim_cost": 421.529,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 95.875,
+     "clean": 8.958,
+     "coh": 0.862,
+     "esc": 1.328,
+     "lead": 27.333,
+     "util": 0.851,
+     "usd_week": NaN,
+     "sim_cost": 846.157,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 36.125,
+     "clean": 0.833,
+     "coh": 0.848,
+     "esc": 2.375,
+     "lead": 33.211,
+     "util": 0.797,
+     "usd_week": NaN,
+     "sim_cost": 238.551,
+     "wip": 8
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 27.875,
+     "clean": 5.625,
+     "coh": 0.916,
+     "esc": 1.043,
+     "lead": 22.644,
+     "util": 0.755,
+     "usd_week": 898.031,
+     "sim_cost": 166.362,
+     "wip": 4
+    },
+    "population 12": {
+     "ipw": 30.417,
+     "clean": 1.0,
+     "coh": 0.862,
+     "esc": 2.327,
+     "lead": 39.568,
+     "util": 0.861,
+     "usd_week": NaN,
+     "sim_cost": 397.463,
+     "wip": 8
+    },
+    "population 24": {
+     "ipw": 64.542,
+     "clean": 2.083,
+     "coh": 0.863,
+     "esc": 2.546,
+     "lead": 39.316,
+     "util": 0.909,
+     "usd_week": NaN,
+     "sim_cost": 916.058,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 28.292,
+     "clean": 0.083,
+     "coh": 0.815,
+     "esc": 4.064,
+     "lead": 59.874,
+     "util": 0.969,
+     "usd_week": NaN,
+     "sim_cost": 295.699,
+     "wip": 12
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 34.958,
+     "clean": 13.125,
+     "coh": 0.904,
+     "esc": 0.309,
+     "lead": 39.419,
+     "util": 0.968,
+     "usd_week": 1123.605,
+     "sim_cost": 177.356,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 45.5,
+     "clean": 5.625,
+     "coh": 0.866,
+     "esc": 1.059,
+     "lead": 27.563,
+     "util": 0.793,
+     "usd_week": NaN,
+     "sim_cost": 406.388,
+     "wip": 8
+    },
+    "population 24": {
+     "ipw": 94.458,
+     "clean": 14.0,
+     "coh": 0.878,
+     "esc": 0.944,
+     "lead": 27.813,
+     "util": 0.86,
+     "usd_week": NaN,
+     "sim_cost": 986.127,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 35.542,
+     "clean": 1.333,
+     "coh": 0.849,
+     "esc": 2.079,
+     "lead": 33.719,
+     "util": 0.809,
+     "usd_week": NaN,
+     "sim_cost": 255.69,
+     "wip": 8
+    }
+   }
+  },
+  "self-licensed": {
+   "base": {
+    "best six": {
+     "ipw": 41.5,
+     "clean": 36.875,
+     "coh": 0.992,
+     "esc": 0.053,
+     "lead": 33.904,
+     "util": 0.952,
+     "usd_week": 1109.976,
+     "sim_cost": 201.968,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 44.708,
+     "clean": 27.625,
+     "coh": 0.984,
+     "esc": 0.373,
+     "lead": 62.414,
+     "util": 0.97,
+     "usd_week": NaN,
+     "sim_cost": 454.608,
+     "wip": 18
+    },
+    "population 24": {
+     "ipw": 90.542,
+     "clean": 53.333,
+     "coh": 0.984,
+     "esc": 0.423,
+     "lead": 41.924,
+     "util": 0.94,
+     "usd_week": NaN,
+     "sim_cost": 974.979,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 30.625,
+     "clean": 13.292,
+     "coh": 0.974,
+     "esc": 0.65,
+     "lead": 59.465,
+     "util": 0.7,
+     "usd_week": NaN,
+     "sim_cost": 272.36,
+     "wip": 12
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 28.958,
+     "clean": 20.25,
+     "coh": 0.996,
+     "esc": 0.346,
+     "lead": 48.1,
+     "util": 0.97,
+     "usd_week": 1131.673,
+     "sim_cost": 210.748,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 24.083,
+     "clean": 12.417,
+     "coh": 0.993,
+     "esc": 0.667,
+     "lead": 51.862,
+     "util": 0.727,
+     "usd_week": NaN,
+     "sim_cost": 391.46,
+     "wip": 8
+    },
+    "population 24": {
+     "ipw": 47.833,
+     "clean": 21.875,
+     "coh": 0.991,
+     "esc": 0.753,
+     "lead": 54.635,
+     "util": 0.757,
+     "usd_week": NaN,
+     "sim_cost": 910.502,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 11.917,
+     "clean": 5.125,
+     "coh": 0.984,
+     "esc": 0.774,
+     "lead": 101.54,
+     "util": 0.374,
+     "usd_week": NaN,
+     "sim_cost": 198.202,
+     "wip": 8
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 29.542,
+     "clean": 26.75,
+     "coh": 0.995,
+     "esc": 0.061,
+     "lead": 46.5,
+     "util": 0.979,
+     "usd_week": 1136.561,
+     "sim_cost": 180.736,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 47.375,
+     "clean": 29.5,
+     "coh": 0.983,
+     "esc": 0.353,
+     "lead": 59.081,
+     "util": 0.971,
+     "usd_week": NaN,
+     "sim_cost": 514.449,
+     "wip": 18
+    },
+    "population 24": {
+     "ipw": 91.417,
+     "clean": 56.25,
+     "coh": 0.982,
+     "esc": 0.359,
+     "lead": 61.256,
+     "util": 0.98,
+     "usd_week": NaN,
+     "sim_cost": 1161.608,
+     "wip": 36
+    },
+    "weak-heavy 12": {
+     "ipw": 28.625,
+     "clean": 14.042,
+     "coh": 0.979,
+     "esc": 0.608,
+     "lead": 43.006,
+     "util": 0.661,
+     "usd_week": NaN,
+     "sim_cost": 276.852,
+     "wip": 8
+    }
+   }
+  },
+  "orchestrator": {
+   "base": {
+    "best six": {
+     "ipw": 19.125,
+     "clean": 13.417,
+     "coh": 0.965,
+     "esc": 0.074,
+     "lead": 33.271,
+     "util": 0.397,
+     "usd_week": 712.853,
+     "sim_cost": 130.716,
+     "wip": 4
+    },
+    "population 12": {
+     "ipw": 20.958,
+     "clean": 10.042,
+     "coh": 0.933,
+     "esc": 0.19,
+     "lead": 64.169,
+     "util": 0.394,
+     "usd_week": NaN,
+     "sim_cost": 235.26,
+     "wip": 8
+    },
+    "population 24": {
+     "ipw": 14.042,
+     "clean": 8.667,
+     "coh": 0.951,
+     "esc": 0.098,
+     "lead": 180.38,
+     "util": 0.135,
+     "usd_week": NaN,
+     "sim_cost": 320.092,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 16.542,
+     "clean": 7.792,
+     "coh": 0.93,
+     "esc": 0.181,
+     "lead": 73.014,
+     "util": 0.286,
+     "usd_week": NaN,
+     "sim_cost": 148.643,
+     "wip": 8
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 14.958,
+     "clean": 6.375,
+     "coh": 0.961,
+     "esc": 0.49,
+     "lead": 92.92,
+     "util": 0.463,
+     "usd_week": 797.173,
+     "sim_cost": 149.279,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 17.0,
+     "clean": 4.458,
+     "coh": 0.942,
+     "esc": 0.806,
+     "lead": 80.723,
+     "util": 0.427,
+     "usd_week": NaN,
+     "sim_cost": 283.444,
+     "wip": 8
+    },
+    "population 24": {
+     "ipw": 11.042,
+     "clean": 3.25,
+     "coh": 0.943,
+     "esc": 0.695,
+     "lead": 220.129,
+     "util": 0.152,
+     "usd_week": NaN,
+     "sim_cost": 372.931,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 7.125,
+     "clean": 2.25,
+     "coh": 0.936,
+     "esc": 0.587,
+     "lead": 161.37,
+     "util": 0.169,
+     "usd_week": NaN,
+     "sim_cost": 96.834,
+     "wip": 8
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 13.375,
+     "clean": 9.125,
+     "coh": 0.956,
+     "esc": 0.044,
+     "lead": 66.194,
+     "util": 0.395,
+     "usd_week": 528.19,
+     "sim_cost": 92.722,
+     "wip": 6
+    },
+    "population 12": {
+     "ipw": 19.333,
+     "clean": 9.583,
+     "coh": 0.935,
+     "esc": 0.146,
+     "lead": 94.719,
+     "util": 0.336,
+     "usd_week": NaN,
+     "sim_cost": 250.779,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 19.333,
+     "clean": 12.458,
+     "coh": 0.952,
+     "esc": 0.071,
+     "lead": 186.544,
+     "util": 0.165,
+     "usd_week": NaN,
+     "sim_cost": 443.413,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 17.417,
+     "clean": 8.0,
+     "coh": 0.933,
+     "esc": 0.177,
+     "lead": 64.131,
+     "util": 0.29,
+     "usd_week": NaN,
+     "sim_cost": 172.472,
+     "wip": 8
+    }
+   }
+  },
+  "DWC": {
+   "base": {
+    "best six": {
+     "ipw": 26.0,
+     "clean": 15.792,
+     "coh": 0.954,
+     "esc": 0.09,
+     "lead": 35.616,
+     "util": 0.474,
+     "usd_week": 485.579,
+     "sim_cost": 87.564,
+     "wip": 6
+    },
+    "population 12": {
+     "ipw": 28.958,
+     "clean": 13.5,
+     "coh": 0.937,
+     "esc": 0.237,
+     "lead": 67.626,
+     "util": 0.57,
+     "usd_week": NaN,
+     "sim_cost": 233.671,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 18.25,
+     "clean": 10.625,
+     "coh": 0.946,
+     "esc": 0.095,
+     "lead": 179.368,
+     "util": 0.183,
+     "usd_week": NaN,
+     "sim_cost": 301.528,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 15.0,
+     "clean": 2.958,
+     "coh": 0.939,
+     "esc": 1.111,
+     "lead": 149.185,
+     "util": 0.423,
+     "usd_week": NaN,
+     "sim_cost": 178.759,
+     "wip": 18
+    }
+   },
+   "harder work": {
+    "best six": {
+     "ipw": 32.542,
+     "clean": 10.417,
+     "coh": 0.953,
+     "esc": 0.732,
+     "lead": 42.562,
+     "util": 0.878,
+     "usd_week": 818.79,
+     "sim_cost": 149.373,
+     "wip": 9
+    },
+    "population 12": {
+     "ipw": 20.208,
+     "clean": 3.333,
+     "coh": 0.94,
+     "esc": 1.188,
+     "lead": 91.39,
+     "util": 0.547,
+     "usd_week": NaN,
+     "sim_cost": 257.651,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 12.333,
+     "clean": 3.458,
+     "coh": 0.95,
+     "esc": 0.79,
+     "lead": 229.988,
+     "util": 0.19,
+     "usd_week": NaN,
+     "sim_cost": 322.1,
+     "wip": 24
+    },
+    "weak-heavy 12": {
+     "ipw": 9.917,
+     "clean": 0.125,
+     "coh": 0.929,
+     "esc": 3.823,
+     "lead": 196.885,
+     "util": 0.421,
+     "usd_week": NaN,
+     "sim_cost": 173.542,
+     "wip": 18
+    }
+   },
+   "speed ignored": {
+    "best six": {
+     "ipw": 13.292,
+     "clean": 8.292,
+     "coh": 0.957,
+     "esc": 0.127,
+     "lead": 45.694,
+     "util": 0.388,
+     "usd_week": 323.245,
+     "sim_cost": 45.578,
+     "wip": 4
+    },
+    "population 12": {
+     "ipw": 25.625,
+     "clean": 12.0,
+     "coh": 0.935,
+     "esc": 0.218,
+     "lead": 70.7,
+     "util": 0.452,
+     "usd_week": NaN,
+     "sim_cost": 210.365,
+     "wip": 12
+    },
+    "population 24": {
+     "ipw": 25.292,
+     "clean": 14.083,
+     "coh": 0.945,
+     "esc": 0.124,
+     "lead": 94.787,
+     "util": 0.215,
+     "usd_week": NaN,
+     "sim_cost": 398.366,
+     "wip": 17
+    },
+    "weak-heavy 12": {
+     "ipw": 20.167,
+     "clean": 3.708,
+     "coh": 0.939,
+     "esc": 1.111,
+     "lead": 113.437,
+     "util": 0.496,
+     "usd_week": NaN,
+     "sim_cost": 195.803,
+     "wip": 18
+    }
+   }
+  }
+ },
+ "worst": {
+  "institutions": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "dedicated": [
+   0.5761099365750528,
+   0.8303651891771271,
+   0.9899665551839465
+  ],
+  "peer": [
+   0.6487179487179486,
+   0.7425672422508027,
+   0.9076923076923077
+  ],
+  "solo": [
+   0.3287671232876712,
+   0.41651023505697327,
+   0.6538461538461539
+  ],
+  "swarm": [
+   0.015384615384615384,
+   0.17207204683848276,
+   0.4646017699115044
+  ],
+  "self-licensed": [
+   0.7970112079701119,
+   0.8800147764453577,
+   0.9966555183946487
+  ],
+  "orchestrator": [
+   0.1295143212951432,
+   0.3086697325032295,
+   0.49230769230769234
+  ],
+  "DWC": [
+   0.023076923076923075,
+   0.2578090617546168,
+   0.4646840148698884
+  ]
+ },
+ "ablation": {
+  "institutions (all)": {
+   "best six / base": {
+    "ipw": 34.521,
+    "clean": 32.083,
+    "coh": 0.997,
+    "esc": 0.049,
+    "lead": 18.727,
+    "util": 0.739,
+    "usd_week": 881.855,
+    "sim_cost": 160.981
+   },
+   "population 12 / base": {
+    "ipw": 40.854,
+    "clean": 31.354,
+    "coh": 0.988,
+    "esc": 0.165,
+    "lead": 31.173,
+    "util": 0.752,
+    "usd_week": NaN,
+    "sim_cost": 459.217
+   },
+   "best six / harder work": {
+    "ipw": 24.271,
+    "clean": 19.375,
+    "coh": 0.997,
+    "esc": 0.196,
+    "lead": 24.963,
+    "util": 0.756,
+    "usd_week": 967.52,
+    "sim_cost": 181.994
+   },
+   "population 12 / harder work": {
+    "ipw": 19.292,
+    "clean": 12.521,
+    "coh": 0.991,
+    "esc": 0.37,
+    "lead": 54.244,
+    "util": 0.52,
+    "usd_week": NaN,
+    "sim_cost": 423.7
+   }
+  },
+  "- council": {
+   "best six / base": {
+    "ipw": 34.542,
+    "clean": 32.042,
+    "coh": 0.996,
+    "esc": 0.044,
+    "lead": 18.741,
+    "util": 0.736,
+    "usd_week": 877.349,
+    "sim_cost": 159.7
+   },
+   "population 12 / base": {
+    "ipw": 41.354,
+    "clean": 31.562,
+    "coh": 0.984,
+    "esc": 0.155,
+    "lead": 30.878,
+    "util": 0.74,
+    "usd_week": NaN,
+    "sim_cost": 451.252
+   },
+   "best six / harder work": {
+    "ipw": 25.042,
+    "clean": 19.5,
+    "coh": 0.996,
+    "esc": 0.209,
+    "lead": 24.101,
+    "util": 0.752,
+    "usd_week": 963.585,
+    "sim_cost": 181.199
+   },
+   "population 12 / harder work": {
+    "ipw": 20.021,
+    "clean": 12.979,
+    "coh": 0.987,
+    "esc": 0.338,
+    "lead": 54.907,
+    "util": 0.528,
+    "usd_week": NaN,
+    "sim_cost": 424.643
+   }
+  },
+  "- red team": {
+   "best six / base": {
+    "ipw": 34.042,
+    "clean": 28.833,
+    "coh": 0.983,
+    "esc": 0.034,
+    "lead": 18.625,
+    "util": 0.725,
+    "usd_week": 868.792,
+    "sim_cost": 158.411
+   },
+   "population 12 / base": {
+    "ipw": 41.521,
+    "clean": 28.021,
+    "coh": 0.962,
+    "esc": 0.115,
+    "lead": 31.085,
+    "util": 0.738,
+    "usd_week": NaN,
+    "sim_cost": 451.293
+   },
+   "best six / harder work": {
+    "ipw": 24.229,
+    "clean": 17.604,
+    "coh": 0.985,
+    "esc": 0.2,
+    "lead": 25.386,
+    "util": 0.739,
+    "usd_week": 958.511,
+    "sim_cost": 180.539
+   },
+   "population 12 / harder work": {
+    "ipw": 19.938,
+    "clean": 12.021,
+    "coh": 0.968,
+    "esc": 0.262,
+    "lead": 55.164,
+    "util": 0.527,
+    "usd_week": NaN,
+    "sim_cost": 422.74
+   }
+  },
+  "- audit": {
+   "best six / base": {
+    "ipw": 34.833,
+    "clean": 32.5,
+    "coh": 0.997,
+    "esc": 0.044,
+    "lead": 18.584,
+    "util": 0.733,
+    "usd_week": 874.006,
+    "sim_cost": 159.231
+   },
+   "population 12 / base": {
+    "ipw": 42.167,
+    "clean": 32.292,
+    "coh": 0.987,
+    "esc": 0.166,
+    "lead": 30.357,
+    "util": 0.751,
+    "usd_week": NaN,
+    "sim_cost": 458.121
+   },
+   "best six / harder work": {
+    "ipw": 25.396,
+    "clean": 19.583,
+    "coh": 0.997,
+    "esc": 0.234,
+    "lead": 24.125,
+    "util": 0.751,
+    "usd_week": 958.698,
+    "sim_cost": 179.844
+   },
+   "population 12 / harder work": {
+    "ipw": 20.208,
+    "clean": 13.625,
+    "coh": 0.991,
+    "esc": 0.343,
+    "lead": 55.153,
+    "util": 0.53,
+    "usd_week": NaN,
+    "sim_cost": 426.665
+   }
+  },
+  "- second analyst (K=1)": {
+   "best six / base": {
+    "ipw": 34.271,
+    "clean": 31.667,
+    "coh": 0.995,
+    "esc": 0.038,
+    "lead": 18.829,
+    "util": 0.721,
+    "usd_week": 860.635,
+    "sim_cost": 156.627
+   },
+   "population 12 / base": {
+    "ipw": 40.583,
+    "clean": 30.875,
+    "coh": 0.985,
+    "esc": 0.157,
+    "lead": 31.097,
+    "util": 0.734,
+    "usd_week": NaN,
+    "sim_cost": 452.403
+   },
+   "best six / harder work": {
+    "ipw": 24.188,
+    "clean": 18.917,
+    "coh": 0.995,
+    "esc": 0.211,
+    "lead": 24.841,
+    "util": 0.738,
+    "usd_week": 957.344,
+    "sim_cost": 179.761
+   },
+   "population 12 / harder work": {
+    "ipw": 19.792,
+    "clean": 12.833,
+    "coh": 0.987,
+    "esc": 0.337,
+    "lead": 53.74,
+    "util": 0.516,
+    "usd_week": NaN,
+    "sim_cost": 420.237
+   }
+  },
+  "- licences": {
+   "best six / base": {
+    "ipw": 33.312,
+    "clean": 28.375,
+    "coh": 0.992,
+    "esc": 0.092,
+    "lead": 19.307,
+    "util": 0.744,
+    "usd_week": 879.139,
+    "sim_cost": 160.044
+   },
+   "population 12 / base": {
+    "ipw": 37.021,
+    "clean": 18.312,
+    "coh": 0.977,
+    "esc": 0.533,
+    "lead": 33.529,
+    "util": 0.855,
+    "usd_week": NaN,
+    "sim_cost": 446.464
+   },
+   "best six / harder work": {
+    "ipw": 24.0,
+    "clean": 14.938,
+    "coh": 0.996,
+    "esc": 0.421,
+    "lead": 26.332,
+    "util": 0.803,
+    "usd_week": 944.725,
+    "sim_cost": 175.867
+   },
+   "population 12 / harder work": {
+    "ipw": 22.708,
+    "clean": 7.042,
+    "coh": 0.982,
+    "esc": 1.04,
+    "lead": 53.16,
+    "util": 0.908,
+    "usd_week": NaN,
+    "sim_cost": 482.626
+   }
+  },
+  "- independence": {
+   "best six / base": {
+    "ipw": 34.062,
+    "clean": 23.75,
+    "coh": 0.992,
+    "esc": 0.297,
+    "lead": 19.013,
+    "util": 0.732,
+    "usd_week": 874.794,
+    "sim_cost": 160.103
+   },
+   "population 12 / base": {
+    "ipw": 44.396,
+    "clean": 15.688,
+    "coh": 0.973,
+    "esc": 0.816,
+    "lead": 28.746,
+    "util": 0.774,
+    "usd_week": NaN,
+    "sim_cost": 465.955
+   },
+   "best six / harder work": {
+    "ipw": 26.542,
+    "clean": 11.062,
+    "coh": 0.992,
+    "esc": 0.793,
+    "lead": 23.204,
+    "util": 0.767,
+    "usd_week": 964.588,
+    "sim_cost": 180.883
+   },
+   "population 12 / harder work": {
+    "ipw": 21.375,
+    "clean": 5.479,
+    "coh": 0.975,
+    "esc": 1.138,
+    "lead": 49.109,
+    "util": 0.534,
+    "usd_week": NaN,
+    "sim_cost": 427.721
+   }
+  },
+  "- hardest-first": {
+   "best six / base": {
+    "ipw": 34.75,
+    "clean": 32.417,
+    "coh": 0.997,
+    "esc": 0.045,
+    "lead": 18.521,
+    "util": 0.75,
+    "usd_week": 909.379,
+    "sim_cost": 166.976
+   },
+   "population 12 / base": {
+    "ipw": 40.792,
+    "clean": 32.0,
+    "coh": 0.987,
+    "esc": 0.14,
+    "lead": 30.858,
+    "util": 0.736,
+    "usd_week": NaN,
+    "sim_cost": 459.779
+   },
+   "best six / harder work": {
+    "ipw": 24.562,
+    "clean": 19.396,
+    "coh": 0.995,
+    "esc": 0.204,
+    "lead": 24.604,
+    "util": 0.745,
+    "usd_week": 986.143,
+    "sim_cost": 185.347
+   },
+   "population 12 / harder work": {
+    "ipw": 20.229,
+    "clean": 13.792,
+    "coh": 0.99,
+    "esc": 0.312,
+    "lead": 57.783,
+    "util": 0.526,
+    "usd_week": NaN,
+    "sim_cost": 427.69
+   }
+  },
+  "+ second planner (D=2)": {
+   "best six / base": {
+    "ipw": 33.583,
+    "clean": 31.562,
+    "coh": 0.999,
+    "esc": 0.052,
+    "lead": 19.292,
+    "util": 0.746,
+    "usd_week": 890.81,
+    "sim_cost": 162.958
+   },
+   "population 12 / base": {
+    "ipw": 40.0,
+    "clean": 31.396,
+    "coh": 0.989,
+    "esc": 0.16,
+    "lead": 31.604,
+    "util": 0.755,
+    "usd_week": NaN,
+    "sim_cost": 464.62
+   },
+   "best six / harder work": {
+    "ipw": 24.604,
+    "clean": 19.479,
+    "coh": 0.999,
+    "esc": 0.235,
+    "lead": 24.791,
+    "util": 0.765,
+    "usd_week": 974.728,
+    "sim_cost": 183.394
+   },
+   "population 12 / harder work": {
+    "ipw": 19.354,
+    "clean": 13.0,
+    "coh": 0.992,
+    "esc": 0.358,
+    "lead": 55.563,
+    "util": 0.528,
+    "usd_week": NaN,
+    "sim_cost": 428.468
+   }
+  }
+ }
+}

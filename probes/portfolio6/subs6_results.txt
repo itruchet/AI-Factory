@@ -1,36 +1,36 @@
 TOKENS vs SUBSCRIPTIONS for the top seats (12 seeds; mid seats on API throughout: DeepSeek V4.1 Flash Max* + GPT-6 Luna (max)* + Ling 3.0 Flash)
 
-[chosen: Opus 5.5 + Muse Spark 1.3 + Gemini 3.8 Flash]  34.7 ideas/wk uncapped; mid seats $78/wk on API
+[chosen: Opus 5.5 + Muse Spark 1.3 + Gemini 3.8 Flash]  39.4 ideas/wk (36.7 clean) uncapped; mid seats $89/wk on API
   seat                     busy h/wk $/busy h API $/wk   20x plan                       b/e h  plan h plans to cover  hybrid $/wk
-  Claude Opus 5.5 Max*           132     3.49      460   Claude Max 20x ($200)           13.2  24-40       4-6         367-423   
-  Muse Spark 1.3 (xhigh)         126     1.59      201   no subscription: API only
-  Gemini 3.8 Flash (high)        125     1.20      151   Google AI Ultra 20x ($199.99)   38.3  24-40       4-6         149-151   
-  top seats, API only:          $  812/wk  ($  3519/month)  34.7 ideas/wk
-  top seats, hybrid (20x plan): $  717-775  /wk ($  3107-3358  /month)  34.7 ideas/wk  saves 5%-12%
-  top seats, plan only (low cap): $  315/wk ($  1365/month)  28.1 ideas/wk (81% of uncapped)
-  top seats, plan only (high cap): $  308/wk ($  1335/month)  28.9 ideas/wk (83% of uncapped)
+  Claude Opus 5.5 Max*           146     3.49      511   Claude Max 20x ($200)           13.2  24-40       4-7         418-473   
+  Muse Spark 1.3 (xhigh)         144     1.59      230   no subscription: API only
+  Gemini 3.8 Flash (high)        144     1.20      173   Google AI Ultra 20x ($199.99)   38.3  24-40       4-6         171-173   
+  top seats, API only:          $  914/wk  ($  3961/month)  39.4 ideas/wk, 36.7 clean
+  top seats, hybrid (20x plan): $  819-876  /wk ($  3549-3796  /month)  36.7 clean/wk  saves 4%-10%
+  top seats, plan only (low cap): $  341/wk ($  1478/month)  30.9 ideas/wk, 28.4 clean (77% of uncapped clean)
+  top seats, plan only (high cap): $  337/wk ($  1460/month)  32.2 ideas/wk, 29.4 clean (80% of uncapped clean)
 
-[all-subscription trio: Opus 5.5 + GPT-6 Sol + Gemini 3.8 Flash]  32.2 ideas/wk uncapped; mid seats $78/wk on API
+[all-subscription trio: Opus 5.5 + GPT-6 Sol + Gemini 3.8 Flash]  36.8 ideas/wk (34.1 clean) uncapped; mid seats $90/wk on API
   seat                     busy h/wk $/busy h API $/wk   20x plan                       b/e h  plan h plans to cover  hybrid $/wk
-  Claude Opus 5.5 Max*           134     3.49      467   Claude Max 20x ($200)           13.2  24-40       4-6         373-429   
-  GPT-6 Sol (max)*               133     1.76      235   ChatGPT Pro 20x ($200)          26.2  24-40       4-6         210-235   
-  Gemini 3.8 Flash (high)        127     1.20      153   Google AI Ultra 20x ($199.99)   38.3  24-40       4-6         151-153   
-  top seats, API only:          $  855/wk  ($  3705/month)  32.2 ideas/wk
-  top seats, hybrid (20x plan): $  734-817  /wk ($  3181-3540  /month)  32.2 ideas/wk  saves 4%-14%
-  top seats, plan only (low cap): $  138/wk ($   598/month)  22.5 ideas/wk (70% of uncapped)
-  top seats, plan only (high cap): $  138/wk ($   598/month)  23.9 ideas/wk (74% of uncapped)
+  Claude Opus 5.5 Max*           148     3.49      518   Claude Max 20x ($200)           13.2  24-40       4-7         425-480   
+  GPT-6 Sol (max)*               149     1.76      262   ChatGPT Pro 20x ($200)          26.2  24-40       4-7         237-262   
+  Gemini 3.8 Flash (high)        146     1.20      175   Google AI Ultra 20x ($199.99)   38.3  24-40       4-7         173-175   
+  top seats, API only:          $  955/wk  ($  4138/month)  36.8 ideas/wk, 34.1 clean
+  top seats, hybrid (20x plan): $  835-917  /wk ($  3618-3974  /month)  34.1 clean/wk  saves 4%-13%
+  top seats, plan only (low cap): $  138/wk ($   598/month)  23.6 ideas/wk, 20.8 clean (61% of uncapped clean)
+  top seats, plan only (high cap): $  138/wk ($   598/month)  25.2 ideas/wk, 22.6 clean (66% of uncapped clean)
 
-[premium trio: Fable 5.1 + GPT-6 Astra + Gemini 3.8 Flash]  31.2 ideas/wk uncapped; mid seats $77/wk on API
+[premium trio: Fable 5.1 + GPT-6 Astra + Gemini 3.8 Flash]  35.6 ideas/wk (33.4 clean) uncapped; mid seats $90/wk on API
   seat                     busy h/wk $/busy h API $/wk   20x plan                       b/e h  plan h plans to cover  hybrid $/wk
-  Claude Fable 5.1 Max           134     7.96     1066   Claude Max 20x ($200)            5.8  12-20       7-12        953-1017  
-  GPT-6 Astra (high)             135     7.21      973   ChatGPT Pro 20x ($200)           6.4  24-40       4-6         731-846   
-  Gemini 3.8 Flash (high)        126     1.20      151   Google AI Ultra 20x ($199.99)   38.3  24-40       4-6         149-151   
-  top seats, API only:          $ 2190/wk  ($  9490/month)  31.2 ideas/wk
-  top seats, hybrid (20x plan): $ 1833-2014 /wk ($  7943-8727  /month)  31.2 ideas/wk  saves 8%-16%
-  top seats, plan only (low cap): $  138/wk ($   598/month)  22.0 ideas/wk (70% of uncapped)
-  top seats, plan only (high cap): $  138/wk ($   598/month)  23.0 ideas/wk (74% of uncapped)
+  Claude Fable 5.1 Max           150     7.96     1197   Claude Max 20x ($200)            5.8  12-20       8-13       1084-1147  
+  GPT-6 Astra (high)             151     7.21     1089   ChatGPT Pro 20x ($200)           6.4  24-40       4-7         847-962   
+  Gemini 3.8 Flash (high)        146     1.20      176   Google AI Ultra 20x ($199.99)   38.3  24-40       4-7         174-176   
+  top seats, API only:          $ 2462/wk  ($ 10669/month)  35.6 ideas/wk, 33.4 clean
+  top seats, hybrid (20x plan): $ 2105-2285 /wk ($  9122-9902  /month)  33.4 clean/wk  saves 7%-15%
+  top seats, plan only (low cap): $  138/wk ($   598/month)  23.4 ideas/wk, 20.7 clean (62% of uncapped clean)
+  top seats, plan only (high cap): $  138/wk ($   598/month)  24.7 ideas/wk, 21.9 clean (66% of uncapped clean)
 
 API bill sensitivity to the token model, first six, all seats on API:
-  lean (0.15, 15, 0.95)    $   349/wk  $   1514/month  $ 10.1/idea
-  base (0.25, 30, 0.90)    $   890/wk  $   3857/month  $ 25.6/idea
-  heavy (0.40, 60, 0.80)   $  2974/wk  $  12885/month  $ 85.6/idea
+  lean (0.15, 15, 0.95)    $   393/wk  $   1705/month  $ 10.7/clean idea
+  base (0.25, 30, 0.90)    $  1002/wk  $   4344/month  $ 27.3/clean idea
+  heavy (0.40, 60, 0.80)   $  3351/wk  $  14519/month  $ 91.2/clean idea

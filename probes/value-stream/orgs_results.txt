@@ -1,0 +1,155 @@
+
+SEARCHED ORGANISATION (best six, objective: most clean ideas)
+  audit       pools F
+  build       pools AFM
+  challenge   pools AFM
+  design      pools FM
+  discover    pools AFM
+  integrate   pools AFM
+  operate     pools AFM
+  plan        pools AFM
+  plan_check  pools AFM
+  qa          pools AFM
+  release     pools AFM
+  review      pools AFM
+  security    pools AFM
+  rules K=2, challenge=1, plan_check=True, security=True, audit=0.1, reviewers=1, licences=True, independence=True
+SEARCHED ORGANISATION (best six, objective: clean ideas per dollar)
+  audit       pools F
+  build       pools M
+  challenge   pools M
+  design      pools FM
+  discover    pools M
+  integrate   pools M
+  operate     pools M
+  plan        pools F
+  plan_check  pools AFM
+  qa          pools F
+  release     pools F
+  review      pools M
+  security    pools M
+  rules K=2, challenge=0, plan_check=False, security=True, audit=0.0, reviewers=1, licences=False, independence=True
+
+SEARCHED ORGANISATION (population 12, objective: most clean ideas)
+  audit       pools FM
+  build       pools AFM
+  challenge   pools AF
+  design      pools AFM
+  discover    pools F
+  integrate   pools M
+  operate     pools AFM
+  plan        pools A
+  plan_check  pools AFM
+  qa          pools AF
+  release     pools AFM
+  review      pools FM
+  security    pools F
+  rules K=2, challenge=1, plan_check=True, security=True, audit=0.1, reviewers=1, licences=True, independence=True
+
+[best six / base]
+  no organisation (solo)    14.3 clean/wk ( 28.1 live)  lead   33 h  CFR  29%  restore  0.9 h  intent 0.97  $   66/clean  bottleneck build  ( 58% of institutions)
+  peer                      20.0 clean/wk ( 28.9 live)  lead   32 h  CFR  13%  restore  1.1 h  intent 0.98  $   50/clean  bottleneck build  ( 80% of institutions)
+  Director-Worker-Checker   16.2 clean/wk ( 22.0 live)  lead   45 h  CFR  18%  restore  1.3 h  intent 0.99  $   34/clean  bottleneck build  ( 65% of institutions)
+  orchestrator               9.6 clean/wk ( 13.3 live)  lead   74 h  CFR  16%  restore  0.7 h  intent 0.99  $   70/clean  bottleneck discover  ( 39% of institutions)
+  functional roles          15.5 clean/wk ( 20.6 live)  lead   51 h  CFR  12%  restore  0.7 h  intent 0.99  $   42/clean  bottleneck build  ( 62% of institutions)
+  institutions              24.9 clean/wk ( 31.4 live)  lead   31 h  CFR  11%  restore  0.8 h  intent 1.00  $   42/clean  bottleneck design  (100% of institutions)
+  pools per step            21.0 clean/wk ( 25.0 live)  lead   40 h  CFR   8%  restore  0.6 h  intent 1.00  $   40/clean  bottleneck build  ( 85% of institutions)
+  searched (clean)          26.2 clean/wk ( 31.1 live)  lead   32 h  CFR   9%  restore  0.8 h  intent 1.00  $   40/clean  bottleneck design  (105% of institutions)
+  searched (per $)          12.7 clean/wk ( 16.8 live)  lead   56 h  CFR  12%  restore  0.7 h  intent 0.99  $   12/clean  bottleneck build  ( 51% of institutions)
+
+[best six / harder work]
+  no organisation (solo)     6.5 clean/wk ( 19.5 live)  lead   47 h  CFR  46%  restore  1.1 h  intent 0.95  $  151/clean  bottleneck build  ( 53% of institutions)
+  peer                       9.5 clean/wk ( 19.4 live)  lead   44 h  CFR  28%  restore  1.1 h  intent 0.96  $  109/clean  bottleneck build  ( 77% of institutions)
+  Director-Worker-Checker    9.7 clean/wk ( 15.7 live)  lead   60 h  CFR  21%  restore  1.3 h  intent 0.99  $   61/clean  bottleneck build  ( 79% of institutions)
+  orchestrator               6.1 clean/wk ( 10.1 live)  lead  100 h  CFR  23%  restore  0.6 h  intent 0.98  $  125/clean  bottleneck discover  ( 50% of institutions)
+  functional roles           8.4 clean/wk ( 14.8 live)  lead   63 h  CFR  24%  restore  0.7 h  intent 0.98  $   72/clean  bottleneck build  ( 68% of institutions)
+  institutions              12.3 clean/wk ( 19.7 live)  lead   43 h  CFR  18%  restore  3.1 h  intent 0.97  $   86/clean  bottleneck design  (100% of institutions)
+  pools per step            12.0 clean/wk ( 15.5 live)  lead   62 h  CFR  14%  restore  0.7 h  intent 0.99  $   72/clean  bottleneck build  ( 97% of institutions)
+  searched (clean)          12.1 clean/wk ( 21.5 live)  lead   42 h  CFR  16%  restore  2.7 h  intent 0.97  $   89/clean  bottleneck design  ( 98% of institutions)
+  searched (per $)           5.1 clean/wk (  9.1 live)  lead   98 h  CFR  21%  restore  0.8 h  intent 0.98  $   29/clean  bottleneck discover  ( 41% of institutions)
+
+[best six / security-heavy]
+  no organisation (solo)    13.0 clean/wk ( 27.4 live)  lead   34 h  CFR  35%  restore  1.0 h  intent 0.97  $   73/clean  bottleneck build  ( 56% of institutions)
+  peer                      18.6 clean/wk ( 27.8 live)  lead   32 h  CFR  16%  restore  1.0 h  intent 0.98  $   53/clean  bottleneck build  ( 81% of institutions)
+  Director-Worker-Checker   14.7 clean/wk ( 20.7 live)  lead   47 h  CFR  20%  restore  1.3 h  intent 0.99  $   38/clean  bottleneck build  ( 64% of institutions)
+  orchestrator               9.6 clean/wk ( 12.9 live)  lead   77 h  CFR  17%  restore  0.7 h  intent 1.00  $   71/clean  bottleneck discover  ( 42% of institutions)
+  functional roles          15.6 clean/wk ( 20.2 live)  lead   50 h  CFR  10%  restore  0.7 h  intent 0.99  $   41/clean  bottleneck build  ( 68% of institutions)
+  institutions              23.0 clean/wk ( 29.2 live)  lead   33 h  CFR  11%  restore  0.8 h  intent 1.00  $   46/clean  bottleneck design  (100% of institutions)
+  pools per step            18.8 clean/wk ( 23.2 live)  lead   42 h  CFR  10%  restore  0.7 h  intent 1.00  $   48/clean  bottleneck design  ( 81% of institutions)
+  searched (clean)          23.3 clean/wk ( 29.1 live)  lead   34 h  CFR  11%  restore  0.7 h  intent 1.00  $   45/clean  bottleneck design  (101% of institutions)
+  searched (per $)          11.3 clean/wk ( 15.4 live)  lead   61 h  CFR  15%  restore  0.8 h  intent 0.99  $   13/clean  bottleneck build  ( 49% of institutions)
+
+[best six / weak tests]
+  no organisation (solo)    13.6 clean/wk ( 27.8 live)  lead   33 h  CFR  33%  restore  1.0 h  intent 0.97  $   69/clean  bottleneck build  ( 58% of institutions)
+  peer                      18.0 clean/wk ( 27.8 live)  lead   33 h  CFR  18%  restore  1.0 h  intent 0.98  $   56/clean  bottleneck build  ( 77% of institutions)
+  Director-Worker-Checker   16.2 clean/wk ( 21.4 live)  lead   45 h  CFR  14%  restore  1.3 h  intent 0.99  $   35/clean  bottleneck build  ( 69% of institutions)
+  orchestrator               9.7 clean/wk ( 13.2 live)  lead   76 h  CFR  14%  restore  0.7 h  intent 0.99  $   69/clean  bottleneck discover  ( 41% of institutions)
+  functional roles          15.6 clean/wk ( 20.5 live)  lead   48 h  CFR  13%  restore  0.7 h  intent 0.99  $   42/clean  bottleneck build  ( 66% of institutions)
+  institutions              23.5 clean/wk ( 31.3 live)  lead   32 h  CFR  15%  restore  0.7 h  intent 1.00  $   45/clean  bottleneck design  (100% of institutions)
+  pools per step            20.5 clean/wk ( 25.6 live)  lead   39 h  CFR  12%  restore  0.7 h  intent 1.00  $   42/clean  bottleneck build  ( 87% of institutions)
+  searched (clean)          22.3 clean/wk ( 30.3 live)  lead   33 h  CFR  16%  restore  0.8 h  intent 1.00  $   47/clean  bottleneck design  ( 95% of institutions)
+  searched (per $)          11.6 clean/wk ( 16.4 live)  lead   56 h  CFR  15%  restore  0.7 h  intent 0.99  $   14/clean  bottleneck build  ( 49% of institutions)
+
+[best six / heavy contention]
+  no organisation (solo)    14.3 clean/wk ( 26.8 live)  lead   34 h  CFR  27%  restore  0.9 h  intent 0.97  $   66/clean  bottleneck build  ( 61% of institutions)
+  peer                      19.6 clean/wk ( 27.3 live)  lead   33 h  CFR  13%  restore  1.1 h  intent 0.98  $   51/clean  bottleneck build  ( 83% of institutions)
+  Director-Worker-Checker   15.7 clean/wk ( 20.6 live)  lead   46 h  CFR  13%  restore  1.3 h  intent 0.99  $   34/clean  bottleneck build  ( 66% of institutions)
+  orchestrator              10.1 clean/wk ( 13.2 live)  lead   75 h  CFR  15%  restore  0.6 h  intent 0.99  $   67/clean  bottleneck discover  ( 43% of institutions)
+  functional roles          15.2 clean/wk ( 20.5 live)  lead   49 h  CFR  12%  restore  0.7 h  intent 0.99  $   43/clean  bottleneck build  ( 64% of institutions)
+  institutions              23.6 clean/wk ( 29.5 live)  lead   33 h  CFR  13%  restore  0.8 h  intent 1.00  $   45/clean  bottleneck design  (100% of institutions)
+  pools per step            20.0 clean/wk ( 24.8 live)  lead   40 h  CFR   9%  restore  0.7 h  intent 1.00  $   42/clean  bottleneck build  ( 85% of institutions)
+  searched (clean)          22.7 clean/wk ( 29.5 live)  lead   33 h  CFR  13%  restore  0.7 h  intent 1.00  $   46/clean  bottleneck build  ( 96% of institutions)
+  searched (per $)          12.3 clean/wk ( 16.6 live)  lead   57 h  CFR  14%  restore  0.7 h  intent 0.99  $   12/clean  bottleneck build  ( 52% of institutions)
+
+[population 12 / base]
+  no organisation (solo)     9.9 clean/wk ( 32.3 live)  lead   51 h  CFR  38%  restore  1.8 h  intent 0.72  bottleneck build  ( 46% of institutions)
+  peer                      12.2 clean/wk ( 25.1 live)  lead   47 h  CFR  24%  restore  1.8 h  intent 0.93  bottleneck build  ( 57% of institutions)
+  Director-Worker-Checker   10.3 clean/wk ( 15.3 live)  lead  135 h  CFR  21%  restore  1.2 h  intent 0.99  bottleneck review  ( 48% of institutions)
+  orchestrator               9.3 clean/wk ( 13.0 live)  lead  168 h  CFR  17%  restore  1.2 h  intent 0.99  bottleneck discover  ( 43% of institutions)
+  functional roles          12.6 clean/wk ( 21.1 live)  lead   85 h  CFR  18%  restore  1.4 h  intent 0.98  bottleneck build  ( 58% of institutions)
+  institutions              21.7 clean/wk ( 32.7 live)  lead   61 h  CFR  16%  restore  1.2 h  intent 0.98  bottleneck design  (100% of institutions)
+  pools per step            11.1 clean/wk ( 14.9 live)  lead  130 h  CFR  13%  restore  1.3 h  intent 0.99  bottleneck build  ( 51% of institutions)
+  searched (clean)          26.0 clean/wk ( 33.2 live)  lead   60 h  CFR  12%  restore  1.3 h  intent 0.99  bottleneck discover  (120% of institutions)
+
+[population 12 / harder work]
+  no organisation (solo)     4.2 clean/wk ( 32.8 live)  lead   42 h  CFR  35%  restore  1.9 h  intent 0.46  bottleneck build  ( 57% of institutions)
+  peer                       4.3 clean/wk ( 16.5 live)  lead   61 h  CFR  41%  restore  1.8 h  intent 0.89  bottleneck build  ( 58% of institutions)
+  Director-Worker-Checker    4.5 clean/wk (  7.6 live)  lead  250 h  CFR  27%  restore  1.1 h  intent 0.99  bottleneck build  ( 60% of institutions)
+  orchestrator               4.5 clean/wk (  8.3 live)  lead  232 h  CFR  29%  restore  1.2 h  intent 0.98  bottleneck discover  ( 60% of institutions)
+  functional roles           3.5 clean/wk ( 10.6 live)  lead  180 h  CFR  39%  restore  1.3 h  intent 0.97  bottleneck build  ( 47% of institutions)
+  institutions               7.5 clean/wk ( 14.4 live)  lead  121 h  CFR  23%  restore  2.6 h  intent 0.96  bottleneck design  (100% of institutions)
+  pools per step             4.2 clean/wk (  5.6 live)  lead  365 h  CFR  11%  restore  1.4 h  intent 0.99  bottleneck build  ( 56% of institutions)
+  searched (clean)           8.9 clean/wk ( 15.1 live)  lead  116 h  CFR  20%  restore  2.9 h  intent 0.98  bottleneck build  (120% of institutions)
+
+[population 12 / security-heavy]
+  no organisation (solo)    10.2 clean/wk ( 33.9 live)  lead   47 h  CFR  34%  restore  1.8 h  intent 0.67  bottleneck build  ( 53% of institutions)
+  peer                      10.8 clean/wk ( 24.2 live)  lead   49 h  CFR  28%  restore  1.8 h  intent 0.94  bottleneck build  ( 56% of institutions)
+  Director-Worker-Checker    9.7 clean/wk ( 14.3 live)  lead  147 h  CFR  23%  restore  1.2 h  intent 0.99  bottleneck review  ( 50% of institutions)
+  orchestrator               7.7 clean/wk ( 12.1 live)  lead  180 h  CFR  26%  restore  1.2 h  intent 0.99  bottleneck discover  ( 40% of institutions)
+  functional roles          10.4 clean/wk ( 18.4 live)  lead   96 h  CFR  26%  restore  1.3 h  intent 0.98  bottleneck review  ( 54% of institutions)
+  institutions              19.2 clean/wk ( 30.8 live)  lead   65 h  CFR  20%  restore  1.2 h  intent 0.98  bottleneck design  (100% of institutions)
+  pools per step             9.9 clean/wk ( 12.8 live)  lead  140 h  CFR  14%  restore  1.4 h  intent 0.99  bottleneck build  ( 52% of institutions)
+  searched (clean)          21.6 clean/wk ( 29.8 live)  lead   66 h  CFR  16%  restore  1.3 h  intent 0.99  bottleneck discover  (112% of institutions)
+
+[population 12 / weak tests]
+  no organisation (solo)     9.7 clean/wk ( 34.5 live)  lead   48 h  CFR  38%  restore  1.8 h  intent 0.68  bottleneck build  ( 46% of institutions)
+  peer                      12.2 clean/wk ( 24.1 live)  lead   48 h  CFR  27%  restore  1.8 h  intent 0.95  bottleneck build  ( 58% of institutions)
+  Director-Worker-Checker    9.9 clean/wk ( 14.4 live)  lead  143 h  CFR  21%  restore  1.2 h  intent 0.99  bottleneck review  ( 47% of institutions)
+  orchestrator               8.6 clean/wk ( 12.0 live)  lead  176 h  CFR  17%  restore  1.1 h  intent 0.99  bottleneck discover  ( 41% of institutions)
+  functional roles          10.8 clean/wk ( 20.3 live)  lead   92 h  CFR  27%  restore  1.3 h  intent 0.98  bottleneck build  ( 51% of institutions)
+  institutions              21.1 clean/wk ( 32.6 live)  lead   61 h  CFR  18%  restore  1.3 h  intent 0.98  bottleneck design  (100% of institutions)
+  pools per step            10.1 clean/wk ( 13.5 live)  lead  141 h  CFR  15%  restore  1.3 h  intent 1.00  bottleneck build  ( 48% of institutions)
+  searched (clean)          23.8 clean/wk ( 32.9 live)  lead   61 h  CFR  17%  restore  1.3 h  intent 0.99  bottleneck discover  (113% of institutions)
+
+[population 12 / heavy contention]
+  no organisation (solo)     9.0 clean/wk ( 30.6 live)  lead   51 h  CFR  35%  restore  1.7 h  intent 0.71  bottleneck build  ( 44% of institutions)
+  peer                      10.2 clean/wk ( 22.0 live)  lead   51 h  CFR  24%  restore  1.7 h  intent 0.94  bottleneck build  ( 49% of institutions)
+  Director-Worker-Checker    9.5 clean/wk ( 14.4 live)  lead  140 h  CFR  21%  restore  1.2 h  intent 0.99  bottleneck review  ( 46% of institutions)
+  orchestrator               8.2 clean/wk ( 12.4 live)  lead  174 h  CFR  22%  restore  1.1 h  intent 0.99  bottleneck discover  ( 40% of institutions)
+  functional roles          11.3 clean/wk ( 19.5 live)  lead   94 h  CFR  24%  restore  1.3 h  intent 0.98  bottleneck build  ( 55% of institutions)
+  institutions              20.6 clean/wk ( 31.0 live)  lead   65 h  CFR  16%  restore  1.3 h  intent 0.98  bottleneck design  (100% of institutions)
+  pools per step             9.9 clean/wk ( 13.4 live)  lead  147 h  CFR  16%  restore  1.4 h  intent 0.99  bottleneck build  ( 48% of institutions)
+  searched (clean)          21.9 clean/wk ( 30.7 live)  lead   64 h  CFR  15%  restore  1.3 h  intent 0.99  bottleneck discover  (106% of institutions)
+
+Where the institutions' seat-hours go (best six, base): build 55%, review 16%, integrate 9%, security 4%, qa 3%, plan 3%, discover 2%, audit 2%, design 2%, challenge 1%, plan_check 1%, release 1%, operate 0%
+Mean wait by step (h): design 5.5, build 4.9, discover 1.8, challenge 0.5, plan_check 0.3, audit 0.2, review 0.1, plan 0.1, operate 0.1, release 0.1, qa 0.0, security 0.0, integrate 0.0

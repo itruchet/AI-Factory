@@ -2,6 +2,10 @@
 
 Stage: **IDEA**. Market: Artificial Analysis (AA) snapshot of **27 Sep 2026**. Probes: [`probes/portfolio6/`](../../probes/portfolio6/) (`select6.py`, `robust6.py`, `subs6.py`; results in the matching `*_results.txt`). The model is the r10 institutional throughput simulation ([`institutional-throughput.md`](institutional-throughput.md)), staffed with named models instead of random draws.
 
+> **r12 note.** This is the r11 record. r12 re-ran every probe after two model fixes, one idea in flight per seat (work-in-progress 6, not 4) and ranking on **clean** ideas. The current figures are in [`probes/portfolio6/`](../../probes/portfolio6/) (`*_results.txt`). They move the numbers below, not the shape of the answer: one strong anchor, the two fastest top-tier models, then three fast cheap models.
+>
+> r12 also changes the frame: the six are a **menu of models**, and Ledger rules start and stop instances of them as work arrives. It confirms Muse Spark API access and drops the US data-residency option. See [`value-stream.md`](value-stream.md).
+
 All outcomes are synthetic. They rank options; they do not forecast the real Factory's output. `*` marks a Coding Index that is **estimated**. AA had not yet published a Coding Index for models released after 9 Sep, so their score comes from a fit on the AA Intelligence Index (top end: RMSE 1.5 points, n = 34).
 
 ---

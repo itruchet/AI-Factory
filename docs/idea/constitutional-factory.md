@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r11 (supersedes r1–r10)
+Revision: r12 (supersedes r1–r11)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -85,6 +85,9 @@ These rules are the whole of "management". They run identically in every institu
 | R11 | **Start state** | Licences and allowances start from today's predetermined mapping. It worked, so it is the starting point. The rules move it on evidence from day one. A new model starts at tier 1 and climbs by stretch cards. |
 | R12 | **Late marks** | An Audit finding weeks later applies like an immediate markdown, counted twice, because escaped defects cost more. |
 | R13 | **No orphan tiers** | If cards wait at a tier with no licensed agent for longer than a set time, the best-performing agent one tier below gets stretch cards. If there is none, the card is split in Planning or escalated to Isa. |
+| R14 | **Elastic capacity (the Scaler)** *(r12)* | Agents are instances of models on the menu. Every 15 minutes the Ledger prices each queued task on every model licensed for it whose pass chance clears the quality floor (0.8). Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins. Each model's target is its busy instances plus ⌈queued hours ÷ 2 h⌉, within vendor rate limits. The Ledger starts the shortfall and stops instances idle 30 minutes beyond target. An instance pulls only work it clears the floor on and whose cost is within 1.5× the cheapest qualified model's (cost-band pull), unless the task has waited an hour. Instances of one model are one model for independence. |
+| R15 | **No training on our data** *(r12)* | No model tier that uses the Factory's prompts or outputs for training (for example, Muse Spark's Contributor tier). |
+| R16 | **Burn cap** *(r12)* | Running instances may burn at most 2× the trailing seven-day average ($ per hour), under a monthly ceiling of expected demand × cost per clean idea × 1.5. Both are relative, so neither depends on the token model. |
 
 **Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality). (r8 dropped the separate velocity standard: promotion credit is counted per card, so speed already moves models up; §3.2.) These are the "KPI and standards".
 
@@ -287,6 +290,36 @@ R13 (no orphans) is load-bearing. It must relax licences, independence and seat 
   - Hybrid (plan first, API past the cap) saves 5–12%.
   - Plan-only is about 45% cheaper per idea but delivers 70–83% of the throughput, and rests on consumer terms written for one person.
 
+### 5.5 Idea to live: organisations, elasticity and budget (r12)
+
+[`value-stream.md`](value-stream.md) models every step from idea to live, not only the institutions' own tasks:
+- design;
+- security review;
+- merge and CI;
+- acceptance test;
+- deploy;
+- incidents and hotfixes.
+
+Organisations are compared as mappings of those steps onto models.
+
+- **The institutions win.** They give the most clean ideas of every named design in all 10 roster and scenario cases. Clean means live, with full intent and no escaped defect.
+  - No organisation delivers 44–61% of that; peer review 49–83%; Director → Worker → Checker 46–79%; an orchestrator 39–60%; fixed functional roles 47–68%.
+  - A search for a new organisation returns the institutions plus a few step affinities. It keeps licences, independence and every optional step.
+- **Gap:** live operation (incident, restore, hotfix) belongs to none of the eight institutions. Design must assign it.
+- **Capacity is elastic (R14).** Against six fixed seats:
+  - Median lead time stays at 18–19 h under steady, bursty, growing, mixed and surging demand; fixed seats reach 30–327 h.
+  - Cost per clean idea is about half.
+  - A swarm of one model checks its own work: change-failure rate 16–25%.
+- **The menu, seven models, all on API tokens:**
+  - anchors: Claude Opus 5.5\* and GPT-5.6 Terra, a near-tie, from two vendors;
+  - fast top tier: Muse Spark 1.3 and Gemini 3.8 Flash;
+  - mid: DeepSeek V4.1 Flash\*, GPT-6 Luna\* and Ling 3.0 Flash.
+- **Budget follows demand.**
+  - About $20 per clean idea at the base token model, so 25 ideas a week is about $1,700 a month.
+  - Scale is efficient to about 100 ideas a week.
+  - A burn cap of 2× the trailing average lost nothing (R16).
+  - The choice of models, rules and organisation is the same under every token model; only the dollars scale.
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -442,6 +475,8 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | X8 | Dropping the velocity standard (r8) does not let slow models hold up hard work on real data | Hard-tier cycle times rise, or a hard tier is left without enough licensed agents |
 | X6 | Anonymity reduces deference in the Council | Adoption by source unchanged |
 | X7 | Universal Inquiry participation adds unique value from every model | A model's surviving contributions stay near zero |
+| X9 | The value-stream model ranks live results correctly (r12): run the model's scenario live and compare | Live clean output, change-failure rate or cost per clean idea falls outside the model's range by more than 25% |
+| X10 | The Scaler (R14) holds lead time under bursts without raising cost per clean idea | 90th-percentile lead time above 1.5× steady state, or cost per clean idea above fixed seats |
 
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
@@ -450,6 +485,9 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - Reason codes for R8, and the evidence each one requires.
 - Initial constants: window, hysteresis, stretch trials, back-off.
 - The Ledger views each agent sees at pull time (R10).
+- Who owns live operation (incident, restore, hotfix): the value stream continues past the Release Gate (§5.5).
+- Which ideas need human ratification. At about 10 minutes an idea, 100 ideas a week is about 17 hours of Isa's time, so ratification is the likely real ceiling (§5.5).
+- Jurisdiction as a property of each route to a model (future): how data-residency law affects cost and efficiency.
 
 ### 11.3 Isa's decisions
 
@@ -459,7 +497,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | H2 | Set the quality standard per institution and tier (maximum markdown rate). Design can propose starting values. |
 | H4 | Approve the rolling portfolio policy (P1, P2, P6–P8; §5.2) in place of a fixed model list. Start from today's four models. |
 | H5 | Approve three absolute work tiers for cards (§5.2) |
-| H6 | Approve the starting six on API tokens (§5.4), and set the data-residency rule for open-weight mid seats: US-hosted only, or a US-only mid tier at −10% throughput |
+| H6 | Approve for the trial: the seven-model menu on API tokens, the Scaler (R14), no training on our data (R15) and the burn cap (R16) (§5.4–5.5). (r12: the US data-residency option is withdrawn.) |
 | H3 | Approve exit from Idea stage into design |
 
 ---

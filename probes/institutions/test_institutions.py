@@ -35,6 +35,19 @@ class InstitutionsTest(unittest.TestCase):
         # R13 (orphans) must keep three agents moving despite independence rules
         self.assertGreater(inst(3)["ideas_per_week"], 3)
 
+    def test_rules_beat_no_organisation(self):
+        # r12: on a mixed roster, institutions deliver more clean ideas than peer review, and peer more than solo
+        import random
+        mix = {1: 6, 2: 3, 3: 3}
+
+        def run(org, **kw):
+            return f.mean_measure(lambda rng: (org, f.draw_agents(mix, random.Random(rng.random()))), n=3, wip=12, **kw)
+        inst = run("institutions", K=2, D=1)["clean_per_week"]
+        peer = run("peer")["clean_per_week"]
+        solo = run("solo")["clean_per_week"]
+        self.assertGreater(inst, 1.2 * peer)
+        self.assertGreater(peer, solo)
+
 
 if __name__ == "__main__":
     unittest.main()

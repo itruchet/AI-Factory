@@ -4,11 +4,12 @@ An AI-native software engineering Factory that converts human ideas into impleme
 
 ## Constitutional Factory (Idea stage)
 
-- **[Idea Record](docs/idea/constitutional-factory.md)** (r11): eight institutions; agents pull cards; plain rules in the Ledger adjust what each agent may pull, based on how the next institution marks its work. Success and velocity push agents up, failure moves them down, and hardest-first pull puts more capable models on harder cards. No manager agent.
+- **[Idea Record](docs/idea/constitutional-factory.md)** (r12): eight institutions; agents pull cards; plain rules in the Ledger adjust what each agent may pull, based on how the next institution marks its work. Success and velocity push agents up, failure moves them down, and hardest-first pull puts more capable models on harder cards. No manager agent.
 - [Pull-rules probes](probes/pull-rules/): `sim.py` (capacity and frontier caps) and `capability_sort.py` (five-tier capability sorting from an inverted start), synthetic data. `portfolio.py` (model mixes, outages, golden-rules ablation, portfolio search; results in `portfolio_results.txt`). Visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg).
 - [Artificial Analysis tiering and market probes](probes/aa-tiers/): real Coding Index data (`aa_coding_2026-09-09.csv`), statistical tiering (`tiering.py`), portfolio and 26-week market simulation (`market_sim.py`). [Visual summary](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd).
 - **[Institutional throughput](docs/idea/institutional-throughput.md)** ([`probes/institutions/`](probes/institutions/)): discrete-event simulation of the institutions vs the Director → Worker → Checker baseline, staffed only from the Artificial Analysis population; headcount, tier mix, institution sizing, shared vs dedicated seats, and sensitivity. [Visual summary](https://claude.ai/artifact/KqT8mPfqWx69EobtZ4Ybx3).
 - **[Best six](docs/idea/best-six.md)** ([`probes/portfolio6/`](probes/portfolio6/)): three top and three mid seats chosen from the 27 Sep 2026 Artificial Analysis market by the institutional model; robustness across six assumption sets; top seats on API tokens vs subscriptions (capped, hybrid).
+- **[Idea to live](docs/idea/value-stream.md)** ([`probes/value-stream/`](probes/value-stream/)): every step from idea to live; organisations as mappings of steps onto models (no organisation, peer, Director → Worker → Checker, orchestrator, functional roles, institutions, pools per step, and a searched design); elastic model instances started and stopped by Ledger rules; budget and burn cap.
 - [Parked design notes](docs/design-parked/): earlier design-stage material.
 - [Superseded probe](probes/_superseded/): r3–r4 allocation maths, replaced by the pull rules.
 
@@ -27,4 +28,10 @@ python3 probes/portfolio6/select6.py                # best six from the current 
 python3 probes/portfolio6/robust6.py                # robustness of the choice
 python3 probes/portfolio6/subs6.py                  # tokens vs subscriptions for the top seats
 python3 -m unittest discover -s probes/portfolio6
+python3 probes/portfolio6/token_invariance.py       # do choices depend on token use?
+python3 probes/portfolio6/whatif_mimo.py            # MiMo-V2.6-Pro-UltraSpeed what-if
+python3 probes/institutions/operating_models.py     # other organisations on the r10 task model (~10 min)
+python3 probes/value-stream/orgs.py                 # organisations on the idea-to-live steps, plus search (~20 min)
+python3 probes/value-stream/elastic.py              # fixed vs elastic, caps, menus, scale (~25 min)
+python3 -m unittest discover -s probes/value-stream
 ```

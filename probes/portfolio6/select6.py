@@ -19,9 +19,12 @@ Portfolio rules applied as hard constraints (Idea Record 5.1):
   P1  at least two vendors among the top seats
   P2  no vendor holds more than half the seats (3 of 6)
 
+Objective (r12): CLEAN ideas per week, i.e. released with every requirement delivered and
+no escaped defect; ideas per week is reported alongside.
+
 Evaluation: the institutional throughput model (../institutions/factory_sim.py)
 with the sizing found in r10: Inquiry K=2, Planning D=1 plus red team, one
-council round, audit 10%, work-in-progress limit 4 (about 0.7 x headcount).
+council round, audit 10%, work-in-progress limit 6 (one idea per seat; r12).
 Agents work around the clock; every figure is per week after a one-week warm-up.
 
 Cost model (replaces the simulator's relative token counts; all assumptions):
@@ -60,7 +63,7 @@ sys.path.insert(0, str(HERE.parent / "institutions"))
 import factory_sim as f  # noqa: E402
 
 DATA = HERE / "candidates_2026-09-27.csv"
-SIZING = dict(K=2, D=1, council_rounds=1, redteam=True, audit=True, wip=4)
+SIZING = dict(K=2, D=1, council_rounds=1, redteam=True, audit=True, wip=6)   # r12: one idea in flight per seat
 QUALITY = dict(coherence=0.97, escaped=0.25)
 SEEDS_SCAN, SEEDS_FINAL = 4, 12
 
@@ -153,7 +156,7 @@ def run_one(args):
     names, seed, ci_shift, caps = args
     sim = f.Sim("institutions", roster(names, ci_shift, caps), seed=seed, **SIZING).run()
     m = f.measure(sim)
-    return dict(ipw=m["ideas_per_week"], lead=m["lead_h"], coh=m["coherence"], esc=m["escaped_per_idea"],
+    return dict(ipw=m["ideas_per_week"], clean=m["clean_per_week"], lead=m["lead_h"], coh=m["coherence"], esc=m["escaped_per_idea"],
                 util=m["utilisation"], busy={k: v["busy_h_per_week"] for k, v in m["per_agent"].items()})
 
 
@@ -166,12 +169,14 @@ def evaluate(pool, sixes, seeds, ci_shift=0.0, caps=None):
         busy = {n: statistics.mean(r["busy"].get(n, 0.0) for r in rows) for n in s}
         ipw = statistics.mean(r["ipw"] for r in rows)
         api_week = sum(busy[n] * usd_per_busy_hour(C[n]) for n in s)
-        out.append(dict(six=list(s), ipw=ipw, sd=statistics.pstdev([r["ipw"] for r in rows]),
+        clean = statistics.mean(r["clean"] for r in rows)
+        out.append(dict(six=list(s), ipw=ipw, clean=clean, sd=statistics.pstdev([r["clean"] for r in rows]),
                         lead=statistics.mean(r["lead"] for r in rows if not math.isnan(r["lead"])) if any(not math.isnan(r["lead"]) for r in rows) else float("nan"),
                         coh=statistics.mean(r["coh"] for r in rows if not math.isnan(r["coh"])) if ipw else 0.0,
                         esc=statistics.mean(r["esc"] for r in rows if not math.isnan(r["esc"])) if ipw else 9.9,
                         util=statistics.mean(r["util"] for r in rows), busy=busy,
-                        api_week=api_week, usd_idea=api_week / ipw if ipw else float("inf")))
+                        api_week=api_week, usd_idea=api_week / ipw if ipw else float("inf"),
+                        usd_clean=api_week / clean if clean else float("inf")))
     return out
 
 
@@ -187,8 +192,8 @@ def ok(r) -> bool:
 def fmt(r, n_top=3) -> str:
     t = " + ".join(label(n) for n in r["six"][:n_top])
     m = " + ".join(label(n) for n in r["six"][n_top:])
-    return (f"{r['ipw']:5.1f}±{r['sd']:.1f} ideas/wk  lead {r['lead']:4.0f} h  coh {r['coh']:.3f}  esc {r['esc']:.2f}  "
-            f"${r['usd_idea']:6.0f}/idea  ${r['api_week']:6.0f}/wk  | {t} || {m}")
+    return (f"{r['clean']:5.1f}±{r['sd']:.1f} clean/wk ({r['ipw']:5.1f} ideas)  lead {r['lead']:4.0f} h  coh {r['coh']:.3f}  "
+            f"esc {r['esc']:.2f}  ${r['usd_clean']:5.0f}/clean  ${r['api_week']:6.0f}/wk  | {t} || {m}")
 
 
 def one_distinct_base(names) -> bool:
@@ -270,14 +275,14 @@ def main():
         tops = [t for t in itertools.combinations(TOP_NAMES, 3) if one_distinct_base(t)]
         cands = [list(t) + REFERENCE_MID for t in tops if legal(list(t), REFERENCE_MID)]
         s1 = evaluate(pool, cands, SEEDS_SCAN)
-        s1.sort(key=lambda r: -r["ipw"])
+        s1.sort(key=lambda r: -r["clean"])
         say(f"\nS1 top trios with reference mid ({' + '.join(label(n) for n in REFERENCE_MID)}): {len(s1)} legal trios")
         for r in s1[:12]:
             say("  " + fmt(r))
         say("  ...")
         for r in s1[-3:]:
             say("  " + fmt(r))
-        cheap_top = sorted([r for r in s1 if ok(r) and r["ipw"] >= 0.9 * s1[0]["ipw"]], key=lambda r: r["usd_idea"])[:3]
+        cheap_top = sorted([r for r in s1 if ok(r) and r["clean"] >= 0.9 * s1[0]["clean"]], key=lambda r: r["usd_clean"])[:3]
         say("  cheapest per idea within 10% of the best throughput:")
         for r in cheap_top:
             say("  " + fmt(r))
@@ -296,16 +301,16 @@ def main():
         mids = [list(m) for m in itertools.combinations(MID_NAMES, 3) if one_distinct_base(m)]
         cands = [t + m for t in best_tops for m in mids if legal(t, m)]
         s2 = evaluate(pool, cands, SEEDS_SCAN)
-        s2.sort(key=lambda r: -r["ipw"])
+        s2.sort(key=lambda r: -r["clean"])
         say(f"\nS2 mid trios with the leading top trios: {len(s2)} legal sixes")
         for r in s2[:12]:
             say("  " + fmt(r))
         strict_mid = [r for r in s2 if all(f.tier_of(C[n]["ci"]) == 2 for n in r["six"][3:])]
         if strict_mid:
             say("  best with three statistically mid-tier models (Coding Index 29.9-56.8):")
-            for r in sorted(strict_mid, key=lambda r: -r["ipw"])[:3]:
+            for r in sorted(strict_mid, key=lambda r: -r["clean"])[:3]:
                 say("  " + fmt(r))
-        cheap6 = sorted([r for r in s2 if ok(r) and r["ipw"] >= 0.9 * s2[0]["ipw"]], key=lambda r: r["usd_idea"])[:5]
+        cheap6 = sorted([r for r in s2 if ok(r) and r["clean"] >= 0.9 * s2[0]["clean"]], key=lambda r: r["usd_clean"])[:5]
         say("  cheapest per idea within 10% of the best throughput:")
         for r in cheap6:
             say("  " + fmt(r))
@@ -323,18 +328,18 @@ def main():
             for v in {C[n]["vendor"] for n in r["six"]}:
                 rest = [n for n in r["six"] if C[n]["vendor"] != v]
                 o = evaluate(pool, [rest], SEEDS_SCAN)[0]
-                if worst is None or o["ipw"] < worst[1]:
-                    worst = (v, o["ipw"])
+                if worst is None or o["clean"] < worst[1]:
+                    worst = (v, o["clean"])
             r["outage_vendor"], r["outage_ipw"] = worst
-            r["est3_ipw"] = est[tuple(r["six"])]["ipw"]
+            r["est3_clean"] = est[tuple(r["six"])]["clean"]
             say("  " + fmt(r))
-            say(f"      without {worst[0]}: {worst[1]:.1f} ideas/wk ({worst[1] / r['ipw']:.0%});  est-3: {r['est3_ipw']:.1f} ideas/wk;  "
+            say(f"      without {worst[0]}: {worst[1]:.1f} clean/wk ({worst[1] / r['clean']:.0%});  est-3: {r['est3_clean']:.1f} clean/wk;  "
                 f"busy h/wk " + ", ".join(f"{label(n).split(' (')[0]} {r['busy'][n]:.0f}" for n in r["six"]))
-        fin.sort(key=lambda r: -r["ipw"])
+        fin.sort(key=lambda r: -r["clean"])
         best_tp = fin[0]
-        best_value = min([r for r in fin if ok(r) and r["ipw"] >= 0.9 * best_tp["ipw"]], key=lambda r: r["usd_idea"])
-        resilient = max([r for r in fin if ok(r) and r["ipw"] >= 0.9 * best_tp["ipw"]],
-                        key=lambda r: (round(r["outage_ipw"] / r["ipw"], 2), -r["usd_idea"]))
+        best_value = min([r for r in fin if ok(r) and r["clean"] >= 0.9 * best_tp["clean"]], key=lambda r: r["usd_clean"])
+        resilient = max([r for r in fin if ok(r) and r["clean"] >= 0.9 * best_tp["clean"]],
+                        key=lambda r: (round(r["outage_ipw"] / r["clean"], 2), -r["usd_clean"]))
         say("\n  best throughput: " + fmt(best_tp))
         say("  best value:      " + fmt(best_value))
         say("  most resilient:  " + fmt(resilient))
@@ -346,7 +351,7 @@ def main():
         for tag, r in (("best value", best_value), ("best throughput", best_tp)):
             rows = sub_modes(pool, r["six"], r, SEEDS_SCAN)
             subs[tag] = dict(six=r["six"], rows=rows, all_capped=all_top_capped(pool, r["six"], SEEDS_SCAN))
-            say(f"  [{tag}] six at {r['ipw']:.1f} ideas/wk, API ${r['api_week']:.0f}/wk")
+            say(f"  [{tag}] six at {r['ipw']:.1f} ideas/wk ({r['clean']:.1f} clean), API ${r['api_week']:.0f}/wk")
             say(f"    {'seat':<22} {'plan':<30} {'cap h':>5} {'busy h':>6} {'$/h':>5} {'API $/wk':>8} {'sub $/wk':>8} "
                 f"{'hybrid $/wk':>11} {'b/e h':>5} {'subs':>4} {'capped i/wk':>11}")
             for x in rows:
@@ -357,7 +362,7 @@ def main():
                     f"({v['ipw'] / r['ipw']:.0%} of uncapped)")
 
         # token-model sensitivity for the API bill
-        say("\nS5 API bill sensitivity (best value six, $/idea)")
+        say("\nS5 API bill sensitivity (best value six, $/clean idea)")
         global GEN_DUTY, IN_PER_OUT, CACHE_HIT
         saved = (GEN_DUTY, IN_PER_OUT, CACHE_HIT)
         sens = {}
@@ -366,8 +371,8 @@ def main():
             GEN_DUTY, IN_PER_OUT, CACHE_HIT = d, io, ch
             wk = sum(best_value["busy"][n] * usd_per_busy_hour(C[n]) for n in best_value["six"])
             wk_top = sum(best_value["busy"][n] * usd_per_busy_hour(C[n]) for n in best_value["six"][:3])
-            sens[lbl] = dict(api_week=round(wk), top_week=round(wk_top), usd_idea=round(wk / best_value["ipw"], 1))
-            say(f"  {lbl:<24} ${wk:7.0f}/wk  (top seats ${wk_top:6.0f})  ${wk / best_value['ipw']:6.1f}/idea")
+            sens[lbl] = dict(api_week=round(wk), top_week=round(wk_top), usd_clean=round(wk / best_value["clean"], 1))
+            say(f"  {lbl:<24} ${wk:7.0f}/wk  (top seats ${wk_top:6.0f})  ${wk / best_value['clean']:6.1f}/clean idea")
         GEN_DUTY, IN_PER_OUT, CACHE_HIT = saved
 
     (HERE / "select6_results.txt").write_text("\n".join(lines) + "\n")
