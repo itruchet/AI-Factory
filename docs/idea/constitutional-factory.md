@@ -3,9 +3,9 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r7 (supersedes r1–r6)
+Revision: r8 (supersedes r1–r7)
 
-The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), synthetic data, 10 passing tests; [visual summary](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
+The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), synthetic data, 17 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
 ---
 
@@ -75,9 +75,9 @@ These rules are the whole of "management". They run identically in every institu
 | R1 | **Pull** | An agent with a free slot pulls the next card. No one assigns work. |
 | R2 | **Licence** | Each card has a difficulty tier. An agent may pull only tiers it holds a licence for. Licences form a ladder: holding tier 2 implies tier 1. |
 | R3 | **Hardest first, oldest first** | An agent pulls the oldest card in the highest tier it is licensed for. It cannot pick within a tier. When a tier runs dry, capable agents take the next-hardest work, which pushes mid-tier agents down a step. This cascade is what sorts agents by capability. |
-| R4 | **Allowance** | Each agent has a number of slots. An accepted card adds one, up to its concurrency limit. A markdown that takes its recent markdown rate **over the standard** halves them. Normal error within the standard costs nothing. |
-| R5 | **Ladder: success and velocity push agents up** | Each accepted card at an agent's home tier earns +1 promotion credit; each markdown costs −4. Credit therefore builds only for agents that are accurate, and it builds fastest for agents that are also fast. Enough credit makes **stretch cards compulsory**: the agent's next pulls come from the tier above. It is promoted if it meets that tier's **quality standard** (markdown rate) and **velocity standard** (cycle time no more than 1.5× the tier's median) over 20 trial cards. **Demotion is two-speed:** gross failure (over 2× the standard) after 10 cards; marginal failure (over 1.25×) only after two consecutive failing batches of 20, judged in separate batches rather than a rolling window. A failed promotion doubles the credit needed next time, capped at 2×. A **new model** needs only 5 credit to start trials until its first failed promotion (fast track). |
-| R6 | **Escalation** | A marked-down card is retried once at its tier by a **different** agent, then moves up a tier. A card that fails repeatedly at the top tier returns to Planning. The card is then suspect, not the agents. |
+| R4 | **Allowance** *(dropped in r8, §3.2)* | Each agent has a number of slots. An accepted card adds one, up to its concurrency limit. A markdown that takes its recent markdown rate **over the standard** halves them. Normal error within the standard costs nothing. |
+| R5 | **Ladder: success and velocity push agents up** *(velocity standard dropped in r8, §3.2)* | Each accepted card at an agent's home tier earns +1 promotion credit; each markdown costs −4. Credit therefore builds only for agents that are accurate, and it builds fastest for agents that are also fast. Enough credit makes **stretch cards compulsory**: the agent's next pulls come from the tier above. It is promoted if it meets that tier's **quality standard** (markdown rate) and **velocity standard** (cycle time no more than 1.5× the tier's median) over 20 trial cards. **Demotion is two-speed:** gross failure (over 2× the standard) after 10 cards; marginal failure (over 1.25×) only after two consecutive failing batches of 20, judged in separate batches rather than a rolling window. A failed promotion doubles the credit needed next time, capped at 2×. A **new model** needs only 5 credit to start trials until its first failed promotion (fast track). |
+| R6 | **Escalation** *(optional in r8, §3.2)* | A marked-down card is retried once at its tier by a **different** agent, then moves up a tier. A card that fails repeatedly at the top tier returns to Planning. The card is then suspect, not the agents. |
 | R7 | **Hard-work reserve** | Below its home tier, a capped agent may spend only the part of its subscription above what it would need to work its home tier at 75% of full speed until reset. Hard work is always covered; only true surplus flows to easier work. Uncapped agents have no such limit. (r6 also barred agents from easier work outright. The simulation showed that floor sorts worse, so r7 drops it; see §9.4.) |
 | R8 | **Attribution** | Every markdown carries a reason backed by evidence, and it lands on the agent that caused it: implementation → implementer; unclear or wrong card → the card's author in Planning; review miss found later → the reviewer who passed it, and the implementer; infrastructure → nobody. |
 | R9 | **The marker is marked** | Reviewers are workers too. A pass later overturned by Audit, or a markdown overturned as unfounded, counts against the reviewer under R4–R5 in the Court. Marking is accountable in both directions. |
@@ -86,7 +86,7 @@ These rules are the whole of "management". They run identically in every institu
 | R12 | **Late marks** | An Audit finding weeks later applies like an immediate markdown, counted twice, because escaped defects cost more. |
 | R13 | **No orphan tiers** | If cards wait at a tier with no licensed agent for longer than a set time, the best-performing agent one tier below gets stretch cards. If there is none, the card is split in Planning or escalated to Isa. |
 
-**Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality) and the maximum cycle time relative to the tier median (velocity). These are the "KPI and standards".
+**Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality). (r8 dropped the separate velocity standard: promotion credit is counted per card, so speed already moves models up; §3.2.) These are the "KPI and standards".
 
 ### 3.1 Key points the rules encode
 
@@ -102,6 +102,25 @@ These rules are the whole of "management". They run identically in every institu
 10. **The backlog per tier is the capacity signal.** Easy cards queueing while frontier capacity is scarce means more cheap capacity is needed (more local Qwen slots, more MiMo concurrency). It does not mean the frontier should drop down.
 
 ---
+
+### 3.2 Golden rules (r8)
+
+Each allocation rule was removed in turn and tested against six stress scenarios, each built to trigger the failure that rule exists for: cold start, tight caps with an easy-card surge, a benchmark-overrated model, silent degradation, 25% of cards mislabelled, and a slow max-effort model at the top ([`probes/pull-rules/portfolio.py`](../../probes/pull-rules/portfolio.py), 24 runs each). A rule is golden if removing it costs more than 2% of value, 5% of hard cards, 25% longer hard-card waits, or 0.10 alignment in any scenario.
+
+| Rule | Removing it costs (worst scenario) | Verdict |
+|---|---|---|
+| **G1 Hardest first** (R3) | 14% fewer hard cards; hard-card waits 2.5× longer (tight caps, easy surge) | **Golden** |
+| **G2 Promotion by credit and trial cards** (R5) | 83% of value (cold start: nobody climbs) | **Golden** |
+| **G3 Demotion, two-speed and batch-judged** (R5) | Alignment −0.14; an overrated model is never moved down | **Golden** |
+| **G4 Hard-work reserve for capped models** (R7) | 13% fewer hard cards (tight caps, easy surge) | **Golden** |
+| **G5 Fast track for new models** (R5) | 2% of value; hard-card waits 73% longer (cold start) | **Golden** |
+| Allowance (R4) | Nothing. It *cost* 6.5% of value under tight caps by throttling good models after normal errors | Dropped |
+| Escalation (R6) | Nothing measurable, even with 25% of cards mislabelled: hardest-first already routes stuck cards upward | Optional |
+| Velocity standard (R5) | Nothing measurable: credit is counted per card, so faster models already climb sooner | Dropped as a separate rule |
+
+**The five golden rules alone matched or beat all eight in every scenario** (value −0.3% to +6.4%; hard cards −0.3% to +1.7%; markdown rate within ±0.5 points).
+
+**Five allocation rules is the optimum found.** Removing any one of them fails a scenario; adding the other three adds nothing. The governance rules (R8 attribution, R9 markers marked, R10 self-awareness, R12 late marks, R13 no orphan tiers) protect the quality of the marks themselves. The simulation assumes marks are correct, so it cannot test them; they stay in the constitution untested.
 
 ## 4. The eight institutions
 
@@ -152,6 +171,54 @@ Everything else runs on the rules.
 
 ---
 
+### 5.1 The model portfolio: how many, of what tier
+
+**Normalised banding from Artificial Analysis.** Each model's Intelligence Index score is divided by the current frontier score, then banded: ≥95% → tier 5; 85–95% → tier 4; 70–85% → tier 3; 50–70% → tier 2; below 50% → tier 1. The band is the model's **prior**: its starting licence and where it should land. Evidence then moves it.
+
+| Model | AA index (reported) | % of frontier | AA band | Where the rules landed it (cold start) |
+|---|---|---|---|---|
+| GPT-5.6 Sol | 59 | 100% | 5 | 5 |
+| Claude Opus 5.5 | 58 | 98% | 5 | 5 |
+| GPT-5.6 Terra | 55 | 93% | 4 | 4 |
+| GPT-5.6 Luna | 51 | 86% | 4 | 4 |
+| MiMo-V2.6-Pro | 46 | 78% | 3 | 3 |
+| Qwen3.8 27B (local) | 34 | 58% | 2 | 2 (1 in some runs: it sits on a band edge) |
+| Qwen3 Coder Next (local) | 9 | 15% | 1 | 1 |
+| *Hypothetical model the benchmark overrates* | 55 | 93% | 4 | **3**, its true tier, in 12 of 12 runs |
+
+The last row is the point: when the benchmark is wrong about our workload, demotion (G3) finds the model's true tier within 1–8 days. Without it, the model keeps the benchmark's tier indefinitely.
+
+**Portfolio golden rules** (from 431 portfolios, then outage and surge tests; §9.6):
+
+| # | Rule | Evidence |
+|---|---|---|
+| P1 | **Two top-tier models from two different vendors.** | The even-spread mix had one top-tier vendor. An OpenAI outage pushed hard-card waits from about 6 hours to 22 hours. |
+| P2 | **Bulk capacity from at least two independent sources.** | Today's mix relies on one MiMo. A three-day Xiaomi outage left 211 cards waiting; a demand surge left 603. |
+| P3 | **At the bottom, fast beats clever.** | Removing local Qwen3.8 (slow reasoning) changed nothing. A fast non-reasoning local model (Coder Next) is worth its slot. |
+| P4 | **Size for a surge of about 20%, not the average.** | Portfolios at ~90% load failed the surge test; the recommended mix absorbed it with 4 cards waiting. |
+| P5 | **Stop at about five models.** | Seven models (+$160–250 a month) added 0.4% value. |
+
+**Recommended portfolio (C): five models, about $560 a month.**
+
+| Tier | Models | Role |
+|---|---|---|
+| 5 | GPT-5.6 Sol + Claude Opus 5.5 | Hard work, two vendors (P1) |
+| 3 | 2 × MiMo-V2.6-Pro | Bulk capacity (P2) |
+| 1 | Qwen3 Coder Next (local) | Fast easy work (P3) |
+
+It has the same cost as today's mix. It meets the service level at nominal and surge demand and through a three-day outage of any single vendor, with the shortest hard-card waits of any mix tested (5.0–5.9 hours). A cheaper option ($470: Opus, Terra, Luna, MiMo, Coder Next) also survives every test, with hard-card waits about one hour longer.
+
+**Sources for the scores** (secondary reports, September 2026; values differ by a few points between sources, and the primary site could not be reached from this environment):
+- [BenchLM: AA Intelligence Index leaderboard](https://benchlm.ai/benchmarks/artificialanalysis)
+- [Artificial Analysis: model leaderboard](https://artificialanalysis.ai/leaderboards/models)
+- [Artificial Analysis: MiMo-V2.6-Pro](https://artificialanalysis.ai/models/mimo-v2-6-pro)
+- [Artificial Analysis: Qwen3.8 27B](https://artificialanalysis.ai/models/qwen3-8-27b)
+- [Artificial Analysis: Qwen3 Coder Next](https://artificialanalysis.ai/models/qwen3-coder-next)
+- [OfficeChai: GPT-5.6 Sol on the Intelligence Index](https://officechai.com/ai/gpt-5-6-sol-places-second-right-behind-claude-fable-on-artificial-analysis-intelligence-index/)
+- [eesel AI: MiMo V2.6 pricing](https://www.eesel.ai/blog/xiaomi-mimo-v2-6-pricing)
+
+**Costs are assumptions:** $200 per frontier plan; $100 and $60 for the Terra- and Luna-class plans; $50 per MiMo plan; $120 and $60 a month amortised for the local models. Swap in real invoices before acting.
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -187,7 +254,7 @@ Showing an agent only its own record gives it self-awareness. It gets no informa
 | Central intelligence (P1) | There is no allocator to fail or capture. Rules are replayable from the Ledger. |
 | A weak agent keeps failing (P4) | R4 cuts its slots; R5 removes its top licence; R10 shows it why. |
 | A strong agent on simple work (P4) | R3: it always takes the hardest card it holds first; R7: capped agents spend only surplus below their home tier. |
-| A slow agent holding hard cards | R5 velocity standard: it is not promoted, or it loses the tier, if its cycle time is far beyond the tier median. |
+| A slow agent holding hard cards | Promotion credit accrues per card, so a slow agent climbs slowly; P1 keeps two top-tier models so one slow model cannot hold up hard work. |
 | Cherry-picking easy work (P7) | R3: no choice within a tier. Declines return licences (R10). |
 | Card hoarding | Slots are capped by allowance and concurrency. |
 | Rubber-stamp or hostile reviewing (P5) | R9: reviewers are marked by Audit in both directions. |
@@ -255,6 +322,20 @@ Alignment is the rank correlation between true capability and the difficulty of 
 - Protecting 50% of hard-work capacity let frontier agents drift to easy work; protecting 100% left 14% of the cap unused. 75% was best under both tight and generous caps.
 - Earlier (r5): halving allowances on every markdown cut output by about a third. Rules now measure against the standard.
 
+**9.6 Model mixes and removals (five tiers, two weeks, golden rules, nominal demand at ~90% load).** Mean of 8–10 runs.
+
+| Mix | $/mo | Value | Hard-card wait | Surge queue | Worst single-vendor outage |
+|---|---|---|---|---|---|
+| A Today (Sol, Opus, MiMo, local Qwen3.8) | 570 | 8,444 | 5.1 h | 603 (fails) | Xiaomi: 211 waiting (fails) |
+| B Cheapest resilient (Opus, Terra, Luna, MiMo, Coder Next) | 470 | 8,405 | 6.1 h | 16 | Anthropic: wait 6.9 h (passes) |
+| **C Recommended (Sol, Opus, 2 × MiMo, Coder Next)** | **560** | **8,434** | **5.0 h** | **4** | **Anthropic: wait 5.9 h (passes)** |
+| D Best value (7 models) | 720 | 8,466 | 5.2 h | 2 | OpenAI: wait 6.1 h (passes) |
+| E Even spread (Sol, Luna, MiMo, Qwen3.8, Coder Next) | 490 | 8,214 | 6.2 h | 477 (fails) | OpenAI: wait 21.9 h (fails) |
+| Top-heavy (Sol, Opus, Terra, Luna; no cheap models) | 560 | 7,960 | 5.3 h | 1,725 (fails; 499 waiting even at nominal) | frontier throttled: 1,376 waiting |
+| Bottom-heavy (Sol, MiMo, 2 × Qwen3.8, Coder Next) | 550 | 8,094 | 7.9 h | 825 (fails; 42 hard cards left even at nominal) | frontier throttled: wait 19.4 h |
+
+How the rules degrade: when capacity is lost, losses land on easy work first. The reserve and hardest-first keep hard work flowing, and hard work catches up after the outage ends.
+
 ## 10. Settled by analysis (not for Isa)
 
 | Question | Settlement |
@@ -263,7 +344,10 @@ Alignment is the rank correlation between true capability and the difficulty of 
 | Subscription terms | Not needed. Pull plus throttling handles them; the hard-work reserve protects frontier caps using only each agent's own cap and time to reset (§5) |
 | Keeping frontier capacity for hard work | R7 hard-work reserve, replacing r5 pacing and the r6 floor (§9.1, §9.4) |
 | Capable models on hard cards, less capable on easy | R3 hardest-first cascade plus R5 ladder (§9.4) |
-| Slow agents on hard work | R5 velocity standard (§9.3) |
+| How many allocation rules | Five golden rules; allowance and velocity dropped, escalation optional (§3.2) |
+| How many models, of what tier | Five: two tier-5 from two vendors, two bulk mid-tier, one fast local (§5.1) |
+| Where models should land | Their Artificial Analysis band as prior; evidence corrects it (§5.1) |
+| Slow agents on hard work | Per-card credit plus two top-tier models (P1); the separate velocity standard was dropped in r8 (§3.2) |
 | How a failing agent gets less work | R4 allowance and R5 ladder, against the standard (§3) |
 | How an agent knows its capability | Its own record at pull time (R10) |
 | Starting point | Today's predetermined mapping (R11) |
@@ -285,7 +369,7 @@ Alignment is the rank correlation between true capability and the difficulty of 
 | X3 | Attribution (R8) improves card quality in Planning | Card-caused markdowns do not fall |
 | X4 | Marking the markers (R9) reduces escaped defects | Audit escape rate unchanged |
 | X5 | The hard-work reserve (R7) keeps frontier capacity for hard work without idle capacity at reset | Hard-card backlog when a frontier cap runs out, or more than 5% of cap unused at reset |
-| X8 | The velocity standard sends slow agents to easier work without starving hard tiers | Hard-tier cycle times rise, or a hard tier is left without enough licensed agents |
+| X8 | Dropping the velocity standard (r8) does not let slow models hold up hard work on real data | Hard-tier cycle times rise, or a hard tier is left without enough licensed agents |
 | X6 | Anonymity reduces deference in the Council | Adoption by source unchanged |
 | X7 | Universal Inquiry participation adds unique value from every model | A model's surviving contributions stay near zero |
 
@@ -301,8 +385,9 @@ Alignment is the rank correlation between true capability and the difficulty of 
 
 | # | Decision |
 |---|---|
-| H1 | Ratify the constitution's eight principles (§6) and rules R1–R13 (§3) |
-| H2 | Set the standards per institution and tier: maximum markdown rate (quality) and maximum cycle time relative to the tier median (velocity). Design can propose starting values. |
+| H1 | Ratify the constitution's eight principles (§6), the five golden allocation rules (§3.2) and governance rules R8–R13 |
+| H2 | Set the quality standard per institution and tier (maximum markdown rate). Design can propose starting values. |
+| H4 | Approve moving to the recommended portfolio: swap local Qwen3.8 for a second MiMo plan and local Qwen3 Coder Next (§5.1). Check real plan prices first. |
 | H3 | Approve exit from Idea stage into design |
 
 ---
@@ -331,4 +416,4 @@ Alignment is the rank correlation between true capability and the difficulty of 
 
 ---
 
-**Takeaway:** ratify R1–R13 as revised in r7, and set quality and velocity standards per tier (H1–H2). Hardest-first pull then puts every model on the hardest work it has earned.
+**Takeaway:** ratify the five golden rules (H1), set quality standards (H2), and move to the five-model portfolio (H4). The simulations show this mix meets the service level through surges and any single-vendor outage at today's cost.

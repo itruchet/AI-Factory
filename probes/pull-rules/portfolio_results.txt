@@ -1,0 +1,80 @@
+
+== Where models land vs their Artificial Analysis band (cold start at tier 1) ==
+  model                        AA  % of top  AA band  true tier*   landed (median, range)
+  GPT-5.6 Sol                  59      100%        5           5            5 (5-5)
+  Claude Opus 5.5              58       98%        5           5            5 (5-5)
+  GPT-5.6 Terra                55       93%        4           4            4 (4-5)
+  GPT-5.6 Luna                 51       86%        4           4            4 (3-4)
+  MiMo-V2.6-Pro                46       78%        3           3            3 (3-4)
+  Qwen3.8 27B (local)          34       58%        2           2            2 (1-2)
+  Qwen3 Coder Next (local)      9       15%        1           1            1 (1-1)
+  * true tier = highest tier the model sustains at the standard given its ASSUMED Factory offset
+
+== Model mixes under the golden rules, nominal demand (no removal), mean of 10 runs ==
+  scenario                                         value   T4-5   T1-2  hardQ  easyQ pkHard  peakQ  align  F easy   $/mo
+  current (2 frontier, MiMo, local Qwen)            8443    418   2273      3      0      4      6  +0.90     16%    570
+  recommended (2 frontier, 2 MiMo, Coder)           8433    417   2274      4      0      5      6  +0.91     13%    560
+  top-heavy (4 OpenAI/Anthropic, no cheap)          7951    420   1764      2    507      3    656  +0.72     31%    560
+  bottom-heavy (1 frontier, cheap + local)          8088    379   2253     43     17     47     72  +0.97      7%    550
+  even spread (one per band)                        8234    397   2272     24      1     27     31  +0.97     11%    490
+
+== Model mixes, surge demand (+18%) ==
+  scenario                                         value   T4-5   T1-2  hardQ  easyQ pkHard  peakQ  align  F easy   $/mo
+  current (2 frontier, MiMo, local Qwen)            9341    492   2083      4    595      6    600  +0.92     17%    570
+  recommended (2 frontier, 2 MiMo, Coder)           9950    494   2676      3      0      4      5  +0.93     11%    560
+  top-heavy (4 OpenAI/Anthropic, no cheap)          8135    495    955      2   1723      3   1725  +0.48     21%    560
+  bottom-heavy (1 frontier, cheap + local)          8413    420   1931     77    746     85    826  +0.97      5%    550
+  even spread (one per band)                        9248    471   2221     26    455     35    516  +0.96      9%    490
+
+== Removals on: current (2 frontier, MiMo, local Qwen) ==
+  scenario                                         value   T4-5   T1-2  hardQ  easyQ pkHard  peakQ  align  F easy   $/mo
+  no removal                                        8443    418   2273      3      0      4      6  +0.90     16%    570
+  low tier out (local Qwen down, days 4-7)          8438    418   2272      4      0      4      9  +0.86     17%    570
+  mid tier out (MiMo down, days 4-7)                8248    419   2073      2    197      4    456  +0.86     17%    570
+  high tier out (frontier throttled, days 4-7)      8009    418   1843      4    428     62    566  +0.88     17%    570
+  vendor halves frontier caps from day 3            7976    417   1822      4    450     53    628  +0.96     16%    570
+
+== Removals on: recommended (2 frontier, 2 MiMo, Coder) ==
+  scenario                                         value   T4-5   T1-2  hardQ  easyQ pkHard  peakQ  align  F easy   $/mo
+  no removal                                        8433    417   2274      4      0      5      6  +0.91     13%    560
+  low tier out (local Qwen down, days 4-7)          8437    418   2274      4      0      4      6  +0.91     13%    560
+  mid tier out (MiMo down, days 4-7)                8450    419   2273      2      0      4    265  +0.91     12%    560
+  high tier out (frontier throttled, days 4-7)      8446    418   2274      3      0     59     60  +0.93     10%    560
+  vendor halves frontier caps from day 3            8448    419   2274      3      0     31     34  +0.91     10%    560
+
+== Removals on: top-heavy (4 OpenAI/Anthropic, no cheap) ==
+  scenario                                         value   T4-5   T1-2  hardQ  easyQ pkHard  peakQ  align  F easy   $/mo
+  no removal                                        7951    420   1764      2    507      3    656  +0.72     31%    560
+  low tier out (local Qwen down, days 4-7)          7951    420   1764      2    507      3    656  +0.72     31%    560
+  mid tier out (MiMo down, days 4-7)                7951    420   1764      2    507      3    656  +0.72     31%    560
+  high tier out (frontier throttled, days 4-7)      7022    420    885      2   1387     21   1390  +0.16     22%    560
+  vendor halves frontier caps from day 3            6897    420    814      2   1457     10   1461  +0.52     21%    560
+
+== Removals on: bottom-heavy (1 frontier, cheap + local) ==
+  scenario                                         value   T4-5   T1-2  hardQ  easyQ pkHard  peakQ  align  F easy   $/mo
+  no removal                                        8088    379   2253     43     17     47     72  +0.97      7%    550
+  low tier out (local Qwen down, days 4-7)          7842    381   1984     40    286     47    383  +0.97      8%    550
+  mid tier out (MiMo down, days 4-7)                7483    375   1908     49    360     61    422  +0.97      6%    550
+  high tier out (frontier throttled, days 4-7)      7721    337   2174     84     97     96    206  +0.97      6%    550
+  vendor halves frontier caps from day 3            7570    324   2103     99    167    108    286  +0.97      5%    550
+
+== Removals on: even spread (one per band) ==
+  scenario                                         value   T4-5   T1-2  hardQ  easyQ pkHard  peakQ  align  F easy   $/mo
+  no removal                                        8234    397   2272     24      1     27     31  +0.97     11%    490
+  low tier out (local Qwen down, days 4-7)          8257    400   2272     22      0     27     83  +0.97     12%    490
+  mid tier out (MiMo down, days 4-7)                8196    398   2221     22     50     30    256  +0.95     10%    490
+  high tier out (frontier throttled, days 4-7)      8225    396   2259     26     14     51    107  +0.95      8%    490
+  vendor halves frontier caps from day 3            8253    400   2257     22     15     45    136  +0.93      9%    490
+
+== Golden-rules ablation: remove ONE rule, compare with the full set ==
+  worst case across six stress scenarios, each built to trigger one failure mode
+  rule removed        value  hard done  hard wait  alignment  worst scenario                     verdict
+  hardest_first      -2.9%    -13.8%     +149%      -0.08  tight caps, easy surge             GOLDEN
+  promotion         -82.6%   -100.0%     +273%      -0.03  cold start, even spread            GOLDEN
+  demotion           -0.7%     +0.1%       +8%      -0.14  current mix, nominal               GOLDEN
+  allowance          -0.1%     -0.2%       +2%      -0.05  tight caps, easy surge             optional
+  escalation         -0.1%     -0.3%       +2%      -0.04  current mix, nominal               optional
+  reserve            -0.2%    -13.1%       +0%      -0.04  tight caps, easy surge             GOLDEN
+  velocity           -0.2%     +0.0%       +5%      -0.08  current mix, nominal               optional
+  fast_track         -2.1%     +0.0%      +73%      +0.00  cold start, even spread            GOLDEN
+  thresholds: a rule is golden if removing it costs >2% value, >5% hard cards, >25% longer hard-card waits, or >0.10 alignment in any scenario

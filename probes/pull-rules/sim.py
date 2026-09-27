@@ -1,6 +1,6 @@
 """Pull-rules probe: do dumb, rules-based feedback loops allocate work well?
 
-Idea-stage feasibility check for docs/idea/constitutional-factory.md (r7).
+Idea-stage feasibility check for docs/idea/constitutional-factory.md (r8).
 No agent manages allocation. Agents pull cards; rules adjust what each may pull.
 
 ALL NUMBERS ARE SYNTHETIC. They illustrate dynamics, not real model performance.

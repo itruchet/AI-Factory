@@ -1,6 +1,6 @@
 """Capability sort: do the rules put more capable models on harder cards?
 
-Idea-stage probe for docs/idea/constitutional-factory.md (r7, rules R1-R13).
+Idea-stage probe for docs/idea/constitutional-factory.md (r8, rules R1-R13).
 ALL NUMBERS ARE SYNTHETIC.
 
 Model of the world (hidden from the rules):
