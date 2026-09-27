@@ -3,7 +3,7 @@
 Stage: **IDEA** (not design)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r9 (supersedes r1–r8)
+Revision: r10 (supersedes r1–r9)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -263,6 +263,16 @@ r8 banded models by hand-picked thresholds on the Intelligence Index. r9 replace
 
 These are Ledger arithmetic, not an agent: value per dollar and diversity are computed from recorded outcomes.
 
+### 5.3 Institutional throughput (r10)
+
+[`institutional-throughput.md`](institutional-throughput.md) models the whole pipeline, not allocation alone. Its agents are drawn only from the Artificial Analysis population. Four results change this record:
+- **The baseline has a ceiling.** Director → Worker → Checker stops at one Checker's capacity: about 24 ideas a week in the model, whatever the headcount.
+- **The institutions scale linearly and deliver more intent.** About 3.7 ideas a week per agent, with 99% of intent delivered against 90–91%, under all eight assumption sets tested.
+- **The ideal tier mix is about 40–45% top tier and the rest middle tier.** It needs at least one top-tier agent; the bottom tier plays almost no role.
+- **The ideal institution sizes are small.** Agents work from a shared pool; dedicated seats lost 34–46% of throughput. Settings: two Inquiry analysts, one Council round, one planner plus a red team, 10% audit, and a work-in-progress limit of about 0.7 × headcount.
+
+R13 (no orphans) is load-bearing. It must relax licences, independence and seat rules, each with a Ledger record, or small teams deadlock.
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -463,4 +473,4 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 
 ---
 
-**Takeaway:** use three absolute work tiers, the five golden allocation rules, and an evidence-gated rolling portfolio with a vendor-diversity guard. On real market data this delivered the most value for the least spend.
+**Takeaway:** replace Director → Worker → Checker with a shared pool pulling through the institutions, staffed about 40–45% top tier and the rest middle tier; the model shows no single-role ceiling and 99% of intent delivered.

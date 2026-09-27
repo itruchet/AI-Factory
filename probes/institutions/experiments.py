@@ -47,10 +47,11 @@ def base(workers, **kw):
 def slim(m):
     keep = ("ideas_per_week", "lead_h", "coherence", "escaped_per_idea", "cost_per_idea", "utilisation")
     out = {k: round(m[k], 3) for k in keep}
+    out["seat_waivers"] = round(m["drops_per_idea"].get("seat_rule_waived", 0.0), 3)
     out["busiest_role"] = max(m["role_util"], key=m["role_util"].get)
     out["busiest_util"] = round(m["role_util"][out["busiest_role"]], 3)
-    out["longest_wait"] = max(m["wait_h"], key=m["wait_h"].get)
-    out["longest_wait_h"] = round(m["wait_h"][out["longest_wait"]], 2)
+    out["longest_wait"] = max(m["wait_h"], key=m["wait_h"].get) if m["wait_h"] else "none"
+    out["longest_wait_h"] = round(m["wait_h"].get(out["longest_wait"], 0.0), 2)
     out["wait_h"] = {k: round(v, 2) for k, v in m["wait_h"].items()}
     out["drops"] = {k: round(v, 3) for k, v in m["drops_per_idea"].items()}
     return out
@@ -126,7 +127,7 @@ def e3():
 
 def dedicated_builder(n: int, plan: dict):
     """plan: institution -> number of seats; tiers assigned best-first to the most demanding."""
-    order = ["planning", "council", "court", "market", "inquiry", "release"]
+    order = ["planning", "council", "release", "court", "market", "inquiry"]   # most demanding first
     kinds = {"inquiry": {"inquiry"}, "council": {"critique", "synthesis"}, "planning": {"decompose", "reconcile", "redteam"},
              "market": {"card"}, "court": {"review", "audit"}, "release": {"release"}}
 

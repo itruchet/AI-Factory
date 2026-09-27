@@ -1,0 +1,74 @@
+
+E1 headcount scaling (tiers in population proportion)
+    N       mix | base i/wk  lead   coh   esc $/idea        busiest | inst i/wk  lead   coh   esc $/idea       longest wait
+    3     1/1/1 |       7.1    64  0.91  0.23    9.3 worker T1 0.99 |       7.0    78  1.00  0.10   16.9  decompose  11.9h
+    4     2/1/1 |      11.0    55  0.90  0.30    7.0 worker T2 0.93 |      14.3    47  1.00  0.03   12.6  decompose  10.1h
+    6     3/2/1 |      14.3    61  0.91  0.23    6.4 worker T2 0.99 |      21.4    46  0.99  0.10   10.4  decompose   9.1h
+    9     4/3/2 |      23.8    62  0.90  0.29    8.5 checker T1 0.94 |      33.6    55  0.99  0.15    8.6  decompose  11.1h
+   12     6/3/3 |      24.4    82  0.91  0.30    8.6 checker T1 1.00 |      42.9    56  0.99  0.18   10.1   critique  15.8h
+   16     7/5/4 |      24.7   106  0.90  0.29    9.4 checker T1 1.00 |      56.3    58  0.99  0.20   10.4   critique  21.3h
+   20     9/6/5 |      24.3   127  0.90  0.32    9.2 checker T1 1.00 |      71.0    65  0.99  0.24   11.3   critique  29.0h
+   24    11/7/6 |      24.5   144  0.90  0.29    9.5 checker T1 1.00 |      92.0    61  0.99  0.22   10.4   critique  20.8h
+   32    15/9/8 |      21.9   201  0.90  0.27   11.5 checker T1 1.00 |     124.6    63  0.99  0.24    9.6   critique  29.7h
+
+E2 tier mix (institutions); best mixes meeting the quality floor
+  N=6: 21/28 mixes meet the floor
+    all top               6/0/0    26.5 ideas/wk  lead    36 h  coherence 1.00  escaped 0.05  $12.4/idea
+    all middle            0/6/0     8.5 ideas/wk  lead   122 h  coherence 0.97  escaped 0.42  $8.8/idea
+    all bottom            0/0/6     0.5 ideas/wk  lead   365 h  coherence 0.94  escaped 1.43  $32.5/idea
+    population mix        3/2/1    21.4 ideas/wk  lead    46 h  coherence 0.99  escaped 0.10  $10.4/idea
+    best throughput       6/0/0    26.5 ideas/wk  lead    36 h  coherence 1.00  escaped 0.05  $12.4/idea
+    cheapest per idea     4/1/1    25.0 ideas/wk  lead    40 h  coherence 1.00  escaped 0.07  $8.9/idea
+  N=9: 39/55 mixes meet the floor
+    all top               9/0/0    38.7 ideas/wk  lead    37 h  coherence 1.00  escaped 0.03  $15.8/idea
+    all middle            0/9/0    13.7 ideas/wk  lead   114 h  coherence 0.97  escaped 0.40  $9.2/idea
+    all bottom            0/0/9     0.5 ideas/wk  lead   346 h  coherence 0.96  escaped 0.98  $40.5/idea
+    population mix        4/3/2    33.6 ideas/wk  lead    55 h  coherence 0.99  escaped 0.15  $8.6/idea
+    best throughput       9/0/0    38.7 ideas/wk  lead    37 h  coherence 1.00  escaped 0.03  $15.8/idea
+    cheapest per idea     4/1/4    28.0 ideas/wk  lead    62 h  coherence 0.99  escaped 0.17  $8.3/idea
+  N=12: 61/91 mixes meet the floor
+    all top              12/0/0    51.9 ideas/wk  lead    36 h  coherence 1.00  escaped 0.07  $14.7/idea
+    all middle           0/12/0    20.2 ideas/wk  lead   111 h  coherence 0.98  escaped 0.42  $8.2/idea
+    all bottom           0/0/12     0.7 ideas/wk  lead   228 h  coherence 0.92  escaped 0.91  $42.9/idea
+    population mix        6/3/3    42.9 ideas/wk  lead    56 h  coherence 0.99  escaped 0.18  $10.1/idea
+    best throughput      12/0/0    51.9 ideas/wk  lead    36 h  coherence 1.00  escaped 0.07  $14.7/idea
+    cheapest per idea     4/7/1    41.2 ideas/wk  lead    57 h  coherence 0.99  escaped 0.18  $8.1/idea
+
+E3 institution sizing at N=12 (6/3/3)
+    Inquiry K=1              44.4 ideas/wk  lead    66 h  coherence 0.986  escaped 0.15  $9.6/idea
+    Inquiry K=2              43.6 ideas/wk  lead    59 h  coherence 0.991  escaped 0.17  $9.9/idea
+    Inquiry K=3              42.9 ideas/wk  lead    56 h  coherence 0.994  escaped 0.18  $10.1/idea
+    Inquiry K=4              42.2 ideas/wk  lead    58 h  coherence 0.994  escaped 0.17  $10.4/idea
+    Inquiry K=5              42.2 ideas/wk  lead    53 h  coherence 0.996  escaped 0.20  $10.3/idea
+    Planners D=1             45.4 ideas/wk  lead    52 h  coherence 0.989  escaped 0.19  $9.7/idea
+    Planners D=2             42.9 ideas/wk  lead    56 h  coherence 0.994  escaped 0.18  $10.1/idea
+    Planners D=3             40.7 ideas/wk  lead    58 h  coherence 0.992  escaped 0.19  $10.6/idea
+    Council rounds=0         45.3 ideas/wk  lead    59 h  coherence 0.986  escaped 0.16  $9.6/idea
+    Council rounds=1         42.9 ideas/wk  lead    56 h  coherence 0.994  escaped 0.18  $10.1/idea
+    Council rounds=2         40.7 ideas/wk  lead    54 h  coherence 0.996  escaped 0.18  $10.6/idea
+    No red team              45.2 ideas/wk  lead    73 h  coherence 0.972  escaped 0.15  $9.6/idea
+    No audit                 44.8 ideas/wk  lead    55 h  coherence 0.992  escaped 0.20  $9.7/idea
+    WIP limit=4              35.0 ideas/wk  lead    24 h  coherence 0.996  escaped 0.21  $10.1/idea
+    WIP limit=8              42.3 ideas/wk  lead    39 h  coherence 0.991  escaped 0.18  $10.0/idea
+    WIP limit=12             42.9 ideas/wk  lead    56 h  coherence 0.994  escaped 0.18  $10.1/idea
+    WIP limit=18             42.0 ideas/wk  lead    78 h  coherence 0.990  escaped 0.21  $10.3/idea
+    WIP limit=24             41.0 ideas/wk  lead   102 h  coherence 0.992  escaped 0.19  $10.7/idea
+
+E4 shared pool vs dedicated seats (N=12)
+    shared pool                    42.9 ideas/wk  lead    56 h  coherence 0.994  escaped 0.18  util 0.84  longest wait critique 15.8 h
+    dedicated A (1/1/2/6/1/1)      23.5 ideas/wk  lead    73 h  coherence 0.994  escaped 0.11  util 0.51  longest wait review 13.0 h
+    dedicated B (2/1/2/4/2/1)      28.5 ideas/wk  lead    63 h  coherence 0.994  escaped 0.10  util 0.59  longest wait card 6.1 h
+    dedicated C (1/1/1/7/1/1)      23.0 ideas/wk  lead    78 h  coherence 0.996  escaped 0.11  util 0.49  longest wait review 10.9 h
+
+E5 sensitivity (N=12, population mix): does the conclusion hold?
+    baseline assumptions               baseline  24.4 i/wk (checker T1) | institutions  42.9 i/wk  ratio 1.76  coherence 0.91 -> 0.99  escaped 0.30 -> 0.18  best mix [12, 0, 0]
+    flatter skill curve (SLOPE 0.08)   baseline  27.8 i/wk (checker T1) | institutions  44.4 i/wk  ratio 1.60  coherence 0.86 -> 0.99  escaped 0.25 -> 0.21  best mix [12, 0, 0]
+    steeper skill curve (SLOPE 0.18)   baseline  22.2 i/wk (checker T1) | institutions  43.1 i/wk  ratio 1.94  coherence 0.94 -> 0.99  escaped 0.29 -> 0.13  best mix [8, 4, 0]
+    weak tests (TEST_CATCH 0.3)        baseline  23.9 i/wk (checker T1) | institutions  43.2 i/wk  ratio 1.80  coherence 0.90 -> 0.99  escaped 0.33 -> 0.23  best mix [12, 0, 0]
+    strong tests (TEST_CATCH 0.7)      baseline  26.1 i/wk (checker T1) | institutions  43.8 i/wk  ratio 1.68  coherence 0.90 -> 0.99  escaped 0.19 -> 0.12  best mix [12, 0, 0]
+    easy-heavy work (65/25/10)         baseline  32.6 i/wk (checker T1) | institutions  59.7 i/wk  ratio 1.83  coherence 0.90 -> 0.99  escaped 0.15 -> 0.14  best mix [8, 4, 0]
+    hard-heavy work (25/35/40)         baseline  17.1 i/wk (checker T1) | institutions  28.3 i/wk  ratio 1.66  coherence 0.92 -> 0.99  escaped 0.57 -> 0.22  best mix [12, 0, 0]
+    harder requirements (+5)           baseline  26.3 i/wk (checker T1) | institutions  43.0 i/wk  ratio 1.63  coherence 0.85 -> 0.99  escaped 0.26 -> 0.19  best mix [8, 4, 0]
+
+wrote results.json
+exit 0

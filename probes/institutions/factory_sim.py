@@ -293,18 +293,20 @@ class Sim:
         if self.org == "baseline":
             return a.queue.pop(0) if a.queue else None
         for kind in PRIORITY:
-            if a.roles is not None and kind not in a.roles:
-                continue
             q = self.queues[kind]
             if not q:
                 continue
-            cands = [t for t in q if self.eligible(a, t)]
+            in_role = a.roles is None or kind in a.roles
+            # R13 also lifts seat restrictions on work orphaned for twice the limit
+            cands = [t for t in q if (in_role or self.t - t.born >= 2 * ORPHAN_H) and self.eligible(a, t)]
             if not cands:
                 continue
             task = max(cands, key=lambda t: t.d) if kind == "card" else cands[0]
             q.remove(task)
             if a.cfg.name in task.exclude:
                 self.drops["independence_waived"] += 1  # recorded in the Ledger
+            if not in_role:
+                self.drops["seat_rule_waived"] += 1
             return task
         return None
 
