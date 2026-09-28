@@ -2,17 +2,17 @@
  "schema": "factory-pack/1",
  "pack_version": "1.0",
  "files": {
-  "CARDS.md": "c96eeea55f8ecd2fa8e104b85619ba922dc5eddcb8cc412d864e760e03907db5",
-  "INGEST.md": "a75b557e8a016249f432d629e92013df78d49f62234699ac81eb2c4400e776ff",
-  "README.md": "4272ca71d3c73861d240883206577d3026705ac0270e256b8b759f5d158e47b6",
-  "build_pack.py": "43ce3bcc170dca689a4c04804fd0d45a004b1c565bc1e39f19d3a8be334827a0",
-  "factory-pack.json": "e43af736f3127b92ceab20f444f216ef0799f42343b77918f2ceeb146361ea5b",
-  "src/approvals.json": "88eb0d894401f93cdcef08d17a551d6cc82076380c5c9d8b0b611fed87de61b2",
-  "src/cards.json": "c391e2470b98fbb74de6f5376296d8a483bb2d442b79c3e0e9233f238bf056a0",
-  "src/claims.json": "37ad55912a64c0ec811a89b3ebc3af55cff32eeae2b42553c0db7e9351311b86",
-  "src/measures.json": "88bc78aeca603acf06dcaca49744c47e42048cf430e0919248dcac83cdc5c62a",
+  "CARDS.md": "6abaf556a07bcce59e0b3760faa5c897bbbbaec0021b8a8c6fe81738579f7636",
+  "INGEST.md": "b2f1aa225a39f81b648f8bf09ff4db4b4cace3f2f7dcf0570590057e4cf45a21",
+  "README.md": "9c28c0ca29d67e7478a0ed404865ca419e9a154a1bdb612012f30e6be8178212",
+  "build_pack.py": "502dbfbf26c4aa65b6d2957031aeabf6d3898498acdc992752201df5e3926f5e",
+  "factory-pack.json": "24e7af58ae751db61228d381d083a09c466c2848e28ceae2d2a65babec715173",
+  "src/approvals.json": "84b0d4a75190b4975578ec5d535759a82cbf8d9e8a8922b5febd0d8adb3267ef",
+  "src/cards.json": "482f2dd536533e918c032105a2da5bd57acc552e3ca97b5d2d76ff209d5e3021",
+  "src/claims.json": "4a4f13d5fd2bd22479a3e0458d6edfc93f7bb80a72b80d86f3d0c78c2b63b91b",
+  "src/measures.json": "78418fdfbc85bf913f7fa21a3b778c9e7ba74942909f913ced888f79d2040624",
   "src/open_items.json": "f4852863b48002bab765158eeee1f9bcbc26772eb0db7bef5b46dc4e28e00bab",
-  "src/parameters.json": "dfd2445b8f56f4d5efd589ce593dd8a68c97debb3b77560f3b675410b2300193",
-  "test_pack.py": "9fe13724202803fdecceacf564616f7c4956436f78ca261d9bed8abe19941346"
+  "src/parameters.json": "d6feec90e03b7b3cf2e4bda63ba4329eeb524ad6fd4db05c4aed1ee16bd978d4",
+  "test_pack.py": "4442cf345605a92a1d5776b067403cf5ab0dc6419333b479e0800c322283196c"
  }
 }

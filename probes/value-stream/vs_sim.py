@@ -90,7 +90,7 @@ CARD_RANGE = {"easy": (10, 30), "mid": (30, 57), "hard": (57, 75)}
 CARD_HOURS = {"easy": 0.5, "mid": 1.0, "hard": 2.5}
 CARD_TOKENS = {"easy": 30e3, "mid": 80e3, "hard": 200e3}
 STEP_HOURS = {"discover": 0.5, "challenge": 0.3, "design": 0.8, "plan": 1.0, "plan_check": 0.5, "qa": 0.8,
-              "release": 0.3, "operate": 1.0, "integrate": 0.2}
+              "release": 0.3, "operate": 1.0, "integrate": 0.2, "replan": 0.3}
 STEP_TOKENS = {"discover": 40e3, "challenge": 25e3, "design": 60e3, "plan": 80e3, "plan_check": 40e3, "qa": 60e3,
                "release": 20e3, "operate": 60e3, "integrate": 20e3}
 CARD_SHARE = {"review": 0.3, "security": 0.3, "audit": 0.5}          # effort relative to the card
@@ -132,7 +132,16 @@ CONTEXT_PENALTY = 0.0          # r12.1: packets. Every unit in a packet of k req
                                # CONTEXT_PENALTY x (k - 1)^1.2 points harder (the cross-check model's form;
                                # 2.5 there): a longer context makes each part harder to get right
 DIRECTOR_NOISE = 12.0
-PRIORITY = ["operate", "release", "qa", "integrate", "security", "review", "audit", "build", "plan_check", "plan",
+# r12.7: the quality / cost / speed trifecta, hand-backs and human rounds (all off by default: r12-r12.3 reproduce)
+READY_CHECK = False            # R21 readiness: the puller checks a card is fit to build before building it;
+READY_SHARE = 0.10             # the check costs this share of the card's hours on every card;
+READY_D = 55.0                 # an insufficiently specified card is spotted with pass chance at this difficulty
+REPLAN_D = 60.0                # and handed back to Planning, which rewrites it (pass chance at this difficulty)
+TIME_VALUE = 0.0               # R14 trifecta: $ value of one hour of task time, added to the price of a success
+TTFT_S = {}                    # latency: seconds to first token per model name [assumption until measured]
+CALLS_PER_H = 0.0              # model calls per base hour of work (each pays the model's latency)
+HUMAN_RETURN_P = 0.0           # chance Isa sends intent or plan back for another round at ratification
+PRIORITY = ["operate", "release", "qa", "integrate", "security", "review", "audit", "build", "replan", "plan_check", "plan",
             "design", "challenge", "discover"]            # downstream first
 ALL_STEPS = set(PRIORITY)
 
@@ -151,8 +160,13 @@ class Seat:
     last_end: float = 0.0
     busy: dict = field(default_factory=lambda: defaultdict(float))
 
+    lat: float = 0.0               # r12.7: hours spent waiting on first tokens (not billed)
+
     def hours(self, base):
         return base * math.sqrt(100 / max(self.cfg.speed, 10))
+
+    def latency(self, base):
+        return base * CALLS_PER_H * TTFT_S.get(self.cfg.name, 0.0) / 3600
 
 
 @dataclass(eq=False)
@@ -433,7 +447,17 @@ class Sim:
         return STEP_HOURS[task.step]
 
     def start(self, s: Seat, task: Task):
-        dur = s.hours(self.base_hours(task))
+        base = self.base_hours(task)
+        dur = s.hours(base)
+        if task.step == "build" and READY_CHECK:
+            if task.card.ambiguous and self.rng.random() < p_pass(s.cfg.ci, READY_D):
+                task.handback, dur, base = True, dur * READY_SHARE, base * READY_SHARE
+            else:
+                dur *= 1 + READY_SHARE
+        lat = s.latency(base)
+        dur += lat
+        if self.t >= self.warmup:
+            s.lat += lat
         if task.step == "build":
             self.building += 1
         s.busy_until = self.t + dur
@@ -446,7 +470,16 @@ class Sim:
         s.last_end = self.t
         if task.step == "build":
             self.building -= 1
+        if getattr(task, "handback", False):           # R21: unfit card handed back before it is built
+            self.drops["handback"] += 1
+            self.enqueue(Task("replan", task.idea, task.card, d=REPLAN_D, exclude=set()))
+            return
         getattr(self, "on_" + task.step)(s, task)
+
+    def on_replan(self, s, task):
+        if self.rng.random() < p_pass(s.cfg.ci, REPLAN_D):
+            task.card.ambiguous = False
+        self.send_card(task.card)
 
     # elasticity: rules, not an agent
     def licensed(self, cfg, task) -> bool:
@@ -460,10 +493,12 @@ class Sim:
         return p_pass(cfg.ci, task.d) >= max(LICENCE_P, floor)
 
     def task_cost(self, cfg, task) -> float:
-        """Expected cost of a success: $/busy hour x hours / pass chance."""
-        h = self.base_hours(task) * math.sqrt(100 / max(cfg.speed, 10))
+        """Expected price of a success: ($/busy hour x hours + TIME_VALUE x elapsed hours) / pass chance."""
+        base = self.base_hours(task)
+        h = base * math.sqrt(100 / max(cfg.speed, 10))
+        elapsed = h + base * CALLS_PER_H * TTFT_S.get(cfg.name, 0.0) / 3600
         succ = p_pass(cfg.ci, task.card.d if task.card is not None else task.d)
-        return self.scaler.rate[cfg.name] * h / max(succ, 0.05)
+        return (self.scaler.rate[cfg.name] * h + TIME_VALUE * elapsed) / max(succ, 0.05)
 
     def best_model(self, task):
         """The cheapest model that may take the task and clears the quality floor (cached per task)."""
@@ -608,7 +643,7 @@ class Sim:
 
     def challenge_round(self, idea):
         if idea.rounds_left <= 0:
-            self.at(self.t + HUMAN_INTENT_H, self.to_design, idea)
+            self.at(self.t + HUMAN_INTENT_H, self.ratify_intent, idea)
             return
         idea.pending = max(1, len(idea.authors["discover"]))
         for _ in range(idea.pending):
@@ -624,6 +659,21 @@ class Sim:
         if idea.pending == 0:
             idea.rounds_left -= 1
             self.challenge_round(idea)
+
+    def ratify_intent(self, idea):
+        if HUMAN_RETURN_P and self.rng.random() < HUMAN_RETURN_P:   # sent back: another challenge round
+            self.drops["human_return"] += 1
+            idea.rounds_left = 1
+            self.challenge_round(idea)
+            return
+        self.to_design(idea)
+
+    def ratify_plan(self, idea):
+        if HUMAN_RETURN_P and self.rng.random() < HUMAN_RETURN_P:   # sent back: planned again
+            self.drops["human_return"] += 1
+            self.enqueue(Task("plan", idea, d=REQ_BASE + 8))
+            return
+        self.make_cards(idea, None)
 
     def to_design(self, idea):
         self.enqueue(Task("design", idea, d=DESIGN_D))
@@ -644,7 +694,7 @@ class Sim:
         if self.org.plan_check and "plan_check" not in self.org.owner_steps:
             self.enqueue(Task("plan_check", idea, d=REQ_BASE + 10, exclude={s.cfg.name}))
         else:
-            self.at(self.t + HUMAN_PLAN_H, self.make_cards, idea, None)
+            self.at(self.t + HUMAN_PLAN_H, self.ratify_plan, idea)
 
     def on_plan_check(self, s, task):
         idea = task.idea
@@ -653,7 +703,7 @@ class Sim:
                     self.rng.random() < p_pass(s.cfg.ci, idea.req_d[r] + 10) * self.own(s, next(iter(idea.authors["plan"]))) \
                     * self.fb(idea, (r,), s.cfg):
                 idea.mapped.add(r)
-        self.at(self.t + HUMAN_PLAN_H, self.make_cards, idea, None)
+        self.at(self.t + HUMAN_PLAN_H, self.ratify_plan, idea)
 
     def make_cards(self, idea, only):
         rng = self.rng
@@ -1003,11 +1053,13 @@ def measure(sim: Sim) -> dict:
     ideas, fixes = sim.log["ideas"], sim.log["hotfixes"]
     busy_model = defaultdict(float)
     busy_step = defaultdict(float)
+    lat_model = defaultdict(float)
     for s in sim.seats + sim.retired:
+        lat_model[s.cfg.name] += s.lat / weeks
         for k, v in s.busy.items():
             busy_model[s.cfg.name] += v / weeks
             busy_step[k] += v / weeks
-    usd = sum(h * s6.usd_per_busy_hour(s6.C[n]) for n, h in busy_model.items() if n in s6.C)
+    usd = sum((h - lat_model[n]) * s6.usd_per_busy_hour(s6.C[n]) for n, h in busy_model.items() if n in s6.C)
     leads = sorted(r["lead"] for r in ideas)
     clean = sum(1 for r in ideas if r["coherence"] >= 1.0 and r["escaped"] == 0) / weeks
     waits = {k: statistics.mean(v) for k, v in sim.wait.items() if v}

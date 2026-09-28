@@ -70,6 +70,14 @@ class ValueStreamTest(unittest.TestCase):
         m1 = v.mean_measures([sh.job((0.25, "mixed", "elastic + held demand", k)) for k in range(3)])
         self.assertGreater(m1["seat_h"], m0["seat_h"])                            # the Scaler now provisions for held work
 
+    def test_hand_backs_cut_failed_builds(self):
+        import trifecta as tf
+        def run(ready):
+            return v.mean_measures([tf.job(("steady", dict(AMBIG_SCALE=0.9, READY_CHECK=ready), k)) for k in range(3)])
+        off, on = run(False), run(True)
+        self.assertGreater(on["drops"].get("handback", 0), 0)
+        self.assertLess(on["drops"]["test_fail"], 0.8 * off["drops"]["test_fail"])
+
 
 if __name__ == "__main__":
     unittest.main()

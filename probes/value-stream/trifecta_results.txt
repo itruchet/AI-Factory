@@ -1,0 +1,49 @@
+QUALITY, COST AND SPEED (institutions, elastic, R17 at 25% coupling, the seven-model menu; lead = median/90th h)
+
+[T1 / steady]
+  insufficient cards x1, build and fail (r12)   19.0 clean ( 25.4 live)  lead   25/  44 h  CFR  13%  $ 27.7/clean  hand-backs 0.00/idea  failed builds 1.26/idea  human returns 0.00/idea  latency     0 h/wk
+  insufficient cards x1, hand back (R21)        18.9 clean ( 25.1 live)  lead   25/  44 h  CFR  14%  $ 28.1/clean  hand-backs 0.62/idea  failed builds 0.95/idea  human returns 0.00/idea  latency     0 h/wk
+  insufficient cards x3, build and fail (r12)   18.5 clean ( 24.5 live)  lead   25/  44 h  CFR  14%  $ 28.0/clean  hand-backs 0.00/idea  failed builds 1.84/idea  human returns 0.00/idea  latency     0 h/wk
+  insufficient cards x3, hand back (R21)        19.4 clean ( 25.4 live)  lead   25/  44 h  CFR  13%  $ 29.0/clean  hand-backs 1.84/idea  failed builds 1.05/idea  human returns 0.00/idea  latency     0 h/wk
+
+[T2 / steady]
+  time value $0/h                               18.9 clean ( 25.1 live)  lead   25/  44 h  CFR  14%  $ 28.1/clean  hand-backs 0.62/idea  failed builds 0.95/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $0.5/h                             18.7 clean ( 24.7 live)  lead   24/  44 h  CFR  13%  $ 28.3/clean  hand-backs 0.55/idea  failed builds 0.91/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $2/h                               19.0 clean ( 24.6 live)  lead   23/  39 h  CFR  12%  $ 36.9/clean  hand-backs 0.40/idea  failed builds 0.79/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $5/h                               19.4 clean ( 25.0 live)  lead   21/  34 h  CFR  12%  $ 39.5/clean  hand-backs 0.30/idea  failed builds 0.64/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $20/h                              19.6 clean ( 25.0 live)  lead   21/  37 h  CFR  13%  $ 50.0/clean  hand-backs 0.25/idea  failed builds 0.65/idea  human returns 0.00/idea  latency     0 h/wk
+
+[T3 / steady]
+  latency off, time value $0/h                  18.9 clean ( 25.1 live)  lead   25/  44 h  CFR  14%  $ 28.1/clean  hand-backs 0.62/idea  failed builds 0.95/idea  human returns 0.00/idea  latency     0 h/wk
+  latency off, time value $2/h                  19.0 clean ( 24.6 live)  lead   23/  39 h  CFR  12%  $ 36.9/clean  hand-backs 0.40/idea  failed builds 0.79/idea  human returns 0.00/idea  latency     0 h/wk
+  latency on, time value $0/h                   19.2 clean ( 24.9 live)  lead   28/  51 h  CFR  12%  $ 28.8/clean  hand-backs 0.64/idea  failed builds 0.99/idea  human returns 0.00/idea  latency   160 h/wk
+  latency on, time value $2/h                   19.0 clean ( 24.3 live)  lead   24/  41 h  CFR  12%  $ 37.4/clean  hand-backs 0.36/idea  failed builds 0.78/idea  human returns 0.00/idea  latency   112 h/wk
+
+[T4 / steady]
+  Isa sends back 0%                             18.9 clean ( 25.1 live)  lead   25/  44 h  CFR  14%  $ 28.1/clean  hand-backs 0.62/idea  failed builds 0.95/idea  human returns 0.00/idea  latency     0 h/wk
+  Isa sends back 25%                            18.6 clean ( 24.3 live)  lead   28/  47 h  CFR  13%  $ 28.1/clean  hand-backs 0.63/idea  failed builds 0.99/idea  human returns 0.78/idea  latency     0 h/wk
+  Isa sends back 50%                            19.3 clean ( 24.6 live)  lead   33/  55 h  CFR  13%  $ 28.1/clean  hand-backs 0.60/idea  failed builds 0.99/idea  human returns 2.38/idea  latency     0 h/wk
+
+[T1 / mixed]
+  insufficient cards x1, build and fail (r12)   18.8 clean ( 25.2 live)  lead   22/ 113 h  CFR  12%  $ 69.6/clean  hand-backs 0.00/idea  failed builds 2.36/idea  human returns 0.00/idea  latency     0 h/wk
+  insufficient cards x1, hand back (R21)        18.3 clean ( 24.6 live)  lead   25/ 116 h  CFR  13%  $ 80.1/clean  hand-backs 0.63/idea  failed builds 2.05/idea  human returns 0.00/idea  latency     0 h/wk
+  insufficient cards x3, build and fail (r12)   18.2 clean ( 23.8 live)  lead   23/ 109 h  CFR  12%  $ 71.9/clean  hand-backs 0.00/idea  failed builds 3.01/idea  human returns 0.00/idea  latency     0 h/wk
+  insufficient cards x3, hand back (R21)        18.2 clean ( 24.1 live)  lead   24/ 108 h  CFR  12%  $ 68.3/clean  hand-backs 1.95/idea  failed builds 1.96/idea  human returns 0.00/idea  latency     0 h/wk
+
+[T2 / mixed]
+  time value $0/h                               18.3 clean ( 24.6 live)  lead   25/ 116 h  CFR  13%  $ 80.1/clean  hand-backs 0.63/idea  failed builds 2.05/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $0.5/h                             18.6 clean ( 24.7 live)  lead   23/ 103 h  CFR  12%  $ 69.7/clean  hand-backs 0.59/idea  failed builds 1.77/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $2/h                               17.1 clean ( 22.7 live)  lead   19/  86 h  CFR  13%  $ 80.7/clean  hand-backs 0.41/idea  failed builds 1.46/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $5/h                               18.8 clean ( 24.7 live)  lead   20/  89 h  CFR  13%  $ 92.3/clean  hand-backs 0.36/idea  failed builds 1.50/idea  human returns 0.00/idea  latency     0 h/wk
+  time value $20/h                              19.1 clean ( 24.4 live)  lead   20/  85 h  CFR  13%  $ 99.1/clean  hand-backs 0.28/idea  failed builds 1.34/idea  human returns 0.00/idea  latency     0 h/wk
+
+[T3 / mixed]
+  latency off, time value $0/h                  18.3 clean ( 24.6 live)  lead   25/ 116 h  CFR  13%  $ 80.1/clean  hand-backs 0.63/idea  failed builds 2.05/idea  human returns 0.00/idea  latency     0 h/wk
+  latency off, time value $2/h                  17.1 clean ( 22.7 live)  lead   19/  86 h  CFR  13%  $ 80.7/clean  hand-backs 0.41/idea  failed builds 1.46/idea  human returns 0.00/idea  latency     0 h/wk
+  latency on, time value $0/h                   18.8 clean ( 25.1 live)  lead   27/ 127 h  CFR  13%  $ 71.3/clean  hand-backs 0.61/idea  failed builds 1.90/idea  human returns 0.00/idea  latency   285 h/wk
+  latency on, time value $2/h                   19.2 clean ( 24.7 live)  lead   22/  98 h  CFR  12%  $ 78.1/clean  hand-backs 0.38/idea  failed builds 1.44/idea  human returns 0.00/idea  latency   196 h/wk
+
+[T4 / mixed]
+  Isa sends back 0%                             18.3 clean ( 24.6 live)  lead   25/ 116 h  CFR  13%  $ 80.1/clean  hand-backs 0.63/idea  failed builds 2.05/idea  human returns 0.00/idea  latency     0 h/wk
+  Isa sends back 25%                            18.4 clean ( 24.5 live)  lead   27/ 105 h  CFR  13%  $ 66.8/clean  hand-backs 0.64/idea  failed builds 1.86/idea  human returns 0.78/idea  latency     0 h/wk
+  Isa sends back 50%                            18.5 clean ( 23.8 live)  lead   32/ 131 h  CFR  13%  $ 72.1/clean  hand-backs 0.68/idea  failed builds 1.97/idea  human returns 2.38/idea  latency     0 h/wk

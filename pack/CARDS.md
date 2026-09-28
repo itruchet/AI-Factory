@@ -86,7 +86,7 @@ Token use, cost and throttling are the inputs to the Scaler, the burn cap and ca
 - **Traces:** R14, R16, problem.P3. **Measures:** M08, M16.
 
 Scope:
-- Per invocation: provider, model ID and version, reasoning effort, input, cached-input and output tokens, list-price cost, latency, throttle or error codes
+- Per invocation: provider, model ID and version, reasoning effort, time to first token, generation time, tool and wait time, input, cached-input and output tokens, list-price cost, throttle or error codes
 - Keyed to idea, card, value-stream step and attempt
 
 Acceptance:
@@ -122,12 +122,13 @@ Measure today's Factory on the same steps the simulation uses, so the two can be
 
 - **Institution:** Ledger.
 - **Depends on:** C0.03. **Approvals first:** none. **Ratified by:** Isa (stage-to-step mapping).
-- **Traces:** X9, DQ6. **Measures:** M02, M03, M04, M14, M18.
+- **Traces:** X9, DQ6. **Measures:** M02, M03, M04, M14, M18, M22.
 
 Scope:
 - Map the Factory's current workflow stages onto the value-stream steps: discover, challenge, human intent ratification, design, plan, plan check, human plan ratification, build, review, security review, merge and CI, audit, acceptance test, release, deploy, live operation (docs/idea/value-stream.md §2)
 - Per card and idea: start, end, waiting time and outcome at each step; rework and its cause
 - Steps today's Factory does not perform are recorded as absent, not inferred
+- Every step routed to Isa is a timed stage: request, decision and send-back rounds are recorded like any institution's work (M22)
 
 Acceptance:
 - [ ] The stage-to-step mapping is written down and ratified by Isa
@@ -257,7 +258,7 @@ One weekly view that compares the Factory with its own predictions, built on SQL
 
 - **Institution:** Ledger.
 - **Depends on:** C0.12. **Approvals first:** none.
-- **Traces:** X9, problem.P10, X1. **Measures:** M01, M03, M04, M05, M16, M17.
+- **Traces:** X9, problem.P10, X1. **Measures:** M01, M03, M04, M05, M16, M17, M21, M22, M23.
 
 Scope:
 - SQL views for every measure M01-M20
@@ -564,12 +565,12 @@ Evidence: Rule tests.
 Agents are instances of menu models, started and stopped by Ledger arithmetic, not by an agent.
 
 - **Institution:** Ledger.
-- **Depends on:** C1.03, C1.12, C1.13. **Approvals first:** AR-04.
-- **Traces:** R14, X10, H6, problem.P3, RK3. **Measures:** M04, M05, M08, M16. **Open items:** OI-15.
+- **Depends on:** C1.03, C1.12, C1.13. **Approvals first:** AR-04, AR-15.
+- **Traces:** R14, X10, H6, problem.P3, RK3, X16. **Measures:** M04, M05, M08, M16, M23. **Open items:** OI-15.
 
 Scope:
 - R14 as written (pack: parameters PR-01 to PR-09)
-- Price every queued task on every licensed model clearing the 0.8 floor: $/busy hour x hours / pass chance; cheapest wins
+- Price every queued task on every licensed model clearing the 0.8 floor: ($/busy hour x hours + time value x elapsed hours, latency included) / pass chance; cheapest price wins. Time value starts at $0.5 an hour (PR-21) and moves on live evidence
 - Target = busy instances + ceil(queued hours / drain target); held cards count as demand; clamp to vendor rate limits (C1.03)
 - Start the shortfall; stop instances idle 30 minutes beyond target
 - Cost-band pull at 1.5x unless the task has waited an hour
@@ -642,6 +643,27 @@ Acceptance:
 - [ ] A reproduced defect overturns prior approvals
 
 Evidence: Court tests.
+
+### C1.19 Readiness hand-back at every boundary
+
+A card that is not fit for purpose goes back before anyone builds on it. Every institution checks what it receives, as part of the pull.
+
+- **Institution:** Market.
+- **Depends on:** C1.01, C1.08. **Approvals first:** AR-15.
+- **Traces:** R21, R8, X15. **Measures:** M21.
+
+Scope:
+- A readiness contract per institution: enough detail, the interfaces named, acceptance criteria the receiver can test
+- The puller checks the card against it before starting work; an unfit card is handed back at once to the producing institution with the reason (R21)
+- The producer is marked under R8; hand-backs and rounds per card are recorded at every boundary (M21)
+- Applies at every boundary: Planning to Market, Market to Court, Court to Release Gate, and to anything routed to Isa
+
+Acceptance:
+- [ ] A card missing detail, interfaces or testable criteria is handed back before any build spend, with a reason code
+- [ ] Every hand-back is attributed to the producing institution
+- [ ] Hand-backs and rounds per card are reported weekly by boundary
+
+Evidence: Hand-back records.
 
 ## Phase 2: Audit, Release Gate and live operation
 
@@ -827,7 +849,7 @@ Each experiment can prove the idea wrong. Judge each as live data accrues, and t
 
 - **Institution:** Ledger.
 - **Depends on:** C0.15, C2.01, C3.03. **Approvals first:** none.
-- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
+- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
 
 Scope:
 - Each experiment X1-X14 judged against its falsification criterion in the pack, on live data, whenever it has enough

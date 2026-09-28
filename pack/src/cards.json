@@ -180,7 +180,7 @@
    "title": "Adapters record usage for every model invocation",
    "intent": "Token use, cost and throttling are the inputs to the Scaler, the burn cap and calibration. Record them as facts from the adapter, never as model claims.",
    "scope": [
-    "Per invocation: provider, model ID and version, reasoning effort, input, cached-input and output tokens, list-price cost, latency, throttle or error codes",
+    "Per invocation: provider, model ID and version, reasoning effort, time to first token, generation time, tool and wait time, input, cached-input and output tokens, list-price cost, throttle or error codes",
     "Keyed to idea, card, value-stream step and attempt"
    ],
    "acceptance": [
@@ -250,7 +250,8 @@
    "scope": [
     "Map the Factory's current workflow stages onto the value-stream steps: discover, challenge, human intent ratification, design, plan, plan check, human plan ratification, build, review, security review, merge and CI, audit, acceptance test, release, deploy, live operation (docs/idea/value-stream.md §2)",
     "Per card and idea: start, end, waiting time and outcome at each step; rework and its cause",
-    "Steps today's Factory does not perform are recorded as absent, not inferred"
+    "Steps today's Factory does not perform are recorded as absent, not inferred",
+    "Every step routed to Isa is a timed stage: request, decision and send-back rounds are recorded like any institution's work (M22)"
    ],
    "acceptance": [
     "The stage-to-step mapping is written down and ratified by Isa",
@@ -275,7 +276,8 @@
     "M03",
     "M04",
     "M14",
-    "M18"
+    "M18",
+    "M22"
    ],
    "open_items": [],
    "institution": "Ledger"
@@ -552,7 +554,10 @@
     "M04",
     "M05",
     "M16",
-    "M17"
+    "M17",
+    "M21",
+    "M22",
+    "M23"
    ],
    "open_items": [],
    "institution": "Ledger"
@@ -1114,7 +1119,7 @@
    "intent": "Agents are instances of menu models, started and stopped by Ledger arithmetic, not by an agent.",
    "scope": [
     "R14 as written (pack: parameters PR-01 to PR-09)",
-    "Price every queued task on every licensed model clearing the 0.8 floor: $/busy hour x hours / pass chance; cheapest wins",
+    "Price every queued task on every licensed model clearing the 0.8 floor: ($/busy hour x hours + time value x elapsed hours, latency included) / pass chance; cheapest price wins. Time value starts at $0.5 an hour (PR-21) and moves on live evidence",
     "Target = busy instances + ceil(queued hours / drain target); held cards count as demand; clamp to vendor rate limits (C1.03)",
     "Start the shortfall; stop instances idle 30 minutes beyond target",
     "Cost-band pull at 1.5x unless the task has waited an hour",
@@ -1134,7 +1139,8 @@
     "C1.13"
    ],
    "requires_approval": [
-    "AR-04"
+    "AR-04",
+    "AR-15"
    ],
    "ratified_by": null,
    "traces": [
@@ -1142,13 +1148,15 @@
     "X10",
     "H6",
     "problem.P3",
-    "RK3"
+    "RK3",
+    "X16"
    ],
    "measures": [
     "M04",
     "M05",
     "M08",
-    "M16"
+    "M16",
+    "M23"
    ],
    "open_items": [
     "OI-15"
@@ -1272,6 +1280,44 @@
    ],
    "open_items": [],
    "institution": "Court"
+  },
+  {
+   "id": "C1.19",
+   "phase": 1,
+   "title": "Readiness hand-back at every boundary",
+   "institution": "Market",
+   "intent": "A card that is not fit for purpose goes back before anyone builds on it. Every institution checks what it receives, as part of the pull.",
+   "scope": [
+    "A readiness contract per institution: enough detail, the interfaces named, acceptance criteria the receiver can test",
+    "The puller checks the card against it before starting work; an unfit card is handed back at once to the producing institution with the reason (R21)",
+    "The producer is marked under R8; hand-backs and rounds per card are recorded at every boundary (M21)",
+    "Applies at every boundary: Planning to Market, Market to Court, Court to Release Gate, and to anything routed to Isa"
+   ],
+   "acceptance": [
+    "A card missing detail, interfaces or testable criteria is handed back before any build spend, with a reason code",
+    "Every hand-back is attributed to the producing institution",
+    "Hand-backs and rounds per card are reported weekly by boundary"
+   ],
+   "evidence": [
+    "Hand-back records"
+   ],
+   "depends_on": [
+    "C1.01",
+    "C1.08"
+   ],
+   "requires_approval": [
+    "AR-15"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R21",
+    "R8",
+    "X15"
+   ],
+   "measures": [
+    "M21"
+   ],
+   "open_items": []
   },
   {
    "id": "C2.01",
@@ -1586,7 +1632,9 @@
     "X12",
     "X13",
     "X14",
-    "principle.8"
+    "principle.8",
+    "X15",
+    "X16"
    ],
    "measures": [
     "M01",

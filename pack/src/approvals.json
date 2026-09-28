@@ -15,6 +15,11 @@
    "gate": 3,
    "name": "Just in time",
    "purpose": "Records the backlog itself waits on. Each is signed before the first card that names it starts."
+  },
+  {
+   "gate": 4,
+   "name": "Amendments",
+   "purpose": "Changes to the signed constitution, each a new version ratified by Isa (principle 8)."
   }
  ],
  "records": [
@@ -291,6 +296,27 @@
    ],
    "before_cards": [
     "C1.03"
+   ]
+  },
+  {
+   "id": "AR-15",
+   "decision": null,
+   "gate": 4,
+   "title": "Amendment: quality, cost and speed; readiness hand-back",
+   "approves": "R14 amended: the Scaler prices a success as ($ + time value x elapsed hours, latency included) / pass chance, weighing quality, cost and speed together; time value starts at $0.5 an hour [baseline] and moves on live evidence. New R21: every institution hands back cards that are not fit for purpose before any build spend. Human steps are timed stages, measured like any institution. New experiments X15 and X16; new measures M21-M23.",
+   "evidence": [
+    "docs/idea/trifecta.md",
+    "probes/value-stream/trifecta_results.txt"
+   ],
+   "owner": "Isa",
+   "signer": "Isa",
+   "status": "Ready",
+   "depends_on": [
+    "AR-13"
+   ],
+   "before_cards": [
+    "C1.14",
+    "C1.19"
    ]
   }
  ],

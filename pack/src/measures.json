@@ -83,14 +83,14 @@
   {
    "id": "M08",
    "name": "Token use per invocation",
-   "definition": "Input, cached input and output tokens, list-price cost, latency and throttle events per model invocation, keyed to idea, card, step and model version.",
+   "definition": "Per model invocation: time to first token (latency), generation time, tool and wait time, input, cached-input and output tokens, list-price cost and throttle events, keyed to idea, card, step and model version. Latency is waiting and is not billed, but it counts in elapsed time.",
    "unit": "tokens, USD, seconds",
    "used_by": [
     "C0.12",
     "R14",
     "R16"
    ],
-   "sim_field": "CARD_TOKENS, STEP_TOKENS, GEN_DUTY, IN_PER_OUT, CACHE_HIT"
+   "sim_field": "CARD_TOKENS, STEP_TOKENS, GEN_DUTY, IN_PER_OUT, CACHE_HIT, TTFT_S, CALLS_PER_H"
   },
   {
    "id": "M09",
@@ -226,6 +226,41 @@
     "R18"
    ],
    "sim_field": null
+  },
+  {
+   "id": "M21",
+   "name": "Hand-backs and rounds per card",
+   "definition": "At every institutional boundary: cards handed back as not fit for purpose (R21), with the reason and the producing institution; and the number of rounds each card makes through the pipeline before it is accepted, including amendments found late.",
+   "unit": "counts per card and per idea",
+   "used_by": [
+    "R21",
+    "X15",
+    "R8"
+   ],
+   "sim_field": "drops.handback, drops.test_fail"
+  },
+  {
+   "id": "M22",
+   "name": "Human turnaround and send-backs",
+   "definition": "For every item routed to Isa: time from request to decision, and whether it was sent back for another round. Counted in lead time like any institution's work.",
+   "unit": "hours; rounds per idea",
+   "used_by": [
+    "DQ7",
+    "AR-09b",
+    "X15"
+   ],
+   "sim_field": "HUMAN_INTENT_H, HUMAN_PLAN_H, HUMAN_RETURN_P"
+  },
+  {
+   "id": "M23",
+   "name": "Quality, cost and speed per model and step",
+   "definition": "Per model version and value-stream step: pass rate (quality), cost per accepted output (cost) and elapsed hours per accepted output, latency included (speed). The inputs to R14's price.",
+   "unit": "ratio; USD; hours",
+   "used_by": [
+    "R14",
+    "X16"
+   ],
+   "sim_field": "TIME_VALUE, p_pass"
   }
  ]
 }

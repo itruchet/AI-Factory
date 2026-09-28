@@ -1,25 +1,181 @@
 {
-  "_about": "Operating parameters the rules fix. Each is quoted from the rule that sets it: 'quote' must appear verbatim in that rule's text in the Idea Record (checked by test_pack.py). 'sim' names the simulator setting that played the same role, where one exists.",
-  "parameters": [
-    {"id": "PR-01", "name": "Scaler cycle", "value": "15 minutes", "rule": "R14", "quote": "Every 15 minutes", "sim": "Scaler.every = 0.25 h"},
-    {"id": "PR-02", "name": "Scaler quality floor", "value": "pass chance 0.8", "rule": "R14", "quote": "clears the quality floor (0.8)", "sim": "Scaler.floor = 0.80"},
-    {"id": "PR-03", "name": "Expected cost of a task on a model", "value": "$/busy hour x hours / pass chance; cheapest wins", "rule": "R14", "quote": "Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins", "sim": "Sim.task_cost"},
-    {"id": "PR-04", "name": "Drain target", "value": "queued work cleared within 15 minutes", "rule": "R14", "quote": "the target clears queued work within 15 minutes (not 2 h)", "sim": "Scaler.drain_h = 0.25 in the '15-min target' runs (default 2.0 reproduces r12)"},
-    {"id": "PR-05", "name": "Held demand", "value": "cards held behind prerequisites count as demand", "rule": "R14", "quote": "cards held behind prerequisites count as demand", "sim": "Scaler.held_weight = 1.0 (default 0 reproduces r12-r12.2)"},
-    {"id": "PR-06", "name": "Idle stop", "value": "30 minutes idle beyond target", "rule": "R14", "quote": "stops instances idle 30 minutes beyond target", "sim": "Scaler.cool_h = 0.5"},
-    {"id": "PR-07", "name": "Cost band", "value": "1.5x the cheapest qualified model", "rule": "R14", "quote": "within 1.5× the cheapest qualified model's (cost-band pull)", "sim": "Scaler.band = 1.5"},
-    {"id": "PR-08", "name": "Cost-band wait", "value": "1 hour", "rule": "R14", "quote": "unless the task has waited an hour", "sim": "Scaler.band_wait_h = 1.0"},
-    {"id": "PR-09", "name": "Instance limits", "value": "vendor rate limits (the model assumed 8 per model, 48 in all)", "rule": "R14", "quote": "within vendor rate limits", "sim": "Scaler.default_max = 8; total_max = 48 [assumption]"},
-    {"id": "PR-10", "name": "Instances and independence", "value": "instances of one model are one model", "rule": "R14", "quote": "Instances of one model are one model for independence", "sim": null},
-    {"id": "PR-11", "name": "Hourly burn cap", "value": "2x the trailing seven-day average $/hour", "rule": "R16", "quote": "at most 2× the trailing seven-day average ($ per hour)", "sim": "Scaler.cap_usd_h"},
-    {"id": "PR-12", "name": "Monthly ceiling", "value": "expected demand x cost per clean idea x 1.5", "rule": "R16", "quote": "expected demand × cost per clean idea × 1.5", "sim": null},
-    {"id": "PR-13", "name": "High-impact floors", "value": "0.8 for design, plan, plan red-team, security review, acceptance test, release; 0.6 other steps; 0.5 review", "rule": "R19", "quote": "at least 0.8 (other steps 0.6; review 0.5)", "sim": "Org.step_floor"},
-    {"id": "PR-14", "name": "Hard-work reserve", "value": "75% of full speed at home tier until reset", "rule": "R7", "quote": "75% of full speed until reset", "sim": null},
-    {"id": "PR-15", "name": "Promotion credit and debit", "value": "+1 per accepted card at home tier; -4 per markdown", "rule": "R5", "quote": "earns +1 promotion credit; each markdown costs −4", "sim": null},
-    {"id": "PR-16", "name": "Promotion trial", "value": "20 trial cards", "rule": "R5", "quote": "over 20 trial cards", "sim": null},
-    {"id": "PR-17", "name": "Demotion", "value": "gross (over 2x the standard) after 10 cards; marginal (over 1.25x) after two consecutive failing batches of 20", "rule": "R5", "quote": "gross failure (over 2× the standard) after 10 cards; marginal failure (over 1.25×) only after two consecutive failing batches of 20", "sim": null},
-    {"id": "PR-18", "name": "Promotion back-off", "value": "failed promotion doubles the credit needed, capped at 2x", "rule": "R5", "quote": "A failed promotion doubles the credit needed next time, capped at 2×", "sim": null},
-    {"id": "PR-19", "name": "Fast track", "value": "new model needs 5 credit until its first failed promotion", "rule": "R5", "quote": "A **new model** needs only 5 credit to start trials until its first failed promotion", "sim": null},
-    {"id": "PR-20", "name": "Late marks", "value": "counted twice", "rule": "R12", "quote": "counted twice", "sim": null}
-  ]
+ "_about": "Operating parameters the rules fix. Each is quoted from the rule that sets it: 'quote' must appear verbatim in that rule's text in the Idea Record (checked by test_pack.py). 'sim' names the simulator setting that played the same role, where one exists.",
+ "parameters": [
+  {
+   "id": "PR-01",
+   "name": "Scaler cycle",
+   "value": "15 minutes",
+   "rule": "R14",
+   "quote": "Every 15 minutes",
+   "sim": "Scaler.every = 0.25 h"
+  },
+  {
+   "id": "PR-02",
+   "name": "Scaler quality floor",
+   "value": "pass chance 0.8",
+   "rule": "R14",
+   "quote": "clears the quality floor (0.8)",
+   "sim": "Scaler.floor = 0.80"
+  },
+  {
+   "id": "PR-03",
+   "name": "Expected cost of a task on a model",
+   "value": "$/busy hour x hours / pass chance; cheapest wins",
+   "rule": "R14",
+   "quote": "Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins",
+   "sim": "Sim.task_cost"
+  },
+  {
+   "id": "PR-04",
+   "name": "Drain target",
+   "value": "queued work cleared within 15 minutes",
+   "rule": "R14",
+   "quote": "the target clears queued work within 15 minutes (not 2 h)",
+   "sim": "Scaler.drain_h = 0.25 in the '15-min target' runs (default 2.0 reproduces r12)"
+  },
+  {
+   "id": "PR-05",
+   "name": "Held demand",
+   "value": "cards held behind prerequisites count as demand",
+   "rule": "R14",
+   "quote": "cards held behind prerequisites count as demand",
+   "sim": "Scaler.held_weight = 1.0 (default 0 reproduces r12-r12.2)"
+  },
+  {
+   "id": "PR-06",
+   "name": "Idle stop",
+   "value": "30 minutes idle beyond target",
+   "rule": "R14",
+   "quote": "stops instances idle 30 minutes beyond target",
+   "sim": "Scaler.cool_h = 0.5"
+  },
+  {
+   "id": "PR-07",
+   "name": "Cost band",
+   "value": "1.5x the cheapest qualified model",
+   "rule": "R14",
+   "quote": "within 1.5× the cheapest qualified model's (cost-band pull)",
+   "sim": "Scaler.band = 1.5"
+  },
+  {
+   "id": "PR-08",
+   "name": "Cost-band wait",
+   "value": "1 hour",
+   "rule": "R14",
+   "quote": "unless the task has waited an hour",
+   "sim": "Scaler.band_wait_h = 1.0"
+  },
+  {
+   "id": "PR-09",
+   "name": "Instance limits",
+   "value": "vendor rate limits (the model assumed 8 per model, 48 in all)",
+   "rule": "R14",
+   "quote": "within vendor rate limits",
+   "sim": "Scaler.default_max = 8; total_max = 48 [assumption]"
+  },
+  {
+   "id": "PR-10",
+   "name": "Instances and independence",
+   "value": "instances of one model are one model",
+   "rule": "R14",
+   "quote": "Instances of one model are one model for independence",
+   "sim": null
+  },
+  {
+   "id": "PR-11",
+   "name": "Hourly burn cap",
+   "value": "2x the trailing seven-day average $/hour",
+   "rule": "R16",
+   "quote": "at most 2× the trailing seven-day average ($ per hour)",
+   "sim": "Scaler.cap_usd_h"
+  },
+  {
+   "id": "PR-12",
+   "name": "Monthly ceiling",
+   "value": "expected demand x cost per clean idea x 1.5",
+   "rule": "R16",
+   "quote": "expected demand × cost per clean idea × 1.5",
+   "sim": null
+  },
+  {
+   "id": "PR-13",
+   "name": "High-impact floors",
+   "value": "0.8 for design, plan, plan red-team, security review, acceptance test, release; 0.6 other steps; 0.5 review",
+   "rule": "R19",
+   "quote": "at least 0.8 (other steps 0.6; review 0.5)",
+   "sim": "Org.step_floor"
+  },
+  {
+   "id": "PR-14",
+   "name": "Hard-work reserve",
+   "value": "75% of full speed at home tier until reset",
+   "rule": "R7",
+   "quote": "75% of full speed until reset",
+   "sim": null
+  },
+  {
+   "id": "PR-15",
+   "name": "Promotion credit and debit",
+   "value": "+1 per accepted card at home tier; -4 per markdown",
+   "rule": "R5",
+   "quote": "earns +1 promotion credit; each markdown costs −4",
+   "sim": null
+  },
+  {
+   "id": "PR-16",
+   "name": "Promotion trial",
+   "value": "20 trial cards",
+   "rule": "R5",
+   "quote": "over 20 trial cards",
+   "sim": null
+  },
+  {
+   "id": "PR-17",
+   "name": "Demotion",
+   "value": "gross (over 2x the standard) after 10 cards; marginal (over 1.25x) after two consecutive failing batches of 20",
+   "rule": "R5",
+   "quote": "gross failure (over 2× the standard) after 10 cards; marginal failure (over 1.25×) only after two consecutive failing batches of 20",
+   "sim": null
+  },
+  {
+   "id": "PR-18",
+   "name": "Promotion back-off",
+   "value": "failed promotion doubles the credit needed, capped at 2x",
+   "rule": "R5",
+   "quote": "A failed promotion doubles the credit needed next time, capped at 2×",
+   "sim": null
+  },
+  {
+   "id": "PR-19",
+   "name": "Fast track",
+   "value": "new model needs 5 credit until its first failed promotion",
+   "rule": "R5",
+   "quote": "A **new model** needs only 5 credit to start trials until its first failed promotion",
+   "sim": null
+  },
+  {
+   "id": "PR-20",
+   "name": "Late marks",
+   "value": "counted twice",
+   "rule": "R12",
+   "quote": "counted twice",
+   "sim": null
+  },
+  {
+   "id": "PR-21",
+   "name": "Time value in the Scaler's price",
+   "value": "$0.5 per elapsed hour [baseline from trifecta.md; moves on live evidence]",
+   "rule": "R14",
+   "quote": "The time value starts at $0.5 an hour and moves on live evidence",
+   "sim": "TIME_VALUE"
+  },
+  {
+   "id": "PR-22",
+   "name": "Readiness hand-back",
+   "value": "every institution checks incoming cards and hands back unfit ones before any build spend",
+   "rule": "R21",
+   "quote": "handed back at once to the institution that produced it, with the reason, before any build spend",
+   "sim": "READY_CHECK, READY_SHARE, READY_D, REPLAN_D"
+  }
+ ]
 }

@@ -62,13 +62,14 @@
 
 ## 3. Approval records
 
-**Fifteen records in three gates.** Isa signs fourteen; AR-14 is a mechanical load into the pull queue. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
+**Sixteen records in four gates.** Isa signs fifteen; AR-14 is a mechanical load into the pull queue. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
 
 | Gate | Records | When |
 |---|---|---|
 | 1. Decide | AR-01 constitution; AR-02 portfolio; AR-03 tiers; AR-04 operating rules; AR-05 budget and value measure; AR-06 exit Idea stage | Now; all Ready |
 | 2. Onto the backlog | AR-07 Alignment Record and authority to ingest; AR-08 baseline standards; AR-09a live operation; AR-11 protected paths; AR-12 monitoring and improvement plan; AR-13 Ratified Plan; AR-14 admission of Phase 0 | Straight after Gate 1; then Phase 0 loads |
 | 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C3.04) | During the build |
+| 4. Amendments | AR-15 quality, cost and speed (R14 time value) and readiness hand-back (R21) (before C1.14, C1.19) | Ready now |
 
 ---
 

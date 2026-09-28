@@ -3,7 +3,7 @@
 Stage: **IDEA, exited 27 Sep 2026** (AR-06 signed; the build proceeds through the ingestion pack)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.6 (supersedes r1–r12.5; r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
+Revision: r12.7 (supersedes r1–r12.6; r12.7 proposes an amendment for the quality, cost and speed trifecta and readiness hand-backs, [`trifecta.md`](trifecta.md); r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -85,13 +85,14 @@ These rules are the whole of "management". They run identically in every institu
 | R11 | **Start state** | Licences and allowances start from today's predetermined mapping. It worked, so it is the starting point. The rules move it on evidence from day one. A new model starts at tier 1 and climbs by stretch cards. |
 | R12 | **Late marks** | An Audit finding weeks later applies like an immediate markdown, counted twice, because escaped defects cost more. |
 | R13 | **No orphan tiers** | If cards wait at a tier with no licensed agent for longer than a set time, the best-performing agent one tier below gets stretch cards. If there is none, the card is split in Planning or escalated to Isa. |
-| R14 | **Elastic capacity (the Scaler)** *(r12)* | Agents are instances of models on the menu. Every 15 minutes the Ledger prices each queued task on every model licensed for it whose pass chance clears the quality floor (0.8). Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins. Each model's target is its busy instances plus ⌈queued hours ÷ 2 h⌉, within vendor rate limits. The Ledger starts the shortfall and stops instances idle 30 minutes beyond target. An instance pulls only work it clears the floor on and whose cost is within 1.5× the cheapest qualified model's (cost-band pull), unless the task has waited an hour. Instances of one model are one model for independence. *r12.1:* work-conserving: the target clears queued work within 15 minutes (not 2 h). The cross-check found that conservative demand predictors lose output, and aggressiveness costs nothing under API pricing. *r12.3:* cards held behind prerequisites count as demand. The cost-band wait stays at 1 hour: it costs 2–3 h of median lead time, and removing it costs 1.5–2.4× per clean idea. |
+| R14 | **Elastic capacity (the Scaler)** *(r12)* | Agents are instances of models on the menu. Every 15 minutes the Ledger prices each queued task on every model licensed for it whose pass chance clears the quality floor (0.8). Expected cost = $/busy hour × hours ÷ pass chance; the cheapest model wins. Each model's target is its busy instances plus ⌈queued hours ÷ 2 h⌉, within vendor rate limits. The Ledger starts the shortfall and stops instances idle 30 minutes beyond target. An instance pulls only work it clears the floor on and whose cost is within 1.5× the cheapest qualified model's (cost-band pull), unless the task has waited an hour. Instances of one model are one model for independence. *r12.1:* work-conserving: the target clears queued work within 15 minutes (not 2 h). The cross-check found that conservative demand predictors lose output, and aggressiveness costs nothing under API pricing. *r12.3:* cards held behind prerequisites count as demand. The cost-band wait stays at 1 hour: it costs 2–3 h of median lead time, and removing it costs 1.5–2.4× per clean idea. *r12.7 (amendment proposed, AR-15):* the price of a success is ($ + time value × elapsed hours, latency included) ÷ pass chance, so quality, cost and speed are weighed together. The time value starts at $0.5 an hour and moves on live evidence. |
 | R15 | **No training on our data** *(r12)* | No model tier that uses the Factory's prompts or outputs for training (for example, Muse Spark's Contributor tier). |
 | R16 | **Burn cap** *(r12)* | Running instances may burn at most 2× the trailing seven-day average ($ per hour), under a monthly ceiling of expected demand × cost per clean idea × 1.5. Both are relative, so neither depends on the token model. |
 | R17 | **Evidence-gated dependencies** *(r12.1)* | Each card is reviewed as it is built; there is no whole-idea barrier. A card that depends on another becomes available only when its prerequisite has passed review. A rework invalidates only the dependants whose inputs changed. The Ledger records the artifact versions each card read. |
 | R18 | **Family independence** *(r12.1)* | No model reviews, audits or releases work by a model of its own family (vendor). Instances and siblings are one epistemic source. If no other family is available, the waiver is recorded (R13). |
 | R19 | **High-impact licence floors** *(r12.3)* | Design, plan, plan red-team, security review, acceptance test and release need a pass chance of at least 0.8 (other steps 0.6; review 0.5). The floors are set from the same evidence as every licence, so they re-sort themselves when models change. |
 | R20 | **Configurations are proposals** *(r12.3)* | The Ledger may propose step affinities found by search over its own records (a step reserved for a pool of models) as a trial configuration: compared with the institutions on the same work, adopted only on evidence, and lapsing automatically when the roster changes or a reserved pool is empty. The constitution never reserves steps for named models. |
+| R21 | **Readiness hand-back** *(r12.7, amendment proposed)* | Every institution checks an incoming card against its readiness contract before it starts work: enough detail, the interfaces named, acceptance criteria it can test. A card that is not fit for purpose is handed back at once to the institution that produced it, with the reason, before any build spend. The producer is marked (R8). The check is part of the pull, not a separate step. |
 
 **Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality). (r8 dropped the separate velocity standard: promotion credit is counted per card, so speed already moves models up; §3.2.) These are the "KPI and standards".
 
@@ -175,6 +176,8 @@ All subscription forms fit without special handling: 5-hour rolling windows, wee
 - R13 escalations.
 
 Everything else runs on the rules.
+
+*r12.7:* human steps are timed stages of the value stream, not exceptions to it. Isa's turnaround and every send-back round are measured like any institution's work and count in lead time (M22).
 
 ---
 
@@ -368,6 +371,14 @@ Adaptive floors (R19) keep most of the gain by evidence alone:
 
 The searched design is therefore a configuration, admissible only as a trial (R20), not the constitution.
 
+### 5.9 Quality, cost and speed (r12.7)
+
+[`trifecta.md`](trifecta.md) adds four mechanisms to the value-stream model: the readiness hand-back (R21), a time value in the Scaler's price, latency per call, and Isa's send-back rounds. The runs use the seven-model menu with R17 at 25% coupling.
+- **The sweet spot is a time value of about $0.5 an hour.** Cost per clean idea and quality hold, and lead time falls slightly. At $2–5 an hour, lead time on steady work falls a further 5–10 h at the 90th percentile, but cost per clean idea rises 31–41% for the same quality: a great answer at a poor cost.
+- **Latency costs speed, not money.** In an illustrative latency scenario, lead time rises 2–3 h at the median and 7–11 h at the 90th percentile. Pricing time recovers it, because work shifts to lower-latency models.
+- **Hand-backs cut failed builds by 13–43% at unchanged cost and quality**, within the model's noise (about ±15% on cost for mixed work). The model finds insufficient detail only at build, so it understates R21's value at the later boundaries.
+- **Each human send-back round costs speed.** A 25% send-back rate adds 2–3 h to median lead time, and 50% adds 7–8 h. Quality and cost are unchanged.
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -529,6 +540,8 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | X12 | One requirement per invocation beats larger packets (r12.1) | Measured interface-error cost exceeds whole-packet rework cost at 2+ requirements |
 | X13 | R17 beats building on unreviewed work at the Factory's real coupling (r12.2) | At the measured share of dependent requirement pairs, building on unreviewed work gives more clean ideas, or stale rebuilds under R17 exceed 3 per idea |
 | X14 | High-impact floors (R19) cut change failures without lowering clean output (r12.3) | Clean output falls more than 5% against plain licences, or change-failure rate does not fall |
+| X15 | Readiness hand-backs (R21) cut rework without lowering clean output (r12.7) | Failed builds and late amendments per idea do not fall, or clean output falls more than 5% |
+| X16 | Pricing time in the Scaler (R14, r12.7) lowers lead time without a poor cost | 90th-percentile lead time does not fall, or cost per clean idea rises more than 10% |
 
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
