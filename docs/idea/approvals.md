@@ -4,8 +4,8 @@ Owner: Isa. Scenario: **Amend** the existing Factory through the ingestion pack 
 
 **Status, 27 Sep 2026: Gates 1 and 2 are signed** (AR-01 to AR-13, except the just-in-time AR-09b and AR-10). The `[PROPOSED]` values in AR-08, AR-09a and AR-13 are accepted as proposed. Next: AR-14 loads the Phase 0 cards into the pull queue.
 
-**Sixteen approval records in four gates.**
-- **Isa signs fifteen.** AR-14 is a mechanical load of the ratified cards into the pull queue.
+**Seventeen approval records in four gates.**
+- **Isa signs sixteen.** AR-14 is a mechanical load of the ratified cards into the pull queue.
 - **Gates 1 and 2 put the change on the backlog.**
 - **Gate 3 records are signed just in time,** before the first card that needs them starts.
 
@@ -44,7 +44,7 @@ One sitting. All evidence exists.
 |---|---|---|---|---|
 | AR-07 | **Alignment Record and authority to ingest** | The pack's intent, assumptions, experiments and open items (`pack/README.md` §1). It authorises loading the pack, and nothing else until AR-13 | Isa | **Signed by Isa, 27 Sep 2026** |
 | AR-08 (H2) | **Quality standards and constants** | Initial maximum markdown rate per step: 1 minus the R19 floor. That is 20% for design, plan, plan red-team, security review, acceptance test and release; 40% for other steps; 50% for review [PROPOSED]. Adjusted from live variance | Isa | **Signed by Isa, 27 Sep 2026** |
-| AR-09a | **Owner of live operation** | Live operation is part of the Factory. The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards through the Market and Court. Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family; then the Release Gate owns them [PROPOSED]. This extends the Release Gate's charter, so it is a constitutional amendment | Isa | **Signed by Isa, 27 Sep 2026** |
+| AR-09a | **Owner of live operation** | Live operation is part of the Factory. The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards through the Market and Review. Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family; then the Release Gate owns them [PROPOSED]. This extends the Release Gate's charter, so it is a constitutional amendment | Isa | **Signed by Isa, 27 Sep 2026** |
 | AR-11 | **Protected governance paths** | The protected path categories: constitution, charters, Ledger rules, Scaler and burn-cap settings, and the pack. The puller of C0.02 confirms the exact paths in the code. Interim gate until the Release Gate exists: another family's pass plus Isa | Isa | **Signed by Isa, 27 Sep 2026** |
 | AR-12 | **Monitoring and improvement plan** | Measures M01–M20. A weekly report and alarms: when live results fall more than 25% outside the model, or any X1–X14 falsification criterion is met, a card is opened; work does not stop. Amendments pass the Release Gate and Isa | Isa | **Signed by Isa, 27 Sep 2026** |
 | AR-13 | **Ratified Plan** | The pack's card seeds (40 at signing; AR-15 adds C1.19), with every `[PROPOSED]` value accepted or changed. Later changes arrive as evidenced returns under R8 | Isa | **Signed by Isa, 27 Sep 2026** |
@@ -66,6 +66,7 @@ One sitting. All evidence exists.
 | # | Record | What is approved | Before | Owner | Status |
 |---|---|---|---|---|---|
 | AR-15 | **Amendment: quality, cost and speed; readiness hand-back** | R14 amended: the Scaler prices a success as ($ + time value × elapsed hours, latency included) ÷ pass chance, weighing quality, cost and speed together; time value starts at $0.5 an hour and moves on live evidence. New R21: every institution hands back cards that are not fit for purpose before any build spend. Human steps are timed stages, measured like any institution. New experiments X15, X16; measures M21–M23 ([`trifecta.md`](trifecta.md)) | C1.14, C1.19 | Isa | Ready |
+| AR-16 | **Amendment: institutions as harnesses; model flexibility; central memory** | Principle 9 (models are interchangeable) and principle 10 (memory is central; context is fresh). R22: each institution runs its own harness; harness edits are predicted, trialled and adopted on evidence. R23: model swap by configuration. R24: fresh, cache-first context from the Ledger. X17–X19; M24–M25. Editorial: the reviewing institution is named Review ([`harnesses.md`](harnesses.md)) | C0.18, C0.19, C2.05 | Isa | Ready |
 
 ---
 

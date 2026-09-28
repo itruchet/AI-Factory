@@ -130,6 +130,20 @@
     ],
     "tol": 0.01
    }
+  },
+  {
+   "id": "CL-10",
+   "statement": "At 70% prompt-cache hits instead of 90%, Claude Opus 5.5 costs 1.50x per task.",
+   "value": 1.5,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/portfolio6/cache_sensitivity.json",
+    "path": [
+     "0.7",
+     "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)"
+    ],
+    "tol": 0.01
+   }
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Factory Constitutional Architecture — Design Notes (parked)
 
-> **Parked for the design stage.** The project is at Idea stage. The current record is [`../idea/constitutional-factory.md`](../idea/constitutional-factory.md) (r4), which supersedes this file wherever they conflict. In particular: charter economics are derived, not hand-set (Idea Record §5.2); subscription terms are learned (§6.2); Jev is the System 1 layer (§2.2).
+> **Parked for the design stage.** The project is at Idea stage. The current record is [`../idea/constitutional-factory.md`](../idea/constitutional-factory.md) (r4), which supersedes this file wherever they conflict. In particular: charter economics are derived, not hand-set (Idea Record §5.2); subscription terms are learned (§6.2).
 
 Status: r3 design notes, parked
 Owner: Isa
@@ -28,7 +28,7 @@ r1 was challenged on four points. This revision accepts three of them fully and 
 | LLMs are stateless, so model incentives can be ignored | Models act collectively against human interest even without individual awareness; memory, where present, shapes behavior | **Accepted.** The threat model now covers strategic behavior, emergent collective behavior and collusion. The Factory *supplies* memory, so memory is governed per institution (§6). |
 | A central offer policy (Thompson sampling) composes each model's choices | Contradicts r1's own stateless claim: all memory sits in one central component, which is a router in disguise | **Accepted.** The contradiction was real. The central scorer is removed. The Ledger holds memory. Each charter grants read rights. The Clerk (formerly Agent 70) keeps clocks and draws lots; it scores nothing. |
 | One Evidence Gate rule set applied everywhere | Each institution needs its own rules; equal standing must not mean identical roles; no route back to a single-agent router | **Accepted.** Per-institution charters (§7). The same models play different roles in different institutions. |
-| Rename "Court" | — | **Withdrawn.** Assurance Court stays. The name can mislead only if it reaches model prompts, and the charter controls prompt wording (§7.3). |
+| Rename "Review" | — | **Withdrawn.** Review stays. The name can mislead only if it reaches model prompts, and the charter controls prompt wording (§7.3). |
 | **Held:** self-selection alone biases what the Factory learns | — | Kept, and reworked as a charter rule instead of a central allocator: a service rota drawn by lot, the same duty for every participant (§11.6). |
 | **Held:** a Release Gate for reflexive change | Absent from the pasted seven-institution list | Kept as the Release Gate. The Factory builds itself, so accepted is not the same as deployed (§15). |
 
@@ -107,7 +107,7 @@ The names below are adopted as proposed. Human-facing names may be metaphorical.
 | 2 | **Deliberation Council** | Quality of shared understanding | Delphi plus scientific peer review: positions → critique → response → synthesis | **Alignment Record** (human-ratified) |
 | 3 | **Planning Chamber** | Turning agreed intent into executable work | Parallel decomposition → cross-examination → reconciliation → red team | **Ratified Plan**: cards and acceptance contracts |
 | 4 | **Work Market** | Allocation under capability and capacity uncertainty | Continuous pull-based labor market with leases, reputation and capacity constraints | Submitted work under lease |
-| 5 | **Assurance Court** | Is this card acceptable? | Adversarial review under evidentiary rules; the constitution is the judge | Acceptance or rejection **judgment**, with its evidence record |
+| 5 | **Review** | Is this card acceptable? | Adversarial review under evidentiary rules; the constitution is the judge | Acceptance or rejection **judgment**, with its evidence record |
 | 6 | **Audit** | Is the assurance system trustworthy? | Independent sampling and replication | Findings, plus **system corrections** |
 | 7 | **Ledger** | Institutional memory, accountability and control logic | Append-only, hash-chained record plus the kernel: constraints and pure functions | Governed read views; derived values; assignments; prices |
 | 8 | **Release Gate** | Is an accepted change safe to run, especially inside the Factory itself? | Pre-registered criteria, sequential testing on canary data, independent approvers | Promoted change |
@@ -135,7 +135,7 @@ Agent 70 no longer exists as an actor. Its former duties are the Ledger kernel (
  LEDGER: every institution writes; charters grant read rights; the kernel computes posteriors, prices, assignments, seats.
 ```
 
-**Boundary rule.** An institution receives only its predecessor's ratified output plus the context its charter grants. Planning does not read the Council transcript. The Market does not read the Planning debate. The Court does not read the worker's reasoning before committing its first verdict.
+**Boundary rule.** An institution receives only its predecessor's ratified output plus the context its charter grants. Planning does not read the Council transcript. The Market does not read the Planning debate. Review does not read the worker's reasoning before committing its first verdict.
 
 ---
 
@@ -155,7 +155,7 @@ Articles apply to every institution. Charters (§7) add institution-specific rul
 | 8 | **Right to decline, surrender, ask and admit uncertainty.** Honest surrender is recorded as a cost, not as a failure. | Outcome definitions in §12.3. |
 | 9 | **Self-review permitted, graded.** It is evidence, never equivalent to independent review. | Independence levels derived from manifests (§13.3). |
 | 10 | **Exposure is provenance.** Agreement after exposure is recorded as such and never presented as independent convergence. | Derived from manifests. |
-| 11 | **Evidence over authority.** A reproduced defect outweighs any number of approvals, whoever found it. No vote can make failing software correct. | Court charter (§13). |
+| 11 | **Evidence over authority.** A reproduced defect outweighs any number of approvals, whoever found it. No vote can make failing software correct. | Review charter (§13). |
 | 12 | **Eligibility is earned by evidence, by the same rule for all.** Higher-risk roles require a recorded track record. A new participant starts where every participant started. | Eligibility rules in charters reference Ledger outcomes only. |
 | 13 | **Human authority over preference, not over fact.** A human may choose, accept a risk, or waive a check with an expiry. A human cannot make a failing test pass. | Waivers are recorded events with expiry and rationale. |
 | 14 | **No single metric governs behavior.** Each decision metric is paired with a counter-metric. | Paired-metric set (§16). |
@@ -182,7 +182,7 @@ Memory is the central design variable. Whoever holds information and decides wha
 | Council | Sealed Inquiry submissions | Yes, anonymized | **No** (random labels per idea) | No | No | No |
 | Planning | Idea + ratified Alignment Record (incl. minority positions) | Decompositions, anonymized, after commit | No | No | No | No |
 | Market | Card, contract, card history (prior attempts, decline reasons, anonymized) | n/a | No | **Yes**, for similar cards | No | Own resource only (price band) |
-| Court | Artifact, contract, evidence | Other verdicts **only after committing its own** | No (author and reviewers blinded to each other) | No | No | No |
+| Review | Artifact, contract, evidence | Other verdicts **only after committing its own** | No (author and reviewers blinded to each other) | No | No | No |
 | Audit | Contract + final artifact (controlled context) | No | No | No | No | No |
 | Human | Everything | Yes | Yes | Yes | Yes | Yes |
 
@@ -191,7 +191,7 @@ Memory is the central design variable. Whoever holds information and decides wha
 - **Own record in the Market** gives each assignee the memory it needs to accept or decline responsibly. The kernel uses the full record; the participant sees only its own.
 - **No peer identities anywhere** blocks prestige deference (T5) and makes targeted coordination (T3, T4) harder.
 - **No others' records** prevents deference cascades ("a stronger participant will take this") and reduces the information needed for tacit collusion.
-- **Commit-before-view appears in three institutions:** Inquiry, Planning decomposition and Court verdicts. It is the single most reusable defense against groupthink.
+- **Commit-before-view appears in three institutions:** Inquiry, Planning decomposition and Review verdicts. It is the single most reusable defense against groupthink.
 
 Whether showing own track record improves or distorts accept and decline decisions is an experiment (H7), not an axiom.
 
@@ -222,7 +222,7 @@ Every institution has a charter with the same ten fields. The kernel executes th
 | Council | Every Inquiry submitter | Proponent, critic |
 | Planning | Decomposers seated by the kernel (≥2 families required) | Decomposer, cross-examiner, reconciler (seated), red team (seated, not reconciler) |
 | Market | Every configuration with capacity; assigned by the kernel | Worker, helper |
-| Court | Seated by the kernel under independence constraints; open standing to challenge | Reviewer, challenger, replicator, expert witness |
+| Review | Seated by the kernel under independence constraints; open standing to challenge | Reviewer, challenger, replicator, expert witness |
 | Audit | Seated by the kernel from outside the card's provenance chain | Auditor |
 | Release | Independent approvers seated by the kernel; human for F2 | Approver, dissenter |
 
@@ -234,7 +234,7 @@ Where a charter values neutrality over competence (for example, the Council synt
 
 ### 7.3 Prompt-facing language
 
-Charters specify the role text models receive. Human-facing names such as "Court" or "Council" need not appear in prompts. Neutral role text ("you are one of several independent reviewers") avoids performative adversarial or consensus-seeking behavior. This is a charter parameter, testable by experiment.
+Charters specify the role text models receive. Human-facing names such as "Review" or "Council" need not appear in prompts. Neutral role text ("you are one of several independent reviewers") avoids performative adversarial or consensus-seeking behavior. This is a charter parameter, testable by experiment.
 
 ### 7.4 Selection bias: the strategy per institution
 
@@ -246,7 +246,7 @@ Each institution faces a different bias. Each uses the standard method that is o
 | Council | Order, prestige and dominance effects | Anonymized labels; presentation order randomized per participant; synthesizer seated by draw | Randomized order removes primacy effects. Anonymity removes prestige. |
 | Planning | Anchoring on the first decomposition | Parallel commit-before-view; reconciler and red team seated separately | Independent drafts are only independent if they are produced blind. |
 | Market | Easy-work selection; confounded competence estimates | Thompson sampling per task at shadow prices | Asymptotically optimal regret for this problem class. Explores exactly where uncertainty is high and stops as evidence accumulates. No tuned exploration rate. |
-| Court | Reviewer selection; knowing the author; lack of ground truth | Blind seating by draw; commit-before-view; **planted defects** as ground truth | Planted defects give known answers, so detection rates are measured without waiting for escapes. |
+| Review | Reviewer selection; knowing the author; lack of ground truth | Blind seating by draw; commit-before-view; **planted defects** as ground truth | Planted defects give known answers, so detection rates are measured without waiting for escapes. |
 | Audit | Non-representative samples | Stratified sampling with **Neyman allocation**, plus inverse-probability weighting | Minimises estimator variance for a fixed audit budget (`neyman_allocation` in the kernel). |
 | Release | Post-hoc rationalisation; canary cherry-picking | Pre-registered criteria; randomized canary assignment; **Wald sequential test** (SPRT) | Fixes the error rates before data arrives and stops as soon as evidence is sufficient (`sprt` in the kernel). |
 | Ledger | Survivorship: only successes get recorded | Every outcome is logged, including declines, surrenders, expiries and non-selection | Missing failures bias every estimate upward. |
@@ -332,7 +332,7 @@ The **Alignment Record**: convergence, remaining disagreement, minority position
 
 ### 10.3 Contracts
 
-- Acceptance tests are written before implementation and **locked** by hash. The Court rejects any diff to locked paths.
+- Acceptance tests are written before implementation and **locked** by hash. Review rejects any diff to locked paths.
 - For R1 and above, some contract tests are **sealed**: the worker sees the specification but not the test code. This counters test overfitting (T1).
 
 ### 10.4 Disagreement without an architect
@@ -377,7 +377,7 @@ The assigned configuration responds with one of:
 | DECLINE (reason) | Recorded. The card is re-assigned without that configuration. If ≥3 distinct families decline citing ambiguity, the card returns to Planning. |
 | REQUEST_CLARIFICATION | Card waits. Routed to Planning, or to the human if intent-level. |
 | PROPOSE_SPLIT | Returned to Planning. Mechanical check: child contracts cover the parent; value points sum to the parent. |
-| REQUEST_HELP | A helper is seated by the kernel. Its advice enters the worker's manifest. The helper's family is then barred from reviewing that card in the Court. |
+| REQUEST_HELP | A helper is seated by the kernel. Its advice enters the worker's manifest. The helper's family is then barred from reviewing that card in Review. |
 
 Declines and surrenders are data. They are never penalized (Article 8). The posterior counts them as neither success nor failure, and their cost is recorded.
 
@@ -477,7 +477,7 @@ Three terms keep over-qualified configurations off simple work:
 | Council | critique, synthesis seat | Higher levels; volume is tiny, so cost is small | Human rating of Alignment Records; downstream replan rate |
 | Planning | decomposition, reconciliation, red team | Highest levels. Errors here propagate to every card. | High F, high τ; feature-card failures; replan rate |
 | Market | cards by size × risk × verifiability | Widest spread. L1–L2 on small, well-tested cards; L3–L4 on large or weakly verifiable ones | Per-class posteriors |
-| Court | deterministic checks, R1 review, R2 review, replication | L0 for checks. Reviews need a family other than the author's, at the level that meets the detection floor | Detection rate on planted defects |
+| Review | deterministic checks, R1 review, R2 review, replication | L0 for checks. Reviews need a family other than the author's, at the level that meets the detection floor | Detection rate on planted defects |
 | Audit | replication, mutation analysis | Strong and independent; low volume | Agreement with human samples |
 | Release | canary metrics, SPRT, F2 review | **Mostly L0.** Models only for F1–F2 review | False promotion and false rejection |
 | Ledger | all kernel functions | **L0 only. Never a model.** | Replay equality |
@@ -512,7 +512,7 @@ Read-outs: the release checks never touch a model; Planning demands both quality
 | Kernel | Remaining capacity estimate; demand forecast; shadow prices | DERIVED |
 | Participant | Expected consumption for a card | ASSERTION (calibrated) |
 
-A model cannot know its account's quota. Adapters observe capacity. No participant has a write path to capacity data. A reserve (initial: 15% of frontier capacity) is subtracted from C_r for Court challenges, audit and escalations, and released before reset.
+A model cannot know its account's quota. Adapters observe capacity. No participant has a write path to capacity data. A reserve (initial: 15% of frontier capacity) is subtracted from C_r for Review challenges, audit and escalations, and released before reset.
 
 ### 12.10 Minimum telemetry per model call
 
@@ -548,7 +548,7 @@ A model cannot know its account's quota. Adapters observe capacity. No participa
 
 ---
 
-## 13. Institution 5 — Assurance Court
+## 13. Institution 5 — Review
 
 **Purpose.** Decide whether the burden of evidence is satisfied. The constitution is the judge. There is no judge-model and no majority vote.
 
@@ -608,18 +608,18 @@ OPEN ─┬─ reproduction attached ─► kernel runs it
 
 ### 13.6 Order, rework, deadlock
 
-- **Order:** cheapest and most decisive first. Deterministic failure stops the Court before any reviewer capacity is spent.
+- **Order:** cheapest and most decisive first. Deterministic failure stops Review before any reviewer capacity is spent.
 - **Burden** is on the submitter. Absence of challenge is not evidence.
 - **Rework budget:** 2 cycles per lease. Then the card returns to the Market; the prior worker is excluded for that version.
 - **Attempt budget:** 3 failed attempts → Planning. The card is probably malformed.
 - **Deadlock** cannot occur: every loop ends in Planning or the human (Article 16).
 
-### 13.7 Anti-collusion rules specific to the Court
+### 13.7 Anti-collusion rules specific to Review
 
 - Author and reviewers are blinded to each other's identity.
 - Reviewers commit verdicts before seeing other verdicts.
 - A family that helped on a card cannot review it.
-- Cross-boundary messages are schema-constrained. For R2–R3, the Court may require reviewers to receive a normalized rendering of the artifact (formatted code and diff only, with free-text comments stripped). This narrows hidden-signal channels (T4).
+- Cross-boundary messages are schema-constrained. For R2–R3, Review may require reviewers to receive a normalized rendering of the artifact (formatted code and diff only, with free-text comments stripped). This narrows hidden-signal channels (T4).
 
 ### 13.8 Learning evidentiary value
 
@@ -650,7 +650,7 @@ Auditor seated by the kernel from outside the card's provenance chain. Controlle
 
 ### 14.3 Planted defects
 
-Known defects are injected into sandboxed copies of real submissions and sent through the Court. This measures reviewer and auditor sensitivity directly, within weeks. Planted defects are never integrated.
+Known defects are injected into sandboxed copies of real submissions and sent through Review. This measures reviewer and auditor sensitivity directly, within weeks. Planted defects are never integrated.
 
 ### 14.4 Collective-behavior measures (Article 17)
 
@@ -684,7 +684,7 @@ ACCEPTED → INTEGRATED → [STAGED → OBSERVED] → PROMOTED
 | Product code | Anything outside the Factory | Promoted on integration, per the product's own deployment rules |
 | F0 | Factory tooling, adapters, UI | Canary on randomly assigned R0 cards; SPRT decides |
 | F1 | Charter economics, prompts, kernel parameters | Shadow run with off-policy evaluation, then canary; SPRT decides |
-| F2 | Kernel code, Ledger schema, Court rules, Audit, capacity accounting, permissions, charters, Constitution | All of F1, plus independent approvers and human ratification; validated by the currently promoted version; forward-only migrations; promoted by a separate minimal script, never by the running kernel |
+| F2 | Kernel code, Ledger schema, Review rules, Audit, capacity accounting, permissions, charters, Constitution | All of F1, plus independent approvers and human ratification; validated by the currently promoted version; forward-only migrations; promoted by a separate minimal script, never by the running kernel |
 
 ### 15.2 Rules against groupthink among experts
 
@@ -779,7 +779,7 @@ Agent 70 is not reframed. It is dissolved. Its control duties become part of the
 | Failure | Prevent | Detect | Recover |
 |---|---|---|---|
 | Institutional bleed | Boundary rule: only ratified outputs cross; charter manifests | Manifest audit for out-of-charter items | Re-run the step with a clean manifest |
-| Self-marking | I2+ required for R1+ | Independence from manifests | Re-seat Court |
+| Self-marking | I2+ required for R1+ | Independence from manifests | Re-seat Review |
 | Correlated model errors | Deterministic checks first; I3 replication; sealed tests | Joint miss rate | Merge correlated families; raise review count |
 | Groupthink | Commit-before-view; anonymized Council | Post-exposure versus independent convergence | Re-open Council with fresh Inquiry |
 | Prestige effects | No identities in any model-facing view | Adoption-by-source analysis | Tighten anonymization |
@@ -802,7 +802,7 @@ Agent 70 is not reframed. It is dissolved. Its control duties become part of the
 | Review loops | Rework budget; reproduction required to block | Rework per card | Reassign or replan |
 | Stale leases | Heartbeat TTL | Lease age | Expire; keep branch |
 | Context contamination | Manifests; controlled audit context | Contamination metrics | Re-review clean |
-| Provenance loss | Manifest required per call; commit trailers | Court rejects missing provenance | Re-run |
+| Provenance loss | Manifest required per call; commit trailers | Review rejects missing provenance | Re-run |
 | Specification drift | Contract hash; immutable card versions | Hash mismatch | New version, re-trace |
 | Incorrect decomposition | Red team; feature acceptance cards | Repeated failures | Planning |
 | Acceptance-criteria gaming | Locked, sealed, mutation-tested contracts | Mutation score | Harden contract; reopen |
@@ -834,7 +834,7 @@ Agent 70 is not reframed. It is dissolved. Its control duties become part of the
 | Telemetry | UPLIFT | FACT / ASSERTION / DERIVED |
 | KPI layer, AUW/$ | UPLIFT | Paired metrics; audit-adjusted; F2-protected |
 | Current intelligent router | REPLACE as authority | Keep as a logged advisory assertion from `legacy_router`, compared against Market outcomes. Not a fallback: a fallback smarter than the primary is a hidden authority. On kernel failure, stop and hold. |
-| Director → Worker → Checker | REPLACE | Council/Planning → Market → Court |
+| Director → Worker → Checker | REPLACE | Council/Planning → Market → Review |
 | Inquiry, Council, Planning, Audit, Release Gate, Ledger kernel, charters, manifests | NEW | This document and `probes/allocation/` |
 
 **Migration options.** Incremental uplift if model choice sits behind one seam and SQLite can gain an append-only Ledger alongside existing tables. Substantial refactor if routing is spread across stages and prompts. Parallel V2 if state cannot be made append-only without breaking running work. Clean rebuild is not justified: it discards the history that the Market's reputation depends on.
@@ -845,7 +845,7 @@ Agent 70 is not reframed. It is dissolved. Its control duties become part of the
 
 ## 19. Experiments (falsifiable)
 
-Council and Planning experiments are underpowered because idea volume is low. Read them directionally, with human rating. Market and Court experiments have volume.
+Council and Planning experiments are underpowered because idea volume is low. Read them directionally, with human rating. Market and Review experiments have volume.
 
 | ID | Hypothesis | Design | Falsified if |
 |---|---|---|---|
@@ -870,9 +870,9 @@ Set thresholds before each experiment starts.
 
 ### Phase 0 — trustworthy memory (first)
 
-Ledger and projections; FACT / ASSERTION / DERIVED; manifests on every call; adapters emit usage and throttles; locked contracts; deterministic Court checks; leases with TTL; worktree per lease; merge queue; F2 protection for governance paths. **F2 protection must exist before the Factory next edits its own governance.** Legacy router demoted to an advisory assertion.
+Ledger and projections; FACT / ASSERTION / DERIVED; manifests on every call; adapters emit usage and throttles; locked contracts; deterministic Review checks; leases with TTL; worktree per lease; merge queue; F2 protection for governance paths. **F2 protection must exist before the Factory next edits its own governance.** Legacy router demoted to an advisory assertion.
 
-### Phase 1 — kernel, Market and Court
+### Phase 1 — kernel, Market and Review
 
 Kernel functions (already prototyped and tested in `probes/allocation/`) wired to the Ledger; charter economics per task class; calibration tournament on historical cards; assignment with propensity; shadow prices and reserve; blind seated review; open-standing challenges; over-provisioning and calibration KPIs.
 
@@ -896,7 +896,7 @@ Adaptive audit rates; normalized artifacts below R2; Factory-wide capacity views
 |---|---|---|---|
 | D1 | Ratify Constitution Articles 1–18 and the eight charters (or amend) | Isa | `[PLACEHOLDER]` |
 | D2 | Approve Phases 0–1 as the next build | Isa | `[PLACEHOLDER]` |
-| D3 | Set V, F, τ, z, θ for the first task classes (start with Market cards, Court R1 review, Release checks) | Isa | `[PLACEHOLDER]` |
+| D3 | Set V, F, τ, z, θ for the first task classes (start with Market cards, Review R1 review, Release checks) | Isa | `[PLACEHOLDER]` |
 | D4 | Approve Release Gate rules G1–G9 | Isa | `[PLACEHOLDER]` |
 | D5 | Approve the calibration tournament: which historical cards, and which capacity windows | Isa | `[PLACEHOLDER]` |
 | D6 | Weekly human-attention budget for ratifications, escalations and audit | Isa | `[PLACEHOLDER]` |
@@ -916,7 +916,6 @@ Adaptive audit rates; normalized artifacts below R2; Factory-wide capacity views
 3. Current card and idea volumes.
 4. Where workflow state lives today.
 5. The sources behind the claim in §2 that LLMs act collectively against human interest, so they can be cited precisely.
-6. What "Jen" refers to (a model, a product or a method) and the role you see for it in "probabilistic determinism". The kernel must stay code, so a model can propose or check kernel mathematics in Planning or the Court, but cannot execute it.
 
 ---
 

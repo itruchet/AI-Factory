@@ -16,7 +16,7 @@ Two organisations are modelled on the same world:
 
   institutions  Inquiry (K independent submissions) -> Council (critique
                 rounds + synthesis) -> Planning (D parallel decompositions,
-                reconciliation, red team) -> Work Market -> Assurance Court
+                reconciliation, red team) -> Work Market -> Review
                 -> Audit (sample) -> Release Gate. Agents pull tasks; nobody
                 assigns. An agent may take a task only if its expected pass
                 rate on that task clears the licence floor (Inquiry is open

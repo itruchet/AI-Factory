@@ -261,6 +261,28 @@
     "X16"
    ],
    "sim_field": "TIME_VALUE, p_pass"
+  },
+  {
+   "id": "M24",
+   "name": "Trajectory telemetry",
+   "definition": "Per card and harness: cost per successful trajectory, tool calls, tool errors, recovery loops, trajectories stopped over budget, and failures by attributed cause (model, tool, context, timeout, card).",
+   "unit": "USD, counts",
+   "used_by": [
+    "R22",
+    "X17"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M25",
+   "name": "Prompt-cache hit rate",
+   "definition": "Share of input tokens served from the prompt cache, per call, model and route.",
+   "unit": "ratio",
+   "used_by": [
+    "R24",
+    "X19"
+   ],
+   "sim_field": "CACHE_HIT"
   }
  ]
 }

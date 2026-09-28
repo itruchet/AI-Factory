@@ -318,9 +318,54 @@ Acceptance:
 
 Evidence: Queue and licence records for the first week of pulls.
 
-## Phase 1: Rules, Market, Court and Scaler
+### C0.18 The harness kernel: one for every institution
 
-Layer the pull rules, licences, Market, Court and elastic capacity onto the collective's pull. Each part is switched on as soon as it passes its acceptance contract.
+Agent = model + harness. Build the shared kernel every institution's harness runs on, so each institution is a tailored harness and models are interchangeable workers inside it.
+
+- **Institution:** Ledger.
+- **Depends on:** C0.03, C0.04. **Approvals first:** AR-16.
+- **Traces:** R22, R24, principle.6, principle.10, problem.P11. **Measures:** M24, M25.
+
+Scope:
+- Primitive tools only: sandboxed worktree file access, sandboxed shell and CLI, retrieval from the Ledger, lifecycle hooks; each institution's charter grants a subset
+- Context assembly fresh per pull from the Ledger (R24), in a fixed cache-first order: constitution and charter, rules and the agent's own record, repository snapshot, then the card and its evidence; long histories enter as Ledger summaries linked to sources
+- Feed-forward guards (licence and floor, independence, output schemas, protected paths, readiness) and feedback sensors (tests, linters, CI, typed contracts) as middleware, before any model judgment
+- Structured traces of every call, tool use, latency and outcome to the Ledger, classifiable by cause (R8)
+- Trajectory budgets on tokens, time and retries per card; loops without progress stop and escalate or hand back
+- Harness components (tools, context policies, guards, prompts) as versioned files
+
+Acceptance:
+- [ ] No agent keeps state between pulls: a pull's context is reproducible from the Ledger and the charter version
+- [ ] The context for a card is assembled in the fixed order, and the prompt-cache hit rate is recorded per call (M25)
+- [ ] A tool outside the institution's charter cannot be called
+- [ ] A trajectory over budget stops and leaves a trace with its cause
+
+Evidence: Kernel tests; replay of context assembly.
+
+### C0.19 One model interface: any model, any route, by configuration
+
+Model flexibility is core. Any model can be swapped for another without touching a harness, charter or rule.
+
+- **Institution:** Ledger.
+- **Depends on:** C0.04, C0.05. **Approvals first:** AR-16.
+- **Traces:** R23, principle.9, X18, X19, problem.P2. **Measures:** M08, M25. **Open items:** OI-17.
+
+Scope:
+- One adapter interface for every model; model, reasoning effort and route (direct vendor API or OpenRouter) are configuration
+- No model-specific logic in any harness; a lint check fails the build on a named model outside configuration
+- A swap takes effect at the next pull; the new model starts under R5's fast track
+- Per route: sticky sessions for prompt-cache hits and data collection denied (R15)
+
+Acceptance:
+- [ ] Swapping one menu model for another is a configuration change with no code change, shown by a test
+- [ ] The same card runs through a direct route and through OpenRouter with usage, latency and cache hits recorded for both (M08, M25)
+- [ ] A named model in harness code fails the lint check
+
+Evidence: Swap test; route comparison.
+
+## Phase 1: Rules, Market, Review and Scaler
+
+Layer the pull rules, licences, Market, Review and elastic capacity onto the collective's pull. Each part is switched on as soon as it passes its acceptance contract.
 
 **Entry:** Phase 0 exit approved; AR-10 signed before C1.03 starts.
 
@@ -370,11 +415,11 @@ Evidence: Replay test.
 Staff the menu on API tokens, with no tier that trains on our data, and read real rate limits.
 
 - **Institution:** Ledger.
-- **Depends on:** C0.04, C0.05. **Approvals first:** AR-02, AR-10.
-- **Traces:** R15, H4, H6, portfolio.P8. **Measures:** M08. **Open items:** OI-04, OI-06, OI-07, OI-15.
+- **Depends on:** C0.19. **Approvals first:** AR-02, AR-10.
+- **Traces:** R15, H4, H6, portfolio.P8. **Measures:** M08. **Open items:** OI-04, OI-06, OI-07, OI-15, OI-17.
 
 Scope:
-- Adapters for the menu in the pack's menu section, through the routes AR-10 approves
+- Configure the menu in the pack's menu section on the routes AR-10 approves, through the model interface (C0.19): OpenRouter with our own keys, sticky sessions and data collection denied as the default [PROPOSED]; direct vendor routes kept for the two anchors until measured
 - A route is registered only with a recorded no-training confirmation for that tier (R15); Muse Spark's Contributor tier is excluded
 - Vendor rate limits recorded as Scaler caps (replacing the assumed 8 per model, 48 in all)
 - A second route where AR-10 names one (for example OpenRouter for Muse Spark)
@@ -391,14 +436,15 @@ Evidence: Route registry; Test invocations.
 Extend C0.17's pull with the full licence ladder and the agent's view of its own record.
 
 - **Institution:** Market.
-- **Depends on:** C1.01, C1.02, C1.03, C0.17. **Approvals first:** AR-01.
-- **Traces:** R1, R2, R3, R10, R11, G1, DQ5, principle.1, principle.2, problem.P1, problem.P4, problem.P7, X2, institution.Market, problem.P2. **Measures:** M09. **Open items:** OI-12, OI-13.
+- **Depends on:** C0.17, C0.18, C1.01, C1.02, C1.03. **Approvals first:** AR-01.
+- **Traces:** R1, R2, R3, R10, R11, G1, DQ5, principle.1, principle.2, problem.P1, problem.P4, problem.P7, X2, institution.Market, problem.P2, R22. **Measures:** M09. **Open items:** OI-12, OI-13.
 
 Scope:
 - R1 pull; R2 licence ladder; R3 hardest first, oldest first, no choice within a tier
 - R10: at pull time the agent sees its licences, recent rate against the standard and its recent markdown reasons; it may decline without a markdown; repeated declines return the licence
 - R11 start state: C0.17's starting licences; menu models not in today's mapping start from their Artificial Analysis band as prior (§5.1) and move on live evidence (OI-12)
 - The Ledger views each agent sees at pull time (DQ5)
+- Harness (Market, working): sandboxed worktree, shell, tests and its own branch, no merge; context is the card, contract, reviewed prerequisites and its own record; readiness check on arrival; hands unfit cards back to Planning
 
 Acceptance:
 - [ ] An agent cannot pull a card above its licence
@@ -452,7 +498,7 @@ Evidence: Rule tests.
 
 Every markdown lands on the producer that caused it.
 
-- **Institution:** Court.
+- **Institution:** Review.
 - **Depends on:** C1.05. **Approvals first:** AR-01. **Ratified by:** Isa (reason codes).
 - **Traces:** R8, DQ3, X3. **Measures:** M10.
 
@@ -507,7 +553,7 @@ Evidence: Deadlock tests with one-model and two-model rosters.
 
 No model reviews, audits or releases work by a model of its own family.
 
-- **Institution:** Court.
+- **Institution:** Review.
 - **Depends on:** C1.10. **Approvals first:** AR-04.
 - **Traces:** R18, X11, problem.P5, problem.P6. **Measures:** M13, M20.
 
@@ -566,7 +612,7 @@ Agents are instances of menu models, started and stopped by Ledger arithmetic, n
 
 - **Institution:** Ledger.
 - **Depends on:** C1.03, C1.12, C1.13. **Approvals first:** AR-04, AR-15.
-- **Traces:** R14, X10, H6, problem.P3, RK3, X16. **Measures:** M04, M05, M08, M16, M23. **Open items:** OI-15.
+- **Traces:** R14, X10, H6, problem.P3, RK3, X16, R22. **Measures:** M04, M05, M08, M16, M23. **Open items:** OI-15.
 
 Scope:
 - R14 as written (pack: parameters PR-01 to PR-09)
@@ -575,6 +621,7 @@ Scope:
 - Start the shortfall; stop instances idle 30 minutes beyond target
 - Cost-band pull at 1.5x unless the task has waited an hour
 - Instances of one model are one model for independence
+- Allocation has no model harness: the Scaler and licences are deterministic Ledger functions, replayable
 
 Acceptance:
 - [ ] Every start and stop cites the counts and rule that caused it, and replays
@@ -624,25 +671,26 @@ Acceptance:
 
 Evidence: Rule tests.
 
-### C1.17 Assurance Court
+### C1.17 Review
 
 Is this work acceptable? Decided blind, deterministic checks first.
 
-- **Institution:** Court.
-- **Depends on:** C1.08, C1.11. **Approvals first:** AR-01.
-- **Traces:** institution.Court, principle.3, principle.5, DQ10, problem.P5. **Measures:** M15.
+- **Institution:** Review.
+- **Depends on:** C0.18, C1.08, C1.11. **Approvals first:** AR-01.
+- **Traces:** institution.Review, principle.3, principle.5, DQ10, problem.P5, R22. **Measures:** M15.
 
 Scope:
 - Reviewers blind to author; open standing to challenge with evidence; other verdicts visible only after committing one's own
 - Deterministic checks first: build, tests, static analysis, CI, typed contracts (DQ10)
 - A reproduced defect beats any number of approvals
+- Harness (Review, reviewing): read-only diff; runs tests, linters, static analysis and reproductions; never sees author identity or reasoning; deterministic checks first; hands work without evidence back to the Market
 
 Acceptance:
 - [ ] A review cannot see the author's identity or reasoning
 - [ ] A failing deterministic check blocks acceptance whatever the model reviews say
 - [ ] A reproduced defect overturns prior approvals
 
-Evidence: Court tests.
+Evidence: Review tests.
 
 ### C1.19 Readiness hand-back at every boundary
 
@@ -656,7 +704,7 @@ Scope:
 - A readiness contract per institution: enough detail, the interfaces named, acceptance criteria the receiver can test
 - The puller checks the card against it before starting work; an unfit card is handed back at once to the producing institution with the reason (R21)
 - The producer is marked under R8; hand-backs and rounds per card are recorded at every boundary (M21)
-- Applies at every boundary: Planning to Market, Market to Court, Court to Release Gate, and to anything routed to Isa
+- Applies at every boundary: Planning to Market, Market to Review, Review to Release Gate, and to anything routed to Isa
 
 Acceptance:
 - [ ] A card missing detail, interfaces or testable criteria is handed back before any build spend, with a reason code
@@ -678,14 +726,15 @@ Mark the markers, gate every change including governance, and give live operatio
 Is assurance trustworthy? Auditors outside the work's provenance chain mark the markers.
 
 - **Institution:** Audit.
-- **Depends on:** C1.17, C1.09. **Approvals first:** none.
-- **Traces:** institution.Audit, R9, X4, principle.7, RK1. **Measures:** M15.
+- **Depends on:** C0.18, C1.09, C1.17. **Approvals first:** none.
+- **Traces:** institution.Audit, R9, X4, principle.7, RK1, R22. **Measures:** M15.
 
 Scope:
 - Random plus risk-weighted samples (the model used 10%)
 - Planted defects with known answers, which also test the auditors
 - Isa's sample
 - Findings feed R9 and R12 (C1.09)
+- Harness (Audit, auditing): read-only; planted-defect registry and Ledger sampling; sees contract and final artifact, never the review discussion
 
 Acceptance:
 - [ ] No auditor audits work in its own provenance chain or family
@@ -698,14 +747,15 @@ Evidence: Audit reports; planted-defect results.
 Is an accepted change safe to run inside the Factory? Criteria fixed before data.
 
 - **Institution:** Release Gate.
-- **Depends on:** C2.01, C0.02. **Approvals first:** none. **Ratified by:** Isa.
-- **Traces:** institution.ReleaseGate, principle.8, problem.P9. **Measures:** M03.
+- **Depends on:** C0.02, C0.18, C2.01. **Approvals first:** none. **Ratified by:** Isa.
+- **Traces:** institution.ReleaseGate, principle.8, problem.P9, R22. **Measures:** M03.
 
 Scope:
 - Approvers from different families, blind, with one seated dissenter; cooling-off period; no version approves itself
 - Canary results against criteria fixed in advance
 - Acceptance test (QA) of the whole idea and release approval (value-stream steps 11-12)
 - Takes over protected governance paths from the interim gate (C0.02): rule changes pass the Release Gate and Isa
+- Harness (Release Gate, releasing): canary controls, rollback and metrics, no code edit; criteria fixed before data; hands unproven changes back to Review
 
 Acceptance:
 - [ ] A change cannot be approved by a version of itself
@@ -724,7 +774,7 @@ Live operation stays inside the Factory. The Release Gate, which let the change 
 
 Scope:
 - Move C0.16's incident, restore and hotfix flow from the pull queue's top priority to the Release Gate's charter
-- Hotfix cards pulled by the Market and reviewed by the Court; restores decided by the Release Gate; the Ledger marks change-failure rate and restore time
+- Hotfix cards pulled by the Market and reviewed by Review; restores decided by the Release Gate; the Ledger marks change-failure rate and restore time
 
 Acceptance:
 - [ ] Every incident has the Release Gate as owner, a restore time and, where needed, a hotfix card
@@ -751,6 +801,27 @@ Acceptance:
 
 Evidence: Rule tests.
 
+### C2.05 Harness evolution: attributed traces, predicted edits
+
+The harness, not the model, is the unit of self-improvement. Edits are attributed, predicted, trialled and adopted on evidence.
+
+- **Institution:** Release Gate.
+- **Depends on:** C0.18, C2.02, C2.04. **Approvals first:** AR-16.
+- **Traces:** R22, R20, R8, X17, principle.8. **Measures:** M24.
+
+Scope:
+- Classify every failed or reworked card's trace by cause: model error, tool or tool documentation, context, timeout or budget, card not fit (R8 reason codes)
+- A harness edit names the component it changes and predicts its effect on a named measure over a stated volume of work
+- The edit runs as a trial configuration on the same work (R20) and is adopted through the Release Gate only if its prediction held (X17); otherwise it is reverted
+- A harness that serves unlike work badly branches by tier or domain rather than accumulating special cases
+
+Acceptance:
+- [ ] Every adopted harness edit has a recorded prediction and its measured outcome
+- [ ] A failed prediction reverts the edit automatically
+- [ ] A model swap is never recorded as a harness improvement
+
+Evidence: Harness change log with predictions and outcomes.
+
 ## Phase 3: Inquiry, Council and Planning
 
 Stand up the three deliberative institutions. Low volume lets them start semi-manually under their charters.
@@ -764,12 +835,13 @@ Stand up the three deliberative institutions. Low volume lets them start semi-ma
 Independent discovery: commit before seeing any other submission.
 
 - **Institution:** Inquiry.
-- **Depends on:** C2.02. **Approvals first:** none.
-- **Traces:** institution.Inquiry, X7, RK5.
+- **Depends on:** C0.18, C2.02. **Approvals first:** none.
+- **Traces:** institution.Inquiry, X7, RK5, R22.
 
 Scope:
 - Participants on the same brief, committing before any peer output is visible
 - Sizing: the institutional model found two analysts sufficient (Idea Record §5.3); X7 tests universal participation. Live data decides (C4.01)
+- Harness (Inquiry, framing): repository read and Ledger retrieval, no write; sees the brief and engineering context only
 
 Acceptance:
 - [ ] No participant sees a peer output or identity before committing
@@ -781,14 +853,15 @@ Evidence: Manifest audit of what each participant saw.
 Shared understanding without prestige or dominance.
 
 - **Institution:** Council.
-- **Depends on:** C3.01. **Approvals first:** none.
-- **Traces:** institution.Council, X6, problem.P6, RK5.
+- **Depends on:** C0.18, C3.01. **Approvals first:** none.
+- **Traces:** institution.Council, X6, problem.P6, RK5, R22.
 
 Scope:
 - Anonymous labels; random reading order; no chair; no vote
 - Every proposition appears in the synthesis; one objection keeps a point disputed
 - One round (Idea Record §5.3)
 - Output: the Alignment Record for Isa's ratification, with minority positions
+- Harness (Council, framing): anonymised submissions and a synthesis writer only
 
 Acceptance:
 - [ ] No identity is visible to Council participants
@@ -801,14 +874,15 @@ Evidence: Synthesis coverage check.
 Intent to executable cards: blind parallel decomposition, then reconciliation and a separate red team. Until it exists, cards come from this pack and from splits and returns under R8.
 
 - **Institution:** Planning.
-- **Depends on:** C3.02, C1.02. **Approvals first:** none.
-- **Traces:** institution.Planning, DQ11, principle.5, X3. **Measures:** M10.
+- **Depends on:** C0.18, C1.02, C3.02. **Approvals first:** none.
+- **Traces:** institution.Planning, DQ11, principle.5, X3, R22. **Measures:** M10.
 
 Scope:
 - Decomposers blind in parallel; reconciler; red team separate from the reconciler
 - One planner plus a red team (Idea Record §5.3)
 - Plans name the interfaces between requirements (DQ11)
 - Tier-setting rules (C1.02)
+- Harness (Planning, planning): repository read and a schema-checked card writer; sees the Alignment Record with minority positions, never the Council transcript
 
 Acceptance:
 - [ ] Planning sees the Alignment Record, including minority positions, never the Council transcript
@@ -849,7 +923,7 @@ Each experiment can prove the idea wrong. Judge each as live data accrues, and t
 
 - **Institution:** Ledger.
 - **Depends on:** C0.15, C2.01, C3.03. **Approvals first:** none.
-- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
+- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16, X17, X18, X19. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
 
 Scope:
 - Each experiment X1-X14 judged against its falsification criterion in the pack, on live data, whenever it has enough

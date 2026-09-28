@@ -1,0 +1,47 @@
+{
+ "0.9": {
+  "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 1.0,
+  "GPT-5.6 Terra (max)": 1.0,
+  "Muse Spark 1.3 (xhigh)": 1.0,
+  "Gemini 3.8 Flash (high)": 1.0,
+  "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 1.0,
+  "GPT-6 Luna (max)": 1.0,
+  "Ling 3.0 Flash": 1.0
+ },
+ "0.8": {
+  "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 1.252,
+  "GPT-5.6 Terra (max)": 1.231,
+  "Muse Spark 1.3 (xhigh)": 1.297,
+  "Gemini 3.8 Flash (high)": 1.252,
+  "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 1.278,
+  "GPT-6 Luna (max)": 1.252,
+  "Ling 3.0 Flash": 1.313
+ },
+ "0.7": {
+  "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 1.505,
+  "GPT-5.6 Terra (max)": 1.462,
+  "Muse Spark 1.3 (xhigh)": 1.593,
+  "Gemini 3.8 Flash (high)": 1.505,
+  "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 1.557,
+  "GPT-6 Luna (max)": 1.505,
+  "Ling 3.0 Flash": 1.625
+ },
+ "0.5": {
+  "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 2.009,
+  "GPT-5.6 Terra (max)": 1.923,
+  "Muse Spark 1.3 (xhigh)": 2.187,
+  "Gemini 3.8 Flash (high)": 2.009,
+  "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 2.113,
+  "GPT-6 Luna (max)": 2.009,
+  "Ling 3.0 Flash": 2.251
+ },
+ "0.0": {
+  "Claude Opus 5.5 (Adaptive Reasoning, Max Effort, Default Fallback)": 3.271,
+  "GPT-5.6 Terra (max)": 3.077,
+  "Muse Spark 1.3 (xhigh)": 3.67,
+  "Gemini 3.8 Flash (high)": 3.271,
+  "DeepSeek V4.1 Flash (Reasoning, Max Effort)": 3.505,
+  "GPT-6 Luna (max)": 3.271,
+  "Ling 3.0 Flash": 3.815
+ }
+}

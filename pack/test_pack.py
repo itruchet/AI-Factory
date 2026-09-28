@@ -56,7 +56,7 @@ class NothingInvented(unittest.TestCase):
                     self.assertIn(x[field], md, x["id"])
 
     def test_every_reference_resolves(self):
-        ids = known_ids() | {f"institution.{i}" for i in ("Market", "Court")}
+        ids = known_ids() | {f"institution.{i}" for i in ("Market", "Review")}
         refs = []
         for c in PACK["cards"]:
             refs += [(c["id"], r) for r in c["traces"] + c["depends_on"] + c["requires_approval"] + c["measures"] + c["open_items"]]
@@ -102,10 +102,10 @@ class NothingInvented(unittest.TestCase):
 
 class NothingForgotten(unittest.TestCase):
     def test_the_idea_record_is_complete(self):
-        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 22)])
-        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 17)))
+        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 25)])
+        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 20)))
         self.assertEqual(sorted(d["id"] for d in C["decisions"]), sorted(f"H{i}" for i in range(1, 8)))
-        self.assertEqual(len(C["principles"]), 8)
+        self.assertEqual(len(C["principles"]), 10)
         self.assertEqual(len(C["institutions"]), 8)
         self.assertEqual(len(C["problems"]), 11)
         self.assertEqual([g["id"] for g in C["golden_rules"] if g["id"]], ["G1", "G2", "G3", "G4", "G5"])
@@ -209,7 +209,7 @@ class PlanIsSound(unittest.TestCase):
         readme = (HERE / "README.md").read_text()
         self.assertIn(f"{n_cards} card seeds", ingest)
         self.assertIn(f"{n_ar} approval records", ingest)
-        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}
+        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen"}
         gates = {3: "three", 4: "four"}[len(PACK["approvals"]["gates"])]
         self.assertIn(f"{words[n_ar]} records in {gates} gates", readme)
         self.assertIn(f"{n_ar} approval records in {gates} gates", ingest)
@@ -227,6 +227,11 @@ class PlanIsSound(unittest.TestCase):
         for word in ("Director", "Worker", "Checker", "Fit Report", "executed_by", "assigned to"):
             self.assertNotIn(word, text.replace("assigned to a named role", ""), word)
         self.assertNotRegex((HERE / "INGEST.md").read_text(), r"Director|Fit Report")
+
+    def test_retired_names_stay_retired(self):
+        text = (HERE / "factory-pack.json").read_text() + (HERE / "CARDS.md").read_text()
+        for word in ("Jev", "Court"):
+            self.assertNotIn(word, text, word)
 
     def test_ratification_is_human(self):
         for c in PACK["cards"]:

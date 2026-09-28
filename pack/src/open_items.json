@@ -82,7 +82,7 @@
    "resolver": "AR-09a",
    "isa_answer": "Live operation must be part of the Factory.",
    "blocks": [],
-   "decision": "Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family (C0.16); then the Release Gate owns them (C2.03) [PROPOSED]. Hotfixes flow through the Market and Court."
+   "decision": "Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family (C0.16); then the Release Gate owns them (C2.03) [PROPOSED]. Hotfixes flow through the Market and Review."
   },
   {
    "id": "OI-10",
@@ -151,6 +151,17 @@
    "resolver": "None needed",
    "isa_answer": "No shadow periods or replay: build, use, monitor and improve.",
    "blocks": []
+  },
+  {
+   "id": "OI-17",
+   "question": "Key custody on OpenRouter: bringing our own keys stores vendor keys at OpenRouter; bought credits need one OpenRouter key and add 5.5% [Unverified].",
+   "status": "Open",
+   "resolver": "Isa, AR-10",
+   "isa_answer": null,
+   "blocks": [
+    "C0.19",
+    "C1.03"
+   ]
   }
  ]
 }

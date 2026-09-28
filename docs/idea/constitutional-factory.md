@@ -3,7 +3,7 @@
 Stage: **IDEA, exited 27 Sep 2026** (AR-06 signed; the build proceeds through the ingestion pack)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.7 (supersedes r1–r12.6; r12.7 proposes an amendment for the quality, cost and speed trifecta and readiness hand-backs, [`trifecta.md`](trifecta.md); r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
+Revision: r12.8 (supersedes r1–r12.7; r12.8 proposes an amendment making each institution a tailored agent harness, with model flexibility and central memory, [`harnesses.md`](harnesses.md); r12.7 proposes an amendment for the quality, cost and speed trifecta and readiness hand-backs, [`trifecta.md`](trifecta.md); r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -38,31 +38,28 @@ Success and velocity push an agent up to the hardest tier it can sustain: its **
 
 ---
 
-## 2. Verdict: rules, not Jev
+## 2. Verdict: rules, not an agent, in the control path
 
-Jev (TypeSafe's typed-decision model) was proposed in r4 as a "System 1" layer for small judgments. Every judgment it would make can instead be made by a rule or a count, and Jev would be one more agent in the control path.
+Every control judgment in the Factory is made by a rule or a count in the Ledger, never by an agent, a model or a router.
 
-| Criterion | Rules in the Ledger | Jev |
+| Criterion | Rules in the Ledger | An agent in the control path |
 |---|---|---|
-| Another agent in control? | **No** | Yes |
 | Reproducible | By construction: same record, same result | Only if every answer is stored |
-| Can be steered by content | No | Yes; the vendor states that input can move its answers |
-| Explainable | Every decision cites a rule and a count | A probability without reasons |
-| Dependency | None | Early-access product; price may be subsidized |
-| Cold start | Starts from today's working mapping | Forecasts would help, but the mapping already exists |
-| Per-card nuance | Card tier from card facts, corrected by escalation | Finer-grained forecasts |
+| Can be steered by content | No | Yes |
+| Explainable | Every decision cites a rule and a count | A judgment without a trace |
+| Cold start | Starts from today's working mapping | Needs its own track record first |
 
-What each proposed Jev job becomes:
+What each control job becomes:
 
-| Proposed Jev job | Rules replacement |
+| Control job | Rule |
 |---|---|
 | Card difficulty | Tier set by Planning rules (size, files, risk paths, dependencies); raised automatically when a card fails (R6) |
-| Forecast of whether an agent will succeed | The agent's own record at that tier (R4, R5) |
+| Whether an agent will succeed | The agent's own record at that tier (R4, R5) |
 | Defect triage | Deterministic checks first: build, tests, static analysis |
-| Mapping critiques to propositions | Agents must cite proposition IDs in structured output; the rule checks coverage |
+| Mapping critiques to propositions | Agents cite proposition IDs in structured output; the rule checks coverage |
 | Anomaly detection in releases | Control limits on canary metrics |
 
-**Verdict: rules. Jev is not needed.** Its one real advantage, per-card nuance, is covered by escalation: a card that proves harder than its tier moves up. Any future model, Jev included, may enter only as a **worker inside an institution** under the same rules. It never enters the control logic.
+**Verdict: rules.** Any model may enter only as a **worker inside an institution** under the same rules. It never enters the control logic.
 
 ---
 
@@ -80,7 +77,7 @@ These rules are the whole of "management". They run identically in every institu
 | R6 | **Escalation** *(optional in r8, §3.2)* | A marked-down card is retried once at its tier by a **different** agent, then moves up a tier. A card that fails repeatedly at the top tier returns to Planning. The card is then suspect, not the agents. |
 | R7 | **Hard-work reserve** | Below its home tier, a capped agent may spend only the part of its subscription above what it would need to work its home tier at 75% of full speed until reset. Hard work is always covered; only true surplus flows to easier work. Uncapped agents have no such limit. (r6 also barred agents from easier work outright. The simulation showed that floor sorts worse, so r7 drops it; see §9.4.) |
 | R8 | **Attribution** | Every markdown carries a reason backed by evidence, and it lands on the agent that caused it: implementation → implementer; unclear or wrong card → the card's author in Planning; review miss found later → the reviewer who passed it, and the implementer; infrastructure → nobody. |
-| R9 | **The marker is marked** | Reviewers are workers too. A pass later overturned by Audit, or a markdown overturned as unfounded, counts against the reviewer under R4–R5 in the Court. Marking is accountable in both directions. |
+| R9 | **The marker is marked** | Reviewers are workers too. A pass later overturned by Audit, or a markdown overturned as unfounded, counts against the reviewer under R4–R5 in Review. Marking is accountable in both directions. |
 | R10 | **Self-awareness** | When pulling, an agent sees its own record: licences, allowance, recent rate against the standard, and the reasons behind its recent markdowns. It may decline a card with no markdown. Repeated declines at a tier return that licence: honest self-assessment reallocates work; it is not punished. |
 | R11 | **Start state** | Licences and allowances start from today's predetermined mapping. It worked, so it is the starting point. The rules move it on evidence from day one. A new model starts at tier 1 and climbs by stretch cards. |
 | R12 | **Late marks** | An Audit finding weeks later applies like an immediate markdown, counted twice, because escaped defects cost more. |
@@ -93,6 +90,9 @@ These rules are the whole of "management". They run identically in every institu
 | R19 | **High-impact licence floors** *(r12.3)* | Design, plan, plan red-team, security review, acceptance test and release need a pass chance of at least 0.8 (other steps 0.6; review 0.5). The floors are set from the same evidence as every licence, so they re-sort themselves when models change. |
 | R20 | **Configurations are proposals** *(r12.3)* | The Ledger may propose step affinities found by search over its own records (a step reserved for a pool of models) as a trial configuration: compared with the institutions on the same work, adopted only on evidence, and lapsing automatically when the roster changes or a reserved pool is empty. The constitution never reserves steps for named models. |
 | R21 | **Readiness hand-back** *(r12.7, amendment proposed)* | Every institution checks an incoming card against its readiness contract before it starts work: enough detail, the interfaces named, acceptance criteria it can test. A card that is not fit for purpose is handed back at once to the institution that produced it, with the reason, before any build spend. The producer is marked (R8). The check is part of the pull, not a separate step. |
+| R22 | **Harness per institution** *(r12.8, amendment proposed)* | Each institution runs its own harness, defined in its charter: minimal tools, context policy, guards, sensors, hand-back contract, budgets and telemetry. Harness components are versioned files. A harness edit names the component, carries a falsifiable prediction, runs as a trial on the same work (R20) and is adopted through the Release Gate only if the prediction holds. |
+| R23 | **Model swap by configuration** *(r12.8, amendment proposed)* | Any model on the menu can replace another at any step by configuration alone, through one model interface and any approved route. No harness, charter or rule is written for a named model. A swapped-in model re-earns its licences by evidence (R5 fast track). |
+| R24 | **Fresh context from central memory** *(r12.8, amendment proposed)* | No agent carries memory from one pull to the next; everything worth keeping is written to the Ledger. Each pull starts from context the harness assembles from the Ledger under the institution's charter, in a fixed, cache-first order: constitution and charter, rules and the agent's own record, repository snapshot, then the card and its evidence. Long histories enter as Ledger summaries linked to their sources. |
 
 **Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality). (r8 dropped the separate velocity standard: promotion credit is counted per card, so speed already moves models up; §3.2.) These are the "KPI and standards".
 
@@ -136,9 +136,9 @@ Each allocation rule was removed in turn and tested against six stress scenarios
 |---|---|---|---|---|
 | 1 | **Inquiry** | Independent discovery | Every model, on the same brief, committing before seeing any other submission | Council: which propositions survive into the Alignment Record |
 | 2 | **Deliberation Council** | Shared understanding | Every Inquiry participant; anonymous; no chair; no vote | Isa's ratification; Planning's clarification requests |
-| 3 | **Planning Chamber** | Intent → executable cards | Decomposers blind in parallel, then reconciliation and red team | Market: cards declined as unclear; Court: rejections attributed to the card |
-| 4 | **Work Market** | High-volume execution | Every agent, by R1–R13 | Court |
-| 5 | **Assurance Court** | Is this work acceptable? | Reviewers, blind to author; open standing to challenge with evidence | Audit: overturned passes and overturned rejections |
+| 3 | **Planning Chamber** | Intent → executable cards | Decomposers blind in parallel, then reconciliation and red team | Market: cards declined as unclear; Review: rejections attributed to the card |
+| 4 | **Work Market** | High-volume execution | Every agent, by R1–R13 | Review |
+| 5 | **Review** | Is this work acceptable? | Reviewers, blind to author; open standing to challenge with evidence | Audit: overturned passes and overturned rejections |
 | 6 | **Audit** | Is assurance trustworthy? | Auditors outside the work's provenance chain, on random and risk-weighted samples | Planted defects with known answers; Isa's sample |
 | 7 | **Ledger** | Memory and the rules | Nobody. It is where rules run and marks are kept. | Replay: any decision can be recomputed from the record |
 | 8 | **Release Gate** | Is an accepted change safe to run inside the Factory? | Approvers from different families, blind, with one seated dissenter | Canary results against criteria fixed in advance |
@@ -151,11 +151,15 @@ Each allocation rule was removed in turn and tested against six stress scenarios
 | Council | Prestige and dominance | Anonymous labels; random reading order; every proposition must appear in the synthesis; one objection keeps a point disputed |
 | Planning | Anchoring on the first plan | Blind parallel decomposition; red team separate from reconciler |
 | Market | Cherry-picking easy work | Hardest-first, oldest-first pull; no choice within a tier (R3) |
-| Court | Self-marking; knowing the author | Blind review; deterministic checks first; a reproduced defect beats any number of approvals |
+| Review | Self-marking; knowing the author | Blind review; deterministic checks first; a reproduced defect beats any number of approvals |
 | Audit | Unrepresentative samples | Random plus risk-weighted sampling; planted defects as ground truth |
 | Release | Post-hoc rationalization | Criteria fixed before data; seated dissenter; cooling-off period; no version approves itself |
 
 ---
+
+### 4.2 Each institution is an agent harness (r12.8)
+
+Agent = model + harness. [`harnesses.md`](harnesses.md) specifies one harness per stage: framing (Inquiry, Council), planning, allocation (the Ledger, with no model), working (Market), reviewing (Review), auditing, releasing and operating (Release Gate). Each has its own minimal tools, fresh context under its charter, feed-forward guards, feedback sensors, hand-back contract, budgets and telemetry, on one shared kernel. The rules run inside each harness, tailored to its job (R22). Models are interchangeable workers inside them (R23).
 
 ## 5. Capacity and subscriptions under pull
 
@@ -379,6 +383,16 @@ The searched design is therefore a configuration, admissible only as a trial (R2
 - **Hand-backs cut failed builds by 13–43% at unchanged cost and quality**, within the model's noise (about ±15% on cost for mixed work). The model finds insufficient detail only at build, so it understates R21's value at the later boundaries.
 - **Each human send-back round costs speed.** A 25% send-back rate adds 2–3 h to median lead time, and 50% adds 7–8 h. Quality and cost are unchanged.
 
+### 5.10 Routes to models: OpenRouter (r12.8)
+
+OpenRouter changes the route, not the design ([`harnesses.md`](harnesses.md) §5):
+- One interface makes a model swap a configuration change, and adds provider fallback.
+- At this Factory's volume, bringing our own keys carries no fee [Unverified: third-party guides]; bought credits add 5.5%.
+- The real cost risk is the prompt-cache hit rate, not the fee. Cost per task rises 1.5–1.6× if hits fall from 90% to 70%, and 3.1–3.8× with no cache (`probes/portfolio6/cache_sensitivity_results.txt`). Sticky sessions and cache-first context (R24) are required.
+- It adds a third party to the data path. `data_collection: "deny"` enforces R15 per request, and the terms go to AR-10.
+
+Routes are configuration, measured on quality, cost and speed like models (X19).
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.
@@ -389,6 +403,8 @@ The searched design is therefore a configuration, admissible only as a trial (R2
 6. **Memory is governed.** The Ledger holds all history. Each institution's charter says who sees what. Every agent sees its own record.
 7. **Accountability in both directions.** Producers are marked by the next stage; markers are marked by Audit.
 8. **No self-certification.** No change approves itself. Rule changes pass the Release Gate and Isa.
+9. **Models are interchangeable.** The harness and the Ledger are the lasting assets. Any model can be swapped for another by configuration; none is designed in. *(r12.8, amendment proposed)*
+10. **Memory is central; context is fresh.** Agents hold nothing between pulls. The Ledger holds the memory, and each harness assembles what its institution may see, afresh, for every pull. *(r12.8, amendment proposed)*
 
 ---
 
@@ -400,7 +416,7 @@ The searched design is therefore a configuration, admissible only as a trial (R2
 | Council | Anonymized submissions | Identities |
 | Planning | The Alignment Record, including minority positions | The Council transcript |
 | Market | The card, its contract, and **its own record** (R10) | Others' records or identities |
-| Court | Artifact, contract, evidence; other verdicts only after committing its own | The author's identity and reasoning |
+| Review | Artifact, contract, evidence; other verdicts only after committing its own | The author's identity and reasoning |
 | Audit | Contract and final artifact | Review discussion |
 
 Showing an agent only its own record gives it self-awareness. It gets no information to defer to, compete with, or collude with other agents.
@@ -500,7 +516,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 
 | Question | Settlement |
 |---|---|
-| Jev or rules | Rules (§2) |
+| Rules or an agent in the control path | Rules (§2) |
 | Subscription terms | Not needed. Pull plus throttling handles them; the hard-work reserve protects frontier caps using only each agent's own cap and time to reset (§5) |
 | Keeping frontier capacity for hard work | R7 hard-work reserve, replacing r5 pacing and the r6 floor (§9.1, §9.4) |
 | Capable models on hard cards, less capable on easy | R3 hardest-first cascade plus R5 ladder (§9.4) |
@@ -542,6 +558,9 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | X14 | High-impact floors (R19) cut change failures without lowering clean output (r12.3) | Clean output falls more than 5% against plain licences, or change-failure rate does not fall |
 | X15 | Readiness hand-backs (R21) cut rework without lowering clean output (r12.7) | Failed builds and late amendments per idea do not fall, or clean output falls more than 5% |
 | X16 | Pricing time in the Scaler (R14, r12.7) lowers lead time without a poor cost | 90th-percentile lead time does not fall, or cost per clean idea rises more than 10% |
+| X17 | Harness edits deliver their predictions (R22, r12.8) | Fewer than half of adopted harness edits meet their stated prediction on the stated volume of work |
+| X18 | A model swap by configuration keeps output (R23, r12.8) | After the fast track, a swap within the same price class changes clean output by more than 5%, or needs any harness change |
+| X19 | Routes are interchangeable too (r12.8) | A route (direct or OpenRouter) differs by more than 10% on cost per clean idea at equal quality and speed, or loses prompt-cache hits below 80% |
 
 ### 11.2 Design-stage questions (for the Planning Chamber)
 
@@ -587,11 +606,11 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 
 ## 13. Risks carried into design
 
-- **Marks are only as good as the markers.** The whole loop rests on the Court and Audit being reliable. That is why R9, planted defects and Isa's sample exist.
+- **Marks are only as good as the markers.** The whole loop rests on Review and Audit being reliable. That is why R9, planted defects and Isa's sample exist.
 - **Real success rates may be noisier than the simulation.** Window and hysteresis constants must be set from real variance in design.
 - **Tight frontier capacity queues easy work.** This is intended. The fix is cheap capacity, which the per-tier backlog makes visible.
 - **Velocity comparisons need enough agents per tier.** With very few agents at a tier, its median cycle time is fragile. Design must set a minimum sample.
-- **Low-volume institutions learn slowly.** Inquiry and Council handle few items, so their feedback loops take months to settle. Market and Court settle within days.
+- **Low-volume institutions learn slowly.** Inquiry and Council handle few items, so their feedback loops take months to settle. Market and Review settle within days.
 
 ---
 

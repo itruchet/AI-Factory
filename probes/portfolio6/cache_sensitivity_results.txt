@@ -1,0 +1,7 @@
+COST PER TASK AS A MULTIPLE OF THE 90% CACHE-HIT BASELINE (token model: 30 input per output, cache at 10%)
+  cache hits  90%: x1.00 to x1.00
+  cache hits  80%: x1.23 to x1.31
+  cache hits  70%: x1.46 to x1.62
+  cache hits  50%: x1.92 to x2.25
+  cache hits   0%: x3.08 to x3.81
+  For comparison: OpenRouter's fee is 5.5% on bought credits (x1.055); BYOK carries no fee below $25,000 a month of list-price use [Unverified: third-party guides].

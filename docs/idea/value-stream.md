@@ -57,8 +57,8 @@ All outcomes are synthetic. They rank designs; they do not forecast the Factory.
 | 5 | Red-team the plan | Planning | Finds unmapped requirements |
 | – | Human ratifies plan (2 h) | Isa | Delay |
 | 6 | Build a card, with unit tests | Work Market | Logic defect if the builder fails; security flaw on sensitive cards (25%); tests catch 50% of logic defects |
-| 7 | Code review | Assurance Court | Catches logic defects; security flaws only at 0.3× skill |
-| 8 | **Security review** (sensitive cards) | Assurance Court | Catches security flaws |
+| 7 | Code review | Review | Catches logic defects; security flaws only at 0.3× skill |
+| 8 | **Security review** (sensitive cards) | Review | Catches security flaws |
 | 9 | **Merge and CI** | Work Market | Conflicts with the cards being built, which are redone; integration defects, 60% caught by CI |
 | 10 | Audit (10% sample) | Audit | Re-checks accepted cards |
 | 11 | **Acceptance test (QA) of the whole idea** | Release Gate | Finds missing intent and remaining defects |

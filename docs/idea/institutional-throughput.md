@@ -23,7 +23,7 @@ This analysis does not start from the Factory's current models. It starts from t
 | Planning | Same Director decomposes alone | **Planning:** D agents decompose in parallel; one reconciler; a red team that is not the reconciler |
 | Allocation | Director pushes each card to a worker tier by its own estimate of difficulty | Agents **pull**. An agent may take a task only if its expected pass rate clears the licence floor. Cards are taken hardest-first; downstream work first |
 | Workers | Dedicated to their queue; a failed card returns to the same worker | Any licensed agent; a failed card goes to a different agent first |
-| Review | One Checker reviews every card | **Court:** any licensed agent other than the author |
+| Review | One Checker reviews every card | **Review:** any licensed agent other than the author |
 | Audit | None | **Audit:** 10% of accepted cards, re-checked |
 | Release | Director signs off | **Release Gate:** checks for remaining defects and unmapped requirements |
 | Human | Ratifies the plan (4 h) | Ratifies framing (4 h) and plan (2 h) |
@@ -260,7 +260,7 @@ These follow from the working above. Absolute ideas per week rest on assumed tas
 
 ## 5. What this changes in the Idea Record
 
-1. The Director → Worker → Checker bottleneck is structural: a single mandatory role. The institutions remove it because Court work is pulled by any licensed agent.
+1. The Director → Worker → Checker bottleneck is structural: a single mandatory role. The institutions remove it because Review work is pulled by any licensed agent.
 2. The bottom tier of the market has almost no place in a pull-based Factory. Portfolio rules should target top and middle tiers.
 3. R13 (no orphans) is load-bearing, not a corner case. It must relax licences, independence and seat rules, each with a Ledger record, or small teams deadlock.
 4. Deliberation (Inquiry, Council, red team) costs about 5% throughput per step and buys intent coherence. Two analysts, one council round and a red team is the efficient point.

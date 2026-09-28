@@ -18,7 +18,7 @@ The steps (idea to live)
   plan_check   red-team the plan for missed requirements (optional)
   [human]      ratify the plan
   build        implement a card with unit tests (Work Market)
-  review       code review (Assurance Court; 1 or 2 reviewers)
+  review       code review (Review; 1 or 2 reviewers)
   security     security review of sensitive cards (optional)
   integrate    merge and CI: conflicts with work in flight, integration defects
   audit        sample re-check of accepted cards (optional)

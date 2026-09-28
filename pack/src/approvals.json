@@ -169,7 +169,7 @@
    "decision": null,
    "gate": 2,
    "title": "Owner of live operation",
-   "approves": "Live operation is part of the Factory (Isa, 27 Sep 2026). The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards pulled by the Market and reviewed by the Court; change-failure rate and restore time are marked against the releasing change. Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family; then the Release Gate owns them [PROPOSED]. This extends the Release Gate's charter: a constitutional amendment.",
+   "approves": "Live operation is part of the Factory (Isa, 27 Sep 2026). The Ledger detects incidents; the owner restores by reverting the causing change; hotfixes are ordinary cards pulled by the Market and reviewed by Review; change-failure rate and restore time are marked against the releasing change. Until the Release Gate exists, incidents and restores are top-priority cards pulled by any agent and checked by another family; then the Release Gate owns them [PROPOSED]. This extends the Release Gate's charter: a constitutional amendment.",
    "evidence": [
     "docs/idea/value-stream.md §2",
     "Isa, 27 Sep 2026"
@@ -283,7 +283,7 @@
    "decision": null,
    "gate": 3,
    "title": "Vendor and data terms",
-   "approves": "API accounts with the menu's vendors; no-training terms confirmed for every tier used (R15); rate limits recorded as Scaler caps; routes, including a second route for Muse Spark; Muse Spark availability for the Owner's account region [Unverified]; review of the terms for Heliosvera IP by a qualified adviser where terms are unclear. Key custody is settled: the Owner holds the keys, hashed in the Factory (OI-04 remains for how adapters obtain usable credentials).",
+   "approves": "API accounts with the menu's vendors; no-training terms confirmed for every tier used (R15); rate limits recorded as Scaler caps; routes, including OpenRouter (our own keys, sticky sessions, data collection denied per request) and a second route for Muse Spark; Muse Spark availability for the Owner's account region [Unverified]; review of the terms for Heliosvera IP by a qualified adviser where terms are unclear. Key custody is settled: the Owner holds the keys, hashed in the Factory (OI-04 remains for how adapters obtain usable credentials).",
    "evidence": [
     "docs/idea/value-stream.md §7",
     "Vendor terms"
@@ -317,6 +317,28 @@
    "before_cards": [
     "C1.14",
     "C1.19"
+   ]
+  },
+  {
+   "id": "AR-16",
+   "decision": null,
+   "gate": 4,
+   "title": "Amendment: institutions as harnesses; model flexibility; central memory",
+   "approves": "Principle 9 (models are interchangeable) and principle 10 (memory is central; context is fresh). R22: each institution runs its own harness, and harness edits are predicted, trialled and adopted on evidence. R23: model swap by configuration. R24: fresh, cache-first context from the Ledger. Experiments X17-X19; measures M24-M25. Editorial: the reviewing institution is named Review.",
+   "evidence": [
+    "docs/idea/harnesses.md",
+    "probes/portfolio6/cache_sensitivity_results.txt"
+   ],
+   "owner": "Isa",
+   "signer": "Isa",
+   "status": "Ready",
+   "depends_on": [
+    "AR-13"
+   ],
+   "before_cards": [
+    "C0.18",
+    "C0.19",
+    "C2.05"
    ]
   }
  ],
