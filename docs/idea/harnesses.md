@@ -1,6 +1,6 @@
 # Institutions as agent harnesses (r12.8)
 
-Stage: amendment proposed (AR-16).
+Stage: amendment AR-16, signed by Isa on 28 Sep 2026.
 
 **Agent = model + harness.** Each institution is a harness tailored to its stage of the work:
 - framing;

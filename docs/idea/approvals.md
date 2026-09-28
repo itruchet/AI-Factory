@@ -66,7 +66,7 @@ One sitting. All evidence exists.
 | # | Record | What is approved | Before | Owner | Status |
 |---|---|---|---|---|---|
 | AR-15 | **Amendment: quality, cost and speed; readiness hand-back** | R14 amended: the Scaler prices a success as ($ + time value × elapsed hours, latency included) ÷ pass chance, weighing quality, cost and speed together; time value starts at $0.5 an hour and moves on live evidence. New R21: every institution hands back cards that are not fit for purpose before any build spend. Human steps are timed stages, measured like any institution. New experiments X15, X16; measures M21–M23 ([`trifecta.md`](trifecta.md)) | C1.14, C1.19 | Isa | Ready |
-| AR-16 | **Amendment: institutions as harnesses; model flexibility; central memory** | Principle 9 (models are interchangeable) and principle 10 (memory is central; context is fresh). R22: each institution runs its own harness; harness edits are predicted, trialled and adopted on evidence. R23: model swap by configuration. R24: fresh, cache-first context from the Ledger. X17–X19; M24–M25. Editorial: the reviewing institution is named Review ([`harnesses.md`](harnesses.md)) | C0.18, C0.19, C2.05 | Isa | Ready |
+| AR-16 | **Amendment: institutions as harnesses; model flexibility; central memory** | Principle 9 (models are interchangeable) and principle 10 (memory is central; context is fresh). R22: each institution runs its own harness; harness edits are predicted, trialled and adopted on evidence. R23: model swap by configuration. R24: fresh, cache-first context from the Ledger. X17–X19; M24–M25. Editorial: the reviewing institution is named Review ([`harnesses.md`](harnesses.md)) | C0.18, C0.19, C2.05 | Isa | **Signed by Isa, 28 Sep 2026** |
 
 ---
 
