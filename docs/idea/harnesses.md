@@ -116,7 +116,7 @@ Models are interchangeable workers inside those harnesses. The harness and the L
 | Biggest cost risk | Cache hits. Losing them costs 1.5–3.8× (table below), far more than any fee. Sticky sessions and cache-first context (R24) are required |
 | Resilience | Provider fallback, mainly for open-weight models hosted by several providers (supports P2) |
 | Data (R15, Heliosvera IP) | A third party in the data path. `data_collection: "deny"` enforces R15 per request. The terms need AR-10's adviser review |
-| Key custody | Bringing our own keys means vendor keys held at OpenRouter; bought credits need one OpenRouter key held by the Owner. Isa decides (OI-17) |
+| Key custody | Settled by the self-hosted gateway: the Owner holds the keys; an aggregator gets a vendor key only if the Owner registers one for that route (OI-17) |
 | Speed | An extra hop [Unverified: small]; measured per route (M08) |
 
 **Cost per task against cache-hit rate** (`cache_sensitivity_results.txt`; multiple of the 90% baseline, across the seven menu models):
@@ -125,9 +125,18 @@ Models are interchangeable workers inside those harnesses. The harness and the L
 |---|---|---|---|---|---|
 | Cost per task | ×1.00 | ×1.23–1.31 | ×1.46–1.62 | ×1.92–2.25 | ×3.08–3.81 |
 
-**Recommendation:**
-- **Routing:** make OpenRouter the default route, with our own keys, sticky sessions and data collection denied. Keep the direct vendor route for the two anchors until measurement shows which route wins on quality, cost and speed.
-- **Routes are configuration,** chosen by the Ledger like models (X19).
+**Decision (Isa, 28 Sep 2026): a self-hosted gateway, with aggregators as routes.**
+- **The gateway:** a self-hosted gateway (LiteLLM, open source, or equivalent) is the Factory's one model interface (C0.19). Model flexibility lives in our own layer, and the Owner keeps the keys.
+- **Routes behind it:**
+  - direct vendor routes for the two anchors;
+  - OpenRouter where its catalogue or provider fallback is needed;
+  - Vercel AI Gateway trialled as a second aggregator route.
+- **Routes are configuration,** chosen by the Ledger on measured quality, cost and speed (X19).
+
+**Comparison of aggregators** [Unverified: vendor docs and third-party guides, September 2026]:
+- None of OpenRouter, Vercel, Cloudflare, Portkey or LiteLLM marks up tokens.
+- The differences are the platform fee, data path, key custody and catalogue.
+- Only a self-hosted gateway keeps both the data path and the keys inside the Factory.
 
 ---
 

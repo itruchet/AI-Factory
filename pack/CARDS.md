@@ -342,24 +342,29 @@ Acceptance:
 
 Evidence: Kernel tests; replay of context assembly.
 
-### C0.19 One model interface: any model, any route, by configuration
+### C0.19 Self-hosted model gateway: any model, any route, by configuration
 
-Model flexibility is core. Any model can be swapped for another without touching a harness, charter or rule.
+Model flexibility is core, so it lives in the Factory's own layer, not a rented one. A self-hosted gateway (LiteLLM or equivalent) is the one model interface: any model swaps for another by configuration, the Owner keeps the keys, and no third party sits in the data path unless a route is chosen for it.
 
 - **Institution:** Ledger.
-- **Depends on:** C0.04, C0.05. **Approvals first:** AR-16.
-- **Traces:** R23, principle.9, X18, X19, problem.P2. **Measures:** M08, M25. **Open items:** OI-17.
+- **Depends on:** C0.04, C0.05, C0.16. **Approvals first:** AR-16.
+- **Traces:** AR-10, R15, R23, X18, X19, principle.9, problem.P2. **Measures:** M08, M25.
 
 Scope:
-- One adapter interface for every model; model, reasoning effort and route (direct vendor API or OpenRouter) are configuration
+- Run a self-hosted gateway (LiteLLM, open source, or equivalent) inside the Factory as the single model interface for every harness
+- Model, reasoning effort and route are configuration: a direct vendor API, or an aggregator route (OpenRouter first; Vercel AI Gateway as a trial route)
+- Keys stay in the Owner's custody, hashed in the Factory; the gateway reads them from the Owner's store and the Ledger records fingerprints only (C0.05)
+- Per route: prompt caching passed through with sticky sessions; data collection denied and zero retention requested where the route offers it (R15)
 - No model-specific logic in any harness; a lint check fails the build on a named model outside configuration
 - A swap takes effect at the next pull; the new model starts under R5's fast track
-- Per route: sticky sessions for prompt-cache hits and data collection denied (R15)
+- The gateway is a live service: its failures are incidents handled by C0.16, and its configuration is a protected path
 
 Acceptance:
 - [ ] Swapping one menu model for another is a configuration change with no code change, shown by a test
-- [ ] The same card runs through a direct route and through OpenRouter with usage, latency and cache hits recorded for both (M08, M25)
+- [ ] The same card runs through a direct route and through an aggregator route, with usage, latency and cache hits recorded for both (M08, M25)
+- [ ] No key material leaves the Owner's store: a secret scan of the gateway, Ledger and logs finds none
 - [ ] A named model in harness code fails the lint check
+- [ ] Stopping the gateway raises an incident and a restore within C0.16's flow
 
 Evidence: Swap test; route comparison.
 
@@ -416,13 +421,13 @@ Staff the menu on API tokens, with no tier that trains on our data, and read rea
 
 - **Institution:** Ledger.
 - **Depends on:** C0.19. **Approvals first:** AR-02, AR-10.
-- **Traces:** R15, H4, H6, portfolio.P8. **Measures:** M08. **Open items:** OI-04, OI-06, OI-07, OI-15, OI-17.
+- **Traces:** R15, H4, H6, portfolio.P8. **Measures:** M08. **Open items:** OI-04, OI-06, OI-07, OI-15.
 
 Scope:
-- Configure the menu in the pack's menu section on the routes AR-10 approves, through the model interface (C0.19): OpenRouter with our own keys, sticky sessions and data collection denied as the default [PROPOSED]; direct vendor routes kept for the two anchors until measured
+- Configure the menu in the pack's menu section through the self-hosted gateway (C0.19), on the routes AR-10 approves: direct vendor routes for the two anchors (Claude Opus 5.5, GPT-5.6 Terra); OpenRouter as the aggregator route where its catalogue or provider fallback is needed (Muse Spark 1.3; DeepSeek V4.1 Flash and Ling 3.0 Flash across hosts); Vercel AI Gateway trialled as a second aggregator route [PROPOSED]
 - A route is registered only with a recorded no-training confirmation for that tier (R15); Muse Spark's Contributor tier is excluded
 - Vendor rate limits recorded as Scaler caps (replacing the assumed 8 per model, 48 in all)
-- A second route where AR-10 names one (for example OpenRouter for Muse Spark)
+- A second route per model where AR-10 names one; the Ledger chooses routes on measured quality, cost and speed (X19)
 
 Acceptance:
 - [ ] Registering a route without a no-training confirmation fails

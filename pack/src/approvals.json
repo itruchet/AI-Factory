@@ -283,7 +283,7 @@
    "decision": null,
    "gate": 3,
    "title": "Vendor and data terms",
-   "approves": "API accounts with the menu's vendors; no-training terms confirmed for every tier used (R15); rate limits recorded as Scaler caps; routes, including OpenRouter (our own keys, sticky sessions, data collection denied per request) and a second route for Muse Spark; Muse Spark availability for the Owner's account region [Unverified]; review of the terms for Heliosvera IP by a qualified adviser where terms are unclear. Key custody is settled: the Owner holds the keys, hashed in the Factory (OI-04 remains for how adapters obtain usable credentials).",
+   "approves": "The self-hosted gateway (C0.19) as the Factory's one model interface. API accounts with the menu's vendors held by the Owner. Routes: direct for the two anchors; OpenRouter as the first aggregator route, with the Owner's own keys (no fee below $25,000 a month of list-price use), sticky sessions and data collection denied per request; Vercel AI Gateway as a trial route (no platform fee; zero data retention per request) [Unverified: third-party guides, September 2026; confirm against current terms]. No-training terms confirmed for every tier and route used (R15); rate limits recorded as Scaler caps; Muse Spark availability for the Owner's account region [Unverified]; review of vendor and aggregator terms for Heliosvera IP by a qualified adviser where they are unclear, including any aggregator in the data path. Key custody: the Owner holds all keys, hashed in the Factory; an aggregator holds a vendor key only where the Owner registers it there for that route.",
    "evidence": [
     "docs/idea/value-stream.md §7",
     "Vendor terms"

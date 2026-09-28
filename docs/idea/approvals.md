@@ -56,7 +56,7 @@ One sitting. All evidence exists.
 
 | # | Record | What is approved | Before | Owner | Status |
 |---|---|---|---|---|---|
-| AR-10 | **Vendor and data terms** | API accounts with the menu's vendors; no-training terms for every tier used (R15); rate limits as Scaler caps; routes, including a second route for Muse Spark; Muse Spark in the Owner's region [Unverified]; review of the terms for Heliosvera IP by a qualified adviser where they are unclear. Key custody is settled; OI-04 remains | C1.03 | Isa | To produce |
+| AR-10 | **Vendor and data terms** | The self-hosted gateway (C0.19) as the one model interface. Vendor accounts held by the Owner. Direct routes for the two anchors. OpenRouter as the first aggregator route: the Owner's own keys, sticky sessions, data collection denied. Vercel AI Gateway as a trial route [Unverified terms]. No-training terms for every tier and route (R15); rate limits as Scaler caps; Muse Spark in the Owner's region [Unverified]; adviser review of vendor and aggregator terms for Heliosvera IP. Key custody: the Owner holds all keys (OI-17 resolved) | C1.03 | Isa | To produce |
 | AR-09b | **Ratification tiers and attention budget** | Which ideas need Isa's ratification, which the Council may ratify, and her weekly attention budget | C3.04 | Isa | Open: Isa decides |
 
 ---

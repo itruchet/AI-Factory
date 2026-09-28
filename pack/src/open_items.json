@@ -154,14 +154,12 @@
   },
   {
    "id": "OI-17",
-   "question": "Key custody on OpenRouter: bringing our own keys stores vendor keys at OpenRouter; bought credits need one OpenRouter key and add 5.5% [Unverified].",
-   "status": "Open",
-   "resolver": "Isa, AR-10",
-   "isa_answer": null,
-   "blocks": [
-    "C0.19",
-    "C1.03"
-   ]
+   "question": "Key custody with aggregator routes.",
+   "status": "Resolved",
+   "resolver": "Isa, 28 Sep 2026",
+   "isa_answer": "Run a self-hosted gateway.",
+   "blocks": [],
+   "decision": "The self-hosted gateway (C0.19) keeps every key in the Owner's custody, hashed in the Factory. An aggregator route receives a vendor key only if the Owner registers one there; otherwise the route is not used. Terms reviewed in AR-10."
   }
  ]
 }

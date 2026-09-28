@@ -391,7 +391,7 @@ OpenRouter changes the route, not the design ([`harnesses.md`](harnesses.md) §5
 - The real cost risk is the prompt-cache hit rate, not the fee. Cost per task rises 1.5–1.6× if hits fall from 90% to 70%, and 3.1–3.8× with no cache (`probes/portfolio6/cache_sensitivity_results.txt`). Sticky sessions and cache-first context (R24) are required.
 - It adds a third party to the data path. `data_collection: "deny"` enforces R15 per request, and the terms go to AR-10.
 
-Routes are configuration, measured on quality, cost and speed like models (X19).
+Routes are configuration, measured on quality, cost and speed like models (X19). *Decision (Isa, 28 Sep 2026):* a self-hosted gateway is the Factory's one model interface; OpenRouter and Vercel AI Gateway are routes behind it; the anchors use direct routes.
 
 ## 6. The constitution (principles)
 
