@@ -310,14 +310,15 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 28 Sep 2026",
    "depends_on": [
     "AR-13"
    ],
    "before_cards": [
     "C1.14",
     "C1.19"
-   ]
+   ],
+   "signed": "2026-09-28"
   },
   {
    "id": "AR-16",

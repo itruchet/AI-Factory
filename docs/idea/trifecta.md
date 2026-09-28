@@ -1,6 +1,6 @@
 # Quality, cost and speed: the trifecta, hand-backs and human rounds (r12.7)
 
-Stage: amendment proposed (AR-15). Code: [`probes/value-stream/trifecta.py`](../../probes/value-stream/trifecta.py) → `trifecta_results.txt`, 12 seeds per cell. All results are synthetic. The new mechanisms are off by default, and with them off the model reproduces r12–r12.3 exactly (tests pass).
+Stage: amendment AR-15, signed by Isa on 28 Sep 2026. Code: [`probes/value-stream/trifecta.py`](../../probes/value-stream/trifecta.py) → `trifecta_results.txt`, 12 seeds per cell. All results are synthetic. The new mechanisms are off by default, and with them off the model reproduces r12–r12.3 exactly (tests pass).
 
 **Configuration:**
 - the institutions;
