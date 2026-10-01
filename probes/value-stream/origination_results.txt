@@ -1,0 +1,49 @@
+EDGE CASES, ORIGINATION AND THE RATIFICATION ENVELOPE (institutions, elastic, R17 at 25% coupling, R21, time value $0.5/h, the seven-model menu; lead = median/90th h)
+
+[E / steady / no blind spots]
+  review only (r12.10)                18.8 clean ( 25.0 live)  lead    24/   42 h  CFR  12%  escaped 0.24/idea  $ 27.8/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    3
+  challenge tests                     18.3 clean ( 24.3 live)  lead    27/   48 h  CFR  13%  escaped 0.23/idea  $ 33.4/clean  challenge catches 3.11/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    6
+  challenge tests + exploration 25%   18.3 clean ( 24.3 live)  lead    27/   48 h  CFR  13%  escaped 0.23/idea  $ 33.4/clean  challenge catches 3.11/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    6
+
+[E / steady / family blind spots 18%]
+  review only (r12.10)                12.8 clean ( 24.7 live)  lead    27/   53 h  CFR  22%  escaped 0.41/idea  $ 49.8/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    4
+  challenge tests                     14.6 clean ( 25.3 live)  lead    29/   55 h  CFR  18%  escaped 0.34/idea  $ 48.5/clean  challenge catches 3.73/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    5
+  challenge tests + exploration 25%   14.6 clean ( 25.3 live)  lead    29/   55 h  CFR  18%  escaped 0.34/idea  $ 48.5/clean  challenge catches 3.73/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    5
+
+[E / steady / all-family blind spots 18%]
+  review only (r12.10)                 2.9 clean ( 25.5 live)  lead    21/   36 h  CFR  23%  escaped 0.44/idea  $147.7/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    3
+  challenge tests                      2.8 clean ( 24.4 live)  lead    23/   39 h  CFR  23%  escaped 0.43/idea  $168.5/clean  challenge catches 1.64/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    2
+  challenge tests + exploration 25%    3.0 clean ( 25.3 live)  lead    22/   37 h  CFR  22%  escaped 0.39/idea  $153.6/clean  challenge catches 1.76/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    4
+
+[E / mixed / no blind spots]
+  review only (r12.10)                18.8 clean ( 24.6 live)  lead    22/  105 h  CFR  12%  escaped 0.23/idea  $ 66.8/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    8
+  challenge tests                     18.5 clean ( 24.7 live)  lead    25/  112 h  CFR  13%  escaped 0.23/idea  $ 77.6/clean  challenge catches 9.47/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    9
+  challenge tests + exploration 25%   18.5 clean ( 24.7 live)  lead    25/  112 h  CFR  13%  escaped 0.23/idea  $ 77.6/clean  challenge catches 9.47/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    9
+
+[E / mixed / family blind spots 18%]
+  review only (r12.10)                13.7 clean ( 23.7 live)  lead    26/  144 h  CFR  20%  escaped 0.42/idea  $127.7/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end   11
+  challenge tests                     13.6 clean ( 24.5 live)  lead    26/  154 h  CFR  20%  escaped 0.40/idea  $142.3/clean  challenge catches 13.82/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end   11
+  challenge tests + exploration 25%   13.6 clean ( 24.5 live)  lead    26/  154 h  CFR  20%  escaped 0.40/idea  $142.3/clean  challenge catches 13.82/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end   11
+
+[E / mixed / all-family blind spots 18%]
+  review only (r12.10)                 5.8 clean ( 26.0 live)  lead    19/   73 h  CFR  25%  escaped 0.48/idea  $177.4/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    5
+  challenge tests                      5.3 clean ( 24.9 live)  lead    21/   90 h  CFR  24%  escaped 0.45/idea  $210.1/clean  challenge catches 5.02/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    8
+  challenge tests + exploration 25%    5.7 clean ( 24.0 live)  lead    20/   79 h  CFR  20%  escaped 0.45/idea  $147.4/clean  challenge catches 5.25/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    5
+
+[O / 25 briefs + 0 originated a week]
+  Isa unlimited (reference)           18.8 clean ( 25.0 live)  lead    24/   42 h  CFR  12%  escaped 0.24/idea  $ 27.8/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    3
+  Isa 5 h, ratifies all               18.5 clean ( 24.2 live)  lead    37/   62 h  CFR  13%  escaped 0.23/idea  $ 27.8/clean  challenge catches 0.00/idea  Isa  4.1 h/wk  ratification wait   9.2 h  open at end    8
+  Isa 5 h, envelope 50%               18.0 clean ( 24.1 live)  lead    24/   41 h  CFR  13%  escaped 0.23/idea  $ 28.6/clean  challenge catches 0.00/idea  Isa  2.2 h/wk  ratification wait   4.3 h  open at end    4
+  Isa 5 h, envelope 80%               18.7 clean ( 24.9 live)  lead    21/   40 h  CFR  14%  escaped 0.23/idea  $ 28.4/clean  challenge catches 0.00/idea  Isa  1.2 h/wk  ratification wait   3.3 h  open at end    4
+
+[O / 25 briefs + 25 originated a week]
+  Isa unlimited (reference)           38.7 clean ( 51.5 live)  lead    24/   44 h  CFR  13%  escaped 0.24/idea  $ 29.8/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end    8
+  Isa 5 h, ratifies all               18.1 clean ( 24.3 live)  lead   326/  542 h  CFR  14%  escaped 0.25/idea  $ 29.2/clean  challenge catches 0.00/idea  Isa  5.0 h/wk  ratification wait 283.1 h  open at end  187
+  Isa 5 h, envelope 50%               37.4 clean ( 50.1 live)  lead    29/   73 h  CFR  13%  escaped 0.24/idea  $ 30.1/clean  challenge catches 0.00/idea  Isa  4.5 h/wk  ratification wait  15.3 h  open at end    9
+  Isa 5 h, envelope 80%               37.8 clean ( 51.2 live)  lead    20/   39 h  CFR  14%  escaped 0.25/idea  $ 30.1/clean  challenge catches 0.00/idea  Isa  2.4 h/wk  ratification wait   4.2 h  open at end    8
+
+[O / 25 briefs + 50 originated a week]
+  Isa unlimited (reference)           54.9 clean ( 73.1 live)  lead    24/   43 h  CFR  14%  escaped 0.24/idea  $ 29.8/clean  challenge catches 0.00/idea  Isa  0.0 h/wk  ratification wait   0.0 h  open at end   12
+  Isa 5 h, ratifies all               16.1 clean ( 21.2 live)  lead   488/  761 h  CFR  12%  escaped 0.21/idea  $ 30.4/clean  challenge catches 0.00/idea  Isa  5.0 h/wk  ratification wait 569.4 h  open at end  362
+  Isa 5 h, envelope 50%               45.6 clean ( 61.1 live)  lead    30/  355 h  CFR  13%  escaped 0.24/idea  $ 29.7/clean  challenge catches 0.00/idea  Isa  5.0 h/wk  ratification wait 175.3 h  open at end  105
+  Isa 5 h, envelope 80%               56.4 clean ( 74.7 live)  lead    21/   46 h  CFR  12%  escaped 0.22/idea  $ 30.2/clean  challenge catches 0.00/idea  Isa  3.6 h/wk  ratification wait   8.5 h  open at end   13

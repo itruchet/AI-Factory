@@ -144,6 +144,54 @@
     ],
     "tol": 0.01
    }
+  },
+  {
+   "id": "CL-11",
+   "statement": "With 5 hours of Isa's attention a week [illustrative] and every idea ratified by her, 75 ideas a week yield about 16 clean ideas.",
+   "value": 16.1,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/origination.json",
+    "path": [
+     "O",
+     "25 briefs + 50 originated a week",
+     "Isa 5 h, ratifies all",
+     "clean"
+    ],
+    "tol": 0.01
+   }
+  },
+  {
+   "id": "CL-12",
+   "statement": "With 80% of ideas inside the envelope, the same demand yields about 56 clean ideas a week.",
+   "value": 56.4,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/origination.json",
+    "path": [
+     "O",
+     "25 briefs + 50 originated a week",
+     "Isa 5 h, envelope 80%",
+     "clean"
+    ],
+    "tol": 0.01
+   }
+  },
+  {
+   "id": "CL-13",
+   "statement": "That takes about 3.6 of Isa's hours a week.",
+   "value": 3.6,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/origination.json",
+    "path": [
+     "O",
+     "25 briefs + 50 originated a week",
+     "Isa 5 h, envelope 80%",
+     "isa_h"
+    ],
+    "tol": 0.03
+   }
   }
  ]
 }

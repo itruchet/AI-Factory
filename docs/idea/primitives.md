@@ -1,6 +1,6 @@
 # Target architecture: primitives, the library, and load (r12.10)
 
-Stage: design direction (AR-17); rule R25 proposed (AR-18). Probe: [`probes/enterprise/load_probe.py`](../../probes/enterprise/load_probe.py) → `load_probe_results.txt`. The probe's capacities and workload are illustrative assumptions, swept ×0.25 to ×4, and it uses no model spend.
+Stage: design direction (AR-17) and rule R25 (AR-18), both signed by Isa on 1 Oct 2026. Probe: [`probes/enterprise/load_probe.py`](../../probes/enterprise/load_probe.py) → `load_probe_results.txt`. The probe's capacities and workload are illustrative assumptions, swept ×0.25 to ×4, and it uses no model spend.
 
 ---
 
@@ -88,7 +88,7 @@ The primitives stay the same; only the partition changes.
 | Library rules | Policy as code (OPA or Cedar) at the gateway and the stores |
 | Returns desk | Hand-backs (R21) and conveyor rejects, which become exception cards |
 
-**R25: industrialise the repeated** (amendment proposed, AR-18):
+**R25: industrialise the repeated** (amended by AR-18, signed 1 Oct 2026):
 - When a pattern of agent work recurs in a stable shape, a card proposes a deterministic path for it: a workflow, view or engine function.
 - The path runs alongside the agents on the same requests. It is adopted through the Release Gate if it matches their answers at lower cost.
 - Requests the deterministic path rejects go to agents as exception cards.

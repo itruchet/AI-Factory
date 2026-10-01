@@ -102,12 +102,12 @@ class NothingInvented(unittest.TestCase):
 
 class NothingForgotten(unittest.TestCase):
     def test_the_idea_record_is_complete(self):
-        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 26)])
-        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 21)))
+        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 29)])
+        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 24)))
         self.assertEqual(sorted(d["id"] for d in C["decisions"]), sorted(f"H{i}" for i in range(1, 8)))
         self.assertEqual(len(C["principles"]), 10)
         self.assertEqual(len(C["institutions"]), 8)
-        self.assertEqual(len(C["problems"]), 11)
+        self.assertEqual(len(C["problems"]), 12)
         self.assertEqual([g["id"] for g in C["golden_rules"] if g["id"]], ["G1", "G2", "G3", "G4", "G5"])
 
     def test_every_live_rule_has_a_card(self):
@@ -209,7 +209,7 @@ class PlanIsSound(unittest.TestCase):
         readme = (HERE / "README.md").read_text()
         self.assertIn(f"{n_cards} card seeds", ingest)
         self.assertIn(f"{n_ar} approval records", ingest)
-        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen", 19: "Nineteen"}
+        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen", 19: "Nineteen", 20: "Twenty"}
         gates = {3: "three", 4: "four"}[len(PACK["approvals"]["gates"])]
         self.assertIn(f"{words[n_ar]} records in {gates} gates", readme)
         self.assertIn(f"{n_ar} approval records in {gates} gates", ingest)

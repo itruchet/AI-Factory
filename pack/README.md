@@ -62,14 +62,16 @@
 
 ## 3. Approval records
 
-**Nineteen records in four gates.** Isa signs eighteen; AR-14 is a mechanical load into the pull queue. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
+**Twenty records in four gates.** Isa signs nineteen; AR-14 is a mechanical load into the pull queue. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
 
 | Gate | Records | When |
 |---|---|---|
 | 1. Decide | AR-01 constitution; AR-02 portfolio; AR-03 tiers; AR-04 operating rules; AR-05 budget and value measure; AR-06 exit Idea stage | Now; all Ready |
 | 2. Onto the backlog | AR-07 Alignment Record and authority to ingest; AR-08 baseline standards; AR-09a live operation; AR-11 protected paths; AR-12 monitoring and improvement plan; AR-13 Ratified Plan; AR-14 admission of Phase 0 | Straight after Gate 1; then Phase 0 loads |
-| 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C3.04) | During the build |
-| 4. Amendments | AR-15 quality, cost and speed (R14 time value) and readiness hand-back (R21) (before C1.14, C1.19); AR-16 institutions as harnesses, model flexibility, central memory (before C0.18, C0.19, C2.05); AR-17 the North Star; AR-18 primitives and R25 | AR-15, AR-16 signed; AR-17 ready |
+| 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C1.22 and C3.04) | During the build |
+| 4. Amendments | AR-15 quality, cost and speed (R14 time value) and readiness hand-back (R21) (before C1.14, C1.19); AR-16 institutions as harnesses, model flexibility, central memory (before C0.18, C0.19, C2.05); AR-17 the North Star; AR-18 primitives and R25; AR-19 edge cases, self-origination and the ratification envelope (R26-R28; before C1.20-C1.22, C2.06, C3.05) | All signed: AR-15, AR-16 on 28 Sep 2026; AR-17 to AR-19 on 1 Oct 2026 |
+
+**AR-19 in numbers (synthetic; 5 hours of Isa's attention a week, illustrative):** at 75 ideas a week, ratifying every idea herself caps output at about 16 clean ideas a week (CL-11). With 80% of ideas inside the envelope, it reaches about 56 (CL-12), on about 3.6 of her hours (CL-13).
 
 ---
 
@@ -85,7 +87,7 @@
 - No secret patterns appear anywhere in the pack.
 
 **Nothing forgotten**
-- The Idea Record is complete: R1–R20, X1–X14, H1–H7, 8 principles, 8 institutions, 11 problems and 5 golden rules.
+- The Idea Record is complete: R1–R28, X1–X23, H1–H7, 10 principles, 8 institutions, 12 problems and 5 golden rules.
 - Every live rule, golden rule, principle, institution and problem is traced by a card.
 - Every experiment is both instrumented and judged.
 - Every design question and risk is routed.

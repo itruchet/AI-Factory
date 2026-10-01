@@ -373,7 +373,7 @@ Evidence: Swap test; route comparison.
 
 Layer the pull rules, licences, Market, Review and elastic capacity onto the collective's pull. Each part is switched on as soon as it passes its acceptance contract.
 
-**Entry:** Phase 0 exit approved; AR-10 signed before C1.03 starts.
+**Entry:** Phase 0 exit approved; AR-10 signed before C1.03 starts; AR-19 signed before C1.20, C1.21 and C1.22 start; AR-09b before C1.22.
 
 **Exit:** Every Phase 1 card accepted; Isa approves the phase exit through the interim gate (C0.02).
 
@@ -719,6 +719,76 @@ Acceptance:
 
 Evidence: Hand-back records.
 
+### C1.20 Edge cases as evidence: sealed scenario tests and challenge tests
+
+Model-written review shares model blind spots. Edge cases become deterministic evidence: sealed tests from the contract's failure scenarios, and challenge tests written by another family before it reads the code.
+
+- **Institution:** Review.
+- **Depends on:** C0.08, C1.01, C1.17. **Approvals first:** AR-19.
+- **Traces:** R26, X21, problem.P5, R18, principle.3, RK7. **Measures:** M26, M15.
+
+Scope:
+- Failure scenarios in every acceptance contract: until Inquiry types them (C3.05), Planning or the card's author writes them; each becomes a locked test sealed from the builder, inside the contract hash (C1.01)
+- Challenge tester: at first review, a model of another family (R18) writes boundary, property-based and fuzz tests from the contract alone, and commits them before the code is visible to it
+- A failing sealed or challenge test is a reproduced defect (principle 3): it blocks acceptance whatever the model reviews say
+- Challenge testers are markers: a defect that escapes past their tests counts against them (R9)
+- Effort: about 30% of the card's hours [PROPOSED: the model's assumption]. Challenge tests start on every card; the Ledger keeps them by tier where they catch defects review passes and stops them where they do not (R26)
+- Harness (Review, reviewing): the challenge tester sees the contract and its failure scenarios only, until its tests are committed
+
+Acceptance:
+- [ ] The build harness cannot read or edit sealed tests
+- [ ] A challenge tester's tests are committed before the code is visible to it (manifest audit)
+- [ ] A failing sealed or challenge test blocks acceptance
+- [ ] Each defect's provenance record (C0.08) shows whether a sealed or challenge test caught it, and the family that wrote the test
+- [ ] Challenge-test catches beyond review are reported weekly by tier, and the rule that keeps or stops them cites them
+
+Evidence: Review tests; manifest audit; catch report.
+
+### C1.21 Self-origination: Ledger signals become briefs
+
+The Factory does not wait to be told. Its own record raises signals by rule, and each signal becomes a brief the collective works like any other. No ninth institution.
+
+- **Institution:** Ledger.
+- **Depends on:** C0.06, C0.08, C0.09, C0.16, C0.17. **Approvals first:** AR-19.
+- **Traces:** R27, X22, problem.P12, RK6, DQ13. **Measures:** M27, M06, M07.
+
+Scope:
+- Signals by rule, no model in the control path: escaped defects or incidents clustering on a component; all-family misses (X11); repeated hand-backs or stale rebuilds; a rising cost per clean idea; repeated agent work (R25); a weekly standing brief
+- Each signal becomes a brief with its evidence and a baseline value at intake (C0.09); a signal that matches an open brief is attached to it by rule
+- Until Inquiry runs (C3.05), the collective pulls originated briefs like any card, checked by another family; ratification follows the envelope (C1.22)
+- Budget: originated ideas use at most 20% of the monthly ceiling (R16, R27); beyond it, they wait
+- Marked by realised value (M07): ideas left with no action count against the contributions behind them
+
+Acceptance:
+- [ ] Every originated brief cites the signal, the rule and the Ledger facts that raised it
+- [ ] Originated spend is reported weekly against its 20% share
+- [ ] Realised value per dollar is reported for originated ideas and for Isa's briefs side by side (X22)
+
+Evidence: Signal log; origination report.
+
+### C1.22 Ratification envelope and Isa's attention queue
+
+Ratification is a problem to solve, not a ceiling to accept. Isa ratifies what only she can; rules ratify the rest inside bounds she sets, and her sample keeps them honest.
+
+- **Institution:** Ledger.
+- **Depends on:** C0.06, C0.09, C0.17. **Approvals first:** AR-19, AR-09b. **Ratified by:** Isa.
+- **Traces:** R28, X23, problem.P10, DQ7. **Measures:** M28, M17, M22. **Open items:** OI-10.
+
+Scope:
+- The envelope Isa sets (AR-09b): baseline cost, reversible by canary rollback, no protected governance path, no new vendor, data flow or regulated claim, no disputed proposition
+- Inside: ratified by rule once the Alignment Record passes the envelope check; Isa reviews a random 10% afterwards (R28)
+- An overturn by Isa is a late mark (R12) on the producers and narrows the envelope at once; 20 rule ratifications without an overturn widen it one step, up to the ceiling Isa sets
+- Outside: Isa's queue, ordered by expected value per minute of her time (C0.09 baseline), in one digest. No fixed weekly budget, because her time varies (Isa, 1 Oct 2026): her turnaround is measured (M22), and she is alerted when an idea outside the envelope waits more than a week
+- Always Isa: amendments, standards, governance changes, R13 escalations
+- Envelope bounds and ceiling: [PLACEHOLDER: Isa sets them in AR-09b (OI-10)]
+
+Acceptance:
+- [ ] Every ratification records who ratified it (Isa or the envelope rule) and the rule that routed it
+- [ ] Isa's sample is drawn at random; no producer can exclude an idea from it
+- [ ] Weekly report: Isa's hours (M17) and turnaround (M22), queue wait, share inside the envelope, sample overturn rate and envelope step (M28)
+
+Evidence: Ratification log; attention report.
+
 ## Phase 2: Audit, Release Gate and live operation
 
 Mark the markers, gate every change including governance, and give live operation an owner.
@@ -829,6 +899,26 @@ Acceptance:
 
 Evidence: Harness change log with predictions and outcomes.
 
+### C2.06 Audit marks the tests: mutation score
+
+A test suite that cannot fail proves nothing. Audit measures whether sealed and challenge tests catch planted mutations.
+
+- **Institution:** Audit.
+- **Depends on:** C1.20, C2.01. **Approvals first:** AR-19.
+- **Traces:** R26, X21, R9, RK1. **Measures:** M26.
+
+Scope:
+- Mutation score of each sampled card's sealed and challenge tests: the share of planted code mutations they catch
+- A suite below the standard is handed back to its author (R21, R8): Planning for sealed tests, the challenge tester for its own
+- Standard per tier [PROPOSED]: reported only until Isa sets it with AR-08's other standards
+- Planted defects (C2.01) include defects inside failure scenarios, so sealed tests are marked too
+
+Acceptance:
+- [ ] Every audited card carries a mutation score
+- [ ] A suite below the standard is handed back with its score
+
+Evidence: Mutation report.
+
 ## Phase 3: Inquiry, Council and Planning
 
 Stand up the three deliberative institutions. Low volume lets them start semi-manually under their charters.
@@ -902,19 +992,41 @@ Evidence: Traceability check.
 Human ratification is the likely real ceiling. Route to Isa only what the rules say needs her.
 
 - **Institution:** Ledger.
-- **Depends on:** C3.02. **Approvals first:** AR-09b. **Ratified by:** Isa.
+- **Depends on:** C3.02, C1.22. **Approvals first:** AR-09b. **Ratified by:** Isa.
 - **Traces:** DQ7, problem.P10. **Measures:** M17. **Open items:** OI-10.
 
 Scope:
 - Which ideas need Isa's ratification and which the Council may ratify (AR-09b)
-- A weekly attention budget with alerts when it is exceeded
+- Isa's attention is measured, not budgeted, because her time varies (Isa, 1 Oct 2026); alerts when an idea outside the envelope waits more than a week
 - Isa's fixed touchpoints: standards, Alignment Records, amendments, governance changes at the Release Gate, R13 escalations
+- The envelope and attention queue run from Phase 1 (C1.22); once the Council exists, its Alignment Records are what the envelope ratifies
 
 Acceptance:
 - [ ] Every ratification request cites the rule that routed it to Isa
 - [ ] Weekly attention hours are reported (M17)
 
 Evidence: Attention report.
+
+### C3.05 Typed propositions: failure scenarios and opportunities
+
+Ideation feeds testing. Inquiry participants commit typed propositions, including the edge cases they would test, so blind spots that differ by family surface before any code exists.
+
+- **Institution:** Inquiry.
+- **Depends on:** C1.20, C1.21, C3.01, C3.02. **Approvals first:** AR-19.
+- **Traces:** institution.Inquiry, R26, R27, X7, X21, X22. **Measures:** M26, M27.
+
+Scope:
+- Proposition types: interpretation, requirement, assumption, risk, objection, alternative, opportunity, failure scenario
+- Every participant names failure scenarios blind, before seeing peers (commit before view)
+- Failure scenarios the Council keeps enter the Alignment Record's acceptance criteria and become sealed tests (C1.20)
+- Originated briefs (C1.21) are pulled by Inquiry like Isa's; their opportunities are judged later by realised value (X22)
+- Surviving propositions per model are recorded by type (X7)
+
+Acceptance:
+- [ ] Every proposition has a type and cites its evidence
+- [ ] Every failure scenario the Council keeps traces to a sealed test in at least one card
+
+Evidence: Proposition log; traceability check.
 
 ## Phase 4: Operate, monitor and improve
 
@@ -930,7 +1042,7 @@ Each experiment can prove the idea wrong. Judge each as live data accrues, and t
 
 - **Institution:** Ledger.
 - **Depends on:** C0.15, C2.01, C3.03. **Approvals first:** none.
-- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16, X17, X18, X19, X20. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
+- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16, X17, X18, X19, X20, X21, X22, X23. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
 
 Scope:
 - Each experiment X1-X14 judged against its falsification criterion in the pack, on live data, whenever it has enough

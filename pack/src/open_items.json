@@ -87,11 +87,12 @@
   {
    "id": "OI-10",
    "question": "Which ideas need Isa's ratification, and her weekly attention budget.",
-   "status": "Open",
+   "status": "Resolved in part: no fixed weekly budget (Isa, 1 Oct 2026); the envelope's bounds and ceiling remain Isa's (AR-09b)",
    "resolver": "Isa, AR-09b",
-   "isa_answer": null,
+   "isa_answer": "1 Oct 2026: 'We do not need a ninth stage but definitely require self originated ideas. I disagree further briefs would load as that is a good problem to solve.' On the budget, 1 Oct 2026: 'do not worry on my weekly time budget as it can vary'.",
    "blocks": [
-    "C3.04"
+    "C3.04",
+    "C1.22"
    ]
   },
   {
