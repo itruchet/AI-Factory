@@ -44,7 +44,7 @@ Stage: amendment AR-19, signed by Isa on 1 Oct 2026. Code: [`probes/value-stream
 |---|---|---|
 | Challenge tests (R26) | At first review, a model of another family writes tests from the contract (30% of the card's hours). They catch a defect an LLM check can see at 0.6 × its pass chance, subject to family blind spots. | Effort and catch rate are assumptions |
 | Mechanical exploration (R26) | Catches a defect in a blind spot shared by every family at 0% or 25% | **No measured rate**; swept |
-| Isa's attention (R28) | A weekly budget, spread over the week; 5 minutes per ratification, intent and plan (about 10 an idea, DQ7) | 5 hours a week is **illustrative**: Isa sets the real budget (OI-10) |
+| Isa's attention (R28) | A weekly budget, spread over the week; 5 minutes per ratification, intent and plan (about 10 an idea, DQ7) | 5 hours a week is **illustrative**. Isa sets no fixed budget, because her time varies (1 Oct 2026); live turnaround is measured instead |
 | Envelope (R28) | A share of ideas is ratified by rule at once; 10% of those take Isa's time afterwards, and nothing waits on them | Swept: 0%, 50%, 80% |
 | Self-origination (R27) | More ideas on top of 25 briefs a week: +0, +25, +50 | The model cannot value an idea |
 
@@ -104,7 +104,6 @@ Clean ideas per week; escaped defects per idea; change-failure rate; $ per clean
 - **Cards:** C1.20 (sealed and challenge tests), C1.21 (origination), C1.22 (envelope and attention queue), C2.06 (mutation score), C3.05 (typed propositions). C3.04 now builds on C1.22.
 
 **Isa's to set (AR-09b, OI-10):**
-- her weekly attention budget, in hours;
 - the envelope's starting bounds and its ceiling.
 
 **Not changed:** the eight institutions, the golden rules, and every touchpoint that is Isa's alone: amendments, standards, governance changes and R13 escalations.

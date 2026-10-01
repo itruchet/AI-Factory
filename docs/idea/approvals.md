@@ -4,7 +4,7 @@ Owner: Isa. Scenario: **Amend** the existing Factory through the ingestion pack 
 
 **Status, 27 Sep 2026: Gates 1 and 2 are signed** (AR-01 to AR-13, except the just-in-time AR-09b and AR-10). The `[PROPOSED]` values in AR-08, AR-09a and AR-13 are accepted as proposed. Next: AR-14 loads the Phase 0 cards into the pull queue.
 
-**Status, 1 Oct 2026: every Gate 4 amendment is signed** (AR-15 to AR-19). Still open: AR-09b (Isa sets the envelope's bounds, ceiling and weekly budget), AR-10 (vendor and data terms, to produce) and AR-14 (the mechanical load).
+**Status, 1 Oct 2026: every Gate 4 amendment is signed** (AR-15 to AR-19). Still open: AR-09b (Isa sets the envelope's bounds and ceiling; no fixed weekly budget, her decision of 1 Oct 2026), AR-10 (vendor and data terms, to produce) and AR-14 (the mechanical load).
 
 **Twenty approval records in four gates.**
 - **Isa signs nineteen.** AR-14 is a mechanical load of the ratified cards into the pull queue.
@@ -59,7 +59,7 @@ One sitting. All evidence exists.
 | # | Record | What is approved | Before | Owner | Status |
 |---|---|---|---|---|---|
 | AR-10 | **Vendor and data terms** | The self-hosted gateway (C0.19) as the one model interface. Vendor accounts held by the Owner. Direct routes for the two anchors. OpenRouter as the first aggregator route: the Owner's own keys, sticky sessions, data collection denied. Vercel AI Gateway as a trial route [Unverified terms]. No-training terms for every tier and route (R15); rate limits as Scaler caps; Muse Spark in the Owner's region [Unverified]; adviser review of vendor and aggregator terms for Heliosvera IP. Key custody: the Owner holds all keys (OI-17 resolved) | C1.03 | Isa | To produce |
-| AR-09b | **Ratification tiers and attention budget** | Which ideas need Isa's ratification, which the Council may ratify, and her weekly attention budget. AR-19 (signed) sets the mechanism (R28): an envelope ratified by rule, her random 10% sample, and a queue for the rest; the bounds, ceiling and budget are hers | C1.22, C3.04 | Isa | Open: Isa decides |
+| AR-09b | **Ratification tiers and attention budget** | Which ideas need Isa's ratification and which the Council may ratify. No fixed weekly attention budget: Isa's time varies, so her turnaround is measured instead (Isa, 1 Oct 2026). AR-19 (signed) sets the mechanism (R28): an envelope ratified by rule, her random 10% sample, and a queue for the rest; the bounds and ceiling are hers | C1.22, C3.04 | Isa | Open: Isa decides |
 
 ---
 
@@ -96,6 +96,6 @@ One sitting. All evidence exists.
 
 The open items live in `pack/src/open_items.json`, each with its resolver. The ones that need Isa:
 - **OI-04:** [Inference] a hash cannot authenticate an API call, so confirm where the usable credential is held.
-- **OI-10:** ratification tiers and attention budget (AR-09b). AR-19 (signed) sets the mechanism; Isa sets the envelope's bounds, its ceiling and her weekly hours.
+- **OI-10:** ratification tiers and attention budget (AR-09b). AR-19 (signed) sets the mechanism; Isa sets the envelope's bounds and its ceiling. No fixed weekly budget (Isa, 1 Oct 2026).
 - **OI-12:** the starting licence for new menu models. [PROPOSED] Artificial Analysis band as prior, corrected live; decided in AR-13.
 - **Actual costs:** the Owner enters invoices, subscriptions and cloud credits into the value ledger (C0.09) as they are paid.

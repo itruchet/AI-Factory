@@ -772,20 +772,20 @@ Ratification is a problem to solve, not a ceiling to accept. Isa ratifies what o
 
 - **Institution:** Ledger.
 - **Depends on:** C0.06, C0.09, C0.17. **Approvals first:** AR-19, AR-09b. **Ratified by:** Isa.
-- **Traces:** R28, X23, problem.P10, DQ7. **Measures:** M28, M17. **Open items:** OI-10.
+- **Traces:** R28, X23, problem.P10, DQ7. **Measures:** M28, M17, M22. **Open items:** OI-10.
 
 Scope:
 - The envelope Isa sets (AR-09b): baseline cost, reversible by canary rollback, no protected governance path, no new vendor, data flow or regulated claim, no disputed proposition
 - Inside: ratified by rule once the Alignment Record passes the envelope check; Isa reviews a random 10% afterwards (R28)
 - An overturn by Isa is a late mark (R12) on the producers and narrows the envelope at once; 20 rule ratifications without an overturn widen it one step, up to the ceiling Isa sets
-- Outside: Isa's queue, ordered by expected value per minute of her time (C0.09 baseline), within her weekly attention budget, in one digest
+- Outside: Isa's queue, ordered by expected value per minute of her time (C0.09 baseline), in one digest. No fixed weekly budget, because her time varies (Isa, 1 Oct 2026): her turnaround is measured (M22), and she is alerted when an idea outside the envelope waits more than a week
 - Always Isa: amendments, standards, governance changes, R13 escalations
-- Envelope bounds and budget: [PLACEHOLDER: Isa sets them in AR-09b (OI-10)]
+- Envelope bounds and ceiling: [PLACEHOLDER: Isa sets them in AR-09b (OI-10)]
 
 Acceptance:
 - [ ] Every ratification records who ratified it (Isa or the envelope rule) and the rule that routed it
 - [ ] Isa's sample is drawn at random; no producer can exclude an idea from it
-- [ ] Weekly report: Isa's hours (M17), queue wait, share inside the envelope, sample overturn rate and envelope step (M28)
+- [ ] Weekly report: Isa's hours (M17) and turnaround (M22), queue wait, share inside the envelope, sample overturn rate and envelope step (M28)
 
 Evidence: Ratification log; attention report.
 
@@ -997,7 +997,7 @@ Human ratification is the likely real ceiling. Route to Isa only what the rules 
 
 Scope:
 - Which ideas need Isa's ratification and which the Council may ratify (AR-09b)
-- A weekly attention budget with alerts when it is exceeded
+- Isa's attention is measured, not budgeted, because her time varies (Isa, 1 Oct 2026); alerts when an idea outside the envelope waits more than a week
 - Isa's fixed touchpoints: standards, Alignment Records, amendments, governance changes at the Release Gate, R13 escalations
 - The envelope and attention queue run from Phase 1 (C1.22); once the Council exists, its Alignment Records are what the envelope ratifies
 

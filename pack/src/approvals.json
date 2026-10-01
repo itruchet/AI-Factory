@@ -263,14 +263,14 @@
    "decision": null,
    "gate": 3,
    "title": "Ratification tiers and attention budget",
-   "approves": "Which ideas need Isa's ratification, which the Council may ratify, and Isa's weekly attention budget.",
+   "approves": "Which ideas need Isa's ratification and which the Council may ratify: the envelope's starting bounds and its ceiling under R28. No fixed weekly attention budget: Isa's time varies, so her turnaround is measured instead (Isa, 1 Oct 2026).",
    "evidence": [
     "docs/idea/value-stream.md §5",
     "Measured attention hours (M17)"
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Open: Isa decides the bounds, ceiling and weekly budget; the mechanism is set by AR-19 (R28, signed 1 Oct 2026)",
+   "status": "Open: Isa decides the envelope's bounds and ceiling; no fixed weekly budget (Isa, 1 Oct 2026); the mechanism is set by AR-19 (R28, signed 1 Oct 2026)",
    "depends_on": [
     "AR-14"
    ],
