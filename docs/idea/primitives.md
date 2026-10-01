@@ -158,4 +158,33 @@ The primitives stay the same; only the partition changes.
 3. **Partition the balance store by account and legal entity from the start.** [Inference] A single hot account, such as one cash account, cannot be spread across nodes; design postings to avoid it.
 4. **The primitive design is the only one of the three that passes every case.** One store and silos both fail at customer-transaction volume.
 
-**Takeaway:** build the Factory on eight primitive stores, let agents read and conveyors write, and promote repeated agent work. Then internal systems of record scale on modest infrastructure, and customer-scale volume needs only partitioning.
+---
+
+## 8. Load tiers (Isa, 1 Oct 2026)
+
+| Tier | What | Volume | Binding constraint | Architecture |
+|---|---|---|---|---|
+| **T1 Agent interactions** | Librarian requests and agent-to-agent hand-offs | Lowest | **Cost and vendor rate limits** (the probe's first limit at scale), not storage | Gateway, elastic capacity (R14), spend cap (R16), promotion (R25) |
+| **T2 Deterministic systems of record** | Project management, incident, HCM, CRM, ERP: postings, state changes, payroll, close | Middle | Peak batches (payroll, month-end close) | **This design:** Postgres per primitive store, Hatchet, outbox event log with batched chains, OPA or Cedar, DuckDB over Iceberg |
+| **T3 High-throughput transactions** | Customer-facing, mainframe-class: orders, payments, many per second | Highest | Transactions per second, hot accounts | **Deferred (OI-19):** a separate architecture when a real domain needs it |
+
+- **Tiers are set by measured load, not by department.** [PROPOSED] A domain enters T3 when its busiest store needs more than one node at 60% utilisation at peak, or its batched hash chain passes 50%, as measured live. A domain can move between tiers; its primitives stay the same.
+- **Agents stay off the T3 transaction path.** They meet T3 only as librarians, through the read model, and on exceptions.
+
+**Seams to keep now, so T3 can be added later without rework:**
+1. **Keys on every write:**
+   - an idempotency key, so a retried write never doubles;
+   - a partition key (tenant, legal entity, account).
+2. **One event contract:** every write reaches the Ledger through the outbox, in the same event format at every tier.
+3. **No transaction spans two domains.** Cross-domain changes are sagas.
+4. **One way in for agents:** they reach data only through the gateway, policy engine and read model.
+5. **Postings avoid hot rows.** No single account takes every write.
+
+**Candidates for T3 when it is needed** [Unverified; not a decision]:
+- purpose-built ledger databases;
+- distributed SQL;
+- stream processing on Kafka or Redpanda.
+
+The choice is made on measured load, through the Release Gate.
+
+**Takeaway:** T1 and T2 run on this design now. T3 is deferred, and five seams kept today let it be added without rework.

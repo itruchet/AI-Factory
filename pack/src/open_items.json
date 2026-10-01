@@ -168,6 +168,14 @@
    "resolver": "Design, then Isa; legal and regulatory reading by qualified advisers per domain",
    "isa_answer": "Eventually any person or team could set the Factory up for any kind of knowledge work.",
    "blocks": []
+  },
+  {
+   "id": "OI-19",
+   "question": "Architecture for T3, high-throughput transactions (customer-facing, mainframe-class).",
+   "status": "Deferred (Isa, 1 Oct 2026)",
+   "resolver": "Design, when a domain crosses the T3 threshold on measured load; through the Release Gate",
+   "isa_answer": "We do not need to solve the highest tier yet; T1 agent interactions and T2 systems of record run on Postgres and the current stack.",
+   "blocks": []
   }
  ]
 }

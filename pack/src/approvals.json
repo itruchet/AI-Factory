@@ -364,7 +364,7 @@
    "decision": null,
    "gate": 4,
    "title": "Amendment: primitives and industrialising the repeated",
-   "approves": "R25: repeated agent work is promoted to deterministic paths on evidence, exceptions return to agents, and agents never write records directly. Target architecture: eight primitives in eight stores separated only where needed; conveyors write, librarians read; Hatchet under the Ledger, Postgres per store, outbox event log with per-domain batched chains, OPA or Cedar, DuckDB over Iceberg. Experiment X20.",
+   "approves": "R25: repeated agent work is promoted to deterministic paths on evidence, exceptions return to agents, and agents never write records directly. Target architecture: eight primitives in eight stores separated only where needed; conveyors write, librarians read; Hatchet under the Ledger, Postgres per store, outbox event log with per-domain batched chains, OPA or Cedar, DuckDB over Iceberg. Experiment X20. Load tiers: T1 agent interactions and T2 deterministic systems of record run on this design; T3 high-throughput transactions is deferred (OI-19). Seams kept now: idempotency and partition keys on every write, one outbox event contract, no cross-domain transactions (sagas), agents only through gateway, policy and read model, postings that avoid hot rows.",
    "evidence": [
     "docs/idea/primitives.md",
     "probes/enterprise/load_probe_results.txt"
