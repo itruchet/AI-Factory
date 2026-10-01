@@ -71,6 +71,8 @@
 | 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C1.22 and C3.04) | During the build |
 | 4. Amendments | AR-15 quality, cost and speed (R14 time value) and readiness hand-back (R21) (before C1.14, C1.19); AR-16 institutions as harnesses, model flexibility, central memory (before C0.18, C0.19, C2.05); AR-17 the North Star; AR-18 primitives and R25; AR-19 edge cases, self-origination and the ratification envelope (R26-R28; before C1.20-C1.22, C2.06, C3.05) | AR-15, AR-16 signed; AR-17 to AR-19 ready |
 
+**AR-19 in numbers (synthetic; 5 hours of Isa's attention a week, illustrative):** at 75 ideas a week, ratifying every idea herself caps output at about 16 clean ideas a week (CL-11). With 80% of ideas inside the envelope, it reaches about 56 (CL-12), on about 3.6 of her hours (CL-13).
+
 ---
 
 ## 4. Why the pack can be trusted

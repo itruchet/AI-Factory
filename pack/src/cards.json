@@ -1433,14 +1433,15 @@
     "Challenge tester: at first review, a model of another family (R18) writes boundary, property-based and fuzz tests from the contract alone, and commits them before the code is visible to it",
     "A failing sealed or challenge test is a reproduced defect (principle 3): it blocks acceptance whatever the model reviews say",
     "Challenge testers are markers: a defect that escapes past their tests counts against them (R9)",
-    "Effort: about 30% of the card's hours [PROPOSED: the model's assumption]; moved on live catch rates",
+    "Effort: about 30% of the card's hours [PROPOSED: the model's assumption]. Challenge tests start on every card; the Ledger keeps them by tier where they catch defects review passes and stops them where they do not (R26)",
     "Harness (Review, reviewing): the challenge tester sees the contract and its failure scenarios only, until its tests are committed"
    ],
    "acceptance": [
     "The build harness cannot read or edit sealed tests",
     "A challenge tester's tests are committed before the code is visible to it (manifest audit)",
     "A failing sealed or challenge test blocks acceptance",
-    "Each defect's provenance record (C0.08) shows whether a sealed or challenge test caught it, and the family that wrote the test"
+    "Each defect's provenance record (C0.08) shows whether a sealed or challenge test caught it, and the family that wrote the test",
+    "Challenge-test catches beyond review are reported weekly by tier, and the rule that keeps or stops them cites them"
    ],
    "evidence": [
     "Review tests",
