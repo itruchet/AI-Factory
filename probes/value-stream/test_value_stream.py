@@ -87,9 +87,10 @@ class ValueStreamTest(unittest.TestCase):
         import origination as og
         def run(p):
             return v.mean_measures([og.job((e.DEMANDS["steady"], p, k)) for k in range(3)])
-        off, on = run({}), run(dict(CHALLENGE_TESTS=True))
+        # they pay where blind spots differ by family (origination.md §4); with none, review already catches the defect
+        off, on = run(dict(FAMILY_BLIND_P=0.18)), run(dict(FAMILY_BLIND_P=0.18, CHALLENGE_TESTS=True))
         self.assertGreater(on["drops"].get("challenge_fail", 0), 0)
-        self.assertLess(on["escaped"], off["escaped"])
+        self.assertLess(on["escaped"], 0.95 * off["escaped"])
 
     def test_envelope_lifts_the_ratification_ceiling(self):
         import origination as og
