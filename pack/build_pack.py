@@ -274,7 +274,7 @@ def build() -> tuple[dict, str]:
     evidence_files = sorted(p for p in (ROOT / "probes").rglob("*") if p.is_file() and "__pycache__" not in p.parts)
     pack = dict(
         schema=SCHEMA, pack_version=PACK_VERSION, owner="Isa", scenario="Amend the existing Factory",
-        from_organisation="Director -> Worker -> Checker", to_organisation="Constitutional institutions (Idea Record r12.8)",
+        from_organisation="Director -> Worker -> Checker", to_organisation="Constitutional institutions (Idea Record r12.9)",
         integrity_rules=[
             "Do not infer. A value marked [PLACEHOLDER] or an open item is resolved only by its named resolver.",
             "[PROPOSED] marks a design value, not evidence. AR-13 (signed 27 Sep 2026) accepted each as proposed; live data may adjust it through AR-12.",

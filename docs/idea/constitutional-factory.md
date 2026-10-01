@@ -3,13 +3,19 @@
 Stage: **IDEA, exited 27 Sep 2026** (AR-06 signed; the build proceeds through the ingestion pack)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.8 (supersedes r1–r12.7; r12.8 proposes an amendment making each institution a tailored agent harness, with model flexibility and central memory, [`harnesses.md`](harnesses.md); r12.7 proposes an amendment for the quality, cost and speed trifecta and readiness hand-backs, [`trifecta.md`](trifecta.md); r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
+Revision: r12.9 (supersedes r1–r12.8; r12.9 proposes the North Star, AR-17; r12.8 proposes an amendment making each institution a tailored agent harness, with model flexibility and central memory, [`harnesses.md`](harnesses.md); r12.7 proposes an amendment for the quality, cost and speed trifecta and readiness hand-backs, [`trifecta.md`](trifecta.md); r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
 ---
 
 ## 0. The idea in one paragraph
+
+**North Star** *(r12.9, amendment proposed, AR-17)*: A self-governing agentic factory: cards flow through a graph of institutional harnesses, every move is a rule-checked transition in the Ledger, agents pull the work and earn their licences on evidence, and the whole system is tuned to deliver defect-free output at the sweet spot of quality, cost and speed.
+
+**North Star metric:** defect-free outputs delivered per week, within the cost and lead-time bounds Isa sets. For software, a defect-free output is a clean idea (M01).
+
+**Direction:** the core is domain-neutral. Any person or team could set the Factory up for any kind of knowledge work, as the processor of work that ERP systems, systems of record and mainframes hold today. This software Factory is the first domain, built by dog-fooding.
 
 The Factory is a chain of eight institutions under a constitution. At every institution, AI agents **pull** cards from a queue. Nobody assigns work. What each agent may pull is governed by **plain rules written into the Ledger**. Each institution's output is **marked** by the next institution. Marks feed back by rule:
 - agents whose work is marked down get fewer and easier cards;
@@ -574,6 +580,7 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - Jurisdiction as a property of each route to a model (future): how data-residency law affects cost and efficiency.
 - SQL as canonical operational state, with stateless invocations reloading a versioned snapshot; Git as the artifact authority (r12.1, from the cross-check model).
 - Tests, CI and typed contracts as first-class evidence at review and release: the only defence against blind spots shared by all model families (r12.1).
+- A domain-neutral core: what is general (the constitution, institutions, Ledger, harness kernel, gateway) is kept apart from what each domain supplies (value-stream steps, acceptance contracts, deterministic checks, the definition of a defect). Software is the first domain pack. Before the Factory holds records of other domains, design must meet system-of-record obligations: transactional integrity, retention, access control, segregation of duties, audit and jurisdiction (r12.9).
 - Plans name the interfaces between requirements, so review can check them against reviewed upstream work. The Scaler counts cards held behind prerequisites as near-term demand (r12.2; adopted in R14, r12.3).
 
 ### 11.3 Isa's decisions

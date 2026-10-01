@@ -209,7 +209,7 @@ class PlanIsSound(unittest.TestCase):
         readme = (HERE / "README.md").read_text()
         self.assertIn(f"{n_cards} card seeds", ingest)
         self.assertIn(f"{n_ar} approval records", ingest)
-        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen"}
+        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen"}
         gates = {3: "three", 4: "four"}[len(PACK["approvals"]["gates"])]
         self.assertIn(f"{words[n_ar]} records in {gates} gates", readme)
         self.assertIn(f"{n_ar} approval records in {gates} gates", ingest)

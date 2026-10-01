@@ -342,6 +342,22 @@
     "C2.05"
    ],
    "signed": "2026-09-28"
+  },
+  {
+   "id": "AR-17",
+   "decision": null,
+   "gate": 4,
+   "title": "Amendment: the North Star",
+   "approves": "The North Star, in Isa's words: 'A self-governing agentic factory: cards flow through a graph of institutional harnesses, every move is a rule-checked transition in the Ledger, agents pull the work and earn their licences on evidence, and the whole system is tuned to deliver defect-free output at the sweet spot of quality, cost and speed.' The North Star metric: defect-free outputs delivered per week, within the cost and lead-time bounds Isa sets (for software, clean ideas, M01). The direction: a domain-neutral core, with software as the first domain pack, toward any knowledge work.",
+   "evidence": [
+    "docs/idea/constitutional-factory.md §0"
+   ],
+   "owner": "Isa",
+   "signer": "Isa",
+   "status": "Ready",
+   "depends_on": [
+    "AR-13"
+   ]
   }
  ],
  "after_backlog": [

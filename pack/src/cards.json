@@ -657,7 +657,8 @@
     "Feed-forward guards (licence and floor, independence, output schemas, protected paths, readiness) and feedback sensors (tests, linters, CI, typed contracts) as middleware, before any model judgment",
     "Structured traces of every call, tool use, latency and outcome to the Ledger, classifiable by cause (R8)",
     "Trajectory budgets on tokens, time and retries per card; loops without progress stop and escalate or hand back",
-    "Harness components (tools, context policies, guards, prompts) as versioned files"
+    "Harness components (tools, context policies, guards, prompts) as versioned files",
+    "Domain-neutral: the kernel holds no software-specific step, check or defect definition; those come from the domain pack (software first)"
    ],
    "acceptance": [
     "No agent keeps state between pulls: a pull's context is reproducible from the Ledger and the charter version",
@@ -681,7 +682,8 @@
     "R24",
     "principle.6",
     "principle.10",
-    "problem.P11"
+    "problem.P11",
+    "DQ12"
    ],
    "measures": [
     "M24",

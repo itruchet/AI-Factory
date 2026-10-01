@@ -324,7 +324,7 @@ Agent = model + harness. Build the shared kernel every institution's harness run
 
 - **Institution:** Ledger.
 - **Depends on:** C0.03, C0.04. **Approvals first:** AR-16.
-- **Traces:** R22, R24, principle.6, principle.10, problem.P11. **Measures:** M24, M25.
+- **Traces:** R22, R24, principle.6, principle.10, problem.P11, DQ12. **Measures:** M24, M25.
 
 Scope:
 - Primitive tools only: sandboxed worktree file access, sandboxed shell and CLI, retrieval from the Ledger, lifecycle hooks; each institution's charter grants a subset
@@ -333,6 +333,7 @@ Scope:
 - Structured traces of every call, tool use, latency and outcome to the Ledger, classifiable by cause (R8)
 - Trajectory budgets on tokens, time and retries per card; loops without progress stop and escalate or hand back
 - Harness components (tools, context policies, guards, prompts) as versioned files
+- Domain-neutral: the kernel holds no software-specific step, check or defect definition; those come from the domain pack (software first)
 
 Acceptance:
 - [ ] No agent keeps state between pulls: a pull's context is reproducible from the Ledger and the charter version

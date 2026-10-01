@@ -160,6 +160,14 @@
    "isa_answer": "Run a self-hosted gateway.",
    "blocks": [],
    "decision": "The self-hosted gateway (C0.19) keeps every key in the Owner's custody, hashed in the Factory. An aggregator route receives a vendor key only if the Owner registers one there; otherwise the route is not used. Terms reviewed in AR-10."
+  },
+  {
+   "id": "OI-18",
+   "question": "What must hold before the Factory becomes the system of record for other domains (replacing ERP, systems of record, mainframes): transactional integrity, retention, access control, segregation of duties, audit, jurisdiction, and a definition of a defect and deterministic checks per domain.",
+   "status": "Deferred (after the software domain runs)",
+   "resolver": "Design, then Isa; legal and regulatory reading by qualified advisers per domain",
+   "isa_answer": "Eventually any person or team could set the Factory up for any kind of knowledge work.",
+   "blocks": []
   }
  ]
 }
