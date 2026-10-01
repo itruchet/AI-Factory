@@ -270,7 +270,7 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Open: Isa decides; the mechanism is proposed in AR-19 (R28)",
+   "status": "Open: Isa decides the bounds, ceiling and weekly budget; the mechanism is set by AR-19 (R28, signed 1 Oct 2026)",
    "depends_on": [
     "AR-14"
    ],
@@ -355,10 +355,11 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 1 Oct 2026",
    "depends_on": [
     "AR-13"
-   ]
+   ],
+   "signed": "2026-10-01"
   },
   {
    "id": "AR-18",
@@ -372,13 +373,14 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 1 Oct 2026",
    "depends_on": [
     "AR-13"
    ],
    "before_cards": [
     "C2.05"
-   ]
+   ],
+   "signed": "2026-10-01"
   },
   {
    "id": "AR-19",
@@ -392,7 +394,7 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 1 Oct 2026",
    "depends_on": [
     "AR-13"
    ],
@@ -402,7 +404,8 @@
     "C1.22",
     "C2.06",
     "C3.05"
-   ]
+   ],
+   "signed": "2026-10-01"
   }
  ],
  "after_backlog": [

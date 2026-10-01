@@ -1,6 +1,6 @@
 # Edge cases, self-origination and the ratification envelope (r12.11)
 
-Stage: amendment AR-19, ready for Isa's signature. Code: [`probes/value-stream/origination.py`](../../probes/value-stream/origination.py) → `origination_results.txt`, 8 seeds per cell. All results are synthetic. The new mechanisms are off by default, and with them off the model reproduces every earlier result (tests pass).
+Stage: amendment AR-19, signed by Isa on 1 Oct 2026. Code: [`probes/value-stream/origination.py`](../../probes/value-stream/origination.py) → `origination_results.txt`, 8 seeds per cell. All results are synthetic. The new mechanisms are off by default, and with them off the model reproduces every earlier result (tests pass).
 
 **Isa's direction, 1 Oct 2026, in her words:** "We do not need a ninth stage but definitely require self originated ideas. I disagree further briefs would load as that is a good problem to solve."
 
