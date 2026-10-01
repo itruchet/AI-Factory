@@ -87,11 +87,12 @@
   {
    "id": "OI-10",
    "question": "Which ideas need Isa's ratification, and her weekly attention budget.",
-   "status": "Open",
+   "status": "Open: mechanism proposed in AR-19 (R28); the bounds, ceiling and budget are Isa's",
    "resolver": "Isa, AR-09b",
-   "isa_answer": null,
+   "isa_answer": "1 Oct 2026: 'We do not need a ninth stage but definitely require self originated ideas. I disagree further briefs would load as that is a good problem to solve.'",
    "blocks": [
-    "C3.04"
+    "C3.04",
+    "C1.22"
    ]
   },
   {

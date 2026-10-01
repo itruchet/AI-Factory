@@ -20,7 +20,8 @@
    "intent": "Layer the pull rules, licences, Market, Review and elastic capacity onto the collective's pull. Each part is switched on as soon as it passes its acceptance contract.",
    "entry": [
     "Phase 0 exit approved",
-    "AR-10 signed before C1.03 starts"
+    "AR-10 signed before C1.03 starts",
+    "AR-19 signed before C1.20, C1.21 and C1.22 start; AR-09b before C1.22"
    ],
    "exit": [
     "Every Phase 1 card accepted",
@@ -1422,6 +1423,148 @@
    "open_items": []
   },
   {
+   "id": "C1.20",
+   "phase": 1,
+   "title": "Edge cases as evidence: sealed scenario tests and challenge tests",
+   "institution": "Review",
+   "intent": "Model-written review shares model blind spots. Edge cases become deterministic evidence: sealed tests from the contract's failure scenarios, and challenge tests written by another family before it reads the code.",
+   "scope": [
+    "Failure scenarios in every acceptance contract: until Inquiry types them (C3.05), Planning or the card's author writes them; each becomes a locked test sealed from the builder, inside the contract hash (C1.01)",
+    "Challenge tester: at first review, a model of another family (R18) writes boundary, property-based and fuzz tests from the contract alone, and commits them before the code is visible to it",
+    "A failing sealed or challenge test is a reproduced defect (principle 3): it blocks acceptance whatever the model reviews say",
+    "Challenge testers are markers: a defect that escapes past their tests counts against them (R9)",
+    "Effort: about 30% of the card's hours [PROPOSED: the model's assumption]; moved on live catch rates",
+    "Harness (Review, reviewing): the challenge tester sees the contract and its failure scenarios only, until its tests are committed"
+   ],
+   "acceptance": [
+    "The build harness cannot read or edit sealed tests",
+    "A challenge tester's tests are committed before the code is visible to it (manifest audit)",
+    "A failing sealed or challenge test blocks acceptance",
+    "Each defect's provenance record (C0.08) shows whether a sealed or challenge test caught it, and the family that wrote the test"
+   ],
+   "evidence": [
+    "Review tests",
+    "manifest audit",
+    "catch report"
+   ],
+   "depends_on": [
+    "C0.08",
+    "C1.01",
+    "C1.17"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R26",
+    "X21",
+    "problem.P5",
+    "R18",
+    "principle.3",
+    "RK7"
+   ],
+   "measures": [
+    "M26",
+    "M15"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C1.21",
+   "phase": 1,
+   "title": "Self-origination: Ledger signals become briefs",
+   "institution": "Ledger",
+   "intent": "The Factory does not wait to be told. Its own record raises signals by rule, and each signal becomes a brief the collective works like any other. No ninth institution.",
+   "scope": [
+    "Signals by rule, no model in the control path: escaped defects or incidents clustering on a component; all-family misses (X11); repeated hand-backs or stale rebuilds; a rising cost per clean idea; repeated agent work (R25); a weekly standing brief",
+    "Each signal becomes a brief with its evidence and a baseline value at intake (C0.09); a signal that matches an open brief is attached to it by rule",
+    "Until Inquiry runs (C3.05), the collective pulls originated briefs like any card, checked by another family; ratification follows the envelope (C1.22)",
+    "Budget: originated ideas use at most 20% of the monthly ceiling (R16, R27); beyond it, they wait",
+    "Marked by realised value (M07): ideas left with no action count against the contributions behind them"
+   ],
+   "acceptance": [
+    "Every originated brief cites the signal, the rule and the Ledger facts that raised it",
+    "Originated spend is reported weekly against its 20% share",
+    "Realised value per dollar is reported for originated ideas and for Isa's briefs side by side (X22)"
+   ],
+   "evidence": [
+    "Signal log",
+    "origination report"
+   ],
+   "depends_on": [
+    "C0.06",
+    "C0.08",
+    "C0.09",
+    "C0.16",
+    "C0.17"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R27",
+    "X22",
+    "problem.P12",
+    "RK6",
+    "DQ13"
+   ],
+   "measures": [
+    "M27",
+    "M06",
+    "M07"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C1.22",
+   "phase": 1,
+   "title": "Ratification envelope and Isa's attention queue",
+   "institution": "Ledger",
+   "intent": "Ratification is a problem to solve, not a ceiling to accept. Isa ratifies what only she can; rules ratify the rest inside bounds she sets, and her sample keeps them honest.",
+   "scope": [
+    "The envelope Isa sets (AR-09b): baseline cost, reversible by canary rollback, no protected governance path, no new vendor, data flow or regulated claim, no disputed proposition",
+    "Inside: ratified by rule once the Alignment Record passes the envelope check; Isa reviews a random 10% afterwards (R28)",
+    "An overturn by Isa is a late mark (R12) on the producers and narrows the envelope at once; 20 rule ratifications without an overturn widen it one step, up to the ceiling Isa sets",
+    "Outside: Isa's queue, ordered by expected value per minute of her time (C0.09 baseline), within her weekly attention budget, in one digest",
+    "Always Isa: amendments, standards, governance changes, R13 escalations",
+    "Envelope bounds and budget: [PLACEHOLDER: Isa sets them in AR-09b (OI-10)]"
+   ],
+   "acceptance": [
+    "Every ratification records who ratified it (Isa or the envelope rule) and the rule that routed it",
+    "Isa's sample is drawn at random; no producer can exclude an idea from it",
+    "Weekly report: Isa's hours (M17), queue wait, share inside the envelope, sample overturn rate and envelope step (M28)"
+   ],
+   "evidence": [
+    "Ratification log",
+    "attention report"
+   ],
+   "depends_on": [
+    "C0.06",
+    "C0.09",
+    "C0.17"
+   ],
+   "requires_approval": [
+    "AR-19",
+    "AR-09b"
+   ],
+   "ratified_by": "Isa",
+   "traces": [
+    "R28",
+    "X23",
+    "problem.P10",
+    "DQ7"
+   ],
+   "measures": [
+    "M28",
+    "M17"
+   ],
+   "open_items": [
+    "OI-10"
+   ]
+  },
+  {
    "id": "C2.01",
    "phase": 2,
    "title": "Audit",
@@ -1614,6 +1757,44 @@
    "open_items": []
   },
   {
+   "id": "C2.06",
+   "phase": 2,
+   "title": "Audit marks the tests: mutation score",
+   "institution": "Audit",
+   "intent": "A test suite that cannot fail proves nothing. Audit measures whether sealed and challenge tests catch planted mutations.",
+   "scope": [
+    "Mutation score of each sampled card's sealed and challenge tests: the share of planted code mutations they catch",
+    "A suite below the standard is handed back to its author (R21, R8): Planning for sealed tests, the challenge tester for its own",
+    "Standard per tier [PROPOSED]: reported only until Isa sets it with AR-08's other standards",
+    "Planted defects (C2.01) include defects inside failure scenarios, so sealed tests are marked too"
+   ],
+   "acceptance": [
+    "Every audited card carries a mutation score",
+    "A suite below the standard is handed back with its score"
+   ],
+   "evidence": [
+    "Mutation report"
+   ],
+   "depends_on": [
+    "C1.20",
+    "C2.01"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R26",
+    "X21",
+    "R9",
+    "RK1"
+   ],
+   "measures": [
+    "M26"
+   ],
+   "open_items": []
+  },
+  {
    "id": "C3.01",
    "phase": 3,
    "title": "Inquiry",
@@ -1728,7 +1909,8 @@
    "scope": [
     "Which ideas need Isa's ratification and which the Council may ratify (AR-09b)",
     "A weekly attention budget with alerts when it is exceeded",
-    "Isa's fixed touchpoints: standards, Alignment Records, amendments, governance changes at the Release Gate, R13 escalations"
+    "Isa's fixed touchpoints: standards, Alignment Records, amendments, governance changes at the Release Gate, R13 escalations",
+    "The envelope and attention queue run from Phase 1 (C1.22); once the Council exists, its Alignment Records are what the envelope ratifies"
    ],
    "acceptance": [
     "Every ratification request cites the rule that routed it to Isa",
@@ -1738,7 +1920,8 @@
     "Attention report"
    ],
    "depends_on": [
-    "C3.02"
+    "C3.02",
+    "C1.22"
    ],
    "requires_approval": [
     "AR-09b"
@@ -1755,6 +1938,51 @@
     "OI-10"
    ],
    "institution": "Ledger"
+  },
+  {
+   "id": "C3.05",
+   "phase": 3,
+   "title": "Typed propositions: failure scenarios and opportunities",
+   "institution": "Inquiry",
+   "intent": "Ideation feeds testing. Inquiry participants commit typed propositions, including the edge cases they would test, so blind spots that differ by family surface before any code exists.",
+   "scope": [
+    "Proposition types: interpretation, requirement, assumption, risk, objection, alternative, opportunity, failure scenario",
+    "Every participant names failure scenarios blind, before seeing peers (commit before view)",
+    "Failure scenarios the Council keeps enter the Alignment Record's acceptance criteria and become sealed tests (C1.20)",
+    "Originated briefs (C1.21) are pulled by Inquiry like Isa's; their opportunities are judged later by realised value (X22)",
+    "Surviving propositions per model are recorded by type (X7)"
+   ],
+   "acceptance": [
+    "Every proposition has a type and cites its evidence",
+    "Every failure scenario the Council keeps traces to a sealed test in at least one card"
+   ],
+   "evidence": [
+    "Proposition log",
+    "traceability check"
+   ],
+   "depends_on": [
+    "C1.20",
+    "C1.21",
+    "C3.01",
+    "C3.02"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "institution.Inquiry",
+    "R26",
+    "R27",
+    "X7",
+    "X21",
+    "X22"
+   ],
+   "measures": [
+    "M26",
+    "M27"
+   ],
+   "open_items": []
   },
   {
    "id": "C4.01",
@@ -1800,7 +2028,10 @@
     "X17",
     "X18",
     "X19",
-    "X20"
+    "X20",
+    "X21",
+    "X22",
+    "X23"
    ],
    "measures": [
     "M01",

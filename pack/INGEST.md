@@ -47,12 +47,14 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 - AR-15 (amendment: quality, cost and speed; readiness hand-back) before C1.14 and C1.19.
 - AR-16 (amendment: institutions as harnesses; model flexibility; central memory) before C0.18, C0.19 and C2.05.
 - AR-18 (amendment: primitives and industrialising the repeated) before C2.05.
+- AR-19 (amendment: edge cases, self-origination and the ratification envelope) before C1.20, C1.21, C1.22, C2.06 and C3.05.
+- AR-09b before C1.22 as well as C3.04: the envelope runs from Phase 1.
 
 ## What comes back to Isa
 
 - The weekly report and alarms (C0.15).
 - Cards returned under R8 with evidence.
-- Ratification requests the rules route to her (C3.04).
+- Ratification requests the rules route to her, and her sample of rule ratifications (C1.22, C3.04).
 - Phase-exit approvals.
 
 ## Where each part of the pack lives
@@ -66,7 +68,7 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 | `twin_parameters` | Every assumed constant in the model, refitted weekly from live data | Read from `vs_sim.py` and `select6.py` |
 | `predictions` | The model's baseline figures | Probe result JSON files |
 | `claims` | Every figure used in hand-written text, with its source | `src/claims.json`, verified |
-| `approvals` | 19 approval records in four gates | `src/approvals.json` |
+| `approvals` | 20 approval records in four gates | `src/approvals.json` |
 | `open_items` | What the pack does not know, and who resolves it | `src/open_items.json` |
-| `phases`, `cards` | 5 phases, 44 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
+| `phases`, `cards` | 5 phases, 49 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
 | `sources`, `evidence_files` | Full text of the Idea Record and evidence documents; hashes of every probe file | Repository |

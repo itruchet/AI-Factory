@@ -141,6 +141,15 @@ TIME_VALUE = 0.0               # R14 trifecta: $ value of one hour of task time,
 TTFT_S = {}                    # latency: seconds to first token per model name [assumption until measured]
 CALLS_PER_H = 0.0              # model calls per base hour of work (each pays the model's latency)
 HUMAN_RETURN_P = 0.0           # chance Isa sends intent or plan back for another round at ratification
+CHALLENGE_TESTS = False        # R26 (r12.11): at first review, a model of another family writes edge-case tests from the
+CHALLENGE_SHARE = 0.30         # contract alone, at this share of the card's hours [assumption, as review's share];
+CHALLENGE_CATCH = 0.60         # its tests catch a defect an LLM check can see at this x its pass chance [assumption];
+BLIND_TEST_CATCH = 0.0         # and a defect in a blind spot shared by every family at this rate, by mechanical
+                               # exploration (property-based, boundary and fuzz inputs) [assumption, swept]
+ISA_H_WEEK = 0.0               # R28 (r12.11): Isa's weekly attention budget in hours; 0 = unlimited (fixed turnaround)
+RATIFY_MIN = 5.0               # minutes of Isa's attention per ratification, intent or plan (about 10 an idea, DQ7)
+ENVELOPE = 0.0                 # R28: share of ideas inside Isa's ratification envelope, ratified by rule at once
+ISA_SAMPLE = 0.10              # R28: chance Isa reviews a rule ratification after the fact (uses her time; nothing waits)
 PRIORITY = ["operate", "release", "qa", "integrate", "security", "review", "audit", "build", "replan", "plan_check", "plan",
             "design", "challenge", "discover"]            # downstream first
 ALL_STEPS = set(PRIORITY)
@@ -193,6 +202,7 @@ class Idea:
     deps: dict = field(default_factory=dict)       # requirement -> prerequisite requirements
     held: list = field(default_factory=list)       # cards waiting for prerequisites
     await_review: list = field(default_factory=list)   # cards waiting for the review barrier
+    envelope: bool | None = None   # R28: inside Isa's ratification envelope (drawn at first ratification)
 
 
 @dataclass(eq=False)
@@ -319,6 +329,8 @@ class Sim:
         self.log = defaultdict(list)
         self.wait = defaultdict(list)
         self.drops = defaultdict(int)
+        self.xrng = random.Random(seed * 7919 + 1)   # r12.11 mechanisms draw here, so the r12 stream is unchanged
+        self.isa_free, self.isa_h = 0.0, 0.0
 
     # plumbing
     def at(self, t, fn, *args):
@@ -443,7 +455,9 @@ class Sim:
     def base_hours(task: Task) -> float:
         if task.card is not None and task.step in ("build", "review", "security", "audit"):
             h = task.card.base_h or CARD_HOURS[task.card.band]
-            return h * (1.0 if task.step == "build" else CARD_SHARE[task.step])
+            share = CARD_SHARE.get(task.step, 1.0) + (CHALLENGE_SHARE if task.step == "review" and CHALLENGE_TESTS
+                                                      and not task.card.reviewers else 0.0)
+            return h * (1.0 if task.step == "build" else share)
         return STEP_HOURS[task.step]
 
     def start(self, s: Seat, task: Task):
@@ -643,7 +657,7 @@ class Sim:
 
     def challenge_round(self, idea):
         if idea.rounds_left <= 0:
-            self.at(self.t + HUMAN_INTENT_H, self.ratify_intent, idea)
+            self.human(idea, HUMAN_INTENT_H, self.ratify_intent)
             return
         idea.pending = max(1, len(idea.authors["discover"]))
         for _ in range(idea.pending):
@@ -694,7 +708,7 @@ class Sim:
         if self.org.plan_check and "plan_check" not in self.org.owner_steps:
             self.enqueue(Task("plan_check", idea, d=REQ_BASE + 10, exclude={s.cfg.name}))
         else:
-            self.at(self.t + HUMAN_PLAN_H, self.ratify_plan, idea)
+            self.human(idea, HUMAN_PLAN_H, self.ratify_plan)
 
     def on_plan_check(self, s, task):
         idea = task.idea
@@ -703,7 +717,33 @@ class Sim:
                     self.rng.random() < p_pass(s.cfg.ci, idea.req_d[r] + 10) * self.own(s, next(iter(idea.authors["plan"]))) \
                     * self.fb(idea, (r,), s.cfg):
                 idea.mapped.add(r)
-        self.at(self.t + HUMAN_PLAN_H, self.ratify_plan, idea)
+        self.human(idea, HUMAN_PLAN_H, self.ratify_plan)
+
+    def human(self, idea, turnaround, fn):
+        """Isa ratifies intent or plan. Unlimited (r12.7): a fixed turnaround. With a budget (R28): ideas inside the
+        envelope are ratified by rule at once and sampled by Isa afterwards; the rest queue for her attention."""
+        if not ISA_H_WEEK:
+            self.at(self.t + turnaround, fn, idea)
+            return
+        if idea.envelope is None:
+            idea.envelope = self.xrng.random() < ENVELOPE
+        if idea.envelope:
+            if self.xrng.random() < ISA_SAMPLE:
+                self.isa_slot()
+            self.at(self.t, fn, idea)
+            return
+        done = self.isa_slot()
+        if self.t >= self.warmup:
+            self.log["ratify_wait"].append(done - self.t)
+        self.at(max(done, self.t + turnaround), fn, idea)
+
+    def isa_slot(self) -> float:
+        """One ratification from Isa's weekly budget, spread over the week, first come first served."""
+        start = max(self.t, self.isa_free)
+        self.isa_free = start + RATIFY_MIN / 60 * 168 / ISA_H_WEEK
+        if self.warmup <= start < self.horizon:            # attention actually spent in the measured weeks
+            self.isa_h += RATIFY_MIN / 60
+        return self.isa_free
 
     def make_cards(self, idea, only):
         rng = self.rng
@@ -886,6 +926,12 @@ class Sim:
             return
         f = self.own(s, card.author) * self.fb(card.idea, card.reqs, s.cfg)
         v = self.vis(card)
+        if CHALLENGE_TESTS and not card.reviewers:      # R26: challenge tests from the contract, before the code is read
+            if (v & {"logic", "interface"} and self.xrng.random() < f * CHALLENGE_CATCH * p_pass(s.cfg.ci, card.d + 5)) or \
+               (card.blind & {"logic", "interface"} and self.xrng.random() < BLIND_TEST_CATCH):
+                self.drops["challenge_fail"] += 1
+                self.send_card(card)
+                return
         if "interface" in v:
             base = IFACE_REVIEW if all(pc.accepted for pc in self.prereqs(card)) else IFACE_REVIEW_BLIND
             if self.rng.random() < f * base * p_pass(s.cfg.ci, card.d):
@@ -1079,6 +1125,8 @@ def measure(sim: Sim) -> dict:
         util=sum(busy_step.values()) / max(1e-9, (sim.instance_h / weeks if sim.scaler else 168 * len(sim.seats))),
         busy_step=dict(busy_step), busy_model=dict(busy_model), waits=waits,
         bottleneck=max(waits, key=waits.get) if waits else "none",
+        isa_h=sim.isa_h / weeks,
+        ratify_wait=statistics.mean(sim.log["ratify_wait"]) if sim.log["ratify_wait"] else 0.0,
         drops={k: v / max(1, len(ideas)) for k, v in sim.drops.items()},
     )
 

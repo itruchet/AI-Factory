@@ -283,6 +283,39 @@
     "X19"
    ],
    "sim_field": "CACHE_HIT"
+  },
+  {
+   "id": "M26",
+   "name": "Edge-case evidence",
+   "definition": "Per card: failure scenarios in the contract; sealed and challenge tests written, and the family that wrote each; defects each test caught; mutation score; escaped defects inside a named failure scenario.",
+   "unit": "counts, ratio",
+   "used_by": [
+    "R26",
+    "X21"
+   ],
+   "sim_field": "CHALLENGE_SHARE, CHALLENGE_CATCH, BLIND_TEST_CATCH"
+  },
+  {
+   "id": "M27",
+   "name": "Origination",
+   "definition": "Signals raised, by rule and kind; briefs opened; originated ideas acted on and left with no action; their cost (M06), realised value (M07) and share of monthly spend, beside the same figures for Isa's briefs.",
+   "unit": "counts, USD, ratio",
+   "used_by": [
+    "R27",
+    "X22"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M28",
+   "name": "Ratification",
+   "definition": "Per idea: ratified by Isa or by the envelope rule, the routing rule and the queue wait. Weekly: share inside the envelope, Isa's sample size and overturn rate, envelope step, and change-failure rate by who ratified.",
+   "unit": "hours, ratio",
+   "used_by": [
+    "R28",
+    "X23"
+   ],
+   "sim_field": "ISA_H_WEEK, RATIFY_MIN, ENVELOPE, ISA_SAMPLE"
   }
  ]
 }
