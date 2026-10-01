@@ -812,14 +812,15 @@ Evidence: Rule tests.
 The harness, not the model, is the unit of self-improvement. Edits are attributed, predicted, trialled and adopted on evidence.
 
 - **Institution:** Release Gate.
-- **Depends on:** C0.18, C2.02, C2.04. **Approvals first:** AR-16.
-- **Traces:** R22, R20, R8, X17, principle.8. **Measures:** M24.
+- **Depends on:** C0.18, C2.02, C2.04. **Approvals first:** AR-16, AR-18.
+- **Traces:** R22, R20, R8, X17, principle.8, R25, X20. **Measures:** M24.
 
 Scope:
 - Classify every failed or reworked card's trace by cause: model error, tool or tool documentation, context, timeout or budget, card not fit (R8 reason codes)
 - A harness edit names the component it changes and predicts its effect on a named measure over a stated volume of work
 - The edit runs as a trial configuration on the same work (R20) and is adopted through the Release Gate only if its prediction held (X17); otherwise it is reverted
 - A harness that serves unlike work badly branches by tier or domain rather than accumulating special cases
+- Promotion (R25): a stable, repeated pattern of agent work is proposed as a deterministic path (workflow, view or engine function), run alongside the agents on the same requests, and adopted if it matches at lower cost; its rejects return as exception cards
 
 Acceptance:
 - [ ] Every adopted harness edit has a recorded prediction and its measured outcome
@@ -929,7 +930,7 @@ Each experiment can prove the idea wrong. Judge each as live data accrues, and t
 
 - **Institution:** Ledger.
 - **Depends on:** C0.15, C2.01, C3.03. **Approvals first:** none.
-- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16, X17, X18, X19. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
+- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16, X17, X18, X19, X20. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
 
 Scope:
 - Each experiment X1-X14 judged against its falsification criterion in the pack, on live data, whenever it has enough

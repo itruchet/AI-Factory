@@ -358,6 +358,26 @@
    "depends_on": [
     "AR-13"
    ]
+  },
+  {
+   "id": "AR-18",
+   "decision": null,
+   "gate": 4,
+   "title": "Amendment: primitives and industrialising the repeated",
+   "approves": "R25: repeated agent work is promoted to deterministic paths on evidence, exceptions return to agents, and agents never write records directly. Target architecture: eight primitives in eight stores separated only where needed; conveyors write, librarians read; Hatchet under the Ledger, Postgres per store, outbox event log with per-domain batched chains, OPA or Cedar, DuckDB over Iceberg. Experiment X20.",
+   "evidence": [
+    "docs/idea/primitives.md",
+    "probes/enterprise/load_probe_results.txt"
+   ],
+   "owner": "Isa",
+   "signer": "Isa",
+   "status": "Ready",
+   "depends_on": [
+    "AR-13"
+   ],
+   "before_cards": [
+    "C2.05"
+   ]
   }
  ],
  "after_backlog": [

@@ -1578,7 +1578,8 @@
     "Classify every failed or reworked card's trace by cause: model error, tool or tool documentation, context, timeout or budget, card not fit (R8 reason codes)",
     "A harness edit names the component it changes and predicts its effect on a named measure over a stated volume of work",
     "The edit runs as a trial configuration on the same work (R20) and is adopted through the Release Gate only if its prediction held (X17); otherwise it is reverted",
-    "A harness that serves unlike work badly branches by tier or domain rather than accumulating special cases"
+    "A harness that serves unlike work badly branches by tier or domain rather than accumulating special cases",
+    "Promotion (R25): a stable, repeated pattern of agent work is proposed as a deterministic path (workflow, view or engine function), run alongside the agents on the same requests, and adopted if it matches at lower cost; its rejects return as exception cards"
    ],
    "acceptance": [
     "Every adopted harness edit has a recorded prediction and its measured outcome",
@@ -1594,7 +1595,8 @@
     "C2.04"
    ],
    "requires_approval": [
-    "AR-16"
+    "AR-16",
+    "AR-18"
    ],
    "ratified_by": null,
    "traces": [
@@ -1602,7 +1604,9 @@
     "R20",
     "R8",
     "X17",
-    "principle.8"
+    "principle.8",
+    "R25",
+    "X20"
    ],
    "measures": [
     "M24"
@@ -1795,7 +1799,8 @@
     "X16",
     "X17",
     "X18",
-    "X19"
+    "X19",
+    "X20"
    ],
    "measures": [
     "M01",

@@ -102,8 +102,8 @@ class NothingInvented(unittest.TestCase):
 
 class NothingForgotten(unittest.TestCase):
     def test_the_idea_record_is_complete(self):
-        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 25)])
-        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 20)))
+        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 26)])
+        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 21)))
         self.assertEqual(sorted(d["id"] for d in C["decisions"]), sorted(f"H{i}" for i in range(1, 8)))
         self.assertEqual(len(C["principles"]), 10)
         self.assertEqual(len(C["institutions"]), 8)
@@ -209,7 +209,7 @@ class PlanIsSound(unittest.TestCase):
         readme = (HERE / "README.md").read_text()
         self.assertIn(f"{n_cards} card seeds", ingest)
         self.assertIn(f"{n_ar} approval records", ingest)
-        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen"}
+        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen", 19: "Nineteen"}
         gates = {3: "three", 4: "four"}[len(PACK["approvals"]["gates"])]
         self.assertIn(f"{words[n_ar]} records in {gates} gates", readme)
         self.assertIn(f"{n_ar} approval records in {gates} gates", ingest)

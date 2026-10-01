@@ -1,0 +1,2801 @@
+{
+ "0|0.0|1000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    0.00569074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    0.0032333333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.0024837962962962964
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.00013310185185185183
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.0009855555555555555
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.00014444444444444446
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.00094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0002916666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.0009723888888888888
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.0027779166666666664
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    1.6666666666666667e-05
+   ],
+   "database: ERP silo": [
+    "util",
+    0.0018981481481481482
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.002777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    0.000925925925925926
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    0.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.0024837962962962964
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.00013310185185185183
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    4.861111111111112e-06
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    0.0015510841049382717
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.00013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    7.870370370370369e-05
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-06
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    2.7779166666666667e-05
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.0004398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.0024837962962962964
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.00013310185185185183
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  }
+ },
+ "0|0.0|10000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    0.05690740740740741
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    0.03233333333333334
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.024837962962962964
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.0013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.009855555555555557
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.0014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.009399999999999999
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0029166666666666664
+   ],
+   "database: HCM silo": [
+    "util",
+    0.00972388888888889
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.027779166666666667
+   ],
+   "database: CRM silo": [
+    "util",
+    0.009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.00016666666666666666
+   ],
+   "database: ERP silo": [
+    "util",
+    0.01898148148148148
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.02777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    0.009259259259259259
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    0.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.024837962962962964
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.0013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    4.8611111111111115e-05
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    0.015510841049382718
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.0013425925925925925
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.000787037037037037
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-05
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.0002777916666666667
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.004398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.024837962962962964
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.0013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  }
+ },
+ "0|0.0|100000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    0.5690740740740741
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    0.3233333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.24837962962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.09855555555555556
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.029166666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.09723888888888887
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.27779166666666666
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0937777777777778
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.0016666666666666668
+   ],
+   "database: ERP silo": [
+    "util",
+    0.18981481481481483
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.2777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    0.09259259259259259
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    0.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.24837962962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.00048611111111111115
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    0.15510841049382715
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.007870370370370371
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    0.0004320987654320988
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.002777916666666667
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.04398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.24837962962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  }
+ },
+ "0|0.7|1000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    0.00569074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    0.0032333333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.002519444444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.00013310185185185183
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.0009855555555555555
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.00014444444444444446
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.00094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0002916666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.0009723888888888888
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.0027779166666666664
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    1.6666666666666667e-05
+   ],
+   "database: ERP silo": [
+    "util",
+    0.0018981481481481482
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.002777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    0.000925925925925926
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    0.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.002519444444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.00013310185185185183
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    4.861111111111112e-06
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    0.0015510841049382717
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.00013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    7.870370370370369e-05
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-06
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    2.7779166666666667e-05
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.0006666666666666664
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.002519444444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.00013310185185185183
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  }
+ },
+ "0|0.7|10000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    0.05690740740740741
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    0.03233333333333334
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.025194444444444446
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.0013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.009855555555555557
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.0014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.009399999999999999
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0029166666666666664
+   ],
+   "database: HCM silo": [
+    "util",
+    0.00972388888888889
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.027779166666666667
+   ],
+   "database: CRM silo": [
+    "util",
+    0.009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.00016666666666666666
+   ],
+   "database: ERP silo": [
+    "util",
+    0.01898148148148148
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.02777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    0.009259259259259259
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    0.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.025194444444444446
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.0013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    4.8611111111111115e-05
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    0.015510841049382718
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.0013425925925925925
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.000787037037037037
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-05
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.0002777916666666667
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.006666666666666665
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.025194444444444446
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.0013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  }
+ },
+ "0|0.7|100000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    0.5690740740740741
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    0.3233333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.2519444444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.09855555555555556
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.029166666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.09723888888888887
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.27779166666666666
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0937777777777778
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.0016666666666666668
+   ],
+   "database: ERP silo": [
+    "util",
+    0.18981481481481483
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.2777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    0.09259259259259259
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    0.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.2519444444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.00048611111111111115
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    0.15510841049382715
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.007870370370370371
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    0.0004320987654320988
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.002777916666666667
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.06666666666666667
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    0.2519444444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.013310185185185187
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  }
+ },
+ "1000|0.0|1000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    1.705690740740741
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    3.003233333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5024837962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08346643518518519
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.0009855555555555555
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.00014444444444444446
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.00094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0002916666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.0009723888888888888
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.0027779166666666664
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    1.6666666666666667e-05
+   ],
+   "database: ERP silo": [
+    "util",
+    0.0018981481481481482
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.002777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    1.700925925925926
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    3.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5024837962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08346643518518519
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.05556041666666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    2.2237685956790125
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.00013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.5556342592592592
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-06
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.03
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.0004398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5024837962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08346643518518519
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  }
+ },
+ "1000|0.0|10000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    1.7569074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    3.0323333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5248379629629634
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08466435185185185
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.009855555555555557
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.0014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.009399999999999999
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0029166666666666664
+   ],
+   "database: HCM silo": [
+    "util",
+    0.00972388888888889
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.027779166666666667
+   ],
+   "database: CRM silo": [
+    "util",
+    0.009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.00016666666666666666
+   ],
+   "database: ERP silo": [
+    "util",
+    0.01898148148148148
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.02777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    1.7092592592592593
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    3.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5248379629629634
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08466435185185185
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.05560416666666668
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    2.2376859567901235
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.0013425925925925925
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.5563425925925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-05
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.03
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.004398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5248379629629634
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08466435185185185
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  }
+ },
+ "1000|0.0|100000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    2.269074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    3.3233333333333337
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.7483796296296297
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.09664351851851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.09855555555555556
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.029166666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.09723888888888887
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.27779166666666666
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0937777777777778
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.0016666666666666668
+   ],
+   "database: ERP silo": [
+    "util",
+    0.18981481481481483
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.2777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    1.7925925925925927
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    3.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.7483796296296297
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.09664351851851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.05604166666666666
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    2.3768595679012345
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.563425925925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    0.0004320987654320988
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.03
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.04398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.7483796296296297
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.09664351851851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  }
+ },
+ "1000|0.7|1000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    1.705690740740741
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    3.003233333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5025194444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08346643518518519
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.0009855555555555555
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.00014444444444444446
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.00094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0002916666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.0009723888888888888
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.0027779166666666664
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    1.6666666666666667e-05
+   ],
+   "database: ERP silo": [
+    "util",
+    0.0018981481481481482
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.002777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    1.700925925925926
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    3.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5025194444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08346643518518519
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.05556041666666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    2.2237685956790125
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.00013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.5556342592592592
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-06
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.03
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.0006666666666666664
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5025194444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08346643518518519
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  }
+ },
+ "1000|0.7|10000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    1.7569074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    3.0323333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5251944444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08466435185185185
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.009855555555555557
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.0014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.009399999999999999
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0029166666666666664
+   ],
+   "database: HCM silo": [
+    "util",
+    0.00972388888888889
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.027779166666666667
+   ],
+   "database: CRM silo": [
+    "util",
+    0.009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.00016666666666666666
+   ],
+   "database: ERP silo": [
+    "util",
+    0.01898148148148148
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.02777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    1.7092592592592593
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    3.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5251944444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08466435185185185
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.05560416666666668
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    2.2376859567901235
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.0013425925925925925
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.5563425925925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-05
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.03
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.006666666666666665
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.5251944444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.08466435185185185
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  }
+ },
+ "1000|0.7|100000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    2.269074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    3.3233333333333337
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.7519444444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.09664351851851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.09855555555555556
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.029166666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.09723888888888887
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.27779166666666666
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0937777777777778
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.0016666666666666668
+   ],
+   "database: ERP silo": [
+    "util",
+    0.18981481481481483
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.2777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    1.7925925925925927
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    3.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.7519444444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.09664351851851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.05604166666666666
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    2.3768595679012345
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    0.563425925925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    0.0004320987654320988
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.03
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.06666666666666667
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    2.7519444444444447
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.09664351851851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  }
+ },
+ "10000|0.0|1000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    17.00569074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    30.003233333333334
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.002483796296296
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8334664351851853
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.0009855555555555555
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.00014444444444444446
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.00094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0002916666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.0009723888888888888
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.0027779166666666664
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    1.6666666666666667e-05
+   ],
+   "database: ERP silo": [
+    "util",
+    0.0018981481481481482
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.002777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    17.000925925925927
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    30.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.002483796296296
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8334664351851853
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.5555604166666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    22.223768595679015
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.00013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    5.55563425925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-06
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.3
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.0004398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.002483796296296
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8334664351851853
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    1.7129629629629632,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    276.3899999999971
+   ]
+  }
+ },
+ "10000|0.0|10000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    17.056907407407408
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    30.032333333333334
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.024837962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.834664351851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.009855555555555557
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.0014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.009399999999999999
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0029166666666666664
+   ],
+   "database: HCM silo": [
+    "util",
+    0.00972388888888889
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.027779166666666667
+   ],
+   "database: CRM silo": [
+    "util",
+    0.009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.00016666666666666666
+   ],
+   "database: ERP silo": [
+    "util",
+    0.01898148148148148
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.02777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    17.00925925925926
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    30.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.024837962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.834664351851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.5556041666666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    22.237685956790123
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.0013425925925925925
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    5.556342592592593
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-05
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.3
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.004398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.024837962962962
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.834664351851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    17.12962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    2763.9000000000005
+   ]
+  }
+ },
+ "10000|0.0|100000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    17.569074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    30.32333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.24837962962963
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8466435185185186
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.09855555555555556
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.029166666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.09723888888888887
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.27779166666666666
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0937777777777778
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.0016666666666666668
+   ],
+   "database: ERP silo": [
+    "util",
+    0.18981481481481483
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.2777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    17.092592592592595
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    30.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.24837962962963
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8466435185185186
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.5560416666666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    22.376859567901235
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    5.563425925925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    0.0004320987654320988
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.3
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.04398148148148148
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.24837962962963
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8466435185185186
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    171.2962962962963,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    27639.00000000012
+   ]
+  }
+ },
+ "10000|0.7|1000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    17.00569074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    30.003233333333334
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.002519444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8334664351851853
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.0009855555555555555
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.00014444444444444446
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.00094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0002916666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.0009723888888888888
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.0027779166666666664
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    1.6666666666666667e-05
+   ],
+   "database: ERP silo": [
+    "util",
+    0.0018981481481481482
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.002777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    17.000925925925927
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    30.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.002519444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8334664351851853
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.5555604166666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    22.223768595679015
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.00013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    5.55563425925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-06
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.3
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.0006666666666666664
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.002519444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8334664351851853
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    0.513888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    82.91699999999985
+   ]
+  }
+ },
+ "10000|0.7|10000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    17.056907407407408
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    30.032333333333334
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.02519444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.834664351851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.009855555555555557
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.0014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.009399999999999999
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.0029166666666666664
+   ],
+   "database: HCM silo": [
+    "util",
+    0.00972388888888889
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.027779166666666667
+   ],
+   "database: CRM silo": [
+    "util",
+    0.009377777777777777
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.00016666666666666666
+   ],
+   "database: ERP silo": [
+    "util",
+    0.01898148148148148
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.02777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    17.00925925925926
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    30.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.02519444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.834664351851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.5556041666666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    22.237685956790123
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.0013425925925925925
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    5.556342592592593
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    4.3209876543209875e-05
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.3
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.006666666666666665
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.02519444444445
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.834664351851852
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    5.138888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    829.1699999999992
+   ]
+  }
+ },
+ "10000|0.7|100000": {
+  "D1 one store": {
+   "database (one node)": [
+    "util",
+    17.569074074074074
+   ],
+   "hash chain (global, per event)": [
+    "util",
+    30.32333333333333
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.251944444444444
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8466435185185186
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  },
+  "D2 silos per SoR": {
+   "database: PM silo": [
+    "util",
+    0.09855555555555556
+   ],
+   "hash chain: PM (per event)": [
+    "util",
+    0.014444444444444444
+   ],
+   "database: ITSM silo": [
+    "util",
+    0.094
+   ],
+   "hash chain: ITSM (per event)": [
+    "util",
+    0.029166666666666667
+   ],
+   "database: HCM silo": [
+    "util",
+    0.09723888888888887
+   ],
+   "hash chain: HCM (per event)": [
+    "util",
+    0.27779166666666666
+   ],
+   "database: CRM silo": [
+    "util",
+    0.0937777777777778
+   ],
+   "hash chain: CRM (per event)": [
+    "util",
+    0.0016666666666666668
+   ],
+   "database: ERP silo": [
+    "util",
+    0.18981481481481483
+   ],
+   "hash chain: ERP (per event)": [
+    "util",
+    0.2777777777777778
+   ],
+   "database: COMMERCE silo": [
+    "util",
+    17.092592592592595
+   ],
+   "hash chain: COMMERCE (per event)": [
+    "util",
+    30.0
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.251944444444444
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8466435185185186
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  },
+  "D3 primitives": {
+   "S1 identity (nodes)": [
+    "nodes",
+    0.5560416666666667
+   ],
+   "S2 balances (nodes)": [
+    "nodes",
+    22.376859567901235
+   ],
+   "S3 work (nodes)": [
+    "nodes",
+    0.013425925925925926
+   ],
+   "S4 records (nodes)": [
+    "nodes",
+    5.563425925925926
+   ],
+   "S6 content (nodes)": [
+    "nodes",
+    0.0004320987654320988
+   ],
+   "S7 policy (nodes)": [
+    "nodes",
+    0.0
+   ],
+   "hash chain: busiest domain (batched)": [
+    "util",
+    0.3
+   ],
+   "read model (nodes)": [
+    "nodes",
+    0.06666666666666667
+   ],
+   "workflow engine (databases)": [
+    "nodes",
+    25.251944444444444
+   ],
+   "policy engine (instances)": [
+    "nodes",
+    0.8466435185185186
+   ],
+   "agents (instances at peak)": [
+    "agents",
+    51.38888888888889,
+    48
+   ],
+   "agent cost ($/month)": [
+    "usd",
+    8291.700000000039
+   ]
+  }
+ },
+ "sensitivity|0.25": {
+  "S1 identity (nodes)": [
+   "nodes",
+   0.22416666666666665
+  ],
+  "S2 balances (nodes)": [
+   "nodes",
+   9.507438271604938
+  ],
+  "S3 work (nodes)": [
+   "nodes",
+   0.053703703703703705
+  ],
+  "S4 records (nodes)": [
+   "nodes",
+   2.253703703703704
+  ],
+  "S6 content (nodes)": [
+   "nodes",
+   0.0017283950617283952
+  ],
+  "S7 policy (nodes)": [
+   "nodes",
+   0.0
+  ],
+  "hash chain: busiest domain (batched)": [
+   "util",
+   0.12
+  ],
+  "read model (nodes)": [
+   "nodes",
+   0.26666666666666666
+  ],
+  "workflow engine (databases)": [
+   "nodes",
+   11.007777777777779
+  ],
+  "policy engine (instances)": [
+   "nodes",
+   0.38657407407407407
+  ],
+  "agents (instances at peak)": [
+   "agents",
+   51.38888888888889,
+   48
+  ],
+  "agent cost ($/month)": [
+   "usd",
+   8291.700000000039
+  ]
+ },
+ "sensitivity|1.0": {
+  "S1 identity (nodes)": [
+   "nodes",
+   0.05604166666666666
+  ],
+  "S2 balances (nodes)": [
+   "nodes",
+   2.3768595679012345
+  ],
+  "S3 work (nodes)": [
+   "nodes",
+   0.013425925925925926
+  ],
+  "S4 records (nodes)": [
+   "nodes",
+   0.563425925925926
+  ],
+  "S6 content (nodes)": [
+   "nodes",
+   0.0004320987654320988
+  ],
+  "S7 policy (nodes)": [
+   "nodes",
+   0.0
+  ],
+  "hash chain: busiest domain (batched)": [
+   "util",
+   0.03
+  ],
+  "read model (nodes)": [
+   "nodes",
+   0.06666666666666667
+  ],
+  "workflow engine (databases)": [
+   "nodes",
+   2.7519444444444447
+  ],
+  "policy engine (instances)": [
+   "nodes",
+   0.09664351851851852
+  ],
+  "agents (instances at peak)": [
+   "agents",
+   51.38888888888889,
+   48
+  ],
+  "agent cost ($/month)": [
+   "usd",
+   8291.700000000039
+  ]
+ },
+ "sensitivity|4.0": {
+  "S1 identity (nodes)": [
+   "nodes",
+   0.014010416666666666
+  ],
+  "S2 balances (nodes)": [
+   "nodes",
+   0.5942148919753086
+  ],
+  "S3 work (nodes)": [
+   "nodes",
+   0.0033564814814814816
+  ],
+  "S4 records (nodes)": [
+   "nodes",
+   0.1408564814814815
+  ],
+  "S6 content (nodes)": [
+   "nodes",
+   0.0001080246913580247
+  ],
+  "S7 policy (nodes)": [
+   "nodes",
+   0.0
+  ],
+  "hash chain: busiest domain (batched)": [
+   "util",
+   0.0075
+  ],
+  "read model (nodes)": [
+   "nodes",
+   0.016666666666666666
+  ],
+  "workflow engine (databases)": [
+   "nodes",
+   0.6879861111111112
+  ],
+  "policy engine (instances)": [
+   "nodes",
+   0.02416087962962963
+  ],
+  "agents (instances at peak)": [
+   "agents",
+   51.38888888888889,
+   48
+  ],
+  "agent cost ($/month)": [
+   "usd",
+   8291.700000000039
+  ]
+ }
+}

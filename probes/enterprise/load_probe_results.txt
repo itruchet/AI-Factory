@@ -1,0 +1,74 @@
+ENTERPRISE LOAD PROBE: busiest hour of a month with payroll run and month-end close [illustrative capacities]
+Per design: busiest database (utilisation of one node, or nodes needed), busiest hash chain, workflow databases,
+agent instances needed at peak against the modelled cap of 48, agent cost a month, and the first limit reached.
+
+[customer orders peak 0/s; librarian work promoted 0%]
+    1,000 | D1 one store     | db: database 1%                  | chain   0.3% | workflow 1 | agents    2/48 | $     276/mo | first limit: agents 2%
+    1,000 | D2 silos per SoR | db: database: ERP silo 0%        | chain   0.3% | workflow 1 | agents    2/48 | $     276/mo | first limit: agents 2%
+    1,000 | D3 primitives    | db: S2 balances 1 node(s)        | chain   0.0% | workflow 1 | agents    2/48 | $     276/mo | first limit: agents 2%
+   10,000 | D1 one store     | db: database 6%                  | chain   3.2% | workflow 1 | agents   18/48 | $   2,764/mo | first limit: agents 21%
+   10,000 | D2 silos per SoR | db: database: ERP silo 2%        | chain   2.8% | workflow 1 | agents   18/48 | $   2,764/mo | first limit: agents 21%
+   10,000 | D3 primitives    | db: S2 balances 1 node(s)        | chain   0.0% | workflow 1 | agents   18/48 | $   2,764/mo | first limit: agents 21%
+  100,000 | D1 one store     | db: database 57%                 | chain  32.3% | workflow 1 | agents  172/48 | $  27,639/mo | first limit: agents 214%  FAILS
+  100,000 | D2 silos per SoR | db: database: ERP silo 19%       | chain  27.8% | workflow 1 | agents  172/48 | $  27,639/mo | first limit: agents 214%  FAILS
+  100,000 | D3 primitives    | db: S2 balances 1 node(s)        | chain   0.3% | workflow 1 | agents  172/48 | $  27,639/mo | first limit: agents 214%  FAILS
+
+[customer orders peak 0/s; librarian work promoted 70%]
+    1,000 | D1 one store     | db: database 1%                  | chain   0.3% | workflow 1 | agents    1/48 | $      83/mo | first limit: agents 1%
+    1,000 | D2 silos per SoR | db: database: ERP silo 0%        | chain   0.3% | workflow 1 | agents    1/48 | $      83/mo | first limit: agents 1%
+    1,000 | D3 primitives    | db: S2 balances 1 node(s)        | chain   0.0% | workflow 1 | agents    1/48 | $      83/mo | first limit: agents 1%
+   10,000 | D1 one store     | db: database 6%                  | chain   3.2% | workflow 1 | agents    6/48 | $     829/mo | first limit: agents 6%
+   10,000 | D2 silos per SoR | db: database: ERP silo 2%        | chain   2.8% | workflow 1 | agents    6/48 | $     829/mo | first limit: agents 6%
+   10,000 | D3 primitives    | db: S2 balances 1 node(s)        | chain   0.0% | workflow 1 | agents    6/48 | $     829/mo | first limit: agents 6%
+  100,000 | D1 one store     | db: database 57%                 | chain  32.3% | workflow 1 | agents   52/48 | $   8,292/mo | first limit: agents 64%
+  100,000 | D2 silos per SoR | db: database: ERP silo 19%       | chain  27.8% | workflow 1 | agents   52/48 | $   8,292/mo | first limit: agents 64%
+  100,000 | D3 primitives    | db: S2 balances 1 node(s)        | chain   0.3% | workflow 1 | agents   52/48 | $   8,292/mo | first limit: agents 64%
+
+[customer orders peak 1,000/s; librarian work promoted 0%]
+    1,000 | D1 one store     | db: database 171%                | chain 300.3% | workflow 3 | agents    2/48 | $     276/mo | first limit: hash chain 300%  FAILS
+    1,000 | D2 silos per SoR | db: database: COMMERCE silo 170% | chain 300.0% | workflow 3 | agents    2/48 | $     276/mo | first limit: hash chain: COMMERCE 300%  FAILS
+    1,000 | D3 primitives    | db: S2 balances 3 node(s)        | chain   3.0% | workflow 3 | agents    2/48 | $     276/mo | first limit: hash chain: busiest domain 3%
+   10,000 | D1 one store     | db: database 176%                | chain 303.2% | workflow 3 | agents   18/48 | $   2,764/mo | first limit: hash chain 303%  FAILS
+   10,000 | D2 silos per SoR | db: database: COMMERCE silo 171% | chain 300.0% | workflow 3 | agents   18/48 | $   2,764/mo | first limit: hash chain: COMMERCE 300%  FAILS
+   10,000 | D3 primitives    | db: S2 balances 3 node(s)        | chain   3.0% | workflow 3 | agents   18/48 | $   2,764/mo | first limit: agents 21%
+  100,000 | D1 one store     | db: database 227%                | chain 332.3% | workflow 3 | agents  172/48 | $  27,639/mo | first limit: hash chain 332%  FAILS
+  100,000 | D2 silos per SoR | db: database: COMMERCE silo 179% | chain 300.0% | workflow 3 | agents  172/48 | $  27,639/mo | first limit: hash chain: COMMERCE 300%  FAILS
+  100,000 | D3 primitives    | db: S2 balances 3 node(s)        | chain   3.0% | workflow 3 | agents  172/48 | $  27,639/mo | first limit: agents 214%  FAILS
+
+[customer orders peak 1,000/s; librarian work promoted 70%]
+    1,000 | D1 one store     | db: database 171%                | chain 300.3% | workflow 3 | agents    1/48 | $      83/mo | first limit: hash chain 300%  FAILS
+    1,000 | D2 silos per SoR | db: database: COMMERCE silo 170% | chain 300.0% | workflow 3 | agents    1/48 | $      83/mo | first limit: hash chain: COMMERCE 300%  FAILS
+    1,000 | D3 primitives    | db: S2 balances 3 node(s)        | chain   3.0% | workflow 3 | agents    1/48 | $      83/mo | first limit: hash chain: busiest domain 3%
+   10,000 | D1 one store     | db: database 176%                | chain 303.2% | workflow 3 | agents    6/48 | $     829/mo | first limit: hash chain 303%  FAILS
+   10,000 | D2 silos per SoR | db: database: COMMERCE silo 171% | chain 300.0% | workflow 3 | agents    6/48 | $     829/mo | first limit: hash chain: COMMERCE 300%  FAILS
+   10,000 | D3 primitives    | db: S2 balances 3 node(s)        | chain   3.0% | workflow 3 | agents    6/48 | $     829/mo | first limit: agents 6%
+  100,000 | D1 one store     | db: database 227%                | chain 332.3% | workflow 3 | agents   52/48 | $   8,292/mo | first limit: hash chain 332%  FAILS
+  100,000 | D2 silos per SoR | db: database: COMMERCE silo 179% | chain 300.0% | workflow 3 | agents   52/48 | $   8,292/mo | first limit: hash chain: COMMERCE 300%  FAILS
+  100,000 | D3 primitives    | db: S2 balances 3 node(s)        | chain   3.0% | workflow 3 | agents   52/48 | $   8,292/mo | first limit: agents 64%
+
+[customer orders peak 10,000/s; librarian work promoted 0%]
+    1,000 | D1 one store     | db: database 1701%               | chain 3000.3% | workflow 26 | agents    2/48 | $     276/mo | first limit: hash chain 3000%  FAILS
+    1,000 | D2 silos per SoR | db: database: COMMERCE silo 1700% | chain 3000.0% | workflow 26 | agents    2/48 | $     276/mo | first limit: hash chain: COMMERCE 3000%  FAILS
+    1,000 | D3 primitives    | db: S2 balances 23 node(s)       | chain  30.0% | workflow 26 | agents    2/48 | $     276/mo | first limit: hash chain: busiest domain 30%
+   10,000 | D1 one store     | db: database 1706%               | chain 3003.2% | workflow 26 | agents   18/48 | $   2,764/mo | first limit: hash chain 3003%  FAILS
+   10,000 | D2 silos per SoR | db: database: COMMERCE silo 1701% | chain 3000.0% | workflow 26 | agents   18/48 | $   2,764/mo | first limit: hash chain: COMMERCE 3000%  FAILS
+   10,000 | D3 primitives    | db: S2 balances 23 node(s)       | chain  30.0% | workflow 26 | agents   18/48 | $   2,764/mo | first limit: hash chain: busiest domain 30%
+  100,000 | D1 one store     | db: database 1757%               | chain 3032.3% | workflow 26 | agents  172/48 | $  27,639/mo | first limit: hash chain 3032%  FAILS
+  100,000 | D2 silos per SoR | db: database: COMMERCE silo 1709% | chain 3000.0% | workflow 26 | agents  172/48 | $  27,639/mo | first limit: hash chain: COMMERCE 3000%  FAILS
+  100,000 | D3 primitives    | db: S2 balances 23 node(s)       | chain  30.0% | workflow 26 | agents  172/48 | $  27,639/mo | first limit: agents 214%  FAILS
+
+[customer orders peak 10,000/s; librarian work promoted 70%]
+    1,000 | D1 one store     | db: database 1701%               | chain 3000.3% | workflow 26 | agents    1/48 | $      83/mo | first limit: hash chain 3000%  FAILS
+    1,000 | D2 silos per SoR | db: database: COMMERCE silo 1700% | chain 3000.0% | workflow 26 | agents    1/48 | $      83/mo | first limit: hash chain: COMMERCE 3000%  FAILS
+    1,000 | D3 primitives    | db: S2 balances 23 node(s)       | chain  30.0% | workflow 26 | agents    1/48 | $      83/mo | first limit: hash chain: busiest domain 30%
+   10,000 | D1 one store     | db: database 1706%               | chain 3003.2% | workflow 26 | agents    6/48 | $     829/mo | first limit: hash chain 3003%  FAILS
+   10,000 | D2 silos per SoR | db: database: COMMERCE silo 1701% | chain 3000.0% | workflow 26 | agents    6/48 | $     829/mo | first limit: hash chain: COMMERCE 3000%  FAILS
+   10,000 | D3 primitives    | db: S2 balances 23 node(s)       | chain  30.0% | workflow 26 | agents    6/48 | $     829/mo | first limit: hash chain: busiest domain 30%
+  100,000 | D1 one store     | db: database 1757%               | chain 3032.3% | workflow 26 | agents   52/48 | $   8,292/mo | first limit: hash chain 3032%  FAILS
+  100,000 | D2 silos per SoR | db: database: COMMERCE silo 1709% | chain 3000.0% | workflow 26 | agents   52/48 | $   8,292/mo | first limit: hash chain: COMMERCE 3000%  FAILS
+  100,000 | D3 primitives    | db: S2 balances 23 node(s)       | chain  30.0% | workflow 26 | agents   52/48 | $   8,292/mo | first limit: agents 64%
+
+SENSITIVITY: D3 at 100,000 employees, 1,000 orders/s, 70% promoted; every capacity x0.25 / x1 / x4
+  x0.25: most nodes 12 (workflow engine (databases)); batched chain 12.0%; agents 52
+  x1.0: most nodes 3 (S2 balances (nodes)); batched chain 3.0%; agents 52
+  x4.0: most nodes 1 (S1 identity (nodes)); batched chain 0.8%; agents 52

@@ -163,7 +163,7 @@
   },
   {
    "id": "OI-18",
-   "question": "What must hold before the Factory becomes the system of record for other domains (replacing ERP, systems of record, mainframes): transactional integrity, retention, access control, segregation of duties, audit, jurisdiction, and a definition of a defect and deterministic checks per domain.",
+   "question": "What must hold before the Factory becomes the system of record for other domains (replacing ERP, systems of record, mainframes): transactional integrity, retention, access control, segregation of duties, audit, jurisdiction, and a definition of a defect and deterministic checks per domain. Target architecture and load evidence: docs/idea/primitives.md (eight primitive stores; per-domain hash chains sealed in batches; crypto-shredding for erasure).",
    "status": "Deferred (after the software domain runs)",
    "resolver": "Design, then Isa; legal and regulatory reading by qualified advisers per domain",
    "isa_answer": "Eventually any person or team could set the Factory up for any kind of knowledge work.",
