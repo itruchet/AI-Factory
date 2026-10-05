@@ -253,7 +253,7 @@
    ],
    "owner": "Ledger load (mechanical)",
    "signer": null,
-   "status": "To produce",
+   "status": "Prototype: load build_queue.now in order (Isa, 5 Oct 2026)",
    "depends_on": [
     "AR-13"
    ]
@@ -270,7 +270,7 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Open: Isa decides the envelope's bounds and ceiling; no fixed weekly budget (Isa, 1 Oct 2026); the mechanism is set by AR-19 (R28, signed 1 Oct 2026)",
+   "status": "Open: Isa decides the envelope's bounds and ceiling; no fixed weekly budget (Isa, 1 Oct 2026); the mechanism is set by AR-19 (R28, signed 1 Oct 2026); not needed in the prototype (Isa ratifies directly)",
    "depends_on": [
     "AR-14"
    ],
@@ -291,13 +291,11 @@
    ],
    "owner": "Isa (Owner)",
    "signer": "Isa",
-   "status": "To produce",
+   "status": "To produce at the pre-release gate (Isa, 5 Oct 2026: the prototype runs on Isa's own accounts)",
    "depends_on": [
     "AR-14"
    ],
-   "before_cards": [
-    "C1.03"
-   ]
+   "before_cards": []
   },
   {
    "id": "AR-15",

@@ -1,5 +1,5 @@
 {
- "_about": "Card seeds for the Factory to rebuild itself as the constitutional institutions. There are no named roles: from the first card, the Factory's agents work as a collective. Any agent pulls the oldest ready card it can do; a model of another family checks it; the rules in the Ledger do the managing. Dog-food build: no lab, no shadow periods, no trial. Every card is grounded in the code by whoever pulls it: it cites the files and commit it read. A seed whose premise does not hold is marked down to its author with evidence (R8) and goes back to Planning, never quietly reshaped. A puller may split a seed into child cards that together meet the seed's acceptance contract; seeds are never merged, dropped or widened without Isa. [PROPOSED] values are for Isa to ratify in AR-13; [PLACEHOLDER] values are resolved only by the open item named.",
+ "_about": "Card seeds for the Factory to rebuild itself as the constitutional institutions. There are no named roles: from the first card, the Factory's agents work as a collective. Any agent pulls the oldest ready card it can do; a model of another family checks it; the rules in the Ledger do the managing. Dog-food build: no lab, no shadow periods, no trial. Every card is grounded in the code by whoever pulls it: it cites the files and commit it read. A seed whose premise does not hold is marked down to its author with evidence (R8) and goes back to Planning, never quietly reshaped. A puller may split a seed into child cards that together meet the seed's acceptance contract; seeds are never merged, dropped or widened without Isa. [PROPOSED] values are for Isa to ratify in AR-13; [PLACEHOLDER] values are resolved only by the open item named. Prototype mode (Isa, 5 Oct 2026): build_queue sets the order; phases are groupings only, and phase-exit approvals are suspended until the pre-release gate.",
  "phases": [
   {
    "phase": 0,
@@ -11,7 +11,7 @@
    ],
    "exit": [
     "Every Phase 0 card accepted",
-    "Isa approves the phase exit through the interim gate (C0.02)"
+    "Isa approves the phase exit through the interim gate (C0.02) (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -26,7 +26,7 @@
    ],
    "exit": [
     "Every Phase 1 card accepted",
-    "Isa approves the phase exit through the interim gate (C0.02)"
+    "Isa approves the phase exit through the interim gate (C0.02) (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -39,8 +39,8 @@
    ],
    "exit": [
     "Every Phase 2 card accepted",
-    "Protected governance paths now pass the Release Gate and Isa (C2.02 replaces the interim gate)",
-    "Isa approves the phase exit"
+    "Protected governance paths now pass the Release Gate and Isa (C2.02 replaces the interim gate) (suspended in the prototype; the build queue decides)",
+    "Isa approves the phase exit (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -53,8 +53,8 @@
    ],
    "exit": [
     "Every Phase 3 card accepted",
-    "Release Gate promotion of the phase",
-    "Isa approves the phase exit"
+    "Release Gate promotion of the phase (suspended in the prototype; the build queue decides)",
+    "Isa approves the phase exit (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -70,6 +70,36 @@
   }
  ],
  "cards": [
+  {
+   "id": "C0.20",
+   "phase": 0,
+   "title": "Stay up: kill the top failure causes and manual workarounds",
+   "institution": "Market",
+   "intent": "The Factory falls over more often than it stays up, held together by manual fixes. Nothing else matters until it stays up.",
+   "scope": [
+    "Log every failure and every manual workaround: what broke, how it was fixed, how long it took",
+    "Each week, fix the top three causes at the root and turn the most frequent workaround into code",
+    "No new feature merges while a top-three cause is open, unless it removes one"
+   ],
+   "acceptance": [
+    "Failures and workarounds are logged with cause and time to fix",
+    "Failures per week and manual interventions per week fall for four weeks running"
+   ],
+   "evidence": [
+    "Failure and workaround log; weekly trend"
+   ],
+   "depends_on": [],
+   "requires_approval": [],
+   "ratified_by": null,
+   "traces": [
+    "DQ6",
+    "RK2"
+   ],
+   "measures": [
+    "M03"
+   ],
+   "open_items": []
+  },
   {
    "id": "C0.01",
    "phase": 0,
@@ -373,8 +403,7 @@
     "Value report for a sample period"
    ],
    "depends_on": [
-    "C0.04",
-    "C0.06"
+    "C0.04"
    ],
    "requires_approval": [],
    "ratified_by": null,
@@ -585,10 +614,7 @@
    "evidence": [
     "Incident drill record"
    ],
-   "depends_on": [
-    "C0.06",
-    "C0.02"
-   ],
+   "depends_on": [],
    "requires_approval": [
     "AR-09a"
    ],
@@ -625,9 +651,7 @@
    "evidence": [
     "Queue and licence records for the first week of pulls"
    ],
-   "depends_on": [
-    "C0.02"
-   ],
+   "depends_on": [],
    "requires_approval": [
     "AR-01"
    ],
@@ -720,8 +744,6 @@
     "Swap test; route comparison"
    ],
    "depends_on": [
-    "C0.04",
-    "C0.05",
     "C0.16"
    ],
    "requires_approval": [
@@ -763,8 +785,7 @@
     "Schema tests"
    ],
    "depends_on": [
-    "C0.03",
-    "C0.07"
+    "C0.03"
    ],
    "requires_approval": [
     "AR-03"
@@ -838,8 +859,7 @@
     "C0.19"
    ],
    "requires_approval": [
-    "AR-02",
-    "AR-10"
+    "AR-02"
    ],
    "ratified_by": null,
    "traces": [
@@ -852,9 +872,6 @@
     "M08"
    ],
    "open_items": [
-    "OI-04",
-    "OI-06",
-    "OI-07",
     "OI-15"
    ],
    "institution": "Ledger"
@@ -939,7 +956,8 @@
     "Rule tests against the pull-rules simulation's scenarios (probes/pull-rules)"
    ],
    "depends_on": [
-    "C1.05"
+    "C1.05",
+    "C1.08"
    ],
    "requires_approval": [
     "AR-01",
@@ -1121,7 +1139,7 @@
     "Rule tests"
    ],
    "depends_on": [
-    "C1.10"
+    "C1.17"
    ],
    "requires_approval": [
     "AR-04"
@@ -1284,7 +1302,7 @@
     "Rule tests"
    ],
    "depends_on": [
-    "C1.14"
+    "C0.04"
    ],
    "requires_approval": [
     "AR-05"
@@ -1364,9 +1382,7 @@
     "Review tests"
    ],
    "depends_on": [
-    "C0.18",
-    "C1.08",
-    "C1.11"
+    "C0.18"
    ],
    "requires_approval": [
     "AR-01"
@@ -1496,8 +1512,6 @@
     "origination report"
    ],
    "depends_on": [
-    "C0.06",
-    "C0.08",
     "C0.09",
     "C0.16",
     "C0.17"
@@ -1593,9 +1607,7 @@
     "redaction test"
    ],
    "depends_on": [
-    "C0.06",
-    "C0.16",
-    "C1.17"
+    "C0.16"
    ],
    "requires_approval": [
     "AR-20"
@@ -1640,8 +1652,7 @@
    ],
    "depends_on": [
     "C0.18",
-    "C1.08",
-    "C1.22"
+    "C1.08"
    ],
    "requires_approval": [
     "AR-20"
@@ -1951,8 +1962,7 @@
     "route log"
    ],
    "depends_on": [
-    "C0.19",
-    "C1.25"
+    "C0.19"
    ],
    "requires_approval": [
     "AR-20"
@@ -1985,8 +1995,7 @@
     "Manifest audit of what each participant saw"
    ],
    "depends_on": [
-    "C0.18",
-    "C2.02"
+    "C0.18"
    ],
    "requires_approval": [],
    "ratified_by": null,
@@ -2238,6 +2247,41 @@
    "open_items": []
   },
   {
+   "id": "C3.08",
+   "phase": 3,
+   "title": "Investor demo path: one idea to working software, on demand",
+   "institution": "Market",
+   "intent": "Prove it works and is worth it. One idea goes from a spoken or written brief, through the council, to reviewed, working software, reliably, with its cost, time and quality shown.",
+   "scope": [
+    "A fixed demo script: brief (voice or text), council framing, cards, build, cross-family review, running result",
+    "Live numbers on screen: time to result, cost per idea, defects caught, council against a single model",
+    "Runs end to end without manual intervention, on demand"
+   ],
+   "acceptance": [
+    "Five demo runs in a row complete without a manual fix",
+    "Each run shows its time, cost and review outcome from the Factory's own records"
+   ],
+   "evidence": [
+    "Five recorded demo runs"
+   ],
+   "depends_on": [
+    "C0.09",
+    "C1.17",
+    "C3.02",
+    "C3.03"
+   ],
+   "requires_approval": [],
+   "ratified_by": null,
+   "traces": [
+    "H7"
+   ],
+   "measures": [
+    "M01",
+    "M05"
+   ],
+   "open_items": []
+  },
+  {
    "id": "C4.01",
    "phase": 4,
    "title": "Judge X1-X14 continuously",
@@ -2303,5 +2347,156 @@
    "open_items": [],
    "institution": "Ledger"
   }
- ]
+ ],
+ "build_queue": {
+  "_about": "Private alpha prototype (Isa, 5 Oct 2026): product first. The Factory must stay up and work end to end for an investor demo before any governance, risk or compliance work. 'now' is the build order; each card is built in the minimal form stated. 'later' waits for its stage; nothing in 'now' waits on anything in 'later', on an unsigned approval or on a phase exit. Isa is the only user.",
+  "now": [
+   {
+    "id": "C0.20",
+    "minimal": "Log failures and workarounds; fix the top three causes weekly"
+   },
+   {
+    "id": "C0.16",
+    "minimal": "Alert and one-step revert; hotfix as an ordinary card"
+   },
+   {
+    "id": "C1.23",
+    "minimal": "Record Isa's own use; replay before every merge; show differences"
+   },
+   {
+    "id": "C0.17",
+    "minimal": "One pull queue the agents work from"
+   },
+   {
+    "id": "C0.19",
+    "minimal": "One gateway; keys in the environment, on Isa's own accounts"
+   },
+   {
+    "id": "C1.03",
+    "minimal": "The models Isa has accounts for; no vendor-terms gate"
+   },
+   {
+    "id": "C0.03",
+    "minimal": "An append-only log of what happened"
+   },
+   {
+    "id": "C0.04",
+    "minimal": "Tokens and cost per call, for cost-per-idea numbers"
+   },
+   {
+    "id": "C0.18",
+    "minimal": "One shared harness: tools, fresh context, budgets"
+   },
+   {
+    "id": "C1.01",
+    "minimal": "Tier, requirement, contract with tests"
+   },
+   {
+    "id": "C1.02",
+    "minimal": "Simple tier rules"
+   },
+   {
+    "id": "C1.17",
+    "minimal": "Tests first, then a model of another family reviews"
+   },
+   {
+    "id": "C1.11",
+    "minimal": "No model reviews its own family's work"
+   },
+   {
+    "id": "C1.05",
+    "minimal": "Hardest-first pull by licence"
+   },
+   {
+    "id": "C1.08",
+    "minimal": "A reason on every rejection"
+   },
+   {
+    "id": "C1.06",
+    "minimal": "Promotion and demotion from the record"
+   },
+   {
+    "id": "C1.10",
+    "minimal": "No tier left without an agent"
+   },
+   {
+    "id": "C1.15",
+    "minimal": "A hard monthly spending cap; nothing else"
+   },
+   {
+    "id": "C3.01",
+    "minimal": "Two models frame the brief blind"
+   },
+   {
+    "id": "C3.02",
+    "minimal": "One synthesis round; Isa ratifies"
+   },
+   {
+    "id": "C3.03",
+    "minimal": "Brief to cards, with one red-team pass"
+   },
+   {
+    "id": "C0.09",
+    "minimal": "Cost and time per idea, from the log"
+   },
+   {
+    "id": "C3.07",
+    "minimal": "Council against one model on the same briefs: the investor proof point"
+   },
+   {
+    "id": "C1.24",
+    "minimal": "Isa's corrections become reusable lessons"
+   },
+   {
+    "id": "C1.21",
+    "minimal": "A weekly standing brief plus incident signals"
+   },
+   {
+    "id": "C2.07",
+    "minimal": "Live voice in English and Arabic, for Isa"
+   },
+   {
+    "id": "C3.08",
+    "minimal": "The investor demo, end to end, five clean runs"
+   }
+  ],
+  "later": {
+   "pre-release gate": [
+    "C0.01",
+    "C0.02",
+    "C0.05",
+    "C1.09",
+    "C1.22",
+    "C1.25",
+    "C2.01",
+    "C2.02",
+    "C2.03",
+    "C2.06",
+    "C3.04"
+   ],
+   "measurement and the simulation twin": [
+    "C0.06",
+    "C0.07",
+    "C0.08",
+    "C0.10",
+    "C0.11",
+    "C0.12",
+    "C0.15",
+    "C4.01"
+   ],
+   "scale and optimisation": [
+    "C1.07",
+    "C1.12",
+    "C1.13",
+    "C1.14",
+    "C1.16",
+    "C1.19",
+    "C1.20",
+    "C2.04",
+    "C2.05",
+    "C3.05",
+    "C3.06"
+   ]
+  }
+ }
 }

@@ -178,18 +178,21 @@ class PlanIsSound(unittest.TestCase):
         for i in CARDS:
             visit(i)
 
-    def test_governance_is_protected_before_anything_changes(self):
-        # every card except pack registration and the protection itself depends, directly or not, on C0.02
-        def ancestors(i, acc=None):
-            acc = set() if acc is None else acc
+    def test_build_queue_is_product_first(self):
+        # prototype mode (Isa, 5 Oct 2026): nothing on the build queue waits on later work, an unsigned approval
+        # or an open item it cannot resolve itself; governance cards are all later
+        bq = PACK["build_queue"]
+        now = [n["id"] for n in bq["now"]]
+        later = [c for v in bq["later"].values() for c in v]
+        self.assertEqual(sorted(now + later), sorted(CARDS))
+        self.assertEqual(now[0], "C0.20")                                        # stay up first
+        for pos, i in enumerate(now):
             for d in CARDS[i]["depends_on"]:
-                if d not in acc:
-                    acc.add(d)
-                    ancestors(d, acc)
-            return acc
-        for i in CARDS:
-            if i not in ("C0.01", "C0.02"):
-                self.assertIn("C0.02", ancestors(i), i)
+                self.assertIn(d, now[:pos], (i, d))
+            for a in CARDS[i]["requires_approval"]:
+                self.assertTrue(APPROVALS[a].get("signed"), (i, a))
+        for g in ("C0.01", "C0.02", "C1.25", "C2.01", "C2.02", "C1.22"):
+            self.assertIn(g, bq["later"]["pre-release gate"], g)
 
     def test_approvals_are_ordered(self):
         order = {a["id"]: n for n, a in enumerate(PACK["approvals"]["records"])}

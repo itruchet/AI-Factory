@@ -28,13 +28,12 @@
   {
    "id": "OI-04",
    "question": "Who holds vendor accounts and API keys, and how adapters obtain them.",
-   "status": "Resolved in part",
+   "status": "Resolved in part (prototype: keys in the environment on Isa's own accounts)",
    "resolver": "The puller of C0.05 finds it in the code; confirmed in AR-10",
    "isa_answer": "The Owner; the keys are hashed in the Factory.",
    "residual": "[Inference] A one-way hash cannot authenticate an API call, so the Factory must also hold a usable credential, encrypted or in a secret store, and use the hash as a fingerprint. Confirm which is in place.",
    "blocks": [
-    "C0.05",
-    "C1.03"
+    "C0.05"
    ]
   },
   {
@@ -49,23 +48,19 @@
   {
    "id": "OI-06",
    "question": "Is Muse Spark 1.3 served to the Owner's account region (UK or KSA)? [Unverified]",
-   "status": "Open",
+   "status": "Open (deferred to the pre-release gate; the prototype uses Isa's own accounts)",
    "resolver": "AR-10",
    "isa_answer": null,
    "fallback": "A second route (OpenRouter) and Gemini 3.8 Flash in the same class (docs/idea/value-stream.md §12).",
-   "blocks": [
-    "C1.03"
-   ]
+   "blocks": []
   },
   {
    "id": "OI-07",
    "question": "No-training terms for every model tier used (R15), and their fit with Heliosvera IP.",
-   "status": "Open",
+   "status": "Open (deferred to the pre-release gate; the prototype uses Isa's own accounts)",
    "resolver": "AR-10, with a qualified adviser where the terms are unclear",
    "isa_answer": null,
-   "blocks": [
-    "C1.03"
-   ]
+   "blocks": []
   },
   {
    "id": "OI-08",

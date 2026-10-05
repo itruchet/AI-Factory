@@ -4,7 +4,7 @@ Owner: Isa. Scenario: **Amend** the existing Factory through the ingestion pack 
 
 **Status, 27 Sep 2026: Gates 1 and 2 are signed** (AR-01 to AR-13, except the just-in-time AR-09b and AR-10). The `[PROPOSED]` values in AR-08, AR-09a and AR-13 are accepted as proposed. Next: AR-14 loads the Phase 0 cards into the pull queue.
 
-**Status, 5 Oct 2026: every Gate 4 amendment is signed** (AR-15 to AR-20). Still open: AR-09b (Isa sets the envelope's bounds and ceiling; no fixed weekly budget, her decision of 1 Oct 2026), AR-10 (vendor and data terms, to produce) and AR-14 (the mechanical load).
+**Status, 5 Oct 2026: every Gate 4 amendment is signed** (AR-15 to AR-20). **Prototype mode (Isa, 5 Oct 2026):** the build queue in `pack/CARDS.md` sets the order; AR-09b, AR-10 and phase-exit approvals no longer block any prototype card. Still open: AR-09b (Isa sets the envelope's bounds and ceiling; no fixed weekly budget, her decision of 1 Oct 2026), AR-10 (vendor and data terms, to produce) and AR-14 (the mechanical load).
 
 **Twenty-one approval records in four gates.**
 - **Isa signs twenty.** AR-14 is a mechanical load of the ratified cards into the pull queue.

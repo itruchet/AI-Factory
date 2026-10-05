@@ -19,6 +19,8 @@ The idea, stated at concept level. Every question analysis can settle is settled
 
 *r12.12 (amended by AR-20, signed 5 Oct 2026):* EvryMynd joins as a front end: user-owned sovereign memory and an agent council for its users, carried by the Factory directly or through other interfaces such as Cowork. The Factory builds each mechanism once, with an owner (the Factory or a user), and runs it on its own work first.
 
+**Prototype mode (Isa, 5 Oct 2026):** this is a private alpha with one user, Isa. Product comes first: the Factory must stay up and work end to end for an investor demo. Governance, risk and compliance mechanisms wait for a pre-release gate, unless they protect Isa's own money or data. While the Release Gate does not exist, Isa's direct decision changes a rule. The build order is the pack's build queue.
+
 The Factory is a chain of eight institutions under a constitution. At every institution, AI agents **pull** cards from a queue. Nobody assigns work. What each agent may pull is governed by **plain rules written into the Ledger**. Each institution's output is **marked** by the next institution. Marks feed back by rule:
 - agents whose work is marked down get fewer and easier cards;
 - agents whose work is accepted get more and harder cards;

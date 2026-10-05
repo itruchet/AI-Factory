@@ -291,6 +291,7 @@ def build() -> tuple[dict, str]:
             "Card seeds may be split by their puller, never merged, dropped or widened without Isa. A seed whose premise does not hold is returned with evidence (R8).",
             "This pack supersedes the parked design wherever they conflict.",
             "No secret, key or credential belongs in the pack, the Ledger or a card.",
+            "Prototype mode (Isa, 5 Oct 2026): product first. Build cards_build_queue.now in order, each in its minimal form. Nothing in it waits on governance, an unsigned approval or a phase exit; governance, risk and compliance cards wait for the pre-release gate. Isa is the only user, and her direct decision changes a rule while the Release Gate does not exist.",
         ],
         constitution=parse_idea(md),
         operating_parameters=src["parameters"]["parameters"],
@@ -303,6 +304,7 @@ def build() -> tuple[dict, str]:
         open_items=src["open_items"]["items"],
         phases=src["cards"]["phases"],
         cards=src["cards"]["cards"],
+        build_queue=src["cards"]["build_queue"],
         sources=[dict(path=p, status=s, sha256=sha(ROOT / p), text=(ROOT / p).read_text() if embed else None)
                  for p, s, embed in SOURCES],
         evidence_files=[dict(path=rel(p), sha256=sha(p)) for p in evidence_files],
@@ -317,6 +319,11 @@ def cards_md(pack: dict) -> str:
            "Each seed is a unit of intent with an acceptance contract, pulled by any agent the rules allow; there are no named roles. "
            "A puller grounds the work in the code, may split a seed into child cards, and returns a seed whose premise does not hold "
            "with evidence (R8). Seeds are never merged, dropped or widened without Isa.", ""]
+    bq = pack["build_queue"]
+    titles = {c["id"]: c["title"] for c in pack["cards"]}
+    out += ["## Build queue: private alpha prototype", "", bq["_about"], "", "| # | Card | Build it as |", "| --- | --- | --- |"]
+    out += [f"| {i} | {n['id']} {titles[n['id']]} | {n['minimal']} |" for i, n in enumerate(bq["now"], 1)]
+    out += ["", "**Later:**", ""] + [f"- **{k}:** " + ", ".join(v) for k, v in bq["later"].items()] + [""]
     for ph in pack["phases"]:
         out += [f"## Phase {ph['phase']}: {ph['name']}", "", ph["intent"], "",
                 "**Entry:** " + "; ".join(ph["entry"]) + ".", "", "**Exit:** " + "; ".join(ph["exit"]) + ".", ""]

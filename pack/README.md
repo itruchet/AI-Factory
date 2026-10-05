@@ -6,6 +6,10 @@
 
 ---
 
+## 0. Prototype mode: the build queue (Isa, 5 Oct 2026)
+
+**Product first.** This is a private alpha with one user, Isa. It has to stay up and work end to end for an investor demo before any governance, risk or compliance work. `CARDS.md` opens with the build queue: 27 cards in order, each in its minimal form, starting with C0.20 (stay up) and ending with C3.08 (the investor demo, five clean runs). 30 cards wait: governance for the pre-release gate, measurement and the simulation twin, scale and optimisation.
+
 ## 1. Intent: the draft Alignment Record for AR-07
 
 **Change.** Replace role routing (Director → Worker → Checker) with the eight constitutional institutions under rules R1–R20. There are no named roles: from the first card, agents pull as a collective and another family checks.

@@ -2,17 +2,17 @@
  "schema": "factory-pack/1",
  "pack_version": "1.0",
  "files": {
-  "CARDS.md": "a9a7b2b5c36bb5c753ae608aba7b9fabf1d031cb65374d0f9ed12ca077e6ee2c",
-  "INGEST.md": "38b78300d8f265af939ff11813314f7cee52734b8084a56b096c6d008d4d295f",
-  "README.md": "1c180f84887702f35c5e033353212f671e0a0c1d43d3930940c5a3cf21ad3393",
-  "build_pack.py": "c093f7d7213587f3f18850f9fdf122a4f5423d807cab746650fe78a73ef27214",
-  "factory-pack.json": "97fb9500d7948494f8e4d0a46eee7b5ae77c88db5d4ab361641d0e820d494f2f",
-  "src/approvals.json": "b18bb5c6985baa3ab17b58f59eb0a48b6a8891232630787a58549e41fe40e99a",
-  "src/cards.json": "0ca911ab0b2689acffd5e950190b87d87a27e57d37569f636632153e965b051b",
+  "CARDS.md": "f632ece051f07a078f67b5ff7754e95d9de393b6ca10ca8f5ca773299ddcfeb4",
+  "INGEST.md": "03eb6b35b8cfc65078e50478b62a6387baedabf5ad0b167106bbc1c67b0c4c38",
+  "README.md": "414fa2f3f1f047cab55fa77a3c5b1fc6998ba14d2176e04fdb069118feb0d517",
+  "build_pack.py": "d2f68fefb99e6f3f9be6ab1fbf5678967f16786d0b8558413462ae5ec36b684e",
+  "factory-pack.json": "25f7cfbbb4b1ecb07dfbfb7d07ea5ef1ac953ce0adadb0d924a3f316899ba63b",
+  "src/approvals.json": "968a5131f0e1e8d2ad38f37ab697bbb803a8b16b020fe775bdeb72d85a3b36b0",
+  "src/cards.json": "b7c54987919e47f5988b9406eb10f7bcd910d3443c88ace2c91b735e1b7ed465",
   "src/claims.json": "e00af5cecd256c28a1fd9807211863bf10be2ee33efb9a63aa755dbbcf22bd9f",
   "src/measures.json": "ca10707a677ead6321888a003182034ae7afab8775244792ebba601d07aeff2a",
-  "src/open_items.json": "f17b9fb2dbb5fd7fbeb20d3cd8cab95a8601a547afe371f44696485c405555c8",
+  "src/open_items.json": "500809857eceaaffc76580277a86cc42d04fa273b12863f70e2cbd1d2760ec83",
   "src/parameters.json": "9bbbff8cd03c71554458a2095ca4a57a6393a088c9a279348e381c7f8ac4a4de",
-  "test_pack.py": "cf7c84d2dcea93e34f8147ab02da739799df03adb4aa9e99b180e7dc07b822d4"
+  "test_pack.py": "5b2616a69d8b2dbe1daadee73625215f737866212fef92e8460e72bcedcca253"
  }
 }

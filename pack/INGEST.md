@@ -4,6 +4,8 @@
 **Task:** load this pack's cards into the pull queue and start work as a collective, so the Factory rebuilds itself as the constitutional institutions.
 **Authority:** AR-07 authorises loading. Cards enter the queue only after AR-13 (ratified plan) and AR-14 (mechanical load).
 
+**Prototype mode (Isa, 5 Oct 2026): product first.** Build `cards_build_queue.now` (`build_queue` in `factory-pack.json`) in order, each card in its minimal form. It starts with C0.20: make the Factory stay up. Nothing on it waits on governance, an unsigned approval or a phase exit. Governance, measurement and scale cards wait in `build_queue.later`. Isa is the only user.
+
 There are no named roles. From the first card, the Factory works the way the constitution says it will:
 - **Nobody assigns work.** An agent with a free slot pulls the oldest ready card it is licensed for (R1, R3). Starting licences come from what each model already did well (R11).
 - **Another family checks.** A model of a different family checks every card, after the deterministic checks: tests and CI (R18).
@@ -37,12 +39,12 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 |---|---|---|
 | 1 | **Verify.** `python3 pack/build_pack.py --check` and `python3 -m unittest discover -s pack` pass; the sha256 of every file in `manifest.json` matches | – |
 | 2 | **Ratify.** Isa signs Gate 1 (AR-01 to AR-06), then Gate 2 (AR-07, AR-08, AR-09a, AR-11, AR-12, AR-13) | AR-13 |
-| 3 | **Load.** Phase 0 cards go into the pull queue with their pack card IDs (mechanical; nobody chooses) | AR-14 |
-| 4 | **Pull.** The collective pulls. C0.01 (register the pack) and C0.02 (protected paths) come first by dependency. C0.17 (the pull queue) encodes the operating mode | – |
-| 5 | **Next phase.** Each later phase loads when the previous phase's exit is approved: through the interim gate for Phases 0–1 (another family's pass plus Isa), then through the Release Gate | Phase exit |
+| 3 | **Load.** Prototype: the build queue's `now` cards go into the pull queue in order (mechanical; nobody chooses) | – |
+| 4 | **Pull.** The collective pulls. C0.20 (stay up) comes first. C0.17 (the pull queue) encodes the operating mode | – |
+| 5 | **Later cards.** Cards in `build_queue.later` load when Isa moves them up; governance cards at the pre-release gate | Isa |
 
 **Just-in-time approvals:** a card stays unpullable until every record in its `requires_approval` is signed.
-- AR-10 before C1.03.
+- AR-10 at the pre-release gate; no prototype card waits on it.
 - AR-09b before C3.04.
 - AR-15 (amendment: quality, cost and speed; readiness hand-back) before C1.14 and C1.19.
 - AR-16 (amendment: institutions as harnesses; model flexibility; central memory) before C0.18, C0.19 and C2.05.
@@ -56,7 +58,7 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 - The weekly report and alarms (C0.15).
 - Cards returned under R8 with evidence.
 - Ratification requests the rules route to her, and her sample of rule ratifications (C1.22, C3.04).
-- Phase-exit approvals.
+- Moving a card up from `build_queue.later`.
 
 ## Where each part of the pack lives
 
@@ -71,5 +73,5 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 | `claims` | Every figure used in hand-written text, with its source | `src/claims.json`, verified |
 | `approvals` | 21 approval records in four gates | `src/approvals.json` |
 | `open_items` | What the pack does not know, and who resolves it | `src/open_items.json` |
-| `phases`, `cards` | 5 phases, 55 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
+| `phases`, `cards` | 5 phases, 57 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
 | `sources`, `evidence_files` | Full text of the Idea Record and evidence documents; hashes of every probe file | Repository |
