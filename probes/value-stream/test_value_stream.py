@@ -101,6 +101,16 @@ class ValueStreamTest(unittest.TestCase):
         self.assertGreater(envelope["clean"], 2 * isa_only["clean"])
         self.assertLessEqual(envelope["isa_h"], 5.0)
 
+    def test_replay_reaches_blind_spots_every_family_shares(self):
+        # R29: the oracle is recorded behaviour, so it catches what no model check can see
+        import replay as rp
+        def run(p):
+            return v.mean_measures([rp.job((e.DEMANDS["steady"], {"BLIND_P": 0.18, **p}, {}, k)) for k in range(3)])
+        off, on = run({}), run(dict(REPLAY_CATCH=0.5))
+        self.assertGreater(on["drops"].get("replay_fail", 0), 0)
+        self.assertLess(on["escaped"], 0.8 * off["escaped"])
+        self.assertEqual(v.REPLAY_CATCH, 0.0)                                   # off by default
+
 
 if __name__ == "__main__":
     unittest.main()

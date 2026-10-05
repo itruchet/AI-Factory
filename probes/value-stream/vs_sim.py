@@ -150,6 +150,10 @@ ISA_H_WEEK = 0.0               # R28 (r12.11): Isa's weekly attention budget in 
 RATIFY_MIN = 5.0               # minutes of Isa's attention per ratification, intent or plan (about 10 an idea, DQ7)
 ENVELOPE = 0.0                 # R28: share of ideas inside Isa's ratification envelope, ratified by rule at once
 ISA_SAMPLE = 0.10              # R28: chance Isa reviews a rule ratification after the fact (uses her time; nothing waits)
+REPLAY_CATCH = 0.0             # R29 (r12.12): at merge, recorded live use is replayed old against new; a logic,
+                               # integration or interface defect changes replayed behaviour and is caught at this rate
+                               # (coverage x detection), blind spots included: the oracle is past behaviour, not a model.
+                               # Compute only, no model time. 0 = off [assumption, swept]
 PRIORITY = ["operate", "release", "qa", "integrate", "security", "review", "audit", "build", "replan", "plan_check", "plan",
             "design", "challenge", "discover"]            # downstream first
 ALL_STEPS = set(PRIORITY)
@@ -980,6 +984,10 @@ class Sim:
            ("interface" in card.defects and self.rng.random() < 0.5 * CI_CATCH) or \
            ("logic" in card.defects and self.rng.random() < 0.2):
             self.drops["ci_fail"] += 1
+            self.send_card(card)
+            return
+        if REPLAY_CATCH and card.defects & {"logic", "integration", "interface"} and self.xrng.random() < REPLAY_CATCH:
+            self.drops["replay_fail"] += 1             # R29: behaviour changed where the card did not intend it
             self.send_card(card)
             return
         card.accepted = True

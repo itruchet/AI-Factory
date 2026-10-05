@@ -4,7 +4,7 @@ An AI-native software engineering Factory that converts human ideas into impleme
 
 ## Constitutional Factory (Idea stage)
 
-- **[Idea Record](docs/idea/constitutional-factory.md)** (r12.11): eight institutions; agents pull cards; plain rules in the Ledger adjust what each agent may pull, based on how the next institution marks its work. Success and velocity push agents up, failure moves them down, and hardest-first pull puts more capable models on harder cards. No manager agent.
+- **[Idea Record](docs/idea/constitutional-factory.md)** (r12.12): eight institutions; agents pull cards; plain rules in the Ledger adjust what each agent may pull, based on how the next institution marks its work. Success and velocity push agents up, failure moves them down, and hardest-first pull puts more capable models on harder cards. No manager agent.
 - [Pull-rules probes](probes/pull-rules/): `sim.py` (capacity and frontier caps) and `capability_sort.py` (five-tier capability sorting from an inverted start), synthetic data. `portfolio.py` (model mixes, outages, golden-rules ablation, portfolio search; results in `portfolio_results.txt`). Visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg).
 - [Artificial Analysis tiering and market probes](probes/aa-tiers/): real Coding Index data (`aa_coding_2026-09-09.csv`), statistical tiering (`tiering.py`), portfolio and 26-week market simulation (`market_sim.py`). [Visual summary](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd).
 - **[Institutional throughput](docs/idea/institutional-throughput.md)** ([`probes/institutions/`](probes/institutions/)): discrete-event simulation of the institutions vs the Director → Worker → Checker baseline, staffed only from the Artificial Analysis population; headcount, tier mix, institution sizing, shared vs dedicated seats, and sensitivity. [Visual summary](https://claude.ai/artifact/KqT8mPfqWx69EobtZ4Ybx3).
@@ -17,8 +17,9 @@ An AI-native software engineering Factory that converts human ideas into impleme
 - **[Institutions as harnesses](docs/idea/harnesses.md)** (`probes/portfolio6/cache_sensitivity.py`): each institution as a tailored agent harness; model flexibility; central memory with fresh, cache-first context; OpenRouter as a route.
 - **[Primitives and load](docs/idea/primitives.md)** ([`probes/enterprise/`](probes/enterprise/)): systems of record rebuilt from eight primitives and stores; conveyors and librarians; a load probe across project management, incident, HCM, CRM, ERP and customer orders.
 - **[Edge cases, self-origination and the envelope](docs/idea/origination.md)** (`probes/value-stream/origination.py`): edge cases as evidence (sealed and challenge tests, mutation score; R26); the Factory originates its own ideas through the existing institutions (R27); a ratification envelope that scales Isa's attention (R28).
-- **[Approval register](docs/idea/approvals.md):** the 20 records, in four gates, from decision to the card backlog.
-- **[Ingestion pack](pack/README.md)** ([`pack/`](pack/)): what the existing Factory ingests to rebuild itself: the constitution extracted verbatim, operating parameters, the model menu, measures, simulator parameters to calibrate, predictions, approvals, open items and 49 card seeds with acceptance contracts and a dependency graph. [`INGEST.md`](pack/INGEST.md) is the ingestion protocol for the collective (no named roles); `test_pack.py` checks that nothing is invented or left out.
+- **[Recorded behaviour, lessons, rights and outcomes](docs/idea/replay-and-judgment.md)** (`probes/value-stream/replay.py`): recorded live use as the regression oracle (R29); lessons from corrections (R30); decision rights for outward actions (R31); dissent credited by outcome (R32); the Council against a single model; a voice front end in English and Arabic; EvryMynd as a front end.
+- **[Approval register](docs/idea/approvals.md):** the 21 records, in four gates, from decision to the card backlog.
+- **[Ingestion pack](pack/README.md)** ([`pack/`](pack/)): what the existing Factory ingests to rebuild itself: the constitution extracted verbatim, operating parameters, the model menu, measures, simulator parameters to calibrate, predictions, approvals, open items and 55 card seeds with acceptance contracts and a dependency graph. [`INGEST.md`](pack/INGEST.md) is the ingestion protocol for the collective (no named roles); `test_pack.py` checks that nothing is invented or left out.
 - [Parked design notes](docs/design-parked/): earlier design-stage material.
 - [Superseded probe](probes/_superseded/): r3–r4 allocation maths, replaced by the pull rules.
 
@@ -52,6 +53,7 @@ python3 probes/value-stream/searched.py             # institutions vs searched d
 python3 probes/value-stream/trifecta.py             # quality/cost/speed, hand-backs, latency, human rounds (~8 min)
 python3 -m unittest discover -s probes/crosscheck
 python3 probes/value-stream/origination.py         # edge cases, self-origination, ratification envelope (~10 min)
+python3 probes/value-stream/replay.py              # replay oracle vs blind spots; Council vs single model (~12 min)
 python3 probes/enterprise/load_probe.py             # enterprise load on primitive stores (seconds)
 python3 pack/build_pack.py                          # rebuild the ingestion pack
 python3 -m unittest discover -s pack                # pack integrity: nothing invented, nothing forgotten

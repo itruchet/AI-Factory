@@ -49,6 +49,7 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 - AR-18 (amendment: primitives and industrialising the repeated) before C2.05.
 - AR-19 (amendment: edge cases, self-origination and the ratification envelope) before C1.20, C1.21, C1.22, C2.06 and C3.05.
 - AR-09b before C1.22 as well as C3.04: the envelope runs from Phase 1.
+- AR-20 (amendment: recorded behaviour, lessons, decision rights and outcomes) before C1.23, C1.24, C1.25, C2.07, C3.06 and C3.07; AR-10 also before C2.07.
 
 ## What comes back to Isa
 
@@ -68,7 +69,7 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 | `twin_parameters` | Every assumed constant in the model, refitted weekly from live data | Read from `vs_sim.py` and `select6.py` |
 | `predictions` | The model's baseline figures | Probe result JSON files |
 | `claims` | Every figure used in hand-written text, with its source | `src/claims.json`, verified |
-| `approvals` | 20 approval records in four gates | `src/approvals.json` |
+| `approvals` | 21 approval records in four gates | `src/approvals.json` |
 | `open_items` | What the pack does not know, and who resolves it | `src/open_items.json` |
-| `phases`, `cards` | 5 phases, 49 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
+| `phases`, `cards` | 5 phases, 55 card seeds with acceptance contracts and a dependency graph | `src/cards.json` |
 | `sources`, `evidence_files` | Full text of the Idea Record and evidence documents; hashes of every probe file | Repository |

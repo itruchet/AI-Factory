@@ -147,7 +147,8 @@ def parse_idea(md: str) -> dict:
     c["findings"] = [dict(id=f"§{h}", text=section(md, h).strip()) for h in
                      ("5.3 Institutional throughput", "5.4 The best six", "5.5 Idea to live", "5.6 Cross-check",
                       "5.7 Dependency graphs", "5.8 Institutions or the searched", "5.9 Quality, cost and speed", "4.2 Each institution is an agent harness", "5.10 Routes to models", "5.11 Primitives, the library and load",
-                       "5.12 Edge cases, self-origination and the ratification envelope")]
+                       "5.12 Edge cases, self-origination and the ratification envelope",
+                       "5.13 Recorded behaviour, lessons, rights and outcomes")]
     return c
 
 
@@ -262,6 +263,7 @@ SOURCES = [
     ("docs/idea/harnesses.md", "design (r12.8; amendment AR-16)", True),
     ("docs/idea/primitives.md", "target architecture (r12.10; amendment AR-18)", True),
     ("docs/idea/origination.md", "design and evidence (r12.11; amendment AR-19)", True),
+    ("docs/idea/replay-and-judgment.md", "design and evidence (r12.12; amendment AR-20)", True),
     ("docs/idea/best-six.md", "evidence", True),
     ("docs/idea/institutional-throughput.md", "evidence (r10; superseded where r11-r12.3 differ)", True),
     ("docs/design-parked/constitutional-factory-design-notes.md",
@@ -277,7 +279,7 @@ def build() -> tuple[dict, str]:
     evidence_files = sorted(p for p in (ROOT / "probes").rglob("*") if p.is_file() and "__pycache__" not in p.parts)
     pack = dict(
         schema=SCHEMA, pack_version=PACK_VERSION, owner="Isa", scenario="Amend the existing Factory",
-        from_organisation="Director -> Worker -> Checker", to_organisation="Constitutional institutions (Idea Record r12.11)",
+        from_organisation="Director -> Worker -> Checker", to_organisation="Constitutional institutions (Idea Record r12.12)",
         integrity_rules=[
             "Do not infer. A value marked [PLACEHOLDER] or an open item is resolved only by its named resolver.",
             "[PROPOSED] marks a design value, not evidence. AR-13 (signed 27 Sep 2026) accepted each as proposed; live data may adjust it through AR-12.",

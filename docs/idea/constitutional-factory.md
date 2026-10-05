@@ -3,7 +3,7 @@
 Stage: **IDEA, exited 27 Sep 2026** (AR-06 signed; the build proceeds through the ingestion pack)
 Scenario: **Amend** the existing Factory (confirmed by Isa's sense check)
 Owner: Isa
-Revision: r12.11 (supersedes r1–r12.10; r12.11 adds R26–R28, amended by AR-19, signed 1 Oct 2026: edge cases as evidence, self-originated ideas through the existing institutions, and a ratification envelope that scales Isa's attention, [`origination.md`](origination.md); r12.10 adds the primitive target architecture and proposes R25, AR-18, [`primitives.md`](primitives.md); r12.9 proposes the North Star, AR-17; r12.8 proposes an amendment making each institution a tailored agent harness, with model flexibility and central memory, [`harnesses.md`](harnesses.md); r12.7 proposes an amendment for the quality, cost and speed trifecta and readiness hand-backs, [`trifecta.md`](trifecta.md); r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
+Revision: r12.12 (supersedes r1–r12.11; r12.12 proposes R29–R32, AR-20: recorded behaviour as the oracle, lessons from corrections, decision rights for outward actions, dissent credited by outcome, a voice front end, and EvryMynd as a front end, [`replay-and-judgment.md`](replay-and-judgment.md); r12.11 adds R26–R28, amended by AR-19, signed 1 Oct 2026: edge cases as evidence, self-originated ideas through the existing institutions, and a ratification envelope that scales Isa's attention, [`origination.md`](origination.md); r12.10 adds the primitive target architecture and proposes R25, AR-18, [`primitives.md`](primitives.md); r12.9 proposes the North Star, AR-17; r12.8 proposes an amendment making each institution a tailored agent harness, with model flexibility and central memory, [`harnesses.md`](harnesses.md); r12.7 proposes an amendment for the quality, cost and speed trifecta and readiness hand-backs, [`trifecta.md`](trifecta.md); r12.6 removes named roles from the migration: the collective pulls from the first card; r12.4 routes the change through the ingestion pack, [`pack/`](../../pack/); r12.5 makes it a dog-food build: no lab, no shadow periods, no trial, baselines from this analysis replaced by live data and actual costs)
 
 The idea, stated at concept level. Every question analysis can settle is settled here. Every remaining question is routed to an experiment, to design, or to Isa. The central mechanism has been stress-tested in a simulation ([`probes/pull-rules/`](../../probes/pull-rules/), plus [`probes/aa-tiers/`](../../probes/aa-tiers/) on real Artificial Analysis data; 21 passing tests; visual summaries: [capability sort](https://claude.ai/artifact/B5RL3EqqouYKK6fUvnETwW), [golden rules and portfolio](https://claude.ai/artifact/JwEzM4KoKyUyedsWxZq6Xg), [coding model market](https://claude.ai/artifact/EKdPojnAMmQwhLtG1f5Ayd)). Earlier design material is parked in [`../design-parked/`](../design-parked/); the r3–r4 allocation maths is superseded ([`probes/_superseded/`](../../probes/_superseded/)).
 
@@ -16,6 +16,8 @@ The idea, stated at concept level. Every question analysis can settle is settled
 **North Star metric:** defect-free outputs delivered per week, within the cost and lead-time bounds Isa sets. For software, a defect-free output is a clean idea (M01).
 
 **Direction:** the core is domain-neutral. Any person or team could set the Factory up for any kind of knowledge work, as the processor of work that ERP systems, systems of record and mainframes hold today. This software Factory is the first domain, built by dog-fooding.
+
+*r12.12 (proposed, AR-20):* EvryMynd joins as a front end: user-owned sovereign memory and an agent council for its users, carried by the Factory directly or through other interfaces such as Cowork. The Factory builds each mechanism once, with an owner (the Factory or a user), and runs it on its own work first.
 
 The Factory is a chain of eight institutions under a constitution. At every institution, AI agents **pull** cards from a queue. Nobody assigns work. What each agent may pull is governed by **plain rules written into the Ledger**. Each institution's output is **marked** by the next institution. Marks feed back by rule:
 - agents whose work is marked down get fewer and easier cards;
@@ -42,6 +44,8 @@ Success and velocity push an agent up to the hardest tier it can sustain: its **
 | P10 | Human attention is scarce. |
 | P11 | Memory is power: whoever holds history controls the system. |
 | P12 | The Factory waits to be told. Ideas come only from Isa, so its own record of failures and opportunities goes unused. *(r12.11)* |
+| P13 | Judgment does not compound. Corrections, decisions and their outcomes are not kept as working knowledge, so they are lost when models, agents or interfaces change. *(r12.12)* |
+| P14 | Outward actions are ungoverned. No rule says who may communicate or act outside the Factory. *(r12.12)* |
 
 ---
 
@@ -104,6 +108,10 @@ These rules are the whole of "management". They run identically in every institu
 | R26 | **Edge cases are evidence** *(r12.11, amended by AR-19, signed 1 Oct 2026)* | Every acceptance contract carries failure scenarios: the edge cases Inquiry names and the Council keeps, or that Planning adds. Planning turns each into a locked test sealed from the builder. At Review, a model of another family writes challenge tests (boundary, property-based and fuzz inputs) from the contract alone and commits them before it reads the code. A failing sealed or challenge test is a reproduced defect. Challenge tests start on every card; the Ledger keeps them by tier where they catch defects review passes, and stops them where they do not. Audit marks the tests by mutation score, and a defect that escapes past a challenge tester counts against it (R9). |
 | R27 | **Self-origination** *(r12.11, amended by AR-19, signed 1 Oct 2026)* | The Factory originates its own ideas through the existing institutions; there is no ninth. The Ledger raises a signal by rule when its record crosses a threshold: escaped defects or incidents clustering on a component, all-family misses, repeated hand-backs or stale rebuilds, a rising cost per clean idea, or repeated agent work (R25). A standing brief also opens weekly: what should the Factory build next, given its record and the North Star? Each signal becomes a brief with its evidence; Inquiry pulls it like any brief, and the Council writes the Alignment Record. Originated ideas may use at most 20% of the monthly ceiling (R16). Each is marked by the value it realises: the contributions behind ideas that return value earn credit, and ideas left with no action count against them. |
 | R28 | **Ratification envelope** *(r12.11, amended by AR-19, signed 1 Oct 2026; no fixed attention budget, Isa's decision of 1 Oct 2026; bounds and ceiling set in AR-09b)* | Isa sets an envelope: the bounds within which an Alignment Record is ratified by rule (baseline cost, reversible by canary rollback, no protected governance path, no new vendor, data flow or regulated claim, no disputed proposition). Inside it, an idea is ratified as soon as its record passes the envelope check, and Isa reviews a random 10% afterwards. An overturn is a late mark (R12) on the producers and narrows the envelope at once; 20 rule ratifications without an overturn widen it one step, up to a ceiling Isa sets. Outside it, the idea queues for Isa, ordered by expected value per minute of her time. Her time varies, so there is no fixed weekly budget: her turnaround is measured, and she is alerted when an idea outside the envelope waits more than a week. Amendments, standards, governance changes and R13 escalations always go to Isa. |
+| R29 | **Recorded behaviour is the oracle** *(r12.12, amendment proposed)* | Live operation records real use: sessions, requests with their responses, and the Ledger's own transitions, with personal and regulated data redacted at capture. Each week the Ledger keeps the few hundred recordings that cover the most behaviour with the least repetition. At merge, and again before any canary, recorded use is replayed against the old and the new version with recorded responses, so the replay is deterministic. A model of another family classifies each difference against the card's contract: an unintended difference is a reproduced defect; an intended difference the contract does not name is handed back to Planning (R21). The regression set is recorded live use, never a lab set. Nothing in a regulated domain is recorded until counsel has cleared it. |
+| R30 | **Lessons from corrections** *(r12.12, amendment proposed)* | A correction proposes a lesson: a send-back or overturn by Isa, an R8 reason that recurs, or a user's correction. Each lesson has an owner (the Factory or a user), a scope (institution, domain, kind of work), its source and author, an approval status and a review date, 90 days by default. It is approved by the author of the correction, or by the Release Gate for a recurring review reason. An approved lesson enters every pull in its scope (R24) and is applied with its source shown. One correction never becomes a rule beyond its scope, and a lapsed lesson leaves context until it is approved again. Lessons outlive model swaps. A correction that recurs after a lesson exists counts against the lesson. |
+| R31 | **Decision rights** *(r12.12, amendment proposed)* | Every charter lists, for each owner, who may recommend, approve, communicate and execute, and marks each action allowed, ask or never. Any communication or action outside the Factory (sending, publishing, contacting a vendor or customer) is ask by default, routed to Isa or to the user who owns the matter. Spending money, signing and any regulated claim are never allowed without Isa or the owning user. A rights entry changes only through the Release Gate and its owner. |
+| R32 | **Dissent credited by outcome** *(r12.12, amendment proposed)* | At ratification the Ledger records the open assumptions and which minority positions were accepted or overruled. When the idea's outcome is recorded (realised value, incidents, change failures), each overruled position the outcome supports earns credit for the Inquiry contributions behind it, and each assumption is marked held or failed. An outcome that cannot be attributed is recorded as unclear, never forced. |
 
 **Constants set once in the constitution:** batch size (20), gross and marginal demotion factors (2×, 1.25×, two strikes), promotion credit and markdown debit (+1 / −4), trial count (20), back-off cap, fast-track credit (5), hard-work reserve (75%), late-mark weight. **Standards set per institution by Isa:** for each tier, the maximum acceptable markdown rate (quality). (r8 dropped the separate velocity standard: promotion credit is counted per card, so speed already moves models up; §3.2.) These are the "KPI and standards".
 
@@ -195,6 +203,8 @@ Everything else runs on the rules.
 *r12.7:* human steps are timed stages of the value stream, not exceptions to it. Isa's turnaround and every send-back round are measured like any institution's work and count in lead time (M22).
 
 *r12.11 (amended by AR-19, signed 1 Oct 2026):* Isa ratifies the Alignment Records outside her envelope and samples those inside it (R28). The envelope and its ceiling are standards she sets. Her attention is measured, not budgeted, because her time varies (Isa, 1 Oct 2026).
+
+*r12.12 (proposed, AR-20):* Isa approves the lessons drawn from her own corrections (R30), receives every outward action marked ask (R31), and holds every right marked never.
 
 ---
 
@@ -444,7 +454,7 @@ Routes are configuration, measured on quality, cost and speed like models (X19).
 | Inquiry | The brief and engineering context; for an originated brief, the Ledger signal and its evidence (R27) | Peer outputs; identities |
 | Council | Anonymized submissions | Identities |
 | Planning | The Alignment Record, including minority positions | The Council transcript |
-| Market | The card, its contract, and **its own record** (R10) | Others' records or identities; sealed tests (R26) |
+| Market | The card, its contract, **its own record** (R10) and approved lessons in its scope (R30) | Others' records or identities; sealed tests (R26) |
 | Review | Artifact, contract, evidence; other verdicts only after committing its own; a challenge tester sees only the contract until its tests are committed (R26) | The author's identity and reasoning |
 | Audit | Contract and final artifact | Review discussion |
 
@@ -475,6 +485,9 @@ Showing an agent only its own record gives it self-awareness. It gets no informa
 | Provider silently changes a model | Its record moves; the rules follow the record. |
 | Tests written to pass (P5) | R26: sealed scenario tests the builder cannot see, challenge tests by another family written before the code is read, and a mutation score from Audit. |
 | The Factory works for itself, not for value (P12) | R27: originated ideas are capped at 20% of the monthly ceiling and marked by the value they realise; ideas left with no action count against their authors. |
+| A wrong lesson spreads (P13) | R30: lessons are scoped, approved, expiring and cited; a lesson whose correction recurs is marked down. |
+| An agent speaks or acts outside the Factory without authority (P14) | R31: outward actions are ask by default; spending, signing and regulated claims are never allowed without Isa or the owning user. |
+| Replay blesses an old bug (P5) | R29 catches change, not wrongness; sealed and challenge tests (R26) and Audit remain. |
 | Rule ratification drifts from Isa's intent (P10) | R28: Isa's random sample; an overturn is a late mark and narrows the envelope at once; governance never enters the envelope. |
 
 ---
@@ -596,6 +609,10 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 | X21 | Edge cases as evidence (R26) catch what cross-family review misses (r12.11) | Where challenge tests run, escaped defects per idea do not fall by at least 10%, or clean output falls more than 5% |
 | X22 | Self-originated ideas earn their cost (R27, r12.11) | After 20 acted-on originated ideas, realised value per dollar is below half that of Isa's briefs, or more than half end with no action |
 | X23 | The envelope (R28) lifts the ratification ceiling without losing intent (r12.11) | Isa's sample overturns more than 10% of rule ratifications, the change-failure rate of rule-ratified ideas exceeds that of Isa-ratified ideas by more than 25%, or ideas outside the envelope wait more than a week for Isa |
+| X24 | The Council earns its cost against a single model (r12.12) | On the same briefs, Inquiry plus the Council does not cut material omissions or Isa's send-backs by at least 20% against one strong model framing alone |
+| X25 | Replay (R29) catches what model checks miss (r12.12) | Replay catches fewer than half of the escaped defects in its covered behaviour that every family missed, or more than 5% of its unintended-difference verdicts are overturned |
+| X26 | Lessons (R30) cut repeated corrections (r12.12) | In a lesson's scope, the same correction recurs at more than half its earlier rate, or more than 10% of applied lessons are withdrawn as wrong or stale |
+| X27 | Outcome credit (R32) improves the Council (r12.12) | After 20 ideas with recorded outcomes, failed assumptions per Alignment Record do not fall, or dissent credit does not predict which contributions survive later |
 | X19 | Routes are interchangeable too (r12.8) | A route (direct or OpenRouter) differs by more than 10% on cost per clean idea at equal quality and speed, or loses prompt-cache hits below 80% |
 
 ### 11.2 Design-stage questions (for the Planning Chamber)
@@ -613,6 +630,8 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - Plans name the interfaces between requirements, so review can check them against reviewed upstream work. The Scaler counts cards held behind prerequisites as near-term demand (r12.2; adopted in R14, r12.3).
 - A domain-neutral core: what is general (the constitution, institutions, Ledger, harness kernel, gateway) is kept apart from what each domain supplies (value-stream steps, acceptance contracts, deterministic checks, the definition of a defect). Software is the first domain pack. Before the Factory holds records of other domains, design must meet system-of-record obligations: transactional integrity, retention, access control, segregation of duties, audit and jurisdiction (r12.9).
 - Signal thresholds and envelope bounds (r12.11): which Ledger facts raise an origination signal (R27), and which facts about an idea place it inside Isa's envelope (R28).
+- Replay coverage and redaction (r12.12): what is recorded, how coverage is measured, what is redacted at capture, and which jurisdiction each recording stays in.
+- Voice front end (r12.12): live speech in English and Arabic through the gateway, with accuracy measured per language and dialect, and where audio is processed for sovereign users.
 
 ### 11.3 Isa's decisions
 
@@ -651,6 +670,9 @@ How the rules degrade: when capacity is lost, losses land on easy work first. Th
 - **Low-volume institutions learn slowly.** Inquiry and Council handle few items, so their feedback loops take months to settle. Market and Review settle within days.
 - **Self-origination can crowd out Isa's briefs.** Originated ideas compete for the same capacity and budget. R27 caps their share; the share moves only on realised value (r12.11).
 - **Blind spots shared by every family remain the largest threat to quality.** Tests written by models share those blind spots. Only mechanical exploration (property-based, boundary and fuzz inputs) and human-ratified failure scenarios reach them, and their catch rate is unmeasured (r12.11).
+- **Recordings are personal data.** Replay (R29) and voice capture must redact at capture, keep each recording in its jurisdiction and have consent. Nothing in a regulated domain is recorded before counsel clears it (r12.12).
+- **Lessons can go stale or overreach.** A wrong lesson repeats a mistake at scale. Review dates, scope limits and the repeated-correction measure are the guard (r12.12).
+- **Sovereign memory is about processing, not only storage.** A user's store in one country does not keep a model call routed abroad in that country (r12.12).
 
 ---
 

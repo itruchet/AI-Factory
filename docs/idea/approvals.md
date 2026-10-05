@@ -4,10 +4,10 @@ Owner: Isa. Scenario: **Amend** the existing Factory through the ingestion pack 
 
 **Status, 27 Sep 2026: Gates 1 and 2 are signed** (AR-01 to AR-13, except the just-in-time AR-09b and AR-10). The `[PROPOSED]` values in AR-08, AR-09a and AR-13 are accepted as proposed. Next: AR-14 loads the Phase 0 cards into the pull queue.
 
-**Status, 1 Oct 2026: every Gate 4 amendment is signed** (AR-15 to AR-19). Still open: AR-09b (Isa sets the envelope's bounds and ceiling; no fixed weekly budget, her decision of 1 Oct 2026), AR-10 (vendor and data terms, to produce) and AR-14 (the mechanical load).
+**Status, 5 Oct 2026: AR-15 to AR-19 are signed; AR-20 is ready.** Still open: AR-09b (Isa sets the envelope's bounds and ceiling; no fixed weekly budget, her decision of 1 Oct 2026), AR-10 (vendor and data terms, to produce) and AR-14 (the mechanical load).
 
-**Twenty approval records in four gates.**
-- **Isa signs nineteen.** AR-14 is a mechanical load of the ratified cards into the pull queue.
+**Twenty-one approval records in four gates.**
+- **Isa signs twenty.** AR-14 is a mechanical load of the ratified cards into the pull queue.
 - **Gates 1 and 2 put the change on the backlog.**
 - **Gate 3 records are signed just in time,** before the first card that needs them starts.
 
@@ -58,7 +58,7 @@ One sitting. All evidence exists.
 
 | # | Record | What is approved | Before | Owner | Status |
 |---|---|---|---|---|---|
-| AR-10 | **Vendor and data terms** | The self-hosted gateway (C0.19) as the one model interface. Vendor accounts held by the Owner. Direct routes for the two anchors. OpenRouter as the first aggregator route: the Owner's own keys, sticky sessions, data collection denied. Vercel AI Gateway as a trial route [Unverified terms]. No-training terms for every tier and route (R15); rate limits as Scaler caps; Muse Spark in the Owner's region [Unverified]; adviser review of vendor and aggregator terms for Heliosvera IP. Key custody: the Owner holds all keys (OI-17 resolved) | C1.03 | Isa | To produce |
+| AR-10 | **Vendor and data terms** | The self-hosted gateway (C0.19) as the one model interface. Vendor accounts held by the Owner. Direct routes for the two anchors. OpenRouter as the first aggregator route: the Owner's own keys, sticky sessions, data collection denied. Vercel AI Gateway as a trial route [Unverified terms]. No-training terms for every tier and route (R15); rate limits as Scaler caps; Muse Spark in the Owner's region [Unverified]; adviser review of vendor and aggregator terms for Heliosvera IP. Key custody: the Owner holds all keys (OI-17 resolved). Speech-to-text and voice vendors for C2.07, with where each processes audio | C1.03, C2.07 | Isa | To produce |
 | AR-09b | **Ratification tiers and attention budget** | Which ideas need Isa's ratification and which the Council may ratify. No fixed weekly attention budget: Isa's time varies, so her turnaround is measured instead (Isa, 1 Oct 2026). AR-19 (signed) sets the mechanism (R28): an envelope ratified by rule, her random 10% sample, and a queue for the rest; the bounds and ceiling are hers | C1.22, C3.04 | Isa | Open: Isa decides |
 
 ---
@@ -72,6 +72,7 @@ One sitting. All evidence exists.
 | AR-17 | **Amendment: the North Star** | In Isa's words: "A self-governing agentic factory: cards flow through a graph of institutional harnesses, every move is a rule-checked transition in the Ledger, agents pull the work and earn their licences on evidence, and the whole system is tuned to deliver defect-free output at the sweet spot of quality, cost and speed." Metric: defect-free outputs delivered per week, within Isa's cost and lead-time bounds (for software, clean ideas). Direction: a domain-neutral core; software is the first domain pack | – | Isa | **Signed by Isa, 1 Oct 2026** |
 | AR-18 | **Amendment: primitives and industrialising the repeated** | R25: repeated agent work is promoted to deterministic paths on evidence; exceptions return to agents; agents never write records directly. Target architecture: eight primitives in eight stores separated only where needed; Hatchet under the Ledger, Postgres per store, batched per-domain chains, OPA or Cedar, DuckDB over Iceberg ([`primitives.md`](primitives.md)). Load tiers: T1 agents and T2 systems of record on this design; T3 high-throughput deferred (OI-19), with five seams kept now. X20 | C2.05 | Isa | **Signed by Isa, 1 Oct 2026** |
 | AR-19 | **Amendment: edge cases, self-origination and the ratification envelope** | R26: edge cases are evidence (failure scenarios, sealed tests, challenge tests by another family before the code is read, mutation score). R27: the Factory originates its own ideas through the existing institutions, with no ninth; Ledger signals become briefs, capped at 20% of the monthly ceiling, marked by realised value. R28: the ratification envelope, the mechanism for AR-09b. P12, X21–X23, M26–M28. In Isa's words: "We do not need a ninth stage but definitely require self originated ideas. I disagree further briefs would load as that is a good problem to solve." ([`origination.md`](origination.md)) | C1.20, C1.21, C1.22, C2.06, C3.05 | Isa | **Signed by Isa, 1 Oct 2026** |
+| AR-20 | **Amendment: recorded behaviour, lessons, decision rights and outcomes** | R29: recorded live use is the regression oracle, replayed old against new at merge and before canary; option A, no lab set. R30: lessons from corrections, scoped, approved, expiring, owned by the Factory or a user. R31: decision rights; outward actions ask by default; spending, signing and regulated claims never without Isa or the owning user. R32: dissent credited by outcome. P13–P14, X24–X27 (including the Council against a single model), M29–M33. Voice front end in English and Arabic (C2.07). Direction: EvryMynd joins for user-owned sovereign memory and an agent council (OI-20) ([`replay-and-judgment.md`](replay-and-judgment.md)) | C1.23, C1.24, C1.25, C2.07, C3.06, C3.07 | Isa | Ready |
 
 ---
 

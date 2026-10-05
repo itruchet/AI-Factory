@@ -200,6 +200,30 @@
    "rule": "R27",
    "quote": "Originated ideas may use at most 20% of the monthly ceiling",
    "sim": null
+  },
+  {
+   "id": "PR-26",
+   "name": "Replay set",
+   "value": "the few hundred recordings covering the most behaviour, re-chosen weekly [PROPOSED]",
+   "rule": "R29",
+   "quote": "Each week the Ledger keeps the few hundred recordings that cover the most behaviour with the least repetition",
+   "sim": "REPLAY_CATCH"
+  },
+  {
+   "id": "PR-27",
+   "name": "Lesson review date",
+   "value": "90 days by default [PROPOSED]",
+   "rule": "R30",
+   "quote": "a review date, 90 days by default",
+   "sim": null
+  },
+  {
+   "id": "PR-28",
+   "name": "Outward actions",
+   "value": "ask by default [PROPOSED]",
+   "rule": "R31",
+   "quote": "is ask by default",
+   "sim": null
   }
  ]
 }

@@ -130,10 +130,12 @@
   {
    "id": "OI-14",
    "question": "Jurisdiction as a property of each route to a model: how data-residency law affects cost and efficiency.",
-   "status": "Deferred (future)",
-   "resolver": "Future analysis; any legal reading needs a qualified adviser",
+   "status": "Open for the voice front end and sovereign users (r12.12); otherwise future",
+   "resolver": "The puller of C2.07 records where each route processes data; any legal reading needs a qualified adviser",
    "isa_answer": "Not an artificial single-country constraint; a future analysis.",
-   "blocks": []
+   "blocks": [
+    "C2.07"
+   ]
   },
   {
    "id": "OI-15",
@@ -177,6 +179,25 @@
    "resolver": "Design, when a domain crosses the T3 threshold on measured load; through the Release Gate",
    "isa_answer": "We do not need to solve the highest tier yet; T1 agent interactions and T2 systems of record run on Postgres and the current stack.",
    "blocks": []
+  },
+  {
+   "id": "OI-20",
+   "question": "What must hold before user data enters the Factory for EvryMynd (user-owned sovereign memory and an agent council): ownership, residency of storage and processing, isolation between users, export, deletion, no training on user data, and counsel review per jurisdiction.",
+   "status": "Deferred (until EvryMynd joins)",
+   "resolver": "Design, then Isa; qualified advisers per jurisdiction",
+   "isa_answer": "5 Oct 2026: AI Factory is the intention; EvryMynd will eventually join with sovereign memory and an agent council for front-end users, carried by the Factory or through Cowork and similar interfaces.",
+   "blocks": []
+  },
+  {
+   "id": "OI-21",
+   "question": "Consent and recording law for live voice and for recorded use (replay): the UK, KSA, Morocco and the US states where speakers or users are; and whether any Heliosvera-facing recording can happen at all.",
+   "status": "Open",
+   "resolver": "Qualified counsel, then Isa",
+   "isa_answer": null,
+   "blocks": [
+    "C1.23",
+    "C2.07"
+   ]
   }
  ]
 }
