@@ -73,6 +73,8 @@
 
 **AR-19 in numbers (synthetic; 5 hours of Isa's attention a week, illustrative):** at 75 ideas a week, ratifying every idea herself caps output at about 16 clean ideas a week (CL-11). With 80% of ideas inside the envelope, it reaches about 56 (CL-12), on about 3.6 of her hours (CL-13).
 
+**AR-20 in numbers (synthetic):** with blind spots shared by every model family, review alone lets about 0.45 defects per idea escape (CL-14); replay at an assumed 50% coverage cuts that to about 0.25 (CL-15). The Council's edge over a single model is modest: about 13.1 clean ideas a week against 12.1 where blind spots differ by family (CL-16).
+
 ---
 
 ## 4. Why the pack can be trusted

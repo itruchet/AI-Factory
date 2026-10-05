@@ -432,6 +432,15 @@ Routes are configuration, measured on quality, cost and speed like models (X19).
 - **Model-written tests do not reach blind spots shared by every family.** Only mechanical exploration (property-based, boundary and fuzz inputs) and human-ratified failure scenarios can. Its catch rate is unmeasured; at an assumed 25% it trims escaped defects by about 11% on steady work.
 - **The model cannot value ideas.** It shows the Factory and Isa's attention can carry 50 originated ideas a week on top of 25 briefs. Whether they are worth building is X22, judged on realised value.
 
+### 5.13 Recorded behaviour, lessons, rights and outcomes (r12.12)
+
+[`replay-and-judgment.md`](replay-and-judgment.md) adds Isa's direction of 5 Oct 2026 (option A: recorded live use as the regression set; voice in English and Arabic; EvryMynd as a front end). Runs: the seven-model menu, elastic, R17 at 25% coupling, R21, 8 seeds a cell ([`replay_results.txt`](../../probes/value-stream/replay_results.txt)).
+- **Replay is the strongest check modelled so far.** At an assumed 50% coverage it cuts escaped defects by 26–46% in every case, and by 39–44% in blind spots shared by every family, where challenge tests cut 0–11%. Change failures there fall from 22–24% to 14–16%.
+- **It pays for itself in the model.** Fewer incidents and hotfixes cut cost per clean idea by 11–36% at 50%; recording and replay compute are not costed.
+- **It does not restore missing intent.** With all-family blind spots about a fifth of requirements are never captured, and clean output stays at 3–6 a week. Human-ratified criteria and lessons (R30) own that gap.
+- **The Council's edge over a single model is real but modest.** It cuts missing requirements by 20–35% and adds up to 8% clean output, at similar cost. X24 judges it live.
+- **Lessons, decision rights and outcome credit are not modelled;** X26, M31 and X27 judge them live.
+
 ## 6. The constitution (principles)
 
 1. **Capability earns work, never authority.** Licences are earned by record and lost by record, by the same rules for every model.

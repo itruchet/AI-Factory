@@ -373,7 +373,7 @@ Evidence: Swap test; route comparison.
 
 Layer the pull rules, licences, Market, Review and elastic capacity onto the collective's pull. Each part is switched on as soon as it passes its acceptance contract.
 
-**Entry:** Phase 0 exit approved; AR-10 signed before C1.03 starts; AR-19 signed before C1.20, C1.21 and C1.22 start; AR-09b before C1.22.
+**Entry:** Phase 0 exit approved; AR-10 signed before C1.03 starts; AR-19 signed before C1.20, C1.21 and C1.22 start; AR-09b before C1.22; AR-20 signed before C1.23, C1.24 and C1.25 start.
 
 **Exit:** Every Phase 1 card accepted; Isa approves the phase exit through the interim gate (C0.02).
 
@@ -789,11 +789,80 @@ Acceptance:
 
 Evidence: Ratification log; attention report.
 
+### C1.23 Recorded behaviour as the oracle: record, select, replay
+
+Model checks share model blind spots; past behaviour does not. Live use is recorded, the most covering recordings are kept, and every change is replayed old against new before it merges.
+
+- **Institution:** Review.
+- **Depends on:** C0.06, C0.16, C1.17. **Approvals first:** AR-20.
+- **Traces:** R29, X25, problem.P5, RK8, DQ14, principle.3. **Measures:** M29, M15. **Open items:** OI-21.
+
+Scope:
+- Record real use in live operation (C0.16): sessions, requests with their responses, and the Ledger's own transitions; personal and regulated data redacted at capture
+- Each week, keep the few hundred recordings that cover the most behaviour with the least repetition (R29); coverage measured on the code paths they reach
+- At merge, replay against the old and the new version with recorded responses, so the replay is deterministic; from C2.02, the Release Gate replays again before any canary
+- A model of another family (R18) classifies each difference against the card's contract: unintended is a reproduced defect (principle 3); intended but not in the contract is handed back to Planning (R21)
+- Option A (Isa, 5 Oct 2026): the regression set is recorded live use, never a lab set
+- Nothing in a regulated domain (Heliosvera included) is recorded until counsel clears it [PLACEHOLDER: counsel review under OI-21]
+
+Acceptance:
+- [ ] Replays of the same recording on the same version give the same result
+- [ ] Every unintended difference blocks the merge with its recording attached
+- [ ] A redaction check runs on every recording before it is stored, and a failed check discards the recording
+- [ ] The replay set's coverage and age are reported weekly
+
+Evidence: Replay log; coverage report; redaction test.
+
+### C1.24 Lessons from corrections: scoped, approved, expiring
+
+An approved correction changes what happens next. Lessons keep Isa's and each user's working judgment, and outlive every model swap.
+
+- **Institution:** Ledger.
+- **Depends on:** C0.18, C1.08, C1.22. **Approvals first:** AR-20.
+- **Traces:** R30, X26, problem.P13, RK9, R24, principle.9. **Measures:** M30.
+
+Scope:
+- Proposed from Isa's send-backs and overturns (C1.22), recurring R8 reasons (C1.08) and, once EvryMynd joins, a user's corrections
+- Each lesson records its owner (the Factory or a user), scope (institution, domain, kind of work), source, author, approval status and review date, 90 days by default (R30)
+- Approved by the author of the correction, or by the Release Gate for a recurring review reason
+- The harness kernel (C0.18) puts approved lessons in scope into each pull's context, cited; agents show which lesson they applied
+- A user's lessons stay in that user's store and never enter the Factory's shared memory or any training (R15)
+- A correction that recurs after a lesson exists counts against the lesson; a lapsed lesson leaves context until approved again
+
+Acceptance:
+- [ ] No lesson enters context outside its scope or after its review date
+- [ ] Every applied lesson is cited in the output that used it
+- [ ] Repeated corrections per scope are reported weekly, before and after each lesson (X26)
+
+Evidence: Lesson register; repeated-correction report.
+
+### C1.25 Decision rights and outward actions
+
+Nothing leaves the Factory without the right to send it. Every charter says who may recommend, approve, communicate and execute, and which actions are allowed, ask or never.
+
+- **Institution:** Ledger.
+- **Depends on:** C0.02, C0.18. **Approvals first:** AR-20.
+- **Traces:** R31, problem.P14, principle.8. **Measures:** M31.
+
+Scope:
+- A rights table per charter and per owner: recommend, approve, communicate, execute; each action allowed, ask or never (R31)
+- Outward communication or action (sending, publishing, contacting a vendor or customer) is ask by default, routed to Isa or to the user who owns the matter
+- Never without Isa or the owning user: spending money, signing, any regulated claim (Heliosvera's FDA and HIPAA exposure included)
+- The tool layer enforces the table: an outward tool call without the right is refused and logged
+- A rights entry changes only through the Release Gate and its owner; until C2.02 exists, through the interim gate (C0.02)
+
+Acceptance:
+- [ ] An outward action without a recorded right is refused, and the refusal is logged
+- [ ] Every outward action that ran cites the right and approval behind it
+- [ ] Rights changes appear only through the gate, with their owner's approval
+
+Evidence: Rights tables; outward-action log.
+
 ## Phase 2: Audit, Release Gate and live operation
 
 Mark the markers, gate every change including governance, and give live operation an owner.
 
-**Entry:** Phase 1 exit approved.
+**Entry:** Phase 1 exit approved; AR-20 and AR-10 signed before C2.07 starts.
 
 **Exit:** Every Phase 2 card accepted; Protected governance paths now pass the Release Gate and Isa (C2.02 replaces the interim gate); Isa approves the phase exit.
 
@@ -919,6 +988,30 @@ Acceptance:
 
 Evidence: Mutation report.
 
+### C2.07 Voice front end: live speech, English and Arabic
+
+Speak to the Factory and get answers back as you talk. Live speech-to-text streams through the gateway to any model on the menu, for Isa and, later, EvryMynd users.
+
+- **Institution:** Ledger.
+- **Depends on:** C0.19, C1.25. **Approvals first:** AR-20, AR-10.
+- **Traces:** DQ15, RK10, RK8, R23. **Measures:** M33. **Open items:** OI-14, OI-21.
+
+Scope:
+- Mobile microphone to streaming speech-to-text to the gateway (C0.19) to the chosen model; a reply by voice where the user asks for one
+- English and Arabic from the first release; accuracy measured per language and dialect (Gulf and Moroccan Arabic separately), and the provider chosen on measured accuracy, latency and cost, not claims
+- Rolling transcript windows: send only what changed; cheap models for routine notes, frontier models on request (R14 prices them)
+- Recording and consent follow decision rights (C1.25) and the law where each speaker is [PLACEHOLDER: counsel review under OI-21]
+- Where audio and transcripts are processed is recorded per route; sovereign users only on routes inside their jurisdiction (OI-14)
+- Never for patient conversations without a covered provider and a business associate agreement
+- Once the Council runs (C3.02), a spoken question can go to the council and come back with its sources
+
+Acceptance:
+- [ ] Word error rate, latency and cost per hour are reported per language and dialect
+- [ ] Every session records its route and processing location
+- [ ] No session starts without recorded consent where the law requires it
+
+Evidence: Voice accuracy report; route log.
+
 ## Phase 3: Inquiry, Council and Planning
 
 Stand up the three deliberative institutions. Low volume lets them start semi-manually under their charters.
@@ -1028,6 +1121,46 @@ Acceptance:
 
 Evidence: Proposition log; traceability check.
 
+### C3.06 Dissent credited by outcome
+
+Mark the Council on what happened, not only on what was approved. Overruled dissent that proved right earns credit; assumptions are marked held or failed.
+
+- **Institution:** Council.
+- **Depends on:** C0.09, C1.24, C3.02. **Approvals first:** AR-20.
+- **Traces:** R32, X27, problem.P13, institution.Council. **Measures:** M32.
+
+Scope:
+- At ratification, record the open assumptions and which minority positions were accepted or overruled (R32)
+- When outcomes arrive (realised value from C0.09, incidents, change failures), link them back to the Alignment Record
+- Credit the Inquiry contributions behind overruled positions the outcome supports; mark each assumption held, failed or unclear
+- Unclear outcomes stay unclear; nothing is forced
+- Lessons (C1.24) may be proposed from failed assumptions
+
+Acceptance:
+- [ ] Every ratified Alignment Record lists its open assumptions and overruled positions
+- [ ] Every recorded outcome is linked to its Alignment Record with a held, failed or unclear mark per assumption
+
+Evidence: Outcome links; dissent-credit report.
+
+### C3.07 The Council against a single-model baseline
+
+The Council must earn its cost. Compare Inquiry plus the Council with one strong model framing alone on the same briefs, and drop deliberation steps that do not pay.
+
+- **Institution:** Ledger.
+- **Depends on:** C3.01, C3.02. **Approvals first:** AR-20.
+- **Traces:** X24, X6, X7, institution.Inquiry. **Measures:** M32, M22.
+
+Scope:
+- On a sample of briefs, one strong model also drafts the Alignment Record alone, blind to the Council's draft
+- Compare material omissions found later, Isa's send-backs, her review time and cost per clean idea (X24)
+- A deliberation step that does not pay is proposed for removal through the Release Gate and Isa
+- The result also tests EvryMynd's agent council offer
+
+Acceptance:
+- [ ] The comparison is reported with sample size, and judged against X24's criterion when the sample suffices
+
+Evidence: Council baseline report.
+
 ## Phase 4: Operate, monitor and improve
 
 No trial and no end date. The Factory runs on its new lines, compares itself weekly with the model, judges X1-X14 as data accrues, and amends through the Release Gate and Isa.
@@ -1042,7 +1175,7 @@ Each experiment can prove the idea wrong. Judge each as live data accrues, and t
 
 - **Institution:** Ledger.
 - **Depends on:** C0.15, C2.01, C3.03. **Approvals first:** none.
-- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16, X17, X18, X19, X20, X21, X22, X23. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
+- **Traces:** X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, principle.8, X15, X16, X17, X18, X19, X20, X21, X22, X23, X24, X25, X26, X27. **Measures:** M01, M03, M04, M05, M11, M12, M13, M19.
 
 Scope:
 - Each experiment X1-X14 judged against its falsification criterion in the pack, on live data, whenever it has enough
