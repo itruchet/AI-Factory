@@ -420,7 +420,7 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 5 Oct 2026",
    "depends_on": [
     "AR-13"
    ],
@@ -431,7 +431,8 @@
     "C2.07",
     "C3.06",
     "C3.07"
-   ]
+   ],
+   "signed": "2026-10-05"
   }
  ],
  "after_backlog": [
