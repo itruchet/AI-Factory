@@ -253,7 +253,7 @@
    ],
    "owner": "Ledger load (mechanical)",
    "signer": null,
-   "status": "To produce",
+   "status": "Prototype: load build_queue.now in order (Isa, 5 Oct 2026)",
    "depends_on": [
     "AR-13"
    ]
@@ -263,19 +263,20 @@
    "decision": null,
    "gate": 3,
    "title": "Ratification tiers and attention budget",
-   "approves": "Which ideas need Isa's ratification, which the Council may ratify, and Isa's weekly attention budget.",
+   "approves": "Which ideas need Isa's ratification and which the Council may ratify: the envelope's starting bounds and its ceiling under R28. No fixed weekly attention budget: Isa's time varies, so her turnaround is measured instead (Isa, 1 Oct 2026).",
    "evidence": [
     "docs/idea/value-stream.md §5",
     "Measured attention hours (M17)"
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Open: Isa decides",
+   "status": "Open: Isa decides the envelope's bounds and ceiling; no fixed weekly budget (Isa, 1 Oct 2026); the mechanism is set by AR-19 (R28, signed 1 Oct 2026); not needed in the prototype (Isa ratifies directly)",
    "depends_on": [
     "AR-14"
    ],
    "before_cards": [
-    "C3.04"
+    "C3.04",
+    "C1.22"
    ]
   },
   {
@@ -290,13 +291,11 @@
    ],
    "owner": "Isa (Owner)",
    "signer": "Isa",
-   "status": "To produce",
+   "status": "To produce at the pre-release gate (Isa, 5 Oct 2026: the prototype runs on Isa's own accounts)",
    "depends_on": [
     "AR-14"
    ],
-   "before_cards": [
-    "C1.03"
-   ]
+   "before_cards": []
   },
   {
    "id": "AR-15",
@@ -354,10 +353,11 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 1 Oct 2026",
    "depends_on": [
     "AR-13"
-   ]
+   ],
+   "signed": "2026-10-01"
   },
   {
    "id": "AR-18",
@@ -371,13 +371,65 @@
    ],
    "owner": "Isa",
    "signer": "Isa",
-   "status": "Ready",
+   "status": "Signed by Isa, 1 Oct 2026",
    "depends_on": [
     "AR-13"
    ],
    "before_cards": [
     "C2.05"
-   ]
+   ],
+   "signed": "2026-10-01"
+  },
+  {
+   "id": "AR-19",
+   "decision": null,
+   "gate": 4,
+   "title": "Amendment: edge cases, self-origination and the ratification envelope",
+   "approves": "R26: edge cases are evidence: failure scenarios in every contract, sealed tests, challenge tests by another family written before the code is read, and a mutation score from Audit. R27: the Factory originates its own ideas through the existing institutions, with no ninth: Ledger signals raised by rule become briefs, capped at 20% of the monthly ceiling and marked by realised value. R28: the ratification envelope: rule ratification inside bounds Isa sets, her random 10% sample, and her attention queue outside it; it is the mechanism proposed for AR-09b. Problem P12; experiments X21-X23; measures M26-M28. In Isa's words (1 Oct 2026): 'We do not need a ninth stage but definitely require self originated ideas. I disagree further briefs would load as that is a good problem to solve.'",
+   "evidence": [
+    "docs/idea/origination.md",
+    "probes/value-stream/origination_results.txt"
+   ],
+   "owner": "Isa",
+   "signer": "Isa",
+   "status": "Signed by Isa, 1 Oct 2026",
+   "depends_on": [
+    "AR-13"
+   ],
+   "before_cards": [
+    "C1.20",
+    "C1.21",
+    "C1.22",
+    "C2.06",
+    "C3.05"
+   ],
+   "signed": "2026-10-01"
+  },
+  {
+   "id": "AR-20",
+   "decision": null,
+   "gate": 4,
+   "title": "Amendment: recorded behaviour, lessons, decision rights and outcomes",
+   "approves": "R29: recorded live use is the regression oracle, replayed old against new at merge and before canary; option A: no lab set (Isa, 5 Oct 2026). R30: lessons from corrections, scoped, approved, expiring and owned (the Factory or a user). R31: decision rights per charter; outward actions ask by default; spending, signing and regulated claims never without Isa or the owning user. R32: dissent credited by outcome. Problems P13-P14; experiments X24-X27, including the Council against a single-model baseline; measures M29-M33. A voice front end in English and Arabic for Isa and EvryMynd users (C2.07). Direction: EvryMynd joins as a front end for user-owned sovereign memory and an agent council, carried by the Factory or through interfaces such as Cowork (OI-20).",
+   "evidence": [
+    "docs/idea/replay-and-judgment.md",
+    "probes/value-stream/replay_results.txt"
+   ],
+   "owner": "Isa",
+   "signer": "Isa",
+   "status": "Signed by Isa, 5 Oct 2026",
+   "depends_on": [
+    "AR-13"
+   ],
+   "before_cards": [
+    "C1.23",
+    "C1.24",
+    "C1.25",
+    "C2.07",
+    "C3.06",
+    "C3.07"
+   ],
+   "signed": "2026-10-05"
   }
  ],
  "after_backlog": [

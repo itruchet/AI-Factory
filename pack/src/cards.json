@@ -1,5 +1,5 @@
 {
- "_about": "Card seeds for the Factory to rebuild itself as the constitutional institutions. There are no named roles: from the first card, the Factory's agents work as a collective. Any agent pulls the oldest ready card it can do; a model of another family checks it; the rules in the Ledger do the managing. Dog-food build: no lab, no shadow periods, no trial. Every card is grounded in the code by whoever pulls it: it cites the files and commit it read. A seed whose premise does not hold is marked down to its author with evidence (R8) and goes back to Planning, never quietly reshaped. A puller may split a seed into child cards that together meet the seed's acceptance contract; seeds are never merged, dropped or widened without Isa. [PROPOSED] values are for Isa to ratify in AR-13; [PLACEHOLDER] values are resolved only by the open item named.",
+ "_about": "Card seeds for the Factory to rebuild itself as the constitutional institutions. There are no named roles: from the first card, the Factory's agents work as a collective. Any agent pulls the oldest ready card it can do; a model of another family checks it; the rules in the Ledger do the managing. Dog-food build: no lab, no shadow periods, no trial. Every card is grounded in the code by whoever pulls it: it cites the files and commit it read. A seed whose premise does not hold is marked down to its author with evidence (R8) and goes back to Planning, never quietly reshaped. A puller may split a seed into child cards that together meet the seed's acceptance contract; seeds are never merged, dropped or widened without Isa. [PROPOSED] values are for Isa to ratify in AR-13; [PLACEHOLDER] values are resolved only by the open item named. Prototype mode (Isa, 5 Oct 2026): build_queue sets the order; phases are groupings only, and phase-exit approvals are suspended until the pre-release gate.",
  "phases": [
   {
    "phase": 0,
@@ -11,7 +11,7 @@
    ],
    "exit": [
     "Every Phase 0 card accepted",
-    "Isa approves the phase exit through the interim gate (C0.02)"
+    "Isa approves the phase exit through the interim gate (C0.02) (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -20,11 +20,13 @@
    "intent": "Layer the pull rules, licences, Market, Review and elastic capacity onto the collective's pull. Each part is switched on as soon as it passes its acceptance contract.",
    "entry": [
     "Phase 0 exit approved",
-    "AR-10 signed before C1.03 starts"
+    "AR-10 signed before C1.03 starts",
+    "AR-19 signed before C1.20, C1.21 and C1.22 start; AR-09b before C1.22",
+    "AR-20 signed before C1.23, C1.24 and C1.25 start"
    ],
    "exit": [
     "Every Phase 1 card accepted",
-    "Isa approves the phase exit through the interim gate (C0.02)"
+    "Isa approves the phase exit through the interim gate (C0.02) (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -32,12 +34,13 @@
    "name": "Audit, Release Gate and live operation",
    "intent": "Mark the markers, gate every change including governance, and give live operation an owner.",
    "entry": [
-    "Phase 1 exit approved"
+    "Phase 1 exit approved",
+    "AR-20 signed before C2.07 starts"
    ],
    "exit": [
     "Every Phase 2 card accepted",
-    "Protected governance paths now pass the Release Gate and Isa (C2.02 replaces the interim gate)",
-    "Isa approves the phase exit"
+    "Protected governance paths now pass the Release Gate and Isa (C2.02 replaces the interim gate) (suspended in the prototype; the build queue decides)",
+    "Isa approves the phase exit (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -50,8 +53,8 @@
    ],
    "exit": [
     "Every Phase 3 card accepted",
-    "Release Gate promotion of the phase",
-    "Isa approves the phase exit"
+    "Release Gate promotion of the phase (suspended in the prototype; the build queue decides)",
+    "Isa approves the phase exit (suspended in the prototype; the build queue decides)"
    ]
   },
   {
@@ -67,6 +70,36 @@
   }
  ],
  "cards": [
+  {
+   "id": "C0.20",
+   "phase": 0,
+   "title": "Stay up: kill the top failure causes and manual workarounds",
+   "institution": "Market",
+   "intent": "The Factory falls over more often than it stays up, held together by manual fixes. Nothing else matters until it stays up.",
+   "scope": [
+    "Log every failure and every manual workaround: what broke, how it was fixed, how long it took",
+    "Each week, fix the top three causes at the root and turn the most frequent workaround into code",
+    "No new feature merges while a top-three cause is open, unless it removes one"
+   ],
+   "acceptance": [
+    "Failures and workarounds are logged with cause and time to fix",
+    "Failures per week and manual interventions per week fall for four weeks running"
+   ],
+   "evidence": [
+    "Failure and workaround log; weekly trend"
+   ],
+   "depends_on": [],
+   "requires_approval": [],
+   "ratified_by": null,
+   "traces": [
+    "DQ6",
+    "RK2"
+   ],
+   "measures": [
+    "M03"
+   ],
+   "open_items": []
+  },
   {
    "id": "C0.01",
    "phase": 0,
@@ -370,8 +403,7 @@
     "Value report for a sample period"
    ],
    "depends_on": [
-    "C0.04",
-    "C0.06"
+    "C0.04"
    ],
    "requires_approval": [],
    "ratified_by": null,
@@ -582,10 +614,7 @@
    "evidence": [
     "Incident drill record"
    ],
-   "depends_on": [
-    "C0.06",
-    "C0.02"
-   ],
+   "depends_on": [],
    "requires_approval": [
     "AR-09a"
    ],
@@ -622,9 +651,7 @@
    "evidence": [
     "Queue and licence records for the first week of pulls"
    ],
-   "depends_on": [
-    "C0.02"
-   ],
+   "depends_on": [],
    "requires_approval": [
     "AR-01"
    ],
@@ -717,8 +744,6 @@
     "Swap test; route comparison"
    ],
    "depends_on": [
-    "C0.04",
-    "C0.05",
     "C0.16"
    ],
    "requires_approval": [
@@ -760,8 +785,7 @@
     "Schema tests"
    ],
    "depends_on": [
-    "C0.03",
-    "C0.07"
+    "C0.03"
    ],
    "requires_approval": [
     "AR-03"
@@ -835,8 +859,7 @@
     "C0.19"
    ],
    "requires_approval": [
-    "AR-02",
-    "AR-10"
+    "AR-02"
    ],
    "ratified_by": null,
    "traces": [
@@ -849,9 +872,6 @@
     "M08"
    ],
    "open_items": [
-    "OI-04",
-    "OI-06",
-    "OI-07",
     "OI-15"
    ],
    "institution": "Ledger"
@@ -936,7 +956,8 @@
     "Rule tests against the pull-rules simulation's scenarios (probes/pull-rules)"
    ],
    "depends_on": [
-    "C1.05"
+    "C1.05",
+    "C1.08"
    ],
    "requires_approval": [
     "AR-01",
@@ -1118,7 +1139,7 @@
     "Rule tests"
    ],
    "depends_on": [
-    "C1.10"
+    "C1.17"
    ],
    "requires_approval": [
     "AR-04"
@@ -1281,7 +1302,7 @@
     "Rule tests"
    ],
    "depends_on": [
-    "C1.14"
+    "C0.04"
    ],
    "requires_approval": [
     "AR-05"
@@ -1361,9 +1382,7 @@
     "Review tests"
    ],
    "depends_on": [
-    "C0.18",
-    "C1.08",
-    "C1.11"
+    "C0.18"
    ],
    "requires_approval": [
     "AR-01"
@@ -1418,6 +1437,277 @@
    ],
    "measures": [
     "M21"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C1.20",
+   "phase": 1,
+   "title": "Edge cases as evidence: sealed scenario tests and challenge tests",
+   "institution": "Review",
+   "intent": "Model-written review shares model blind spots. Edge cases become deterministic evidence: sealed tests from the contract's failure scenarios, and challenge tests written by another family before it reads the code.",
+   "scope": [
+    "Failure scenarios in every acceptance contract: until Inquiry types them (C3.05), Planning or the card's author writes them; each becomes a locked test sealed from the builder, inside the contract hash (C1.01)",
+    "Challenge tester: at first review, a model of another family (R18) writes boundary, property-based and fuzz tests from the contract alone, and commits them before the code is visible to it",
+    "A failing sealed or challenge test is a reproduced defect (principle 3): it blocks acceptance whatever the model reviews say",
+    "Challenge testers are markers: a defect that escapes past their tests counts against them (R9)",
+    "Effort: about 30% of the card's hours [PROPOSED: the model's assumption]. Challenge tests start on every card; the Ledger keeps them by tier where they catch defects review passes and stops them where they do not (R26)",
+    "Harness (Review, reviewing): the challenge tester sees the contract and its failure scenarios only, until its tests are committed"
+   ],
+   "acceptance": [
+    "The build harness cannot read or edit sealed tests",
+    "A challenge tester's tests are committed before the code is visible to it (manifest audit)",
+    "A failing sealed or challenge test blocks acceptance",
+    "Each defect's provenance record (C0.08) shows whether a sealed or challenge test caught it, and the family that wrote the test",
+    "Challenge-test catches beyond review are reported weekly by tier, and the rule that keeps or stops them cites them"
+   ],
+   "evidence": [
+    "Review tests",
+    "manifest audit",
+    "catch report"
+   ],
+   "depends_on": [
+    "C0.08",
+    "C1.01",
+    "C1.17"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R26",
+    "X21",
+    "problem.P5",
+    "R18",
+    "principle.3",
+    "RK7"
+   ],
+   "measures": [
+    "M26",
+    "M15"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C1.21",
+   "phase": 1,
+   "title": "Self-origination: Ledger signals become briefs",
+   "institution": "Ledger",
+   "intent": "The Factory does not wait to be told. Its own record raises signals by rule, and each signal becomes a brief the collective works like any other. No ninth institution.",
+   "scope": [
+    "Signals by rule, no model in the control path: escaped defects or incidents clustering on a component; all-family misses (X11); repeated hand-backs or stale rebuilds; a rising cost per clean idea; repeated agent work (R25); a weekly standing brief",
+    "Each signal becomes a brief with its evidence and a baseline value at intake (C0.09); a signal that matches an open brief is attached to it by rule",
+    "Until Inquiry runs (C3.05), the collective pulls originated briefs like any card, checked by another family; ratification follows the envelope (C1.22)",
+    "Budget: originated ideas use at most 20% of the monthly ceiling (R16, R27); beyond it, they wait",
+    "Marked by realised value (M07): ideas left with no action count against the contributions behind them"
+   ],
+   "acceptance": [
+    "Every originated brief cites the signal, the rule and the Ledger facts that raised it",
+    "Originated spend is reported weekly against its 20% share",
+    "Realised value per dollar is reported for originated ideas and for Isa's briefs side by side (X22)"
+   ],
+   "evidence": [
+    "Signal log",
+    "origination report"
+   ],
+   "depends_on": [
+    "C0.09",
+    "C0.16",
+    "C0.17"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R27",
+    "X22",
+    "problem.P12",
+    "RK6",
+    "DQ13"
+   ],
+   "measures": [
+    "M27",
+    "M06",
+    "M07"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C1.22",
+   "phase": 1,
+   "title": "Ratification envelope and Isa's attention queue",
+   "institution": "Ledger",
+   "intent": "Ratification is a problem to solve, not a ceiling to accept. Isa ratifies what only she can; rules ratify the rest inside bounds she sets, and her sample keeps them honest.",
+   "scope": [
+    "The envelope Isa sets (AR-09b): baseline cost, reversible by canary rollback, no protected governance path, no new vendor, data flow or regulated claim, no disputed proposition",
+    "Inside: ratified by rule once the Alignment Record passes the envelope check; Isa reviews a random 10% afterwards (R28)",
+    "An overturn by Isa is a late mark (R12) on the producers and narrows the envelope at once; 20 rule ratifications without an overturn widen it one step, up to the ceiling Isa sets",
+    "Outside: Isa's queue, ordered by expected value per minute of her time (C0.09 baseline), in one digest. No fixed weekly budget, because her time varies (Isa, 1 Oct 2026): her turnaround is measured (M22), and she is alerted when an idea outside the envelope waits more than a week",
+    "Always Isa: amendments, standards, governance changes, R13 escalations",
+    "Envelope bounds and ceiling: [PLACEHOLDER: Isa sets them in AR-09b (OI-10)]"
+   ],
+   "acceptance": [
+    "Every ratification records who ratified it (Isa or the envelope rule) and the rule that routed it",
+    "Isa's sample is drawn at random; no producer can exclude an idea from it",
+    "Weekly report: Isa's hours (M17) and turnaround (M22), queue wait, share inside the envelope, sample overturn rate and envelope step (M28)"
+   ],
+   "evidence": [
+    "Ratification log",
+    "attention report"
+   ],
+   "depends_on": [
+    "C0.06",
+    "C0.09",
+    "C0.17"
+   ],
+   "requires_approval": [
+    "AR-19",
+    "AR-09b"
+   ],
+   "ratified_by": "Isa",
+   "traces": [
+    "R28",
+    "X23",
+    "problem.P10",
+    "DQ7"
+   ],
+   "measures": [
+    "M28",
+    "M17",
+    "M22"
+   ],
+   "open_items": [
+    "OI-10"
+   ]
+  },
+  {
+   "id": "C1.23",
+   "phase": 1,
+   "title": "Recorded behaviour as the oracle: record, select, replay",
+   "institution": "Review",
+   "intent": "Model checks share model blind spots; past behaviour does not. Live use is recorded, the most covering recordings are kept, and every change is replayed old against new before it merges.",
+   "scope": [
+    "Record real use in live operation (C0.16): sessions, requests with their responses, and the Ledger's own transitions",
+    "Each week, keep the few hundred recordings that cover the most behaviour with the least repetition (R29); coverage measured on the code paths they reach",
+    "At merge, replay against the old and the new version with recorded responses, so the replay is deterministic; from C2.02, the Release Gate replays again before any canary",
+    "A model of another family (R18) classifies each difference against the card's contract: unintended is a reproduced defect (principle 3); intended but not in the contract is handed back to Planning (R21)",
+    "Option A (Isa, 5 Oct 2026): the regression set is recorded live use, never a lab set",
+    "Prototype first (Isa, 5 Oct 2026): Isa is the only user, so recording runs on her own use with no consent process; redaction at capture, counsel review and anything regulated (Heliosvera included) wait for the pre-release gate (OI-21)"
+   ],
+   "acceptance": [
+    "Replays of the same recording on the same version give the same result",
+    "Every unintended difference blocks the merge with its recording attached",
+    "The replay set's coverage and age are reported weekly"
+   ],
+   "evidence": [
+    "Replay log",
+    "coverage report",
+    "redaction test"
+   ],
+   "depends_on": [
+    "C0.16"
+   ],
+   "requires_approval": [
+    "AR-20"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R29",
+    "X25",
+    "problem.P5",
+    "RK8",
+    "DQ14",
+    "principle.3"
+   ],
+   "measures": [
+    "M29",
+    "M15"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C1.24",
+   "phase": 1,
+   "title": "Lessons from corrections: scoped, approved, expiring",
+   "institution": "Ledger",
+   "intent": "An approved correction changes what happens next. Lessons keep Isa's and each user's working judgment, and outlive every model swap.",
+   "scope": [
+    "Proposed from Isa's send-backs and overturns (C1.22), recurring R8 reasons (C1.08) and, once EvryMynd joins, a user's corrections",
+    "Each lesson records its owner (the Factory or a user), scope (institution, domain, kind of work), source, author, approval status and review date, 90 days by default (R30)",
+    "Approved by the author of the correction, or by the Release Gate for a recurring review reason",
+    "The harness kernel (C0.18) puts approved lessons in scope into each pull's context, cited; agents show which lesson they applied",
+    "A user's lessons stay in that user's store and never enter the Factory's shared memory or any training (R15)",
+    "A correction that recurs after a lesson exists counts against the lesson; a lapsed lesson leaves context until approved again"
+   ],
+   "acceptance": [
+    "No lesson enters context outside its scope or after its review date",
+    "Every applied lesson is cited in the output that used it",
+    "Repeated corrections per scope are reported weekly, before and after each lesson (X26)"
+   ],
+   "evidence": [
+    "Lesson register",
+    "repeated-correction report"
+   ],
+   "depends_on": [
+    "C0.18",
+    "C1.08"
+   ],
+   "requires_approval": [
+    "AR-20"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R30",
+    "X26",
+    "problem.P13",
+    "RK9",
+    "R24",
+    "principle.9"
+   ],
+   "measures": [
+    "M30"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C1.25",
+   "phase": 1,
+   "title": "Decision rights and outward actions",
+   "institution": "Ledger",
+   "intent": "Nothing leaves the Factory without the right to send it. Every charter says who may recommend, approve, communicate and execute, and which actions are allowed, ask or never.",
+   "scope": [
+    "A rights table per charter and per owner: recommend, approve, communicate, execute; each action allowed, ask or never (R31)",
+    "Outward communication or action (sending, publishing, contacting a vendor or customer) is ask by default, routed to Isa or to the user who owns the matter",
+    "Never without Isa or the owning user: spending money, signing, any regulated claim (Heliosvera's FDA and HIPAA exposure included)",
+    "The tool layer enforces the table: an outward tool call without the right is refused and logged",
+    "A rights entry changes only through the Release Gate and its owner; until C2.02 exists, through the interim gate (C0.02)"
+   ],
+   "acceptance": [
+    "An outward action without a recorded right is refused, and the refusal is logged",
+    "Every outward action that ran cites the right and approval behind it",
+    "Rights changes appear only through the gate, with their owner's approval"
+   ],
+   "evidence": [
+    "Rights tables",
+    "outward-action log"
+   ],
+   "depends_on": [
+    "C0.02",
+    "C0.18"
+   ],
+   "requires_approval": [
+    "AR-20"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R31",
+    "problem.P14",
+    "principle.8"
+   ],
+   "measures": [
+    "M31"
    ],
    "open_items": []
   },
@@ -1614,6 +1904,81 @@
    "open_items": []
   },
   {
+   "id": "C2.06",
+   "phase": 2,
+   "title": "Audit marks the tests: mutation score",
+   "institution": "Audit",
+   "intent": "A test suite that cannot fail proves nothing. Audit measures whether sealed and challenge tests catch planted mutations.",
+   "scope": [
+    "Mutation score of each sampled card's sealed and challenge tests: the share of planted code mutations they catch",
+    "A suite below the standard is handed back to its author (R21, R8): Planning for sealed tests, the challenge tester for its own",
+    "Standard per tier [PROPOSED]: reported only until Isa sets it with AR-08's other standards",
+    "Planted defects (C2.01) include defects inside failure scenarios, so sealed tests are marked too"
+   ],
+   "acceptance": [
+    "Every audited card carries a mutation score",
+    "A suite below the standard is handed back with its score"
+   ],
+   "evidence": [
+    "Mutation report"
+   ],
+   "depends_on": [
+    "C1.20",
+    "C2.01"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R26",
+    "X21",
+    "R9",
+    "RK1"
+   ],
+   "measures": [
+    "M26"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C2.07",
+   "phase": 2,
+   "title": "Voice front end: live speech, English and Arabic",
+   "institution": "Ledger",
+   "intent": "Speak to the Factory and get answers back as you talk. Live speech-to-text streams through the gateway to any model on the menu, for Isa and, later, EvryMynd users.",
+   "scope": [
+    "Mobile microphone to streaming speech-to-text to the gateway (C0.19) to the chosen model; a reply by voice where the user asks for one",
+    "English and Arabic from the first release; accuracy measured per language and dialect (Gulf and Moroccan Arabic separately), and the provider chosen on measured accuracy, latency and cost, not claims",
+    "Rolling transcript windows: send only what changed; cheap models for routine notes, frontier models on request (R14 prices them)",
+    "Once the Council runs (C3.02), a spoken question can go to the council and come back with its sources",
+    "Prototype first (Isa, 5 Oct 2026): Isa is the only user, on her own provider accounts; consent, vendor terms, processing location for sovereign users and anything touching health data wait for the pre-release gate (OI-21)"
+   ],
+   "acceptance": [
+    "Word error rate, latency and cost per hour are reported per language and dialect"
+   ],
+   "evidence": [
+    "Voice accuracy report",
+    "route log"
+   ],
+   "depends_on": [
+    "C0.19"
+   ],
+   "requires_approval": [
+    "AR-20"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "DQ15",
+    "RK10",
+    "R23"
+   ],
+   "measures": [
+    "M33"
+   ],
+   "open_items": []
+  },
+  {
    "id": "C3.01",
    "phase": 3,
    "title": "Inquiry",
@@ -1630,8 +1995,7 @@
     "Manifest audit of what each participant saw"
    ],
    "depends_on": [
-    "C0.18",
-    "C2.02"
+    "C0.18"
    ],
    "requires_approval": [],
    "ratified_by": null,
@@ -1727,8 +2091,9 @@
    "intent": "Human ratification is the likely real ceiling. Route to Isa only what the rules say needs her.",
    "scope": [
     "Which ideas need Isa's ratification and which the Council may ratify (AR-09b)",
-    "A weekly attention budget with alerts when it is exceeded",
-    "Isa's fixed touchpoints: standards, Alignment Records, amendments, governance changes at the Release Gate, R13 escalations"
+    "Isa's attention is measured, not budgeted, because her time varies (Isa, 1 Oct 2026); alerts when an idea outside the envelope waits more than a week",
+    "Isa's fixed touchpoints: standards, Alignment Records, amendments, governance changes at the Release Gate, R13 escalations",
+    "The envelope and attention queue run from Phase 1 (C1.22); once the Council exists, its Alignment Records are what the envelope ratifies"
    ],
    "acceptance": [
     "Every ratification request cites the rule that routed it to Isa",
@@ -1738,7 +2103,8 @@
     "Attention report"
    ],
    "depends_on": [
-    "C3.02"
+    "C3.02",
+    "C1.22"
    ],
    "requires_approval": [
     "AR-09b"
@@ -1755,6 +2121,165 @@
     "OI-10"
    ],
    "institution": "Ledger"
+  },
+  {
+   "id": "C3.05",
+   "phase": 3,
+   "title": "Typed propositions: failure scenarios and opportunities",
+   "institution": "Inquiry",
+   "intent": "Ideation feeds testing. Inquiry participants commit typed propositions, including the edge cases they would test, so blind spots that differ by family surface before any code exists.",
+   "scope": [
+    "Proposition types: interpretation, requirement, assumption, risk, objection, alternative, opportunity, failure scenario",
+    "Every participant names failure scenarios blind, before seeing peers (commit before view)",
+    "Failure scenarios the Council keeps enter the Alignment Record's acceptance criteria and become sealed tests (C1.20)",
+    "Originated briefs (C1.21) are pulled by Inquiry like Isa's; their opportunities are judged later by realised value (X22)",
+    "Surviving propositions per model are recorded by type (X7)"
+   ],
+   "acceptance": [
+    "Every proposition has a type and cites its evidence",
+    "Every failure scenario the Council keeps traces to a sealed test in at least one card"
+   ],
+   "evidence": [
+    "Proposition log",
+    "traceability check"
+   ],
+   "depends_on": [
+    "C1.20",
+    "C1.21",
+    "C3.01",
+    "C3.02"
+   ],
+   "requires_approval": [
+    "AR-19"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "institution.Inquiry",
+    "R26",
+    "R27",
+    "X7",
+    "X21",
+    "X22"
+   ],
+   "measures": [
+    "M26",
+    "M27"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C3.06",
+   "phase": 3,
+   "title": "Dissent credited by outcome",
+   "institution": "Council",
+   "intent": "Mark the Council on what happened, not only on what was approved. Overruled dissent that proved right earns credit; assumptions are marked held or failed.",
+   "scope": [
+    "At ratification, record the open assumptions and which minority positions were accepted or overruled (R32)",
+    "When outcomes arrive (realised value from C0.09, incidents, change failures), link them back to the Alignment Record",
+    "Credit the Inquiry contributions behind overruled positions the outcome supports; mark each assumption held, failed or unclear",
+    "Unclear outcomes stay unclear; nothing is forced",
+    "Lessons (C1.24) may be proposed from failed assumptions"
+   ],
+   "acceptance": [
+    "Every ratified Alignment Record lists its open assumptions and overruled positions",
+    "Every recorded outcome is linked to its Alignment Record with a held, failed or unclear mark per assumption"
+   ],
+   "evidence": [
+    "Outcome links",
+    "dissent-credit report"
+   ],
+   "depends_on": [
+    "C0.09",
+    "C1.24",
+    "C3.02"
+   ],
+   "requires_approval": [
+    "AR-20"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "R32",
+    "X27",
+    "problem.P13",
+    "institution.Council"
+   ],
+   "measures": [
+    "M32"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C3.07",
+   "phase": 3,
+   "title": "The Council against a single-model baseline",
+   "institution": "Ledger",
+   "intent": "The Council must earn its cost. Compare Inquiry plus the Council with one strong model framing alone on the same briefs, and drop deliberation steps that do not pay.",
+   "scope": [
+    "On a sample of briefs, one strong model also drafts the Alignment Record alone, blind to the Council's draft",
+    "Compare material omissions found later, Isa's send-backs, her review time and cost per clean idea (X24)",
+    "A deliberation step that does not pay is proposed for removal through the Release Gate and Isa",
+    "The result also tests EvryMynd's agent council offer"
+   ],
+   "acceptance": [
+    "The comparison is reported with sample size, and judged against X24's criterion when the sample suffices"
+   ],
+   "evidence": [
+    "Council baseline report"
+   ],
+   "depends_on": [
+    "C3.01",
+    "C3.02"
+   ],
+   "requires_approval": [
+    "AR-20"
+   ],
+   "ratified_by": null,
+   "traces": [
+    "X24",
+    "X6",
+    "X7",
+    "institution.Inquiry"
+   ],
+   "measures": [
+    "M32",
+    "M22"
+   ],
+   "open_items": []
+  },
+  {
+   "id": "C3.08",
+   "phase": 3,
+   "title": "Investor demo path: one idea to working software, on demand",
+   "institution": "Market",
+   "intent": "Prove it works and is worth it. One idea goes from a spoken or written brief, through the council, to reviewed, working software, reliably, with its cost, time and quality shown.",
+   "scope": [
+    "A fixed demo script: brief (voice or text), council framing, cards, build, cross-family review, running result",
+    "Live numbers on screen: time to result, cost per idea, defects caught, council against a single model",
+    "Runs end to end without manual intervention, on demand"
+   ],
+   "acceptance": [
+    "Five demo runs in a row complete without a manual fix",
+    "Each run shows its time, cost and review outcome from the Factory's own records"
+   ],
+   "evidence": [
+    "Five recorded demo runs"
+   ],
+   "depends_on": [
+    "C0.09",
+    "C1.17",
+    "C3.02",
+    "C3.03"
+   ],
+   "requires_approval": [],
+   "ratified_by": null,
+   "traces": [
+    "H7"
+   ],
+   "measures": [
+    "M01",
+    "M05"
+   ],
+   "open_items": []
   },
   {
    "id": "C4.01",
@@ -1800,7 +2325,14 @@
     "X17",
     "X18",
     "X19",
-    "X20"
+    "X20",
+    "X21",
+    "X22",
+    "X23",
+    "X24",
+    "X25",
+    "X26",
+    "X27"
    ],
    "measures": [
     "M01",
@@ -1815,5 +2347,156 @@
    "open_items": [],
    "institution": "Ledger"
   }
- ]
+ ],
+ "build_queue": {
+  "_about": "Private alpha prototype (Isa, 5 Oct 2026): product first. The Factory must stay up and work end to end for an investor demo before any governance, risk or compliance work. 'now' is the build order; each card is built in the minimal form stated. 'later' waits for its stage; nothing in 'now' waits on anything in 'later', on an unsigned approval or on a phase exit. Isa is the only user.",
+  "now": [
+   {
+    "id": "C0.20",
+    "minimal": "Log failures and workarounds; fix the top three causes weekly"
+   },
+   {
+    "id": "C0.16",
+    "minimal": "Alert and one-step revert; hotfix as an ordinary card"
+   },
+   {
+    "id": "C1.23",
+    "minimal": "Record Isa's own use; replay before every merge; show differences"
+   },
+   {
+    "id": "C0.17",
+    "minimal": "One pull queue the agents work from"
+   },
+   {
+    "id": "C0.19",
+    "minimal": "One gateway; keys in the environment, on Isa's own accounts"
+   },
+   {
+    "id": "C1.03",
+    "minimal": "The models Isa has accounts for; no vendor-terms gate"
+   },
+   {
+    "id": "C0.03",
+    "minimal": "An append-only log of what happened"
+   },
+   {
+    "id": "C0.04",
+    "minimal": "Tokens and cost per call, for cost-per-idea numbers"
+   },
+   {
+    "id": "C0.18",
+    "minimal": "One shared harness: tools, fresh context, budgets"
+   },
+   {
+    "id": "C1.01",
+    "minimal": "Tier, requirement, contract with tests"
+   },
+   {
+    "id": "C1.02",
+    "minimal": "Simple tier rules"
+   },
+   {
+    "id": "C1.17",
+    "minimal": "Tests first, then a model of another family reviews"
+   },
+   {
+    "id": "C1.11",
+    "minimal": "No model reviews its own family's work"
+   },
+   {
+    "id": "C1.05",
+    "minimal": "Hardest-first pull by licence"
+   },
+   {
+    "id": "C1.08",
+    "minimal": "A reason on every rejection"
+   },
+   {
+    "id": "C1.06",
+    "minimal": "Promotion and demotion from the record"
+   },
+   {
+    "id": "C1.10",
+    "minimal": "No tier left without an agent"
+   },
+   {
+    "id": "C1.15",
+    "minimal": "A hard monthly spending cap; nothing else"
+   },
+   {
+    "id": "C3.01",
+    "minimal": "Two models frame the brief blind"
+   },
+   {
+    "id": "C3.02",
+    "minimal": "One synthesis round; Isa ratifies"
+   },
+   {
+    "id": "C3.03",
+    "minimal": "Brief to cards, with one red-team pass"
+   },
+   {
+    "id": "C0.09",
+    "minimal": "Cost and time per idea, from the log"
+   },
+   {
+    "id": "C3.07",
+    "minimal": "Council against one model on the same briefs: the investor proof point"
+   },
+   {
+    "id": "C1.24",
+    "minimal": "Isa's corrections become reusable lessons"
+   },
+   {
+    "id": "C1.21",
+    "minimal": "A weekly standing brief plus incident signals"
+   },
+   {
+    "id": "C2.07",
+    "minimal": "Live voice in English and Arabic, for Isa"
+   },
+   {
+    "id": "C3.08",
+    "minimal": "The investor demo, end to end, five clean runs"
+   }
+  ],
+  "later": {
+   "pre-release gate": [
+    "C0.01",
+    "C0.02",
+    "C0.05",
+    "C1.09",
+    "C1.22",
+    "C1.25",
+    "C2.01",
+    "C2.02",
+    "C2.03",
+    "C2.06",
+    "C3.04"
+   ],
+   "measurement and the simulation twin": [
+    "C0.06",
+    "C0.07",
+    "C0.08",
+    "C0.10",
+    "C0.11",
+    "C0.12",
+    "C0.15",
+    "C4.01"
+   ],
+   "scale and optimisation": [
+    "C1.07",
+    "C1.12",
+    "C1.13",
+    "C1.14",
+    "C1.16",
+    "C1.19",
+    "C1.20",
+    "C2.04",
+    "C2.05",
+    "C3.05",
+    "C3.06"
+   ]
+  }
+ }
 }

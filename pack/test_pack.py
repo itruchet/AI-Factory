@@ -102,12 +102,12 @@ class NothingInvented(unittest.TestCase):
 
 class NothingForgotten(unittest.TestCase):
     def test_the_idea_record_is_complete(self):
-        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 26)])
-        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 21)))
+        self.assertEqual([r["id"] for r in C["rules"]], [f"R{i}" for i in range(1, 33)])
+        self.assertEqual(sorted(x["id"] for x in C["experiments"]), sorted(f"X{i}" for i in range(1, 28)))
         self.assertEqual(sorted(d["id"] for d in C["decisions"]), sorted(f"H{i}" for i in range(1, 8)))
         self.assertEqual(len(C["principles"]), 10)
         self.assertEqual(len(C["institutions"]), 8)
-        self.assertEqual(len(C["problems"]), 11)
+        self.assertEqual(len(C["problems"]), 14)
         self.assertEqual([g["id"] for g in C["golden_rules"] if g["id"]], ["G1", "G2", "G3", "G4", "G5"])
 
     def test_every_live_rule_has_a_card(self):
@@ -178,18 +178,21 @@ class PlanIsSound(unittest.TestCase):
         for i in CARDS:
             visit(i)
 
-    def test_governance_is_protected_before_anything_changes(self):
-        # every card except pack registration and the protection itself depends, directly or not, on C0.02
-        def ancestors(i, acc=None):
-            acc = set() if acc is None else acc
+    def test_build_queue_is_product_first(self):
+        # prototype mode (Isa, 5 Oct 2026): nothing on the build queue waits on later work, an unsigned approval
+        # or an open item it cannot resolve itself; governance cards are all later
+        bq = PACK["build_queue"]
+        now = [n["id"] for n in bq["now"]]
+        later = [c for v in bq["later"].values() for c in v]
+        self.assertEqual(sorted(now + later), sorted(CARDS))
+        self.assertEqual(now[0], "C0.20")                                        # stay up first
+        for pos, i in enumerate(now):
             for d in CARDS[i]["depends_on"]:
-                if d not in acc:
-                    acc.add(d)
-                    ancestors(d, acc)
-            return acc
-        for i in CARDS:
-            if i not in ("C0.01", "C0.02"):
-                self.assertIn("C0.02", ancestors(i), i)
+                self.assertIn(d, now[:pos], (i, d))
+            for a in CARDS[i]["requires_approval"]:
+                self.assertTrue(APPROVALS[a].get("signed"), (i, a))
+        for g in ("C0.01", "C0.02", "C1.25", "C2.01", "C2.02", "C1.22"):
+            self.assertIn(g, bq["later"]["pre-release gate"], g)
 
     def test_approvals_are_ordered(self):
         order = {a["id"]: n for n, a in enumerate(PACK["approvals"]["records"])}
@@ -209,7 +212,7 @@ class PlanIsSound(unittest.TestCase):
         readme = (HERE / "README.md").read_text()
         self.assertIn(f"{n_cards} card seeds", ingest)
         self.assertIn(f"{n_ar} approval records", ingest)
-        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen", 19: "Nineteen"}
+        words = {14: "Fourteen", 15: "Fifteen", 16: "Sixteen", 17: "Seventeen", 18: "Eighteen", 19: "Nineteen", 20: "Twenty", 21: "Twenty-one"}
         gates = {3: "three", 4: "four"}[len(PACK["approvals"]["gates"])]
         self.assertIn(f"{words[n_ar]} records in {gates} gates", readme)
         self.assertIn(f"{n_ar} approval records in {gates} gates", ingest)

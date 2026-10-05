@@ -144,6 +144,102 @@
     ],
     "tol": 0.01
    }
+  },
+  {
+   "id": "CL-11",
+   "statement": "With 5 hours of Isa's attention a week [illustrative] and every idea ratified by her, 75 ideas a week yield about 16 clean ideas.",
+   "value": 16.1,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/origination.json",
+    "path": [
+     "O",
+     "25 briefs + 50 originated a week",
+     "Isa 5 h, ratifies all",
+     "clean"
+    ],
+    "tol": 0.01
+   }
+  },
+  {
+   "id": "CL-12",
+   "statement": "With 80% of ideas inside the envelope, the same demand yields about 56 clean ideas a week.",
+   "value": 56.4,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/origination.json",
+    "path": [
+     "O",
+     "25 briefs + 50 originated a week",
+     "Isa 5 h, envelope 80%",
+     "clean"
+    ],
+    "tol": 0.01
+   }
+  },
+  {
+   "id": "CL-13",
+   "statement": "That takes about 3.6 of Isa's hours a week.",
+   "value": 3.6,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/origination.json",
+    "path": [
+     "O",
+     "25 briefs + 50 originated a week",
+     "Isa 5 h, envelope 80%",
+     "isa_h"
+    ],
+    "tol": 0.03
+   }
+  },
+  {
+   "id": "CL-14",
+   "statement": "With blind spots shared by every family (18%), review alone lets about 0.45 defects per idea escape on steady work.",
+   "value": 0.45,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/replay.json",
+    "path": [
+     "P",
+     "steady / all-family blind spots 18%",
+     "review only (r12.11)",
+     "escaped"
+    ],
+    "tol": 0.03
+   }
+  },
+  {
+   "id": "CL-15",
+   "statement": "Replay at an assumed 50% coverage cuts that to about 0.25.",
+   "value": 0.25,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/replay.json",
+    "path": [
+     "P",
+     "steady / all-family blind spots 18%",
+     "replay 50%",
+     "escaped"
+    ],
+    "tol": 0.04
+   }
+  },
+  {
+   "id": "CL-16",
+   "statement": "Where blind spots differ by family, the Council delivers about 13.1 clean ideas a week against about 12.1 for a single model framing alone.",
+   "value": 13.1,
+   "kind": "synthetic",
+   "source": {
+    "json": "probes/value-stream/replay.json",
+    "path": [
+     "C",
+     "steady / family blind spots 18%",
+     "institutions (2 analysts, 1 Council round)",
+     "clean"
+    ],
+    "tol": 0.01
+   }
   }
  ]
 }

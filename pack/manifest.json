@@ -2,17 +2,17 @@
  "schema": "factory-pack/1",
  "pack_version": "1.0",
  "files": {
-  "CARDS.md": "19e9057492b7cfda6983332ca9dc5459eec3556486ca060001fad221376d993a",
-  "INGEST.md": "8a4fa6ba2fef68e77acd2005f18de60c105f2c3e0c3a32df0ff9a907028d1091",
-  "README.md": "36654f7d5fa6f5a19f06cf3d77cad8b3fcb2a5d4871baf877c304cd30461d989",
-  "build_pack.py": "1175e112efdb264cf590ef61d3cbc0b9a3687576380f54c4a6183b671c380c83",
-  "factory-pack.json": "152973e7b55006007425ec891af450c7f2dcf90dab97c8c465698958fc1a37da",
-  "src/approvals.json": "3c12762ad4bbb6a1cf70a7ab601c66916294434c8467a6a895dfc1d664fb0c74",
-  "src/cards.json": "a71236094de58ab350dc9b1547fa67cc4911475c4f58c968b6d15642722b127a",
-  "src/claims.json": "b20774d6a321e143fa5e189bc5a1be143c9269bfa9ba969626684f45fca509fb",
-  "src/measures.json": "de6b2d7c88b161845147b885a69b6a1a3295e70978df6b6b88603975b9129004",
-  "src/open_items.json": "c121f1735024a11818a63c3ee74cc2b5a19ab47d22420a4b8e6d6cf31ae8a1b9",
-  "src/parameters.json": "d6feec90e03b7b3cf2e4bda63ba4329eeb524ad6fd4db05c4aed1ee16bd978d4",
-  "test_pack.py": "eae458ff905522b1526d65ccfc32b0bfa60fa77f0a4c79d02e3b76445ffc12a8"
+  "CARDS.md": "f632ece051f07a078f67b5ff7754e95d9de393b6ca10ca8f5ca773299ddcfeb4",
+  "INGEST.md": "03eb6b35b8cfc65078e50478b62a6387baedabf5ad0b167106bbc1c67b0c4c38",
+  "README.md": "414fa2f3f1f047cab55fa77a3c5b1fc6998ba14d2176e04fdb069118feb0d517",
+  "build_pack.py": "d2f68fefb99e6f3f9be6ab1fbf5678967f16786d0b8558413462ae5ec36b684e",
+  "factory-pack.json": "25f7cfbbb4b1ecb07dfbfb7d07ea5ef1ac953ce0adadb0d924a3f316899ba63b",
+  "src/approvals.json": "968a5131f0e1e8d2ad38f37ab697bbb803a8b16b020fe775bdeb72d85a3b36b0",
+  "src/cards.json": "b7c54987919e47f5988b9406eb10f7bcd910d3443c88ace2c91b735e1b7ed465",
+  "src/claims.json": "e00af5cecd256c28a1fd9807211863bf10be2ee33efb9a63aa755dbbcf22bd9f",
+  "src/measures.json": "ca10707a677ead6321888a003182034ae7afab8775244792ebba601d07aeff2a",
+  "src/open_items.json": "500809857eceaaffc76580277a86cc42d04fa273b12863f70e2cbd1d2760ec83",
+  "src/parameters.json": "9bbbff8cd03c71554458a2095ca4a57a6393a088c9a279348e381c7f8ac4a4de",
+  "test_pack.py": "5b2616a69d8b2dbe1daadee73625215f737866212fef92e8460e72bcedcca253"
  }
 }

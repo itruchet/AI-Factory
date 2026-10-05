@@ -6,6 +6,10 @@
 
 ---
 
+## 0. Prototype mode: the build queue (Isa, 5 Oct 2026)
+
+**Product first.** This is a private alpha with one user, Isa. It has to stay up and work end to end for an investor demo before any governance, risk or compliance work. `CARDS.md` opens with the build queue: 27 cards in order, each in its minimal form, starting with C0.20 (stay up) and ending with C3.08 (the investor demo, five clean runs). 30 cards wait: governance for the pre-release gate, measurement and the simulation twin, scale and optimisation.
+
 ## 1. Intent: the draft Alignment Record for AR-07
 
 **Change.** Replace role routing (Director → Worker → Checker) with the eight constitutional institutions under rules R1–R20. There are no named roles: from the first card, agents pull as a collective and another family checks.
@@ -62,14 +66,18 @@
 
 ## 3. Approval records
 
-**Nineteen records in four gates.** Isa signs eighteen; AR-14 is a mechanical load into the pull queue. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
+**Twenty-one records in four gates.** Isa signs twenty; AR-14 is a mechanical load into the pull queue. Full detail is in [`docs/idea/approvals.md`](../docs/idea/approvals.md) and `factory-pack.json` → `approvals`.
 
 | Gate | Records | When |
 |---|---|---|
 | 1. Decide | AR-01 constitution; AR-02 portfolio; AR-03 tiers; AR-04 operating rules; AR-05 budget and value measure; AR-06 exit Idea stage | Now; all Ready |
 | 2. Onto the backlog | AR-07 Alignment Record and authority to ingest; AR-08 baseline standards; AR-09a live operation; AR-11 protected paths; AR-12 monitoring and improvement plan; AR-13 Ratified Plan; AR-14 admission of Phase 0 | Straight after Gate 1; then Phase 0 loads |
-| 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C3.04) | During the build |
-| 4. Amendments | AR-15 quality, cost and speed (R14 time value) and readiness hand-back (R21) (before C1.14, C1.19); AR-16 institutions as harnesses, model flexibility, central memory (before C0.18, C0.19, C2.05); AR-17 the North Star; AR-18 primitives and R25 | AR-15, AR-16 signed; AR-17 ready |
+| 3. Just in time | AR-10 vendor terms (before C1.03); AR-09b ratification tiers (before C1.22 and C3.04) | During the build |
+| 4. Amendments | AR-15 quality, cost and speed (R14 time value) and readiness hand-back (R21) (before C1.14, C1.19); AR-16 institutions as harnesses, model flexibility, central memory (before C0.18, C0.19, C2.05); AR-17 the North Star; AR-18 primitives and R25; AR-19 edge cases, self-origination and the ratification envelope (R26-R28; before C1.20-C1.22, C2.06, C3.05); AR-20 recorded behaviour, lessons, decision rights and outcomes (R29-R32; before C1.23-C1.25, C2.07, C3.06, C3.07) | AR-15, AR-16 signed 28 Sep 2026; AR-17 to AR-19 signed 1 Oct 2026; AR-20 signed 5 Oct 2026 |
+
+**AR-19 in numbers (synthetic; 5 hours of Isa's attention a week, illustrative):** at 75 ideas a week, ratifying every idea herself caps output at about 16 clean ideas a week (CL-11). With 80% of ideas inside the envelope, it reaches about 56 (CL-12), on about 3.6 of her hours (CL-13).
+
+**AR-20 in numbers (synthetic):** with blind spots shared by every model family, review alone lets about 0.45 defects per idea escape (CL-14); replay at an assumed 50% coverage cuts that to about 0.25 (CL-15). The Council's edge over a single model is modest: about 13.1 clean ideas a week against 12.1 where blind spots differ by family (CL-16).
 
 ---
 
@@ -85,7 +93,7 @@
 - No secret patterns appear anywhere in the pack.
 
 **Nothing forgotten**
-- The Idea Record is complete: R1–R20, X1–X14, H1–H7, 8 principles, 8 institutions, 11 problems and 5 golden rules.
+- The Idea Record is complete: R1–R32, X1–X27, H1–H7, 10 principles, 8 institutions, 14 problems and 5 golden rules.
 - Every live rule, golden rule, principle, institution and problem is traced by a card.
 - Every experiment is both instrumented and judged.
 - Every design question and risk is routed.

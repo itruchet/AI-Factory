@@ -176,6 +176,54 @@
    "rule": "R21",
    "quote": "handed back at once to the institution that produced it, with the reason, before any build spend",
    "sim": "READY_CHECK, READY_SHARE, READY_D, REPLAN_D"
+  },
+  {
+   "id": "PR-23",
+   "name": "Isa's sample of rule ratifications",
+   "value": "10% of ideas ratified inside the envelope [PROPOSED]",
+   "rule": "R28",
+   "quote": "Isa reviews a random 10% afterwards",
+   "sim": "ISA_SAMPLE"
+  },
+  {
+   "id": "PR-24",
+   "name": "Envelope widening",
+   "value": "one step after 20 rule ratifications without an overturn; narrowed at once by an overturn [PROPOSED]",
+   "rule": "R28",
+   "quote": "20 rule ratifications without an overturn widen it one step",
+   "sim": null
+  },
+  {
+   "id": "PR-25",
+   "name": "Origination budget",
+   "value": "at most 20% of the monthly ceiling [PROPOSED]",
+   "rule": "R27",
+   "quote": "Originated ideas may use at most 20% of the monthly ceiling",
+   "sim": null
+  },
+  {
+   "id": "PR-26",
+   "name": "Replay set",
+   "value": "the few hundred recordings covering the most behaviour, re-chosen weekly [PROPOSED]",
+   "rule": "R29",
+   "quote": "Each week the Ledger keeps the few hundred recordings that cover the most behaviour with the least repetition",
+   "sim": "REPLAY_CATCH"
+  },
+  {
+   "id": "PR-27",
+   "name": "Lesson review date",
+   "value": "90 days by default [PROPOSED]",
+   "rule": "R30",
+   "quote": "a review date, 90 days by default",
+   "sim": null
+  },
+  {
+   "id": "PR-28",
+   "name": "Outward actions",
+   "value": "ask by default [PROPOSED]",
+   "rule": "R31",
+   "quote": "is ask by default",
+   "sim": null
   }
  ]
 }

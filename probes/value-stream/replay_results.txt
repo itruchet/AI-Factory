@@ -1,0 +1,53 @@
+RECORDED BEHAVIOUR AS THE ORACLE; THE COUNCIL AGAINST A SINGLE MODEL (institutions, elastic, R17 at 25% coupling, R21, time value $0.5/h, the seven-model menu; lead = median/90th h)
+
+[P / steady / no blind spots]
+  review only (r12.11)                          18.8 clean ( 25.0 live)  lead   24/  42 h  CFR  12%  escaped 0.24/idea  coherence 99.2%  $  27.8/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  challenge tests (R26)                         18.3 clean ( 24.3 live)  lead   27/  48 h  CFR  13%  escaped 0.23/idea  coherence 99.3%  $  33.4/clean  replay catches 0.00/idea  challenge catches 3.11/idea
+  replay 25%                                    18.6 clean ( 24.4 live)  lead   24/  43 h  CFR  11%  escaped 0.19/idea  coherence 99.1%  $  28.3/clean  replay catches 0.36/idea  challenge catches 0.00/idea
+  replay 50%                                    20.9 clean ( 25.6 live)  lead   23/  38 h  CFR   8%  escaped 0.13/idea  coherence 99.1%  $  24.6/clean  replay catches 0.67/idea  challenge catches 0.00/idea
+
+[P / steady / family blind spots 18%]
+  review only (r12.11)                          13.1 clean ( 24.8 live)  lead   27/  53 h  CFR  21%  escaped 0.41/idea  coherence 97.4%  $  49.1/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  challenge tests (R26)                         15.0 clean ( 25.9 live)  lead   29/  56 h  CFR  16%  escaped 0.31/idea  coherence 97.2%  $  49.4/clean  replay catches 0.00/idea  challenge catches 3.72/idea
+  replay 25%                                    15.1 clean ( 26.3 live)  lead   26/  48 h  CFR  17%  escaped 0.34/idea  coherence 97.2%  $  40.6/clean  replay catches 0.54/idea  challenge catches 0.00/idea
+  replay 50%                                    16.7 clean ( 26.3 live)  lead   26/  47 h  CFR  13%  escaped 0.22/idea  coherence 96.9%  $  36.1/clean  replay catches 1.07/idea  challenge catches 0.00/idea
+
+[P / steady / all-family blind spots 18%]
+  review only (r12.11)                           2.4 clean ( 25.5 live)  lead   21/  36 h  CFR  22%  escaped 0.45/idea  coherence 80.8%  $ 173.9/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  challenge tests (R26)                          2.9 clean ( 25.2 live)  lead   22/  38 h  CFR  23%  escaped 0.40/idea  coherence 81.1%  $ 165.0/clean  replay catches 0.00/idea  challenge catches 1.66/idea
+  replay 25%                                     2.7 clean ( 24.1 live)  lead   21/  34 h  CFR  20%  escaped 0.35/idea  coherence 80.8%  $ 144.0/clean  replay catches 0.32/idea  challenge catches 0.00/idea
+  replay 50%                                     3.6 clean ( 25.5 live)  lead   21/  32 h  CFR  14%  escaped 0.25/idea  coherence 81.2%  $ 110.5/clean  replay catches 0.66/idea  challenge catches 0.00/idea
+
+[P / mixed / no blind spots]
+  review only (r12.11)                          18.6 clean ( 24.3 live)  lead   22/ 103 h  CFR  12%  escaped 0.23/idea  coherence 98.9%  $  66.4/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  challenge tests (R26)                         18.5 clean ( 24.7 live)  lead   25/ 112 h  CFR  13%  escaped 0.23/idea  coherence 98.6%  $  77.6/clean  replay catches 0.00/idea  challenge catches 9.47/idea
+  replay 25%                                    19.2 clean ( 24.7 live)  lead   23/  98 h  CFR  10%  escaped 0.20/idea  coherence 98.7%  $  63.4/clean  replay catches 0.67/idea  challenge catches 0.00/idea
+  replay 50%                                    19.4 clean ( 24.8 live)  lead   22/  91 h  CFR   9%  escaped 0.17/idea  coherence 98.5%  $  55.2/clean  replay catches 1.20/idea  challenge catches 0.00/idea
+
+[P / mixed / family blind spots 18%]
+  review only (r12.11)                          14.3 clean ( 24.9 live)  lead   25/ 130 h  CFR  20%  escaped 0.41/idea  coherence 96.6%  $ 117.4/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  challenge tests (R26)                         13.5 clean ( 24.2 live)  lead   26/ 158 h  CFR  19%  escaped 0.40/idea  coherence 96.1%  $ 145.1/clean  replay catches 0.00/idea  challenge catches 14.15/idea
+  replay 25%                                    14.4 clean ( 23.9 live)  lead   24/ 141 h  CFR  20%  escaped 0.38/idea  coherence 96.4%  $ 117.5/clean  replay catches 1.34/idea  challenge catches 0.00/idea
+  replay 50%                                    15.6 clean ( 24.8 live)  lead   24/ 109 h  CFR  15%  escaped 0.27/idea  coherence 96.4%  $  77.8/clean  replay catches 2.15/idea  challenge catches 0.00/idea
+
+[P / mixed / all-family blind spots 18%]
+  review only (r12.11)                           5.5 clean ( 25.5 live)  lead   20/  71 h  CFR  24%  escaped 0.49/idea  coherence 80.1%  $ 157.1/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  challenge tests (R26)                          5.7 clean ( 25.0 live)  lead   21/  89 h  CFR  23%  escaped 0.49/idea  coherence 80.6%  $ 164.8/clean  replay catches 0.00/idea  challenge catches 5.44/idea
+  replay 25%                                     5.6 clean ( 24.4 live)  lead   19/  70 h  CFR  21%  escaped 0.42/idea  coherence 80.2%  $ 155.3/clean  replay catches 0.58/idea  challenge catches 0.00/idea
+  replay 50%                                     6.0 clean ( 25.0 live)  lead   20/  71 h  CFR  16%  escaped 0.30/idea  coherence 81.0%  $ 140.4/clean  replay catches 1.08/idea  challenge catches 0.00/idea
+
+[C / steady / no blind spots]
+  institutions (2 analysts, 1 Council round)    18.8 clean ( 25.0 live)  lead   24/  42 h  CFR  12%  escaped 0.24/idea  coherence 99.2%  $  27.8/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  single model (1 analyst, no Council)          18.6 clean ( 24.9 live)  lead   25/  44 h  CFR  12%  escaped 0.22/idea  coherence 99.0%  $  29.5/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+
+[C / steady / family blind spots 18%]
+  institutions (2 analysts, 1 Council round)    13.1 clean ( 24.8 live)  lead   27/  53 h  CFR  21%  escaped 0.41/idea  coherence 97.4%  $  49.1/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  single model (1 analyst, no Council)          12.1 clean ( 24.6 live)  lead   27/  53 h  CFR  22%  escaped 0.38/idea  coherence 96.0%  $  50.3/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+
+[C / mixed / no blind spots]
+  institutions (2 analysts, 1 Council round)    18.6 clean ( 24.3 live)  lead   22/ 103 h  CFR  12%  escaped 0.23/idea  coherence 98.9%  $  66.4/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  single model (1 analyst, no Council)          18.6 clean ( 25.9 live)  lead   24/ 115 h  CFR  14%  escaped 0.26/idea  coherence 98.3%  $  76.3/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+
+[C / mixed / family blind spots 18%]
+  institutions (2 analysts, 1 Council round)    14.3 clean ( 24.9 live)  lead   25/ 130 h  CFR  20%  escaped 0.41/idea  coherence 96.6%  $ 117.4/clean  replay catches 0.00/idea  challenge catches 0.00/idea
+  single model (1 analyst, no Council)          13.2 clean ( 23.6 live)  lead   23/ 148 h  CFR  21%  escaped 0.39/idea  coherence 95.4%  $ 113.1/clean  replay catches 0.00/idea  challenge catches 0.00/idea

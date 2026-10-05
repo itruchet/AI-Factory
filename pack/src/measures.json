@@ -283,6 +283,93 @@
     "X19"
    ],
    "sim_field": "CACHE_HIT"
+  },
+  {
+   "id": "M26",
+   "name": "Edge-case evidence",
+   "definition": "Per card: failure scenarios in the contract; sealed and challenge tests written, and the family that wrote each; defects each test caught; mutation score; escaped defects inside a named failure scenario.",
+   "unit": "counts, ratio",
+   "used_by": [
+    "R26",
+    "X21"
+   ],
+   "sim_field": "CHALLENGE_SHARE, CHALLENGE_CATCH, BLIND_TEST_CATCH"
+  },
+  {
+   "id": "M27",
+   "name": "Origination",
+   "definition": "Signals raised, by rule and kind; briefs opened; originated ideas acted on and left with no action; their cost (M06), realised value (M07) and share of monthly spend, beside the same figures for Isa's briefs.",
+   "unit": "counts, USD, ratio",
+   "used_by": [
+    "R27",
+    "X22"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M28",
+   "name": "Ratification",
+   "definition": "Per idea: ratified by Isa or by the envelope rule, the routing rule and the queue wait. Weekly: share inside the envelope, Isa's sample size and overturn rate, envelope step, and change-failure rate by who ratified.",
+   "unit": "hours, ratio",
+   "used_by": [
+    "R28",
+    "X23"
+   ],
+   "sim_field": "ISA_H_WEEK, RATIFY_MIN, ENVELOPE, ISA_SAMPLE"
+  },
+  {
+   "id": "M29",
+   "name": "Replay",
+   "definition": "Recordings kept, coverage of code paths, replays run, differences found, classified unintended or intended, defects caught by replay, verdicts overturned, redaction failures.",
+   "unit": "counts, ratio",
+   "used_by": [
+    "R29",
+    "X25"
+   ],
+   "sim_field": "REPLAY_CATCH"
+  },
+  {
+   "id": "M30",
+   "name": "Lessons",
+   "definition": "Lessons proposed, approved, applied (with citations), lapsed and withdrawn, by owner and scope; repeated corrections per scope before and after each lesson.",
+   "unit": "counts, ratio",
+   "used_by": [
+    "R30",
+    "X26"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M31",
+   "name": "Decision rights",
+   "definition": "Outward actions by kind and right (allowed, ask, never); asks answered and their turnaround; refusals; rights changes and who approved them.",
+   "unit": "counts, hours",
+   "used_by": [
+    "R31"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M32",
+   "name": "Outcomes and dissent",
+   "definition": "Per Alignment Record: open assumptions marked held, failed or unclear; overruled positions and whether outcomes supported them; credit earned; and, for the single-model baseline, omissions and send-backs on each side.",
+   "unit": "counts, ratio",
+   "used_by": [
+    "R32",
+    "X24",
+    "X27"
+   ],
+   "sim_field": null
+  },
+  {
+   "id": "M33",
+   "name": "Voice",
+   "definition": "Per language and dialect: word error rate, latency to first word, cost per hour, sessions; per session: route and processing location, and consent recorded.",
+   "unit": "ratio, ms, USD",
+   "used_by": [
+    "C2.07"
+   ],
+   "sim_field": null
   }
  ]
 }

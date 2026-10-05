@@ -78,6 +78,39 @@ class ValueStreamTest(unittest.TestCase):
         self.assertGreater(on["drops"].get("handback", 0), 0)
         self.assertLess(on["drops"]["test_fail"], 0.8 * off["drops"]["test_fail"])
 
+    def test_mechanisms_off_by_default(self):
+        # r12.11: challenge tests and Isa's budget are off unless set, so every earlier result reproduces
+        self.assertFalse(v.CHALLENGE_TESTS)
+        self.assertEqual((v.ISA_H_WEEK, v.ENVELOPE, v.BLIND_TEST_CATCH), (0.0, 0.0, 0.0))
+
+    def test_challenge_tests_catch_defects_review_misses(self):
+        import origination as og
+        def run(p):
+            return v.mean_measures([og.job((e.DEMANDS["steady"], p, k)) for k in range(3)])
+        # they pay where blind spots differ by family (origination.md §4); with none, review already catches the defect
+        off, on = run(dict(FAMILY_BLIND_P=0.18)), run(dict(FAMILY_BLIND_P=0.18, CHALLENGE_TESTS=True))
+        self.assertGreater(on["drops"].get("challenge_fail", 0), 0)
+        self.assertLess(on["escaped"], 0.95 * off["escaped"])
+
+    def test_envelope_lifts_the_ratification_ceiling(self):
+        import origination as og
+        def run(p):
+            return v.mean_measures([og.job((dict(rate=("const", 75)), p, k)) for k in range(2)])
+        isa_only, envelope = run(dict(ISA_H_WEEK=5.0)), run(dict(ISA_H_WEEK=5.0, ENVELOPE=0.8))
+        self.assertGreater(isa_only["ratify_wait"], 100)                      # a 5-hour week cannot ratify 75 ideas
+        self.assertGreater(envelope["clean"], 2 * isa_only["clean"])
+        self.assertLessEqual(envelope["isa_h"], 5.0)
+
+    def test_replay_reaches_blind_spots_every_family_shares(self):
+        # R29: the oracle is recorded behaviour, so it catches what no model check can see
+        import replay as rp
+        def run(p):
+            return v.mean_measures([rp.job((e.DEMANDS["steady"], {"BLIND_P": 0.18, **p}, {}, k)) for k in range(3)])
+        off, on = run({}), run(dict(REPLAY_CATCH=0.5))
+        self.assertGreater(on["drops"].get("replay_fail", 0), 0)
+        self.assertLess(on["escaped"], 0.8 * off["escaped"])
+        self.assertEqual(v.REPLAY_CATCH, 0.0)                                   # off by default
+
 
 if __name__ == "__main__":
     unittest.main()
