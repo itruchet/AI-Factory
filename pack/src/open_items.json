@@ -130,12 +130,10 @@
   {
    "id": "OI-14",
    "question": "Jurisdiction as a property of each route to a model: how data-residency law affects cost and efficiency.",
-   "status": "Open for the voice front end and sovereign users (r12.12); otherwise future",
-   "resolver": "The puller of C2.07 records where each route processes data; any legal reading needs a qualified adviser",
+   "status": "Deferred (future); revisited at the pre-release gate (OI-21)",
+   "resolver": "Future analysis; any legal reading needs a qualified adviser",
    "isa_answer": "Not an artificial single-country constraint; a future analysis.",
-   "blocks": [
-    "C2.07"
-   ]
+   "blocks": []
   },
   {
    "id": "OI-15",
@@ -190,14 +188,11 @@
   },
   {
    "id": "OI-21",
-   "question": "Consent and recording law for live voice and for recorded use (replay): the UK, KSA, Morocco and the US states where speakers or users are; and whether any Heliosvera-facing recording can happen at all.",
-   "status": "Open",
-   "resolver": "Qualified counsel, then Isa",
-   "isa_answer": null,
-   "blocks": [
-    "C1.23",
-    "C2.07"
-   ]
+   "question": "Pre-release gate: what must hold before any user other than Isa (private testing under NDA, or release): consent and recording law in the UK, KSA, Morocco and the US states concerned; redaction at capture; vendor terms for speech and voice providers; where each route processes data; and whether anything touching health data may be recorded at all.",
+   "status": "Deferred to the pre-release gate (Isa, 5 Oct 2026): the prototype has one user, Isa",
+   "resolver": "Qualified counsel, then Isa, when private testing or release is near (draft brief exists: Consent and Recording: Brief for Counsel)",
+   "isa_answer": "5 Oct 2026: 'why have you gone down this route yet. Sequencing of this task comes when we are close to release ... This is not a live product with live users'",
+   "blocks": []
   }
  ]
 }

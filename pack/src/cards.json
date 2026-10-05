@@ -35,7 +35,7 @@
    "intent": "Mark the markers, gate every change including governance, and give live operation an owner.",
    "entry": [
     "Phase 1 exit approved",
-    "AR-20 and AR-10 signed before C2.07 starts"
+    "AR-20 signed before C2.07 starts"
    ],
    "exit": [
     "Every Phase 2 card accepted",
@@ -1575,17 +1575,16 @@
    "institution": "Review",
    "intent": "Model checks share model blind spots; past behaviour does not. Live use is recorded, the most covering recordings are kept, and every change is replayed old against new before it merges.",
    "scope": [
-    "Record real use in live operation (C0.16): sessions, requests with their responses, and the Ledger's own transitions; personal and regulated data redacted at capture",
+    "Record real use in live operation (C0.16): sessions, requests with their responses, and the Ledger's own transitions",
     "Each week, keep the few hundred recordings that cover the most behaviour with the least repetition (R29); coverage measured on the code paths they reach",
     "At merge, replay against the old and the new version with recorded responses, so the replay is deterministic; from C2.02, the Release Gate replays again before any canary",
     "A model of another family (R18) classifies each difference against the card's contract: unintended is a reproduced defect (principle 3); intended but not in the contract is handed back to Planning (R21)",
     "Option A (Isa, 5 Oct 2026): the regression set is recorded live use, never a lab set",
-    "Nothing in a regulated domain (Heliosvera included) is recorded until counsel clears it [PLACEHOLDER: counsel review under OI-21]"
+    "Prototype first (Isa, 5 Oct 2026): Isa is the only user, so recording runs on her own use with no consent process; redaction at capture, counsel review and anything regulated (Heliosvera included) wait for the pre-release gate (OI-21)"
    ],
    "acceptance": [
     "Replays of the same recording on the same version give the same result",
     "Every unintended difference blocks the merge with its recording attached",
-    "A redaction check runs on every recording before it is stored, and a failed check discards the recording",
     "The replay set's coverage and age are reported weekly"
    ],
    "evidence": [
@@ -1614,9 +1613,7 @@
     "M29",
     "M15"
    ],
-   "open_items": [
-    "OI-21"
-   ]
+   "open_items": []
   },
   {
    "id": "C1.24",
@@ -1943,15 +1940,11 @@
     "Mobile microphone to streaming speech-to-text to the gateway (C0.19) to the chosen model; a reply by voice where the user asks for one",
     "English and Arabic from the first release; accuracy measured per language and dialect (Gulf and Moroccan Arabic separately), and the provider chosen on measured accuracy, latency and cost, not claims",
     "Rolling transcript windows: send only what changed; cheap models for routine notes, frontier models on request (R14 prices them)",
-    "Recording and consent follow decision rights (C1.25) and the law where each speaker is [PLACEHOLDER: counsel review under OI-21]",
-    "Where audio and transcripts are processed is recorded per route; sovereign users only on routes inside their jurisdiction (OI-14)",
-    "Never for patient conversations without a covered provider and a business associate agreement",
-    "Once the Council runs (C3.02), a spoken question can go to the council and come back with its sources"
+    "Once the Council runs (C3.02), a spoken question can go to the council and come back with its sources",
+    "Prototype first (Isa, 5 Oct 2026): Isa is the only user, on her own provider accounts; consent, vendor terms, processing location for sovereign users and anything touching health data wait for the pre-release gate (OI-21)"
    ],
    "acceptance": [
-    "Word error rate, latency and cost per hour are reported per language and dialect",
-    "Every session records its route and processing location",
-    "No session starts without recorded consent where the law requires it"
+    "Word error rate, latency and cost per hour are reported per language and dialect"
    ],
    "evidence": [
     "Voice accuracy report",
@@ -1962,23 +1955,18 @@
     "C1.25"
    ],
    "requires_approval": [
-    "AR-20",
-    "AR-10"
+    "AR-20"
    ],
    "ratified_by": null,
    "traces": [
     "DQ15",
     "RK10",
-    "RK8",
     "R23"
    ],
    "measures": [
     "M33"
    ],
-   "open_items": [
-    "OI-14",
-    "OI-21"
-   ]
+   "open_items": []
   },
   {
    "id": "C3.01",

@@ -49,7 +49,7 @@ These rules are also in `factory-pack.json` → `integrity_rules`.
 - AR-18 (amendment: primitives and industrialising the repeated) before C2.05.
 - AR-19 (amendment: edge cases, self-origination and the ratification envelope) before C1.20, C1.21, C1.22, C2.06 and C3.05.
 - AR-09b before C1.22 as well as C3.04: the envelope runs from Phase 1.
-- AR-20 (amendment: recorded behaviour, lessons, decision rights and outcomes) before C1.23, C1.24, C1.25, C2.07, C3.06 and C3.07; AR-10 also before C2.07.
+- AR-20 (amendment: recorded behaviour, lessons, decision rights and outcomes) before C1.23, C1.24, C1.25, C2.07, C3.06 and C3.07.
 
 ## What comes back to Isa
 

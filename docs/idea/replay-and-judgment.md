@@ -88,8 +88,6 @@ Clean ideas per week; escaped defects per idea; change-failure rate; $ per clean
   - C3.07 the Council against a single model.
 - **Direction:** EvryMynd joins as a front end (OI-20); every lesson, right and outcome carries an owner from the first card.
 
-**Blocked until cleared:**
-- **C1.23 and C2.07:** consent and recording law (OI-21, the counsel brief).
-- **C2.07:** vendor terms for speech-to-text and voice providers (AR-10), and where each route processes data (OI-14).
+**Sequencing (Isa, 5 Oct 2026):** this is a prototype with one user, Isa. Replay (C1.23) and voice (C2.07) run on her own use now, with no consent process, redaction or counsel review. Those, with vendor terms and processing location, wait for the pre-release gate (OI-21), before any private testing under NDA or release.
 
-**Takeaway:** brief counsel on OI-21 now; replay is the highest-value check in the design, and it cannot start until recording is cleared.
+**Takeaway:** build replay and voice on Isa's own use now; the legal gate waits until private testing or release is near.

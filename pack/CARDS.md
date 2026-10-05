@@ -795,20 +795,19 @@ Model checks share model blind spots; past behaviour does not. Live use is recor
 
 - **Institution:** Review.
 - **Depends on:** C0.06, C0.16, C1.17. **Approvals first:** AR-20.
-- **Traces:** R29, X25, problem.P5, RK8, DQ14, principle.3. **Measures:** M29, M15. **Open items:** OI-21.
+- **Traces:** R29, X25, problem.P5, RK8, DQ14, principle.3. **Measures:** M29, M15.
 
 Scope:
-- Record real use in live operation (C0.16): sessions, requests with their responses, and the Ledger's own transitions; personal and regulated data redacted at capture
+- Record real use in live operation (C0.16): sessions, requests with their responses, and the Ledger's own transitions
 - Each week, keep the few hundred recordings that cover the most behaviour with the least repetition (R29); coverage measured on the code paths they reach
 - At merge, replay against the old and the new version with recorded responses, so the replay is deterministic; from C2.02, the Release Gate replays again before any canary
 - A model of another family (R18) classifies each difference against the card's contract: unintended is a reproduced defect (principle 3); intended but not in the contract is handed back to Planning (R21)
 - Option A (Isa, 5 Oct 2026): the regression set is recorded live use, never a lab set
-- Nothing in a regulated domain (Heliosvera included) is recorded until counsel clears it [PLACEHOLDER: counsel review under OI-21]
+- Prototype first (Isa, 5 Oct 2026): Isa is the only user, so recording runs on her own use with no consent process; redaction at capture, counsel review and anything regulated (Heliosvera included) wait for the pre-release gate (OI-21)
 
 Acceptance:
 - [ ] Replays of the same recording on the same version give the same result
 - [ ] Every unintended difference blocks the merge with its recording attached
-- [ ] A redaction check runs on every recording before it is stored, and a failed check discards the recording
 - [ ] The replay set's coverage and age are reported weekly
 
 Evidence: Replay log; coverage report; redaction test.
@@ -862,7 +861,7 @@ Evidence: Rights tables; outward-action log.
 
 Mark the markers, gate every change including governance, and give live operation an owner.
 
-**Entry:** Phase 1 exit approved; AR-20 and AR-10 signed before C2.07 starts.
+**Entry:** Phase 1 exit approved; AR-20 signed before C2.07 starts.
 
 **Exit:** Every Phase 2 card accepted; Protected governance paths now pass the Release Gate and Isa (C2.02 replaces the interim gate); Isa approves the phase exit.
 
@@ -993,22 +992,18 @@ Evidence: Mutation report.
 Speak to the Factory and get answers back as you talk. Live speech-to-text streams through the gateway to any model on the menu, for Isa and, later, EvryMynd users.
 
 - **Institution:** Ledger.
-- **Depends on:** C0.19, C1.25. **Approvals first:** AR-20, AR-10.
-- **Traces:** DQ15, RK10, RK8, R23. **Measures:** M33. **Open items:** OI-14, OI-21.
+- **Depends on:** C0.19, C1.25. **Approvals first:** AR-20.
+- **Traces:** DQ15, RK10, R23. **Measures:** M33.
 
 Scope:
 - Mobile microphone to streaming speech-to-text to the gateway (C0.19) to the chosen model; a reply by voice where the user asks for one
 - English and Arabic from the first release; accuracy measured per language and dialect (Gulf and Moroccan Arabic separately), and the provider chosen on measured accuracy, latency and cost, not claims
 - Rolling transcript windows: send only what changed; cheap models for routine notes, frontier models on request (R14 prices them)
-- Recording and consent follow decision rights (C1.25) and the law where each speaker is [PLACEHOLDER: counsel review under OI-21]
-- Where audio and transcripts are processed is recorded per route; sovereign users only on routes inside their jurisdiction (OI-14)
-- Never for patient conversations without a covered provider and a business associate agreement
 - Once the Council runs (C3.02), a spoken question can go to the council and come back with its sources
+- Prototype first (Isa, 5 Oct 2026): Isa is the only user, on her own provider accounts; consent, vendor terms, processing location for sovereign users and anything touching health data wait for the pre-release gate (OI-21)
 
 Acceptance:
 - [ ] Word error rate, latency and cost per hour are reported per language and dialect
-- [ ] Every session records its route and processing location
-- [ ] No session starts without recorded consent where the law requires it
 
 Evidence: Voice accuracy report; route log.
 
